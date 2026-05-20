@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Extra Practice 1.1.4</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Extra Practice 1.1.4</h1>
+<div class="unit-intro">Practice Set 4 — Full Rigor / Final Readiness Spiral</div>
+<div class="section-label">Unit 1.1 — Function Notation & Solving</div>
+<section class="problem" id="problem-1">
+<div class="problem-number">1.</div>
+<p>Let \(C(n)=2n^2+n\). Evaluate \(C(3)\) and \(C(-1)\).</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-2">
+<div class="problem-number">2.</div>
+<p>The graph of \(r\) is shown.</p><ol class="lower-alpha" type="a"><li><p>Evaluate \(r(-2)\).</p></li><li><p>Evaluate \(r(4)\).</p></li><li><p>Solve \(r(x)=2\) using the graph.</p></li></ol>
+<div class="graph-block graph-md"><img alt="Graph for problem 2" src="practice_files/figures/U1_graph_piecewise_eval_solve.png"/></div>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-3">
+<div class="problem-number">3.</div>
+<p>Two students solve \(f(x)=0\) for \(f(x)=x^2-7x+10\).</p><p><strong>Student A:</strong> \((x-5)(x-2)=0\), so \(x=5\) or \(x=2\).</p><p><strong>Student B:</strong> \(x^2=7x-10\), so \(x=7\) or \(x=-10\).</p><p>Which student is correct? Explain the error in the other solution.</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-4">
+<div class="problem-number">4.</div>
+<p>Choose a linear function and a factorable quadratic function that both have \(f(2)=6\). Compare how solving \(f(x)=6\) is different for the two functions.</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<div class="section-label">Unit A.1 Spiral — Transformations and Vertex Form of Quadratics</div>
+<section class="problem" id="problem-5">
+<div class="problem-number">5.</div>
+<p>Fill in the blanks.</p><p>For \(y=2(x-7)^2-3\), the graph is shifted ______ units right, ______ units down, stretched by a factor of ______, and opens ______.</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-6">
+<div class="problem-number">6.</div>
+<p>The graph of a quadratic function is shown.</p><ol class="lower-alpha" type="a"><li><p>Identify the vertex.</p></li><li><p>State whether the graph opens up or down.</p></li><li><p>Describe the vertical stretch or compression compared to \(y=x^2\).</p></li><li><p>Write a possible equation in vertex form.</p></li></ol>
+<div class="graph-block graph-md"><img alt="Graph for problem 6" src="practice_files/figures/A_graph_vertex_down.png"/></div>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-7">
+<div class="problem-number">7.</div>
+<p>Describe the transformation from \(y=x^2\) to \(y=-(x+1)^2+4\). Use the words shift, reflect, and vertex in your answer.</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-8">
+<div class="problem-number">8.</div>
+<p>A quadratic function has vertex \((2,-5)\), opens upward, and has no vertical stretch or compression. Write its equation in vertex form.</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-9">
+<div class="problem-number">9.</div>
+<p>A quadratic function has vertex \((-3,5)\) and passes through the point \((-1,-7)\).</p><ol class="lower-alpha" type="a"><li><p>Determine \(a\).</p></li><li><p>Write the equation in vertex form.</p></li><li><p>State whether the vertex is a maximum or minimum.</p></li></ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-10">
+<div class="problem-number">10.</div>
+<p>A quadratic function has vertex \((1,-3)\) and \(a=-4\).</p><ol class="lower-alpha" type="a"><li><p>Write the equation.</p></li><li><p>Find \(f(0)\).</p></li><li><p>Find \(f(2)\).</p></li><li><p>Explain why the answers to parts b and c are related.</p></li></ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-11">
+<div class="problem-number">11.</div>
+<p>A graph has a minimum at \((-2,5)\) and passes through \((0,17)\).</p><ol class="lower-alpha" type="a"><li><p>Write the equation in vertex form.</p></li><li><p>Explain why the vertex must be a minimum.</p></li><li><p>Use symmetry to identify another point on the graph.</p></li></ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-12">
+<div class="problem-number">12.</div>
+<p>Two students are writing an equation for the same parabola. The graph has vertex \((4,-3)\) and passes through \((6,5)\).</p><p>Student A writes \(y=2(x-4)^2-3\).</p><p>Student B writes \(y=-2(x+4)^2-3\).</p><ol class="lower-alpha" type="a"><li><p>Determine which student is correct.</p></li><li><p>Explain each error or correct step.</p></li><li><p>Use substitution to verify the correct equation.</p></li><li><p>Use symmetry to find another point on the graph.</p></li><li><p>Explain how the vertex form prevents common graphing mistakes.</p></li></ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<div class="section-label">Unit B.1 Spiral — Exponent Properties</div>
+<section class="problem" id="problem-13">
+<div class="problem-number">13.</div>
+<p>State whether each expression is equivalent to \(x^6\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(x^2\cdot x^4\)</p></li>
+<li><p>\((x^2)^3\)</p></li>
+<li><p>\(x^{12}\div x^2\)</p></li>
+<li><p>\(x^8\div x^2\)</p></li>
+<li><p>\(x^3+x^3\)</p></li>
+</ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-14">
+<div class="problem-number">14.</div>
+<p>A student rewrites</p><p>\[\dfrac{x^5}{x^9}\]</p><p>as</p><p>\[x^4.\]</p><p>Is the student correct? Explain and simplify correctly.</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-15">
+<div class="problem-number">15.</div>
+<p>Which expressions are equivalent to:</p><p>\[x^{-6}\]</p><ol class="lower-alpha" type="a"><li><p>\(\dfrac{1}{x^6}\)</p></li><li><p>\(-x^6\)</p></li><li><p>\(\dfrac{x^2}{x^8}\)</p></li><li><p>\((x^{-2})^3\)</p></li><li><p>\(\dfrac{x^{-3}}{x^3}\)</p></li></ol><p>Explain your choices.</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-16">
+<div class="problem-number">16.</div>
+<p>A teacher gives the class this challenge:</p><p>\[\left(\dfrac{3x^{-2}y^4}{6x^3y^{-1}}\right)^2\cdot \dfrac{4x^5}{y^3}\]</p><ol class="lower-alpha" type="a"><li><p>Simplify the expression completely.</p></li><li><p>Write the answer with positive exponents.</p></li><li><p>Explain why the order of exponent rules matters.</p></li><li><p>Identify two possible mistakes students might make and how to avoid them.</p></li></ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+</div>
+</body>
+</html>

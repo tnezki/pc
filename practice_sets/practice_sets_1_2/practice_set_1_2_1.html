@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Set 1.2.1</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Practice Set 1.2.1</h1>
+<div class="unit-intro">Practice Set 1 — Entry / Early Unit Spiral</div>
+<div class="section-label">Unit 1.2 — Interval & Inequality Notation</div>
+<section class="problem" id="problem-1">
+<div class="problem-number">1.</div>
+<p>Write the inequality \(-2 \le x &lt; 5\) in interval notation.</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-2">
+<div class="problem-number">2.</div>
+<p>Write the interval shown on the number line in interval notation.</p>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-009" src="practice_files/figures/U1S2-009.png"/>
+</div>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-3">
+<div class="problem-number">3.</div>
+<p>Write the interval \((3, 9]\) as an inequality.</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-4">
+<div class="problem-number">4.</div>
+<p>Write the graph shown on the number line as an inequality.</p>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-010" src="practice_files/figures/U1S2-010.png"/>
+</div>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<div class="section-label">Unit A.2 Spiral — Solving Quadratics by Factoring and Intercepts</div>
+<section class="problem" id="problem-5">
+<div class="problem-number">5.</div>
+<p>Factor each expression completely.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(x^2+7x+12\)</p></li>
+<li><p>\(x^2-9x+20\)</p></li>
+<li><p>\(x^2+x-30\)</p></li>
+<li><p>\(x^2-16\)</p></li>
+</ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-6">
+<div class="problem-number">6.</div>
+<p>For each equation, identify the zeros without multiplying.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=(x-3)(x+5)\)</p></li>
+<li><p>\(y=2(x+1)(x-7)\)</p></li>
+<li><p>\(y=-4(x-6)(x+2)\)</p></li>
+<li><p>\(y=(x-9)^2\)</p></li>
+</ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-7">
+<div class="problem-number">7.</div>
+<p>For each function, state the \(x\)-intercepts.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(f(x)=(x-4)(x+2)\)</p></li>
+<li><p>\(g(x)=3(x-1)(x-8)\)</p></li>
+<li><p>\(h(x)=-2(x+6)(x-3)\)</p></li>
+</ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-8">
+<div class="problem-number">8.</div>
+<p>Which equation has zeros \(x=-2\) and \(x=6\)?</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=(x-2)(x+6)\)</p></li>
+<li><p>\(y=(x+2)(x-6)\)</p></li>
+<li><p>\(y=(x-6)(x-2)\)</p></li>
+<li><p>\(y=(x+6)(x-2)\)</p></li>
+</ol>
+<p>Explain how you know.</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-9">
+<div class="problem-number">9.</div>
+<p>Solve by factoring.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(x^2+9x+20=0\)</p></li>
+<li><p>\(x^2-3x-18=0\)</p></li>
+<li><p>\(x^2-64=0\)</p></li>
+</ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-10">
+<div class="problem-number">10.</div>
+<p>A quadratic function is written in factored form:</p>
+<p style="text-align:center;">\(f(x)=-2(x-3)(x+4)\)</p>
+<ol class="lower-alpha" type="a">
+<li><p>State the zeros.</p></li>
+<li><p>State the \(x\)-intercepts.</p></li>
+<li><p>Find \(f(0)\).</p></li>
+<li><p>Explain what the coefficient \(-2\) changes and what it does not change.</p></li>
+</ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-11">
+<div class="problem-number">11.</div>
+<p>A student factors:</p>
+<p style="text-align:center;">\(x^2+2x-24\)</p>
+<p>as:</p>
+<p style="text-align:center;">\((x+6)(x-4)\)</p>
+<p>Then solves:</p>
+<p style="text-align:center;">\(x=-6,\quad x=4\)</p>
+<p>Is the student correct? Explain how you can check without expanding everything.</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-12">
+<div class="problem-number">12.</div>
+<p>A ball is launched from the ground. Its height is modeled by:</p>
+<p style="text-align:center;">\(h(t)=-2t(t-6)\)</p>
+<p>where \(t\) is time in seconds and \(h(t)\) is height in meters.</p>
+<ol class="lower-alpha" type="a">
+<li><p>What are the zeros of the function?</p></li>
+<li><p>Interpret each zero in context.</p></li>
+<li><p>Find the time when the ball reaches its maximum height.</p></li>
+<li><p>Find the maximum height.</p></li>
+<li><p>Explain how factored form helps answer the question efficiently.</p></li>
+</ol>
+<div class="graph-block graph-md">
+<img alt="Blank coordinate grid for UAS2-043" src="practice_files/figures/UAS2-043_grid.png"/>
+</div>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<div class="section-label">Unit B.2 Spiral — Radicals and Rational Exponents</div>
+<section class="problem" id="problem-13">
+<div class="problem-number">13.</div>
+<p>Rewrite each radical using rational exponent notation.</p><ol class="lower-alpha" type="a"><li><p>\(\sqrt{x}\)</p></li><li><p>\(\sqrt[3]{x}\)</p></li><li><p>\(\sqrt[4]{x}\)</p></li><li><p>\(\sqrt[5]{x}\)</p></li></ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-14">
+<div class="problem-number">14.</div>
+<p>Rewrite each expression using radical notation.</p><ol class="lower-alpha" type="a"><li><p>\(x^{1/2}\)</p></li><li><p>\(x^{1/3}\)</p></li><li><p>\(x^{1/4}\)</p></li><li><p>\(x^{1/5}\)</p></li></ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-15">
+<div class="problem-number">15.</div>
+<p>Which expression is equivalent to:</p><p>\[\sqrt[3]{x^2}\]</p><ol class="lower-alpha" type="a"><li><p>\(x^{3/2}\)</p></li><li><p>\(x^{2/3}\)</p></li><li><p>\(x^{1/6}\)</p></li><li><p>\(x^6\)</p></li></ol><p>Explain how you know.</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-16">
+<div class="problem-number">16.</div>
+<p>Evaluate each expression without a calculator.</p><ol class="lower-alpha" type="a"><li><p>\(16^{1/2}\)</p></li><li><p>\(27^{1/3}\)</p></li><li><p>\(81^{1/4}\)</p></li><li><p>\(32^{1/5}\)</p></li></ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+</div>
+</body>
+</html>
