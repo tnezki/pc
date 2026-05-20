@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4 Section 4.3: Half Angle and Double Angle Identities</title>
+<script>
+window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.55;color:#222;background:#fff;padding:20px;}
+.container{max-width:900px;margin:0 auto;}
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.5rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+.lesson-header{margin-bottom:18px;}
+.lesson-subtitle{font-style:italic;color:#555;margin-top:2px;}
+.section-label{background:#eaf1fb;border:1px solid #a9b9cf;color:#22354d;font-weight:700;font-size:0.95rem;padding:8px 12px;margin:18px 0 10px 0;border-radius:4px;}
+.problem{border:1px solid #777;padding:14px 14px 12px 14px;margin-bottom:16px;break-inside:avoid;page-break-inside:avoid;}
+.problem-number{font-weight:700;font-size:1.05rem;margin-bottom:8px;}
+.problem-lesson{font-weight:600;color:#555;margin-left:12px;font-size:0.9rem;}
+.problem p{margin-bottom:8px;}
+.problem ol,.problem ul{margin-left:24px;margin-bottom:8px;}
+.problem li{margin-bottom:6px;}
+.graph-block{margin:12px 0 10px 0;text-align:center;}
+.graph-block img{display:block;margin:0 auto;max-width:100%;border:1px solid #ccc;background:#fff;}
+.graph-lg img{max-width:420px;}
+.workspace{width:100%;margin-top:10px;border-top:1px solid #777;}
+.workspace-120{height:120px;}.workspace-150{height:150px;}.workspace-180{height:180px;}.workspace-220{height:220px;}.workspace-250{height:250px;}.workspace-300{height:300px;}
+.workspace-label{margin-top:8px;font-size:0.85rem;font-weight:600;color:#444;}
+.lower-alpha{list-style-type:lower-alpha;}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Unit 4 Section 4.3: Half Angle and Double Angle Identities</h1>
+<div class="lesson-header"><h2>Section 4.3 Teacher Question Bank</h2><div class="lesson-subtitle">Double-angle identities, half-angle identities, exact values, verification, quadrant reasoning, graph behavior, and expanded creation tasks.</div></div>
+<div class="section-label">Section 4.3 — DoK 1</div>
+<section class="problem" id="problem-U4S3-001">
+<div class="problem-number">U4S3-001<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 1</span></div>
+<p>State the double-angle identity for \(\sin(2x)\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U4S3-002">
+<div class="problem-number">U4S3-002<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 1</span></div>
+<p>State one double-angle identity for \(\cos(2x)\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U4S3-003">
+<div class="problem-number">U4S3-003<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 1</span></div>
+<p>Rewrite \(2\sin(x)\cos(x)\) using a double-angle identity.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U4S3-004">
+<div class="problem-number">U4S3-004<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 1</span></div>
+<p>Rewrite \(\cos^2(x)-\sin^2(x)\) using a double-angle identity.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U4S3-005">
+<div class="problem-number">U4S3-005<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 1</span></div>
+<p>Rewrite \(1-2\sin^2(x)\) using a double-angle identity.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U4S3-006">
+<div class="problem-number">U4S3-006<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 1</span></div>
+<p>Rewrite \(2\cos^2(x)-1\) using a double-angle identity.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U4S3-007">
+<div class="problem-number">U4S3-007<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 1</span></div>
+<p>State the half-angle identity for \(\sin\left(\frac{x}{2}\right)\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U4S3-008">
+<div class="problem-number">U4S3-008<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 1</span></div>
+<p>State the half-angle identity for \(\cos\left(\frac{x}{2}\right)\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U4S3-009">
+<div class="problem-number">U4S3-009<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 1</span></div>
+<p>Evaluate exactly: \[\sin(2\cdot45^\circ)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U4S3-010">
+<div class="problem-number">U4S3-010<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 1</span></div>
+<p>Evaluate exactly: \[\cos(2\cdot30^\circ)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U4S3-011">
+<div class="problem-number">U4S3-011<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 1</span></div>
+<p>Evaluate exactly: \[\sin\left(\frac{\pi}{8}\right)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U4S3-012">
+<div class="problem-number">U4S3-012<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 1</span></div>
+<p>Evaluate exactly: \[\cos\left(\frac{\pi}{8}\right)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U4S3-013">
+<div class="problem-number">U4S3-013<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 1</span></div>
+<p>Fill in the blanks.</p><ol class='lower-alpha'><li>\(\sin(2x)=\) __________</li><li>\(\cos(2x)=\) __________</li><li>Half-angle identities involve __________ square roots.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<div class="section-label">Section 4.3 — DoK 2</div>
+<section class="problem" id="problem-U4S3-014">
+<div class="problem-number">U4S3-014<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 2</span></div>
+<p>Rewrite \(4\sin(x)\cos(x)\) as a single trig function.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S3-015">
+<div class="problem-number">U4S3-015<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 2</span></div>
+<p>Rewrite \(8\sin(x)\cos(x)\) using double-angle identities.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S3-016">
+<div class="problem-number">U4S3-016<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 2</span></div>
+<p>Simplify: \[\sin^2(x)-\cos^2(x)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S3-017">
+<div class="problem-number">U4S3-017<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 2</span></div>
+<p>Rewrite \(\cos^2(x)\) using a half-angle identity.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S3-018">
+<div class="problem-number">U4S3-018<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 2</span></div>
+<p>Rewrite \(\sin^2(x)\) using a half-angle identity.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S3-019">
+<div class="problem-number">U4S3-019<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 2</span></div>
+<p>Evaluate \(\sin(90^\circ)\) using a double-angle identity.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S3-020">
+<div class="problem-number">U4S3-020<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 2</span></div>
+<p>Evaluate \(\cos(120^\circ)\) using a double-angle identity.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S3-021">
+<div class="problem-number">U4S3-021<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 2</span></div>
+<p>Evaluate exactly: \[\sin\left(\frac{\pi}{12}\right)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S3-022">
+<div class="problem-number">U4S3-022<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 2</span></div>
+<p>Evaluate exactly: \[\cos\left(\frac{\pi}{12}\right)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S3-023">
+<div class="problem-number">U4S3-023<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 2</span></div>
+<p>Evaluate exactly: \[\tan\left(\frac{\pi}{8}\right)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S3-024">
+<div class="problem-number">U4S3-024<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 2</span></div>
+<p>Use a half-angle identity to determine \(\cos(15^\circ)\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S3-025">
+<div class="problem-number">U4S3-025<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 2</span></div>
+<p>Use a half-angle identity to determine \(\sin(15^\circ)\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S3-026">
+<div class="problem-number">U4S3-026<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 2</span></div>
+<p>Verify: \[2\sin(x)\cos(x)=\sin(2x)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S3-027">
+<div class="problem-number">U4S3-027<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 2</span></div>
+<p>Verify: \[1-2\sin^2(x)=\cos(2x)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S3-028">
+<div class="problem-number">U4S3-028<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 2</span></div>
+<p>Rewrite \(\sin^2(x)\cos^2(x)\) using double-angle identities.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<div class="section-label">Section 4.3 — DoK 3</div>
+<section class="problem" id="problem-U4S3-029">
+<div class="problem-number">U4S3-029<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 3</span></div>
+<p>Explain geometrically why \(\sin(2x)=2\sin(x)\cos(x)\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U4S3-030">
+<div class="problem-number">U4S3-030<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 3</span></div>
+<p>A student claims \(\cos(2x)=\cos^2(x)+\sin^2(x)\).</p><ol class='lower-alpha'><li>Explain the mistake.</li><li>State the correct identity.</li><li>Show why the student’s result simplifies incorrectly.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U4S3-031">
+<div class="problem-number">U4S3-031<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 3</span></div>
+<p>Verify: \[\frac{1-\cos(2x)}{2}=\sin^2(x)\]</p><p>Explain each step.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U4S3-032">
+<div class="problem-number">U4S3-032<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 3</span></div>
+<p>Verify: \[\frac{1+\cos(2x)}{2}=\cos^2(x)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U4S3-033">
+<div class="problem-number">U4S3-033<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 3</span></div>
+<p>Explain why half-angle identities require \(\pm\) in front of the square root.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U4S3-034">
+<div class="problem-number">U4S3-034<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 3</span></div>
+<p>Determine \(\sin\left(\frac{x}{2}\right)\) given \(\cos(x)=\frac35\) and \(\pi<x<2\pi\). Explain how quadrant information determines the sign.</p>
+<div class="graph-block graph-lg"><img src="figures/U4S3-034.png" alt="Figure for U4S3-034"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U4S3-035">
+<div class="problem-number">U4S3-035<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 3</span></div>
+<p>Determine \(\cos\left(\frac{x}{2}\right)\) given \(\sin(x)=-\frac45\) and \(\pi<x<\frac{3\pi}{2}\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U4S3-036">
+<div class="problem-number">U4S3-036<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 3</span></div>
+<p>Use identities to rewrite \(\sin^4(x)-\cos^4(x)\) in a simpler form.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U4S3-037">
+<div class="problem-number">U4S3-037<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 3</span></div>
+<p>A student says, “Double-angle identities are just shortcuts and do not reveal anything important.” Respond using examples involving graph structure and exact values.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U4S3-038">
+<div class="problem-number">U4S3-038<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 3</span></div>
+<p>Compare \(\cos(2x)\) written as \(\cos^2(x)-\sin^2(x)\) and as \(1-2\sin^2(x)\). Explain when each form is strategically useful.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U4S3-039">
+<div class="problem-number">U4S3-039<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 3</span></div>
+<p>Use identities to prove \(\sin(75^\circ)=\frac{\sqrt6+\sqrt2}{4}\).</p>
+<div class="graph-block graph-lg"><img src="figures/U4S3-039.png" alt="Figure for U4S3-039"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U4S3-040">
+<div class="problem-number">U4S3-040<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 3</span></div>
+<p>Use graph behavior to explain how \(\sin(x)\) and \(\sin(2x)\) are related. Discuss period, symmetry, zeros, and amplitude.</p>
+<div class="graph-block graph-lg"><img src="figures/U4S3-040.png" alt="Figure for U4S3-040"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<div class="section-label">Section 4.3 — DoK 4</div>
+<section class="problem" id="problem-U4S3-041">
+<div class="problem-number">U4S3-041<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 4</span></div>
+<p>Create and solve a verification problem that requires both a double-angle identity and a Pythagorean identity. Your identity must begin with an expression involving \(\sin^2(x)\), \(\cos^2(x)\), and \(\sin(2x)\), and it must simplify to a single trig function. Show every step and explain why each rewrite is valid.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S3-042">
+<div class="problem-number">U4S3-042<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 4</span></div>
+<p>Create a half-angle problem where quadrant reasoning matters. Choose an angle \(x\) such that \(\cos(x)\) is known and \(\frac{x}{2}\) lies in a different quadrant than \(x\). Ask for \(\sin\left(\frac{x}{2}\right)\) or \(\cos\left(\frac{x}{2}\right)\), then solve it fully with exact values and a sign explanation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S3-043">
+<div class="problem-number">U4S3-043<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 4</span></div>
+<p>Design an error-analysis problem involving \(\cos(2x)\).</p><ol class='lower-alpha'><li>Write incorrect student work that uses \(\cos(2x)=\cos^2(x)+\sin^2(x)\).</li><li>Identify the misconception.</li><li>Correct the identity.</li><li>Test both expressions using \(x=45^\circ\).</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S3-044">
+<div class="problem-number">U4S3-044<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 4</span></div>
+<p>Create a problem where \(\sin(2x)\) must be used to simplify a complicated expression. The original expression should include a product \(\sin(x)\cos(x)\). Solve it in two ways: first by using the double-angle identity early, and second by expanding or substituting first. Compare the efficiency.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S3-045">
+<div class="problem-number">U4S3-045<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 4</span></div>
+<p>Design a real-world periodic scenario where doubling the angle changes the frequency of oscillation. Write two models, one using \(\sin(x)\) and one using \(\sin(2x)\), then explain how the graphs differ in period, zeros, and number of cycles over the same interval.</p>
+<div class="graph-block graph-lg"><img src="figures/U4S3-045.png" alt="Figure for U4S3-045"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S3-046">
+<div class="problem-number">U4S3-046<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 4</span></div>
+<p>Create a specific challenge problem involving exact trig values, half-angle identities, radicals, and unit-circle reasoning. Use the angle \(\frac{\pi}{8}\) or \(\frac{3\pi}{8}\). Require students to determine both sine and cosine exactly, justify the signs using the unit circle, and simplify the radicals as much as possible.</p>
+<div class="graph-block graph-lg"><img src="figures/U4S3-046.png" alt="Figure for U4S3-046"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S3-047">
+<div class="problem-number">U4S3-047<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 4</span></div>
+<p>Create a comparison task involving \(\sin(2x)\) and \(\cos(2x)\). Include a graph, two identities for each function, and prompts asking students to compare zeros, symmetry, period, and which identity form is most useful for solving equations.</p>
+<div class="graph-block graph-lg"><img src="figures/U4S3-047.png" alt="Figure for U4S3-047"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S3-048">
+<div class="problem-number">U4S3-048<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 4</span></div>
+<p>Create a multi-representation problem involving unit-circle coordinates, half-angle identities, exact values, and graph behavior. Use an angle such as \(\frac{3\pi}{4}\) and ask students to find exact values for \(\sin\left(\frac{3\pi}{8}\right)\) and \(\cos\left(\frac{3\pi}{8}\right)\), justify signs geometrically, and explain where those values appear on sine and cosine graphs.</p>
+<div class="graph-block graph-lg"><img src="figures/U4S3-048.png" alt="Figure for U4S3-048"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S3-049">
+<div class="problem-number">U4S3-049<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 4</span></div>
+<p>A student claims, “Half-angle identities are just memorization.” Critique this statement using one example involving geometry, one involving exact values, one involving graph reasoning, and one involving strategic simplification.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S3-050">
+<div class="problem-number">U4S3-050<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.3 | DoK 4</span></div>
+<p>Create a verification problem requiring multiple identities, careful algebra, strategic substitution, and exact-value reasoning. Your problem must use at least one double-angle identity, one half-angle identity, and one known unit-circle value. Then provide a full justification.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+</div>
+</body>
+</html>

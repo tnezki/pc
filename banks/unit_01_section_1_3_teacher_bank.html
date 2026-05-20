@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1 Section 1.3: Domain & Range Question Bank</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1>Unit 1 Section 1.3: Domain & Range</h1>
+<div class="unit-intro">Question bank for Section 1.3. Teacher version shows DoK metadata; student version removes DoK labels. Original style, MathJax support, and workspace formatting are preserved.</div>
+<div class="source-label">DoK 1</div>
+<section class="problem" id="problem-U1S3-001">
+<div class="problem-number">U1S3-001<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 1</span></div>
+<p>Determine the domain of $f(x)=x^2-4x+7$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-002">
+<div class="problem-number">U1S3-002<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 1</span></div>
+<p>Determine the domain of $g(x)=\sqrt{x-5}$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-003">
+<div class="problem-number">U1S3-003<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 1</span></div>
+<p>Determine the domain of $h(x)=\sqrt{x+2}$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-004">
+<div class="problem-number">U1S3-004<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 1</span></div>
+<p>Determine the domain of $p(x)=\frac{1}{x-3}$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-005">
+<div class="problem-number">U1S3-005<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 1</span></div>
+<p>Determine the domain of $r(x)=\frac{2x+1}{x+4}$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-006">
+<div class="problem-number">U1S3-006<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 1</span></div>
+<p>Use the graph to determine the range of the function. Write your answer in interval notation.</p>
+<!-- Graph of an upward-opening parabola with vertex at (2,-3) and arrows continuing upward. -->
+<div class="graph-block graph-md">
+<img alt="Graph of an upward-opening parabola with vertex at (2,-3) and arrows continuing upward." src="figures/1_3_06.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-007">
+<div class="problem-number">U1S3-007<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 1</span></div>
+<p>Use the graph to determine the domain of the function. Write your answer in interval notation.</p>
+<!-- Graph of a line segment from (-4,1) closed endpoint to (3,5) open endpoint. -->
+<div class="graph-block graph-md">
+<img alt="Graph of a line segment from (-4,1) closed endpoint to (3,5) open endpoint." src="figures/1_3_07.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-008">
+<div class="problem-number">U1S3-008<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 1</span></div>
+<p>Use the graph to determine the domain and range of the function.</p>
+<!-- Graph of a curve beginning at a closed point (-2,-1), increasing to an open point (4,3). -->
+<div class="graph-block graph-md">
+<img alt="Graph of a curve beginning at a closed point (-2,-1), increasing to an open point (4,3)." src="figures/1_3_08.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-009">
+<div class="problem-number">U1S3-009<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 1</span></div>
+<p>State whether each endpoint is included or excluded in $[-3,7)$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-010">
+<div class="problem-number">U1S3-010<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 1</span></div>
+<p>Rewrite the set $x\ge -1$ in interval notation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-011">
+<div class="problem-number">U1S3-011<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 1</span></div>
+<p>Rewrite the set $-5<x\le 2$ in interval notation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-012">
+<div class="problem-number">U1S3-012<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 1</span></div>
+<p>Use the number line to write the set in interval notation.</p>
+<!-- Number line with an open circle at -2, closed circle at 5, and shading between them. -->
+<div class="figure-block figure-md">
+<img alt="Number line with an open circle at -2, closed circle at 5, and shading between them." src="figures/1_3_12.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-013">
+<div class="problem-number">U1S3-013<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 1</span></div>
+<p>Determine the domain of $f(x)=\sqrt{9-x}$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-014">
+<div class="problem-number">U1S3-014<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 1</span></div>
+<p>Determine the domain of $f(x)=\frac{x+2}{x^2-9}$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<div class="source-label">DoK 2</div>
+<section class="problem" id="problem-U1S3-015">
+<div class="problem-number">U1S3-015<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 2</span></div>
+<p>Determine the domain of $f(x)=\sqrt{2x-6}$ and write it in interval notation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-016">
+<div class="problem-number">U1S3-016<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 2</span></div>
+<p>Determine the domain of $g(x)=\sqrt{12-3x}$ and write it in interval notation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-017">
+<div class="problem-number">U1S3-017<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 2</span></div>
+<p>Determine the domain of $h(x)=\frac{x+5}{x^2-4x}$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-018">
+<div class="problem-number">U1S3-018<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 2</span></div>
+<p>Determine the domain of $p(x)=\frac{3}{(x+1)(x-6)}$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-019">
+<div class="problem-number">U1S3-019<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 2</span></div>
+<p>Determine the domain and range of the graphed function. Use interval notation.</p>
+<!-- Graph of a downward-opening parabola with vertex at (-1,4) and arrows continuing downward. -->
+<div class="graph-block graph-md">
+<img alt="Graph of a downward-opening parabola with vertex at (-1,4) and arrows continuing downward." src="figures/1_3_19.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-020">
+<div class="problem-number">U1S3-020<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 2</span></div>
+<p>Determine the domain and range of the graphed function. Use interval notation.</p>
+<!-- Piecewise graph with closed point at (-5,2), line segment to open point at (0,-1), and separate ray starting closed at (2,0) increasing to the right. -->
+<div class="graph-block graph-md">
+<img alt="Piecewise graph with closed point at (-5,2), line segment to open point at (0,-1), and separate ray starting closed at (2,0) increasing to the right." src="figures/1_3_20.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-021">
+<div class="problem-number">U1S3-021<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 2</span></div>
+<p>Determine the domain and range of the graphed function. Use interval notation.</p>
+<!-- Graph of a square root function starting at closed point (3,-2) and increasing to the right. -->
+<div class="graph-block graph-md">
+<img alt="Graph of a square root function starting at closed point (3,-2) and increasing to the right." src="figures/1_3_21.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-022">
+<div class="problem-number">U1S3-022<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 2</span></div>
+<p>A function has domain $(-\infty,-2]\cup(1,\infty)$. Describe what this means in words.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-023">
+<div class="problem-number">U1S3-023<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 2</span></div>
+<p>A graph has domain $[-4,6)$ and range $(-2,5]$. Describe the possible endpoints and output values.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-024">
+<div class="problem-number">U1S3-024<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 2</span></div>
+<p>The table gives values of a function. Determine the domain and range of the relation.</p>
+<ol type="a">
+<li>$x$: $-3,-1,0,4,7$</li>
+<li>$f(x)$: $5,2,2,-6,1$</li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-025">
+<div class="problem-number">U1S3-025<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 2</span></div>
+<p>The table gives values of a function. Determine the domain and range of the relation.</p>
+<ol type="a">
+<li>$x$: $-2,-2,1,3,5$</li>
+<li>$g(x)$: $4,6,0,0,-1$</li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-026">
+<div class="problem-number">U1S3-026<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 2</span></div>
+<p>A function $C(t)$ represents the cost of renting a kayak for $t$ hours. The rental shop allows rentals from $0$ to $8$ hours. State the reasonable domain in interval notation and explain the endpoint inclusion.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-027">
+<div class="problem-number">U1S3-027<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 2</span></div>
+<p>A function $H(t)$ represents the height of a ball thrown from the ground. The maximum height is $64$ feet and the ball returns to the ground. State a reasonable range and explain it.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S3-028">
+<div class="problem-number">U1S3-028<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 2</span></div>
+<p>Determine the domain of $f(x)=\frac{\sqrt{x-1}}{x-5}$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<div class="source-label">DoK 3</div>
+<section class="problem" id="problem-U1S3-029">
+<div class="problem-number">U1S3-029<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 3</span></div>
+<p>A student says the domain of $f(x)=\sqrt{x-4}$ is all real numbers because any number can be substituted for $x$. Explain the error and give the correct domain.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U1S3-030">
+<div class="problem-number">U1S3-030<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 3</span></div>
+<p>Explain why $x=2$ must be excluded from the domain of $g(x)=\frac{x+1}{x-2}$ even though the numerator is defined at $x=2$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U1S3-031">
+<div class="problem-number">U1S3-031<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 3</span></div>
+<p>Compare the domains of $f(x)=\sqrt{x-3}$ and $g(x)=\frac{1}{x-3}$. Explain why the restrictions are different.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U1S3-032">
+<div class="problem-number">U1S3-032<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 3</span></div>
+<p>Two students analyze the same graph. Student A says the range is $[-2,5]$. Student B says the range is $(-2,5]$. The graph has an open point at the lowest output and a closed point at the highest output. Who is correct? Explain.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U1S3-033">
+<div class="problem-number">U1S3-033<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 3</span></div>
+<p>Use the graph to determine the domain and range. Then justify how endpoint types and arrows affected your answer.</p>
+<!-- Graph has a closed point at (-3,4), decreases to an open point at (1,-2), then a ray starts at open point (1,0) and continues upward/right forever. -->
+<div class="graph-block graph-md">
+<img alt="Graph has a closed point at (-3,4), decreases to an open point at (1,-2), then a ray starts at open point (1,0) and continues upward/right forever." src="figures/1_3_33.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<section class="problem" id="problem-U1S3-034">
+<div class="problem-number">U1S3-034<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 3</span></div>
+<p>For $f(x)=\sqrt{x+6}$, determine the domain algebraically. Then describe what the graph must look like near its left endpoint.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U1S3-035">
+<div class="problem-number">U1S3-035<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 3</span></div>
+<p>A function models the number of students remaining in a gym after dismissal. Explain why the domain and range should not automatically be all real numbers, even if a formula could be evaluated for all real $x$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U1S3-036">
+<div class="problem-number">U1S3-036<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 3</span></div>
+<p>A student finds the domain of $f(x)=\frac{x}{x^2-25}$ and writes $(-\infty,\infty)$ because the denominator is a polynomial. Identify the mistake and correct the domain.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U1S3-037">
+<div class="problem-number">U1S3-037<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 3</span></div>
+<p>A table shows outputs $-1,0,3,3,7$ for inputs $-4,-2,0,2,4$. A graph of the same function has arrows continuing beyond the table. Explain why the table alone may not show the full domain and range.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U1S3-038">
+<div class="problem-number">U1S3-038<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 3</span></div>
+<p>Explain how the domain restriction of $f(x)=\frac{1}{x+8}$ appears in the graph of the function.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U1S3-039">
+<div class="problem-number">U1S3-039<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 3</span></div>
+<p>Compare the domains of $f(x)=\sqrt{x}$, $g(x)=\sqrt{-x}$, and $h(x)=x^2$. Explain how the structure of each function determines its domain.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<section class="problem" id="problem-U1S3-040">
+<div class="problem-number">U1S3-040<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 3</span></div>
+<p>A graph has domain $[-6,2)\cup(2,8]$ and range $[-3,5]$. Describe one possible graphical feature that could cause $x=2$ to be excluded while nearby $x$-values are included.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<div class="source-label">DoK 4</div>
+<section class="problem" id="problem-U1S3-041">
+<div class="problem-number">U1S3-041<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 4</span></div>
+<p>Create a function whose domain is $[4,\infty)$. Explain why your function has that domain.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<section class="problem" id="problem-U1S3-042">
+<div class="problem-number">U1S3-042<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 4</span></div>
+<p>Create a rational function whose domain excludes exactly $x=-3$ and $x=5$. Explain your reasoning.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<section class="problem" id="problem-U1S3-043">
+<div class="problem-number">U1S3-043<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 4</span></div>
+<p>Design a graph with domain $(-\infty,1]\cup(3,\infty)$ and range $[-2,\infty)$. Describe the graph or sketch it.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U1S3-044">
+<div class="problem-number">U1S3-044<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 4</span></div>
+<p>A student claims that every function with a restricted domain must have a restricted range. Decide whether this claim is always true, sometimes true, or never true. Support your answer with examples.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U1S3-045">
+<div class="problem-number">U1S3-045<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 4</span></div>
+<p>A school sells tickets for a dance. Tickets cost $8 each, and the room can hold at most 250 students. Define a function for revenue based on tickets sold. State a reasonable domain and range, and explain why both are restricted.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U1S3-046">
+<div class="problem-number">U1S3-046<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 4</span></div>
+<p>Create two different functions with the same domain $x
+e 2$ but different ranges. Explain how you know the domains match and the ranges differ.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U1S3-047">
+<div class="problem-number">U1S3-047<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 4</span></div>
+<p>A student models the height of water in a tank with $h(t)=20-2t$ and gives the domain $(-\infty,\infty)$. Critique the domain and propose a more reasonable domain and range.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U1S3-048">
+<div class="problem-number">U1S3-048<span class="problem-lesson">Teacher Created | Section 1.3 | DoK 4</span></div>
+<p>Write an equation, table, or graph description for a function with domain $[-2,6]$ and range $[1,9]$. Then explain how your representation guarantees both the domain and range.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+</div>
+</body>
+</html>

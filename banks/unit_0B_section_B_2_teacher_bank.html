@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit B Section B.2 Teacher Bank</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Unit B Section B.2: Radicals and Rational Exponents</h1>
+<div class="lesson-header">
+<h2>Teacher Bank</h2>
+<div class="lesson-subtitle">Radical notation, rational exponents, equivalent forms, exact evaluation, and structure reasoning</div>
+</div>
+<div class="section-label">DoK 1 — Recognition / Vocabulary / Basic Conversion</div>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-001 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-001">
+<div class="problem-number">UBS2-001<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 1</span></div>
+<p>Rewrite each radical using rational exponent notation.</p><ol class="lower-alpha" type="a"><li><p>\(\sqrt{x}\)</p></li><li><p>\(\sqrt[3]{x}\)</p></li><li><p>\(\sqrt[4]{x}\)</p></li><li><p>\(\sqrt[5]{x}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-002 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-002">
+<div class="problem-number">UBS2-002<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 1</span></div>
+<p>Rewrite each radical using rational exponent notation.</p><ol class="lower-alpha" type="a"><li><p>\(\sqrt{x^3}\)</p></li><li><p>\(\sqrt[3]{x^2}\)</p></li><li><p>\(\sqrt[4]{x^7}\)</p></li><li><p>\(\sqrt[5]{x^4}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-003 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-003">
+<div class="problem-number">UBS2-003<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 1</span></div>
+<p>Rewrite each expression using radical notation.</p><ol class="lower-alpha" type="a"><li><p>\(x^{1/2}\)</p></li><li><p>\(x^{1/3}\)</p></li><li><p>\(x^{1/4}\)</p></li><li><p>\(x^{1/5}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-004 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-004">
+<div class="problem-number">UBS2-004<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 1</span></div>
+<p>Rewrite each expression using radical notation.</p><ol class="lower-alpha" type="a"><li><p>\(x^{3/2}\)</p></li><li><p>\(x^{2/3}\)</p></li><li><p>\(x^{5/4}\)</p></li><li><p>\(x^{7/5}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-005 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-005">
+<div class="problem-number">UBS2-005<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 1</span></div>
+<p>For each expression, identify the root and the power.</p><ol class="lower-alpha" type="a"><li><p>\(x^{2/3}\)</p></li><li><p>\(x^{5/2}\)</p></li><li><p>\(x^{3/4}\)</p></li><li><p>\(x^{1/6}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-006 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-006">
+<div class="problem-number">UBS2-006<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 1</span></div>
+<p>Fill in the blanks.</p><p>For \(x^{m/n}\), the denominator \(n\) tells the ______, and the numerator \(m\) tells the ______.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-100"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-007 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-007">
+<div class="problem-number">UBS2-007<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 1</span></div>
+<p>Match each expression to an equivalent radical form.</p><ol class="lower-alpha" type="a"><li><p>\(x^{3/2}\)</p></li><li><p>\(x^{2/5}\)</p></li><li><p>\(x^{4/3}\)</p></li><li><p>\(x^{1/6}\)</p></li></ol><p>Choices:</p><ol><li><p>\(\sqrt[5]{x^2}\)</p></li><li><p>\(\sqrt{x^3}\)</p></li><li><p>\(\sqrt[6]{x}\)</p></li><li><p>\(\sqrt[3]{x^4}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-008 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-008">
+<div class="problem-number">UBS2-008<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 1</span></div>
+<p>Match each radical to an equivalent rational exponent form.</p><ol class="lower-alpha" type="a"><li><p>\(\sqrt[3]{a^5}\)</p></li><li><p>\(\sqrt{b^7}\)</p></li><li><p>\(\sqrt[4]{m^3}\)</p></li><li><p>\(\sqrt[6]{n^5}\)</p></li></ol><p>Choices:</p><ol><li><p>\(b^{7/2}\)</p></li><li><p>\(m^{3/4}\)</p></li><li><p>\(a^{5/3}\)</p></li><li><p>\(n^{5/6}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-009 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-009">
+<div class="problem-number">UBS2-009<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 1</span></div>
+<p>Which expression is equivalent to:</p><p>\[\sqrt[3]{x^2}\]</p><ol class="lower-alpha" type="a"><li><p>\(x^{3/2}\)</p></li><li><p>\(x^{2/3}\)</p></li><li><p>\(x^{1/6}\)</p></li><li><p>\(x^6\)</p></li></ol><p>Explain how you know.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-010 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-010">
+<div class="problem-number">UBS2-010<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 1</span></div>
+<p>Which expression is equivalent to:</p><p>\[x^{5/2}\]</p><ol class="lower-alpha" type="a"><li><p>\(\sqrt[5]{x^2}\)</p></li><li><p>\(\sqrt{x^5}\)</p></li><li><p>\(\sqrt[2]{x^{1/5}}\)</p></li><li><p>\(5\sqrt{x}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-100"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-011 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-011">
+<div class="problem-number">UBS2-011<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 1</span></div>
+<p>State whether each expression is equivalent to \(x^{3/4}\).</p><ol class="lower-alpha" type="a"><li><p>\(\sqrt[4]{x^3}\)</p></li><li><p>\(\left(\sqrt[4]{x}\right)^3\)</p></li><li><p>\(\sqrt{x^3}\)</p></li><li><p>\(\left(x^3\right)^{1/4}\)</p></li><li><p>\(x^{4/3}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-012 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-012">
+<div class="problem-number">UBS2-012<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 1</span></div>
+<p>A student says:</p><p><em>“The expression \(x^{1/3}\) means one-third of \(x\).”</em></p><p>What is wrong with the statement? Give an example.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<div class="section-label">DoK 2 — Converting and Evaluating Rational Exponents</div>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-013 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-013">
+<div class="problem-number">UBS2-013<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>Rewrite each expression in radical form.</p><ol class="lower-alpha" type="a"><li><p>\(16^{1/2}\)</p></li><li><p>\(27^{1/3}\)</p></li><li><p>\(81^{1/4}\)</p></li><li><p>\(32^{1/5}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-014 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-014">
+<div class="problem-number">UBS2-014<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>Evaluate each expression without a calculator.</p><ol class="lower-alpha" type="a"><li><p>\(16^{1/2}\)</p></li><li><p>\(27^{1/3}\)</p></li><li><p>\(81^{1/4}\)</p></li><li><p>\(32^{1/5}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-015 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-015">
+<div class="problem-number">UBS2-015<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>Evaluate each expression without a calculator.</p><ol class="lower-alpha" type="a"><li><p>\(25^{3/2}\)</p></li><li><p>\(8^{2/3}\)</p></li><li><p>\(16^{3/4}\)</p></li><li><p>\(32^{2/5}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-016 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-016">
+<div class="problem-number">UBS2-016<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>Evaluate each expression without a calculator.</p><ol class="lower-alpha" type="a"><li><p>\(64^{2/3}\)</p></li><li><p>\(125^{4/3}\)</p></li><li><p>\(81^{3/4}\)</p></li><li><p>\(\left(\dfrac{27}{8}\right)^{2/3}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-017 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-017">
+<div class="problem-number">UBS2-017<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>Evaluate each expression without a calculator.</p><ol class="lower-alpha" type="a"><li><p>\(\left(\dfrac{1}{9}\right)^{1/2}\)</p></li><li><p>\(\left(\dfrac{8}{27}\right)^{1/3}\)</p></li><li><p>\(\left(\dfrac{16}{81}\right)^{3/4}\)</p></li><li><p>\(\left(\dfrac{32}{243}\right)^{2/5}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-018 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-018">
+<div class="problem-number">UBS2-018<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>Evaluate each expression without a calculator.</p><ol class="lower-alpha" type="a"><li><p>\(4^{-1/2}\)</p></li><li><p>\(8^{-2/3}\)</p></li><li><p>\(16^{-3/4}\)</p></li><li><p>\(\left(\dfrac{27}{8}\right)^{-2/3}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-019 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-019">
+<div class="problem-number">UBS2-019<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>Rewrite each radical using rational exponents, then evaluate.</p><ol class="lower-alpha" type="a"><li><p>\(\sqrt{49}\)</p></li><li><p>\(\sqrt[3]{64}\)</p></li><li><p>\(\sqrt[4]{81}\)</p></li><li><p>\(\sqrt[5]{32}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-020 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-020">
+<div class="problem-number">UBS2-020<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>Rewrite each radical using rational exponents, then evaluate.</p><ol class="lower-alpha" type="a"><li><p>\(\sqrt{36^3}\)</p></li><li><p>\(\sqrt[3]{27^2}\)</p></li><li><p>\(\sqrt[4]{16^3}\)</p></li><li><p>\(\sqrt[5]{32^4}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-021 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-021">
+<div class="problem-number">UBS2-021<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>Rewrite each expression in two equivalent radical forms.</p><p>Example: \(x^{2/3}=\sqrt[3]{x^2}=\left(\sqrt[3]{x}\right)^2\)</p><ol class="lower-alpha" type="a"><li><p>\(x^{3/2}\)</p></li><li><p>\(x^{4/5}\)</p></li><li><p>\(x^{5/3}\)</p></li><li><p>\(x^{7/4}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-022 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-022">
+<div class="problem-number">UBS2-022<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>Rewrite each expression in rational exponent form.</p><ol class="lower-alpha" type="a"><li><p>\(\left(\sqrt{x}\right)^5\)</p></li><li><p>\(\left(\sqrt[3]{x}\right)^4\)</p></li><li><p>\(\left(\sqrt[5]{x^2}\right)^3\)</p></li><li><p>\(\sqrt[4]{x^3}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-023 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-023">
+<div class="problem-number">UBS2-023<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>Rewrite each expression using radical notation and positive exponents.</p><ol class="lower-alpha" type="a"><li><p>\(x^{-1/2}\)</p></li><li><p>\(x^{-2/3}\)</p></li><li><p>\(x^{-5/4}\)</p></li><li><p>\(x^{-3/5}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-024 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-024">
+<div class="problem-number">UBS2-024<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>Rewrite each expression using rational exponents and positive exponents.</p><ol class="lower-alpha" type="a"><li><p>\(\dfrac{1}{\sqrt{x}}\)</p></li><li><p>\(\dfrac{1}{\sqrt[3]{x^2}}\)</p></li><li><p>\(\dfrac{5}{\sqrt[4]{x^3}}\)</p></li><li><p>\(\dfrac{2}{\sqrt[5]{x^4}}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-025 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-025">
+<div class="problem-number">UBS2-025<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>Evaluate each expression without a calculator. Show whether you take the root first or apply the power first.</p><ol class="lower-alpha" type="a"><li><p>\(36^{3/2}\)</p></li><li><p>\(27^{2/3}\)</p></li><li><p>\(16^{5/4}\)</p></li><li><p>\(100^{3/2}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-026 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-026">
+<div class="problem-number">UBS2-026<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>Evaluate each expression without a calculator.</p><ol class="lower-alpha" type="a"><li><p>\((-8)^{1/3}\)</p></li><li><p>\((-27)^{2/3}\)</p></li><li><p>\((-32)^{3/5}\)</p></li><li><p>\((-64)^{2/3}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-027 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-027">
+<div class="problem-number">UBS2-027<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>Determine whether each expression is real.</p><ol class="lower-alpha" type="a"><li><p>\((-16)^{1/2}\)</p></li><li><p>\((-8)^{1/3}\)</p></li><li><p>\((-81)^{1/4}\)</p></li><li><p>\((-32)^{1/5}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-028 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-028">
+<div class="problem-number">UBS2-028<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>Determine whether each expression is real. Explain your reasoning.</p><ol class="lower-alpha" type="a"><li><p>\(\sqrt{-25}\)</p></li><li><p>\(\sqrt[3]{-125}\)</p></li><li><p>\((-16)^{3/4}\)</p></li><li><p>\((-243)^{2/5}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-029 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-029">
+<div class="problem-number">UBS2-029<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>A student rewrites</p><p>\[x^{4/3}\]</p><p>as</p><p>\[\sqrt[4]{x^3}.\]</p><p>Is the student correct? Explain and rewrite it correctly.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-030 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-030">
+<div class="problem-number">UBS2-030<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 2</span></div>
+<p>A student evaluates</p><p>\[27^{2/3}\]</p><p>by doing:</p><p>\[27^2=729,\quad \sqrt[3]{729}=9.\]</p><p>The answer is correct, but the work was difficult.</p><p>Show a more efficient method and explain why it works.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<div class="section-label">DoK 3 — Reasoning / Error Analysis / Equivalence</div>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-031 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-031">
+<div class="problem-number">UBS2-031<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 3</span></div>
+<p>A student says:</p><p><em>“The numerator in \(x^{m/n}\) is always the root.”</em></p><p>Explain the mistake using the expression:</p><p>\[x^{3/5}\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-032 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-032">
+<div class="problem-number">UBS2-032<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 3</span></div>
+<p>A student says:</p><p><em>“\(\sqrt[3]{x^2}\) and \(\sqrt{x^3}\) are basically the same because both have a \(2\) and a \(3\).”</em></p><p>Explain why the expressions are not equivalent.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-033 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-033">
+<div class="problem-number">UBS2-033<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 3</span></div>
+<p>Compare the expressions:</p><p>\[64^{2/3}\]</p><p>and</p><p>\[64^{3/2}.\]</p><ol class="lower-alpha" type="a"><li><p>Evaluate both exactly.</p></li><li><p>Explain why switching the numerator and denominator of the exponent changes the value.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-034 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-034">
+<div class="problem-number">UBS2-034<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 3</span></div>
+<p>Compare the expressions:</p><p>\[x^{1/2}\]</p><p>and</p><p>\[\dfrac{1}{2}x.\]</p><ol class="lower-alpha" type="a"><li><p>Are they equivalent?</p></li><li><p>Test with \(x=16\).</p></li><li><p>Explain the difference between taking a square root and multiplying by one-half.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-035 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-035">
+<div class="problem-number">UBS2-035<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 3</span></div>
+<p>Which expressions are equivalent to:</p><p>\[x^{5/3}\]</p><ol class="lower-alpha" type="a"><li><p>\(\sqrt[3]{x^5}\)</p></li><li><p>\(\left(\sqrt[3]{x}\right)^5\)</p></li><li><p>\(\sqrt[5]{x^3}\)</p></li><li><p>\(x\sqrt[3]{x^2}\)</p></li><li><p>\(\left(x^5\right)^{1/3}\)</p></li></ol><p>Explain your choices.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-036 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-036">
+<div class="problem-number">UBS2-036<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 3</span></div>
+<p>Which expressions are equivalent to:</p><p>\[x^{-3/4}\]</p><ol class="lower-alpha" type="a"><li><p>\(\dfrac{1}{x^{3/4}}\)</p></li><li><p>\(\dfrac{1}{\sqrt[4]{x^3}}\)</p></li><li><p>\(-\sqrt[4]{x^3}\)</p></li><li><p>\(\left(\dfrac{1}{x}\right)^{3/4}\)</p></li><li><p>\(\sqrt[-4]{x^3}\)</p></li></ol><p>Explain your choices.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-037 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-037">
+<div class="problem-number">UBS2-037<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 3</span></div>
+<p>A student evaluates:</p><p>\[(-27)^{2/3}\]</p><p>and gets \(-9\).</p><ol class="lower-alpha" type="a"><li><p>Explain the likely mistake.</p></li><li><p>Evaluate the expression correctly.</p></li><li><p>Explain why the result is positive.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-038 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-038">
+<div class="problem-number">UBS2-038<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 3</span></div>
+<p>A student evaluates:</p><p>\[(-16)^{3/4}\]</p><p>and gets \(8\).</p><ol class="lower-alpha" type="a"><li><p>Explain why this is not a real-number result.</p></li><li><p>Compare this to \((-32)^{3/5}\).</p></li><li><p>Explain why odd roots behave differently from even roots.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-039 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-039">
+<div class="problem-number">UBS2-039<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 3</span></div>
+<p>Explain why:</p><p>\[x^{6/3}=x^2\]</p><p>but</p><p>\[x^{3/6}\]</p><p>does not equal \(x^2\).</p><p>Use radical notation in your explanation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-040 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-040">
+<div class="problem-number">UBS2-040<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 3</span></div>
+<p>The expressions below are not all equivalent.</p><p>\[x^{2/3},\qquad \sqrt[3]{x^2},\qquad \sqrt{x^3},\qquad (x^{1/3})^2,\qquad (x^2)^{1/3}\]</p><ol class="lower-alpha" type="a"><li><p>Group the equivalent expressions.</p></li><li><p>Identify the expression that does not belong.</p></li><li><p>Explain how rational exponent notation helps you decide.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-041 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-041">
+<div class="problem-number">UBS2-041<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 3</span></div>
+<p>A student claims:</p><p>\[\left(\sqrt[3]{x}\right)^6=x^2.\]</p><ol class="lower-alpha" type="a"><li><p>Rewrite the left side using rational exponents.</p></li><li><p>Determine whether the student is correct.</p></li><li><p>Explain how exponent properties support your answer.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-042 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-042">
+<div class="problem-number">UBS2-042<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 3</span></div>
+<p>A student claims:</p><p>\[\sqrt[4]{x^8}=x^2.\]</p><ol class="lower-alpha" type="a"><li><p>Is this always true for all real \(x\)?</p></li><li><p>Test \(x=-3\).</p></li><li><p>Explain the role of absolute value when even roots are involved.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<div class="section-label">DoK 4 — Rich Multi-Step / Strategy Defense / Generalization</div>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-043 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-043">
+<div class="problem-number">UBS2-043<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 4</span></div>
+<p>A student is evaluating:</p><p>\[\left(\dfrac{81}{16}\right)^{3/4}.\]</p><ol class="lower-alpha" type="a"><li><p>Rewrite the expression using radical notation.</p></li><li><p>Evaluate it exactly.</p></li><li><p>Explain whether it is more efficient to take the fourth root first or cube first.</p></li><li><p>Defend your strategy.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-044 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-044">
+<div class="problem-number">UBS2-044<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 4</span></div>
+<p>Simplify and evaluate:</p><p>\[\left(125^{2/3}\right)^{-1}\cdot 25^{1/2}.\]</p><ol class="lower-alpha" type="a"><li><p>Rewrite each factor using radical notation.</p></li><li><p>Evaluate each factor exactly.</p></li><li><p>Simplify the product.</p></li><li><p>Explain how negative exponents and rational exponents interact.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-045 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-045">
+<div class="problem-number">UBS2-045<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 4</span></div>
+<p>A classmate says:</p><p><em>“I can convert radicals and rational exponents, but I do not see why we need both forms.”</em></p><p>Use the expression \(64^{2/3}\) to respond.</p><ol class="lower-alpha" type="a"><li><p>Show the expression in rational exponent form.</p></li><li><p>Show the expression in radical form.</p></li><li><p>Evaluate it.</p></li><li><p>Explain one advantage of each notation.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-046 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-046">
+<div class="problem-number">UBS2-046<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 4</span></div>
+<p>Create three different expressions equivalent to:</p><p>\[x^{7/4}\]</p><p>Your expressions must include:</p><ul><li><p>one radical with the power inside</p></li><li><p>one radical with the power outside</p></li><li><p>one expression using a product of powers</p></li></ul><p>Then explain why all three are equivalent.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-047 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-047">
+<div class="problem-number">UBS2-047<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 4</span></div>
+<p>A teacher writes:</p><p>\[x^{m/n}=\sqrt[n]{x^m}\]</p><p>and asks students to explain the formula.</p><ol class="lower-alpha" type="a"><li><p>Explain what \(m\) represents.</p></li><li><p>Explain what \(n\) represents.</p></li><li><p>Use \(x^{3/2}\) as an example.</p></li><li><p>Use \(x^{2/3}\) as an example.</p></li><li><p>Explain why \(n\neq 0\).</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-048 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-048">
+<div class="problem-number">UBS2-048<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 4</span></div>
+<p>The expression</p><p>\[\dfrac{x^{5/3}}{x^{-1/3}}\]</p><p>can be simplified before converting to radical form.</p><ol class="lower-alpha" type="a"><li><p>Simplify using exponent rules.</p></li><li><p>Rewrite the result in radical form.</p></li><li><p>Explain why simplifying the rational exponents first is efficient.</p></li><li><p>State any restrictions needed if working only with real numbers and even roots.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-049 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-049">
+<div class="problem-number">UBS2-049<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 4</span></div>
+<p>A student creates this equivalence chain:</p><p>\[x^{6/4}=\sqrt[6]{x^4}=x^{3/2}=\sqrt{x^3}.\]</p><ol class="lower-alpha" type="a"><li><p>Identify the incorrect step.</p></li><li><p>Correct the equivalence chain.</p></li><li><p>Explain how reducing fractions in rational exponents works.</p></li><li><p>Give a numerical example that verifies your corrected chain.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS2-050 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS2-050">
+<div class="problem-number">UBS2-050<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.2 | DoK 4</span></div>
+<p>Create an expression involving a rational exponent that satisfies all of the following:</p><ul><li><p>it has a fractional exponent</p></li><li><p>it can be written as a radical</p></li><li><p>it evaluates to \(16\)</p></li><li><p>the root should be taken before the power for an efficient solution</p></li></ul><p>Then:</p><ol class="lower-alpha" type="a"><li><p>Write your expression.</p></li><li><p>Rewrite it in radical form.</p></li><li><p>Evaluate it exactly.</p></li><li><p>Explain why your expression satisfies every condition.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+
+</div>
+</body>
+</html>

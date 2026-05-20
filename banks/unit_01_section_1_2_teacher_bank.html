@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1 Section 1.2 Question Bank</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Unit 1 Section 1.2: Interval & Inequality Notation Question Bank</h1>
+<div class="unit-intro">Teacher version includes visible DoK metadata. Problems are aligned to Section 1.2: representing and interpreting sets using interval notation, inequality notation, and number-line graphs.</div>
+<div class="source-label">Section 1.2 — DoK 1</div>
+<section class="problem" id="problem-U1S2-001">
+<div class="problem-number">U1S2-001<span class="problem-lesson">Created | Section 1.2 | DoK 1</span></div>
+<p>Write the inequality \(-2 \le x < 5\) in interval notation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S2-002">
+<div class="problem-number">U1S2-002<span class="problem-lesson">Created | Section 1.2 | DoK 1</span></div>
+<p>Write the interval \((3, 9]\) as an inequality.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S2-003">
+<div class="problem-number">U1S2-003<span class="problem-lesson">Created | Section 1.2 | DoK 1</span></div>
+<p>Write the inequality \(x \ge -4\) in interval notation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S2-004">
+<div class="problem-number">U1S2-004<span class="problem-lesson">Created | Section 1.2 | DoK 1</span></div>
+<p>Write the interval \(( -\infty, 7 )\) as an inequality.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S2-005">
+<div class="problem-number">U1S2-005<span class="problem-lesson">Created | Section 1.2 | DoK 1</span></div>
+<p>Determine whether each endpoint is included or excluded in \([1, 6)\).</p><ol type="a"><li>Endpoint \(1\)</li><li>Endpoint \(6\)</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S2-006">
+<div class="problem-number">U1S2-006<span class="problem-lesson">Created | Section 1.2 | DoK 1</span></div>
+<p>Write the set of all real numbers greater than \(-3\) using interval notation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S2-007">
+<div class="problem-number">U1S2-007<span class="problem-lesson">Created | Section 1.2 | DoK 1</span></div>
+<p>Write the set of all real numbers less than or equal to \(8\) using inequality notation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S2-008">
+<div class="problem-number">U1S2-008<span class="problem-lesson">Created | Section 1.2 | DoK 1</span></div>
+<p>Circle the correct interval notation for \(-5 < x \le 2\).</p><ol type="a"><li>\([-5,2]\)</li><li>\((-5,2]\)</li><li>\([-5,2)\)</li><li>\((-5,2)\)</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S2-009">
+<div class="problem-number">U1S2-009<span class="problem-lesson">Created | Section 1.2 | DoK 1</span></div>
+<p>Write the interval shown on the number line in interval notation.</p>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-009" src="figures/U1S2-009.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-100"></div>
+</section>
+<section class="problem" id="problem-U1S2-010">
+<div class="problem-number">U1S2-010<span class="problem-lesson">Created | Section 1.2 | DoK 1</span></div>
+<p>Write the graph shown on the number line as an inequality.</p>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-010" src="figures/U1S2-010.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-100"></div>
+</section>
+<section class="problem" id="problem-U1S2-011">
+<div class="problem-number">U1S2-011<span class="problem-lesson">Created | Section 1.2 | DoK 1</span></div>
+<p>Write the graph shown on the number line in interval notation.</p>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-011" src="figures/U1S2-011.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-100"></div>
+</section>
+<section class="problem" id="problem-U1S2-012">
+<div class="problem-number">U1S2-012<span class="problem-lesson">Created | Section 1.2 | DoK 1</span></div>
+<p>Write the graph shown on the number line as an inequality.</p>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-012" src="figures/U1S2-012.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-100"></div>
+</section>
+<section class="problem" id="problem-U1S2-013">
+<div class="problem-number">U1S2-013<span class="problem-lesson">Created | Section 1.2 | DoK 1</span></div>
+<p>Choose the correct symbol to make the statement match the interval \(( -\infty, 4 ]\): \(x \; \_ \; 4\).</p><ol type="a"><li>\(<\)</li><li>\(\le\)</li><li>\(>\)</li><li>\(\ge\)</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U1S2-014">
+<div class="problem-number">U1S2-014<span class="problem-lesson">Created | Section 1.2 | DoK 1</span></div>
+<p>State whether \(x=3\) is included in each set.</p><ol type="a"><li>\((3, 10]\)</li><li>\([3, 10)\)</li><li>\(x>3\)</li><li>\(x\le 3\)</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<div class="source-label">Section 1.2 — DoK 2</div>
+<section class="problem" id="problem-U1S2-015">
+<div class="problem-number">U1S2-015<span class="problem-lesson">Created | Section 1.2 | DoK 2</span></div>
+<p>Translate each representation.</p><ol type="a"><li>Write \([-2, 4)\) as an inequality.</li><li>Describe how you would graph the endpoints on a number line.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U1S2-016">
+<div class="problem-number">U1S2-016<span class="problem-lesson">Created | Section 1.2 | DoK 2</span></div>
+<p>Translate each representation.</p><ol type="a"><li>Write \(-6 < x < 1\) in interval notation.</li><li>Describe the graph using open or closed circles.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U1S2-017">
+<div class="problem-number">U1S2-017<span class="problem-lesson">Created | Section 1.2 | DoK 2</span></div>
+<p>A solution set is described as: all real numbers at least \(2\) and less than \(9\).</p><ol type="a"><li>Write the set as an inequality.</li><li>Write the set in interval notation.</li><li>Describe its number-line graph.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U1S2-018">
+<div class="problem-number">U1S2-018<span class="problem-lesson">Created | Section 1.2 | DoK 2</span></div>
+<p>A solution set is described as: all real numbers greater than \(-5\) but no more than \(3\).</p><ol type="a"><li>Write the set as an inequality.</li><li>Write the set in interval notation.</li><li>Explain which endpoints are included.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U1S2-019">
+<div class="problem-number">U1S2-019<span class="problem-lesson">Created | Section 1.2 | DoK 2</span></div>
+<p>Complete the table.</p><table class="table-block"><tr><th>Description</th><th>Inequality</th><th>Interval Notation</th></tr><tr><td>All values from \(-1\) to \(6\), including both endpoints</td><td></td><td></td></tr><tr><td>All values less than \(4\)</td><td></td><td></td></tr></table>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U1S2-020">
+<div class="problem-number">U1S2-020<span class="problem-lesson">Created | Section 1.2 | DoK 2</span></div>
+<p>Write two different representations for the set of values shown: all real numbers greater than or equal to \(-2\).</p><ol type="a"><li>Inequality notation</li><li>Interval notation</li><li>Number-line description</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U1S2-021">
+<div class="problem-number">U1S2-021<span class="problem-lesson">Created | Section 1.2 | DoK 2</span></div>
+<p>Determine whether each value belongs to the interval \((-3, 5]\).</p><ol type="a"><li>\(-3\)</li><li>\(0\)</li><li>\(5\)</li><li>\(6\)</li></ol><p>Explain one of your decisions.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U1S2-022">
+<div class="problem-number">U1S2-022<span class="problem-lesson">Created | Section 1.2 | DoK 2</span></div>
+<p>The number line shows a solution set.</p><ol type="a"><li>Write the set in interval notation.</li><li>Write the set as an inequality.</li><li>Explain how the open endpoints affect the notation.</li></ol>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-022" src="figures/U1S2-022.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U1S2-023">
+<div class="problem-number">U1S2-023<span class="problem-lesson">Created | Section 1.2 | DoK 2</span></div>
+<p>The number line shows a solution set.</p><ol type="a"><li>Write the set in interval notation.</li><li>Write the set as an inequality.</li><li>Explain why the endpoint is included.</li></ol>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-023" src="figures/U1S2-023.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U1S2-024">
+<div class="problem-number">U1S2-024<span class="problem-lesson">Created | Section 1.2 | DoK 2</span></div>
+<p>The number line shows a solution set.</p><ol type="a"><li>Write the set in interval notation.</li><li>Write the set as an inequality.</li><li>Explain why the endpoint is excluded.</li></ol>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-024" src="figures/U1S2-024.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U1S2-025">
+<div class="problem-number">U1S2-025<span class="problem-lesson">Created | Section 1.2 | DoK 2</span></div>
+<p>A student writes \(x> -1\) as \([-1,\infty)\). Identify the mistake and write the correct interval notation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U1S2-026">
+<div class="problem-number">U1S2-026<span class="problem-lesson">Created | Section 1.2 | DoK 2</span></div>
+<p>A student writes \([0,7)\) as \(0 \le x \le 7\). Identify the mistake and write the correct inequality notation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U1S2-027">
+<div class="problem-number">U1S2-027<span class="problem-lesson">Created | Section 1.2 | DoK 2</span></div>
+<p>Graph \(-4 \le x < 2\) on a number line. Then write one sentence explaining your endpoint choices.</p>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U1S2-028">
+<div class="problem-number">U1S2-028<span class="problem-lesson">Created | Section 1.2 | DoK 2</span></div>
+<p>Graph \(( -\infty, 1 ]\) on a number line. Then write the equivalent inequality.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<div class="source-label">Section 1.2 — DoK 3</div>
+<section class="problem" id="problem-U1S2-029">
+<div class="problem-number">U1S2-029<span class="problem-lesson">Created | Section 1.2 | DoK 3</span></div>
+<p>Compare the sets \((-2, 5]\) and \([-2, 5)\).</p><ol type="a"><li>How are they alike?</li><li>How are they different?</li><li>Give one value that belongs to the first set but not the second.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U1S2-030">
+<div class="problem-number">U1S2-030<span class="problem-lesson">Created | Section 1.2 | DoK 3</span></div>
+<p>Explain why \((-\infty, 3]\) cannot be written as \(-\infty \le x \le 3\). Use complete mathematical reasoning.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U1S2-031">
+<div class="problem-number">U1S2-031<span class="problem-lesson">Created | Section 1.2 | DoK 3</span></div>
+<p>A student says, “Parentheses mean the endpoint is not part of the set, so infinity should use brackets when it goes on forever.” Is the student correct? Explain.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<section class="problem" id="problem-U1S2-032">
+<div class="problem-number">U1S2-032<span class="problem-lesson">Created | Section 1.2 | DoK 3</span></div>
+<p>Create two different intervals that both contain \(0\) but differ in whether they include \(4\). Write each interval in inequality notation and explain the difference.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U1S2-033">
+<div class="problem-number">U1S2-033<span class="problem-lesson">Created | Section 1.2 | DoK 3</span></div>
+<p>A student drew the number line shown for the inequality \(-5 < x < -1\).</p><ol type="a"><li>Identify the error in the graph.</li><li>Draw or describe the corrected graph.</li><li>Write the correct interval notation.</li></ol>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-033" src="figures/U1S2-033.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U1S2-034">
+<div class="problem-number">U1S2-034<span class="problem-lesson">Created | Section 1.2 | DoK 3</span></div>
+<p>A function has a domain described by \(-3 \le x < 6\).</p><ol type="a"><li>Write the domain in interval notation.</li><li>Explain what values are allowed and what values are not allowed.</li><li>Describe how the graph should show each endpoint.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U1S2-035">
+<div class="problem-number">U1S2-035<span class="problem-lesson">Created | Section 1.2 | DoK 3</span></div>
+<p>Decide whether the statement is always true, sometimes true, or never true:</p><p>“If an endpoint is included in interval notation, the graph must use a closed circle at that endpoint.”</p><p>Justify your answer.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U1S2-036">
+<div class="problem-number">U1S2-036<span class="problem-lesson">Created | Section 1.2 | DoK 3</span></div>
+<p>A set is represented by the inequality \(x<2\). Another set is represented by \(x\le2\).</p><ol type="a"><li>Write both in interval notation.</li><li>Explain how a single point changes the notation and graph.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U1S2-037">
+<div class="problem-number">U1S2-037<span class="problem-lesson">Created | Section 1.2 | DoK 3</span></div>
+<p>Write a set that includes exactly the values between \(-7\) and \(7\), includes \(-7\), but excludes \(7\).</p><ol type="a"><li>Write the inequality.</li><li>Write the interval notation.</li><li>Explain your endpoint choices.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<section class="problem" id="problem-U1S2-038">
+<div class="problem-number">U1S2-038<span class="problem-lesson">Created | Section 1.2 | DoK 3</span></div>
+<p>The number line could represent the possible input values for a function.</p><ol type="a"><li>Write the domain in interval notation.</li><li>Write the domain as an inequality.</li><li>Explain why the endpoints might be excluded in a real problem.</li></ol>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-038" src="figures/U1S2-038.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U1S2-039">
+<div class="problem-number">U1S2-039<span class="problem-lesson">Created | Section 1.2 | DoK 3</span></div>
+<p>A student writes the solution set “all numbers no more than \(10\)” as \((10,\infty)\).</p><ol type="a"><li>Explain the meaning of “no more than.”</li><li>Correct the interval notation.</li><li>Write the inequality notation.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<section class="problem" id="problem-U1S2-040">
+<div class="problem-number">U1S2-040<span class="problem-lesson">Created | Section 1.2 | DoK 3</span></div>
+<p>Given the interval \((-4, 8]\), write a real-world situation where \(-4\) is not allowed but \(8\) is allowed. Explain why the endpoint choices make sense.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-240"></div>
+</section>
+<div class="source-label">Section 1.2 — DoK 4</div>
+<section class="problem" id="problem-U1S2-041">
+<div class="problem-number">U1S2-041<span class="problem-lesson">Created | Section 1.2 | DoK 4</span></div>
+<p>Design a matching activity with three representations of the same set: a verbal description, an inequality, and interval notation. Include the correct answer and explain why the representations match.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-260"></div>
+</section>
+<section class="problem" id="problem-U1S2-042">
+<div class="problem-number">U1S2-042<span class="problem-lesson">Created | Section 1.2 | DoK 4</span></div>
+<p>Create a real-world restriction that should be represented by \([0,\infty)\). Write the context, define the variable, and explain why \(0\) is included.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-240"></div>
+</section>
+<section class="problem" id="problem-U1S2-043">
+<div class="problem-number">U1S2-043<span class="problem-lesson">Created | Section 1.2 | DoK 4</span></div>
+<p>Create a real-world restriction that should be represented by \((0,\infty)\). Write the context, define the variable, and explain why \(0\) is excluded.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-240"></div>
+</section>
+<section class="problem" id="problem-U1S2-044">
+<div class="problem-number">U1S2-044<span class="problem-lesson">Created | Section 1.2 | DoK 4</span></div>
+<p>A classmate claims, “The intervals \([2, 5]\), \((2, 5)\), \([2, 5)\), and \((2, 5]\) are basically the same because they all go from \(2\) to \(5\).” Write a response that explains why the endpoint notation matters.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-260"></div>
+</section>
+<section class="problem" id="problem-U1S2-045">
+<div class="problem-number">U1S2-045<span class="problem-lesson">Created | Section 1.2 | DoK 4</span></div>
+<p>Create two different solution sets that would look almost identical on a number line but are not the same because of endpoint inclusion. Write both sets in interval notation and explain the difference.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-260"></div>
+</section>
+<section class="problem" id="problem-U1S2-046">
+<div class="problem-number">U1S2-046<span class="problem-lesson">Created | Section 1.2 | DoK 4</span></div>
+<p>The number line could represent the number of months a student may participate in a program.</p><ol type="a"><li>Write a possible real-world interpretation for the graph.</li><li>Write the interval notation.</li><li>Explain why both endpoints are included in the context.</li></ol>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-046" src="figures/U1S2-046.png"/>
+</div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-260"></div>
+</section>
+<section class="problem" id="problem-U1S2-047">
+<div class="problem-number">U1S2-047<span class="problem-lesson">Created | Section 1.2 | DoK 4</span></div>
+<p>Write a mini-lesson for a student who keeps confusing parentheses and brackets in interval notation. Include one example with a finite interval and one example with infinity.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U1S2-048">
+<div class="problem-number">U1S2-048<span class="problem-lesson">Created | Section 1.2 | DoK 4</span></div>
+<p>Create a complete problem where students must move between all three representations: inequality notation, interval notation, and a number-line graph. Include the problem, the correct answer, and a brief explanation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+</div>
+</body>
+</html>

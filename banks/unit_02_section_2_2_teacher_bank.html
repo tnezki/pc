@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2 Section 2.2: Function Arithmetic</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Unit 2 Section 2.2: Function Arithmetic</h1>
+<div class="lesson-header">
+<h2>Section 2.2 Teacher Question Bank</h2>
+<div class="lesson-subtitle">Function operations, domains, tables, graphs, context, and CPM-style reasoning.</div>
+</div>
+<div class="section-label">Section 2.2 — DoK 1</div>
+<section class="problem" id="problem-U2S2-001">
+<div class="problem-number">U2S2-001<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 1</span></div>
+<p>Let \(f(x)=2x+3\) and \(g(x)=x^2-4\).</p>
+<ol class="lower-alpha"><li>Find \((f+g)(x)\).</li><li>Find \((f-g)(x)\).</li><li>Find \((fg)(x)\).</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U2S2-002">
+<div class="problem-number">U2S2-002<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 1</span></div>
+<p>Let \(f(x)=x+5\) and \(g(x)=x-2\).</p>
+<ol class="lower-alpha"><li>Find \(\left(\frac{f}{g}\right)(x)\).</li><li>State the value of \(x\) that must be excluded from the domain.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U2S2-003">
+<div class="problem-number">U2S2-003<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 1</span></div>
+<p>The graphs of \(f\) and \(g\) are shown.</p>
+<ol class="lower-alpha"><li>Estimate \(f(2)\) and \(g(2)\).</li><li>Estimate \((f+g)(2)\).</li><li>Estimate \((f-g)(2)\).</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-003" src="figures/U2S2-003.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U2S2-004">
+<div class="problem-number">U2S2-004<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 1</span></div>
+<p>Use the table to evaluate each expression.</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-2\)</td><td>\(0\)</td><td>\(3\)</td></tr><tr><th>\(f(x)\)</th><td>\(5\)</td><td>\(1\)</td><td>\(-4\)</td></tr><tr><th>\(g(x)\)</th><td>\(-2\)</td><td>\(6\)</td><td>\(3\)</td></tr></table>
+<ol class="lower-alpha"><li>\((f+g)(0)\)</li><li>\((fg)(-2)\)</li><li>\(\left(\frac{f}{g}\right)(3)\)</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U2S2-005">
+<div class="problem-number">U2S2-005<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 1</span></div>
+<p>Let \(p(x)=x^2\) and \(q(x)=3x\).</p>
+<ol class="lower-alpha"><li>Find \((p+q)(4)\).</li><li>Find \((p-q)(-2)\).</li><li>Find \((pq)(1)\).</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U2S2-006">
+<div class="problem-number">U2S2-006<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 1</span></div>
+<p>Fill in the blanks.</p>
+<ol class="lower-alpha"><li>\((f+g)(x)=\) ____________________</li><li>\((f-g)(x)=\) ____________________</li><li>\((fg)(x)=\) ____________________</li><li>\(\left(\frac{f}{g}\right)(x)=\) ____________________, where \(g(x)\neq\) ________.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U2S2-007">
+<div class="problem-number">U2S2-007<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 1</span></div>
+<p>Let \(f(x)=\sqrt{x}\) and \(g(x)=x+1\).</p>
+<ol class="lower-alpha"><li>Find \((f+g)(9)\).</li><li>Find \((fg)(4)\).</li><li>Explain why \(x=-1\) is not useful for evaluating \(f(x)\).</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U2S2-008">
+<div class="problem-number">U2S2-008<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 1</span></div>
+<p>Let \(f(x)=x^2-9\) and \(g(x)=x-3\).</p>
+<ol class="lower-alpha"><li>Find \(\left(\frac{f}{g}\right)(x)\).</li><li>Simplify the expression.</li><li>State the excluded value before simplification.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U2S2-009">
+<div class="problem-number">U2S2-009<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 1</span></div>
+<p>Let \( f(x)=3x-2 \) and \( g(x)=x+5 \).</p>
+<ol class="lower-alpha"><li>Find \((f+g)(x)\).</li><li>Find \((f-g)(x)\).</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U2S2-010">
+<div class="problem-number">U2S2-010<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 1</span></div>
+<p>Let \( f(x)=x^2 \) and \( g(x)=2x \).</p>
+<ol class="lower-alpha"><li>Evaluate \((fg)(3)\).</li><li>Evaluate \(\left(\frac{f}{g}\right)(4)\).</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U2S2-011">
+<div class="problem-number">U2S2-011<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 1</span></div>
+<p>Use the table.</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(2\)</td></tr><tr><th>\(f(x)\)</th><td>\(3\)</td><td>\(1\)</td><td>\(5\)</td></tr><tr><th>\(g(x)\)</th><td>\(2\)</td><td>\(-4\)</td><td>\(1\)</td></tr></table>
+<ol class="lower-alpha"><li>Find \((f+g)(0)\).</li><li>Find \((fg)(2)\).</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U2S2-012">
+<div class="problem-number">U2S2-012<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 1</span></div>
+<p>State the domain restriction for:</p><p style="text-align:center;">\(\frac{x+1}{x-7}\)</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-100"></div>
+</section>
+<section class="problem" id="problem-U2S2-013">
+<div class="problem-number">U2S2-013<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 1</span></div>
+<p>True or False:</p><p>If \(g(x)=0\), then \(\frac{f(x)}{g(x)}\) is undefined.</p><p>Explain briefly.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-100"></div>
+</section>
+<section class="problem" id="problem-U2S2-014">
+<div class="problem-number">U2S2-014<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 1</span></div>
+<p>Match each operation to its description:</p>
+<ul><li>sum</li><li>difference</li><li>product</li><li>quotient</li></ul>
+<p>Descriptions involve combined totals, comparisons, scaling, and remaining amounts.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<div class="section-label">Section 2.2 — DoK 2</div>
+<section class="problem" id="problem-U2S2-015">
+<div class="problem-number">U2S2-015<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 2</span></div>
+<p>Let \(f(x)=x^2-1\) and \(g(x)=2x+5\).</p>
+<ol class="lower-alpha"><li>Find \((f+g)(x)\).</li><li>Find \((f-g)(x)\).</li><li>Find \((fg)(x)\).</li><li>Find \(\left(\frac{f}{g}\right)(x)\) and state its domain restriction.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U2S2-016">
+<div class="problem-number">U2S2-016<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 2</span></div>
+<p>Let \(f(x)=\sqrt{x+2}\) and \(g(x)=x-1\).</p>
+<ol class="lower-alpha"><li>Find \((f+g)(x)\).</li><li>Find \((fg)(x)\).</li><li>State the domain of each combined function.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<section class="problem" id="problem-U2S2-017">
+<div class="problem-number">U2S2-017<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 2</span></div>
+<p>Let \(f(x)=\frac{1}{x-4}\) and \(g(x)=x^2\).</p>
+<ol class="lower-alpha"><li>Find \((f+g)(x)\).</li><li>Find \((fg)(x)\).</li><li>State the domain restrictions.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<section class="problem" id="problem-U2S2-018">
+<div class="problem-number">U2S2-018<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 2</span></div>
+<p>The graph shown represents \(f(x)+g(x)\).</p>
+<ol class="lower-alpha"><li>Estimate \((f+g)(-2)\), \((f+g)(0)\), and \((f+g)(4)\).</li><li>Explain how the sum graph relates to the values of \(f\) and \(g\).</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-018" src="figures/U2S2-012.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U2S2-019">
+<div class="problem-number">U2S2-019<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 2</span></div>
+<p>The graph shown represents a product \(f(x)g(x)\).</p>
+<ol class="lower-alpha"><li>Identify the \(x\)-intercepts of the product graph.</li><li>Explain why zeros of either factor become zeros of the product.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-019" src="figures/U2S2-013.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U2S2-020">
+<div class="problem-number">U2S2-020<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 2</span></div>
+<p>The graph shown represents a quotient \(\frac{f(x)}{g(x)}\).</p>
+<ol class="lower-alpha"><li>What value of \(x\) appears to be excluded?</li><li>Explain why a zero of the denominator creates a domain restriction.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-020" src="figures/U2S2-014.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U2S2-021">
+<div class="problem-number">U2S2-021<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 2</span></div>
+<p>Use the table to compare function operations.</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr><tr><th>\(f(x)\)</th><td>\(4\)</td><td>\(3\)</td><td>\(0\)</td><td>\(-2\)</td></tr><tr><th>\(g(x)\)</th><td>\(2\)</td><td>\(-1\)</td><td>\(5\)</td><td>\(0\)</td></tr></table>
+<ol class="lower-alpha"><li>Find \((f+g)(1)\).</li><li>Find \((fg)(0)\).</li><li>Find \(\left(\frac{f}{g}\right)(-1)\).</li><li>Explain why \(\left(\frac{f}{g}\right)(2)\) is undefined.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U2S2-022">
+<div class="problem-number">U2S2-022<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 2</span></div>
+<p>A student simplified \(\frac{x^2-9}{x-3}\) to \(x+3\) and said the domain is all real numbers.</p>
+<ol class="lower-alpha"><li>What did the student do correctly?</li><li>What domain detail did the student miss?</li><li>Write the correct simplified expression and domain restriction.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<section class="problem" id="problem-U2S2-023">
+<div class="problem-number">U2S2-023<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 2</span></div>
+<p>The graphs of \(f\) and \(g\) are shown.</p>
+<ol class="lower-alpha"><li>Estimate \((f+g)(1)\).</li><li>Estimate \((f-g)(-2)\).</li><li>Estimate \((fg)(0)\).</li><li>Explain how you used the graphs.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-023" src="figures/U2S2-036.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U2S2-024">
+<div class="problem-number">U2S2-024<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 2</span></div>
+<p>Given:</p><p style="text-align:center;">\(f(x)=\sqrt{x+4}\qquad g(x)=\frac{1}{x-2}\)</p>
+<p>Determine the domain of:</p><ul><li>\(f+g\)</li><li>\(fg\)</li></ul><p>Explain your reasoning.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U2S2-025">
+<div class="problem-number">U2S2-025<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 2</span></div>
+<p>A company tracks daily expenses \(E(x)\) and daily revenue \(R(x)\).</p>
+<p>Explain what:</p><ul><li>\(R(x)-E(x)\)</li><li>\(\frac{R(x)}{E(x)}\)</li></ul><p>would represent in context.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U2S2-026">
+<div class="problem-number">U2S2-026<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 2</span></div>
+<p>Compare:</p><p style="text-align:center;">\((f+g)(x)\qquad \text{and}\qquad f(x)+g(x)\)</p><p>Are these equivalent notations? Explain.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U2S2-027">
+<div class="problem-number">U2S2-027<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 2</span></div>
+<p>Given:</p><p style="text-align:center;">\(f(x)=x^2-9\qquad g(x)=x-3\)</p>
+<ol class="lower-alpha"><li>Simplify \(\frac{f(x)}{g(x)}\).</li><li>Explain why the domain restriction still exists after simplification.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U2S2-028">
+<div class="problem-number">U2S2-028<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 2</span></div>
+<p>Use a graph to estimate where:</p><p style="text-align:center;">\((f+g)(x)=0\)</p><p>Explain how the graphs help you determine the estimate.</p>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-028" src="figures/U2S2-041.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<div class="section-label">Section 2.2 — DoK 3</div>
+<section class="problem" id="problem-U2S2-029">
+<div class="problem-number">U2S2-029<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 3</span></div>
+<p>A fundraiser has revenue \(R(x)=12x+40\) and cost \(C(x)=8x+100\), where \(x\) is the number of items sold.</p>
+<ol class="lower-alpha"><li>Write a function for profit \(P(x)=R(x)-C(x)\).</li><li>Interpret \(P(10)\) in context.</li><li>Explain why subtracting functions makes sense in this situation.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-029" src="figures/U2S2-019.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U2S2-030">
+<div class="problem-number">U2S2-030<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 3</span></div>
+<p>Let \(f(x)=x^2-4\) and \(g(x)=x-2\).</p>
+<ol class="lower-alpha"><li>Find \(\left(\frac{f}{g}\right)(x)\) and simplify.</li><li>Explain why the simplified expression does not have the same domain as \(x+2\).</li><li>Describe what would happen on a graph at the excluded input.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U2S2-031">
+<div class="problem-number">U2S2-031<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 3</span></div>
+<p>Compare the functions \(f+g\), \(fg\), and \(\frac{f}{g}\). Use \(f(x)=x+1\) and \(g(x)=x-4\).</p>
+<ol class="lower-alpha"><li>Write each combined function.</li><li>Compare their domains.</li><li>Explain why the quotient requires more caution than the sum or product.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U2S2-032">
+<div class="problem-number">U2S2-032<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 3</span></div>
+<p>A student claims, “If \(f\) and \(g\) are both defined for all real numbers, then \(\frac{f}{g}\) is also defined for all real numbers.”</p>
+<ol class="lower-alpha"><li>Is the claim true?</li><li>Use an example to test the claim.</li><li>Write a complete explanation.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U2S2-033">
+<div class="problem-number">U2S2-033<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 3</span></div>
+<p>Let \(f(x)=\sqrt{x+1}\) and \(g(x)=6-x\).</p>
+<ol class="lower-alpha"><li>Find the domain of \(f+g\).</li><li>Find the domain of \(fg\).</li><li>Find the domain of \(\frac{f}{g}\).</li><li>Explain why the quotient has one additional restriction.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-033" src="figures/U2S2-023.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U2S2-034">
+<div class="problem-number">U2S2-034<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 3</span></div>
+<p>Explain the difference between simplifying a quotient of functions and changing the function itself.</p>
+<p>Use \(\frac{x^2-1}{x-1}\) as your example. Mention excluded values, holes, or domain restrictions.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U2S2-035">
+<div class="problem-number">U2S2-035<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 3</span></div>
+<p>Use structure to determine whether each statement is always, sometimes, or never true.</p>
+<ol class="lower-alpha"><li>The domain of \(f+g\) is the intersection of the domains of \(f\) and \(g\).</li><li>The domain of \(fg\) is the union of the domains of \(f\) and \(g\).</li><li>The domain of \(\frac{f}{g}\) must exclude inputs where \(g(x)=0\).</li></ol>
+<p>Justify each answer.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U2S2-036">
+<div class="problem-number">U2S2-036<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 3</span></div>
+<p>Two students are comparing \((f+g)(x)\) and \(f(g(x))\).</p>
+<ol class="lower-alpha"><li>Explain why these are different operations.</li><li>Create a pair of functions where \((f+g)(2)\neq f(g(2))\).</li><li>Explain how notation prevents confusion.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U2S2-037">
+<div class="problem-number">U2S2-037<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 3</span></div>
+<p>A student says:</p><p>“If two functions have the same domain, then all operations on them will also have the same domain.”</p>
+<p>Is this true? Use examples and explanations to justify your answer.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U2S2-038">
+<div class="problem-number">U2S2-038<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 3</span></div>
+<p>Compare the domains of:</p><ul><li>\(f+g\)</li><li>\(fg\)</li><li>\(\frac{f}{g}\)</li></ul><p>Explain why the quotient operation behaves differently.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U2S2-039">
+<div class="problem-number">U2S2-039<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 3</span></div>
+<p>Explain why:</p><p style="text-align:center;">\(\frac{x^2-4}{x-2}\)</p><p>and</p><p style="text-align:center;">\(x+2\)</p><p>have different graphs even though they simplify algebraically.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U2S2-040">
+<div class="problem-number">U2S2-040<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 3</span></div>
+<p>Create two functions where:</p><ul><li>the sum is defined</li><li>the quotient is not defined for all real numbers</li></ul><p>Explain why.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<div class="section-label">Section 2.2 — DoK 4</div>
+<section class="problem" id="problem-U2S2-041">
+<div class="problem-number">U2S2-041<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 4</span></div>
+<p>Create two functions \(f\) and \(g\) so that:</p>
+<ol class="lower-alpha"><li>\((f+g)(x)\) is linear.</li><li>\((fg)(x)\) is quadratic.</li><li>\(\frac{f}{g}\) has an excluded value.</li></ol>
+<p>Explain why your choices satisfy all three conditions.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U2S2-042">
+<div class="problem-number">U2S2-042<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 4</span></div>
+<p>Design a pair of functions \(f\) and \(g\) where \(\frac{f}{g}\) simplifies algebraically but still has a hole in its graph.</p>
+<ol class="lower-alpha"><li>Write \(f(x)\) and \(g(x)\).</li><li>Simplify \(\frac{f}{g}\).</li><li>State the original domain restriction.</li><li>Explain what the graph would show.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U2S2-043">
+<div class="problem-number">U2S2-043<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 4</span></div>
+<p>Create a real-world situation involving two quantities where adding, subtracting, multiplying, and dividing functions each have different meanings.</p>
+<p>For each operation, describe what the new function would represent.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U2S2-044">
+<div class="problem-number">U2S2-044<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 4</span></div>
+<p>A school store sells shirts and hats. Let \(S(x)\) be shirt revenue and \(H(x)\) be hat revenue after \(x\) days.</p>
+<ol class="lower-alpha"><li>Create reasonable functions \(S(x)\) and \(H(x)\).</li><li>Write and interpret \((S+H)(x)\).</li><li>Write and interpret \((S-H)(x)\).</li><li>Explain whether \(\frac{S(x)}{H(x)}\) has a meaningful interpretation.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-044" src="figures/U2S2-030.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U2S2-045">
+<div class="problem-number">U2S2-045<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 4</span></div>
+<p>A student argues that function arithmetic is “just combining equations,” so domain does not need to be checked separately.</p>
+<ol class="lower-alpha"><li>Critique the student’s argument.</li><li>Give at least two examples that show why domain matters.</li><li>Write a corrected explanation that could be used as a class note.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U2S2-046">
+<div class="problem-number">U2S2-046<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 4</span></div>
+<p>Design a real-world situation where:</p><ul><li>adding functions makes sense</li><li>multiplying functions makes sense</li><li>dividing functions does NOT make sense</li></ul><p>Explain your reasoning.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U2S2-047">
+<div class="problem-number">U2S2-047<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 2.2 | DoK 4</span></div>
+<p>Create two functions whose quotient:</p><ul><li>has a removable discontinuity</li><li>simplifies algebraically</li><li>still requires a restricted domain</li></ul><p>Explain completely.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+</div>
+</body>
+</html>

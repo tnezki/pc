@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit B Section B.1 Teacher Bank</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Unit B Section B.1: Exponent Properties</h1>
+<div class="lesson-header">
+<h2>Teacher Bank</h2>
+<div class="lesson-subtitle">Exponent properties, zero and negative exponents, equivalent forms, and structure reasoning</div>
+</div>
+<div class="section-label">DoK 1 — Recognition / Vocabulary / Basic Exponent Properties</div>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-001 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-001">
+<div class="problem-number">UBS1-001<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 1</span></div>
+<p>Simplify each expression.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(x^3\cdot x^5\)</p></li>
+<li><p>\(a^7\cdot a^2\)</p></li>
+<li><p>\(m^4\cdot m\)</p></li>
+<li><p>\(y^6\cdot y^0\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-002 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-002">
+<div class="problem-number">UBS1-002<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 1</span></div>
+<p>Simplify each expression.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(\dfrac{x^8}{x^3}\)</p></li>
+<li><p>\(\dfrac{a^{10}}{a^4}\)</p></li>
+<li><p>\(\dfrac{m^5}{m}\)</p></li>
+<li><p>\(\dfrac{y^9}{y^9}\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-003 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-003">
+<div class="problem-number">UBS1-003<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 1</span></div>
+<p>Simplify each expression.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\((x^3)^4\)</p></li>
+<li><p>\((a^5)^2\)</p></li>
+<li><p>\((m^2)^7\)</p></li>
+<li><p>\((y^4)^0\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-004 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-004">
+<div class="problem-number">UBS1-004<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 1</span></div>
+<p>Simplify each expression.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\((3x)^2\)</p></li>
+<li><p>\((5a)^3\)</p></li>
+<li><p>\((-2m)^4\)</p></li>
+<li><p>\((-4y)^2\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-005 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-005">
+<div class="problem-number">UBS1-005<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 1</span></div>
+<p>Simplify each expression.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(x^0\)</p></li>
+<li><p>\(7^0\)</p></li>
+<li><p>\((-4)^0\)</p></li>
+<li><p>\((3a^2b)^0\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-006 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-006">
+<div class="problem-number">UBS1-006<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 1</span></div>
+<p>Rewrite each expression using positive exponents.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(x^{-4}\)</p></li>
+<li><p>\(a^{-7}\)</p></li>
+<li><p>\(5m^{-2}\)</p></li>
+<li><p>\(-3y^{-5}\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-007 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-007">
+<div class="problem-number">UBS1-007<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 1</span></div>
+<p>Rewrite each expression using positive exponents.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(\dfrac{1}{x^{-3}}\)</p></li>
+<li><p>\(\dfrac{1}{a^{-6}}\)</p></li>
+<li><p>\(\dfrac{4}{m^{-2}}\)</p></li>
+<li><p>\(\dfrac{-7}{y^{-1}}\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-008 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-008">
+<div class="problem-number">UBS1-008<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 1</span></div>
+<p>Match each expression to the property being used.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(x^4\cdot x^6=x^{10}\)</p></li>
+<li><p>\(\dfrac{x^9}{x^2}=x^7\)</p></li>
+<li><p>\((x^5)^3=x^{15}\)</p></li>
+<li><p>\(x^{-4}=\dfrac{1}{x^4}\)</p></li>
+</ol>
+<p>Properties:</p>
+<ol>
+<li><p>power rule</p></li>
+<li><p>product rule</p></li>
+<li><p>negative exponent rule</p></li>
+<li><p>quotient rule</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-009 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-009">
+<div class="problem-number">UBS1-009<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 1</span></div>
+<p>Which expression is equivalent to:</p>
+<p>\[x^5\cdot x^3\]</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(x^8\)</p></li>
+<li><p>\(x^{15}\)</p></li>
+<li><p>\(2x^8\)</p></li>
+<li><p>\(x^2\)</p></li>
+</ol>
+<p>Explain how you know.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-010 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-010">
+<div class="problem-number">UBS1-010<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 1</span></div>
+<p>Which expression is equivalent to:</p>
+<p>\[(x^4)^3\]</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(x^7\)</p></li>
+<li><p>\(x^{12}\)</p></li>
+<li><p>\(3x^4\)</p></li>
+<li><p>\(x^{64}\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-100"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-011 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-011">
+<div class="problem-number">UBS1-011<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 1</span></div>
+<p>State whether each expression is equivalent to \(x^6\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(x^2\cdot x^4\)</p></li>
+<li><p>\((x^2)^3\)</p></li>
+<li><p>\(x^{12}\div x^2\)</p></li>
+<li><p>\(x^8\div x^2\)</p></li>
+<li><p>\(x^3+x^3\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-012 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-012">
+<div class="problem-number">UBS1-012<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 1</span></div>
+<p>A student says:</p>
+<p><em>“Any expression with exponent \(0\) equals \(0\).”</em></p>
+<p>What is wrong with the statement? Give an example.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-100"></div>
+</section>
+<div class="section-label">DoK 2 — Applying Properties / Multi-Step Simplification</div>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-013 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-013">
+<div class="problem-number">UBS1-013<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>Simplify each expression. Write answers with positive exponents.</p><ol class="lower-alpha" type="a"><li><p>\(x^4\cdot x^{-7}\)</p></li><li><p>\(a^{-3}\cdot a^9\)</p></li><li><p>\(m^{-5}\cdot m^{-2}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-014 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-014">
+<div class="problem-number">UBS1-014<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>Simplify each expression. Write answers with positive exponents.</p><ol class="lower-alpha" type="a"><li><p>\(\dfrac{x^3}{x^8}\)</p></li><li><p>\(\dfrac{a^{-2}}{a^5}\)</p></li><li><p>\(\dfrac{m^4}{m^{-3}}\)</p></li><li><p>\(\dfrac{y^{-6}}{y^{-10}}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-015 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-015">
+<div class="problem-number">UBS1-015<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>Simplify each expression. Write answers with positive exponents.</p><ol class="lower-alpha" type="a"><li><p>\((2x^3)^4\)</p></li><li><p>\((-3a^2)^3\)</p></li><li><p>\((5m^{-1})^2\)</p></li><li><p>\((-2y^{-3})^4\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-016 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-016">
+<div class="problem-number">UBS1-016<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>Simplify each expression. Write answers with positive exponents.</p><ol class="lower-alpha" type="a"><li><p>\(\left(\dfrac{x^3}{y^2}\right)^4\)</p></li><li><p>\(\left(\dfrac{a^{-2}}{b^5}\right)^3\)</p></li><li><p>\(\left(\dfrac{2m^4}{n^{-1}}\right)^2\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-017 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-017">
+<div class="problem-number">UBS1-017<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>Simplify each expression. Write answers with positive exponents.</p><ol class="lower-alpha" type="a"><li><p>\(\dfrac{6x^5}{3x^2}\)</p></li><li><p>\(\dfrac{12a^7b^3}{4a^2b}\)</p></li><li><p>\(\dfrac{15m^4n^6}{5m^{-2}n^3}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-018 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-018">
+<div class="problem-number">UBS1-018<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>Simplify each expression. Write answers with positive exponents.</p><ol class="lower-alpha" type="a"><li><p>\((3x^2y)(4x^5y^3)\)</p></li><li><p>\((-2a^3b^4)(5a^{-1}b^2)\)</p></li><li><p>\((6m^{-2}n^5)(-3m^4n^{-1})\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-019 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-019">
+<div class="problem-number">UBS1-019<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>Simplify each expression. Write answers with positive exponents.</p><ol class="lower-alpha" type="a"><li><p>\(\dfrac{(x^3)^4}{x^5}\)</p></li><li><p>\(\dfrac{a^2(a^5)^3}{a^{-1}}\)</p></li><li><p>\(\dfrac{m^{-4}(m^6)^2}{m^3}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-020 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-020">
+<div class="problem-number">UBS1-020<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>Simplify each expression. Write answers with positive exponents.</p><ol class="lower-alpha" type="a"><li><p>\(\dfrac{(2x^3)^2}{4x}\)</p></li><li><p>\(\dfrac{(3a^2b)^2}{9ab^{-1}}\)</p></li><li><p>\(\dfrac{(-2m^{-1}n^3)^3}{4m^2n}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-021 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-021">
+<div class="problem-number">UBS1-021<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>Simplify each expression. Write answers with positive exponents.</p><ol class="lower-alpha" type="a"><li><p>\(\left(\dfrac{2x^{-3}y^4}{6x^2y^{-1}}\right)\)</p></li><li><p>\(\left(\dfrac{12a^5b^{-2}}{3a^{-1}b^3}\right)\)</p></li><li><p>\(\left(\dfrac{-8m^{-2}n^6}{4m^3n^{-4}}\right)\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-022 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-022">
+<div class="problem-number">UBS1-022<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>Simplify each expression. Write answers with positive exponents.</p><ol class="lower-alpha" type="a"><li><p>\(\left(\dfrac{x^2y^{-3}}{x^{-4}y}\right)^2\)</p></li><li><p>\(\left(\dfrac{2a^{-1}b^3}{a^2b^{-2}}\right)^3\)</p></li><li><p>\(\left(\dfrac{-3m^2n^{-4}}{m^{-1}n}\right)^2\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-023 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-023">
+<div class="problem-number">UBS1-023<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>Rewrite each expression using the smallest possible integer base.</p><ol class="lower-alpha" type="a"><li><p>\(8^x\)</p></li><li><p>\(27^{2x}\)</p></li><li><p>\(\left(\dfrac{1}{16}\right)^x\)</p></li><li><p>\(\dfrac{1}{25^{x-1}}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-024 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-024">
+<div class="problem-number">UBS1-024<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>Rewrite each expression using the smallest possible integer base.</p><ol class="lower-alpha" type="a"><li><p>\(4^x\cdot 8^x\)</p></li><li><p>\(9^{x+1}\cdot 27^x\)</p></li><li><p>\(16^{x-2}\left(\dfrac{1}{8}\right)^x\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-025 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-025">
+<div class="problem-number">UBS1-025<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>Evaluate each expression without a calculator.</p><ol class="lower-alpha" type="a"><li><p>\(2^3\cdot 2^4\)</p></li><li><p>\(\dfrac{5^6}{5^4}\)</p></li><li><p>\((3^2)^3\)</p></li><li><p>\(10^{-2}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-026 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-026">
+<div class="problem-number">UBS1-026<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>Evaluate each expression without a calculator.</p><ol class="lower-alpha" type="a"><li><p>\(4^{-1}\)</p></li><li><p>\(2^{-3}\)</p></li><li><p>\(\left(\dfrac{1}{3}\right)^{-2}\)</p></li><li><p>\(\left(\dfrac{2}{5}\right)^{-3}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-027 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-027">
+<div class="problem-number">UBS1-027<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>Simplify each expression. Write answers with positive exponents.</p><ol class="lower-alpha" type="a"><li><p>\(\dfrac{x^{-2}+x^{-2}}{x^{-2}}\)</p></li><li><p>\(\dfrac{3a^{-1}+6a^{-1}}{a^{-1}}\)</p></li><li><p>\(\dfrac{5m^{-3}-2m^{-3}}{m^{-3}}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-028 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-028">
+<div class="problem-number">UBS1-028<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>Simplify each expression. Write answers with positive exponents.</p><ol class="lower-alpha" type="a"><li><p>\(x^2(x^{-3}+x^5)\)</p></li><li><p>\(a^{-1}(a^4-2a^{-2})\)</p></li><li><p>\(m^3(2m^{-5}+4m^{-1})\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-029 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-029">
+<div class="problem-number">UBS1-029<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>A student rewrites</p><p>\[\dfrac{x^5}{x^9}\]</p><p>as</p><p>\[x^4.\]</p><p>Is the student correct? Explain and simplify correctly.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-030 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-030">
+<div class="problem-number">UBS1-030<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 2</span></div>
+<p>A student rewrites</p><p>\[(3x^2)^3\]</p><p>as</p><p>\[3x^6.\]</p><p>Is the student correct? Explain and simplify correctly.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<div class="section-label">DoK 3 — Reasoning / Error Analysis / Structure</div>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-031 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-031">
+<div class="problem-number">UBS1-031<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 3</span></div>
+<p>A student says:</p><p><em>“When multiplying powers with the same base, you multiply the exponents.”</em></p><p>Use repeated multiplication to explain why this is incorrect.</p><p>Use the expression:</p><p>\[x^3\cdot x^4\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-032 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-032">
+<div class="problem-number">UBS1-032<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 3</span></div>
+<p>A student says:</p><p><em>“Since \(x^{-2}\) has a negative exponent, it must be negative.”</em></p><p>Explain the mistake. Give an example using a positive value of \(x\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-033 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-033">
+<div class="problem-number">UBS1-033<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 3</span></div>
+<p>A student simplifies:</p><p>\[\dfrac{a^7}{a^2}\]</p><p>as</p><p>\[a^{\frac72}.\]</p><p>Explain the error and simplify correctly.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-034 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-034">
+<div class="problem-number">UBS1-034<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 3</span></div>
+<p>A student simplifies:</p><p>\[(x^2y^3)^4\]</p><p>as</p><p>\[x^6y^7.\]</p><p>Identify the misconception and simplify correctly.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-035 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-035">
+<div class="problem-number">UBS1-035<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 3</span></div>
+<p>A student simplifies:</p><p>\[\dfrac{4x^{-3}y^2}{8x^2y^{-4}}\]</p><p>as</p><p>\[\dfrac{1}{2}x^{-1}y^{-2}.\]</p><p>Identify the error and simplify correctly using positive exponents.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-036 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-036">
+<div class="problem-number">UBS1-036<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 3</span></div>
+<p>Compare the expressions:</p><p>\[(2^3)^4\]</p><p>and</p><p>\[2^3\cdot 2^4\]</p><ol class="lower-alpha" type="a"><li><p>Simplify each expression.</p></li><li><p>Explain why the exponent operations are different.</p></li><li><p>Describe the difference between a power raised to a power and powers multiplied with the same base.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-037 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-037">
+<div class="problem-number">UBS1-037<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 3</span></div>
+<p>Compare the expressions:</p><p>\[(3x)^2\]</p><p>and</p><p>\[3x^2\]</p><ol class="lower-alpha" type="a"><li><p>Are they equivalent?</p></li><li><p>Use \(x=4\) to test both expressions.</p></li><li><p>Explain the difference in structure.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-038 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-038">
+<div class="problem-number">UBS1-038<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 3</span></div>
+<p>Which expressions are equivalent to:</p><p>\[x^{-6}\]</p><ol class="lower-alpha" type="a"><li><p>\(\dfrac{1}{x^6}\)</p></li><li><p>\(-x^6\)</p></li><li><p>\(\dfrac{x^2}{x^8}\)</p></li><li><p>\((x^{-2})^3\)</p></li><li><p>\(\dfrac{x^{-3}}{x^3}\)</p></li></ol><p>Explain your choices.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-039 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-039">
+<div class="problem-number">UBS1-039<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 3</span></div>
+<p>Which expressions are equivalent to:</p><p>\[16x^8\]</p><ol class="lower-alpha" type="a"><li><p>\((4x^4)^2\)</p></li><li><p>\((2x^2)^4\)</p></li><li><p>\(4x^4\cdot 4x^4\)</p></li><li><p>\(\dfrac{32x^{10}}{2x^2}\)</p></li></ol><p>Explain your choices.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-040 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-040">
+<div class="problem-number">UBS1-040<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 3</span></div>
+<p>Simplify the expression in two different ways.</p><p>\[\dfrac{(x^4)^3}{x^{-2}}\]</p><p>Then explain why both methods give the same result.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-041 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-041">
+<div class="problem-number">UBS1-041<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 3</span></div>
+<p>A student claims:</p><p>\[(2x^{-3})^{-2}=4x^6\]</p><ol class="lower-alpha" type="a"><li><p>Identify the error.</p></li><li><p>Simplify the expression correctly.</p></li><li><p>Explain how the negative exponent outside the parentheses affects every factor inside.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-042 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-042">
+<div class="problem-number">UBS1-042<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 3</span></div>
+<p>The expressions below are not all equivalent.</p><p>\[2^x\cdot 2^3,\qquad 2^{x+3},\qquad 8^x,\qquad 2^{3x},\qquad (2^x)^3\]</p><ol class="lower-alpha" type="a"><li><p>Group the equivalent expressions.</p></li><li><p>Explain how you know.</p></li><li><p>Describe one common mistake someone might make when comparing them.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<div class="section-label">DoK 4 — Rich Multi-Step / Strategy Defense / Generalization</div>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-043 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-043">
+<div class="problem-number">UBS1-043<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 4</span></div>
+<p>A student is simplifying:</p><p>\[\dfrac{(6x^{-2}y^3)^2}{3x^4y^{-1}}\]</p><ol class="lower-alpha" type="a"><li><p>Simplify the expression using exponent rules.</p></li><li><p>Rewrite the final answer with positive exponents.</p></li><li><p>Explain which exponent property you used at each major step.</p></li><li><p>Check your answer by substituting \(x=1\) and \(y=2\).</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-044 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-044">
+<div class="problem-number">UBS1-044<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 4</span></div>
+<p>Simplify:</p><p>\[\left(\dfrac{2a^{-3}b^2}{4a^2b^{-1}}\right)^{-2}\]</p><ol class="lower-alpha" type="a"><li><p>Simplify inside the parentheses first.</p></li><li><p>Apply the outside exponent.</p></li><li><p>Write the final answer with positive exponents.</p></li><li><p>Explain why simplifying inside first can help prevent mistakes.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-045 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-045">
+<div class="problem-number">UBS1-045<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 4</span></div>
+<p>A student claims the following expressions are equivalent:</p><p>\[(5x^2)^3\]</p><p>and</p><p>\[5x^6.\]</p><ol class="lower-alpha" type="a"><li><p>Explain why the student might think this is correct.</p></li><li><p>Correct the expression.</p></li><li><p>Use a numerical value of \(x\) to prove the expressions are not equivalent.</p></li><li><p>Write a general rule for powers of products.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-046 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-046">
+<div class="problem-number">UBS1-046<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 4</span></div>
+<p>Create three different expressions that simplify to:</p><p>\[\dfrac{12x^5}{y^3}\]</p><p>Your expressions must include:</p><ul><li><p>one product rule expression</p></li><li><p>one quotient rule expression</p></li><li><p>one expression with a negative exponent</p></li></ul><p>Then explain why each one is equivalent to the target expression.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-047 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-047">
+<div class="problem-number">UBS1-047<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 4</span></div>
+<p>A classmate says:</p><p><em>“I do not need exponent rules. I can just expand everything.”</em></p><p>Use the expression</p><p>\[\dfrac{(x^3y^2)^4}{x^5y^{-1}}\]</p><p>to respond.</p><ol class="lower-alpha" type="a"><li><p>Simplify using exponent rules.</p></li><li><p>Explain what expanding would look like.</p></li><li><p>Defend why exponent rules are more efficient.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-048 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-048">
+<div class="problem-number">UBS1-048<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 4</span></div>
+<p>The expression</p><p>\[\dfrac{2^x\cdot 8^{x+1}}{4^{2x-1}}\]</p><p>can be rewritten as a single power of \(2\).</p><ol class="lower-alpha" type="a"><li><p>Rewrite every factor with base \(2\).</p></li><li><p>Simplify to a single power of \(2\).</p></li><li><p>Explain why using the same base makes the expression easier to simplify.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-049 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-049">
+<div class="problem-number">UBS1-049<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 4</span></div>
+<p>Create an expression involving \(x\), \(y\), multiplication, division, powers, and at least one negative exponent that simplifies to:</p><p>\[\dfrac{x^4}{y^2}\]</p><ol class="lower-alpha" type="a"><li><p>Write your original expression.</p></li><li><p>Simplify it step by step.</p></li><li><p>Explain how someone could verify your expression is equivalent to the target expression.</p></li><li><p>Describe one common error your expression is designed to test.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<!-- ====================================================== -->
+<!-- PROBLEM UBS1-050 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UBS1-050">
+<div class="problem-number">UBS1-050<span class="problem-lesson">Teacher Created / CPM-Inspired | Section B.1 | DoK 4</span></div>
+<p>A teacher gives the class this challenge:</p><p>\[\left(\dfrac{3x^{-2}y^4}{6x^3y^{-1}}\right)^2\cdot \dfrac{4x^5}{y^3}\]</p><ol class="lower-alpha" type="a"><li><p>Simplify the expression completely.</p></li><li><p>Write the answer with positive exponents.</p></li><li><p>Explain why the order of exponent rules matters.</p></li><li><p>Identify two possible mistakes students might make and how to avoid them.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+
+</div>
+</body>
+</html>

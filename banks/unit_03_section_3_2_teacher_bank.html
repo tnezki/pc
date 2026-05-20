@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3 Section 3.2: Solve Square Root Equations</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Unit 3 Section 3.2: Solve Square Root Equations</h1>
+<div class="lesson-header">
+<h2>Section 3.2 Teacher Question Bank</h2>
+<div class="lesson-subtitle">Isolating radicals, solving square root equations, checking solutions, extraneous solutions, graph intersections, and CPM-style reasoning.</div>
+</div>
+<div class="section-label">Section 3.2 — DoK 1</div>
+<section class="problem" id="problem-U3S2-001">
+<div class="problem-number">U3S2-001<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 1</span></div>
+<p>Solve: \[\sqrt{x}=7\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U3S2-002">
+<div class="problem-number">U3S2-002<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 1</span></div>
+<p>Solve: \[\sqrt{x+5}=9\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U3S2-003">
+<div class="problem-number">U3S2-003<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 1</span></div>
+<p>Solve: \[\sqrt{x-3}=4\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U3S2-004">
+<div class="problem-number">U3S2-004<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 1</span></div>
+<p>Solve: \[2\sqrt{x}=12\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U3S2-005">
+<div class="problem-number">U3S2-005<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 1</span></div>
+<p>Solve: \[\sqrt{x}+3=10\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U3S2-006">
+<div class="problem-number">U3S2-006<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 1</span></div>
+<p>Solve: \[\sqrt{x-1}+5=11\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U3S2-007">
+<div class="problem-number">U3S2-007<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 1</span></div>
+<p>Solve: \[3\sqrt{x+2}=15\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U3S2-008">
+<div class="problem-number">U3S2-008<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 1</span></div>
+<p>Solve: \[\sqrt{2x+1}=5\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U3S2-009">
+<div class="problem-number">U3S2-009<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 1</span></div>
+<p>Solve: \[\sqrt{4x-7}=3\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U3S2-010">
+<div class="problem-number">U3S2-010<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 1</span></div>
+<p>State the first step needed to solve each equation.</p><ol class="lower-alpha"><li>\(\sqrt{x+4}+2=9\)</li><li>\(3\sqrt{x-1}=18\)</li><li>\(\sqrt{2x+5}=x-1\)</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U3S2-011">
+<div class="problem-number">U3S2-011<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 1</span></div>
+<p>Determine whether each value is a solution to \(\sqrt{x+6}=x\).</p><ol class="lower-alpha"><li>\(x=3\)</li><li>\(x=-2\)</li><li>\(x=6\)</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U3S2-012">
+<div class="problem-number">U3S2-012<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 1</span></div>
+<p>Fill in the blanks.</p><ol class="lower-alpha"><li>To solve a square root equation, first __________ the radical.</li><li>After squaring both sides, you must __________ your solution.</li><li>A solution that appears from algebra but does not work in the original equation is called __________.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U3S2-013">
+<div class="problem-number">U3S2-013<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 1</span></div>
+<p>Solve and check: \[\sqrt{x+12}=6\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<div class="section-label">Section 3.2 — DoK 2</div>
+<section class="problem" id="problem-U3S2-014">
+<div class="problem-number">U3S2-014<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 2</span></div>
+<p>Solve and check: \[\sqrt{x+4}+2=8\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U3S2-015">
+<div class="problem-number">U3S2-015<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 2</span></div>
+<p>Solve and check: \[5-\sqrt{x-1}=2\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U3S2-016">
+<div class="problem-number">U3S2-016<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 2</span></div>
+<p>Solve: \[4\sqrt{2x-3}=20\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U3S2-017">
+<div class="problem-number">U3S2-017<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 2</span></div>
+<p>Solve: \[\sqrt{3x+1}-4=5\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U3S2-018">
+<div class="problem-number">U3S2-018<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 2</span></div>
+<p>Solve and check: \[2\sqrt{x+7}+1=9\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U3S2-019">
+<div class="problem-number">U3S2-019<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 2</span></div>
+<p>Solve: \[\sqrt{x+10}=x\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U3S2-020">
+<div class="problem-number">U3S2-020<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 2</span></div>
+<p>Solve: \[\sqrt{x+6}=x-2\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U3S2-021">
+<div class="problem-number">U3S2-021<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 2</span></div>
+<p>Solve: \[\sqrt{2x+9}=x\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U3S2-022">
+<div class="problem-number">U3S2-022<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 2</span></div>
+<p>Solve: \[\sqrt{x+3}=x-3\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U3S2-023">
+<div class="problem-number">U3S2-023<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 2</span></div>
+<p>Solve and identify any extraneous solution: \[\sqrt{x+1}=x-1\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U3S2-024">
+<div class="problem-number">U3S2-024<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 2</span></div>
+<p>Solve and identify any extraneous solution: \[\sqrt{2x+4}=x\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U3S2-025">
+<div class="problem-number">U3S2-025<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 2</span></div>
+<p>A student solves \(\sqrt{x+5}=x-1\) and gets \(x=4\) and \(x=-1\).</p><ol class="lower-alpha"><li>Check both solutions.</li><li>Identify any extraneous solution.</li><li>Explain why it is extraneous.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U3S2-026">
+<div class="problem-number">U3S2-026<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 2</span></div>
+<p>Use the table to estimate the solution to \(\sqrt{x+2}=x-2\).</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(2\)</td><td>\(3\)</td><td>\(4\)</td><td>\(5\)</td><td>\(6\)</td><td>\(7\)</td></tr><tr><th>\(\sqrt{x+2}\)</th><td>\(2\)</td><td>\(\sqrt5\)</td><td>\(\sqrt6\)</td><td>\(\sqrt7\)</td><td>\(\sqrt8\)</td><td>\(3\)</td></tr><tr><th>\(x-2\)</th><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td><td>\(4\)</td><td>\(5\)</td></tr></table>
+<p>Explain how the table helps.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U3S2-027">
+<div class="problem-number">U3S2-027<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 2</span></div>
+<p>Use a graph to solve: \[\sqrt{x+4}=x-2\]</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S2-027" src="figures/U3S2-027.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U3S2-028">
+<div class="problem-number">U3S2-028<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 2</span></div>
+<p>A square root equation has the possible solutions \(x=1\) and \(x=8\) after squaring. Explain why both must be checked in the original equation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<div class="section-label">Section 3.2 — DoK 3</div>
+<section class="problem" id="problem-U3S2-029">
+<div class="problem-number">U3S2-029<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 3</span></div>
+<p>Explain why squaring both sides of an equation can create extraneous solutions.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U3S2-030">
+<div class="problem-number">U3S2-030<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 3</span></div>
+<p>A student solves \(\sqrt{x+3}=x-1\). They square both sides and get \(x+3=x^2-1\).</p><ol class="lower-alpha"><li>Identify the algebra mistake.</li><li>Correct the equation after squaring.</li><li>Solve correctly and check.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U3S2-031">
+<div class="problem-number">U3S2-031<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 3</span></div>
+<p>Solve \(\sqrt{x+6}=x\). Then explain why one solution works and the other does not.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U3S2-032">
+<div class="problem-number">U3S2-032<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 3</span></div>
+<p>Solve \(\sqrt{3x+4}=x+2\). Then explain why checking is required even if the algebra seems correct.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U3S2-033">
+<div class="problem-number">U3S2-033<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 3</span></div>
+<p>Solve \(\sqrt{x+9}=x-3\). Then explain how the domain restriction \(x-3\ge0\) helps predict possible solutions.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U3S2-034">
+<div class="problem-number">U3S2-034<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 3</span></div>
+<p>A student says: “If I square both sides correctly, all answers from the quadratic are automatically solutions.” Respond with an example and explanation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U3S2-035">
+<div class="problem-number">U3S2-035<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 3</span></div>
+<p>Use a graph of \(y=\sqrt{x+1}\) and \(y=x-1\).</p><ol class="lower-alpha"><li>Estimate the intersection.</li><li>Solve algebraically.</li><li>Explain how the graph helps identify the valid solution.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U3S2-035" src="figures/U3S2-035.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U3S2-036">
+<div class="problem-number">U3S2-036<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 3</span></div>
+<p>Solve: \[\sqrt{x+4}+\sqrt{x-1}=5\]</p><p>Show why this equation requires careful isolation and checking.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U3S2-037">
+<div class="problem-number">U3S2-037<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 3</span></div>
+<p>Solve: \[\sqrt{2x+5}=x+1\]</p><p>Then explain how the solution relates to the intersection of two functions.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U3S2-038">
+<div class="problem-number">U3S2-038<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 3</span></div>
+<p>A student solves \(\sqrt{x+8}=x-2\) and rejects \(x=1\) because it is less than 2.</p><ol class="lower-alpha"><li>Is the reasoning correct?</li><li>Explain what should actually be checked.</li><li>Solve the equation completely.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U3S2-039">
+<div class="problem-number">U3S2-039<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 3</span></div>
+<p>Compare these two equations:</p><p style="text-align:center;">\(\sqrt{x+5}=x-1\)</p><p style="text-align:center;">\(\sqrt{x+5}=1-x\)</p><p>Explain how the right side changes the possible solution set.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U3S2-040">
+<div class="problem-number">U3S2-040<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 3</span></div>
+<p>Create a flowchart or written process for solving square root equations that includes isolating, squaring, solving, checking, and rejecting extraneous solutions.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<div class="section-label">Section 3.2 — DoK 4</div>
+<section class="problem" id="problem-U3S2-041">
+<div class="problem-number">U3S2-041<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 4</span></div>
+<p>Create a square root equation that has exactly one valid solution and one extraneous solution after squaring.</p><ol class="lower-alpha"><li>Write the equation.</li><li>Solve it.</li><li>Identify the extraneous solution.</li><li>Explain how you designed it.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U3S2-042">
+<div class="problem-number">U3S2-042<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 4</span></div>
+<p>Create a square root equation that has no real solution because all possible solutions are extraneous.</p><p>Show the algebra and explain why no solution remains.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U3S2-043">
+<div class="problem-number">U3S2-043<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 4</span></div>
+<p>Design a real-world problem that leads to a square root equation.</p><ol class="lower-alpha"><li>Define the variables.</li><li>Write the equation.</li><li>Solve.</li><li>Explain which solution makes sense in context.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U3S2-044">
+<div class="problem-number">U3S2-044<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 4</span></div>
+<p>A student argues: “Graphing is unnecessary because algebra always gives the answer.” Critique this claim using a square root equation that produces an extraneous solution.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U3S2-045">
+<div class="problem-number">U3S2-045<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 4</span></div>
+<p>Create an error-analysis problem involving \(\sqrt{x+7}=x-1\).</p><ol class="lower-alpha"><li>Write incorrect student work.</li><li>Identify the misconception.</li><li>Correct the solution.</li><li>Explain how checking reveals the error.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U3S2-046">
+<div class="problem-number">U3S2-046<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 4</span></div>
+<p>Design a graph-based square root equation problem where students solve by finding an intersection.</p><ol class="lower-alpha"><li>Write the two functions.</li><li>Describe the graph.</li><li>Solve algebraically.</li><li>Explain how the graph and algebra agree.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U3S2-046" src="figures/U3S2-046.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U3S2-047">
+<div class="problem-number">U3S2-047<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 4</span></div>
+<p>Create a square root equation with a solution greater than 10. Then solve and verify.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U3S2-048">
+<div class="problem-number">U3S2-048<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 4</span></div>
+<p>Create a square root equation where the first step is not squaring.</p><ol class="lower-alpha"><li>Write the equation.</li><li>Explain why isolating must happen first.</li><li>Solve and check.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U3S2-049">
+<div class="problem-number">U3S2-049<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 4</span></div>
+<p>Create two square root equations that have the same squared equation but different valid solution sets. Explain why checking in the original equation changes the final answer.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U3S2-050">
+<div class="problem-number">U3S2-050<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 3.2 | DoK 4</span></div>
+<p>Create a multi-representation problem involving an equation, a graph, and a table where students solve a square root equation and identify an extraneous solution.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S2-050" src="figures/U3S2-050.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+</div>
+</body>
+</html>

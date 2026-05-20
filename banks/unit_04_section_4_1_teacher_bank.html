@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4 Section 4.1: Unit Circle</title>
+<script>
+window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.55;color:#222;background:#fff;padding:20px;}
+.container{max-width:900px;margin:0 auto;}
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.5rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+.lesson-header{margin-bottom:18px;}
+.lesson-subtitle{font-style:italic;color:#555;margin-top:2px;}
+.section-label{background:#eaf1fb;border:1px solid #a9b9cf;color:#22354d;font-weight:700;font-size:0.95rem;padding:8px 12px;margin:18px 0 10px 0;border-radius:4px;}
+.problem{border:1px solid #777;padding:14px 14px 12px 14px;margin-bottom:16px;break-inside:avoid;page-break-inside:avoid;}
+.problem-number{font-weight:700;font-size:1.05rem;margin-bottom:8px;}
+.problem-lesson{font-weight:600;color:#555;margin-left:12px;font-size:0.9rem;}
+.problem p{margin-bottom:8px;}
+.problem ol,.problem ul{margin-left:24px;margin-bottom:8px;}
+.problem li{margin-bottom:6px;}
+.graph-block{margin:12px 0 10px 0;text-align:center;}
+.graph-block img{display:block;margin:0 auto;max-width:100%;border:1px solid #ccc;background:#fff;}
+.graph-lg img{max-width:420px;}
+.workspace{width:100%;margin-top:10px;border-top:1px solid #777;}
+.workspace-120{height:120px;}.workspace-150{height:150px;}.workspace-180{height:180px;}.workspace-220{height:220px;}.workspace-250{height:250px;}.workspace-300{height:300px;}
+.workspace-label{margin-top:8px;font-size:0.85rem;font-weight:600;color:#444;}
+.lower-alpha{list-style-type:lower-alpha;}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Unit 4 Section 4.1: Unit Circle</h1>
+<div class="lesson-header"><h2>Section 4.1 Teacher Question Bank</h2><div class="lesson-subtitle">Radians, coterminal angles, exact trig values, all six trig functions, unit-circle coordinates, and CPM-style reasoning.</div></div>
+<div class="section-label">Section 4.1 — DoK 1</div>
+<section class="problem" id="problem-U4S1-001">
+<div class="problem-number">U4S1-001<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 1</span></div>
+<p>Convert \(60^\circ\) to radians.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U4S1-002">
+<div class="problem-number">U4S1-002<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 1</span></div>
+<p>Convert \(\frac{5\pi}{6}\) to degrees.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U4S1-003">
+<div class="problem-number">U4S1-003<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 1</span></div>
+<p>Find a positive coterminal angle for \(-\frac{3\pi}{4}\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U4S1-004">
+<div class="problem-number">U4S1-004<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 1</span></div>
+<p>Find a negative coterminal angle for \(\frac{11\pi}{6}\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U4S1-005">
+<div class="problem-number">U4S1-005<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 1</span></div>
+<p>State the coordinates on the unit circle for \(\theta=\frac{\pi}{3}\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U4S1-006">
+<div class="problem-number">U4S1-006<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 1</span></div>
+<p>State the coordinates on the unit circle for \(\theta=\frac{5\pi}{4}\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U4S1-007">
+<div class="problem-number">U4S1-007<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 1</span></div>
+<p>Evaluate exactly: \[\sin\left(\frac{\pi}{6}\right)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U4S1-008">
+<div class="problem-number">U4S1-008<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 1</span></div>
+<p>Evaluate exactly: \[\cos\left(\frac{3\pi}{4}\right)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U4S1-009">
+<div class="problem-number">U4S1-009<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 1</span></div>
+<p>Evaluate exactly: \[\tan\left(\frac{2\pi}{3}\right)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U4S1-010">
+<div class="problem-number">U4S1-010<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 1</span></div>
+<p>Evaluate exactly: \[\sin\left(\frac{7\pi}{6}\right)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U4S1-011">
+<div class="problem-number">U4S1-011<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 1</span></div>
+<p>Evaluate exactly: \[\cos\left(-\frac{\pi}{3}\right)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U4S1-012">
+<div class="problem-number">U4S1-012<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 1</span></div>
+<p>Evaluate exactly: \[\tan\left(\frac{5\pi}{4}\right)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-U4S1-013">
+<div class="problem-number">U4S1-013<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 1</span></div>
+<p>Fill in the blanks.</p><ol class='lower-alpha'><li>On the unit circle, cosine represents the __________ coordinate.</li><li>On the unit circle, sine represents the __________ coordinate.</li><li>Tangent equals __________ divided by __________.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U4S1-014">
+<div class="problem-number">U4S1-014<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 1</span></div>
+<p>Determine the quadrant for each angle.</p><ol class='lower-alpha'><li>\(\frac{5\pi}{6}\)</li><li>\(-\frac{2\pi}{3}\)</li><li>\(\frac{11\pi}{4}\)</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U4S1-015">
+<div class="problem-number">U4S1-015<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 1</span></div>
+<p>State whether each value is positive, negative, or zero.</p><ol class='lower-alpha'><li>\(\sin\left(\frac{4\pi}{3}\right)\)</li><li>\(\cos\left(\frac{7\pi}{4}\right)\)</li><li>\(\tan(\pi)\)</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<div class="section-label">Section 4.1 — DoK 2</div>
+<section class="problem" id="problem-U4S1-016">
+<div class="problem-number">U4S1-016<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 2</span></div>
+<p>Sketch \(\theta=\frac{2\pi}{3}\) on the unit circle and determine the coordinates, sine, cosine, and tangent.</p>
+<div class="graph-block graph-lg"><img src="figures/U4S1-016.png" alt="Figure for U4S1-016"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U4S1-017">
+<div class="problem-number">U4S1-017<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 2</span></div>
+<p>Sketch \(\theta=-\frac{5\pi}{6}\) and determine all six trigonometric functions.</p>
+<div class="graph-block graph-lg"><img src="figures/U4S1-017.png" alt="Figure for U4S1-017"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U4S1-018">
+<div class="problem-number">U4S1-018<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 2</span></div>
+<p>Use the unit circle to evaluate \(\sin\left(\frac{11\pi}{6}\right)\), \(\cos\left(\frac{11\pi}{6}\right)\), and \(\tan\left(\frac{11\pi}{6}\right)\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S1-019">
+<div class="problem-number">U4S1-019<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 2</span></div>
+<p>Evaluate exactly: \[\sin\left(\frac{13\pi}{6}\right)\]</p><p>Explain why the answer matches another special angle.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S1-020">
+<div class="problem-number">U4S1-020<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 2</span></div>
+<p>Evaluate exactly: \[\cos\left(-\frac{7\pi}{4}\right)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U4S1-021">
+<div class="problem-number">U4S1-021<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 2</span></div>
+<p>Evaluate exactly: \[\tan\left(\frac{9\pi}{4}\right)\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-U4S1-022">
+<div class="problem-number">U4S1-022<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 2</span></div>
+<p>A point on the unit circle has coordinates \(\left(-\frac{\sqrt3}{2},\frac12\right)\). Determine \(\sin(\theta)\), \(\cos(\theta)\), \(\tan(\theta)\), and the angle \(\theta\).</p>
+<div class="graph-block graph-lg"><img src="figures/U4S1-022.png" alt="Figure for U4S1-022"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U4S1-023">
+<div class="problem-number">U4S1-023<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 2</span></div>
+<p>A point on the unit circle has coordinates \(\left(\frac{\sqrt2}{2},-\frac{\sqrt2}{2}\right)\). Determine all six trig functions.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U4S1-024">
+<div class="problem-number">U4S1-024<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 2</span></div>
+<p>Use a \(45^\circ-45^\circ-90^\circ\) triangle to explain why \(\sin\left(\frac{\pi}{4}\right)=\frac{\sqrt2}{2}\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S1-025">
+<div class="problem-number">U4S1-025<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 2</span></div>
+<p>Use a \(30^\circ-60^\circ-90^\circ\) triangle to explain why \(\cos\left(\frac{\pi}{3}\right)=\frac12\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S1-026">
+<div class="problem-number">U4S1-026<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 2</span></div>
+<p>Determine all angles in \(0\le\theta<2\pi\) such that \(\sin(\theta)=\frac12\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S1-027">
+<div class="problem-number">U4S1-027<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 2</span></div>
+<p>Determine all angles in \(0\le\theta<2\pi\) such that \(\cos(\theta)=-\frac{\sqrt2}{2}\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S1-028">
+<div class="problem-number">U4S1-028<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 2</span></div>
+<p>Determine all angles in \(0\le\theta<2\pi\) such that \(\tan(\theta)=\sqrt3\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S1-029">
+<div class="problem-number">U4S1-029<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 2</span></div>
+<p>A student says, “\(\sin(\theta)\) and \(\cos(\theta)\) are always positive on the unit circle.” Use examples and the unit circle to explain why this is false.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-U4S1-030">
+<div class="problem-number">U4S1-030<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 2</span></div>
+<p>Use the unit circle to explain why \(\tan(\theta)=\frac{\sin(\theta)}{\cos(\theta)}\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<div class="section-label">Section 4.1 — DoK 3</div>
+<section class="problem" id="problem-U4S1-031">
+<div class="problem-number">U4S1-031<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 3</span></div>
+<p>Explain why \(\sin^2(\theta)+\cos^2(\theta)=1\) for every point on the unit circle.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U4S1-032">
+<div class="problem-number">U4S1-032<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 3</span></div>
+<p>Compare \(\sin\left(\frac{\pi}{6}\right)\) and \(\cos\left(\frac{\pi}{3}\right)\). Explain why the values are equal geometrically.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U4S1-033">
+<div class="problem-number">U4S1-033<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 3</span></div>
+<p>A student says, “Angles bigger than \(2\pi\) are not on the unit circle.” Respond with examples and reasoning.</p>
+<div class="graph-block graph-lg"><img src="figures/U4S1-033.png" alt="Figure for U4S1-033"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U4S1-034">
+<div class="problem-number">U4S1-034<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 3</span></div>
+<p>Explain why \(\sin(-\theta)=-\sin(\theta)\) using unit-circle symmetry.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U4S1-035">
+<div class="problem-number">U4S1-035<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 3</span></div>
+<p>Explain why \(\cos(-\theta)=\cos(\theta)\) using unit-circle symmetry.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-U4S1-036">
+<div class="problem-number">U4S1-036<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 3</span></div>
+<p>Compare the signs of sine, cosine, and tangent in all four quadrants. Then explain how the unit circle helps predict trig values without memorization.</p>
+<div class="graph-block graph-lg"><img src="figures/U4S1-036.png" alt="Figure for U4S1-036"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U4S1-037">
+<div class="problem-number">U4S1-037<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 3</span></div>
+<p>A student evaluates \(\tan\left(\frac{\pi}{2}\right)=1\).</p><ol class='lower-alpha'><li>Explain the mistake.</li><li>Determine the correct value.</li><li>Explain geometrically why tangent is undefined there.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U4S1-038">
+<div class="problem-number">U4S1-038<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 3</span></div>
+<p>Use the unit circle to explain why \(\sin\left(\frac{5\pi}{6}\right)=\sin\left(\frac{\pi}{6}\right)\), but \(\cos\left(\frac{5\pi}{6}\right)\ne\cos\left(\frac{\pi}{6}\right)\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U4S1-039">
+<div class="problem-number">U4S1-039<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 3</span></div>
+<p>A point on the unit circle has \(\sin(\theta)=\frac35\) and lies in Quadrant II. Determine \(\cos(\theta)\) and \(\tan(\theta)\). Explain how you know the signs.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U4S1-040">
+<div class="problem-number">U4S1-040<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 3</span></div>
+<p>Explain how the unit circle connects radians, coordinates, triangles, trigonometric functions, and graph behavior.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<div class="section-label">Section 4.1 — DoK 4</div>
+<section class="problem" id="problem-U4S1-041">
+<div class="problem-number">U4S1-041<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 4</span></div>
+<p>Create an angle whose sine is positive, cosine is negative, and tangent is negative. Then sketch it, give one radian measure, and explain how you know the signs.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S1-042">
+<div class="problem-number">U4S1-042<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 4</span></div>
+<p>Create a unit-circle problem where students must determine all six trig functions from one coordinate. Then solve your own problem.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S1-043">
+<div class="problem-number">U4S1-043<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 4</span></div>
+<p>Design an error-analysis problem involving coterminal angles.</p><ol class='lower-alpha'><li>Write incorrect student work.</li><li>Identify the misconception.</li><li>Correct the work.</li><li>Explain how to avoid the error.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S1-044">
+<div class="problem-number">U4S1-044<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 4</span></div>
+<p>Create a real-world periodic situation where radians are more useful than degrees. Explain why.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-U4S1-045">
+<div class="problem-number">U4S1-045<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 4</span></div>
+<p>Design a unit-circle puzzle involving coterminal angles, exact values, and quadrant reasoning. Then provide the solution.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S1-046">
+<div class="problem-number">U4S1-046<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 4</span></div>
+<p>Create a comparison task between \(\sin(\theta)\) and \(\cos(\theta)\) where students must use geometry and symmetry to justify relationships.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S1-047">
+<div class="problem-number">U4S1-047<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 4</span></div>
+<p>A student claims, “Memorizing the unit circle is enough to understand trigonometry.” Critique this statement using examples involving coordinates, symmetry, and graph behavior.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S1-048">
+<div class="problem-number">U4S1-048<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 4</span></div>
+<p>Create a graph/unit-circle connection problem where students relate a point on the unit circle, sine/cosine values, and a point on a trig graph. Explain the connection.</p>
+<div class="graph-block graph-lg"><img src="figures/U4S1-048.png" alt="Figure for U4S1-048"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S1-049">
+<div class="problem-number">U4S1-049<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 4</span></div>
+<p>Create a multi-representation problem involving radians, coordinates, trig values, and special triangles. Then solve it completely.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-U4S1-050">
+<div class="problem-number">U4S1-050<span class="problem-lesson">Teacher Created / CPM-Inspired | Section 4.1 | DoK 4</span></div>
+<p>Design a challenge problem involving exact trig values, coterminal angles, symmetry, and all four quadrants. Then provide a full justification.</p>
+<div class="graph-block graph-lg"><img src="figures/U4S1-050.png" alt="Figure for U4S1-050"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+</div>
+</body>
+</html>

@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Unit A Section A.4 Teacher Bank</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Unit A Section A.4 Teacher Bank</h1>
+<div class="lesson-header">
+<h2>Writing and Rewriting Quadratic Equations from Graphs, Data, and Features</h2>
+<div class="lesson-subtitle">Precalculus Readiness - Unit A: Quadratic Functions</div>
+</div>
+<div class="unit-intro">Teacher-created, CPM-inspired question bank. Problems are organized by Depth of Knowledge and emphasize writing equations from features, tables, graphs, data, form choice, verification, and explanation.</div>
+<div class="section-label">DoK 1 - Recognition / Forms / Basic Feature Identification</div>
+<section class="problem" id="problem-UAS4-001">
+<div class="problem-number">UAS4-001<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 1</span></div>
+<p>Identify the form of each quadratic equation: standard form, vertex form, or intercept form.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=2x^2-5x+3\)</p></li>
+<li><p>\(y=-3(x-4)^2+7\)</p></li>
+<li><p>\(y=(x+2)(x-6)\)</p></li>
+<li><p>\(y=-\frac12(x-1)(x+5)\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-UAS4-002">
+<div class="problem-number">UAS4-002<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 1</span></div>
+<p>For each equation, identify the information that is easiest to see.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=4(x-3)^2-8\)</p></li>
+<li><p>\(y=-2(x+1)(x-7)\)</p></li>
+<li><p>\(y=x^2+6x+5\)<br/><br/>Choose from:<br/>1. vertex<br/>2. zeros<br/>3. \(y\)-intercept and leading coefficient</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-UAS4-003">
+<div class="problem-number">UAS4-003<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 1</span></div>
+<p>State the vertex from each equation.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=(x-5)^2+2\)</p></li>
+<li><p>\(y=-4(x+3)^2-1\)</p></li>
+<li><p>\(y=\frac12(x-8)^2\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-UAS4-004">
+<div class="problem-number">UAS4-004<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 1</span></div>
+<p>State the zeros from each equation.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=(x-2)(x+9)\)</p></li>
+<li><p>\(y=-3(x+4)(x-6)\)</p></li>
+<li><p>\(y=5(x-1)^2\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-UAS4-005">
+<div class="problem-number">UAS4-005<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 1</span></div>
+<p>State the \(y\)-intercept of each function.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=x^2-7x+10\)</p></li>
+<li><p>\(y=3x^2+2x-8\)</p></li>
+<li><p>\(y=-5x^2+4\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-UAS4-006">
+<div class="problem-number">UAS4-006<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 1</span></div>
+<p>For each table, determine whether the relationship appears linear, quadratic, or neither.<br/><br/>
+\[
+\begin{array}{c|ccccc}
+x&0&1&2&3&4\\
+\hline
+y&1&4&7&10&13
+\end{array}
+\]
+\[
+\begin{array}{c|ccccc}
+x&0&1&2&3&4\\
+\hline
+y&2&5&10&17&26
+\end{array}
+\]
+\[
+\begin{array}{c|ccccc}
+x&0&1&2&3&4\\
+\hline
+y&1&2&4&8&16
+\end{array}
+\]</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS4-007">
+<div class="problem-number">UAS4-007<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 1</span></div>
+<p>Find the first differences and second differences for the table.
+\[
+\begin{array}{c|ccccc}
+x&0&1&2&3&4\\
+\hline
+y&3&6&11&18&27
+\end{array}
+\]
+Then state whether the table could represent a quadratic function.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-UAS4-008">
+<div class="problem-number">UAS4-008<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 1</span></div>
+<p>Fill in the blanks.<br/><br/>
+A quadratic table with equally spaced \(x\)-values has constant ______ differences.<br/>
+The form \(a(x-h)^2+k\) is called ______ form.<br/>
+The form \(a(x-p)(x-q)\) is called ______ form.<br/>
+The form \(ax^2+bx+c\) is called ______ form.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-UAS4-009">
+<div class="problem-number">UAS4-009<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 1</span></div>
+<p>Which equation has zeros \(-4\) and \(6\)?</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=(x-4)(x+6)\)</p></li>
+<li><p>\(y=(x+4)(x-6)\)</p></li>
+<li><p>\(y=(x-6)(x-4)\)</p></li>
+<li><p>\(y=(x+6)(x-4)\)<br/><br/>Explain how you know.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-UAS4-010">
+<div class="problem-number">UAS4-010<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 1</span></div>
+<p>Which equation has vertex \((3,-7)\)?</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=(x+3)^2-7\)</p></li>
+<li><p>\(y=(x-3)^2-7\)</p></li>
+<li><p>\(y=(x-7)^2+3\)</p></li>
+<li><p>\(y=(x+7)^2-3\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-UAS4-011">
+<div class="problem-number">UAS4-011<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 1</span></div>
+<p>A quadratic function has zeros \(x=2\) and \(x=10\).<br/><br/>What is the axis of symmetry?<br/><br/>Explain how you know without graphing.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-UAS4-012">
+<div class="problem-number">UAS4-012<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 1</span></div>
+<p>A quadratic table has constant second difference \(6\). What is the value of \(a\) if the \(x\)-values increase by \(1\)?<br/><br/>Explain your reasoning.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<div class="section-label">DoK 2 - Writing Equations / Rewriting Forms / Tables</div>
+<section class="problem" id="problem-UAS4-013">
+<div class="problem-number">UAS4-013<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>Write a quadratic equation in vertex form with vertex \((4,-3)\) and \(a=2\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-100"></div>
+</section>
+<section class="problem" id="problem-UAS4-014">
+<div class="problem-number">UAS4-014<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>Write a quadratic equation in vertex form with vertex \((-5,6)\) and \(a=-1\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-100"></div>
+</section>
+<section class="problem" id="problem-UAS4-015">
+<div class="problem-number">UAS4-015<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>Write a quadratic equation in intercept form with zeros \(x=-2\) and \(x=7\), and \(a=1\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-100"></div>
+</section>
+<section class="problem" id="problem-UAS4-016">
+<div class="problem-number">UAS4-016<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>Write a quadratic equation in intercept form with zeros \(x=3\) and \(x=9\), and \(a=-2\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-100"></div>
+</section>
+<section class="problem" id="problem-UAS4-017">
+<div class="problem-number">UAS4-017<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>A quadratic has vertex \((2,5)\) and passes through \((4,13)\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the equation in vertex form.</p></li>
+<li><p>Verify using the point \((4,13)\).</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS4-018">
+<div class="problem-number">UAS4-018<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>A quadratic has vertex \((-1,-6)\) and passes through \((1,2)\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the equation in vertex form.</p></li>
+<li><p>State whether the graph opens up or down.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS4-019">
+<div class="problem-number">UAS4-019<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>A quadratic has vertex \((3,8)\) and passes through \((5,0)\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the equation in vertex form.</p></li>
+<li><p>Find another point on the graph using symmetry.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS4-020">
+<div class="problem-number">UAS4-020<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>A quadratic has zeros \(-3\) and \(5\), and passes through \((1,-16)\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the equation in intercept form.</p></li>
+<li><p>Find the \(y\)-intercept.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS4-021">
+<div class="problem-number">UAS4-021<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>A quadratic has zeros \(2\) and \(8\), and passes through \((0,32)\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the equation in intercept form.</p></li>
+<li><p>Find the axis of symmetry.</p></li>
+<li><p>Find the vertex.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-UAS4-022">
+<div class="problem-number">UAS4-022<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>A quadratic has \(x\)-intercepts at \((-4,0)\) and \((6,0)\), and passes through \((0,-24)\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the equation in intercept form.</p></li>
+<li><p>Rewrite the equation in standard form.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<section class="problem" id="problem-UAS4-023">
+<div class="problem-number">UAS4-023<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>Rewrite each equation in standard form.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=2(x-3)^2+5\)</p></li>
+<li><p>\(y=-(x+4)^2+1\)</p></li>
+<li><p>\(y=\frac12(x-6)^2-8\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS4-024">
+<div class="problem-number">UAS4-024<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>Rewrite each equation in standard form.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=(x-2)(x+5)\)</p></li>
+<li><p>\(y=-3(x+1)(x-4)\)</p></li>
+<li><p>\(y=2(x-6)^2\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS4-025">
+<div class="problem-number">UAS4-025<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>Rewrite the quadratic in vertex form by completing the square.
+\[
+y=x^2-10x+18
+\]
+Then identify the vertex.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS4-026">
+<div class="problem-number">UAS4-026<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>Rewrite the quadratic in vertex form by completing the square.
+\[
+y=2x^2+8x-1
+\]
+Then identify the vertex.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS4-027">
+<div class="problem-number">UAS4-027<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>The table shows a quadratic function.
+\[
+\begin{array}{c|ccccc}
+x&0&1&2&3&4\\
+\hline
+y&5&8&13&20&29
+\end{array}
+\]</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the first differences.</p></li>
+<li><p>Find the second differences.</p></li>
+<li><p>Determine the value of \(a\).</p></li>
+<li><p>Write an equation for the function.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-UAS4-028">
+<div class="problem-number">UAS4-028<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>The table shows a quadratic function.
+\[
+\begin{array}{c|ccccc}
+x&-2&-1&0&1&2\\
+\hline
+y&11&2&-3&-4&-1
+\end{array}
+\]</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the second differences.</p></li>
+<li><p>Determine \(a\).</p></li>
+<li><p>Use \(y=ax^2+bx+c\) to write the equation.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-UAS4-029">
+<div class="problem-number">UAS4-029<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>The table shows a quadratic function.
+\[
+\begin{array}{c|ccccc}
+x&1&2&3&4&5\\
+\hline
+y&0&-3&-4&-3&0
+\end{array}
+\]</p>
+<ol class="lower-alpha" type="a">
+<li><p>Identify the zeros.</p></li>
+<li><p>Write the equation in intercept form.</p></li>
+<li><p>Verify using the vertex.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<section class="problem" id="problem-UAS4-030">
+<div class="problem-number">UAS4-030<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 2</span></div>
+<p>A quadratic function has the table:
+\[
+\begin{array}{c|ccccc}
+x&-1&0&1&2&3\\
+\hline
+y&12&5&0&-3&-4
+\end{array}
+\]</p>
+<ol class="lower-alpha" type="a">
+<li><p>Use differences to determine whether the table is quadratic.</p></li>
+<li><p>Find an equation in standard form.</p></li>
+<li><p>Use the equation to predict \(f(4)\).</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+<div class="section-label">DoK 3 - Reasoning / Form Choice / Error Analysis / Multiple Representations</div>
+<section class="problem" id="problem-UAS4-031">
+<div class="problem-number">UAS4-031<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 3</span></div>
+<p>A student says:<br/><br/><em>“If I know the vertex, I should always use intercept form.”</em><br/><br/>Explain why this is usually not the best choice. Use an example in your explanation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<section class="problem" id="problem-UAS4-032">
+<div class="problem-number">UAS4-032<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 3</span></div>
+<p>A student writes an equation for a quadratic with zeros \(-2\) and \(5\):
+\[
+y=(x-2)(x+5)
+\]
+Identify the error and write the correct equation using \(a=1\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS4-033">
+<div class="problem-number">UAS4-033<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 3</span></div>
+<p>A student writes an equation for a quadratic with vertex \((-3,4)\):
+\[
+y=(x-3)^2+4
+\]
+Identify the error and write the correct equation using \(a=1\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS4-034">
+<div class="problem-number">UAS4-034<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 3</span></div>
+<p>A quadratic has zeros \(x=-1\) and \(x=7\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write two different equations with these zeros.</p></li>
+<li><p>Explain what stays the same and what changes.</p></li>
+<li><p>Describe how the graphs are related.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-UAS4-035">
+<div class="problem-number">UAS4-035<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 3</span></div>
+<p>A quadratic has vertex \((2,-5)\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write two different equations with this vertex.</p></li>
+<li><p>Explain what stays the same and what changes.</p></li>
+<li><p>Describe how the value of \(a\) affects the graph.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-UAS4-036">
+<div class="problem-number">UAS4-036<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 3</span></div>
+<p>Compare these two equations:
+\[
+f(x)=2(x-3)^2-8
+\]
+\[
+g(x)=2(x-1)(x-5)
+\]</p>
+<ol class="lower-alpha" type="a">
+<li><p>Rewrite both equations in standard form.</p></li>
+<li><p>Explain why they represent the same function.</p></li>
+<li><p>State the vertex and zeros.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-260"></div>
+</section>
+<section class="problem" id="problem-UAS4-037">
+<div class="problem-number">UAS4-037<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 3</span></div>
+<p>Compare these two equations:
+\[
+f(x)=-(x+2)^2+9
+\]
+\[
+g(x)=-(x-1)(x+5)
+\]</p>
+<ol class="lower-alpha" type="a">
+<li><p>Rewrite each in standard form.</p></li>
+<li><p>Determine whether they are equivalent.</p></li>
+<li><p>Explain how you know.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-260"></div>
+</section>
+<section class="problem" id="problem-UAS4-038">
+<div class="problem-number">UAS4-038<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 3</span></div>
+<p>A table has constant second difference \(-4\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>What is the value of \(a\) if the \(x\)-values increase by \(1\)?</p></li>
+<li><p>What does the negative value of \(a\) tell you about the graph?</p></li>
+<li><p>Explain how a table can show opening direction.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-UAS4-039">
+<div class="problem-number">UAS4-039<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 3</span></div>
+<p>The table shows a quadratic function.
+\[
+\begin{array}{c|ccccc}
+x&-3&-2&-1&0&1\\
+\hline
+y&14&5&0&-1&2
+\end{array}
+\]</p>
+<ol class="lower-alpha" type="a">
+<li><p>Use differences to verify the function is quadratic.</p></li>
+<li><p>Write the equation in standard form.</p></li>
+<li><p>Rewrite the equation in vertex form.</p></li>
+<li><p>Explain what each form reveals.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-UAS4-040">
+<div class="problem-number">UAS4-040<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 3</span></div>
+<p>A graph has \(x\)-intercepts at \((-2,0)\) and \((8,0)\). The vertex is \((3,-25)\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the equation in intercept form.</p></li>
+<li><p>Explain how the vertex confirms the axis of symmetry.</p></li>
+<li><p>Rewrite the equation in vertex form.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-260"></div>
+</section>
+<section class="problem" id="problem-UAS4-041">
+<div class="problem-number">UAS4-041<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 3</span></div>
+<p>A graph has vertex \((-4,12)\) and \(y\)-intercept \((0,-20)\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the equation in vertex form.</p></li>
+<li><p>Rewrite it in standard form.</p></li>
+<li><p>Explain how the \(y\)-intercept helps determine \(a\).</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-260"></div>
+</section>
+<section class="problem" id="problem-UAS4-042">
+<div class="problem-number">UAS4-042<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 3</span></div>
+<p>A quadratic function has the same zeros as:
+\[
+y=(x-2)(x+6)
+\]
+but passes through \((0,24)\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Determine the new value of \(a\).</p></li>
+<li><p>Write the new function.</p></li>
+<li><p>Explain why the zeros did not change.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-260"></div>
+</section>
+<div class="section-label">DoK 4 - Rich Multi-Step / Choosing Forms / Modeling / Verification</div>
+<section class="problem" id="problem-UAS4-043">
+<div class="problem-number">UAS4-043<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 4</span></div>
+<p>A quadratic function is shown by the table.
+\[
+\begin{array}{c|ccccc}
+x&0&1&2&3&4\\
+\hline
+f(x)&12&3&-2&-3&0
+\end{array}
+\]</p>
+<ol class="lower-alpha" type="a">
+<li><p>Use first and second differences to verify the function is quadratic.</p></li>
+<li><p>Write the equation in standard form.</p></li>
+<li><p>Rewrite the equation in vertex form.</p></li>
+<li><p>Find the zeros using a method of your choice.</p></li>
+<li><p>Explain how the table, standard form, vertex form, and zeros all describe the same function.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-UAS4-044">
+<div class="problem-number">UAS4-044<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 4</span></div>
+<p>A quadratic has zeros \(x=-4\) and \(x=10\). It passes through \((2,-48)\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the equation in intercept form.</p></li>
+<li><p>Find the vertex.</p></li>
+<li><p>Rewrite the equation in vertex form.</p></li>
+<li><p>Rewrite the equation in standard form.</p></li>
+<li><p>Explain which form is most useful for finding zeros, vertex, and \(y\)-intercept.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-UAS4-045">
+<div class="problem-number">UAS4-045<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 4</span></div>
+<p>A quadratic has vertex \((5,18)\) and passes through \((2,0)\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the equation in vertex form.</p></li>
+<li><p>Find the second \(x\)-intercept using symmetry.</p></li>
+<li><p>Rewrite the equation in intercept form.</p></li>
+<li><p>Rewrite the equation in standard form.</p></li>
+<li><p>Explain how symmetry helped you move from vertex form to intercept form.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-UAS4-046">
+<div class="problem-number">UAS4-046<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 4</span></div>
+<p>The height of a launched object is modeled by a quadratic function. The object is on the ground at \(t=1\) second and \(t=7\) seconds. At \(t=0\), the object is \(21\) feet high.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the height function in intercept form.</p></li>
+<li><p>Determine the value of \(a\).</p></li>
+<li><p>Find the time when the object reaches its maximum height.</p></li>
+<li><p>Find the maximum height.</p></li>
+<li><p>Explain why intercept form was a good starting point.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-UAS4-047">
+<div class="problem-number">UAS4-047<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 4</span></div>
+<p>A company’s daily profit follows a quadratic pattern. The profit is \(0\) dollars when the price is \(p=4\) dollars and \(p=16\) dollars. When the price is \(p=10\), the profit is \(720\) dollars.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write a quadratic model in intercept form.</p></li>
+<li><p>Determine the maximum profit.</p></li>
+<li><p>Determine the price that gives the maximum profit.</p></li>
+<li><p>Rewrite the model in vertex form.</p></li>
+<li><p>Explain what the zeros and vertex mean in context.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-UAS4-048">
+<div class="problem-number">UAS4-048<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 4</span></div>
+<p>A quadratic function has the following values:
+\[
+\begin{array}{c|ccccc}
+x&-2&-1&0&1&2\\
+\hline
+f(x)&6&0&-2&0&6
+\end{array}
+\]</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the equation in intercept form.</p></li>
+<li><p>Write the equation in vertex form.</p></li>
+<li><p>Write the equation in standard form.</p></li>
+<li><p>Explain why all three forms are equivalent.</p></li>
+<li><p>Use one form to predict \(f(3)\), then verify with another form.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-UAS4-049">
+<div class="problem-number">UAS4-049<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 4</span></div>
+<p>Two students are writing an equation for the same quadratic. The graph has zeros \(x=-3\) and \(x=5\), and passes through \((1,-32)\).<br/><br/>
+Student A writes:
+\[
+y=2(x+3)(x-5)
+\]
+Student B writes:
+\[
+y=-2(x+3)(x-5)
+\]</p>
+<ol class="lower-alpha" type="a">
+<li><p>Determine which student is correct.</p></li>
+<li><p>Explain the mistake in the incorrect equation.</p></li>
+<li><p>Find the vertex of the correct function.</p></li>
+<li><p>Rewrite the correct function in standard form.</p></li>
+<li><p>Explain how substitution verifies the correct equation.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-UAS4-050">
+<div class="problem-number">UAS4-050<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.4 | DoK 4</span></div>
+<p>Create a quadratic function that satisfies all of the following:</p>
+<ul>
+<li>it has two real zeros</li>
+<li>the zeros are symmetric around \(x=3\)</li>
+<li>the graph opens downward</li>
+<li>the \(y\)-intercept is positive</li>
+</ul>
+<p>Then:</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the function in intercept form.</p></li>
+<li><p>Identify the zeros and axis of symmetry.</p></li>
+<li><p>Find the vertex.</p></li>
+<li><p>Rewrite the function in standard form.</p></li>
+<li><p>Explain why your function satisfies every condition.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+</div>
+</body>
+</html>

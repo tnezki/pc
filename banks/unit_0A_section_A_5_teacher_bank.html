@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Unit A Section A.5 Teacher Bank</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Unit A Section A.5 Teacher Bank</h1>
+<div class="unit-intro">Teacher-created / CPM-inspired problems for Precalculus Readiness Unit A, Section A.5: Key Features, Behavior, and Quadratic Modeling.</div>
+<div class="section-label">DoK 1 - Recognition / Vocabulary / Basic Key Features</div>
+<section class="problem" id="problem-UAS5-001">
+<div class="problem-number">UAS5-001<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 1</span></div>
+<p>For each function, identify the \(y\)-intercept.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(f(x)=x^2-4x+7\)</p></li>
+<li><p>\(g(x)=-2x^2+5x-3\)</p></li>
+<li><p>\(h(x)=\frac12x^2+6\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-UAS5-002">
+<div class="problem-number">UAS5-002<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 1</span></div>
+<p>For each quadratic, state whether the graph opens up or down.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=3x^2-5x+1\)</p></li>
+<li><p>\(y=-x^2+8x-12\)</p></li>
+<li><p>\(y=-\frac14x^2+2x+9\)</p></li>
+<li><p>\(y=0.8x^2-3x\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-UAS5-003">
+<div class="problem-number">UAS5-003<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 1</span></div>
+<p>For each quadratic, determine whether the vertex is a maximum or a minimum.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=x^2+6x+2\)</p></li>
+<li><p>\(y=-2x^2+4x+5\)</p></li>
+<li><p>\(y=5(x-3)^2-8\)</p></li>
+<li><p>\(y=-\frac12(x+1)^2+7\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-UAS5-004">
+<div class="problem-number">UAS5-004<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 1</span></div>
+<p>Use the equation to identify the axis of symmetry.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=(x-4)^2+9\)</p></li>
+<li><p>\(y=-3(x+2)^2-1\)</p></li>
+<li><p>\(y=2(x-7)^2\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-UAS5-005">
+<div class="problem-number">UAS5-005<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 1</span></div>
+<p>Use the formula</p>
+<p style="text-align:center;">\(x=-\frac{b}{2a}\)</p>
+<p>to find the axis of symmetry for each quadratic.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=x^2-8x+3\)</p></li>
+<li><p>\(y=2x^2+12x-1\)</p></li>
+<li><p>\(y=-x^2+10x+4\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-UAS5-006">
+<div class="problem-number">UAS5-006<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 1</span></div>
+<p>For each function, identify the domain.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=x^2-5x+6\)</p></li>
+<li><p>\(y=-2(x-1)^2+4\)</p></li>
+<li><p>\(y=0.5x^2+7x-2\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-UAS5-007">
+<div class="problem-number">UAS5-007<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 1</span></div>
+<p>Match each description to the correct range.</p>
+<ol class="lower-alpha" type="a">
+<li><p>A parabola opens up and has vertex \((3,-4)\).</p></li>
+<li><p>A parabola opens down and has vertex \((-2,7)\).</p></li>
+<li><p>A parabola opens up and has vertex \((0,5)\).</p></li>
+<li><p>A parabola opens down and has vertex \((6,-1)\).</p></li>
+</ol>
+<p>Ranges:</p>
+<ol>
+<li><p>\(y\le 7\)</p></li>
+<li><p>\(y\ge -4\)</p></li>
+<li><p>\(y\le -1\)</p></li>
+<li><p>\(y\ge 5\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-UAS5-008">
+<div class="problem-number">UAS5-008<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 1</span></div>
+<p>Fill in the blanks.</p>
+<p>For a quadratic function that opens upward, the vertex represents a ______ value.</p>
+<p>For a quadratic function that opens downward, the vertex represents a ______ value.</p>
+<p>The graph of every quadratic function has a vertical line of symmetry called the ______.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-UAS5-009">
+<div class="problem-number">UAS5-009<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 1</span></div>
+<p>Which function has a maximum value?</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=2x^2+3x-1\)</p></li>
+<li><p>\(y=-x^2+6x+4\)</p></li>
+<li><p>\(y=5(x-2)^2-8\)</p></li>
+<li><p>\(y=\frac13x^2-7\)</p></li>
+</ol><p>Explain how you know.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-UAS5-010">
+<div class="problem-number">UAS5-010<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 1</span></div>
+<p>Which function has a minimum value of \(-6\)?</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=(x+4)^2-6\)</p></li>
+<li><p>\(y=-(x+4)^2-6\)</p></li>
+<li><p>\(y=(x-6)^2+4\)</p></li>
+<li><p>\(y=-6(x+4)^2\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-UAS5-011">
+<div class="problem-number">UAS5-011<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 1</span></div>
+<p>A quadratic function has vertex \((5,12)\) and opens downward.</p>
+<ol class="lower-alpha" type="a">
+<li><p>What is the maximum value?</p></li>
+<li><p>What is the axis of symmetry?</p></li>
+<li><p>What is the range?</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<section class="problem" id="problem-UAS5-012">
+<div class="problem-number">UAS5-012<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 1</span></div>
+<p>A quadratic function has vertex \((-3,-8)\) and opens upward.</p>
+<ol class="lower-alpha" type="a">
+<li><p>What is the minimum value?</p></li>
+<li><p>What is the axis of symmetry?</p></li>
+<li><p>What is the range?</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+<div class="section-label">DoK 2 - Applying Key Features / Standard Form / Behavior</div>
+<section class="problem" id="problem-UAS5-013">
+<div class="problem-number">UAS5-013<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>For the function</p><p style="text-align:center;">\(f(x)=x^2-6x+5\)</p><p>find:</p>
+<ol class="lower-alpha" type="a">
+<li><p>the \(y\)-intercept</p></li>
+<li><p>the axis of symmetry</p></li>
+<li><p>the vertex</p></li>
+<li><p>whether the vertex is a maximum or minimum</p></li>
+<li><p>the range</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS5-014">
+<div class="problem-number">UAS5-014<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>For the function</p><p style="text-align:center;">\(g(x)=-x^2+8x-10\)</p><p>find:</p>
+<ol class="lower-alpha" type="a">
+<li><p>the \(y\)-intercept</p></li>
+<li><p>the axis of symmetry</p></li>
+<li><p>the vertex</p></li>
+<li><p>whether the vertex is a maximum or minimum</p></li>
+<li><p>the range</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS5-015">
+<div class="problem-number">UAS5-015<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>For the function</p><p style="text-align:center;">\(h(x)=2x^2+4x-7\)</p><p>find:</p>
+<ol class="lower-alpha" type="a">
+<li><p>the axis of symmetry</p></li>
+<li><p>the vertex</p></li>
+<li><p>the \(y\)-intercept</p></li>
+<li><p>the domain</p></li>
+<li><p>the range</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS5-016">
+<div class="problem-number">UAS5-016<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>For the function</p><p style="text-align:center;">\(p(x)=-3x^2+12x+1\)</p><p>find:</p>
+<ol class="lower-alpha" type="a">
+<li><p>the axis of symmetry</p></li>
+<li><p>the vertex</p></li>
+<li><p>the maximum value</p></li>
+<li><p>the \(y\)-intercept</p></li>
+<li><p>the range</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS5-017">
+<div class="problem-number">UAS5-017<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>Graph the function</p><p style="text-align:center;">\(y=x^2-4x-5\)</p><p>Then identify:</p>
+<ol class="lower-alpha" type="a">
+<li><p>vertex</p></li>
+<li><p>axis of symmetry</p></li>
+<li><p>\(x\)-intercepts</p></li>
+<li><p>\(y\)-intercept</p></li>
+<li><p>range</p></li>
+</ol>
+<div class="figure-block figure-md"><img alt="Blank coordinate grid for UAS5-017" src="figures/UAS5-017_grid.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-UAS5-018">
+<div class="problem-number">UAS5-018<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>Graph the function</p><p style="text-align:center;">\(y=-x^2+2x+8\)</p><p>Then identify:</p>
+<ol class="lower-alpha" type="a">
+<li><p>vertex</p></li>
+<li><p>axis of symmetry</p></li>
+<li><p>\(x\)-intercepts</p></li>
+<li><p>\(y\)-intercept</p></li>
+<li><p>range</p></li>
+</ol>
+<div class="figure-block figure-md"><img alt="Blank coordinate grid for UAS5-018" src="figures/UAS5-018_grid.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-UAS5-019">
+<div class="problem-number">UAS5-019<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>For the function</p><p style="text-align:center;">\(f(x)=x^2-2x-8\)</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the vertex.</p></li>
+<li><p>Find the \(x\)-intercepts.</p></li>
+<li><p>Find the \(y\)-intercept.</p></li>
+<li><p>State the intervals where the function is increasing and decreasing.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS5-020">
+<div class="problem-number">UAS5-020<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>For the function</p><p style="text-align:center;">\(g(x)=-x^2-4x+12\)</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the vertex.</p></li>
+<li><p>Find the \(x\)-intercepts.</p></li>
+<li><p>Find the \(y\)-intercept.</p></li>
+<li><p>State the intervals where the function is increasing and decreasing.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS5-021">
+<div class="problem-number">UAS5-021<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>Complete the table for</p><p style="text-align:center;">\(f(x)=x^2-6x+8\)</p>
+<table class="table-block"><tr><th>\(x\)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr><tr><th>\(f(x)\)</th><td></td><td></td><td></td><td></td><td></td></tr></table>
+<p>Then identify the vertex and axis of symmetry.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-UAS5-022">
+<div class="problem-number">UAS5-022<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>Complete the table for</p><p style="text-align:center;">\(g(x)=-2x^2+8x-3\)</p>
+<table class="table-block"><tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><th>\(g(x)\)</th><td></td><td></td><td></td><td></td><td></td></tr></table>
+<p>Then identify the maximum value.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+<section class="problem" id="problem-UAS5-023">
+<div class="problem-number">UAS5-023<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>A quadratic function has zeros \(x=-2\) and \(x=6\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the axis of symmetry.</p></li>
+<li><p>Explain how the zeros determine the axis of symmetry.</p></li>
+<li><p>If the graph opens upward, where is the function decreasing?</p></li>
+<li><p>If the graph opens upward, where is the function increasing?</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS5-024">
+<div class="problem-number">UAS5-024<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>A quadratic function has zeros \(x=1\) and \(x=9\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the axis of symmetry.</p></li>
+<li><p>If the graph opens downward, where is the function increasing?</p></li>
+<li><p>If the graph opens downward, where is the function decreasing?</p></li>
+<li><p>What kind of value does the vertex represent?</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS5-025">
+<div class="problem-number">UAS5-025<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>The height of a ball is modeled by</p><p style="text-align:center;">\(h(t)=-16t^2+64t+5\)</p><p>where \(t\) is time in seconds and \(h(t)\) is height in feet.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the time when the ball reaches its maximum height.</p></li>
+<li><p>Find the maximum height.</p></li>
+<li><p>What is the initial height?</p></li>
+<li><p>Explain what the vertex means in context.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS5-026">
+<div class="problem-number">UAS5-026<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>A company’s revenue is modeled by</p><p style="text-align:center;">\(R(p)=-5p^2+120p\)</p><p>where \(p\) is the price in dollars.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the price that maximizes revenue.</p></li>
+<li><p>Find the maximum revenue.</p></li>
+<li><p>Find the revenue when \(p=0\).</p></li>
+<li><p>Explain why the revenue cannot increase forever.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS5-027">
+<div class="problem-number">UAS5-027<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>A rectangle has perimeter \(40\) units. Let \(x\) represent the width.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write an expression for the length in terms of \(x\).</p></li>
+<li><p>Write an area function \(A(x)\).</p></li>
+<li><p>Determine the value of \(x\) that gives the maximum area.</p></li>
+<li><p>Find the maximum area.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<section class="problem" id="problem-UAS5-028">
+<div class="problem-number">UAS5-028<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>A farmer has \(60\) feet of fencing to make a rectangular pen along a barn, so only three sides need fencing. Let \(x\) represent each side perpendicular to the barn.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write an expression for the side parallel to the barn.</p></li>
+<li><p>Write an area function \(A(x)\).</p></li>
+<li><p>Find the value of \(x\) that maximizes area.</p></li>
+<li><p>Find the maximum area.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<section class="problem" id="problem-UAS5-029">
+<div class="problem-number">UAS5-029<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>A quadratic model is given by</p><p style="text-align:center;">\(P(x)=-2x^2+20x-18\)</p><p>where \(P(x)\) is profit in hundreds of dollars.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the break-even points.</p></li>
+<li><p>Find the value of \(x\) that maximizes profit.</p></li>
+<li><p>Find the maximum profit.</p></li>
+<li><p>Explain what the zeros mean in context.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<section class="problem" id="problem-UAS5-030">
+<div class="problem-number">UAS5-030<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 2</span></div>
+<p>For the function</p><p style="text-align:center;">\(f(x)=3x^2-18x+20\)</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the vertex using \(x=-\frac{b}{2a}\).</p></li>
+<li><p>Rewrite the function in vertex form.</p></li>
+<li><p>State the minimum value.</p></li>
+<li><p>Explain how standard form and vertex form each reveal different information.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<div class="section-label">DoK 3 - Reasoning / Error Analysis / Connections</div>
+<section class="problem" id="problem-UAS5-031">
+<div class="problem-number">UAS5-031<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 3</span></div>
+<p>A student says:</p><p style="margin-left:20px;">“The \(y\)-intercept is always the maximum or minimum because it is easy to see from standard form.”</p><p>Explain the mistake. Use an example in your explanation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS5-032">
+<div class="problem-number">UAS5-032<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 3</span></div>
+<p>A student finds the axis of symmetry for</p><p style="text-align:center;">\(y=2x^2-12x+7\)</p><p>by calculating</p><p style="text-align:center;">\(x=\frac{b}{2a}=\frac{-12}{4}=-3\).</p><p>Identify the error and find the correct axis of symmetry.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS5-033">
+<div class="problem-number">UAS5-033<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 3</span></div>
+<p>A student says:</p><p style="margin-left:20px;">“The range of \(y=-3(x-2)^2+5\) is \(y\ge 5\) because the vertex has \(y=5\).”</p><p>Explain the mistake and state the correct range.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+<section class="problem" id="problem-UAS5-034">
+<div class="problem-number">UAS5-034<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 3</span></div>
+<p>Compare the functions:</p><p style="text-align:center;">\(f(x)=x^2-4x+1\)</p><p style="text-align:center;">\(g(x)=-(x^2-4x+1)\)</p>
+<ol class="lower-alpha" type="a">
+<li><p>How are their axes of symmetry related?</p></li>
+<li><p>How are their vertices related?</p></li>
+<li><p>How are their maximum/minimum values related?</p></li>
+<li><p>Explain the effect of multiplying by \(-1\).</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-UAS5-035">
+<div class="problem-number">UAS5-035<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 3</span></div>
+<p>Compare the functions:</p><p style="text-align:center;">\(f(x)=2x^2-8x+3\)</p><p style="text-align:center;">\(g(x)=2(x-2)^2-5\)</p>
+<ol class="lower-alpha" type="a">
+<li><p>Show that the functions are equivalent.</p></li>
+<li><p>Identify the vertex.</p></li>
+<li><p>Explain why vertex form is more efficient for finding the range.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-UAS5-036">
+<div class="problem-number">UAS5-036<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 3</span></div>
+<p>A quadratic has \(x\)-intercepts at \((-1,0)\) and \((7,0)\), and opens upward.</p>
+<ol class="lower-alpha" type="a">
+<li><p>What is the axis of symmetry?</p></li>
+<li><p>What kind of value does the vertex represent?</p></li>
+<li><p>Where is the function decreasing?</p></li>
+<li><p>Where is the function increasing?</p></li>
+<li><p>Explain how you know without finding the full equation.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-UAS5-037">
+<div class="problem-number">UAS5-037<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 3</span></div>
+<p>A quadratic has \(x\)-intercepts at \((2,0)\) and \((10,0)\), and opens downward.</p>
+<ol class="lower-alpha" type="a">
+<li><p>What is the axis of symmetry?</p></li>
+<li><p>What kind of value does the vertex represent?</p></li>
+<li><p>Where is the function increasing?</p></li>
+<li><p>Where is the function decreasing?</p></li>
+<li><p>Explain how the graph’s symmetry supports your answers.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-UAS5-038">
+<div class="problem-number">UAS5-038<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 3</span></div>
+<p>A ball’s height is modeled by</p><p style="text-align:center;">\(h(t)=-16t^2+80t+4\).</p><p>A student says the ball reaches its maximum height at \(t=80\) seconds because \(b=80\).</p><p>Explain the mistake and find the correct time.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+<section class="problem" id="problem-UAS5-039">
+<div class="problem-number">UAS5-039<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 3</span></div>
+<p>A company’s revenue is modeled by</p><p style="text-align:center;">\(R(p)=-4p^2+96p-200\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the price that maximizes revenue.</p></li>
+<li><p>Explain why the vertex gives the maximum.</p></li>
+<li><p>Explain why the \(y\)-intercept may not be meaningful in this context.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-UAS5-040">
+<div class="problem-number">UAS5-040<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 3</span></div>
+<p>A rectangular garden has area modeled by</p><p style="text-align:center;">\(A(x)=x(30-2x)\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Rewrite the function in standard form.</p></li>
+<li><p>Find the zeros.</p></li>
+<li><p>Find the vertex.</p></li>
+<li><p>Explain what the zeros and vertex mean in the garden context.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-UAS5-041">
+<div class="problem-number">UAS5-041<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 3</span></div>
+<p>The table shows values of a quadratic function.</p>
+<table class="table-block"><tr><th>\(x\)</th><td>-1</td><td>0</td><td>1</td><td>2</td><td>3</td></tr><tr><th>\(f(x)\)</th><td>12</td><td>5</td><td>0</td><td>-3</td><td>-4</td></tr></table>
+<ol class="lower-alpha" type="a">
+<li><p>Identify whether the vertex is shown in the table.</p></li>
+<li><p>State the interval where the function appears to be decreasing.</p></li>
+<li><p>Use an equation to determine the exact vertex.</p></li>
+<li><p>Explain why a table alone can sometimes be misleading.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<section class="problem" id="problem-UAS5-042">
+<div class="problem-number">UAS5-042<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 3</span></div>
+<p>A quadratic has the same \(y\)-intercept as</p><p style="text-align:center;">\(f(x)=x^2-6x+8\)</p><p>but has a maximum instead of a minimum.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Create one possible equation.</p></li>
+<li><p>Explain how your equation keeps the same \(y\)-intercept.</p></li>
+<li><p>Explain how your equation changes the graph’s behavior.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+<div class="section-label">DoK 4 - Rich Multi-Step / Modeling / Optimization / Strategy Defense</div>
+<section class="problem" id="problem-UAS5-043">
+<div class="problem-number">UAS5-043<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 4</span></div>
+<p>A ball is launched from a platform. Its height is modeled by</p><p style="text-align:center;">\(h(t)=-16t^2+96t+112\)</p><p>where \(t\) is time in seconds and \(h(t)\) is height in feet.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the maximum height.</p></li>
+<li><p>Find the time when the maximum height occurs.</p></li>
+<li><p>Find the time when the ball hits the ground.</p></li>
+<li><p>State a reasonable domain for the model.</p></li>
+<li><p>State a reasonable range for the model.</p></li>
+<li><p>Explain what the vertex and intercepts mean in context.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-UAS5-044">
+<div class="problem-number">UAS5-044<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 4</span></div>
+<p>A farmer has \(100\) meters of fencing to enclose a rectangular field along a river. No fencing is needed along the river. Let \(x\) be the width perpendicular to the river.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write an area function in terms of \(x\).</p></li>
+<li><p>Find the dimensions that maximize area.</p></li>
+<li><p>Find the maximum area.</p></li>
+<li><p>State a reasonable domain for the model.</p></li>
+<li><p>Explain why the domain is restricted in context.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-UAS5-045">
+<div class="problem-number">UAS5-045<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 4</span></div>
+<p>A company sells \(400\) items when the price is \(\$20\). For each \(\$1\) increase in price, the company sells \(10\) fewer items.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write an expression for the price.</p></li>
+<li><p>Write an expression for the number of items sold.</p></li>
+<li><p>Write a revenue function.</p></li>
+<li><p>Find the price that maximizes revenue.</p></li>
+<li><p>Find the maximum revenue.</p></li>
+<li><p>Explain why the revenue model is quadratic.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-UAS5-046">
+<div class="problem-number">UAS5-046<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 4</span></div>
+<p>A rectangular poster has a total perimeter of \(72\) inches.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write an area function using one variable.</p></li>
+<li><p>Find the dimensions that maximize area.</p></li>
+<li><p>Find the maximum area.</p></li>
+<li><p>Explain why the graph of the area function opens downward.</p></li>
+<li><p>Explain how the vertex answers the optimization question.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-UAS5-047">
+<div class="problem-number">UAS5-047<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 4</span></div>
+<p>A bridge arch is modeled by a quadratic function. The arch touches the ground at \(x=0\) and \(x=40\). The maximum height of the arch is \(24\) feet.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the function in intercept form.</p></li>
+<li><p>Determine the value of \(a\).</p></li>
+<li><p>Rewrite the function in vertex form.</p></li>
+<li><p>Find the height of the arch when \(x=10\).</p></li>
+<li><p>State the reasonable domain and range.</p></li>
+<li><p>Explain how the intercepts and vertex define the model.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-UAS5-048">
+<div class="problem-number">UAS5-048<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 4</span></div>
+<p>A rocket’s height is modeled by</p><p style="text-align:center;">\(h(t)=-5t^2+40t+45\)</p><p>where \(t\) is time in seconds and \(h(t)\) is height in meters.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the initial height.</p></li>
+<li><p>Find the maximum height.</p></li>
+<li><p>Find when the maximum height occurs.</p></li>
+<li><p>Find when the rocket reaches the ground.</p></li>
+<li><p>State a reasonable domain and range.</p></li>
+<li><p>Explain which key features are meaningful in context.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-UAS5-049">
+<div class="problem-number">UAS5-049<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 4</span></div>
+<p>Two different quadratic models are proposed for the same revenue situation:</p><p style="text-align:center;">\(R_1(p)=-2(p-12)^2+288\)</p><p style="text-align:center;">\(R_2(p)=-2p^2+48p\)</p>
+<ol class="lower-alpha" type="a">
+<li><p>Show that the two models are equivalent.</p></li>
+<li><p>Identify the price that maximizes revenue.</p></li>
+<li><p>Identify the maximum revenue.</p></li>
+<li><p>Find the break-even prices.</p></li>
+<li><p>Explain which form is most useful for each feature.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+<section class="problem" id="problem-UAS5-050">
+<div class="problem-number">UAS5-050<span class="problem-lesson">Teacher Created / CPM-Inspired | Section A.5 | DoK 4</span></div>
+<p>Create a quadratic model for an optimization situation that satisfies all of the following:</p>
+<ul>
+<li>the graph opens downward</li>
+<li>the maximum occurs when \(x=6\)</li>
+<li>the maximum value is \(80\)</li>
+<li>the model has two real zeros</li>
+<li>the reasonable domain is restricted by context</li>
+</ul>
+<p>Then:</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write your model.</p></li>
+<li><p>Describe a real-world situation your model could represent.</p></li>
+<li><p>Identify the vertex, zeros, domain, and range.</p></li>
+<li><p>Explain why the vertex represents a maximum.</p></li>
+<li><p>Explain why your domain is reasonable for the context.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+</div>
+</body>
+</html>
