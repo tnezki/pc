@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1 Warm Ups</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+
+.warmup-meta{font-size:0.95rem;color:#555;margin-bottom:14px;}
+.problem-source{font-size:0.82rem;color:#666;font-style:italic;margin-top:4px;}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1>Unit 1 Warm Ups</h1>
+<div class="warmup-meta">Current Unit: Unit 1 Function Foundations. Spiral sources: Unit A Quadratic Functions and Unit B Exponents, Radicals, and Lines.</div>
+<!-- ====================================================== -->
+<!-- Warm Up Unit 1.1.1 -->
+<!-- ====================================================== -->
+<section class="warmup-section">
+<h2>Warm Up Unit 1.1.1</h2>
+<div class="warmup-meta">Prior knowledge: substitution, equations, reading graphs, and function readiness</div>
+<section class="problem" id="warm-up-unit-1-1-1-q1">
+<div class="problem-number">1</div>
+<p>Evaluate each expression when \(x=-2\):<br>(a) \(3x^2-5\) &nbsp;&nbsp; (b) \(-4x+7\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-1-1-q2">
+<div class="problem-number">2</div>
+<p>Solve each equation:<br>(a) \(2x-9=5\) &nbsp;&nbsp; (b) \(x^2-16=0\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-1-1-q3">
+<div class="problem-number">3</div>
+<p>Use the graph of the line to estimate the value of \(y\) when \(x=2\), and the value of \(x\) when \(y=-3\).</p>
+<div class="graph-block graph-md"><img alt="Graph for Warm Up Unit 1.1.1 problem 3" src="figures/wu1-1-1-3.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-1-1-q4">
+<div class="problem-number">4</div>
+<p>A table has inputs \(-1,0,1,2\) and outputs \(5,3,1,-1\). Write a rule that could generate the outputs, then use it to predict the output for \(x=4\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</section>
+<div class="page-break"></div>
+<!-- ====================================================== -->
+<!-- Warm Up Unit 1.1.2 -->
+<!-- ====================================================== -->
+<section class="warmup-section">
+<h2>Warm Up Unit 1.1.2</h2>
+<div class="warmup-meta">Current skill with Unit A/B spiral review</div>
+<section class="problem" id="warm-up-unit-1-1-2-q1">
+<div class="problem-number">1</div>
+<p>Let \(f(x)=3x-7\). Find \(f(-2)\), \(f(0)\), and \(f(5)\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-1-2-q2">
+<div class="problem-number">2</div>
+<p>Use the graph of \(g(x)\) to solve \(g(x)=5\). Explain how the graph shows the solution(s).</p>
+<div class="graph-block graph-md"><img alt="Graph for Warm Up Unit 1.1.2 problem 2" src="figures/wu1-1-2-2.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-1-2-q3">
+<div class="problem-number">3</div>
+<p>Spiral Unit A: For \(q(x)=(x-4)(x+2)\), identify the zeros and the axis of symmetry.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-1-2-q4">
+<div class="problem-number">4</div>
+<p>Spiral Unit B: Simplify \(\dfrac{x^7y^{-2}}{x^3y^4}\) using positive exponents.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</section>
+<div class="page-break"></div>
+<!-- ====================================================== -->
+<!-- Warm Up Unit 1.1.3 -->
+<!-- ====================================================== -->
+<section class="warmup-section">
+<h2>Warm Up Unit 1.1.3</h2>
+<div class="warmup-meta">Reasoning with function notation, graphs, and spiral connections</div>
+<section class="problem" id="warm-up-unit-1-1-3-q1">
+<div class="problem-number">1</div>
+<p>The graph of \(f\) is shown. Estimate all solutions to \(f(x)=1\), then explain whether \(f(1)=1\).</p>
+<div class="graph-block graph-md"><img alt="Graph for Warm Up Unit 1.1.3 problem 1" src="figures/wu1-1-3-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-1-3-q2">
+<div class="problem-number">2</div>
+<p>A student says \(h(-3)=h(3)\) for every function because \(-3\) and \(3\) are opposites. Give a counterexample using \(h(x)=2x+1\), and explain the mistake.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-1-3-q3">
+<div class="problem-number">3</div>
+<p>Spiral Unit A: A quadratic has zeros \(-2\) and \(6\), and opens upward. Without writing the full equation, explain where its minimum must occur.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-1-3-q4">
+<div class="problem-number">4</div>
+<p>Spiral Unit B: A phone plan charges \($25\) plus \($15\) per GB of data. Write a function for the cost and explain what the input and output represent.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</section>
+<div class="page-break"></div>
+<!-- ====================================================== -->
+<!-- Warm Up Unit 1.2.1 -->
+<!-- ====================================================== -->
+<section class="warmup-section">
+<h2>Warm Up Unit 1.2.1</h2>
+<div class="warmup-meta">Prior knowledge: inequalities, endpoint meaning, and set language</div>
+<section class="problem" id="warm-up-unit-1-2-1-q1">
+<div class="problem-number">1</div>
+<p>Solve and graph mentally: \(3x-4<11\). Write the solution as an inequality.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-2-1-q2">
+<div class="problem-number">2</div>
+<p>Explain the difference between \(x<5\) and \(x\le 5\). Give one number that is in one set but not the other.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-2-1-q3">
+<div class="problem-number">3</div>
+<p>List three values that satisfy \(-3<x\le 2\), then list one value that does not.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-2-1-q4">
+<div class="problem-number">4</div>
+<p>Use the number-line graph to write the set in words and inequality notation.</p>
+<div class="graph-block graph-md"><img alt="Graph for Warm Up Unit 1.2.1 problem 4" src="figures/wu1-2-1-4.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</section>
+<div class="page-break"></div>
+<!-- ====================================================== -->
+<!-- Warm Up Unit 1.2.2 -->
+<!-- ====================================================== -->
+<section class="warmup-section">
+<h2>Warm Up Unit 1.2.2</h2>
+<div class="warmup-meta">Current skill with Unit A/B spiral review</div>
+<section class="problem" id="warm-up-unit-1-2-2-q1">
+<div class="problem-number">1</div>
+<p>Write \(-4\le x<7\) in interval notation. Explain why one endpoint uses a bracket and the other uses a parenthesis.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-2-2-q2">
+<div class="problem-number">2</div>
+<p>Write \((-\infty,3]\) as an inequality. Then describe the graph on a number line.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-2-2-q3">
+<div class="problem-number">3</div>
+<p>Spiral Unit A: For \(y=-2(x-1)^2+8\), state the vertex, whether it is a maximum or minimum, and the range.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-2-2-q4">
+<div class="problem-number">4</div>
+<p>Spiral Unit B: Determine the values of \(x\) that make \(\sqrt{x+5}\) real.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</section>
+<div class="page-break"></div>
+<!-- ====================================================== -->
+<!-- Warm Up Unit 1.2.3 -->
+<!-- ====================================================== -->
+<section class="warmup-section">
+<h2>Warm Up Unit 1.2.3</h2>
+<div class="warmup-meta">Reasoning with interval notation and restrictions</div>
+<section class="problem" id="warm-up-unit-1-2-3-q1">
+<div class="problem-number">1</div>
+<p>A student writes \([-2,5)\) for the inequality \(-2<x\le5\). Identify both endpoint errors and correct the interval.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-2-3-q2">
+<div class="problem-number">2</div>
+<p>The graph shows a compound set. Write it in interval notation and inequality notation, then explain the isolated point.</p>
+<div class="graph-block graph-md"><img alt="Graph for Warm Up Unit 1.2.3 problem 2" src="figures/wu1-2-3-2.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-2-3-q3">
+<div class="problem-number">3</div>
+<p>Spiral Unit A: A quadratic has range \(y\le 9\) and axis of symmetry \(x=-3\). What can you conclude about the vertex and opening direction? Explain.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-2-3-q4">
+<div class="problem-number">4</div>
+<p>Spiral Unit B: Compare \(x^{1/2}\) and \(x^2\). For which real \(x\)-values is each expression defined?</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</section>
+<div class="page-break"></div>
+<!-- ====================================================== -->
+<!-- Warm Up Unit 1.3.1 -->
+<!-- ====================================================== -->
+<section class="warmup-section">
+<h2>Warm Up Unit 1.3.1</h2>
+<div class="warmup-meta">Prior knowledge: inputs, outputs, restrictions, and graph reading</div>
+<section class="problem" id="warm-up-unit-1-3-1-q1">
+<div class="problem-number">1</div>
+<p>For \(f(x)=2x+5\), explain why every real number can be used as an input.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-3-1-q2">
+<div class="problem-number">2</div>
+<p>Use the graph to identify the leftmost point and explain how it affects the domain.</p>
+<div class="graph-block graph-md"><img alt="Graph for Warm Up Unit 1.3.1 problem 2" src="figures/wu1-3-1-2.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-3-1-q3">
+<div class="problem-number">3</div>
+<p>Evaluate whether each input is allowed for \(g(x)=\sqrt{x-4}\): \(x=0\), \(x=4\), \(x=9\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-3-1-q4">
+<div class="problem-number">4</div>
+<p>A table has inputs \(-2,-1,0,1,2\) and outputs \(4,1,0,1,4\). State the listed domain and listed range.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</section>
+<div class="page-break"></div>
+<!-- ====================================================== -->
+<!-- Warm Up Unit 1.3.2 -->
+<!-- ====================================================== -->
+<section class="warmup-section">
+<h2>Warm Up Unit 1.3.2</h2>
+<div class="warmup-meta">Current skill with Unit A/B spiral review</div>
+<section class="problem" id="warm-up-unit-1-3-2-q1">
+<div class="problem-number">1</div>
+<p>Determine the domain and range of the graphed function. Use interval notation.</p>
+<div class="graph-block graph-md"><img alt="Graph for Warm Up Unit 1.3.2 problem 1" src="figures/wu1-3-2-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-3-2-q2">
+<div class="problem-number">2</div>
+<p>Find the domain of \(h(x)=\sqrt{2x-6}\). Show the inequality that creates the restriction.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-3-2-q3">
+<div class="problem-number">3</div>
+<p>Spiral Unit A: Find the vertex and range of \(y=2(x+3)^2-5\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-3-2-q4">
+<div class="problem-number">4</div>
+<p>Spiral Unit B: Simplify \(\sqrt{72}\) and explain which perfect-square factor you used.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</section>
+<div class="page-break"></div>
+<!-- ====================================================== -->
+<!-- Warm Up Unit 1.3.3 -->
+<!-- ====================================================== -->
+<section class="warmup-section">
+<h2>Warm Up Unit 1.3.3</h2>
+<div class="warmup-meta">Reasoning about restrictions and multiple representations</div>
+<section class="problem" id="warm-up-unit-1-3-3-q1">
+<div class="problem-number">1</div>
+<p>The graph is shown. Determine the domain and range, then explain why the range has an upper bound.</p>
+<div class="graph-block graph-md"><img alt="Graph for Warm Up Unit 1.3.3 problem 1" src="figures/wu1-3-3-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-3-3-q2">
+<div class="problem-number">2</div>
+<p>A student says the domain of \(f(x)=\sqrt{x+2}\) is \([2,\infty)\) because the 2 is inside the radical. Correct the mistake.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-3-3-q3">
+<div class="problem-number">3</div>
+<p>Spiral Unit A: A projectile has height \(h(t)=-16t^2+64t+5\). Explain what a reasonable domain means in this situation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-3-3-q4">
+<div class="problem-number">4</div>
+<p>Spiral Unit B: The line through \((-2,7)\) and \((4,-5)\) models a relationship. Find the slope and explain its meaning as a rate of change.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</section>
+<div class="page-break"></div>
+<!-- ====================================================== -->
+<!-- Warm Up Unit 1.4.1 -->
+<!-- ====================================================== -->
+<section class="warmup-section">
+<h2>Warm Up Unit 1.4.1</h2>
+<div class="warmup-meta">Prior knowledge: parent functions, shifts, reflections, and graph comparison</div>
+<section class="problem" id="warm-up-unit-1-4-1-q1">
+<div class="problem-number">1</div>
+<p>Describe the difference between \(y=x^2\) and \(y=(x-3)^2+4\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-4-1-q2">
+<div class="problem-number">2</div>
+<p>Use the graph of the parent function \(f(x)=|x|\). What point is the vertex/corner?</p>
+<div class="graph-block graph-md"><img alt="Graph for Warm Up Unit 1.4.1 problem 2" src="figures/wu1-4-1-2.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-4-1-q3">
+<div class="problem-number">3</div>
+<p>For each expression, describe the transformation from \(f(x)\):<br>(a) \(f(x)+6\) &nbsp;&nbsp; (b) \(f(x-2)\) &nbsp;&nbsp; (c) \(-f(x)\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-4-1-q4">
+<div class="problem-number">4</div>
+<p>A graph is shifted left 5 and down 1. If the original point \((2,3)\) is on the graph, where does that point move?</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</section>
+<div class="page-break"></div>
+<!-- ====================================================== -->
+<!-- Warm Up Unit 1.4.2 -->
+<!-- ====================================================== -->
+<section class="warmup-section">
+<h2>Warm Up Unit 1.4.2</h2>
+<div class="warmup-meta">Current skill with Unit A/B spiral review</div>
+<section class="problem" id="warm-up-unit-1-4-2-q1">
+<div class="problem-number">1</div>
+<p>Let \(g(x)=f(x+4)-2\). Describe the transformation from \(f\) to \(g\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-4-2-q2">
+<div class="problem-number">2</div>
+<p>Use the graph to write a transformation of \(f(x)=|x|\).</p>
+<div class="graph-block graph-md"><img alt="Graph for Warm Up Unit 1.4.2 problem 2" src="figures/wu1-4-2-2.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-4-2-q3">
+<div class="problem-number">3</div>
+<p>Spiral Unit A: Write a quadratic in vertex form with vertex \((-2,5)\) that opens downward and has vertical stretch factor \(3\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-4-2-q4">
+<div class="problem-number">4</div>
+<p>Spiral Unit B: Rewrite \(\sqrt[3]{x^5}\) using rational exponents, then identify the root and the power.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</section>
+<div class="page-break"></div>
+<!-- ====================================================== -->
+<!-- Warm Up Unit 1.4.3 -->
+<!-- ====================================================== -->
+<section class="warmup-section">
+<h2>Warm Up Unit 1.4.3</h2>
+<div class="warmup-meta">Reasoning with transformations and structure</div>
+<section class="problem" id="warm-up-unit-1-4-3-q1">
+<div class="problem-number">1</div>
+<p>The graph shown is a transformation of \(f(x)=|x|\). Write a possible equation and describe each transformation.</p>
+<div class="graph-block graph-md"><img alt="Graph for Warm Up Unit 1.4.3 problem 1" src="figures/wu1-4-3-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-4-3-q2">
+<div class="problem-number">2</div>
+<p>A student says \(f(x-6)\) shifts the graph left 6 because there is a minus sign. Explain the mistake.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-4-3-q3">
+<div class="problem-number">3</div>
+<p>Spiral Unit A: Compare \(y=2(x-1)^2-4\) and \(y=\frac12(x-1)^2-4\). What is the same and what changes?</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-4-3-q4">
+<div class="problem-number">4</div>
+<p>Spiral Unit B: A line has slope \(-3\) and passes through \((2,7)\). Write an equation and explain how the slope appears in the equation.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</section>
+<div class="page-break"></div>
+<!-- ====================================================== -->
+<!-- Warm Up Unit 1.5.1 -->
+<!-- ====================================================== -->
+<section class="warmup-section">
+<h2>Warm Up Unit 1.5.1</h2>
+<div class="warmup-meta">Prior knowledge: approaching values, graph reading, and function values</div>
+<section class="problem" id="warm-up-unit-1-5-1-q1">
+<div class="problem-number">1</div>
+<p>In your own words, explain the difference between \(x=2\) and \(x\) approaching 2.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-5-1-q2">
+<div class="problem-number">2</div>
+<p>From the graph, estimate the value the function approaches as \(x\) approaches 1 from the left. Then identify the actual function value at \(x=1\).</p>
+<div class="graph-block graph-md"><img alt="Graph for Warm Up Unit 1.5.1 problem 2" src="figures/wu1-5-1-3.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-5-1-q3">
+<div class="problem-number">3</div>
+<p>A table gives values near \(x=3\): \(f(2.9)=5.8\), \(f(2.99)=5.98\), \(f(3.01)=6.02\), \(f(3.1)=6.2\). What value does \(f(x)\) appear to approach?</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-5-1-q4">
+<div class="problem-number">4</div>
+<p>Explain what an open circle and a closed circle usually mean on a graph.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</section>
+<div class="page-break"></div>
+<!-- ====================================================== -->
+<!-- Warm Up Unit 1.5.2 -->
+<!-- ====================================================== -->
+<section class="warmup-section">
+<h2>Warm Up Unit 1.5.2</h2>
+<div class="warmup-meta">Current skill with Unit A/B spiral review</div>
+<section class="problem" id="warm-up-unit-1-5-2-q1">
+<div class="problem-number">1</div>
+<p>Use the graph to determine \(\lim_{x\to0^-}f(x)\), \(\lim_{x\to0^+}f(x)\), and whether \(\lim_{x\to0}f(x)\) exists.</p>
+<div class="graph-block graph-md"><img alt="Graph for Warm Up Unit 1.5.2 problem 1" src="figures/wu1-5-2-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-5-2-q2">
+<div class="problem-number">2</div>
+<p>A function has \(\lim_{x\to4^-}f(x)=7\) and \(\lim_{x\to4^+}f(x)=7\), but \(f(4)=-2\). Does \(\lim_{x\to4}f(x)\) exist? Explain.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-5-2-q3">
+<div class="problem-number">3</div>
+<p>Spiral Unit A: Use the discriminant to decide how many real solutions \(x^2-6x+13=0\) has.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-5-2-q4">
+<div class="problem-number">4</div>
+<p>Spiral Unit B: Determine the domain of \(r(x)=\sqrt{10-2x}\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</section>
+<div class="page-break"></div>
+<!-- ====================================================== -->
+<!-- Warm Up Unit 1.5.3 -->
+<!-- ====================================================== -->
+<section class="warmup-section">
+<h2>Warm Up Unit 1.5.3</h2>
+<div class="warmup-meta">Reasoning about one-sided limits and discontinuities</div>
+<section class="problem" id="warm-up-unit-1-5-3-q1">
+<div class="problem-number">1</div>
+<p>Use the graph to determine the left-hand and right-hand limits at \(x=-1\) and \(x=2\). State where the two-sided limit exists.</p>
+<div class="graph-block graph-md"><img alt="Graph for Warm Up Unit 1.5.3 problem 1" src="figures/wu1-5-3-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-5-3-q2">
+<div class="problem-number">2</div>
+<p>Create a short explanation for this statement: “A limit can exist even when the function value is different.” Include a small example in words or symbols.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-5-3-q3">
+<div class="problem-number">3</div>
+<p>Spiral Unit A: A quadratic model has zeros \(1\) and \(7\). Explain why the maximum or minimum occurs at \(x=4\).</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem" id="warm-up-unit-1-5-3-q4">
+<div class="problem-number">4</div>
+<p>Spiral Unit B: A linear function is shown by the table \((0,4),(2,10),(4,16)\). Find the equation and explain how the table shows constant rate of change.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</section>
+</div>
+</body>
+</html>
