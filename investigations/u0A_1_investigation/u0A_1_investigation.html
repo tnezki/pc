@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>u0A_1_investigation</title>
+  <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+/* ======================= RESET / BASE ======================= */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.45;color:#222;background:#fff;padding:20px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.container{max-width:900px;margin:0 auto;}
+.page-break{page-break-before:always;}
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.45rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.1rem;margin-top:8px;margin-bottom:8px;}
+h4{color:#00003d;font-size:1rem;margin:10px 0 6px 0;}
+p{margin-bottom:8px;}
+ul,ol{margin-left:24px;margin-bottom:8px;}
+li{margin-bottom:6px;}
+strong{color:#00003d;}
+
+/* ======================= TITLE / HEADER ======================= */
+.title-page{min-height:9.5in;display:flex;flex-direction:column;justify-content:center;text-align:center;border:4px solid #00003d;padding:42px;break-inside:avoid;page-break-inside:avoid;}
+.title-page .course{font-size:1rem;text-transform:uppercase;letter-spacing:2px;color:#555;margin-bottom:18px;}
+.title-page h1{font-size:2.35rem;line-height:1.15;margin-bottom:18px;}
+.title-page .subtitle{font-size:1.35rem;color:#004d99;font-weight:700;margin-bottom:24px;}
+.title-page .details{font-size:1.05rem;color:#333;margin-top:18px;}
+.name-line{margin-top:38px;border-top:2px solid #000;width:70%;align-self:center;padding-top:10px;text-align:left;font-weight:700;}
+.header-strip{background:#00003d;color:#fff;padding:10px 14px;margin:0 0 14px 0;font-weight:700;font-size:1.1rem;break-after:avoid;}
+
+/* ======================= CARDS / PROBLEMS ======================= */
+.problem,.teacher-box,.key-point{border:1px solid #777;padding:14px 14px 12px 14px;margin-bottom:14px;break-inside:avoid;page-break-inside:avoid;}
+.problem-number{font-weight:700;color:#00003d;margin-bottom:8px;font-size:1.03rem;}
+.small-note{font-size:.92rem;color:#555;}
+.teacher-note{background:#f7f7f7;border-left:4px solid #777;padding:8px 10px;margin:10px 0;}
+.desmos-link{font-weight:700;color:#004d99;}
+.dok-bar{background:#000;color:#fff;font-weight:700;padding:8px 12px;margin:18px 0 12px 0;break-after:avoid;}
+.workspace{width:100%;margin-top:8px;border-top:1px solid #777;break-inside:avoid;page-break-inside:avoid;}
+.workspace-60{height:60px}.workspace-80{height:80px}.workspace-100{height:100px}.workspace-120{height:120px}.workspace-150{height:150px}.workspace-180{height:180px}.workspace-220{height:220px}.workspace-260{height:260px}
+.workspace-label{margin-top:8px;font-size:.85rem;font-weight:600;color:#444;}
+
+/* ======================= TABLES ======================= */
+table{width:100%;border-collapse:collapse;margin:10px 0;break-inside:avoid;page-break-inside:avoid;}
+th,td{border:1px solid #888;padding:7px;text-align:center;vertical-align:middle;}
+th{background:#eaf1fb;color:#00003d;}
+td.left,th.left{text-align:left;}
+
+/* ======================= PRINT ======================= */
+@media print{body{padding:10px}.container{max-width:100%}.title-page{min-height:9.75in}}
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ======================= TITLE PAGE ======================= -->
+    <section class="title-page">
+      <div class="course">Precalculus Readiness - Unit A</div>
+      <h1>Section A.1 Investigation</h1>
+      <div class="subtitle">Transformations and Vertex Form of Quadratics</div>
+      <p><strong>Investigation:</strong> What do the numbers in \(y=a(x-h)^2+k\) actually do?</p>
+      <p><strong>Time:</strong> 15-20 minutes</p>
+      <p><strong>Format:</strong> Desmos exploration, partner talk, and whole-class discussion</p>
+      <div class="details">Learning Target: Analyze and graph quadratic functions in vertex form using transformations of the parent function.</div>
+      
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- ======================= DIRECTIONS PAGE ======================= -->
+    <section>
+      <div class="header-strip">Investigation Directions</div>
+
+      <div class="problem">
+        <h2>Setup</h2>
+        <ul>
+          <li><strong>Grouping:</strong> Partners or groups of 3.</li>
+          <li><strong>Materials:</strong> Student handout, pencil, and one device per group.</li>
+          <li><strong>Technology:</strong> Open Desmos Graphing Calculator.</li>
+          <li><strong>Teacher display:</strong> Project Desmos or a blank coordinate grid for sharing discoveries.</li>
+        </ul>
+      </div>
+
+      <div class="problem">
+        <h2>Student Goal</h2>
+        <p>Today you are not being told the rules first. Your job is to collect evidence from graphs and use that evidence to decide what \(a\), \(h\), and \(k\) do in vertex form.</p>
+        <p style="text-align:center;font-size:1.15rem;">\[y=a(x-h)^2+k\]</p>
+      </div>
+
+      <div class="problem">
+        <h2>Desmos Start</h2>
+        <ol>
+          <li>Go to <span class="desmos-link">desmos.com/calculator</span>.</li>
+          <li>Type: \(y=a(x-h)^2+k\)</li>
+          <li>When Desmos asks, create sliders for \(a\), \(h\), and \(k\).</li>
+          <li>Also type the parent function: \(y=x^2\).</li>
+          <li>Use slider values that are easy to compare first: whole numbers between \(-5\) and \(5\).</li>
+        </ol>
+      </div>
+
+      <div class="problem">
+        <h2>Norms for the Investigation</h2>
+        <ul>
+          <li>Change only one slider at a time until the handout tells you otherwise.</li>
+          <li>Record what you see before writing a rule.</li>
+          <li>Use words like vertex, axis of symmetry, opens up/down, wider/narrower, shift, reflect, stretch, and compress.</li>
+          <li>Be ready to justify your rule with at least two examples.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- ======================= STUDENT HANDOUT ======================= -->
+    <section>
+      <div class="header-strip">Student Investigation Handout</div>
+
+      <div class="problem">
+        <div class="problem-number">Part 1: Build the Parent Function</div>
+        <p>In Desmos, graph \(y=x^2\). Then graph \(y=a(x-h)^2+k\) and create sliders.</p>
+        <ol>
+          <li>Set \(a=1\), \(h=0\), and \(k=0\). What do you notice?</li>
+          <li>What is the vertex of the parent function?</li>
+          <li>What is the axis of symmetry of the parent function?</li>
+        </ol>
+        <div class="workspace-label">Observations</div>
+        <div class="workspace workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 2: Investigate \(k\)</div>
+        <p>Keep \(a=1\) and \(h=0\). Change only \(k\).</p>
+        <table>
+          <tr><th>Equation</th><th>Vertex</th><th>What changed from \(y=x^2\)?</th></tr>
+          <tr><td>\(y=x^2+3\)</td><td></td><td></td></tr>
+          <tr><td>\(y=x^2-4\)</td><td></td><td></td></tr>
+          <tr><td>\(y=x^2+1\)</td><td></td><td></td></tr>
+        </table>
+        <p><strong>Write a rule:</strong> What does \(k\) do to the graph?</p>
+        <div class="workspace workspace-80"></div>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 3: Investigate \(h\)</div>
+        <p>Keep \(a=1\) and \(k=0\). Change only \(h\). Be careful with the sign inside the parentheses.</p>
+        <table>
+          <tr><th>Equation</th><th>Value of \(h\)</th><th>Vertex</th><th>What changed from \(y=x^2\)?</th></tr>
+          <tr><td>\(y=(x-2)^2\)</td><td></td><td></td><td></td></tr>
+          <tr><td>\(y=(x+3)^2\)</td><td></td><td></td><td></td></tr>
+          <tr><td>\(y=(x-5)^2\)</td><td></td><td></td><td></td></tr>
+        </table>
+        <p><strong>Write a rule:</strong> What does \(h\) do to the graph?</p>
+        <div class="workspace workspace-80"></div>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 4: Investigate \(a\)</div>
+        <p>Keep \(h=0\) and \(k=0\). Change only \(a\).</p>
+        <table>
+          <tr><th>Equation</th><th>Opens Up or Down?</th><th>Wider or Narrower than \(y=x^2\)?</th></tr>
+          <tr><td>\(y=2x^2\)</td><td></td><td></td></tr>
+          <tr><td>\(y=\frac12x^2\)</td><td></td><td></td></tr>
+          <tr><td>\(y=-x^2\)</td><td></td><td></td></tr>
+          <tr><td>\(y=-3x^2\)</td><td></td><td></td></tr>
+        </table>
+        <p><strong>Write a rule:</strong> What does \(a\) do to the graph?</p>
+        <div class="workspace workspace-100"></div>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 5: Put the Pieces Together</div>
+        <p>Use your rules to predict the vertex, axis of symmetry, opening direction, and shape before graphing. Then check in Desmos.</p>
+        <table>
+          <tr><th>Equation</th><th>Predicted Vertex</th><th>Axis of Symmetry</th><th>Opening / Shape</th><th>Check</th></tr>
+          <tr><td>\(y=2(x-3)^2+4\)</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>\(y=-\frac12(x+1)^2-2\)</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>\(y=-(x-4)^2+5\)</td><td></td><td></td><td></td><td></td></tr>
+        </table>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 6: Make Your Own</div>
+        <p>Create one quadratic in vertex form that satisfies each condition. Check each one in Desmos.</p>
+        <ol>
+          <li>Vertex \((-2,3)\), opens upward, narrower than \(y=x^2\).</li>
+          <li>Vertex \((4,-1)\), opens downward, wider than \(y=x^2\).</li>
+        </ol>
+        <div class="workspace workspace-120"></div>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- ======================= DISCUSSION QUESTIONS ======================= -->
+    <section>
+      <div class="header-strip">Discussion Questions</div>
+
+      <div class="problem">
+        <ol>
+          <li>Why does \(y=(x-3)^2\) move right even though the equation contains \(x-3\)?</li>
+          <li>How can you identify the vertex directly from \(y=a(x-h)^2+k\)?</li>
+          <li>What does a negative \(a\)-value do that a positive \(a\)-value does not?</li>
+          <li>How can you tell whether a parabola is vertically stretched or compressed?</li>
+          <li>A student says \(y=-2(x+5)^2-1\) has vertex \((5,-1)\). What mistake did the student make?</li>
+        </ol>
+        <div class="workspace-label">Class Notes / Final Rule</div>
+        <div class="workspace workspace-180"></div>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- ======================= TEACHER SCRIPT ======================= -->
+    <section>
+      <div class="header-strip">Teaching Resource 1: Teacher Script</div>
+
+      <div class="teacher-box">
+        <h2>Purpose</h2>
+        <p>This investigation is designed to let students discover the structure of vertex form before formal notes. Students should leave with an evidence-based rule for each parameter in \(y=a(x-h)^2+k\).</p>
+      </div>
+
+      <div class="teacher-box">
+        <h2>Launch: 2 minutes</h2>
+        <p><strong>Say:</strong> “Today your goal is to figure out what the numbers in vertex form do. Do not try to memorize first. Move one slider at a time, collect evidence, and then write a rule.”</p>
+        <p><strong>Check:</strong> Every group should have \(y=x^2\) and \(y=a(x-h)^2+k\) entered in Desmos with sliders created.</p>
+      </div>
+
+      <div class="teacher-box">
+        <h2>Investigation: 10-12 minutes</h2>
+        <ol>
+          <li><strong>Part 1:</strong> Confirm that \(a=1\), \(h=0\), \(k=0\) matches \(y=x^2\).</li>
+          <li><strong>Part 2:</strong> Push students to use “up/down” and connect \(k\) to the y-coordinate of the vertex.</li>
+          <li><strong>Part 3:</strong> Pause groups if they say \(x+3\) means right 3. Ask, “What value of \(x\) makes the inside zero?”</li>
+          <li><strong>Part 4:</strong> Ask groups to compare \(|a|>1\) and \(0<|a|<1\). Do not accept only “changes shape”; ask how.</li>
+          <li><strong>Part 5:</strong> Require prediction before checking in Desmos.</li>
+        </ol>
+      </div>
+
+      <div class="teacher-box">
+        <h2>Discussion: 5 minutes</h2>
+        <p>Use the discussion questions to build the final class summary:</p>
+        <div class="teacher-note">
+          <p>For \(y=a(x-h)^2+k\), the vertex is \((h,k)\), the axis of symmetry is \(x=h\), \(a\) controls opening direction and vertical stretch/compression, \(h\) shifts left/right, and \(k\) shifts up/down.</p>
+        </div>
+        <p><strong>Teacher move:</strong> End by asking students to identify the vertex and transformations of \(y=-2(x+3)^2+4\) without graphing.</p>
+      </div>
+
+      <div class="teacher-box">
+        <h2>Common Misconceptions to Watch For</h2>
+        <ul>
+          <li>Thinking \((x-3)^2\) shifts left because of the minus sign.</li>
+          <li>Writing the vertex of \((x+5)^2-1\) as \((5,-1)\) instead of \((-5,-1)\).</li>
+          <li>Thinking any fraction makes the graph narrower. Fractions with absolute value less than 1 make the graph wider.</li>
+          <li>Describing \(a<0\) only as “negative” instead of “reflection over the \(x\)-axis / opens downward.”</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="page-break"></div>
+
+    <!-- ======================= ANSWER KEY ======================= -->
+    <section>
+      <div class="header-strip">Teaching Resource 2: Answer Key</div>
+
+      <div class="problem">
+        <div class="problem-number">Part 1: Build the Parent Function</div>
+        <p><strong>Question:</strong> Set \(a=1\), \(h=0\), and \(k=0\). What do you notice?</p>
+        <p><strong>Answer:</strong> The transformed equation becomes \(y=x^2\), so both graphs match.</p>
+        <p><strong>Question:</strong> What is the vertex of the parent function?</p>
+        <p><strong>Answer:</strong> \((0,0)\)</p>
+        <p><strong>Question:</strong> What is the axis of symmetry?</p>
+        <p><strong>Answer:</strong> \(x=0\)</p>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 2: Investigate \(k\)</div>
+        <table>
+          <tr><th>Equation</th><th>Vertex</th><th>What changed?</th></tr>
+          <tr><td>\(y=x^2+3\)</td><td>\((0,3)\)</td><td>Shifted up 3</td></tr>
+          <tr><td>\(y=x^2-4\)</td><td>\((0,-4)\)</td><td>Shifted down 4</td></tr>
+          <tr><td>\(y=x^2+1\)</td><td>\((0,1)\)</td><td>Shifted up 1</td></tr>
+        </table>
+        <p><strong>Rule:</strong> \(k\) shifts the graph up or down and becomes the y-coordinate of the vertex.</p>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 3: Investigate \(h\)</div>
+        <table>
+          <tr><th>Equation</th><th>Value of \(h\)</th><th>Vertex</th><th>What changed?</th></tr>
+          <tr><td>\(y=(x-2)^2\)</td><td>2</td><td>\((2,0)\)</td><td>Shifted right 2</td></tr>
+          <tr><td>\(y=(x+3)^2\)</td><td>-3</td><td>\((-3,0)\)</td><td>Shifted left 3</td></tr>
+          <tr><td>\(y=(x-5)^2\)</td><td>5</td><td>\((5,0)\)</td><td>Shifted right 5</td></tr>
+        </table>
+        <p><strong>Rule:</strong> \(h\) shifts the graph left or right and becomes the x-coordinate of the vertex. The form is \(x-h\), so \(x+3\) means \(h=-3\).</p>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 4: Investigate \(a\)</div>
+        <table>
+          <tr><th>Equation</th><th>Opens</th><th>Shape</th></tr>
+          <tr><td>\(y=2x^2\)</td><td>Up</td><td>Narrower / vertical stretch</td></tr>
+          <tr><td>\(y=\frac12x^2\)</td><td>Up</td><td>Wider / vertical compression</td></tr>
+          <tr><td>\(y=-x^2\)</td><td>Down</td><td>Same width as parent, reflected</td></tr>
+          <tr><td>\(y=-3x^2\)</td><td>Down</td><td>Narrower / vertical stretch and reflected</td></tr>
+        </table>
+        <p><strong>Rule:</strong> If \(a>0\), the parabola opens up. If \(a<0\), it opens down. If \(|a|>1\), it is narrower. If \(0<|a|<1\), it is wider.</p>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 5: Put the Pieces Together</div>
+        <table>
+          <tr><th>Equation</th><th>Vertex</th><th>Axis</th><th>Opening / Shape</th></tr>
+          <tr><td>\(y=2(x-3)^2+4\)</td><td>\((3,4)\)</td><td>\(x=3\)</td><td>Opens up, narrower</td></tr>
+          <tr><td>\(y=-\frac12(x+1)^2-2\)</td><td>\((-1,-2)\)</td><td>\(x=-1\)</td><td>Opens down, wider</td></tr>
+          <tr><td>\(y=-(x-4)^2+5\)</td><td>\((4,5)\)</td><td>\(x=4\)</td><td>Opens down, same width as parent</td></tr>
+        </table>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 6: Make Your Own</div>
+        <p><strong>Question:</strong> Vertex \((-2,3)\), opens upward, narrower than \(y=x^2\).</p>
+        <p><strong>Sample answer:</strong> \(y=2(x+2)^2+3\). Any \(a>1\) works.</p>
+        <p><strong>Question:</strong> Vertex \((4,-1)\), opens downward, wider than \(y=x^2\).</p>
+        <p><strong>Sample answer:</strong> \(y=-\frac12(x-4)^2-1\). Any \(-1<a<0\) works.</p>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Discussion Questions</div>
+        <ol>
+          <li><strong>Why does \(y=(x-3)^2\) move right?</strong> The vertex occurs when \(x-3=0\), so \(x=3\). The graph shifts right 3.</li>
+          <li><strong>How can you identify the vertex?</strong> In \(y=a(x-h)^2+k\), the vertex is \((h,k)\).</li>
+          <li><strong>What does a negative \(a\)-value do?</strong> It reflects the parabola over the \(x\)-axis, so it opens downward.</li>
+          <li><strong>How can you tell stretch or compression?</strong> Use \(|a|\). If \(|a|>1\), the graph is narrower; if \(0<|a|<1\), it is wider.</li>
+          <li><strong>Student error:</strong> For \(y=-2(x+5)^2-1\), the vertex is \((-5,-1)\), not \((5,-1)\), because \(x+5=x-(-5)\).</li>
+        </ol>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
