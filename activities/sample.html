@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 1.1 — Rally Coach</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{
+  --navy:#1B2E4B;
+  --gold:#C8A400;
+  --white:#FFFFFF;
+  --light-gray:#E8E8E8;
+  --dark-text:#1A1A1A;
+  --font-main:'Segoe UI',Arial,sans-serif;
+  --page-w:8.5in;
+  --page-h:11in;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+@page{size:letter;margin:0;}
+body{
+  font-family:var(--font-main);
+  color:var(--dark-text);
+  background:var(--light-gray);
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+.page{
+  width:var(--page-w);
+  height:var(--page-h);
+  padding:0.32in 0.42in 0.24in 0.42in;
+  margin:0 auto 0.35in;
+  background:white;
+  box-shadow:0 2px 12px rgba(0,0,0,0.18);
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  overflow:hidden;
+}
+@media print{
+  body{background:none;}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;break-after:auto;}
+}
+.title-page{padding:0.65in;}
+.title-bar{height:6px;background:var(--gold);border-radius:3px;margin-bottom:1.55in;}
+.unit-label{font-size:13pt;font-weight:700;color:var(--navy);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.22in;text-align:center;}
+.activity-name{font-size:32pt;font-weight:800;color:var(--navy);line-height:1.1;text-align:center;margin-bottom:0.34in;}
+.divider-navy{border:none;border-top:3px solid var(--navy);margin:0.18in 0;}
+.directions-page{display:flex;align-items:center;justify-content:center;padding:0.08in;}
+.directions-page img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
+.header{
+  background:var(--navy);
+  color:white;
+  font-size:22pt;
+  font-weight:800;
+  padding:0.13in 0.22in;
+  margin-bottom:0.18in;
+  border-radius:4px;
+  line-height:1.05;
+}
+.question,.solution{
+  font-size:13pt;
+  line-height:1.34;
+  flex:1;
+}
+.question p,.solution p{margin:0 0 0.11in 0;}
+.question ol,.solution ol,.question ul,.solution ul{margin:0.04in 0 0.09in 0.30in;}
+.question li,.solution li{margin-bottom:0.055in;}
+.solution .mathline{margin:0.07in 0;text-align:center;}
+.graph-img{
+  display:block;
+  max-width:4.45in;
+  max-height:4.35in;
+  object-fit:contain;
+  margin:0.05in auto 0 auto;
+}
+.graph-question p{margin-bottom:0.06in;}
+.graph-question li{margin-bottom:0.03in;}
+.compact-table{border-collapse:collapse;margin:0.12in auto;font-size:13pt;}
+.compact-table th,.compact-table td{border:1.2px solid #222;padding:0.055in 0.20in;text-align:center;}
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.18in 0.28in;font-size:12.5pt;line-height:1.25;}
+.skill-grid div{break-inside:avoid;}
+.page-footer{
+  margin-top:auto;
+  padding-top:0.08in;
+  display:flex;
+  justify-content:space-between;
+  font-size:7.5pt;
+  color:#111;
+}
+
+</style>
+</head>
+<body>
+<section class="page title-page">
+  <div class="title-bar"></div>
+  <div class="unit-label">Section 1.1 &nbsp;·&nbsp; Function Notation & Solving</div>
+  <h1 class="activity-name">Rally Coach</h1>
+  <hr class="divider-navy">
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page directions-page">
+  <img src="directions/rallycoach.png" alt="Rally Coach directions">
+</section>
+<section class="page">
+  <div class="header">Problem 1</div>
+  <div class="question">
+<p>Let $A(t)=5t+12$. Find the input $t$ when $A(t)=37$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 1</div>
+  <div class="solution">
+<p>Set the output equal to $37$.</p>
+    <p>$5t+12=37$</p>
+    <p>$5t=25$</p>
+    <p>$t=5$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 2</div>
+  <div class="question">
+<div class="graph-question"><p>The graph of $p$ and the horizontal line $y=4$ are shown.</p><ol type="a"><li>Evaluate $p(2)$.</li><li>Solve $p(x)=4$ from the graph.</li><li>Explain why there are two solutions.</li></ol><img class="graph-img" src="figures/g1.png" alt="Graph of p and y equals 4"></div>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 2</div>
+  <div class="solution">
+<ol type="a"><li>$p(2)=6$.</li><li>$p(x)=4$ when $x=0$ and $x=4$.</li><li>There are two solutions because the horizontal line intersects the parabola twice.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 3</div>
+  <div class="question">
+<p>Compare these two tasks for $f(x)=x^2-4x$:</p><ol type="a"><li>Evaluate $f(6)$.</li><li>Solve $f(x)=6$.</li></ol><p>Complete both tasks and explain how they are different.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 3</div>
+  <div class="solution">
+<ol type="a"><li>$f(6)=6^2-4(6)=36-24=12$.</li><li>$x^2-4x=6$, so $x^2-4x-6=0$.</li></ol>
+    <p>Using the quadratic formula, $x=2\pm\sqrt{10}$.</p>
+    <p>Evaluating uses one input. Solving finds the input values that produce a given output.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 4</div>
+  <div class="question">
+<div class="graph-question"><p>The graph models the height $H(t)$, in feet, of a ball after $t$ seconds.</p><ol type="a"><li>Evaluate $H(3)$ and interpret its meaning.</li><li>Solve $H(t)=5$ using the graph.</li><li>Explain why both solutions make sense in context.</li></ol><img class="graph-img" src="figures/g2.png" alt="Height graph"></div>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 4</div>
+  <div class="solution">
+<ol type="a"><li>$H(3)=9$. After $3$ seconds, the ball is about $9$ feet high.</li><li>$H(t)=5$ at about $t=1$ and $t=5$.</li><li>The ball is at that height once on the way up and once on the way down.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 5</div>
+  <div class="question">
+<p>For each function, identify the vertex and whether the vertex represents a maximum or minimum.</p>
+    <ol type="a"><li>$y=(x+2)^2-9$</li><li>$y=-3(x-1)^2+8$</li><li>$y=\frac{1}{2}(x-5)^2+4$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 5</div>
+  <div class="solution">
+<ol type="a"><li>Vertex $(-2,-9)$; minimum.</li><li>Vertex $(1,8)$; maximum.</li><li>Vertex $(5,4)$; minimum.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 6</div>
+  <div class="question">
+<div class="graph-question"><p>The graph of a quadratic function is shown.</p><ol type="a"><li>Identify the vertex.</li><li>State the axis of symmetry.</li><li>Does the vertex represent a maximum or minimum?</li><li>Write a possible equation in vertex form.</li></ol><img class="graph-img" src="figures/g3.png" alt="Quadratic graph opening upward"></div>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 6</div>
+  <div class="solution">
+<ol type="a"><li>The vertex is $(-2,-3)$.</li><li>The axis of symmetry is $x=-2$.</li><li>The vertex is a minimum.</li><li>One possible equation is $y=(x+2)^2-3$.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 7</div>
+  <div class="question">
+<p>Which equation represents a parabola with axis of symmetry $x=3$?</p>
+    <ol type="a"><li>$y=(x+3)^2-1$</li><li>$y=(x-3)^2+2$</li><li>$y=3(x+1)^2$</li><li>$y=x^2-3$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 7</div>
+  <div class="solution">
+<p>The correct choice is <strong>b</strong>.</p>
+    <p>In vertex form $y=a(x-h)^2+k$, the axis of symmetry is $x=h$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 8</div>
+  <div class="question">
+<p>Describe the transformation from $y=x^2$ to $y=-(x+1)^2+4$. Use the words shift, reflect, and vertex in your answer.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 8</div>
+  <div class="solution">
+<p>The graph shifts left $1$ and up $4$.</p>
+    <p>The negative sign reflects the graph over the $x$-axis.</p>
+    <p>The vertex is $(-1,4)$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 9</div>
+  <div class="question">
+<p>A parabola has vertex $(3,7)$ and passes through the point $(5,15)$. Write the equation in vertex form.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 9</div>
+  <div class="solution">
+<p>Start with $y=a(x-3)^2+7$.</p>
+    <p>Use point $(5,15)$: $15=a(5-3)^2+7$.</p>
+    <p>$15=4a+7$, so $a=2$.</p>
+    <p>Answer: $y=2(x-3)^2+7$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 10</div>
+  <div class="question">
+<p>The graph of a quadratic function has vertex $(-4,1)$ and opens downward. Which of the following could be its equation? Explain your choice.</p>
+    <ol type="a"><li>$y=2(x+4)^2+1$</li><li>$y=-2(x+4)^2+1$</li><li>$y=-2(x-4)^2+1$</li><li>$y=2(x-1)^2-4$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 10</div>
+  <div class="solution">
+<p>The correct choice is <strong>b</strong>.</p>
+    <p>$y=-2(x+4)^2+1$ has vertex $(-4,1)$ and opens downward because $a<0$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 11</div>
+  <div class="question">
+<p>A parabola has vertex $(1,6)$ and passes through $(3,-2)$. A student reasons $y=a(x+1)^2+6$, then uses $(3,-2)$ to find $a=-\frac{1}{2}$. Identify the error and solve correctly.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 11</div>
+  <div class="solution">
+<p>The student used $x+1$, which gives vertex $(-1,6)$ instead of $(1,6)$.</p>
+    <p>The correct form is $y=a(x-1)^2+6$.</p>
+    <p>Use $(3,-2)$: $-2=a(3-1)^2+6$.</p>
+    <p>$-8=4a$, so $a=-2$.</p>
+    <p>Answer: $y=-2(x-1)^2+6$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 12</div>
+  <div class="question">
+<p>A bridge arch is modeled by a quadratic function with vertex $(0,30)$. The arch touches the ground at $(-10,0)$ and $(10,0)$.</p><ol type="a"><li>Write the equation in vertex form.</li><li>Explain why the graph must open downward.</li><li>Find the height of the arch when $x=5$.</li><li>State the domain and range that make sense in context.</li><li>Explain how the intercepts and vertex support your model.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 12</div>
+  <div class="solution">
+<ol type="a"><li>Use $y=ax^2+30$. Since $(10,0)$ is on the graph, $0=100a+30$, so $a=-\frac{3}{10}$. The model is $y=-\frac{3}{10}x^2+30$.</li><li>The graph opens downward because the vertex is the highest point.</li><li>$y=-\frac{3}{10}(5)^2+30=22.5$.</li><li>Domain: $-10\le x\le 10$. Range: $0\le y\le 30$.</li><li>The intercepts show where the arch reaches the ground, and the vertex shows the maximum height.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 13</div>
+  <div class="question">
+<p>Simplify each expression.</p>
+    <ol type="a"><li>$x^0$</li><li>$7^0$</li><li>$(-4)^0$</li><li>$(3a^2b)^0$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 13</div>
+  <div class="solution">
+<ol type="a"><li>$1$</li><li>$1$</li><li>$1$</li><li>$1$</li></ol>
+    <p>Any nonzero expression raised to the zero power equals $1$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 14</div>
+  <div class="question">
+<p>Simplify each expression. Write answers with positive exponents.</p><ol type="a"><li>$x^4\cdot x^{-7}$</li><li>$a^{-3}\cdot a^9$</li><li>$m^{-5}\cdot m^{-2}$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 14</div>
+  <div class="solution">
+<ol type="a"><li>$x^{-3}=\frac{1}{x^3}$</li><li>$a^6$</li><li>$m^{-7}=\frac{1}{m^7}$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 15</div>
+  <div class="question">
+<p>Compare the expressions:</p><p>$(3x)^2$ and $3x^2$</p><ol type="a"><li>Are they equivalent?</li><li>Use $x=4$ to test both expressions.</li><li>Explain the difference in structure.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 15</div>
+  <div class="solution">
+<ol type="a"><li>No, they are not equivalent.</li><li>$(3\cdot4)^2=12^2=144$, but $3(4^2)=3\cdot16=48$.</li><li>In $(3x)^2$, the exponent applies to both $3$ and $x$. In $3x^2$, the exponent applies only to $x$.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 16</div>
+  <div class="question">
+<p>The expression $\dfrac{2^x\cdot 8^{x+1}}{4^{2x-1}}$ can be rewritten as a single power of $2$.</p><ol type="a"><li>Rewrite every factor with base $2$.</li><li>Simplify to a single power of $2$.</li><li>Explain why using the same base makes the expression easier to simplify.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 16</div>
+  <div class="solution">
+<ol type="a"><li>$2^x\cdot (2^3)^{x+1}\div(2^2)^{2x-1}$</li><li>$2^x\cdot2^{3x+3}\div2^{4x-2}=2^{x+3x+3-(4x-2)}=2^5$</li><li>Using the same base lets us add and subtract exponents.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Skill Check</div>
+  <div class="question">
+    <div class="skill-grid">
+      <div><strong>1.</strong> Let $f(x)=2x^2-3x+1$. Evaluate $f(-2)$.</div>
+      <div><strong>2.</strong> Solve $g(x)=15$ when $g(x)=4x+3$.</div>
+      <div><strong>3.</strong> Compare evaluating $f(5)$ with solving $f(x)=5$.</div>
+      <div><strong>4.</strong> Identify the vertex of $y=-2(x-4)^2+9$ and state whether it is a maximum or minimum.</div>
+      <div><strong>5.</strong> Write a vertex-form equation with vertex $(-3,6)$ that opens upward with $a=\frac{1}{2}$.</div>
+      <div><strong>6.</strong> Simplify and write with positive exponents: $x^{-4}\cdot x^9$.</div>
+    </div>
+  </div>
+  <div class="page-footer"><span>Section 1.1 — Rally Coach</span><span>Manistee High School</span></div>
+</section>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 1.1 - Whiteboard Partners</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\$', '\$']],
+    displayMath: [['$$', '$$'], ['\$$', '\$$']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+:root{
+  --navy:#1B2E4B;
+  --gold:#C8A400;
+  --white:#FFFFFF;
+  --light-gray:#E8E8E8;
+  --dark-text:#1A1A1A;
+  --font-main:'Segoe UI',Arial,sans-serif;
+  --page-w:8.5in;
+  --page-h:11in;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+@page{size:letter;margin:0;}
+body{
+  font-family:var(--font-main);
+  color:var(--dark-text);
+  background:var(--light-gray);
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+.page{
+  width:var(--page-w);
+  height:var(--page-h);
+  padding:0.32in 0.42in 0.24in 0.42in;
+  margin:0 auto 0.35in;
+  background:white;
+  box-shadow:0 2px 12px rgba(0,0,0,0.18);
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  overflow:hidden;
+}
+@media print{
+  body{background:none;}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;break-after:auto;}
+}
+.title-page{padding:0.65in;}
+.title-bar{height:6px;background:var(--gold);border-radius:3px;margin-bottom:1.55in;}
+.unit-label{font-size:13pt;font-weight:700;color:var(--navy);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.22in;text-align:center;}
+.activity-name{font-size:32pt;font-weight:800;color:var(--navy);line-height:1.1;text-align:center;margin-bottom:0.34in;}
+.divider-navy{border:none;border-top:3px solid var(--navy);margin:0.18in 0;}
+.directions-page{display:flex;align-items:center;justify-content:center;padding:0.08in;}
+.directions-page img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
+.header{
+  background:var(--navy);
+  color:white;
+  font-size:22pt;
+  font-weight:800;
+  padding:0.13in 0.22in;
+  margin-bottom:0.18in;
+  border-radius:4px;
+  line-height:1.05;
+}
+.question,.solution{
+  font-size:13pt;
+  line-height:1.34;
+  flex:1;
+}
+.question p,.solution p{margin:0 0 0.11in 0;}
+.question ol,.solution ol,.question ul,.solution ul{margin:0.04in 0 0.09in 0.30in;}
+.question li,.solution li{margin-bottom:0.055in;}
+.solution .mathline{margin:0.07in 0;text-align:center;}
+.graph-img{
+  display:block;
+  max-width:4.45in;
+  max-height:4.35in;
+  object-fit:contain;
+  margin:0.05in auto 0 auto;
+}
+.graph-question p{margin-bottom:0.06in;}
+.graph-question li{margin-bottom:0.03in;}
+.compact-table{border-collapse:collapse;margin:0.12in auto;font-size:13pt;}
+.compact-table th,.compact-table td{border:1.2px solid #222;padding:0.055in 0.20in;text-align:center;}
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.18in 0.28in;font-size:12.5pt;line-height:1.25;}
+.skill-grid div{break-inside:avoid;}
+.page-footer{
+  margin-top:auto;
+  padding-top:0.08in;
+  display:flex;
+  justify-content:space-between;
+  font-size:7.5pt;
+  color:#111;
+}
+
+</style>
+</head>
+<body>
+<section class="page title-page">
+  <div class="title-bar"></div>
+  <div class="unit-label">Section 1.1 &nbsp;·&nbsp; Function Notation & Solving</div>
+  <h1 class="activity-name">Whiteboard Partners</h1>
+  <hr class="divider-navy">
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page directions-page">
+  <img src="directions/whiteboards_partners.png" alt="Whiteboard Partners directions">
+</section>
+<section class="page">
+  <div class="header">Problem 1</div>
+  <div class="question">
+    <p>Let $p(x)=-3x^2+1$. Evaluate:</p>
+<ol type="a"><li>$p(1)$</li><li>$p(-2)$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 1</div>
+  <div class="solution">
+    <ol type="a"><li>$p(1)=-3(1)^2+1=-2$</li><li>$p(-2)=-3(-2)^2+1=-11$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 2</div>
+  <div class="question">
+    <p>Solve $f(x)=9$ when $f(x)=3x-6$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 2</div>
+  <div class="solution">
+    <p>Set the function equal to 9.</p><p>$$3x-6=9$$</p><p>$$3x=15$$</p><p>$$x=5$$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 3</div>
+  <div class="question">
+    <div class="graph-question"><p>The graph of $h$ and the horizontal line $y=-2$ are shown.</p>
+<ol type="a"><li>Evaluate $h(0)$.</li><li>Solve $h(x)=-2$ graphically.</li><li>Verify the solution if $h(x)=-x+3$.</li></ol>
+<img class="graph-img" src="figures/U1_graph_solve_line.png" alt="Graph of h and y=-2"></div>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 3</div>
+  <div class="solution">
+    <ol type="a"><li>From the graph, $h(0)=3$.</li><li>The line reaches $y=-2$ when $x=5$, so the solution is $x=5$.</li><li>Verify: $h(5)=-5+3=-2$, so $x=5$ is correct.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 4</div>
+  <div class="question">
+    <p>A student evaluates $f(-2)$ for $f(x)=3x^2-4x+1$ and gets $-3$.</p>
+<ol type="a"><li>Identify the student's likely mistake.</li><li>Find the correct value of $f(-2)$.</li><li>Explain how parentheses affect evaluation.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 4</div>
+  <div class="solution">
+    <ol type="a"><li>The student likely treated $(-2)^2$ as negative or did not substitute with parentheses.</li><li>$f(-2)=3(-2)^2-4(-2)+1=12+8+1=21$.</li><li>Parentheses show that the entire input $-2$ is being squared.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 5</div>
+  <div class="question">
+    <p>Identify the values of $a$, $h$, and $k$ for each function written in the form $y=a(x-h)^2+k$.</p>
+<ol type="a"><li>$y=4(x-2)^2+7$</li><li>$y=-3(x+5)^2-1$</li><li>$y=\frac12(x-8)^2$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 5</div>
+  <div class="solution">
+    <ol type="a"><li>$a=4$, $h=2$, $k=7$</li><li>$a=-3$, $h=-5$, $k=-1$</li><li>$a=\frac12$, $h=8$, $k=0$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 6</div>
+  <div class="question">
+    <p>Match each function to its transformation from $y=x^2$.</p>
+<ol type="a"><li>$y=(x-4)^2$</li><li>$y=x^2+6$</li><li>$y=-x^2$</li><li>$y=3x^2$</li></ol>
+<p>Transformations:</p>
+<ol><li>reflection over the $x$-axis</li><li>shift right 4</li><li>vertical stretch by a factor of 3</li><li>shift up 6</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 6</div>
+  <div class="solution">
+    <ol type="a"><li>shift right 4</li><li>shift up 6</li><li>reflection over the $x$-axis</li><li>vertical stretch by a factor of 3</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 7</div>
+  <div class="question">
+    <p>State whether each graph is wider, narrower, or the same width as $y=x^2$.</p>
+<ol type="a"><li>$y=5x^2$</li><li>$y=\frac14x^2$</li><li>$y=-x^2$</li><li>$y=-\frac23x^2$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 7</div>
+  <div class="solution">
+    <ol type="a"><li>narrower because $|5|>1$</li><li>wider because $0<\left|\frac14\right|<1$</li><li>same width because $|-1|=1$</li><li>wider because $0<\left|-\frac23\right|<1$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 8</div>
+  <div class="question">
+    <p>Fill in the blanks.</p><p>For $y=2(x-7)^2-3$, the graph is shifted ______ units right, ______ units down, stretched by a factor of ______, and opens ______.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 8</div>
+  <div class="solution">
+    <p>The graph is shifted 7 units right, 3 units down, stretched by a factor of 2, and opens upward.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 9</div>
+  <div class="question">
+    <p>Write a quadratic equation in vertex form with:</p><ul><li>vertex $(-1,4)$</li><li>opens upward</li><li>vertical compression factor $\frac12$</li></ul>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 9</div>
+  <div class="solution">
+    <p>Use $y=a(x-h)^2+k$.</p><p>Here $a=\frac12$, $h=-1$, and $k=4$.</p><p>$$y=\frac12(x+1)^2+4$$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 10</div>
+  <div class="question">
+    <p>For the function $f(x)=3(x+2)^2-12$, find:</p><ol type="a"><li>$f(-2)$</li><li>$f(0)$</li><li>$f(-4)$</li><li>Explain the symmetry shown in your answers.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 10</div>
+  <div class="solution">
+    <ol type="a"><li>$f(-2)=3(0)^2-12=-12$</li><li>$f(0)=3(2)^2-12=0$</li><li>$f(-4)=3(-2)^2-12=0$</li><li>The inputs $0$ and $-4$ are the same distance from $x=-2$, so their outputs match.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 11</div>
+  <div class="question">
+    <p>A student says, “The graph of $y=-\frac12(x-3)^2+4$ is narrower than $y=x^2$ because there is a fraction.” Is the student correct? Explain.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 11</div>
+  <div class="solution">
+    <p>No. Since $\left|-\frac12\right|=\frac12$, the graph is wider than $y=x^2$.</p><p>The negative sign makes the parabola open downward.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 12</div>
+  <div class="question">
+    <p>A student claims that the following two functions have the same graph because they both have vertex $(2,5)$:</p><p>$$f(x)=2(x-2)^2+5$$</p><p>$$g(x)=\frac12(x-2)^2+5$$</p><ol type="a"><li>Explain what the student noticed correctly.</li><li>Explain what the student missed.</li><li>Use at least two points from each function to prove the graphs are different.</li><li>Describe how the value of $a$ changes the shape.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 12</div>
+  <div class="solution">
+    <ol type="a"><li>Both functions have vertex $(2,5)$.</li><li>The student missed that the $a$-values are different.</li><li>For $f$: $f(3)=7$, $f(4)=13$. For $g$: $g(3)=\frac{11}{2}$, $g(4)=7$.</li><li>Larger $|a|$ makes a parabola narrower; smaller $|a|$ makes it wider.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 13</div>
+  <div class="question">
+    <p>Simplify each expression.</p>
+<ol type="a"><li>$(x^3)^4$</li><li>$(a^5)^2$</li><li>$(m^2)^7$</li><li>$(y^4)^0$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 13</div>
+  <div class="solution">
+    <ol type="a"><li>$x^{12}$</li><li>$a^{10}$</li><li>$m^{14}$</li><li>$1$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 14</div>
+  <div class="question">
+    <p>Rewrite each expression using positive exponents.</p>
+<ol type="a"><li>$x^{-4}$</li><li>$a^{-7}$</li><li>$5m^{-2}$</li><li>$-3y^{-5}$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 14</div>
+  <div class="solution">
+    <ol type="a"><li>$\frac{1}{x^4}$</li><li>$\frac{1}{a^7}$</li><li>$\frac{5}{m^2}$</li><li>$-\frac{3}{y^5}$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 15</div>
+  <div class="question">
+    <p>Simplify each expression. Write answers with positive exponents.</p><ol type="a"><li>$\dfrac{x^3}{x^8}$</li><li>$\dfrac{a^{-2}}{a^5}$</li><li>$\dfrac{m^4}{m^{-3}}$</li><li>$\dfrac{y^{-6}}{y^{-10}}$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 15</div>
+  <div class="solution">
+    <ol type="a"><li>$\frac{1}{x^5}$</li><li>$\frac{1}{a^7}$</li><li>$m^7$</li><li>$y^4$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 16</div>
+  <div class="question">
+    <p>A student says:</p><p><em>“When multiplying powers with the same base, you multiply the exponents.”</em></p><p>Use repeated multiplication to explain why this is incorrect.</p><p>Use the expression:</p><p>$$x^3\cdot x^4$$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 16</div>
+  <div class="solution">
+    <p>Repeated multiplication gives</p><p>$$x^3\cdot x^4=(x\cdot x\cdot x)(x\cdot x\cdot x\cdot x)=x^7$$</p><p>When multiplying powers with the same base, add the exponents: $x^3\cdot x^4=x^{3+4}=x^7$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Skill Check</div>
+  <div class="question">
+    <div class="skill-grid">
+  <div><strong>1.</strong> Let $g(x)=-2x^2+3$. Evaluate $g(-4)$.</div>
+  <div><strong>2.</strong> Solve $m(x)=11$ when $m(x)=2x+5$.</div>
+  <div><strong>3.</strong> Identify $a$, $h$, and $k$: $y=-4(x+2)^2+6$.</div>
+  <div><strong>4.</strong> Write a vertex-form equation with vertex $(5,-1)$ and $a=\frac13$.</div>
+  <div><strong>5.</strong> Simplify: $(b^4)^3$ and $(z^9)^0$.</div>
+  <div><strong>6.</strong> Rewrite with positive exponents: $\dfrac{r^{-2}}{r^5}$ and $-6t^{-3}$.</div>
+</div>
+  </div>
+  <div class="page-footer"><span>Section 1.1 - Whiteboard Partners</span><span>Manistee High School</span></div>
+</section>
+</body>
+</html>
