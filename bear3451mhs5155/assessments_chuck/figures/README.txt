@@ -1,1 +1,0 @@
-Use this folder for assessment figures. Required naming pattern examples: ua-dok1-1-3.png, ua-dok2-4-5.png, ua-dok4-2-1.png, ua-sum-12.png. Placeholder grid images for source-bank graph items are included when referenced by the assessment bank.
