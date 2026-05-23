@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section A.1 — Speed Dating Math</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)'], ['$', '$']],
+    displayMath: [['\\[', '\\]'], ['$$', '$$']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+:root{
+  --navy:#1B2E4B;
+  --gold:#C8A400;
+  --white:#FFFFFF;
+  --light-gray:#E8E8E8;
+  --dark-text:#1A1A1A;
+  --font-main:'Segoe UI',Arial,sans-serif;
+  --page-w:8.5in;
+  --page-h:11in;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+@page{size:letter;margin:0;}
+body{
+  font-family:var(--font-main);
+  color:var(--dark-text);
+  background:var(--light-gray);
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+.page{
+  width:var(--page-w);
+  height:var(--page-h);
+  padding:0.32in 0.42in 0.24in 0.42in;
+  margin:0 auto 0.35in;
+  background:white;
+  box-shadow:0 2px 12px rgba(0,0,0,0.18);
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  overflow:hidden;
+}
+@media print{
+  body{background:none;}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;break-after:auto;}
+}
+.title-page{padding:0.65in;}
+.title-bar{height:6px;background:var(--gold);border-radius:3px;margin-bottom:1.55in;}
+.unit-label{font-size:13pt;font-weight:700;color:var(--navy);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.22in;text-align:center;}
+.activity-name{font-size:32pt;font-weight:800;color:var(--navy);line-height:1.1;text-align:center;margin-bottom:0.34in;}
+.divider-navy{border:none;border-top:3px solid var(--navy);margin:0.18in 0;}
+.directions-page{display:flex;align-items:center;justify-content:center;padding:0.08in;}
+.directions-page img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
+.header{
+  background:var(--navy);
+  color:white;
+  font-size:20pt;
+  font-weight:800;
+  padding:0.10in 0.18in;
+  margin-bottom:0.14in;
+  border-radius:4px;
+  line-height:1.05;
+}
+.question,.solution{
+  font-size:12.5pt;
+  line-height:1.26;
+  flex:1;
+}
+.question p,.solution p{margin:0 0 0.085in 0;}
+.question ol,.solution ol,.question ul,.solution ul{margin:0.03in 0 0.075in 0.28in;}
+.question li,.solution li{margin-bottom:0.035in;}
+.mathline{margin:0.055in 0;text-align:center;}
+.graph-img{
+  display:block;
+  max-width:3.55in;
+  max-height:3.45in;
+  object-fit:contain;
+  margin:0.03in auto 0 auto;
+}
+.graph-question p{margin-bottom:0.045in;}
+.graph-question li{margin-bottom:0.02in;}
+.compact-table{border-collapse:collapse;margin:0.09in auto;font-size:12.5pt;}
+.compact-table th,.compact-table td{border:1.2px solid #222;padding:0.045in 0.18in;text-align:center;}
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.16in 0.26in;font-size:12.2pt;line-height:1.22;}
+.skill-grid div{break-inside:avoid;}
+.page-footer{
+  margin-top:auto;
+  padding-top:0.08in;
+  display:flex;
+  justify-content:space-between;
+  font-size:7.5pt;
+  color:#111;
+}
+
+</style>
+</head>
+<body>
+<section class="page title-page">
+  <div class="title-bar"></div>
+  <div class="unit-label">Section A.1 &nbsp;·&nbsp; Transformations and Vertex Form of Quadratics</div>
+  <h1 class="activity-name">Speed Dating Math</h1>
+  <hr class="divider-navy">
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page directions-page">
+  <img src="directions/Speed Dating Math.png" alt="Speed Dating Math directions">
+</section>
+<section class="page">
+  <div class="header">Problem 1</div>
+  <div class="question">
+    <p>For each function, identify the vertex and whether the vertex represents a maximum or minimum.</p>
+    <ol type="a">
+      <li>\(y=(x+2)^2-9\)</li>
+      <li>\(y=-3(x-1)^2+8\)</li>
+      <li>\(y=\frac12(x-5)^2+4\)</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 1</div>
+  <div class="solution">
+    <ol type="a">
+      <li>Vertex: \((-2,-9)\). Minimum because the graph opens upward.</li>
+      <li>Vertex: \((1,8)\). Maximum because the graph opens downward.</li>
+      <li>Vertex: \((5,4)\). Minimum because the graph opens upward.</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 2</div>
+  <div class="question">
+    <div class="graph-question">
+      <p>The graph of a quadratic function is shown.</p>
+      <ol type="a">
+        <li>Identify the vertex.</li>
+        <li>State the axis of symmetry.</li>
+        <li>Does the vertex represent a maximum or minimum?</li>
+        <li>Write a possible equation in vertex form.</li>
+      </ol>
+      <img class="graph-img" src="figures/g1.png" alt="Quadratic graph">
+    </div>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 2</div>
+  <div class="solution">
+    <ol type="a">
+      <li>The vertex is approximately \((-5,-1)\).</li>
+      <li>The axis of symmetry is approximately \(x=-5\).</li>
+      <li>The vertex is a minimum.</li>
+      <li>One possible equation is \(y=(x+5)^2-1\).</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 3</div>
+  <div class="question">
+    <p>Which equation represents a parabola with axis of symmetry \(x=3\)?</p>
+    <ol type="a">
+      <li>\(y=(x+3)^2-1\)</li>
+      <li>\(y=(x-3)^2+2\)</li>
+      <li>\(y=3(x+1)^2\)</li>
+      <li>\(y=x^2-3\)</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 3</div>
+  <div class="solution">
+    <p>The correct choice is <strong>b</strong>, \(y=(x-3)^2+2\).</p>
+    <p>In vertex form, \(y=a(x-h)^2+k\), the axis of symmetry is \(x=h\).</p>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 4</div>
+  <div class="question">
+    <p>Describe the transformation from \(y=x^2\) to \(y=-(x+1)^2+4\). Use the words shift, reflect, and vertex in your answer.</p>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 4</div>
+  <div class="solution">
+    <p>The graph shifts left 1 and up 4, then reflects across the \(x\)-axis.</p>
+    <p>The vertex is \((-1,4)\), and the graph opens downward.</p>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 5</div>
+  <div class="question">
+    <p>A parabola has vertex \((3,7)\) and passes through the point \((5,15)\). Write the equation in vertex form.</p>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 5</div>
+  <div class="solution">
+    <p>Start with vertex form using \((h,k)=(3,7)\):</p>
+    <div class="mathline">\[y=a(x-3)^2+7\]</div>
+    <p>Substitute \((5,15)\):</p>
+    <div class="mathline">\[15=a(5-3)^2+7\]</div>
+    <div class="mathline">\[15=4a+7\]</div>
+    <div class="mathline">\[a=2\]</div>
+    <p>Answer: \(y=2(x-3)^2+7\)</p>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 6</div>
+  <div class="question">
+    <p>The graph of a quadratic function has vertex \((-4,1)\) and opens downward. Which of the following could be its equation? Explain your choice.</p>
+    <ol type="a">
+      <li>\(y=2(x+4)^2+1\)</li>
+      <li>\(y=-2(x+4)^2+1\)</li>
+      <li>\(y=-2(x-4)^2+1\)</li>
+      <li>\(y=2(x-1)^2-4\)</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 6</div>
+  <div class="solution">
+    <p>The correct choice is <strong>b</strong>, \(y=-2(x+4)^2+1\).</p>
+    <p>The expression \((x+4)^2\) gives \(h=-4\), the \(+1\) gives \(k=1\), and the negative \(a\)-value makes the graph open downward.</p>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 7</div>
+  <div class="question">
+    <p>A parabola has vertex \((1,6)\) and passes through \((3,-2)\). A student reasons \(y=a(x+1)^2+6\), then uses \((3,-2)\) to find \(a=-\frac12\).</p>
+    <p>Identify the error and solve correctly.</p>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 7</div>
+  <div class="solution">
+    <p>The error is using \((x+1)^2\). A vertex with \(h=1\) gives \((x-1)^2\).</p>
+    <div class="mathline">\[y=a(x-1)^2+6\]</div>
+    <p>Use \((3,-2)\):</p>
+    <div class="mathline">\[-2=a(3-1)^2+6\]</div>
+    <div class="mathline">\[-2=4a+6\]</div>
+    <div class="mathline">\[a=-2\]</div>
+    <p>Correct equation: \(y=-2(x-1)^2+6\)</p>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 8</div>
+  <div class="question">
+    <p>A bridge arch is modeled by a quadratic function with vertex \((0,30)\). The arch touches the ground at \((-10,0)\) and \((10,0)\).</p>
+    <ol type="a">
+      <li>Write the equation in vertex form.</li>
+      <li>Explain why the graph must open downward.</li>
+      <li>Find the height of the arch when \(x=5\).</li>
+      <li>State the domain and range that make sense in context.</li>
+      <li>Explain how the intercepts and vertex support your model.</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 8</div>
+  <div class="solution">
+    <p>Use vertex form with vertex \((0,30)\): \(y=a(x-0)^2+30\).</p>
+    <p>Use \((10,0)\): \(0=100a+30\), so \(a=-\frac{3}{10}\).</p>
+    <p>Equation: \(y=-\frac{3}{10}x^2+30\)</p>
+    <ol type="a">
+      <li>\(y=-\frac{3}{10}x^2+30\)</li>
+      <li>It opens downward because the vertex is the highest point.</li>
+      <li>\(y=-\frac{3}{10}(5)^2+30=22.5\)</li>
+      <li>Domain: \(-10\le x\le 10\). Range: \(0\le y\le 30\).</li>
+      <li>The vertex gives the maximum height, and the intercepts show where the arch reaches the ground.</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 9</div>
+  <div class="question">
+    <p>Identify the vertex of each quadratic.</p>
+    <ol type="a">
+      <li>\(y=(x-3)^2+5\)</li>
+      <li>\(y=(x+4)^2-2\)</li>
+      <li>\(y=-2(x-1)^2+7\)</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 9</div>
+  <div class="solution">
+    <ol type="a">
+      <li>\((3,5)\)</li>
+      <li>\((-4,-2)\)</li>
+      <li>\((1,7)\)</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 10</div>
+  <div class="question">
+    <p>For each function, identify the vertex and whether the vertex represents a maximum or minimum.</p>
+    <ol type="a">
+      <li>\(y=(x+2)^2-9\)</li>
+      <li>\(y=-3(x-1)^2+8\)</li>
+      <li>\(y=\frac12(x-5)^2+4\)</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 10</div>
+  <div class="solution">
+    <ol type="a">
+      <li>Vertex: \((-2,-9)\). Minimum because the graph opens upward.</li>
+      <li>Vertex: \((1,8)\). Maximum because the graph opens downward.</li>
+      <li>Vertex: \((5,4)\). Minimum because the graph opens upward.</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 11</div>
+  <div class="question">
+    <div class="graph-question">
+      <p>The graph of a quadratic function is shown.</p>
+      <ol type="a">
+        <li>Identify the vertex.</li>
+        <li>State whether the graph opens up or down.</li>
+        <li>Describe the vertical stretch or compression compared to \(y=x^2\).</li>
+        <li>Write a possible equation in vertex form.</li>
+      </ol>
+      <img class="graph-img" src="figures/g3.png" alt="Quadratic graph">
+    </div>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 11</div>
+  <div class="solution">
+    <ol type="a">
+      <li>The vertex is approximately \((-5,7)\).</li>
+      <li>The graph opens down.</li>
+      <li>It is narrower than \(y=x^2\), so it has a vertical stretch.</li>
+      <li>One possible equation is \(y=-2(x+5)^2+7\).</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 12</div>
+  <div class="question">
+    <p>A quadratic function has vertex \((2,-5)\), opens upward, and has no vertical stretch or compression. Write its equation in vertex form.</p>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 12</div>
+  <div class="solution">
+    <p>No vertical stretch or compression means \(a=1\).</p>
+    <p>With vertex \((2,-5)\), the equation is \(y=(x-2)^2-5\).</p>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 13</div>
+  <div class="question">
+    <p>A quadratic function is written as \(f(x)=a(x-h)^2+k\). If the vertex is \((4,-1)\) and the graph passes through \((6,11)\), determine \(a\) and write the function.</p>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 13</div>
+  <div class="solution">
+    <p>Use vertex form with \((h,k)=(4,-1)\):</p>
+    <div class="mathline">\[f(x)=a(x-4)^2-1\]</div>
+    <p>Substitute \((6,11)\):</p>
+    <div class="mathline">\[11=a(6-4)^2-1\]</div>
+    <div class="mathline">\[12=4a\]</div>
+    <div class="mathline">\[a=3\]</div>
+    <p>Function: \(f(x)=3(x-4)^2-1\)</p>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 14</div>
+  <div class="question">
+    <p>A football is kicked and its height can be modeled by \(h(t)=-2(t-3)^2+20\), where \(t\) is time in seconds and \(h(t)\) is height in feet.</p>
+    <ol type="a">
+      <li>What is the maximum height?</li>
+      <li>When does the maximum height occur?</li>
+      <li>What does the vertex mean in this situation?</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 14</div>
+  <div class="solution">
+    <ol type="a">
+      <li>The maximum height is \(20\) feet.</li>
+      <li>It occurs at \(t=3\) seconds.</li>
+      <li>The vertex \((3,20)\) means the football reaches its highest point of 20 feet after 3 seconds.</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 15</div>
+  <div class="question">
+    <p>The table shows values of a quadratic function.</p>
+    <table class="compact-table"><tr><th>\(x\)</th><td>-1</td><td>0</td><td>1</td><td>2</td><td>3</td></tr><tr><th>\(y\)</th><td>8</td><td>3</td><td>0</td><td>-1</td><td>0</td></tr></table>
+    <ol type="a">
+      <li>Identify the vertex.</li>
+      <li>State the axis of symmetry.</li>
+      <li>Write an equation in vertex form.</li>
+      <li>Explain how the table shows symmetry.</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 15</div>
+  <div class="solution">
+    <ol type="a">
+      <li>The vertex is \((2,-1)\).</li>
+      <li>The axis of symmetry is \(x=2\).</li>
+      <li>Use \((1,0)\): \(0=a(1-2)^2-1\), so \(a=1\). Equation: \(y=(x-2)^2-1\).</li>
+      <li>The values at \(x=1\) and \(x=3\) are both \(0\), showing equal outputs the same distance from \(x=2\).</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 16</div>
+  <div class="question">
+    <p>A company models daily revenue using \(R(p)=-20(p-15)^2+5000\), where \(p\) is the price of one item in dollars.</p>
+    <ol type="a">
+      <li>What price maximizes revenue?</li>
+      <li>What is the maximum revenue?</li>
+      <li>What is the revenue when \(p=10\)?</li>
+      <li>Find another price that gives the same revenue as \(p=10\).</li>
+      <li>Explain why two different prices can give the same revenue.</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 16</div>
+  <div class="solution">
+    <ol type="a">
+      <li>The price \(p=15\) maximizes revenue.</li>
+      <li>The maximum revenue is \(5000\).</li>
+      <li>\(R(10)=-20(10-15)^2+5000=4500\)</li>
+      <li>Another price is \(p=20\), because it is also 5 units from 15.</li>
+      <li>Quadratic functions are symmetric, so inputs the same distance from the axis of symmetry can have the same output.</li>
+    </ol>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Skill Check</div>
+  <div class="question">
+    <div class="skill-grid">
+      <div><strong>1.</strong> Identify the vertex and whether it is a maximum or minimum: \(y=-3(x+4)^2+9\).</div>
+      <div><strong>2.</strong> Describe the transformations of \(y=\frac12(x-6)^2-5\) from \(y=x^2\).</div>
+      <div><strong>3.</strong> Write a vertex-form equation with vertex \((-2,7)\) that opens downward and is wider than \(y=x^2\).</div>
+      <div><strong>4.</strong> A parabola has vertex \((1,-3)\) and passes through \((3,5)\). Find its equation in vertex form.</div>
+      <div><strong>5.</strong> For \(f(x)=2(x-1)^2+3\), find \(f(1)\) and \(f(4)\). Explain what the vertex tells you.</div>
+      <div><strong>6.</strong> A revenue model is \(R(p)=-5(p-8)^2+320\). State the maximum revenue and the price that gives it.</div>
+    </div>
+  </div>
+  <div class="page-footer"><span>Section A.1 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+</body>
+</html>
