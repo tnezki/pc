@@ -1,0 +1,366 @@
+/* ============================================================
+   activity.css  —  Shared styles for all 27 activity templates
+   Manistee Mariners: navy (#1B2E4B) + gold (#C8A400)
+   ============================================================ */
+
+/* ── 1. CSS CUSTOM PROPERTIES (change these to restyle everything) ── */
+:root {
+  --navy:       #1B2E4B;   /* Manistee primary dark blue            */
+  --gold:       #C8A400;   /* Manistee dark yellow / gold           */
+  --white:      #FFFFFF;
+  --off-white:  #F7F8FA;   /* subtle page background                */
+  --light-gray: #E8E8E8;   /* borders, rule lines                   */
+  --mid-gray:   #999999;   /* secondary text                        */
+  --dark-text:  #1A1A1A;
+
+  /* Typography */
+  --font-main:  'Segoe UI', Arial, sans-serif;
+  --font-mono:  'Courier New', Courier, monospace;
+
+  /* Page geometry (letter = 8.5 × 11 in) */
+  --page-w:     8.5in;
+  --page-h:     11in;
+  --margin:     0.65in;
+
+  /* Spacing tokens */
+  --gap-sm:     0.4rem;
+  --gap-md:     0.9rem;
+  --gap-lg:     1.6rem;
+}
+
+/* ── 2. RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── 3. BODY / PRINT SCAFFOLD ── */
+body {
+  font-family: var(--font-main);
+  font-size: 11pt;
+  color: var(--dark-text);
+  background: var(--light-gray);   /* visible only on screen          */
+}
+
+/* ── 4. PAGE BLOCK — each .page renders as one sheet ── */
+/*
+   Add as many <section class="page"> blocks as needed.
+   The first .page is always the title page.
+   The second .page is always the directions image page.
+   Add more .page blocks below those for problems, workspaces, etc.
+*/
+.page {
+  width:  var(--page-w);
+  height: var(--page-h);
+  padding: var(--margin);
+  margin: 0 auto 0.5in;            /* centered on screen; no gap in print */
+  background: var(--white);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);  /* screen only                */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── 5. PRINT RULES ── */
+@page { size: letter; margin: 0; }
+
+@media print {
+  body { background: none; }
+
+  .page {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+}
+
+/* ── 6. TITLE PAGE ELEMENTS ── */
+
+/* Thin gold top bar */
+.title-bar {
+  height: 6px;
+  background: var(--gold);
+  border-radius: 3px;
+  margin-bottom: var(--gap-lg);
+}
+
+/* "Unit # · Section #" label above the activity name */
+.unit-label {
+  font-size: 13pt;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--gap-sm);
+}
+
+/* Activity number badge (large numeral) */
+.activity-number {
+  font-size: 72pt;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: var(--gap-sm);
+}
+
+/* Activity name — main heading */
+.activity-name {
+  font-size: 30pt;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.15;
+  margin-bottom: var(--gap-md);
+}
+
+/* Optional structure tagline below the name */
+.activity-structure {
+  font-size: 11pt;
+  color: var(--mid-gray);
+  font-style: italic;
+  margin-bottom: var(--gap-lg);
+}
+
+/* Horizontal divider */
+.divider {
+  border: none;
+  border-top: 2px solid var(--light-gray);
+  margin: var(--gap-md) 0;
+}
+
+/* Navy accent divider */
+.divider-navy {
+  border: none;
+  border-top: 3px solid var(--navy);
+  margin: var(--gap-md) 0;
+}
+
+/* Gold accent divider */
+.divider-gold {
+  border: none;
+  border-top: 3px solid var(--gold);
+  margin: var(--gap-md) 0;
+}
+
+/* ── 7. DIRECTIONS IMAGE PAGE ── */
+
+/* Wraps the directions screenshot so it fills the page */
+.directions-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 0.2in;           /* small inset from page edge             */
+}
+
+.directions-page img {
+  max-width:  100%;
+  max-height: 100%;
+  object-fit: contain;      /* never crop; scale down to fit          */
+  display: block;
+}
+
+/* ── 8. PROBLEM / CONTENT AREA ── */
+/*
+   Use .problem-box to display a single problem statement.
+   Paste the LaTeX or text inside a <div class="problem-box">.
+*/
+.problem-box {
+  border: 2px solid var(--navy);
+  border-radius: 6px;
+  padding: var(--gap-md);
+  background: var(--off-white);
+  font-size: 12pt;
+  margin-bottom: var(--gap-md);
+}
+
+/* Smaller label above a problem box */
+.problem-label {
+  font-size: 8pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+/* ── 9. WORKSPACE / BLANK AREA ── */
+/*
+   .workspace gives students a blank area with light ruling.
+   Adjust --workspace-lines to control how many lines appear.
+   Set a fixed height or let it flex-grow to fill remaining space.
+*/
+.workspace {
+  flex: 1;                  /* fills leftover vertical space by default */
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 27px,
+      var(--light-gray) 27px,
+      var(--light-gray) 28px
+    );
+  padding: 8px var(--gap-md) 0;
+  min-height: 1in;
+}
+
+/* Compact fixed-height workspace (use instead of .workspace when needed) */
+.workspace-sm  { height: 1.5in; }
+.workspace-md  { height: 3in;   }
+.workspace-lg  { height: 5in;   }
+
+/* ── 10. GRAPH / IMAGE BOXES ── */
+/*
+   .graph-box is a bordered region for inserting a graph or image.
+   Use width/height utilities to control size, or inline style.
+   The inner <img> fills the box while preserving aspect ratio.
+*/
+.graph-box {
+  border: 2px solid var(--navy);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--off-white);
+  min-height: 2in;
+  position: relative;
+}
+
+.graph-box img {
+  max-width:  100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Placeholder label shown when no image is yet inserted */
+.graph-box .placeholder-label {
+  color: var(--mid-gray);
+  font-size: 9pt;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Size helpers for graph/image boxes */
+.box-quarter   { height: 2.5in; }
+.box-third     { height: 3.25in; }
+.box-half      { height: 5in; }
+.box-full      { height: 9.5in; }  /* almost full page */
+
+/* ── 11. TWO-COLUMN LAYOUT ── */
+/*
+   Wrap two children in .two-col for a side-by-side layout.
+   Useful for problem + workspace, or two problems side by side.
+   Use .col-wide (60%) and .col-narrow (40%) to split unevenly.
+*/
+.two-col {
+  display: flex;
+  gap: var(--gap-md);
+  flex: 1;
+}
+
+.two-col > * { flex: 1; }    /* equal columns by default */
+
+.col-wide   { flex: 3 !important; }
+.col-narrow { flex: 2 !important; }
+
+/* ── 12. NAME / DATE / PERIOD HEADER ── */
+/*
+   Drop a .student-header at the top of any content page.
+   Uses flex so labels and underlines sit in a single row.
+*/
+.student-header {
+  display: flex;
+  gap: var(--gap-lg);
+  margin-bottom: var(--gap-md);
+  font-size: 10pt;
+}
+
+.student-header .field {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  flex: 1;
+}
+
+.student-header .field label {
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 9pt;
+  color: var(--navy);
+}
+
+.student-header .field .underline {
+  flex: 1;
+  border-bottom: 1.5px solid var(--dark-text);
+  height: 1.2em;
+}
+
+/* ── 13. TABLE / GRID ── */
+/*
+   .data-table for structured data (truth tables, values, etc.)
+*/
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10pt;
+  margin-bottom: var(--gap-md);
+}
+
+.data-table th {
+  background: var(--navy);
+  color: var(--white);
+  padding: 5px 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.data-table td {
+  border: 1px solid var(--light-gray);
+  padding: 5px 8px;
+  text-align: center;
+  min-width: 0.7in;
+  min-height: 0.35in;
+}
+
+.data-table tr:nth-child(even) td { background: var(--off-white); }
+
+/* ── 14. ANSWER BOX ── */
+/* Small box for a final numeric / expression answer */
+.answer-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--gap-sm);
+}
+
+.answer-box label {
+  font-weight: 600;
+  font-size: 10pt;
+}
+
+.answer-box .box {
+  border: 2px solid var(--navy);
+  border-radius: 4px;
+  width: 2.5in;
+  height: 0.45in;
+  display: inline-block;
+}
+
+/* ── 15. FOOTER ── */
+.page-footer {
+  margin-top: auto;
+  padding-top: var(--gap-sm);
+  border-top: 1px solid var(--light-gray);
+  display: flex;
+  justify-content: space-between;
+  font-size: 8pt;
+  color: var(--mid-gray);
+}
