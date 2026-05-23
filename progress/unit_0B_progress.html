@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Unit B Progress Check</title>
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- ====================================================== -->
+<style>
+
+/* ====================================================== */
+/* RESET */
+/* ====================================================== */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+/* ====================================================== */
+/* PAGE */
+/* ====================================================== */
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.45;
+  color:#111;
+  background:white;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* ====================================================== */
+/* HEADINGS */
+/* ====================================================== */
+
+h1{
+  font-size:1.75rem;
+  color:#00003d;
+  margin-bottom:8px;
+}
+
+h2{
+  font-size:1.35rem;
+  color:#00003d;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+  margin:18px 0 10px;
+}
+
+h3{
+  font-size:1.05rem;
+  margin:0 0 8px;
+}
+
+/* ====================================================== */
+/* TOP HEADER */
+/* ====================================================== */
+
+.name-line{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:8px;
+  font-size:1rem;
+}
+
+.name-blank{
+  display:inline-block;
+  border-bottom:1px solid #111;
+  width:340px;
+  height:1.1em;
+}
+
+/* ====================================================== */
+/* PROGRESS TRACKING KEY */
+/* ====================================================== */
+
+.key{
+  border:1px solid #222;
+  padding:10px 12px;
+  margin:10px 0 14px;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.key-title{
+  font-weight:700;
+  margin-bottom:4px;
+}
+
+/* ====================================================== */
+/* PROGRESS TRACKING CARDS */
+/* ====================================================== */
+
+.black-box{
+  background:#111;
+  color:white;
+  padding:12px 14px;
+  margin:14px 0 0;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.black-box strong{
+  font-size:1.02rem;
+}
+
+.tracking-card{
+  border:1px solid #222;
+  margin:0 0 18px;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.tracking-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  border-top:1px solid #222;
+}
+
+.tracking-cell{
+  padding:12px;
+  border-right:1px solid #222;
+  min-height:126px;
+}
+
+.tracking-cell:last-child{
+  border-right:0;
+}
+
+.check-list div{
+  margin:5px 0;
+}
+
+/* ====================================================== */
+/* PAGE BREAKS */
+/* ====================================================== */
+
+.page-break{
+  page-break-before:always;
+}
+
+/* ====================================================== */
+/* PRACTICE BY DEPTH OF KNOWLEDGE */
+/* ====================================================== */
+
+.practice-title{
+  color:#00003d;
+  font-size:1.5rem;
+  margin:24px 0 18px 0;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+.black-dok{
+  background:#111;
+  color:#fff;
+  padding:12px 14px;
+  font-weight:800;
+  font-size:1.05rem;
+  margin:18px 0 14px 0;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.black-dok .dok-small{
+  display:block;
+  font-size:0.88rem;
+  font-weight:500;
+  font-style:italic;
+  color:#f0f0f0;
+  margin-top:6px;
+}
+
+/* ====================================================== */
+/* PROBLEMS */
+/* ====================================================== */
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin:0 0 16px;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* ====================================================== */
+/* TABLES */
+/* ====================================================== */
+
+.parent-table,
+.table-block,
+.param-table,
+table.values{
+  width:auto;
+  border-collapse:collapse;
+  margin:10px auto 12px;
+}
+
+.parent-table th,
+.parent-table td,
+.table-block th,
+.table-block td,
+.param-table th,
+.param-table td,
+table.values th,
+table.values td{
+  border:1px solid #333;
+  padding:6px 12px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+
+/* ====================================================== */
+/* FIGURES AND GRAPHS */
+/* ====================================================== */
+
+.figure-block,
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img,
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* ====================================================== */
+/* WORKSPACE */
+/* ====================================================== */
+
+.workspace-label{
+  font-size:.82rem;
+  font-weight:600;
+  color:#444;
+  margin-top:8px;
+}
+
+.workspace{
+  width:100%;
+  height:150px;
+  border-top:1px solid #777;
+  margin-top:8px;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-140{height:140px;}
+.workspace-150{height:150px;}
+.workspace-160{height:160px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-260{height:260px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+/* ====================================================== */
+/* LIST HELPERS */
+/* ====================================================== */
+
+.lower-alpha{
+  list-style-type:lower-alpha;
+}
+
+.lower-roman{
+  list-style-type:lower-roman;
+}
+
+/* ====================================================== */
+/* PRINT */
+/* ====================================================== */
+
+@media print{
+
+  body{
+    padding:14px;
+  }
+
+  .container{
+    max-width:100%;
+  }
+
+  .page-break{
+    page-break-before:always;
+  }
+
+  .problem,
+  .black-box,
+  .black-dok,
+  .tracking-card{
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+
+  .black-box,
+  .black-dok{
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- DOCUMENT HEADER -->
+<!-- ====================================================== -->
+
+<div class="name-line">
+<div>
+    Name:<span class="name-blank"></span>
+</div>
+<div>
+<strong>Unit B: Exponents, Radicals, and Lines</strong>
+</div>
+</div>
+<h1>Unit B Progress Tracker</h1>
+
+<!-- ====================================================== -->
+<!-- PROGRESS TRACKING KEY -->
+<!-- ====================================================== -->
+
+<div class="key">
+<div class="key-title">Progress Tracking Key</div>
+<div><strong>Not Yet:</strong> I need more instruction and practice.</div>
+<div><strong>Getting There:</strong> I understand most of it but need more practice.</div>
+<div><strong>Got It!:</strong> I can do this independently.</div>
+<div><strong>Teach It!:</strong> I can teach it.</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROGRESS TRACKING -->
+<!-- ====================================================== -->
+
+<h2>Progress Tracking</h2>
+
+<!-- ====================================================== -->
+<!-- DoK 1 — PROGRESS CARD -->
+<!-- ====================================================== -->
+
+<div class="tracking-card">
+<div class="black-box">
+<strong>DoK 1 — </strong>Students can identify exponent, radical, rational exponent, function notation, and linear-function vocabulary and recognize basic equivalent forms and features.
+  </div>
+<div class="tracking-grid">
+<div class="tracking-cell">
+<h3>Progress Tracking<br/>Check One</h3>
+<div class="check-list">
+<div>☐ Teach It!</div>
+<div>☐ Got It!</div>
+<div>☐ Getting There</div>
+<div>☐ Not Yet</div>
+</div>
+</div>
+<div class="tracking-cell">
+<h3>Evidence — assessment name and score</h3>
+</div>
+</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- DoK 2 — PROGRESS CARD -->
+<!-- ====================================================== -->
+
+<div class="tracking-card">
+<div class="black-box">
+<strong>DoK 2 — </strong>Students can apply exponent properties, convert and evaluate rational exponents and radicals, simplify radical expressions, write linear equations, and evaluate functions.
+  </div>
+<div class="tracking-grid">
+<div class="tracking-cell">
+<h3>Progress Tracking<br/>Check One</h3>
+<div class="check-list">
+<div>☐ Teach It!</div>
+<div>☐ Got It!</div>
+<div>☐ Getting There</div>
+<div>☐ Not Yet</div>
+</div>
+</div>
+<div class="tracking-cell">
+<h3>Evidence — assessment name and score</h3>
+</div>
+</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- DoK 3 — PROGRESS CARD -->
+<!-- ====================================================== -->
+
+<div class="tracking-card">
+<div class="black-box">
+<strong>DoK 3 — </strong>Students can justify algebraic steps, analyze errors, compare representations, explain structure, and connect equations, tables, graphs, and verbal descriptions.
+  </div>
+<div class="tracking-grid">
+<div class="tracking-cell">
+<h3>Progress Tracking<br/>Check One</h3>
+<div class="check-list">
+<div>☐ Teach It!</div>
+<div>☐ Got It!</div>
+<div>☐ Getting There</div>
+<div>☐ Not Yet</div>
+</div>
+</div>
+<div class="tracking-cell">
+<h3>Evidence — assessment name and score</h3>
+</div>
+</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- DoK 4 — PROGRESS CARD -->
+<!-- ====================================================== -->
+
+<div class="tracking-card">
+<div class="black-box">
+<strong>DoK 4 — </strong>Students can synthesize exponent, radical, linear, and function-readiness reasoning to solve unfamiliar problems, defend strategies, and transfer between representations.
+  </div>
+<div class="tracking-grid">
+<div class="tracking-cell">
+<h3>Progress Tracking<br/>Check One</h3>
+<div class="check-list">
+<div>☐ Teach It!</div>
+<div>☐ Got It!</div>
+<div>☐ Getting There</div>
+<div>☐ Not Yet</div>
+</div>
+</div>
+<div class="tracking-cell">
+<h3>Evidence — assessment name and score</h3>
+</div>
+</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PAGE BREAK AFTER DOK 4 TRACKING -->
+<!-- ====================================================== -->
+
+<div class="page-break"></div>
+
+<!-- ====================================================== -->
+<!-- PRACTICE BY DEPTH OF KNOWLEDGE -->
+<!-- ====================================================== -->
+
+<h2 class="practice-title">Unit B Practice by Depth of Knowledge</h2>
+
+<!-- ====================================================== -->
+<!-- DOK 1 — RUNGS 1–2 -->
+<!-- ====================================================== -->
+
+<div class="black-dok">
+<strong>DoK 1 — Rungs 1–2</strong>
+<span class="dok-small">
+    Students can identify exponent, radical, rational exponent, function notation, and linear-function vocabulary and recognize basic equivalent forms and features.
+  </span>
+</div>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS1-008 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS1-008">
+<div class="problem-number">1.</div>
+<p>Match each expression to the property being used.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(x^4\cdot x^6=x^{10}\)</p></li>
+<li><p>\(\dfrac{x^9}{x^2}=x^7\)</p></li>
+<li><p>\((x^5)^3=x^{15}\)</p></li>
+<li><p>\(x^{-4}=\dfrac{1}{x^4}\)</p></li>
+</ol>
+<p>Properties:</p>
+<ol>
+<li><p>power rule</p></li>
+<li><p>product rule</p></li>
+<li><p>negative exponent rule</p></li>
+<li><p>quotient rule</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS2-007 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS2-007">
+<div class="problem-number">2.</div>
+<p>Match each expression to an equivalent radical form.</p><ol class="lower-alpha" type="a"><li><p>\(x^{3/2}\)</p></li><li><p>\(x^{2/5}\)</p></li><li><p>\(x^{4/3}\)</p></li><li><p>\(x^{1/6}\)</p></li></ol><p>Choices:</p><ol><li><p>\(\sqrt[5]{x^2}\)</p></li><li><p>\(\sqrt{x^3}\)</p></li><li><p>\(\sqrt[6]{x}\)</p></li><li><p>\(\sqrt[3]{x^4}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS3-001 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS3-001">
+<div class="problem-number">3.</div>
+<p>Evaluate each expression without a calculator.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(\sqrt{49}\)</p></li>
+<li><p>\(\sqrt{121}\)</p></li>
+<li><p>\(\sqrt[3]{64}\)</p></li>
+<li><p>\(\sqrt[4]{81}\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS3-003 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS3-003">
+<div class="problem-number">4.</div>
+<p>Determine whether each expression is real.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(\sqrt{-9}\)</p></li>
+<li><p>\(\sqrt[3]{-8}\)</p></li>
+<li><p>\(\sqrt[4]{-16}\)</p></li>
+<li><p>\(\sqrt[5]{-32}\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS4-001 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS4-001">
+<div class="problem-number">5.</div>
+<p>Identify the slope and \(y\)-intercept of each line.</p><ol class="lower-alpha" type="a"><li><p>\(y=3x+5\)</p></li><li><p>\(y=-2x+7\)</p></li><li><p>\(y=\frac12x-4\)</p></li><li><p>\(y=-\frac34x\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS4-006 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS4-006">
+<div class="problem-number">6.</div>
+<p>State whether each line has positive slope, negative slope, zero slope, or undefined slope.</p><ol class="lower-alpha" type="a"><li><p>A line rises from left to right.</p></li><li><p>A line falls from left to right.</p></li><li><p>A horizontal line.</p></li><li><p>A vertical line.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-100"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS5-004 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS5-004">
+<div class="problem-number">7.</div>
+<p>If \(f(x)=2x+7\), evaluate each.</p>
+<ol class="lower-alpha" type="a"><li><p>\(f(0)\)</p></li><li><p>\(f(3)\)</p></li><li><p>\(f(-4)\)</p></li><li><p>\(f(10)\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS5-011 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS5-011">
+<div class="problem-number">8.</div>
+<p>Fill in the blanks.</p>
+<p>In function notation, \(f(3)\) means the ______ value when the input is ______.</p>
+<p>The expression \(f(x+2)\) means replace every \(x\) in the formula with ______.</p>
+<p>Equivalent expressions have the same value for every allowed ______.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- DOK 2 — RUNGS 3–4 -->
+<!-- ====================================================== -->
+
+<div class="black-dok">
+<strong>DoK 2 — Rungs 3–4</strong>
+<span class="dok-small">
+    Students can apply exponent properties, convert and evaluate rational exponents and radicals, simplify radical expressions, write linear equations, and evaluate functions.
+  </span>
+</div>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS1-020 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS1-020">
+<div class="problem-number">1.</div>
+<p>Simplify each expression. Write answers with positive exponents.</p><ol class="lower-alpha" type="a"><li><p>\(\dfrac{(2x^3)^2}{4x}\)</p></li><li><p>\(\dfrac{(3a^2b)^2}{9ab^{-1}}\)</p></li><li><p>\(\dfrac{(-2m^{-1}n^3)^3}{4m^2n}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS2-025 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS2-025">
+<div class="problem-number">2.</div>
+<p>Evaluate each expression without a calculator. Show whether you take the root first or apply the power first.</p><ol class="lower-alpha" type="a"><li><p>\(36^{3/2}\)</p></li><li><p>\(27^{2/3}\)</p></li><li><p>\(16^{5/4}\)</p></li><li><p>\(100^{3/2}\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS3-022 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS3-022">
+<div class="problem-number">3.</div>
+<p>Simplify by first simplifying each radical, then combining like radicals.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(\sqrt{20}+\sqrt{45}\)</p></li>
+<li><p>\(\sqrt{18}+\sqrt{50}\)</p></li>
+<li><p>\(3\sqrt{12}-\sqrt{75}\)</p></li>
+<li><p>\(2\sqrt{27}+5\sqrt{48}\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS3-028 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS3-028">
+<div class="problem-number">4.</div>
+<p>Rationalize the denominator.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(\dfrac{5}{\sqrt{2}}\)</p></li>
+<li><p>\(\dfrac{3}{\sqrt{7}}\)</p></li>
+<li><p>\(\dfrac{2}{3\sqrt{5}}\)</p></li>
+<li><p>\(\dfrac{6}{\sqrt{12}}\)</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS4-021 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS4-021">
+<div class="problem-number">5.</div>
+<p>The table shows a linear relationship.</p><table class="parent-table"><tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><th>\(y\)</th><td>2</td><td>5</td><td>8</td><td>11</td><td>14</td></tr></table><ol class="lower-alpha" type="a"><li><p>Find the slope.</p></li><li><p>Identify the \(y\)-intercept.</p></li><li><p>Write an equation.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS4-025 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS4-025">
+<div class="problem-number">6.</div>
+<p>Determine whether each table appears linear. If it is linear, write an equation.</p><ol class="lower-alpha" type="a"><li><table class="parent-table"><tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><th>\(y\)</th><td>6</td><td>10</td><td>14</td><td>18</td><td>22</td></tr></table></li><li><table class="parent-table"><tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><th>\(y\)</th><td>2</td><td>5</td><td>10</td><td>17</td><td>26</td></tr></table></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS5-014 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS5-014">
+<div class="problem-number">7.</div>
+<p>If \(g(x)=\frac{x+6}{x-2}\), evaluate each.</p><ol class="lower-alpha" type="a"><li><p>\(g(3)\)</p></li><li><p>\(g(8)\)</p></li><li><p>\(g(0)\)</p></li><li><p>Explain why \(g(2)\) is undefined.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS5-027 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS5-027">
+<div class="problem-number">8.</div>
+<p>Solve each equation by recognizing structure.</p><ol class="lower-alpha" type="a"><li><p>\(2x+7=19\)</p></li><li><p>\((x-4)^2=25\)</p></li><li><p>\(\sqrt{x+3}=6\)</p></li><li><p>\(\frac{x+5}{3}=8\)</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- DOK 3 — RUNGS 5–6 -->
+<!-- ====================================================== -->
+
+<div class="black-dok">
+<strong>DoK 3 — Rungs 5–6</strong>
+<span class="dok-small">
+    Students can justify algebraic steps, analyze errors, compare representations, explain structure, and connect equations, tables, graphs, and verbal descriptions.
+  </span>
+</div>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS1-035 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS1-035">
+<div class="problem-number">1.</div>
+<p>A student simplifies:</p><p>\[\dfrac{4x^{-3}y^2}{8x^2y^{-4}}\]</p><p>as</p><p>\[\dfrac{1}{2}x^{-1}y^{-2}.\]</p><p>Identify the error and simplify correctly using positive exponents.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS2-037 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS2-037">
+<div class="problem-number">2.</div>
+<p>A student evaluates:</p><p>\[(-27)^{2/3}\]</p><p>and gets \(-9\).</p><ol class="lower-alpha" type="a"><li><p>Explain the likely mistake.</p></li><li><p>Evaluate the expression correctly.</p></li><li><p>Explain why the result is positive.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS3-037 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS3-037">
+<div class="problem-number">3.</div>
+<p>Compare the expressions \(\sqrt{18}+\sqrt{8}\) and \(\sqrt{26}\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Are they equivalent?</p></li>
+<li><p>Simplify the first expression.</p></li>
+<li><p>Explain why radicals cannot usually be combined by adding radicands.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS3-042 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS3-042">
+<div class="problem-number">4.</div>
+<p>The expression \(\sqrt{x-2}\) is real for some values of \(x\), but not for others.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the values of \(x\) that make the expression real.</p></li>
+<li><p>Explain why \(x=1\) does not work.</p></li>
+<li><p>Explain why cube-root expressions do not have the same restriction.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS4-031 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS4-031">
+<div class="problem-number">5.</div>
+<p>A student says:</p><p><em>“The slope of the line through \((2,5)\) and \((6,13)\) is \(\frac{2}{4}\) because \(6-2=4\) and \(13-5=8\), so I put the smaller number on top.”</em></p><p>Identify the error and find the correct slope.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS4-035 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS4-035">
+<div class="problem-number">6.</div>
+<p>A student says:</p><p><em>“A vertical line has slope \(0\).”</em></p><p>Explain the mistake. Compare a vertical line and a horizontal line.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS5-038 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS5-038">
+<div class="problem-number">7.</div>
+<p>The same function is represented three ways.</p><p>Equation: \(f(x)=2x-3\)</p>
+<p>Table:</p><table class="table-block"><tr><th>\(x\)</th><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td></tr><tr><th>\(f(x)\)</th><td>\(-3\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(3\)</td></tr></table>
+<p>Description: “Double the input, then subtract \(3\).”</p><p>Explain how the equation, table, and description all show the same relationship.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS5-042 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS5-042">
+<div class="problem-number">8.</div>
+<p>A student is solving:</p><p>\[(x-2)^2+5(x-2)+6=0.\]</p><p>Student A expands first. Student B lets \(u=x-2\).</p><ol class="lower-alpha" type="a"><li><p>Solve using substitution.</p></li><li><p>Solve by expanding.</p></li><li><p>Explain which method is more efficient and why.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- DOK 4 — RUNGS 7–8 -->
+<!-- ====================================================== -->
+
+<div class="black-dok">
+<strong>DoK 4 — Rungs 7–8</strong>
+<span class="dok-small">
+    Students can synthesize exponent, radical, linear, and function-readiness reasoning to solve unfamiliar problems, defend strategies, and transfer between representations.
+  </span>
+</div>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS1-048 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS1-048">
+<div class="problem-number">1.</div>
+<p>The expression</p><p>\[\dfrac{2^x\cdot 8^{x+1}}{4^{2x-1}}\]</p><p>can be rewritten as a single power of \(2\).</p><ol class="lower-alpha" type="a"><li><p>Rewrite every factor with base \(2\).</p></li><li><p>Simplify to a single power of \(2\).</p></li><li><p>Explain why using the same base makes the expression easier to simplify.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS2-043 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS2-043">
+<div class="problem-number">2.</div>
+<p>A student is evaluating:</p><p>\[\left(\dfrac{81}{16}\right)^{3/4}.\]</p><ol class="lower-alpha" type="a"><li><p>Rewrite the expression using radical notation.</p></li><li><p>Evaluate it exactly.</p></li><li><p>Explain whether it is more efficient to take the fourth root first or cube first.</p></li><li><p>Defend your strategy.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS3-045 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS3-045">
+<div class="problem-number">3.</div>
+<p>Simplify and rationalize the denominator.</p>
+<p>\[\frac{\sqrt{18}+\sqrt{50}}{\sqrt{2}}\]</p>
+<ol class="lower-alpha" type="a">
+<li><p>Simplify the numerator first.</p></li>
+<li><p>Simplify the quotient.</p></li>
+<li><p>Explain why simplifying before rationalizing can make the work easier.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-260"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS3-048 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS3-048">
+<div class="problem-number">4.</div>
+<p>A rectangle has side lengths \(2\sqrt{3}+1\) and \(3\sqrt{3}-2\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write an exact expression for the area.</p></li>
+<li><p>Simplify the area completely.</p></li>
+<li><p>Write an exact expression for the perimeter.</p></li>
+<li><p>Simplify the perimeter completely.</p></li>
+<li><p>Explain why exact radical form is more useful than decimal approximations here.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS4-043 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS4-043">
+<div class="problem-number">5.</div>
+<p>A student works at a summer job. After \(3\) hours, the student has earned \(\$45\). After \(8\) hours, the student has earned \(\$120\).</p><ol class="lower-alpha" type="a"><li><p>Write a linear equation relating earnings \(E\) to hours \(h\).</p></li><li><p>Interpret the slope.</p></li><li><p>Interpret the \(E\)-intercept.</p></li><li><p>Use the equation to predict earnings after \(12\) hours.</p></li><li><p>Explain whether the model makes sense for all possible values of \(h\).</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-260"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS4-047 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS4-047">
+<div class="problem-number">6.</div>
+<p>A phone plan charges a fixed monthly fee plus a cost per gigabyte of data. The total cost is \(\$38\) for \(4\) GB and \(\$62\) for \(10\) GB.</p><ol class="lower-alpha" type="a"><li><p>Write a linear model for total cost \(C\) in terms of data \(g\).</p></li><li><p>Interpret the slope in context.</p></li><li><p>Interpret the \(C\)-intercept in context.</p></li><li><p>Predict the cost for \(15\) GB.</p></li><li><p>Explain why negative data values do not make sense in this context.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-260"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS5-047 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS5-047">
+<div class="problem-number">7.</div>
+<p>A table, description, and equation are shown.</p><p>Table:</p><table class="table-block"><tr><th>\(x\)</th><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td><td>\(4\)</td></tr><tr><th>\(y\)</th><td>\(5\)</td><td>\(8\)</td><td>\(11\)</td><td>\(14\)</td><td>\(17\)</td></tr></table>
+<p>Description: “Start at \(5\), then increase by \(3\) for every \(1\) increase in \(x\).”</p><p>Equation: \(y=3x+5\)</p><ol class="lower-alpha" type="a"><li><p>Explain how all three representations match.</p></li><li><p>Identify the slope and \(y\)-intercept.</p></li><li><p>Predict the value when \(x=10\).</p></li><li><p>Find the input when \(y=50\).</p></li><li><p>Explain why this relationship is linear.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UBS5-049 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-UBS5-049">
+<div class="problem-number">8.</div>
+<p>A classmate is deciding how to simplify and evaluate:</p><p>\[\frac{(x+3)^2-9}{x}\]</p><p>when \(x=6\).</p><ol class="lower-alpha" type="a"><li><p>Evaluate the expression directly.</p></li><li><p>Simplify the expression first, then evaluate.</p></li><li><p>Explain why simplifying first is more efficient.</p></li><li><p>State any value of \(x\) that is not allowed.</p></li><li><p>Explain how this problem tests algebraic structure.</p></li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+</div>
+</body>
+</html>

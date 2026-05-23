@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 1.1 - Function Notation &amp; Solving</title>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+      line-height:1.7;
+      color:#333;
+      background:#ffffff;
+      padding:20px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .container{max-width:900px;margin:auto;}
+    .page-break{page-break-before:always;}
+
+    h1{color:#00003d;font-size:2.5em;margin-bottom:20px;line-height:1.15;}
+
+    h2{
+      color:#00003d;
+      font-size:1.8em;
+      margin-top:30px;
+      margin-bottom:15px;
+      border-left:5px solid #00003d;
+      padding-left:10px;
+    }
+
+    h3{
+      color:#004d99;
+      font-size:1.3em;
+      margin-top:16px;
+      margin-bottom:8px;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    p{margin-bottom:10px;}
+    ol, ul{margin-left:22px;}
+    li{margin-bottom:6px;}
+
+    .title-page{
+      min-height:930px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      border:2px solid #00003d;
+      padding:56px;
+      border-radius:10px;
+      background:linear-gradient(180deg,#ffffff 0%,#f6f8ff 100%);
+    }
+
+    .title-kicker{font-weight:800;color:#004d99;text-transform:uppercase;letter-spacing:2px;margin-bottom:18px;}
+    .title-main{font-size:3em;color:#00003d;font-weight:900;line-height:1.1;margin-bottom:18px;}
+    .title-sub{font-size:1.3em;color:#333;margin-bottom:28px;}
+    .quote-box{border-left:6px solid #00003d;background:#eef3ff;padding:18px 22px;border-radius:6px;margin-top:26px;font-size:1.15em;}
+    .title-note{margin-top:26px;color:#555;font-size:1.05em;}
+
+    .intro-text{
+      font-size:1.05em;
+      color:#555;
+      margin-bottom:10px;
+      font-style:italic;
+    }
+
+    .objectives{
+      background:#f0f4f8;
+      padding:20px;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .definition{
+      background:#fffacd;
+      border-left:5px solid #ffd700;
+      padding:16px;
+      margin:16px 0;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .key-point{
+      background:#e8f5e9;
+      border-left:5px solid #4caf50;
+      padding:16px;
+      margin:16px 0;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .strategy-box{
+      background:#eef3ff;
+      border-left:5px solid #4a6fdc;
+      padding:16px;
+      margin:16px 0;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .annotation-box{
+      border:1px solid #bfc8d8;
+      border-radius:6px;
+      padding:14px;
+      margin:14px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .example-box{
+      border:none;
+      border-radius:0;
+      padding:0;
+      margin:6px 0 12px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .example-box h3{margin-top:0;margin-bottom:8px;}
+
+    .problem{
+      break-inside: avoid;
+      page-break-inside: avoid;
+      margin-bottom:12px;
+    }
+
+    /* =======================
+       PRINT GROUPING CONTROL
+       Use this wrapper when a section title/intro should stay with the first task.
+       This prevents orphaned headers at the bottom of a printed page.
+       Add around only small chunks; do not wrap an entire long section.
+       ======================= */
+    .section-title-task-group{
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    section{margin-bottom:30px;}
+
+    /* =======================
+       WORKSPACE HEIGHT CONTROL
+       Adjust these heights if you want more or less student writing space.
+       Use classes such as workspace-180, workspace-260, workspace-discuss, etc.
+       ======================= */
+
+    .workspace,
+    .workspace-100,
+    .workspace-120,
+    .workspace-140,
+    .workspace-150,
+    .workspace-180,
+    .workspace-200,
+    .workspace-220,
+    .workspace-240,
+    .workspace-260,
+    .workspace-300,
+    .workspace-350,
+    .workspace-400,
+    .workspace-500,
+    .workspace-600{
+      width:100%;
+      margin-top:8px;
+      border-bottom:0px solid #000;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .workspace-100{height:100px;}
+    .workspace-120{height:120px;}
+    .workspace-140{height:140px;}
+    .workspace-150{height:150px;}
+    .workspace-180{height:180px;}
+    .workspace-200{height:200px;}
+    .workspace-220{height:220px;}
+    .workspace-240{height:240px;}
+    .workspace-260{height:260px;}
+    .workspace-300{height:300px;}
+    .workspace-350{height:350px;}
+    .workspace-400{height:400px;}
+    .workspace-500{height:500px;}
+    .workspace-600{height:600px;}
+    .workspace-discuss{height:220px;}
+    .workspace-context{height:300px;}
+
+    /* Add a very light top line so blank workspace is visible while staying clean. */
+    .workspace,
+    .workspace-100,
+    .workspace-120,
+    .workspace-140,
+    .workspace-150,
+    .workspace-180,
+    .workspace-200,
+    .workspace-220,
+    .workspace-240,
+    .workspace-260,
+    .workspace-300,
+    .workspace-350,
+    .workspace-400,
+    .workspace-500,
+    .workspace-600,
+    .workspace-discuss,
+    .workspace-context{
+      border-top:1px solid #e4e4e4;
+    }
+
+    /* =======================
+       TABLE CONTROL
+       Adjust table padding here if tables need to become more compact.
+       ======================= */
+
+    .table-block{
+      margin:10px auto 12px auto;
+      border-collapse:collapse;
+    }
+    .table-block td,
+    .table-block th{
+      border:1px solid #000;
+      padding:8px 18px;
+      text-align:center;
+    }
+
+    /* =======================
+       GRAPH / IMAGE SIZE CONTROL
+       Change max-width below to manually resize all graphs at once.
+       Use the optional graph-sm / graph-md / graph-lg classes for individual control.
+       ======================= */
+    .graph-block{
+      margin:12px 0 10px 0;
+      text-align:center;
+      break-inside:avoid;
+      page-break-inside:avoid;
+    }
+    .graph-block img{
+      display:block;
+      margin:0 auto;
+      height:auto;
+      max-width:360px;
+      width:100%;
+      border:1px solid #ccc;
+      background:#fff;
+    }
+    .graph-sm img{max-width:300px;}
+    .graph-md img{max-width:360px;}
+    .graph-lg img{max-width:430px;}
+
+    .two-column{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      align-items:start;
+    }
+
+    @media print{
+      body{padding:12px;}
+      .title-page{min-height:9.7in;}
+      .two-column{display:block;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <section class="title-page">
+      <div class="title-kicker">Precalculus - Unit 01</div>
+      <div class="title-main">Section 1.1<br>Function Notation &amp; Solving</div>
+      <div class="title-sub">Evaluating functions, solving $f(x)=a$, and connecting algebra, tables, and graphs.</div>
+      <div class="quote-box">
+        <p><strong>Mathematical idea:</strong> A function is more than an equation. It is a relationship that lets us ask two different questions: What output comes from this input? What input creates this output?</p>
+      </div>
+      <p class="title-note">In this section, you will learn how function notation organizes inputs and outputs, how solving differs from evaluating, and why graphs and tables can confirm algebraic work.</p>
+    </section>
+
+    <div class="page-break"></div>
+
+    <section>
+      <div class="problem">
+        <!-- LEARNING TARGET START -->
+        <h2>Learning Target</h2>
+        <div class="objectives">
+          <p>Students will evaluate functions and solve equations of the form $f(x) = a$ using tables, algebraic and graphical methods.</p>
+          <p><strong>I can statements</strong></p>
+          <ul>
+            <li>I can evaluate a function written in function notation for given input values.</li>
+            <li>I can solve equations of the form $f(x)=a$ algebraically when $f(x)$ is linear or a factorable quadratic.</li>
+            <li>I can solve equations of the form $f(x)=a$ graphically or with a table.</li>
+            <li>I can verify and interpret solutions within the context of the function and its graph.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- WHAT’S TO COME START -->
+        <h2>What’s To Come</h2>
+        <p>
+          Later in this section, you will return to the task below. For now, do not solve it. Instead, annotate it individually. Circle anything familiar, underline symbols or directions that seem important, and write notes about what information you think will be needed.
+        </p>
+        <p>As you annotate, ask yourself: What is the input? What is the output? Am I being asked to evaluate the function or solve for an input? How could a table, graph, and equation each help?</p>
+
+        <div class="annotation-box">
+          <p><strong>Future Task</strong></p>
+          <p>A school sells tickets to a fundraiser. The profit, in dollars, can be modeled by</p>
+          \[
+          P(x)=-2(x-10)(x-40)
+          \]
+          <p>where $x$ represents the ticket price in dollars.</p>
+          <ol>
+            <li>Evaluate $P(20)$ and interpret its meaning.</li>
+            <li>Solve $P(x)=0$ and interpret the solutions in context.</li>
+            <li>Solve $P(x)=600$ using a graph or table, then verify algebraically.</li>
+            <li>Explain why evaluating $P(20)$ and solving $P(x)=20$ are different tasks.</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- INTRO START -->
+        <h2>Intro</h2>
+
+        <div class="strategy-box">
+          <p><strong>Directions</strong></p>
+          <p>Read the introduction aloud with a partner or in a small group. As you read, annotate the text by marking important ideas, circling key vocabulary, and writing short notes about connections, questions, or predictions in the margins.</p>
+        </div>
+
+        <p>
+          Function notation is a compact way to describe a relationship between inputs and outputs. When we write $f(x)$, we are not multiplying $f$ and $x$. Instead, $f(x)$ means “the output of the function $f$ when the input is $x$.” This notation lets us name a rule, substitute values into that rule, and talk precisely about how one quantity depends on another.
+        </p>
+
+        <p>
+          Evaluating a function means starting with a known input and finding the output. For example, if $f(x)=2x+3$, then $f(4)$ asks for the output when the input is $4$. Solving an equation such as $f(x)=11$ asks a different question: which input values make the output equal to $11$?
+        </p>
+
+        <p>
+          This distinction matters throughout precalculus. A table can show which inputs match a specific output. A graph can show solutions as intersection points between the function and a horizontal line. Algebra can give exact answers when the equation is linear or factorable. Each representation tells the same story in a different way.
+        </p>
+
+        <p>
+          Function notation is also used in science, engineering, business, and computer science. If $H(t)$ represents height after $t$ seconds, then $H(3)$ is the height at 3 seconds. If $C(n)$ represents cost for $n$ items, then solving $C(n)=100$ asks how many items create a cost of $100$. The notation helps connect mathematics to decisions and interpretations.
+        </p>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>What does $f(x)$ mean in words?</li>
+            <li>How is evaluating $f(4)$ different from solving $f(x)=4$?</li>
+            <li>What does a graph show when solving $f(x)=a$?</li>
+            <li>What is one real-world example of function notation from the text?</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- FUNCTION NOTATION MEANS INPUT AND OUTPUT START -->
+        <h2>Function Notation Means Input and Output</h2>
+        <p>A function notation statement has three important pieces.</p>
+        <div class="definition">
+          <p><strong>Notation Reminder</strong></p>
+          <ul>
+            <li>$f$ is the name of the function.</li>
+            <li>$x$ is the input variable.</li>
+            <li>$f(x)$ is the output value.</li>
+          </ul>
+        </div>
+        <p>When you see $f(3)$, replace every $x$ in the rule with $3$.</p>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- EXAMPLE 1 START -->
+          <h3>Example 1</h3>
+          <p>Let $f(x)=2x^2-3$. Evaluate $f(2)$ and $f(-3)$.</p>
+          <div class="workspace-220"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 1</h3>
+          <p>Let $g(x)=x^2-2x$. Evaluate $g(3)$ and $g(-2)$.</p>
+          <div class="workspace-220"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>Why are parentheses important when substituting a negative input?</li>
+            <li>What does the answer to $f(2)$ represent?</li>
+            <li>Why does $f(-3)$ not mean the opposite of $f(3)$?</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- SUBSTITUTION AND ORDER OF OPERATIONS START -->
+        <h2>Substitution and Order of Operations</h2>
+        <p>Function evaluation depends on careful substitution. The input goes inside parentheses first, then the operations are completed in the correct order.</p>
+        <div class="key-point">
+          <p><strong>Careful Substitution</strong></p>
+          \[
+          f(-2)=3(-2)^2-4(-2)+1
+          \]
+          <p>The exponent applies to the entire substituted input because the input is inside parentheses.</p>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- EXAMPLE 2 START -->
+          <h3>Example 2</h3>
+          <p>A student evaluates $f(-2)$ for $f(x)=3x^2-4x+1$ and gets $-3$.</p>
+          <ol>
+            <li>Identify the likely mistake.</li>
+            <li>Find the correct value of $f(-2)$.</li>
+            <li>Explain how parentheses affect evaluation.</li>
+          </ol>
+          <div class="workspace-260"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 2</h3>
+          <p>Let $p(x)=-3x^2+1$. Evaluate $p(1)$ and $p(-2)$.</p>
+          <div class="workspace-200"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- EVALUATING VS. SOLVING START -->
+        <h2>Evaluating vs. Solving</h2>
+        <p>One of the most important distinctions in this section is the difference between evaluating and solving.</p>
+        <div class="definition">
+          <p><strong>Evaluate:</strong> You are given the input and you find the output.</p>
+          <p><strong>Solve:</strong> You are given the output and you find the input or inputs.</p>
+        </div>
+        <table class="table-block">
+          <tr><th>Task</th><th>Question Being Asked</th></tr>
+          <tr><td>$f(6)$</td><td>What output happens when the input is $6$?</td></tr>
+          <tr><td>$f(x)=6$</td><td>What input or inputs make the output $6$?</td></tr>
+        </table>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- EXAMPLE 3 START -->
+          <h3>Example 3</h3>
+          <p>Compare these two tasks for $f(x)=x^2-4x$:</p>
+          <ol>
+            <li>Evaluate $f(6)$.</li>
+            <li>Solve $f(x)=6$.</li>
+            <li>Explain how they are different.</li>
+          </ol>
+          <div class="workspace-300"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 3</h3>
+          <p>Let $f(x)=2(x-1)(x+4)$.</p>
+          <ol>
+            <li>Solve $f(x)=0$.</li>
+            <li>Evaluate $f(0)$.</li>
+            <li>Explain the difference between solving $f(x)=0$ and evaluating $f(0)$.</li>
+          </ol>
+          <div class="workspace-260"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <p>A classmate says, “Solving $f(x)=a$ is the same thing as evaluating $f(a)$.” What is wrong with this claim?</p>
+        </div>
+        <div class="workspace-discuss"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- SOLVING $F(X)=A$ WITH A TABLE START -->
+        <h2>Solving $f(x)=a$ with a Table</h2>
+        <p>When a function is represented by a table, solving $f(x)=a$ means finding the input value or values where the output row equals $a$.</p>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- EXAMPLE 4 START -->
+          <h3>Example 4</h3>
+          <p>Use the table to solve $q(x)=6$.</p>
+          <table class="table-block">
+            <tr><th>$x$</th><td>-4</td><td>-2</td><td>0</td><td>2</td><td>4</td></tr>
+            <tr><th>$q(x)$</th><td>14</td><td>6</td><td>2</td><td>6</td><td>14</td></tr>
+          </table>
+          <div class="workspace-180"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 4</h3>
+          <p>A function $f$ is represented by the table below.</p>
+          <table class="table-block">
+            <tr><th>$x$</th><td>-2</td><td>-1</td><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+            <tr><th>$f(x)$</th><td>-3</td><td>0</td><td>1</td><td>0</td><td>-3</td><td>-8</td></tr>
+          </table>
+          <ol>
+            <li>Solve $f(x)=0$ using the table.</li>
+            <li>Describe what those solutions would look like on a graph.</li>
+          </ol>
+          <div class="workspace-220"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>Can a table show more than one solution to $f(x)=a$?</li>
+            <li>Can a table prove that there are no other solutions? Why or why not?</li>
+            <li>How is looking across a table different from substituting one value?</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- SOLVING $F(X)=A$ ALGEBRAICALLY START -->
+        <h2>Solving $f(x)=a$ Algebraically</h2>
+        <p>When the function rule is known, algebra can often give exact solutions. In this section, the algebraic solving will focus on linear functions and factorable quadratics.</p>
+        <div class="key-point">
+          <p><strong>Linear:</strong> isolate the variable.</p>
+          <p><strong>Factorable quadratic:</strong> set the equation equal to zero, factor, and use the zero product property.</p>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- EXAMPLE 5 START -->
+          <h3>Example 5</h3>
+          <p>Let $g(x)=2x+1$.</p>
+          <ol>
+            <li>Solve $g(x)=9$ algebraically.</li>
+            <li>Create a two-row table that confirms your solution.</li>
+          </ol>
+          <div class="workspace-260"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 5</h3>
+          <p>Let $k(x)=x^2+2x-8$.</p>
+          <ol>
+            <li>Solve $k(x)=0$ by factoring.</li>
+            <li>State the ordered pairs where the graph crosses the $x$-axis.</li>
+          </ol>
+          <div class="workspace-260"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- GRAPHS SHOW SOLUTIONS AS INTERSECTIONS START -->
+        <h2>Graphs Show Solutions as Intersections</h2>
+        <p>Solving $f(x)=a$ graphically means finding where the graph of $y=f(x)$ intersects the horizontal line $y=a$.</p>
+        <div class="definition">
+          <p><strong>Graphical Meaning</strong></p>
+          <p>The solution to $f(x)=a$ is the $x$-coordinate of each intersection between the function and the horizontal line $y=a$.</p>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- GRAPH TASK START -->
+          <h3>Graph Task</h3>
+          <p>The graph of $f(x)=2x-3$ and the horizontal line $y=5$ are shown. Use the graph to solve $f(x)=5$, then verify algebraically.</p>
+          <div class="graph-block graph-md"><img src="figures/u1_1_graph_linear_intersection.png" alt="Graph of f(x)=2x-3 and y=5 intersecting at (4,5)"></div>
+          <div class="workspace-220"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- PARTNER TASK START -->
+          <h3>Partner Task</h3>
+          <p>The graph of $g(x)=x^2-4$ and the horizontal line $y=5$ are shown. Use the graph to solve $g(x)=5$, then verify algebraically.</p>
+          <div class="graph-block graph-md"><img src="figures/u1_1_graph_quadratic_intersection.png" alt="Graph of g(x)=x squared minus four and y=5 intersecting at (-3,5) and (3,5)"></div>
+          <div class="workspace-260"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>Why is a horizontal line used when solving $f(x)=a$?</li>
+            <li>Why can a quadratic equation have two solutions for the same output?</li>
+            <li>What does the ordered pair at an intersection mean?</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- INTERPRETING SOLUTIONS IN CONTEXT START -->
+        <h2>Interpreting Solutions in Context</h2>
+        <p>In a context, the input and output have meaning. A solution may be mathematically correct but still need to be interpreted carefully.</p>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- CONTEXT TASK START -->
+          <h3>Context Task</h3>
+          <p>Let $P(t)=25-5t$, where $P(t)$ is the number of pages left to read after $t$ minutes.</p>
+          <ol>
+            <li>Find $P(3)$.</li>
+            <li>Solve $P(t)=0$.</li>
+            <li>Interpret both answers in context.</li>
+          </ol>
+          <div class="workspace-260"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- PARTNER CONTEXT TASK START -->
+          <h3>Partner Context Task</h3>
+          <p>The graph models the height $A(t)$, in meters, of an object after $t$ seconds.</p>
+          <div class="graph-block graph-md"><img src="figures/u1_1_graph_context_height.png" alt="Graph of A(t)=-(t-3)^2+25 and y=16"></div>
+          <ol>
+            <li>Estimate the times when $A(t)=16$.</li>
+            <li>Explain why both solutions make sense in the context.</li>
+            <li>Describe a time value that would not make sense in this context and explain why.</li>
+          </ol>
+          <div class="workspace-260"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <!-- SECTION TITLE + FIRST TASK GROUP START
+           This small wrapper keeps the heading/intro from printing alone at the bottom of a page.
+           Manually remove this wrapper if you want normal page flow. -->
+      <div class="section-title-task-group">
+        <div class="problem">
+          <!-- REASONING AND ERROR ANALYSIS START -->
+          <h2>Reasoning and Error Analysis</h2>
+          <p>Error analysis helps reveal the structure behind the procedure. When a solution is wrong, ask whether the student evaluated instead of solved, dropped a solution, substituted incorrectly, or misread the graph.</p>
+        </div>
+
+        <div class="problem">
+          <div class="example-box">
+            <!-- ERROR ANALYSIS TASK START -->
+            <h3>Error Analysis Task</h3>
+            <p>Let $f(x)=x^2-9$. A student says the solution to $f(x)=0$ is $x=3$. Determine whether the student is correct and explain.</p>
+            <div class="workspace-220"></div>
+          </div>
+        </div>
+      </div>
+      <!-- SECTION TITLE + FIRST TASK GROUP END -->
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- PARTNER ERROR ANALYSIS START -->
+          <h3>Partner Error Analysis</h3>
+          <p>Two students solve $f(x)=0$ for $f(x)=x^2-7x+10$.</p>
+          <p><strong>Student A:</strong> $(x-5)(x-2)=0$, so $x=5$ or $x=2$.</p>
+          <p><strong>Student B:</strong> $x^2=7x-10$, so $x=7$ or $x=-10$.</p>
+          <p>Which student is correct? Explain the error in the other solution.</p>
+          <div class="workspace-260"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>Why is it easy to miss one solution when solving a quadratic?</li>
+            <li>How can substitution verify a solution?</li>
+            <li>How can a graph help catch an algebra mistake?</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- RETURN TO THE FUTURE TASK START -->
+        <h2>Return to the Future Task</h2>
+        <p>Use what you learned to revisit the task from the beginning of the notes.</p>
+        <div class="annotation-box">
+          <p>A school sells tickets to a fundraiser. The profit, in dollars, can be modeled by</p>
+          \[
+          P(x)=-2(x-10)(x-40)
+          \]
+          <p>where $x$ represents the ticket price in dollars.</p>
+          <ol>
+            <li>Evaluate $P(20)$ and interpret its meaning.</li>
+            <li>Solve $P(x)=0$ and interpret the solutions in context.</li>
+            <li>Solve $P(x)=600$ using a graph or table, then verify algebraically.</li>
+            <li>Explain why evaluating $P(20)$ and solving $P(x)=20$ are different tasks.</li>
+          </ol>
+        </div>
+        <div class="workspace-400"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- SUMMARY START -->
+        <h2>Summary</h2>
+        <div class="key-point">
+          <ul>
+            <li>Function notation connects inputs to outputs.</li>
+            <li>Evaluating $f(a)$ means using a known input to find an output.</li>
+            <li>Solving $f(x)=a$ means finding the input value or values that produce a given output.</li>
+            <li>Tables solve $f(x)=a$ by locating output values equal to $a$.</li>
+            <li>Graphs solve $f(x)=a$ by showing intersections with the horizontal line $y=a$.</li>
+            <li>Algebra can verify or find exact solutions.</li>
+            <li>Context determines what inputs and outputs mean and whether solutions are reasonable.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- COMMON MISTAKES START -->
+        <h2>Common Mistakes</h2>
+        <div class="strategy-box">
+          <ul>
+            <li><strong>Confusing $f(a)$ with $f(x)=a$:</strong> one asks for an output, the other asks for input(s).</li>
+            <li><strong>Forgetting parentheses with negative inputs:</strong> $(-2)^2$ and $-2^2$ are not the same.</li>
+            <li><strong>Finding only one quadratic solution:</strong> a quadratic can have two inputs with the same output.</li>
+            <li><strong>Reading the wrong coordinate from a graph:</strong> when solving $f(x)=a$, the answer is the $x$-value of the intersection.</li>
+            <li><strong>Not checking context:</strong> some mathematical solutions may not make sense in the situation.</li>
+            <li><strong>Using a table too broadly:</strong> a table shows listed values, but it may not show every possible solution.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <div class="problem">
+        <h2>Supplemental Notes</h2>
+        <div class="workspace-600"></div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <div class="problem">
+        <h2>Supplemental Notes</h2>
+        <div class="workspace-600"></div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

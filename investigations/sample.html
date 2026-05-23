@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>u1_1_investigation</title>
+  <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+/* ======================= RESET / BASE ======================= */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.45;color:#222;background:#fff;padding:20px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.container{max-width:900px;margin:0 auto;}
+.page-break{page-break-before:always;}
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.45rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.1rem;margin-top:8px;margin-bottom:8px;}
+h4{color:#00003d;font-size:1rem;margin:10px 0 6px 0;}
+p{margin-bottom:8px;}
+ul,ol{margin-left:24px;margin-bottom:8px;}
+li{margin-bottom:6px;}
+strong{color:#00003d;}
+/* ======================= TITLE / HEADER ======================= */
+.title-page{min-height:9.5in;display:flex;flex-direction:column;justify-content:center;text-align:center;border:4px solid #00003d;padding:42px;break-inside:avoid;page-break-inside:avoid;}
+.title-page .course{font-size:1rem;text-transform:uppercase;letter-spacing:2px;color:#555;margin-bottom:18px;}
+.title-page h1{font-size:2.35rem;line-height:1.15;margin-bottom:18px;}
+.title-page .subtitle{font-size:1.35rem;color:#004d99;font-weight:700;margin-bottom:24px;}
+.title-page .details{font-size:1.05rem;color:#333;margin-top:18px;}
+.header-strip{background:#00003d;color:#fff;padding:10px 14px;margin:0 0 14px 0;font-weight:700;font-size:1.1rem;break-after:avoid;}
+/* ======================= CARDS / PROBLEMS ======================= */
+.problem,.teacher-box,.key-point{border:1px solid #777;padding:14px 14px 12px 14px;margin-bottom:14px;break-inside:avoid;page-break-inside:avoid;}
+.problem-number{font-weight:700;color:#00003d;margin-bottom:8px;font-size:1.03rem;}
+.small-note{font-size:.92rem;color:#555;}
+.teacher-note{background:#f7f7f7;border-left:4px solid #777;padding:8px 10px;margin:10px 0;}
+.dok-bar{background:#000;color:#fff;font-weight:700;padding:8px 12px;margin:18px 0 12px 0;break-after:avoid;}
+.workspace{width:100%;margin-top:8px;border-top:1px solid #777;break-inside:avoid;page-break-inside:avoid;}
+.workspace-60{height:60px}.workspace-80{height:80px}.workspace-100{height:100px}.workspace-120{height:120px}.workspace-150{height:150px}.workspace-180{height:180px}.workspace-220{height:220px}.workspace-260{height:260px}
+.workspace-label{margin-top:8px;font-size:.85rem;font-weight:600;color:#444;}
+.tag{font-size:.85rem;background:#eaf1fb;border:1px solid #a9b9cf;color:#22354d;padding:2px 7px;border-radius:4px;margin-left:6px;}
+.rep-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:14px;align-items:start;}
+.graph-block{text-align:center;margin:8px 0;break-inside:avoid;page-break-inside:avoid;}
+.graph-block img{max-width:100%;height:auto;border:1px solid #bbb;background:#fff;}
+/* ======================= TABLES ======================= */
+table{width:100%;border-collapse:collapse;margin:10px 0;break-inside:avoid;page-break-inside:avoid;}
+th,td{border:1px solid #888;padding:7px;text-align:center;vertical-align:middle;}
+th{background:#eaf1fb;color:#00003d;}
+td.left,th.left{text-align:left;}
+/* ======================= PRINT ======================= */
+@media print{body{padding:10px}.container{max-width:100%}.title-page{min-height:9.75in}.rep-grid{grid-template-columns:1fr 1.15fr;gap:10px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ======================= TITLE PAGE ======================= -->
+    <section class="title-page">
+      <div class="course">Precalculus - Unit 1</div>
+      <h1>Section 1.1 Investigation</h1>
+      <div class="subtitle">Function Notation &amp; Solving</div>
+      <p><strong>Investigation:</strong> What is the difference between finding \(f(a)\) and solving \(f(x)=a\)?</p>
+      <p><strong>Time:</strong> 15-20 minutes</p>
+      <p><strong>Format:</strong> Partner investigation, representation comparison, and whole-class discussion</p>
+      <div class="details">Learning Target: Evaluate functions and solve equations of the form \(f(x)=a\) using tables, algebraic, and graphical methods.</div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= DIRECTIONS PAGE ======================= -->
+    <section>
+      <div class="header-strip">Investigation Directions</div>
+      <div class="problem">
+        <h2>Setup</h2>
+        <ul>
+          <li><strong>Grouping:</strong> Partners or groups of 3.</li>
+          <li><strong>Materials:</strong> Student handout, pencil, and optional graphing calculator or Desmos.</li>
+          <li><strong>Teacher display:</strong> Project one situation at a time during the share-out.</li>
+          <li><strong>Timing:</strong> Assign each group 2 situations. Groups analyze their assigned pages, then use the summary page to compare all 8 situations during discussion.</li>
+        </ul>
+      </div>
+      <div class="problem">
+        <h2>Student Goal</h2>
+        <p>Today you will compare contexts, tables, graphs, and equations. Your job is to discover what function notation is asking you to do.</p>
+        <p style="text-align:center;font-size:1.15rem;">\[\text{Evaluate: } f(a) \qquad \text{Solve: } f(x)=a\]</p>
+        <p>By the end, you should be able to explain why evaluating gives an output, while solving gives input value(s).</p>
+      </div>
+      <div class="problem">
+        <h2>Norms for the Investigation</h2>
+        <ul>
+          <li>Use at least two representations before deciding on an answer.</li>
+          <li>Circle whether each question asks for an input or an output.</li>
+          <li>When solving \(f(x)=a\), check whether there is one solution, two solutions, or no solution.</li>
+          <li>Be ready to explain which representation was most efficient and why.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= STUDENT HANDOUT ======================= -->
+    <section>
+      <div class="header-strip">Student Investigation Handout</div>
+      <div class="problem">
+        <h2>How to Work</h2>
+        <ol>
+          <li>Your teacher will assign your group two situations.</li>
+          <li>For each assigned situation, answer the four task questions at the bottom of the page.</li>
+          <li>During the class share-out, complete the comparison page using information from other groups.</li>
+          <li>Look for patterns: when does the answer come from a y-value, and when does the answer come from an x-value?</li>
+        </ol>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    
+    <section class="situation-page">
+      <div class="header-strip">Situation 1: Canoe Rental</div>
+      <div class="problem">
+        <h2>Canoe Rental <span class="tag">Linear</span></h2>
+        <p><strong>Context:</strong> A park rents canoes. There is a flat setup fee plus an hourly charge.</p>
+        <p><strong>Equation:</strong> \(C(h)=12+8h\)</p>
+        <div class="rep-grid">
+          <div>
+            <h3>Table</h3>
+            <table><tr><th>hours</th><th>cost ($)</th></tr><tr><td>0</td><td>12</td></tr><tr><td>1</td><td>20</td></tr><tr><td>2</td><td>28</td></tr><tr><td>3</td><td>36</td></tr><tr><td>4</td><td>44</td></tr><tr><td>5</td><td>52</td></tr></table>
+          </div>
+          <div>
+            <h3>Graph</h3>
+            <div class="graph-block"><img src="figures/u1_1_situation_1.png" alt="Graph for Canoe Rental"></div>
+          </div>
+        </div>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Assigned Group Task</div>
+        <ol>
+          <li>Evaluate \(C(3)\). What does your answer mean in this situation?</li>
+          <li>Solve \(C(h)=44\). What does your solution mean in this situation?</li>
+          <li>Which representation made each question easiest: context, table, graph, or equation? Explain.</li>
+          <li>Write one sentence that explains the difference between evaluating a function and solving an equation like \(f(x)=a\).</li>
+        </ol>
+        <div class="workspace-label">Work / Notes</div>
+        <div class="workspace workspace-260"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+    
+    <section class="situation-page">
+      <div class="header-strip">Situation 2: Phone Battery</div>
+      <div class="problem">
+        <h2>Phone Battery <span class="tag">Linear</span></h2>
+        <p><strong>Context:</strong> A phone battery starts partially charged and loses the same percent each hour.</p>
+        <p><strong>Equation:</strong> \(B(t)=92-11t\)</p>
+        <div class="rep-grid">
+          <div>
+            <h3>Table</h3>
+            <table><tr><th>hours</th><th>battery (%)</th></tr><tr><td>0</td><td>92</td></tr><tr><td>1</td><td>81</td></tr><tr><td>2</td><td>70</td></tr><tr><td>3</td><td>59</td></tr><tr><td>4</td><td>48</td></tr><tr><td>5</td><td>37</td></tr><tr><td>6</td><td>26</td></tr><tr><td>7</td><td>15</td></tr><tr><td>8</td><td>4</td></tr></table>
+          </div>
+          <div>
+            <h3>Graph</h3>
+            <div class="graph-block"><img src="figures/u1_1_situation_2.png" alt="Graph for Phone Battery"></div>
+          </div>
+        </div>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Assigned Group Task</div>
+        <ol>
+          <li>Evaluate \(B(5)\). What does your answer mean in this situation?</li>
+          <li>Solve \(B(t)=48\). What does your solution mean in this situation?</li>
+          <li>Which representation made each question easiest: context, table, graph, or equation? Explain.</li>
+          <li>Write one sentence that explains the difference between evaluating a function and solving an equation like \(f(x)=a\).</li>
+        </ol>
+        <div class="workspace-label">Work / Notes</div>
+        <div class="workspace workspace-260"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+    
+    <section class="situation-page">
+      <div class="header-strip">Situation 3: Streaming Subscription</div>
+      <div class="problem">
+        <h2>Streaming Subscription <span class="tag">Linear</span></h2>
+        <p><strong>Context:</strong> A streaming service charges a monthly fee plus a small charge for each movie rental.</p>
+        <p><strong>Equation:</strong> \(S(m)=15+3m\)</p>
+        <div class="rep-grid">
+          <div>
+            <h3>Table</h3>
+            <table><tr><th>movie rentals</th><th>cost ($)</th></tr><tr><td>0</td><td>15</td></tr><tr><td>1</td><td>18</td></tr><tr><td>2</td><td>21</td></tr><tr><td>3</td><td>24</td></tr><tr><td>4</td><td>27</td></tr><tr><td>5</td><td>30</td></tr><tr><td>6</td><td>33</td></tr><tr><td>7</td><td>36</td></tr></table>
+          </div>
+          <div>
+            <h3>Graph</h3>
+            <div class="graph-block"><img src="figures/u1_1_situation_3.png" alt="Graph for Streaming Subscription"></div>
+          </div>
+        </div>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Assigned Group Task</div>
+        <ol>
+          <li>Evaluate \(S(6)\). What does your answer mean in this situation?</li>
+          <li>Solve \(S(m)=24\). What does your solution mean in this situation?</li>
+          <li>Which representation made each question easiest: context, table, graph, or equation? Explain.</li>
+          <li>Write one sentence that explains the difference between evaluating a function and solving an equation like \(f(x)=a\).</li>
+        </ol>
+        <div class="workspace-label">Work / Notes</div>
+        <div class="workspace workspace-260"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+    
+    <section class="situation-page">
+      <div class="header-strip">Situation 4: Fundraiser Progress</div>
+      <div class="problem">
+        <h2>Fundraiser Progress <span class="tag">Linear</span></h2>
+        <p><strong>Context:</strong> A club already has some money saved and raises the same amount each day.</p>
+        <p><strong>Equation:</strong> \(F(d)=40+25d\)</p>
+        <div class="rep-grid">
+          <div>
+            <h3>Table</h3>
+            <table><tr><th>days</th><th>money ($)</th></tr><tr><td>0</td><td>40</td></tr><tr><td>1</td><td>65</td></tr><tr><td>2</td><td>90</td></tr><tr><td>3</td><td>115</td></tr><tr><td>4</td><td>140</td></tr><tr><td>5</td><td>165</td></tr></table>
+          </div>
+          <div>
+            <h3>Graph</h3>
+            <div class="graph-block"><img src="figures/u1_1_situation_4.png" alt="Graph for Fundraiser Progress"></div>
+          </div>
+        </div>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Assigned Group Task</div>
+        <ol>
+          <li>Evaluate \(F(4)\). What does your answer mean in this situation?</li>
+          <li>Solve \(F(d)=115\). What does your solution mean in this situation?</li>
+          <li>Which representation made each question easiest: context, table, graph, or equation? Explain.</li>
+          <li>Write one sentence that explains the difference between evaluating a function and solving an equation like \(f(x)=a\).</li>
+        </ol>
+        <div class="workspace-label">Work / Notes</div>
+        <div class="workspace workspace-260"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+    
+    <section class="situation-page">
+      <div class="header-strip">Situation 5: Ball Height</div>
+      <div class="problem">
+        <h2>Ball Height <span class="tag">Quadratic</span></h2>
+        <p><strong>Context:</strong> A ball is launched upward. Its height changes over time.</p>
+        <p><strong>Equation:</strong> \(H(t)=-(t-3)^2+10\)</p>
+        <div class="rep-grid">
+          <div>
+            <h3>Table</h3>
+            <table><tr><th>time (s)</th><th>height (ft)</th></tr><tr><td>0</td><td>1</td></tr><tr><td>1</td><td>6</td></tr><tr><td>2</td><td>9</td></tr><tr><td>3</td><td>10</td></tr><tr><td>4</td><td>9</td></tr><tr><td>5</td><td>6</td></tr><tr><td>6</td><td>1</td></tr></table>
+          </div>
+          <div>
+            <h3>Graph</h3>
+            <div class="graph-block"><img src="figures/u1_1_situation_5.png" alt="Graph for Ball Height"></div>
+          </div>
+        </div>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Assigned Group Task</div>
+        <ol>
+          <li>Evaluate \(H(1)\). What does your answer mean in this situation?</li>
+          <li>Solve \(H(t)=6\). What does your solution mean in this situation?</li>
+          <li>Which representation made each question easiest: context, table, graph, or equation? Explain.</li>
+          <li>Write one sentence that explains the difference between evaluating a function and solving an equation like \(f(x)=a\).</li>
+        </ol>
+        <div class="workspace-label">Work / Notes</div>
+        <div class="workspace workspace-260"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+    
+    <section class="situation-page">
+      <div class="header-strip">Situation 6: Garden Area</div>
+      <div class="problem">
+        <h2>Garden Area <span class="tag">Quadratic</span></h2>
+        <p><strong>Context:</strong> A rectangular garden has area based on the selected width.</p>
+        <p><strong>Equation:</strong> \(A(w)=-(w-4)^2+16\)</p>
+        <div class="rep-grid">
+          <div>
+            <h3>Table</h3>
+            <table><tr><th>width</th><th>area</th></tr><tr><td>0</td><td>0</td></tr><tr><td>1</td><td>7</td></tr><tr><td>2</td><td>12</td></tr><tr><td>3</td><td>15</td></tr><tr><td>4</td><td>16</td></tr><tr><td>5</td><td>15</td></tr><tr><td>6</td><td>12</td></tr><tr><td>7</td><td>7</td></tr><tr><td>8</td><td>0</td></tr></table>
+          </div>
+          <div>
+            <h3>Graph</h3>
+            <div class="graph-block"><img src="figures/u1_1_situation_6.png" alt="Graph for Garden Area"></div>
+          </div>
+        </div>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Assigned Group Task</div>
+        <ol>
+          <li>Evaluate \(A(2)\). What does your answer mean in this situation?</li>
+          <li>Solve \(A(w)=7\). What does your solution mean in this situation?</li>
+          <li>Which representation made each question easiest: context, table, graph, or equation? Explain.</li>
+          <li>Write one sentence that explains the difference between evaluating a function and solving an equation like \(f(x)=a\).</li>
+        </ol>
+        <div class="workspace-label">Work / Notes</div>
+        <div class="workspace workspace-260"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+    
+    <section class="situation-page">
+      <div class="header-strip">Situation 7: Fountain Spray</div>
+      <div class="problem">
+        <h2>Fountain Spray <span class="tag">Quadratic</span></h2>
+        <p><strong>Context:</strong> The height of water from a fountain depends on horizontal distance from the nozzle.</p>
+        <p><strong>Equation:</strong> \(P(x)=-2(x-2)^2+8\)</p>
+        <div class="rep-grid">
+          <div>
+            <h3>Table</h3>
+            <table><tr><th>distance</th><th>height</th></tr><tr><td>0</td><td>0</td></tr><tr><td>0.5</td><td>3.5</td></tr><tr><td>1</td><td>6</td></tr><tr><td>1.5</td><td>7.5</td></tr><tr><td>2</td><td>8</td></tr><tr><td>2.5</td><td>7.5</td></tr><tr><td>3</td><td>6</td></tr><tr><td>3.5</td><td>3.5</td></tr><tr><td>4</td><td>0</td></tr></table>
+          </div>
+          <div>
+            <h3>Graph</h3>
+            <div class="graph-block"><img src="figures/u1_1_situation_7.png" alt="Graph for Fountain Spray"></div>
+          </div>
+        </div>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Assigned Group Task</div>
+        <ol>
+          <li>Evaluate \(P(3)\). What does your answer mean in this situation?</li>
+          <li>Solve \(P(x)=0\). What does your solution mean in this situation?</li>
+          <li>Which representation made each question easiest: context, table, graph, or equation? Explain.</li>
+          <li>Write one sentence that explains the difference between evaluating a function and solving an equation like \(f(x)=a\).</li>
+        </ol>
+        <div class="workspace-label">Work / Notes</div>
+        <div class="workspace workspace-260"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+    
+    <section class="situation-page">
+      <div class="header-strip">Situation 8: Toy Rocket</div>
+      <div class="problem">
+        <h2>Toy Rocket <span class="tag">Quadratic</span></h2>
+        <p><strong>Context:</strong> A toy rocket is launched from a platform. The function gives its height after launch.</p>
+        <p><strong>Equation:</strong> \(R(t)=-4(t-2)^2+20\)</p>
+        <div class="rep-grid">
+          <div>
+            <h3>Table</h3>
+            <table><tr><th>time (s)</th><th>height (ft)</th></tr><tr><td>0</td><td>4</td></tr><tr><td>1</td><td>16</td></tr><tr><td>2</td><td>20</td></tr><tr><td>3</td><td>16</td></tr><tr><td>4</td><td>4</td></tr></table>
+          </div>
+          <div>
+            <h3>Graph</h3>
+            <div class="graph-block"><img src="figures/u1_1_situation_8.png" alt="Graph for Toy Rocket"></div>
+          </div>
+        </div>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Assigned Group Task</div>
+        <ol>
+          <li>Evaluate \(R(0)\). What does your answer mean in this situation?</li>
+          <li>Solve \(R(t)=16\). What does your solution mean in this situation?</li>
+          <li>Which representation made each question easiest: context, table, graph, or equation? Explain.</li>
+          <li>Write one sentence that explains the difference between evaluating a function and solving an equation like \(f(x)=a\).</li>
+        </ol>
+        <div class="workspace-label">Work / Notes</div>
+        <div class="workspace workspace-260"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+    
+
+    <!-- ======================= COMPARISON PAGE ======================= -->
+    <section>
+      <div class="header-strip">Class Comparison Page</div>
+      <div class="problem">
+        <h2>Collect Class Results</h2>
+        <table>
+          <tr><th>Situation</th><th>Evaluate Question</th><th>Answer</th><th>Solve Question</th><th>Solution(s)</th><th>Best Representation</th></tr>
+          <tr><td>1. Canoe Rental</td><td>\(C(3)\)</td><td></td><td>\(C(h)=44\)</td><td></td><td></td></tr><tr><td>2. Phone Battery</td><td>\(B(5)\)</td><td></td><td>\(B(t)=48\)</td><td></td><td></td></tr><tr><td>3. Streaming Subscription</td><td>\(S(6)\)</td><td></td><td>\(S(m)=24\)</td><td></td><td></td></tr><tr><td>4. Fundraiser Progress</td><td>\(F(4)\)</td><td></td><td>\(F(d)=115\)</td><td></td><td></td></tr><tr><td>5. Ball Height</td><td>\(H(1)\)</td><td></td><td>\(H(t)=6\)</td><td></td><td></td></tr><tr><td>6. Garden Area</td><td>\(A(2)\)</td><td></td><td>\(A(w)=7\)</td><td></td><td></td></tr><tr><td>7. Fountain Spray</td><td>\(P(3)\)</td><td></td><td>\(P(x)=0\)</td><td></td><td></td></tr><tr><td>8. Toy Rocket</td><td>\(R(0)\)</td><td></td><td>\(R(t)=16\)</td><td></td><td></td></tr>
+        </table>
+      </div>
+      <div class="problem">
+        <h2>Pattern Finding</h2>
+        <ol>
+          <li>When a question asks for \(f(3)\), what are you given: an input or an output?</li>
+          <li>When a question asks you to solve \(f(x)=12\), what are you given: an input or an output?</li>
+          <li>Why can a quadratic situation sometimes have two solutions to \(f(x)=a\)?</li>
+          <li>How can a graph help you solve \(f(x)=a\) without algebra?</li>
+          <li>How can a table help you verify a solution?</li>
+        </ol>
+        <div class="workspace-label">Pattern Notes</div>
+        <div class="workspace workspace-220"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= DISCUSSION QUESTIONS ======================= -->
+    <section>
+      <div class="header-strip">Discussion Questions</div>
+      <div class="problem">
+        <ol>
+          <li>Explain the difference between evaluating \(f(a)\) and solving \(f(x)=a\) without using the words “plug in.”</li>
+          <li>Which representation usually made evaluating easiest? Which representation usually made solving easiest?</li>
+          <li>Why did the linear situations usually have one solution, while some quadratic situations had two?</li>
+          <li>How can you verify an algebraic solution using a table or graph?</li>
+          <li>A student says, “\(f(4)=10\) and \(f(x)=10\) are asking the same thing.” What is correct about this statement, and what needs to be fixed?</li>
+        </ol>
+        <div class="workspace-label">Class Notes / Final Rule</div>
+        <div class="workspace workspace-180"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= TEACHER SCRIPT ======================= -->
+    <section>
+      <div class="header-strip">Teaching Resource 1: Teacher Script</div>
+      <div class="teacher-box">
+        <h2>Purpose</h2>
+        <p>This investigation helps students discover the central structure of Section 1.1: evaluating a function means using an input to find an output, while solving \(f(x)=a\) means using an output to find input value(s). The task intentionally uses linear and quadratic situations so students see why some equations have one solution and others can have two.</p>
+      </div>
+      <div class="teacher-box">
+        <h2>Launch: 2 minutes</h2>
+        <p><strong>Say:</strong> “Today the main question is not just how to calculate. The main question is: what is the notation asking for? Are we finding an output, or are we finding input value(s)?”</p>
+        <p><strong>Assign:</strong> Give each group two situations. Try to give each group one linear and one quadratic situation if possible.</p>
+      </div>
+      <div class="teacher-box">
+        <h2>Investigation: 10-12 minutes</h2>
+        <ol>
+          <li>Circulate and ask, “Is the number inside parentheses an input or an output?”</li>
+          <li>When students solve \(f(x)=a\), ask, “Where do you see that output in the table or graph?”</li>
+          <li>For quadratics, press students to look for a second input with the same output.</li>
+          <li>Ask groups to label each method as table, graph, equation, or context.</li>
+          <li>Choose 2 linear and 2 quadratic groups to share during the discussion.</li>
+        </ol>
+      </div>
+      <div class="teacher-box">
+        <h2>Synthesis: 5 minutes</h2>
+        <div class="teacher-note">
+          <p>Final summary: \(f(a)\) gives an output for a specified input. Solving \(f(x)=a\) gives the input value or values that produce a specified output. On a graph, evaluating starts at an x-value and reads the y-value. Solving starts at a y-value and finds the x-value(s).</p>
+        </div>
+        <p><strong>Closure prompt:</strong> “How would you explain the difference between \(f(2)=8\) and \(f(x)=8\) to a student who was absent?”</p>
+      </div>
+      <div class="teacher-box">
+        <h2>Common Misconceptions to Watch For</h2>
+        <ul>
+          <li>Students may treat \(f(4)\) as multiplication.</li>
+          <li>Students may answer \(f(x)=a\) with a y-value instead of an x-value.</li>
+          <li>Students may stop after finding one quadratic solution when there are two.</li>
+          <li>Students may not connect table rows to ordered pairs on the graph.</li>
+          <li>Students may think context answers do not need units or interpretation.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= ANSWER KEY ======================= -->
+    <section>
+      <div class="header-strip">Teaching Resource 2: Answer Key</div>
+      
+      <div class="problem">
+        <div class="problem-number">Situation 1: Canoe Rental</div>
+        <p><strong>Question 1:</strong> Evaluate \(C(3)\). What does your answer mean?</p>
+        <p><strong>Answer:</strong> \(C(3)=36\). This means the output is 36 for the given input in the situation.</p>
+        <p><strong>Question 2:</strong> Solve \(C(h)=44\). What does your solution mean?</p>
+        <p><strong>Answer:</strong> \(h=4\). After 4 hours, the rental costs $44.</p>
+        <p><strong>Question 3:</strong> Which representation made each question easiest?</p>
+        <p><strong>Sample answer:</strong> Evaluating is often quickest from the equation or table. Solving can be easiest from a graph or table when the target output is visible, and algebra is useful when the value is not clearly visible.</p>
+        <p><strong>Question 4:</strong> Explain the difference between evaluating and solving.</p>
+        <p><strong>Sample answer:</strong> Evaluating starts with an input and finds an output. Solving starts with an output and finds the input value or values that produce it.</p>
+      </div>
+      
+      <div class="problem">
+        <div class="problem-number">Situation 2: Phone Battery</div>
+        <p><strong>Question 1:</strong> Evaluate \(B(5)\). What does your answer mean?</p>
+        <p><strong>Answer:</strong> \(B(5)=37\). This means the output is 37 for the given input in the situation.</p>
+        <p><strong>Question 2:</strong> Solve \(B(t)=48\). What does your solution mean?</p>
+        <p><strong>Answer:</strong> \(t=4\). After 4 hours, the battery is at 48%.</p>
+        <p><strong>Question 3:</strong> Which representation made each question easiest?</p>
+        <p><strong>Sample answer:</strong> Evaluating is often quickest from the equation or table. Solving can be easiest from a graph or table when the target output is visible, and algebra is useful when the value is not clearly visible.</p>
+        <p><strong>Question 4:</strong> Explain the difference between evaluating and solving.</p>
+        <p><strong>Sample answer:</strong> Evaluating starts with an input and finds an output. Solving starts with an output and finds the input value or values that produce it.</p>
+      </div>
+      
+      <div class="problem">
+        <div class="problem-number">Situation 3: Streaming Subscription</div>
+        <p><strong>Question 1:</strong> Evaluate \(S(6)\). What does your answer mean?</p>
+        <p><strong>Answer:</strong> \(S(6)=33\). This means the output is 33 for the given input in the situation.</p>
+        <p><strong>Question 2:</strong> Solve \(S(m)=24\). What does your solution mean?</p>
+        <p><strong>Answer:</strong> \(m=3\). A total cost of $24 means 3 movie rentals.</p>
+        <p><strong>Question 3:</strong> Which representation made each question easiest?</p>
+        <p><strong>Sample answer:</strong> Evaluating is often quickest from the equation or table. Solving can be easiest from a graph or table when the target output is visible, and algebra is useful when the value is not clearly visible.</p>
+        <p><strong>Question 4:</strong> Explain the difference between evaluating and solving.</p>
+        <p><strong>Sample answer:</strong> Evaluating starts with an input and finds an output. Solving starts with an output and finds the input value or values that produce it.</p>
+      </div>
+      
+      <div class="problem">
+        <div class="problem-number">Situation 4: Fundraiser Progress</div>
+        <p><strong>Question 1:</strong> Evaluate \(F(4)\). What does your answer mean?</p>
+        <p><strong>Answer:</strong> \(F(4)=140\). This means the output is 140 for the given input in the situation.</p>
+        <p><strong>Question 2:</strong> Solve \(F(d)=115\). What does your solution mean?</p>
+        <p><strong>Answer:</strong> \(d=3\). On day 3, the club has $115.</p>
+        <p><strong>Question 3:</strong> Which representation made each question easiest?</p>
+        <p><strong>Sample answer:</strong> Evaluating is often quickest from the equation or table. Solving can be easiest from a graph or table when the target output is visible, and algebra is useful when the value is not clearly visible.</p>
+        <p><strong>Question 4:</strong> Explain the difference between evaluating and solving.</p>
+        <p><strong>Sample answer:</strong> Evaluating starts with an input and finds an output. Solving starts with an output and finds the input value or values that produce it.</p>
+      </div>
+      
+      <div class="problem">
+        <div class="problem-number">Situation 5: Ball Height</div>
+        <p><strong>Question 1:</strong> Evaluate \(H(1)\). What does your answer mean?</p>
+        <p><strong>Answer:</strong> \(H(1)=6\). This means the output is 6 for the given input in the situation.</p>
+        <p><strong>Question 2:</strong> Solve \(H(t)=6\). What does your solution mean?</p>
+        <p><strong>Answer:</strong> \(t=1 or t=5\). The ball is 6 feet high at 1 second and 5 seconds.</p>
+        <p><strong>Question 3:</strong> Which representation made each question easiest?</p>
+        <p><strong>Sample answer:</strong> Evaluating is often quickest from the equation or table. Solving can be easiest from a graph or table when the target output is visible, and algebra is useful when the value is not clearly visible.</p>
+        <p><strong>Question 4:</strong> Explain the difference between evaluating and solving.</p>
+        <p><strong>Sample answer:</strong> Evaluating starts with an input and finds an output. Solving starts with an output and finds the input value or values that produce it.</p>
+      </div>
+      
+      <div class="problem">
+        <div class="problem-number">Situation 6: Garden Area</div>
+        <p><strong>Question 1:</strong> Evaluate \(A(2)\). What does your answer mean?</p>
+        <p><strong>Answer:</strong> \(A(2)=12\). This means the output is 12 for the given input in the situation.</p>
+        <p><strong>Question 2:</strong> Solve \(A(w)=7\). What does your solution mean?</p>
+        <p><strong>Answer:</strong> \(w=1 or w=7\). Widths 1 and 7 give an area of 7 square units in this model.</p>
+        <p><strong>Question 3:</strong> Which representation made each question easiest?</p>
+        <p><strong>Sample answer:</strong> Evaluating is often quickest from the equation or table. Solving can be easiest from a graph or table when the target output is visible, and algebra is useful when the value is not clearly visible.</p>
+        <p><strong>Question 4:</strong> Explain the difference between evaluating and solving.</p>
+        <p><strong>Sample answer:</strong> Evaluating starts with an input and finds an output. Solving starts with an output and finds the input value or values that produce it.</p>
+      </div>
+      
+      <div class="problem">
+        <div class="problem-number">Situation 7: Fountain Spray</div>
+        <p><strong>Question 1:</strong> Evaluate \(P(3)\). What does your answer mean?</p>
+        <p><strong>Answer:</strong> \(P(3)=6\). This means the output is 6 for the given input in the situation.</p>
+        <p><strong>Question 2:</strong> Solve \(P(x)=0\). What does your solution mean?</p>
+        <p><strong>Answer:</strong> \(x=0 or x=4\). The water is at ground level at distances 0 and 4.</p>
+        <p><strong>Question 3:</strong> Which representation made each question easiest?</p>
+        <p><strong>Sample answer:</strong> Evaluating is often quickest from the equation or table. Solving can be easiest from a graph or table when the target output is visible, and algebra is useful when the value is not clearly visible.</p>
+        <p><strong>Question 4:</strong> Explain the difference between evaluating and solving.</p>
+        <p><strong>Sample answer:</strong> Evaluating starts with an input and finds an output. Solving starts with an output and finds the input value or values that produce it.</p>
+      </div>
+      
+      <div class="problem">
+        <div class="problem-number">Situation 8: Toy Rocket</div>
+        <p><strong>Question 1:</strong> Evaluate \(R(0)\). What does your answer mean?</p>
+        <p><strong>Answer:</strong> \(R(0)=4\). This means the output is 4 for the given input in the situation.</p>
+        <p><strong>Question 2:</strong> Solve \(R(t)=16\). What does your solution mean?</p>
+        <p><strong>Answer:</strong> \(t=1 or t=3\). The rocket is 16 feet high at 1 second and 3 seconds.</p>
+        <p><strong>Question 3:</strong> Which representation made each question easiest?</p>
+        <p><strong>Sample answer:</strong> Evaluating is often quickest from the equation or table. Solving can be easiest from a graph or table when the target output is visible, and algebra is useful when the value is not clearly visible.</p>
+        <p><strong>Question 4:</strong> Explain the difference between evaluating and solving.</p>
+        <p><strong>Sample answer:</strong> Evaluating starts with an input and finds an output. Solving starts with an output and finds the input value or values that produce it.</p>
+      </div>
+      
+      <div class="problem">
+        <div class="problem-number">Discussion Questions</div>
+        <ol>
+          <li><strong>Difference:</strong> Evaluating uses a known input to find an output. Solving uses a known output to find input value(s).</li>
+          <li><strong>Representations:</strong> Tables and equations are often efficient for evaluating. Graphs and tables are often helpful for solving when the target output is visible.</li>
+          <li><strong>Linear vs. quadratic:</strong> A linear function with a nonzero slope usually reaches an output once. A quadratic can reach the same output on both sides of its vertex.</li>
+          <li><strong>Verify:</strong> Substitute the solution into the equation, check the table row, or see whether the graph has the target y-value at that x-value.</li>
+          <li><strong>Student statement:</strong> Both involve the output 10, but \(f(4)=10\) tells the output when input is 4, while \(f(x)=10\) asks which input or inputs produce output 10.</li>
+        </ol>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

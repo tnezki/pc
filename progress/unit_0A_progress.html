@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Unit A Progress Check</title>
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- ====================================================== -->
+<style>
+
+/* ====================================================== */
+/* RESET */
+/* ====================================================== */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+/* ====================================================== */
+/* PAGE */
+/* ====================================================== */
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.45;
+  color:#111;
+  background:white;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* ====================================================== */
+/* HEADINGS */
+/* ====================================================== */
+
+h1{
+  font-size:1.75rem;
+  color:#00003d;
+  margin-bottom:8px;
+}
+
+h2{
+  font-size:1.35rem;
+  color:#00003d;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+  margin:18px 0 10px;
+}
+
+h3{
+  font-size:1.05rem;
+  margin:0 0 8px;
+}
+
+/* ====================================================== */
+/* TOP HEADER */
+/* ====================================================== */
+
+.name-line{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:8px;
+  font-size:1rem;
+}
+
+.name-blank{
+  display:inline-block;
+  border-bottom:1px solid #111;
+  width:340px;
+  height:1.1em;
+}
+
+/* ====================================================== */
+/* PROGRESS TRACKING KEY */
+/* ====================================================== */
+
+.key{
+  border:1px solid #222;
+  padding:10px 12px;
+  margin:10px 0 14px;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.key-title{
+  font-weight:700;
+  margin-bottom:4px;
+}
+
+/* ====================================================== */
+/* PROGRESS TRACKING CARDS */
+/* ====================================================== */
+
+.black-box{
+  background:#111;
+  color:white;
+  padding:12px 14px;
+  margin:14px 0 0;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.black-box strong{
+  font-size:1.02rem;
+}
+
+.tracking-card{
+  border:1px solid #222;
+  margin:0 0 18px;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.tracking-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  border-top:1px solid #222;
+}
+
+.tracking-cell{
+  padding:12px;
+  border-right:1px solid #222;
+  min-height:126px;
+}
+
+.tracking-cell:last-child{
+  border-right:0;
+}
+
+.check-list div{
+  margin:5px 0;
+}
+
+/* ====================================================== */
+/* PAGE BREAKS */
+/* ====================================================== */
+
+.page-break{
+  page-break-before:always;
+}
+
+/* ====================================================== */
+/* PRACTICE BY DEPTH OF KNOWLEDGE */
+/* ====================================================== */
+
+.practice-title{
+  color:#00003d;
+  font-size:1.5rem;
+  margin:24px 0 18px 0;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+.black-dok{
+  background:#111;
+  color:#fff;
+  padding:12px 14px;
+  font-weight:800;
+  font-size:1.05rem;
+  margin:18px 0 14px 0;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.black-dok .dok-small{
+  display:block;
+  font-size:0.88rem;
+  font-weight:500;
+  font-style:italic;
+  color:#f0f0f0;
+  margin-top:6px;
+}
+
+/* ====================================================== */
+/* PROBLEMS */
+/* ====================================================== */
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin:0 0 16px;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* ====================================================== */
+/* TABLES */
+/* ====================================================== */
+
+.parent-table,
+.table-block,
+.param-table,
+table.values{
+  width:auto;
+  border-collapse:collapse;
+  margin:10px auto 12px;
+}
+
+.parent-table th,
+.parent-table td,
+.table-block th,
+.table-block td,
+.param-table th,
+.param-table td,
+table.values th,
+table.values td{
+  border:1px solid #333;
+  padding:6px 12px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+
+/* ====================================================== */
+/* FIGURES AND GRAPHS */
+/* ====================================================== */
+
+.figure-block,
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img,
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* ====================================================== */
+/* WORKSPACE */
+/* ====================================================== */
+
+.workspace-label{
+  font-size:.82rem;
+  font-weight:600;
+  color:#444;
+  margin-top:8px;
+}
+
+.workspace{
+  width:100%;
+  height:150px;
+  border-top:1px solid #777;
+  margin-top:8px;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-140{height:140px;}
+.workspace-150{height:150px;}
+.workspace-160{height:160px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-260{height:260px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+/* ====================================================== */
+/* LIST HELPERS */
+/* ====================================================== */
+
+.lower-alpha{
+  list-style-type:lower-alpha;
+}
+
+.lower-roman{
+  list-style-type:lower-roman;
+}
+
+/* ====================================================== */
+/* PRINT */
+/* ====================================================== */
+
+@media print{
+
+  body{
+    padding:14px;
+  }
+
+  .container{
+    max-width:100%;
+  }
+
+  .page-break{
+    page-break-before:always;
+  }
+
+  .problem,
+  .black-box,
+  .black-dok,
+  .tracking-card{
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+
+  .black-box,
+  .black-dok{
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<!-- ====================================================== -->
+<!-- DOCUMENT HEADER -->
+<!-- ====================================================== -->
+<div class="name-line">
+<div>
+    Name:<span class="name-blank"></span>
+</div>
+<div>
+<strong>Unit A: Quadratic Functions</strong>
+</div>
+</div>
+<h1>Unit A Progress Tracker</h1>
+<!-- ====================================================== -->
+<!-- PROGRESS TRACKING KEY -->
+<!-- ====================================================== -->
+<div class="key">
+<div class="key-title">Progress Tracking Key</div>
+<div><strong>Not Yet:</strong> I need more instruction and practice.</div>
+<div><strong>Getting There:</strong> I understand most of it but need more practice.</div>
+<div><strong>Got It!:</strong> I can do this independently.</div>
+<div><strong>Teach It!:</strong> I can teach it.</div>
+</div>
+<!-- ====================================================== -->
+<!-- PROGRESS TRACKING -->
+<!-- ====================================================== -->
+<h2>Progress Tracking</h2>
+<!-- ====================================================== -->
+<!-- DoK 1 — Rungs 1–2 PROGRESS CARD -->
+<!-- ====================================================== -->
+<div class="tracking-card">
+<div class="black-box">
+<strong>DoK 1 — </strong>Students can recognize quadratic structure, identify basic graph features, use vocabulary accurately, and distinguish between different quadratic forms.
+  </div>
+<div class="tracking-grid">
+<div class="tracking-cell">
+<h3>Progress Tracking<br/>Check One</h3>
+<div class="check-list">
+<div>☐ Teach It!</div>
+<div>☐ Got It!</div>
+<div>☐ Getting There</div>
+<div>☐ Not Yet</div>
+</div>
+</div>
+<div class="tracking-cell">
+<h3>Evidence — assessment name and score</h3>
+</div>
+</div>
+</div>
+<!-- ====================================================== -->
+<!-- DoK 2 — Rungs 3–4 PROGRESS CARD -->
+<!-- ====================================================== -->
+<div class="tracking-card">
+<div class="black-box">
+<strong>DoK 2 — </strong>Students can apply procedures, choose appropriate forms, solve quadratic equations, graph quadratic functions, and connect algebraic work to graphical meaning.
+  </div>
+<div class="tracking-grid">
+<div class="tracking-cell">
+<h3>Progress Tracking<br/>Check One</h3>
+<div class="check-list">
+<div>☐ Teach It!</div>
+<div>☐ Got It!</div>
+<div>☐ Getting There</div>
+<div>☐ Not Yet</div>
+</div>
+</div>
+<div class="tracking-cell">
+<h3>Evidence — assessment name and score</h3>
+</div>
+</div>
+</div>
+<!-- ====================================================== -->
+<!-- DoK 3 — Rungs 5–6 PROGRESS CARD -->
+<!-- ====================================================== -->
+<div class="tracking-card">
+<div class="black-box">
+<strong>DoK 3 — </strong>Students can reason strategically, justify conclusions, connect representations, explain structure, and interpret solutions and key features.
+  </div>
+<div class="tracking-grid">
+<div class="tracking-cell">
+<h3>Progress Tracking<br/>Check One</h3>
+<div class="check-list">
+<div>☐ Teach It!</div>
+<div>☐ Got It!</div>
+<div>☐ Getting There</div>
+<div>☐ Not Yet</div>
+</div>
+</div>
+<div class="tracking-cell">
+<h3>Evidence — assessment name and score</h3>
+</div>
+</div>
+</div>
+<!-- ====================================================== -->
+<!-- DoK 4 — Rungs 7–8 PROGRESS CARD -->
+<!-- ====================================================== -->
+<div class="tracking-card">
+<div class="black-box">
+<strong>DoK 4 — </strong>Students can synthesize solving, graphing, equation writing, rewriting forms, and interpretation to model and analyze unfamiliar quadratic situations.
+  </div>
+<div class="tracking-grid">
+<div class="tracking-cell">
+<h3>Progress Tracking<br/>Check One</h3>
+<div class="check-list">
+<div>☐ Teach It!</div>
+<div>☐ Got It!</div>
+<div>☐ Getting There</div>
+<div>☐ Not Yet</div>
+</div>
+</div>
+<div class="tracking-cell">
+<h3>Evidence — assessment name and score</h3>
+</div>
+</div>
+</div>
+<!-- ====================================================== -->
+<!-- PAGE BREAK AFTER DOK 4 TRACKING -->
+<!-- ====================================================== -->
+<div class="page-break"></div>
+<!-- ====================================================== -->
+<!-- PRACTICE BY DEPTH OF KNOWLEDGE -->
+<!-- ====================================================== -->
+<h2 class="practice-title">Unit A Practice by Depth of Knowledge</h2>
+<!-- ====================================================== -->
+<!-- DOK 1 — RUNGS 1–2 -->
+<!-- ====================================================== -->
+<div class="black-dok">
+<strong>DoK 1 — Rungs 1–2</strong>
+<span class="dok-small">
+    Students can recognize quadratic structure, identify basic graph features, use vocabulary accurately, and distinguish between different quadratic forms.
+  </span>
+</div>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS4-001 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS4-001" id="problem-UAS4-001">
+<div class="problem-number">
+  1.
+ </div>
+<p>
+  Identify the form of each quadratic equation: standard form, vertex form, or intercept form.
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    \(y=2x^2-5x+3\)
+   </p>
+</li>
+<li>
+<p>
+    \(y=-3(x-4)^2+7\)
+   </p>
+</li>
+<li>
+<p>
+    \(y=(x+2)(x-6)\)
+   </p>
+</li>
+<li>
+<p>
+    \(y=-\frac12(x-1)(x+5)\)
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-150">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS1-001 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS1-001" id="problem-UAS1-001">
+<div class="problem-number">
+  2.
+ </div>
+<p>
+  Identify the vertex of each quadratic.
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    \(y=(x-3)^2+5\)
+   </p>
+</li>
+<li>
+<p>
+    \(y=(x+4)^2-2\)
+   </p>
+</li>
+<li>
+<p>
+    \(y=-2(x-1)^2+7\)
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-120">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS1-005 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS1-005" id="problem-UAS1-005">
+<div class="problem-number">
+  3.
+ </div>
+<p>
+  Match each function to its transformation from \(y=x^2\).
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    \(y=(x-4)^2\)
+   </p>
+</li>
+<li>
+<p>
+    \(y=x^2+6\)
+   </p>
+</li>
+<li>
+<p>
+    \(y=-x^2\)
+   </p>
+</li>
+<li>
+<p>
+    \(y=3x^2\)
+   </p>
+</li>
+</ol>
+<p>
+  Transformations:
+ </p>
+<ol>
+<li>
+<p>
+    reflection over the \(x\)-axis
+   </p>
+</li>
+<li>
+<p>
+    shift right 4
+   </p>
+</li>
+<li>
+<p>
+    vertical stretch by a factor of 3
+   </p>
+</li>
+<li>
+<p>
+    shift up 6
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-150">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS2-006 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS2-006" id="problem-UAS2-006">
+<div class="problem-number">
+  4.
+ </div>
+<p>
+  For each function, state the \(x\)-intercepts.
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    \(f(x)=(x-4)(x+2)\)
+   </p>
+</li>
+<li>
+<p>
+    \(g(x)=3(x-1)(x-8)\)
+   </p>
+</li>
+<li>
+<p>
+    \(h(x)=-2(x+6)(x-3)\)
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-120">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS3-002 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UAP-GRAPH-001">
+<div class="problem-number">
+    5.
+  </div>
+<p>
+    Use the graph to identify the key features of the quadratic function.
+  </p>
+<div class="graph-block graph-md">
+<img alt="Graph of an upward-opening parabola" src="figures/unit0A_graph_01.png"/>
+</div>
+<ol class="lower-alpha" type="a">
+<li>
+<p>Identify the vertex.</p>
+</li>
+<li>
+<p>State the axis of symmetry.</p>
+</li>
+<li>
+<p>Identify the \(x\)-intercepts.</p>
+</li>
+<li>
+<p>State whether the vertex is a maximum or minimum.</p>
+</li>
+<li>
+<p>Write a possible equation in vertex form.</p>
+</li>
+</ol>
+<div class="workspace-label">
+    Workspace
+  </div>
+<div class="workspace workspace-300">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS3-003 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS3-003" id="problem-UAS3-003">
+<div class="problem-number">
+  6.
+ </div>
+<p>
+  For each value of \(\Delta\), state the number of real solutions.
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    \(\Delta=25\)
+   </p>
+</li>
+<li>
+<p>
+    \(\Delta=0\)
+   </p>
+</li>
+<li>
+<p>
+    \(\Delta=-12\)
+   </p>
+</li>
+<li>
+<p>
+    \(\Delta=3\)
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-100">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS4-006 -->
+<!-- ====================================================== -->
+<section class="problem" id="problem-UAP-GRAPH-002">
+<div class="problem-number">
+    7.
+  </div>
+<p>
+    Use the graph to write and interpret a quadratic model.
+  </p>
+<div class="graph-block graph-md">
+<img alt="Graph of a downward-opening parabola" src="figures/unit0A_graph_02.png"/>
+</div>
+<ol class="lower-alpha" type="a">
+<li>
+<p>Identify the vertex and explain what it tells you about the graph.</p>
+</li>
+<li>
+<p>Identify the \(x\)-intercepts.</p>
+</li>
+<li>
+<p>State the axis of symmetry.</p>
+</li>
+<li>
+<p>Write a possible equation in intercept form.</p>
+</li>
+<li>
+<p>Rewrite the equation in vertex form.</p>
+</li>
+</ol>
+<div class="workspace-label">
+    Workspace
+  </div>
+<div class="workspace workspace-300">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS5-007 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS5-007" id="problem-UAS5-007">
+<div class="problem-number">
+  8.
+ </div>
+<p>
+  Match each description to the correct range.
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    A parabola opens up and has vertex \((3,-4)\).
+   </p>
+</li>
+<li>
+<p>
+    A parabola opens down and has vertex \((-2,7)\).
+   </p>
+</li>
+<li>
+<p>
+    A parabola opens up and has vertex \((0,5)\).
+   </p>
+</li>
+<li>
+<p>
+    A parabola opens down and has vertex \((6,-1)\).
+   </p>
+</li>
+</ol>
+<p>
+  Ranges:
+ </p>
+<ol>
+<li>
+<p>
+    \(y\le 7\)
+   </p>
+</li>
+<li>
+<p>
+    \(y\ge -4\)
+   </p>
+</li>
+<li>
+<p>
+    \(y\le -1\)
+   </p>
+</li>
+<li>
+<p>
+    \(y\ge 5\)
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-150">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- DOK 2 — RUNGS 3–4 -->
+<!-- ====================================================== -->
+<div class="black-dok">
+<strong>DoK 2 — Rungs 3–4</strong>
+<span class="dok-small">
+    Students can apply procedures, choose appropriate forms, solve quadratic equations, graph quadratic functions, and connect algebraic work to graphical meaning.
+  </span>
+</div>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS2-013 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS2-013" id="problem-UAS2-013">
+<div class="problem-number">
+  1.
+ </div>
+<p>
+  Solve by factoring.
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    \(x^2+9x+20=0\)
+   </p>
+</li>
+<li>
+<p>
+    \(x^2-3x-18=0\)
+   </p>
+</li>
+<li>
+<p>
+    \(x^2-64=0\)
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-180">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS3-021 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS3-021" id="problem-UAS3-021">
+<div class="problem-number">
+  2.
+ </div>
+<p>
+  Solve using the quadratic formula.
+ </p>
+<p>
+  \[2x^2-5x-3=0\]
+ </p>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-150">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS3-026 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS3-026" id="problem-UAS3-026">
+<div class="problem-number">
+  3.
+ </div>
+<p>
+  For each equation:
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    calculate \(\Delta\)
+   </p>
+</li>
+<li>
+<p>
+    predict the number of real solutions
+   </p>
+</li>
+<li>
+<p>
+    solve if real solutions exist
+   </p>
+</li>
+</ol>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    \(x^2-12x+36=0\)
+   </p>
+</li>
+<li>
+<p>
+    \(x^2-12x+20=0\)
+   </p>
+</li>
+<li>
+<p>
+    \(x^2-12x+40=0\)
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-220">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS1-021 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS1-021" id="problem-UAS1-021">
+<div class="problem-number">
+  4.
+ </div>
+<p>
+  A parabola has vertex \((3,7)\) and passes through the point \((5,15)\). Write the equation in vertex form.
+ </p>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-150">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS4-022 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS4-022" id="problem-UAS4-022">
+<div class="problem-number">
+  5.
+ </div>
+<p>
+  A quadratic has \(x\)-intercepts at \((-4,0)\) and \((6,0)\), and passes through \((0,-24)\).
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    Write the equation in intercept form.
+   </p>
+</li>
+<li>
+<p>
+    Rewrite the equation in standard form.
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-200">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS4-027 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS4-027" id="problem-UAS4-027">
+<div class="problem-number">
+  6.
+ </div>
+<p>
+  The table shows a quadratic function.
+\[
+\begin{array}{c|ccccc}
+x&amp;0&amp;1&amp;2&amp;3&amp;4\\
+\hline
+y&amp;5&amp;8&amp;13&amp;20&amp;29
+\end{array}
+\]
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    Find the first differences.
+   </p>
+</li>
+<li>
+<p>
+    Find the second differences.
+   </p>
+</li>
+<li>
+<p>
+    Determine the value of \(a\).
+   </p>
+</li>
+<li>
+<p>
+    Write an equation for the function.
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-250">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS5-013 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS5-013" id="problem-UAS5-013">
+<div class="problem-number">
+  7.
+ </div>
+<p>
+  For the function
+ </p>
+<p style="text-align:center;">
+  \(f(x)=x^2-6x+5\)
+ </p>
+<p>
+  find:
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    the \(y\)-intercept
+   </p>
+</li>
+<li>
+<p>
+    the axis of symmetry
+   </p>
+</li>
+<li>
+<p>
+    the vertex
+   </p>
+</li>
+<li>
+<p>
+    whether the vertex is a maximum or minimum
+   </p>
+</li>
+<li>
+<p>
+    the range
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-180">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS5-025 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS5-025" id="problem-UAS5-025">
+<div class="problem-number">
+  8.
+ </div>
+<p>
+  The height of a ball is modeled by
+ </p>
+<p style="text-align:center;">
+  \(h(t)=-16t^2+64t+5\)
+ </p>
+<p>
+  where \(t\) is time in seconds and \(h(t)\) is height in feet.
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    Find the time when the ball reaches its maximum height.
+   </p>
+</li>
+<li>
+<p>
+    Find the maximum height.
+   </p>
+</li>
+<li>
+<p>
+    What is the initial height?
+   </p>
+</li>
+<li>
+<p>
+    Explain what the vertex means in context.
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-180">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- DOK 3 — RUNGS 5–6 -->
+<!-- ====================================================== -->
+<div class="black-dok">
+<strong>DoK 3 — Rungs 5–6</strong>
+<span class="dok-small">
+    Students can reason strategically, justify conclusions, connect representations, explain structure, and interpret solutions and key features.
+  </span>
+</div>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS1-031 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS1-031" id="problem-UAS1-031">
+<div class="problem-number">
+  1.
+ </div>
+<p>
+  A student says, “The graph of \(y=(x+5)^2-2\) shifts right 5 and down 2.” Explain the student’s mistake. Then describe the correct transformation.
+ </p>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-180">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS2-031 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS2-031" id="problem-UAS2-031">
+<div class="problem-number">
+  2.
+ </div>
+<p>
+  A student factors:
+ </p>
+<p style="text-align:center;">
+  \(x^2+2x-24\)
+ </p>
+<p>
+  as:
+ </p>
+<p style="text-align:center;">
+  \((x+6)(x-4)\)
+ </p>
+<p>
+  Then solves:
+ </p>
+<p style="text-align:center;">
+  \(x=-6,\quad x=4\)
+ </p>
+<p>
+  Is the student correct? Explain how you can check without expanding everything.
+ </p>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-180">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS3-032 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS3-032" id="problem-UAS3-032">
+<div class="problem-number">
+  3.
+ </div>
+<p>
+  A student calculates the discriminant for:
+ </p>
+<p>
+  \[2x^2-3x+8=0\]
+ </p>
+<p>
+  as:
+ </p>
+<p>
+  \[\Delta=(-3)^2-4(2)(8)=9-64=-55\]
+ </p>
+<p>
+<em>
+   “Since the discriminant is negative, there are no solutions.”
+  </em>
+</p>
+<p>
+  What should the student have said instead? Explain carefully.
+ </p>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-180">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS4-036 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS4-036" id="problem-UAS4-036">
+<div class="problem-number">
+  4.
+ </div>
+<p>
+  Compare these two equations:
+\[
+f(x)=2(x-3)^2-8
+\]
+\[
+g(x)=2(x-1)(x-5)
+\]
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    Rewrite both equations in standard form.
+   </p>
+</li>
+<li>
+<p>
+    Explain why they represent the same function.
+   </p>
+</li>
+<li>
+<p>
+    State the vertex and zeros.
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-260">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS4-039 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS4-039" id="problem-UAS4-039">
+<div class="problem-number">
+  5.
+ </div>
+<p>
+  The table shows a quadratic function.
+\[
+\begin{array}{c|ccccc}
+x&amp;-3&amp;-2&amp;-1&amp;0&amp;1\\
+\hline
+y&amp;14&amp;5&amp;0&amp;-1&amp;2
+\end{array}
+\]
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    Use differences to verify the function is quadratic.
+   </p>
+</li>
+<li>
+<p>
+    Write the equation in standard form.
+   </p>
+</li>
+<li>
+<p>
+    Rewrite the equation in vertex form.
+   </p>
+</li>
+<li>
+<p>
+    Explain what each form reveals.
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-300">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS5-033 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS5-033" id="problem-UAS5-033">
+<div class="problem-number">
+  6.
+ </div>
+<p>
+  A student says:
+ </p>
+<p style="margin-left:20px;">
+  “The range of \(y=-3(x-2)^2+5\) is \(y\ge 5\) because the vertex has \(y=5\).”
+ </p>
+<p>
+  Explain the mistake and state the correct range.
+ </p>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-180">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS5-036 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS5-036" id="problem-UAS5-036">
+<div class="problem-number">
+  7.
+ </div>
+<p>
+  A quadratic has \(x\)-intercepts at \((-1,0)\) and \((7,0)\), and opens upward.
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    What is the axis of symmetry?
+   </p>
+</li>
+<li>
+<p>
+    What kind of value does the vertex represent?
+   </p>
+</li>
+<li>
+<p>
+    Where is the function decreasing?
+   </p>
+</li>
+<li>
+<p>
+    Where is the function increasing?
+   </p>
+</li>
+<li>
+<p>
+    Explain how you know without finding the full equation.
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-220">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS3-037 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS3-037" id="problem-UAS3-037">
+<div class="problem-number">
+  8.
+ </div>
+<p>
+  For each equation, choose the most efficient method: factoring, completing the square, or quadratic formula. Then justify your choice.
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    \(x^2-9x+20=0\)
+   </p>
+</li>
+<li>
+<p>
+    \(x^2+4x-1=0\)
+   </p>
+</li>
+<li>
+<p>
+    \(3x^2-8x+2=0\)
+   </p>
+</li>
+<li>
+<p>
+    \(x^2+12x+36=0\)
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-220">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- DOK 4 — RUNGS 7–8 -->
+<!-- ====================================================== -->
+<div class="black-dok">
+<strong>DoK 4 — Rungs 7–8</strong>
+<span class="dok-small">
+    Students can synthesize solving, graphing, equation writing, rewriting forms, and interpretation to model and analyze unfamiliar quadratic situations.
+  </span>
+</div>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS1-043 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS1-043" id="problem-UAS1-043">
+<div class="problem-number">
+  1.
+ </div>
+<p>
+  A water fountain shoots water upward. The height of the water is modeled by \(h(t)=-5(t-2)^2+21\), where \(t\) is time in seconds and \(h(t)\) is height in feet.
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    Identify the vertex and interpret it in context.
+   </p>
+</li>
+<li>
+<p>
+    Determine the height at \(t=0\).
+   </p>
+</li>
+<li>
+<p>
+    Determine another time when the water is the same height as at \(t=0\).
+   </p>
+</li>
+<li>
+<p>
+    Explain how symmetry helps answer part c.
+   </p>
+</li>
+<li>
+<p>
+    State a reasonable domain for the model and justify it.
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-300">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS2-043 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS2-043" id="problem-UAS2-043">
+<div class="problem-number">
+  2.
+ </div>
+<p>
+  A ball is launched from the ground. Its height is modeled by:
+ </p>
+<p style="text-align:center;">
+  \(h(t)=-2t(t-6)\)
+ </p>
+<p>
+  where \(t\) is time in seconds and \(h(t)\) is height in meters.
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    What are the zeros of the function?
+   </p>
+</li>
+<li>
+<p>
+    Interpret each zero in context.
+   </p>
+</li>
+<li>
+<p>
+    Find the time when the ball reaches its maximum height.
+   </p>
+</li>
+<li>
+<p>
+    Find the maximum height.
+   </p>
+</li>
+<li>
+<p>
+    Explain how factored form helps answer the question efficiently.
+   </p>
+</li>
+</ol>
+<div class="graph-block graph-md">
+<img alt="Blank coordinate grid for UAS2-043" src="figures/UAS2-043_grid.png"/>
+</div>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-300">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS3-043 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS3-043" id="problem-UAS3-043">
+<div class="problem-number">
+  3.
+ </div>
+<p>
+  A ball is thrown upward from a platform. Its height is modeled by:
+ </p>
+<p>
+  \[h(t)=-16t^2+48t+64\]
+ </p>
+<p>
+  where \(h(t)\) is height in feet and \(t\) is time in seconds.
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    Rewrite the function in vertex form by completing the square.
+   </p>
+</li>
+<li>
+<p>
+    Identify and interpret the vertex.
+   </p>
+</li>
+<li>
+<p>
+    Use the quadratic formula to determine when the ball hits the ground.
+   </p>
+</li>
+<li>
+<p>
+    Explain why one solution may not make sense in context.
+   </p>
+</li>
+<li>
+<p>
+    State a reasonable domain for the model.
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-300">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS4-043 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS4-043" id="problem-UAS4-043">
+<div class="problem-number">
+  4.
+ </div>
+<p>
+  A quadratic function is shown by the table.
+\[
+\begin{array}{c|ccccc}
+x&amp;0&amp;1&amp;2&amp;3&amp;4\\
+\hline
+f(x)&amp;12&amp;3&amp;-2&amp;-3&amp;0
+\end{array}
+\]
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    Use first and second differences to verify the function is quadratic.
+   </p>
+</li>
+<li>
+<p>
+    Write the equation in standard form.
+   </p>
+</li>
+<li>
+<p>
+    Rewrite the equation in vertex form.
+   </p>
+</li>
+<li>
+<p>
+    Find the zeros using a method of your choice.
+   </p>
+</li>
+<li>
+<p>
+    Explain how the table, standard form, vertex form, and zeros all describe the same function.
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-300">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS5-044 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS5-044" id="problem-UAS5-044">
+<div class="problem-number">
+  5.
+ </div>
+<p>
+  A farmer has \(100\) meters of fencing to enclose a rectangular field along a river. No fencing is needed along the river. Let \(x\) be the width perpendicular to the river.
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    Write an area function in terms of \(x\).
+   </p>
+</li>
+<li>
+<p>
+    Find the dimensions that maximize area.
+   </p>
+</li>
+<li>
+<p>
+    Find the maximum area.
+   </p>
+</li>
+<li>
+<p>
+    State a reasonable domain for the model.
+   </p>
+</li>
+<li>
+<p>
+    Explain why the domain is restricted in context.
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-300">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS4-044 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS4-044" id="problem-UAS4-044">
+<div class="problem-number">
+  6.
+ </div>
+<p>
+  A quadratic has zeros \(x=-4\) and \(x=10\). It passes through \((2,-48)\).
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    Write the equation in intercept form.
+   </p>
+</li>
+<li>
+<p>
+    Find the vertex.
+   </p>
+</li>
+<li>
+<p>
+    Rewrite the equation in vertex form.
+   </p>
+</li>
+<li>
+<p>
+    Rewrite the equation in standard form.
+   </p>
+</li>
+<li>
+<p>
+    Explain which form is most useful for finding zeros, vertex, and \(y\)-intercept.
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-300">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS5-049 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS5-049" id="problem-UAS5-049">
+<div class="problem-number">
+  7.
+ </div>
+<p>
+  Two different quadratic models are proposed for the same revenue situation:
+ </p>
+<p style="text-align:center;">
+  \(R_1(p)=-2(p-12)^2+288\)
+ </p>
+<p style="text-align:center;">
+  \(R_2(p)=-2p^2+48p\)
+ </p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    Show that the two models are equivalent.
+   </p>
+</li>
+<li>
+<p>
+    Identify the price that maximizes revenue.
+   </p>
+</li>
+<li>
+<p>
+    Identify the maximum revenue.
+   </p>
+</li>
+<li>
+<p>
+    Find the break-even prices.
+   </p>
+</li>
+<li>
+<p>
+    Explain which form is most useful for each feature.
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-300">
+</div>
+</section>
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM UAS3-047 -->
+<!-- ====================================================== -->
+<section class="problem" data-source="UAS3-047" id="problem-UAS3-047">
+<div class="problem-number">
+  8.
+ </div>
+<p>
+  Two students solve the same equation:
+ </p>
+<p>
+  \[2x^2-8x-3=0\]
+ </p>
+<p>
+  Student A uses completing the square.
+  <br>
+  Student B uses the quadratic formula.
+ </br></p>
+<ol class="lower-alpha" type="a">
+<li>
+<p>
+    Solve the equation using completing the square.
+   </p>
+</li>
+<li>
+<p>
+    Solve the equation using the quadratic formula.
+   </p>
+</li>
+<li>
+<p>
+    Show that the answers are equivalent.
+   </p>
+</li>
+<li>
+<p>
+    Explain which method is more efficient for this equation and why.
+   </p>
+</li>
+</ol>
+<div class="workspace-label">
+  Workspace
+ </div>
+<div class="workspace workspace-300">
+</div>
+</section>
+</div>
+</body>
+</html>
