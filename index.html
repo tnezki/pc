@@ -6,44 +6,24 @@
      File: index.html
      Hosted at: tnezki.github.io/pctextbook/index.html
 
-     STRUCTURE OVERVIEW
-     ------------------
-     1. <head>             Fonts, styles
-     2. .page-header       Title and subtitle
-     3. .resources-bar     Quick-link chips (top of page)
-     4. #units             Populated by JavaScript below
+     STRUCTURE is identical to index.html with these additions:
+       - Green "Teacher View" banner at top
+       - Extra resources bar chips (Tarsia, Year at a Glance, etc.)
+       - Each section shows additional teacher-only resources
+         (Bank, Notes Teacher, Reflection, Practice Set 2, Practice Set 3)
+         displayed in green to distinguish them from student resources
 
-     TO EDIT A LINK
-     --------------
-     Find the unit/section in the `units` array in the
-     <script> block. Change the `href` value for that item.
-
-     TO ADD A RESOURCE TO THE TOP BAR
-     ---------------------------------
-     Find the "TOP RESOURCES BAR" section in <body>.
-     Copy any <a> tag and paste a new one below it.
-
-     TO RENAME A RESOURCE (e.g. Activity 1 → Discovery Lab)
-     --------------------------------------------------------
-     Find the section's `resources` array and change the
-     `label` field for that item.
-
-     TO ADD A NEW SECTION RESOURCE
-     ------------------------------
-     Add a new object to the section's `resources` array:
-       { label: "My New Thing", cls: "", icon: "ti-file", href: "https://..." }
-
-     TO ADD A WHOLE NEW UNIT
-     ------------------------
-     Copy any unit object (from the opening { to the }, )
-     and paste it in the correct position in the units array.
+     TO EDIT — same rules as index.html:
+       Edit href values in the `units` array below.
+       Add top-bar chips in the "TOP RESOURCES BAR" section.
+       Rename any label by changing its `label` field.
      ============================================================ -->
 
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precalculus — Manistee High School</title>
+    <title>Precalculus</title>
 
     <!-- Tabler Icons (outline webfont) -->
     <link
@@ -58,16 +38,17 @@
            Edit colors here — changes cascade everywhere.
            -------------------------------------------------------- */
         :root {
-            --navy:       #1F3864;
-            --gold:       #C9A84C;
-            --gold-light: #F5EDD5;
-            --gold-mid:   #e8d49a;
+            --navy:           #1F3864;
+            --gold:           #C9A84C;
+            --gold-light:     #F5EDD5;
+            --gold-mid:       #e8d49a;
 
-            --text:       #1a1a1a;
-            --text-muted: #555555;
-            --border:     #dddddd;
-            --bg:         #ffffff;
-            --bg-subtle:  #f7f7f5;
+            --text:           #1a1a1a;
+            --text-muted:     #555555;
+            --border:         #dddddd;
+            --bg:             #ffffff;
+            --bg-subtle:      #f7f7f5;
+
         }
 
 
@@ -93,10 +74,12 @@
            PAGE LAYOUT
            -------------------------------------------------------- */
         .page-wrap {
-            max-width: 860px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 2rem 1.5rem 4rem;
         }
+
+
 
 
         /* --------------------------------------------------------
@@ -169,13 +152,12 @@
 
         /* --------------------------------------------------------
            UNIT BLOCK
-           One of these wraps each unit (header + sections).
            -------------------------------------------------------- */
         .unit-block {
             margin-bottom: 2.5rem;
         }
 
-        /* Navy title bar — clicking this opens/closes the unit */
+        /* Navy title bar — clicking opens/closes the unit */
         .unit-header {
             background: var(--navy);
             border-radius: 6px 6px 0 0;
@@ -191,7 +173,6 @@
             background: #26447a;
         }
 
-        /* Small all-caps gold label, e.g. "UNIT 01" */
         .unit-label {
             font-size: 11px;
             font-family: Arial, sans-serif;
@@ -202,7 +183,6 @@
             white-space: nowrap;
         }
 
-        /* Full unit title in white */
         .unit-name {
             font-size: 16px;
             font-family: Georgia, serif;
@@ -211,7 +191,6 @@
             flex: 1;
         }
 
-        /* Chevron rotates when unit is open */
         .unit-chevron {
             font-size: 15px;
             color: var(--gold);
@@ -223,7 +202,7 @@
             transform: rotate(180deg);
         }
 
-        /* Everything inside the unit that collapses */
+        /* Everything inside a unit that collapses */
         .unit-collapsible {
             display: none;
         }
@@ -232,7 +211,7 @@
             display: block;
         }
 
-        /* Light blue strip with unit-level links (Outline, etc.) */
+        /* Unit-level link chips row */
         .unit-meta {
             background: #f0f3f8;
             border-left: 1px solid #c5cfe0;
@@ -243,6 +222,7 @@
             gap: 7px;
         }
 
+        /* Standard (student-visible) unit chip */
         .unit-meta-chip {
             font-size: 12px;
             font-family: Arial, sans-serif;
@@ -258,6 +238,7 @@
             background: #dce6f5;
         }
 
+
         /* Container for all section rows */
         .unit-body {
             border: 1px solid #c5cfe0;
@@ -269,7 +250,6 @@
 
         /* --------------------------------------------------------
            SECTION ROWS
-           One row per section inside a unit.
            -------------------------------------------------------- */
         .section-row {
             border-top: 1px solid var(--border);
@@ -279,7 +259,6 @@
             border-top: none;
         }
 
-        /* Clickable row that toggles the resource buttons */
         .section-head {
             display: flex;
             align-items: center;
@@ -294,7 +273,6 @@
             background: #eef1f7;
         }
 
-        /* Section number badge, e.g. "1.3" */
         .section-num {
             font-size: 11px;
             font-family: Arial, sans-serif;
@@ -313,7 +291,6 @@
             flex: 1;
         }
 
-        /* Chevron rotates when section is open */
         .section-chevron {
             font-size: 14px;
             color: var(--text-muted);
@@ -325,24 +302,44 @@
             transform: rotate(180deg);
         }
 
-        /* Resource button row — hidden until section is clicked */
+        /* Resource area — hidden until section is clicked */
         .section-body {
             display: none;
-            flex-wrap: wrap;
-            gap: 6px;
             padding: 0.6rem 1rem 0.75rem;
             background: white;
             border-top: 1px solid var(--border);
         }
 
         .section-body.open {
+            display: block;
+        }
+
+        /* Row of buttons inside the section body */
+        .btn-row {
             display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .btn-row:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Small label above each button row */
+        .btn-row-label {
+            font-size: 10px;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            color: var(--text-muted);
+            width: 100%;
+            margin-bottom: 3px;
         }
 
 
         /* --------------------------------------------------------
            RESOURCE BUTTONS
-           The pill-shaped links inside each section.
            -------------------------------------------------------- */
         .r-btn {
             font-size: 12px;
@@ -363,7 +360,7 @@
             color: var(--navy);
         }
 
-        /* Notes and Practice Set get a slightly stronger style */
+        /* Notes and Practice Set are slightly emphasized */
         .r-btn.primary {
             border-color: #b8c5d8;
             color: var(--navy);
@@ -374,6 +371,7 @@
         .r-btn.primary:hover {
             background: #dce6f5;
         }
+
 
         .r-btn i {
             font-size: 13px;
@@ -388,15 +386,20 @@
 
 
     <!-- ============================================================
+         TEACHER BANNER
+         Visual reminder that this is the teacher-only view.
+         ============================================================ -->
+
+
+    <!-- ============================================================
          PAGE HEADER
-         Edit course name and teacher name here.
          ============================================================ -->
     <div class="page-header">
 
         <div class="page-title">Precalculus</div>
 
         <div class="page-subtitle">
-            Manistee High School &nbsp;&middot;&nbsp; Mr. Nezki
+            Manistee High School
         </div>
 
     </div>
@@ -405,8 +408,7 @@
 
     <!-- ============================================================
          TOP RESOURCES BAR
-         Add / remove / rename chips here.
-         Each <a> tag is one chip.
+         Quick-link chips.
          ============================================================ -->
     <div class="resources-bar">
 
@@ -414,28 +416,28 @@
 
         <div class="resources-bar-links">
 
-            <a href="https://claude.ai" class="res-chip" target="_blank">Syllabus</a>
-            <a href="https://claude.ai" class="res-chip" target="_blank">Images</a>
-            <a href="https://claude.ai" class="res-chip" target="_blank">Graph Paper</a>
-            <a href="https://claude.ai" class="res-chip" target="_blank">Parent Functions</a>
-            <a href="https://claude.ai" class="res-chip" target="_blank">Desmos</a>
-            <a href="https://claude.ai" class="res-chip" target="_blank">GeoGebra</a>
-            <a href="https://claude.ai" class="res-chip" target="_blank">Canvas</a>
-            <a href="https://claude.ai" class="res-chip" target="_blank">Daily Schedule</a>
-            <a href="https://claude.ai" class="res-chip" target="_blank">Line Graphing Practice</a>
+            <!-- Student-visible resources -->
+            <a href="https://docs.google.com/document/d/1affWxYO0EYUv9eQTvYc0b3sSe_mshlVee4-26Rg8UaQ/edit?usp=sharing" class="res-chip" target="_blank">Syllabus</a>
+            <a href="https://drive.google.com/drive/folders/1P--I08sYOrbIL_JtoX0DDcQ3KmNbyaIF?usp=sharing" class="res-chip" target="_blank">Images</a>
+            <a href="https://docs.google.com/document/d/1Au4WGM82DyV6I-HAUM-lMD-mIdrj_sit05ZvU2MsGvM/edit?usp=sharing" class="res-chip" target="_blank">Outlines</a>
+            <a href="https://drive.google.com/file/d/1xmiV_IxGOdml2it9MTNOrAfQtNCEnVZw/view?usp=sharing" class="res-chip" target="_blank">Graph Paper</a>
+            <a href="https://drive.google.com/file/d/1AaolERU6aOXD1g7sWIOZiN7HZkwbBni2/view?usp=sharing" class="res-chip" target="_blank">Parent Functions</a>
+            <a href="https://www.desmos.com/calculator" class="res-chip" target="_blank">Desmos</a>
+            <a href="https://www.geogebra.org/graphing" class="res-chip" target="_blank">GeoGebra</a>
+            <a href="https://mariners.instructure.com/" class="res-chip" target="_blank">Canvas</a>
+            <a href="https://www.geogebra.org/m/EzCuXRvT" class="res-chip" target="_blank">Line Graphing Practice</a>
 
             <!-- ADD NEW TOP-BAR LINKS BELOW THIS LINE -->
 
         </div>
 
     </div>
-    <!-- end .resources-bar -->
+    
 
 
     <!-- ============================================================
          UNITS CONTAINER
-         Do not add HTML here — edit the `units` array in
-         the <script> block below instead.
+         Populated by the <script> block below.
          ============================================================ -->
     <div id="units"></div>
 
@@ -450,25 +452,14 @@
 
      HOW THE DATA IS ORGANIZED
      --------------------------
-     `units` is an array. Each object is one unit and has:
+     Same structure as index.html, with one addition:
 
-       id        used to build section numbers ("1" → "1.3")
-       label     short gold label ("Unit 01")
-       name      full unit title (white text)
-       meta      unit-level link chips (Outline, Warm Ups, etc.)
-       sections  array of section objects
+     Each section has TWO resource arrays:
+       studentResources  shown in navy/blue (same as student view)
+       teacherResources  shown in green (teacher-only)
 
-     Each section object has:
-
-       title      displayed section name
-       resources  array of button objects
-
-     Each resource button object has:
-
-       label   button text — rename freely (e.g. "Activity 1")
-       cls     "primary" for Notes/Practice Set, "" for others
-       icon    Tabler icon name  see: tabler.io/icons
-       href    the URL — replace "https://claude.ai" when ready
+     Each unit's `meta` array also has a `teacher` flag:
+     Teacher meta chips render in green.
 
      ============================================================ -->
 <script>
@@ -481,176 +472,7 @@
     const units = [
 
 
-        // --------------------------------------------------------
-        // READINESS UNIT A — Quadratic Functions
-        // --------------------------------------------------------
-        {
-            id:    "A",
-            label: "Readiness Unit A",
-            name:  "Quadratic Functions",
-
-            meta: [
-                { label: "Outline",          href: "https://claude.ai" },
-                { label: "Progress Tracker", href: "https://claude.ai" },
-                { label: "Warm Ups",         href: "https://claude.ai" }
-            ],
-
-            sections: [
-
-                {
-                    title: "Transformations and Vertex Form of Quadratics",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Solving Quadratics by Factoring and Intercepts",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Completing the Square, Quadratic Formula, and Discriminant",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Writing and Rewriting Quadratic Equations from Graphs, Data, and Features",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Key Features, Behavior, and Quadratic Modeling",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                }
-
-            ] // end sections — Readiness Unit A
-
-        }, // end Readiness Unit A
-
-
-        // --------------------------------------------------------
-        // READINESS UNIT B — Exponents, Radicals, and Lines
-        // --------------------------------------------------------
-        {
-            id:    "B",
-            label: "Readiness Unit B",
-            name:  "Exponents, Radicals, and Lines",
-
-            meta: [
-                { label: "Outline",          href: "https://claude.ai" },
-                { label: "Progress Tracker", href: "https://claude.ai" },
-                { label: "Warm Ups",         href: "https://claude.ai" }
-            ],
-
-            sections: [
-
-                {
-                    title: "Exponent Properties",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Radicals and Rational Exponents",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Simplifying and Evaluating Radical Expressions",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Linear Equations from Points, Slopes, Graphs, and Tables",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Algebraic Structure and Function Readiness",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                }
-
-            ] // end sections — Readiness Unit B
-
-        }, // end Readiness Unit B
+       
 
 
         // --------------------------------------------------------
@@ -662,75 +484,75 @@
             name:  "Function Foundations",
 
             meta: [
-                { label: "Outline",          href: "https://claude.ai" },
-                { label: "Progress Tracker", href: "https://claude.ai" },
-                { label: "Warm Ups",         href: "https://claude.ai" }
+                { label: "Outline", href: "https://docs.google.com/document/d/1820EB8Yq5soVONdvwQscc6HJts0_BoVi0Sks-LE9IF0/edit?usp=sharing" },
+                { label: "Progress Tracker", href: "/pc/progress/unit_0A_progress.html" },
+                { label: "Warm Ups", href: "/pc/warmups/unit_01_warmups.html" },
             ],
 
             sections: [
 
                 {
                     title: "Function Notation &amp; Solving",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
+                    studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u1_1_notes/u1_1_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_1_1/practice_set_1_1_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u1_1_investigation/u1_1_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u1_1_act1/u1_1_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u1_1_act2/u1_1_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_1_1/practice_set_1_1_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_1_1/cyu_1.1.html" }
                     ]
                 },
 
                 {
                     title: "Interval &amp; Inequality Notation",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
+                    studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u1_2_notes/u1_2_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_1_2/practice_set_1_2_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u1_2_investigation/u1_2_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u1_2_act1/u1_2_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u1_2_act2/u1_2_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_1_2/practice_set_1_2_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_1_2/cyu_1.2.html" }
                     ]
                 },
 
                 {
                     title: "Domain &amp; Range",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
+                    studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u1_3_notes/u1_3_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_1_3/practice_set_1_3_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u1_3_investigation/u1_3_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u1_3_act1/u1_3_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u1_3_act2/u1_3_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_1_3/practice_set_1_3_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_1_3/cyu_1.3.html" }
                     ]
                 },
 
                 {
                     title: "Transformations of Parent Functions",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
+                    studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u1_4_notes/u1_4_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_1_4/practice_set_1_4_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u1_4_investigation/u1_4_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u1_4_act1/u1_4_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u1_4_act2/u1_4_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_1_4/practice_set_1_4_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_1_4/cyu_1.4.html" }
                     ]
                 },
 
                 {
                     title: "Limits Graphically",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
+                    studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u1_5_notes/u1_5_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_1_5/practice_set_1_5_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u1_5_investigation/u1_5_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u1_5_act1/u1_5_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u1_5_act2/u1_5_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_1_5/practice_set_1_5_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_1_5/cyu_1.5.html" }
                     ]
                 }
 
@@ -740,88 +562,71 @@
 
 
         // --------------------------------------------------------
+        // UNITS 02 – 08 follow the exact same pattern as Unit 01.
+        // Only the title, id, label, name, and section titles change.
+        // All meta and resource structures are identical.
+        // --------------------------------------------------------
+
+
+        // --------------------------------------------------------
         // UNIT 02 — More Functions
         // --------------------------------------------------------
         {
             id:    "2",
             label: "Unit 02",
             name:  "More Functions",
-
             meta: [
-                { label: "Outline",          href: "https://claude.ai" },
-                { label: "Progress Tracker", href: "https://claude.ai" },
-                { label: "Warm Ups",         href: "https://claude.ai" }
+                { label: "Outline", href: "https://claude.ai" },
+                { label: "Progress Tracker", href: "/pc/progress/unit_02_progress.html" },
+                { label: "Warm Ups", href: "/pc/warmups/unit_02_warmups.html" },
             ],
-
             sections: [
-
-                {
-                    title: "Odd and Even Functions",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Function Arithmetic",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Function Composition",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Difference Quotient",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Function Inverses",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                }
-
-            ] // end sections — Unit 02
-
+                { title: "Odd and Even Functions",   studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u2_1_notes/u2_1_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_2_1/practice_set_2_1_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u2_1_investigation/u2_1_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u2_1_act1/u2_1_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u2_1_act2/u2_1_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_2_1/practice_set_2_1_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_2_1/cyu_2.1.html" }
+                    ] },
+                { title: "Function Arithmetic",      studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u2_2_notes/u2_2_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_2_2/practice_set_2_2_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u2_2_investigation/u2_2_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u2_2_act1/u2_2_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u2_2_act2/u2_2_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_2_2/practice_set_2_2_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_2_2/cyu_2.2.html" }
+                    ] },
+                { title: "Function Composition",     studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u2_3_notes/u2_3_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_2_3/practice_set_2_3_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u2_3_investigation/u2_3_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u2_3_act1/u2_3_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u2_3_act2/u2_3_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_2_3/practice_set_2_3_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_2_3/cyu_2.3.html" }
+                    ] },
+                { title: "Difference Quotient",      studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u2_4_notes/u2_4_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_2_4/practice_set_2_4_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u2_4_investigation/u2_4_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u2_4_act1/u2_4_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u2_4_act2/u2_4_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_2_4/practice_set_2_4_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_2_4/cyu_2.4.html" }
+                    ] },
+                { title: "Function Inverses",        studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u2_5_notes/u2_5_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_2_5/practice_set_2_5_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u2_5_investigation/u2_5_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u2_5_act1/u2_5_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u2_5_act2/u2_5_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_2_5/practice_set_2_5_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_2_5/cyu_2.5.html" }
+                    ] }
+            ]
         }, // end Unit 02
 
 
@@ -832,82 +637,58 @@
             id:    "3",
             label: "Unit 03",
             name:  "Radical Functions",
-
             meta: [
-                { label: "Outline",          href: "https://claude.ai" },
-                { label: "Progress Tracker", href: "https://claude.ai" },
-                { label: "Warm Ups",         href: "https://claude.ai" }
+                { label: "Outline", href: "https://claude.ai" },
+                { label: "Progress Tracker", href: "/pc/progress/unit_03_progress.html" },
+                { label: "Warm Ups", href: "/pc/warmups/unit_03_warmups.html" },
             ],
-
             sections: [
-
-                {
-                    title: "Solve Using Roots",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Solve Square Root Equations",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Solve Cube Root Equations",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Graph Square and Cube Root Functions",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Exploring Rational Exponents",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                }
-
-            ] // end sections — Unit 03
-
+                { title: "Solve Using Roots",                    studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u3_1_notes/u3_1_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_3_1/practice_set_3_1_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u3_1_investigation/u3_1_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u3_1_act1/u3_1_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u3_1_act2/u3_1_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_3_1/practice_set_3_1_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_3_1/cyu_3.1.html" }
+                    ] },
+                { title: "Solve Square Root Equations",          studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u3_2_notes/u3_2_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_3_2/practice_set_3_2_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u3_2_investigation/u3_2_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u3_2_act1/u3_2_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u3_2_act2/u3_2_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_3_2/practice_set_3_2_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_3_2/cyu_3.2.html" }
+                    ] },
+                { title: "Solve Cube Root Equations",            studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u3_3_notes/u3_3_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_3_3/practice_set_3_3_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u3_3_investigation/u3_3_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u3_3_act1/u3_3_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u3_3_act2/u3_3_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_3_3/practice_set_3_3_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_3_3/cyu_3.3.html" }
+                    ] },
+                { title: "Graph Square and Cube Root Functions", studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u3_4_notes/u3_4_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_3_4/practice_set_3_4_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u3_4_investigation/u3_4_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u3_4_act1/u3_4_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u3_4_act2/u3_4_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_3_4/practice_set_3_4_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_3_4/cyu_3.4.html" }
+                    ] },
+                { title: "Exploring Rational Exponents",         studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u3_5_notes/u3_5_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_3_5/practice_set_3_5_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u3_5_investigation/u3_5_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u3_5_act1/u3_5_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u3_5_act2/u3_5_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_3_5/practice_set_3_5_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_3_5/cyu_3.5.html" }
+                    ] }
+            ]
         }, // end Unit 03
 
 
@@ -918,82 +699,58 @@
             id:    "4",
             label: "Unit 04",
             name:  "Trigonometry",
-
             meta: [
-                { label: "Outline",          href: "https://claude.ai" },
-                { label: "Progress Tracker", href: "https://claude.ai" },
-                { label: "Warm Ups",         href: "https://claude.ai" }
+                { label: "Outline", href: "https://claude.ai" },
+                { label: "Progress Tracker", href: "/pc/progress/unit_04_progress.html" },
+                { label: "Warm Ups", href: "/pc/warmups/unit_04_warmups.html" },
             ],
-
             sections: [
-
-                {
-                    title: "Unit Circle",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Sum, Difference, and Pythagorean Identities",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Half Angle and Double Angle Identities",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Graphing and Writing Trig Functions",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Solving Trig Equations",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                }
-
-            ] // end sections — Unit 04
-
+                { title: "Unit Circle",                                   studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u4_1_notes/u4_1_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_4_1/practice_set_4_1_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u4_1_investigation/u4_1_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u4_1_act1/u4_1_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u4_1_act2/u4_1_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_4_1/practice_set_4_1_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_4_1/cyu_4.1.html" }
+                    ] },
+                { title: "Sum, Difference, and Pythagorean Identities",   studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u4_2_notes/u4_2_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_4_2/practice_set_4_2_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u4_2_investigation/u4_2_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u4_2_act1/u4_2_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u4_2_act2/u4_2_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_4_2/practice_set_4_2_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_4_2/cyu_4.2.html" }
+                    ] },
+                { title: "Half Angle and Double Angle Identities",        studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u4_3_notes/u4_3_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_4_3/practice_set_4_3_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u4_3_investigation/u4_3_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u4_3_act1/u4_3_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u4_3_act2/u4_3_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_4_3/practice_set_4_3_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_4_3/cyu_4.3.html" }
+                    ] },
+                { title: "Graphing and Writing Trig Functions",           studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u4_4_notes/u4_4_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_4_4/practice_set_4_4_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u4_4_investigation/u4_4_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u4_4_act1/u4_4_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u4_4_act2/u4_4_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_4_4/practice_set_4_4_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_4_4/cyu_4.4.html" }
+                    ] },
+                { title: "Solving Trig Equations",                        studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u4_5_notes/u4_5_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_4_5/practice_set_4_5_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u4_5_investigation/u4_5_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u4_5_act1/u4_5_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u4_5_act2/u4_5_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_4_5/practice_set_4_5_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_4_5/cyu_4.5.html" }
+                    ] }
+            ]
         }, // end Unit 04
 
 
@@ -1004,82 +761,58 @@
             id:    "5",
             label: "Unit 05",
             name:  "Piecewise Functions",
-
             meta: [
-                { label: "Outline",          href: "https://claude.ai" },
-                { label: "Progress Tracker", href: "https://claude.ai" },
-                { label: "Warm Ups",         href: "https://claude.ai" }
+                { label: "Outline", href: "https://claude.ai" },
+                { label: "Progress Tracker", href: "/pc/progress/unit_05_progress.html" },
+                { label: "Warm Ups", href: "/pc/warmups/unit_05_warmups.html" },
             ],
-
             sections: [
-
-                {
-                    title: "Evaluating Piecewise Functions",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Graphing Piecewise Functions",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Writing Piecewise Functions from Graphs",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Absolute Value Functions",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Properties of Piecewise Functions",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                }
-
-            ] // end sections — Unit 05
-
+                { title: "Evaluating Piecewise Functions",          studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u5_1_notes/u5_1_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_5_1/practice_set_5_1_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u5_1_investigation/u5_1_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u5_1_act1/u5_1_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u5_1_act2/u5_1_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_5_1/practice_set_5_1_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_5_1/cyu_5.1.html" }
+                    ] },
+                { title: "Graphing Piecewise Functions",            studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u5_2_notes/u5_2_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_5_2/practice_set_5_2_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u5_2_investigation/u5_2_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u5_2_act1/u5_2_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u5_2_act2/u5_2_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_5_2/practice_set_5_2_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_5_2/cyu_5.2.html" }
+                    ] },
+                { title: "Writing Piecewise Functions from Graphs", studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u5_3_notes/u5_3_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_5_3/practice_set_5_3_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u5_3_investigation/u5_3_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u5_3_act1/u5_3_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u5_3_act2/u5_3_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_5_3/practice_set_5_3_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_5_3/cyu_5.3.html" }
+                    ] },
+                { title: "Absolute Value Functions",                studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u5_4_notes/u5_4_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_5_4/practice_set_5_4_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u5_4_investigation/u5_4_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u5_4_act1/u5_4_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u5_4_act2/u5_4_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_5_4/practice_set_5_4_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_5_4/cyu_5.4.html" }
+                    ] },
+                { title: "Properties of Piecewise Functions",       studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u5_5_notes/u5_5_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_5_5/practice_set_5_5_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u5_5_investigation/u5_5_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u5_5_act1/u5_5_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u5_5_act2/u5_5_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_5_5/practice_set_5_5_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_5_5/cyu_5.5.html" }
+                    ] }
+            ]
         }, // end Unit 05
 
 
@@ -1090,82 +823,58 @@
             id:    "6",
             label: "Unit 06",
             name:  "Polynomial Functions",
-
             meta: [
-                { label: "Outline",          href: "https://claude.ai" },
-                { label: "Progress Tracker", href: "https://claude.ai" },
-                { label: "Warm Ups",         href: "https://claude.ai" }
+                { label: "Outline", href: "https://claude.ai" },
+                { label: "Progress Tracker", href: "/pc/progress/unit_06_progress.html" },
+                { label: "Warm Ups", href: "/pc/warmups/unit_06_warmups.html" },
             ],
-
             sections: [
-
-                {
-                    title: "Factoring Polynomials",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Solving Polynomial Equations",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Graphing from Factored Form",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Writing Equations in Factored Form",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Graphing Standard Form",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                }
-
-            ] // end sections — Unit 06
-
+                { title: "Factoring Polynomials",            studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u6_1_notes/u6_1_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_6_1/practice_set_6_1_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u6_1_investigation/u6_1_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u6_1_act1/u6_1_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u6_1_act2/u6_1_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_6_1/practice_set_6_1_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_6_1/cyu_6.1.html" }
+                    ] },
+                { title: "Solving Polynomial Equations",     studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u6_2_notes/u6_2_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_6_2/practice_set_6_2_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u6_2_investigation/u6_2_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u6_2_act1/u6_2_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u6_2_act2/u6_2_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_6_2/practice_set_6_2_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_6_2/cyu_6.2.html" }
+                    ] },
+                { title: "Graphing from Factored Form",      studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u6_3_notes/u6_3_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_6_3/practice_set_6_3_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u6_3_investigation/u6_3_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u6_3_act1/u6_3_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u6_3_act2/u6_3_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_6_3/practice_set_6_3_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_6_3/cyu_6.3.html" }
+                    ] },
+                { title: "Writing Equations in Factored Form", studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u6_4_notes/u6_4_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_6_4/practice_set_6_4_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u6_4_investigation/u6_4_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u6_4_act1/u6_4_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u6_4_act2/u6_4_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_6_4/practice_set_6_4_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_6_4/cyu_6.4.html" }
+                    ] },
+                { title: "Graphing Standard Form",           studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u6_5_notes/u6_5_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_6_5/practice_set_6_5_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u6_5_investigation/u6_5_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u6_5_act1/u6_5_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u6_5_act2/u6_5_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_6_5/practice_set_6_5_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_6_5/cyu_6.5.html" }
+                    ] }
+            ]
         }, // end Unit 06
 
 
@@ -1176,82 +885,58 @@
             id:    "7",
             label: "Unit 07",
             name:  "Rational Functions",
-
             meta: [
-                { label: "Outline",          href: "https://claude.ai" },
-                { label: "Progress Tracker", href: "https://claude.ai" },
-                { label: "Warm Ups",         href: "https://claude.ai" }
+                { label: "Outline", href: "https://claude.ai" },
+                { label: "Progress Tracker", href: "/pc/progress/unit_07_progress.html" },
+                { label: "Warm Ups", href: "/pc/warmups/unit_07_warmups.html" },
             ],
-
             sections: [
-
-                {
-                    title: "Multiplying and Dividing Rational Expressions",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Adding and Subtracting Rational Expressions",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Solving Rational Equations",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Graphing Rational Functions",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Complex Fractions",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                }
-
-            ] // end sections — Unit 07
-
+                { title: "Multiplying and Dividing Rational Expressions", studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u7_1_notes/u7_1_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_7_1/practice_set_7_1_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u7_1_investigation/u7_1_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u7_1_act1/u7_1_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u7_1_act2/u7_1_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_7_1/practice_set_7_1_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_7_1/cyu_7.1.html" }
+                    ] },
+                { title: "Adding and Subtracting Rational Expressions",   studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u7_2_notes/u7_2_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_7_2/practice_set_7_2_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u7_2_investigation/u7_2_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u7_2_act1/u7_2_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u7_2_act2/u7_2_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_7_2/practice_set_7_2_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_7_2/cyu_7.2.html" }
+                    ] },
+                { title: "Solving Rational Equations",                    studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u7_3_notes/u7_3_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_7_3/practice_set_7_3_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u7_3_investigation/u7_3_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u7_3_act1/u7_3_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u7_3_act2/u7_3_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_7_3/practice_set_7_3_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_7_3/cyu_7.3.html" }
+                    ] },
+                { title: "Graphing Rational Functions",                   studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u7_4_notes/u7_4_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_7_4/practice_set_7_4_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u7_4_investigation/u7_4_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u7_4_act1/u7_4_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u7_4_act2/u7_4_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_7_4/practice_set_7_4_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_7_4/cyu_7.4.html" }
+                    ] },
+                { title: "Complex Fractions",                             studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u7_5_notes/u7_5_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_7_5/practice_set_7_5_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u7_5_investigation/u7_5_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u7_5_act1/u7_5_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u7_5_act2/u7_5_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_7_5/practice_set_7_5_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_7_5/cyu_7.5.html" }
+                    ] }
+            ]
         }, // end Unit 07
 
 
@@ -1262,91 +947,87 @@
             id:    "8",
             label: "Unit 08",
             name:  "Logarithmic and Exponential Functions",
-
             meta: [
-                { label: "Outline",          href: "https://claude.ai" },
-                { label: "Progress Tracker", href: "https://claude.ai" },
-                { label: "Warm Ups",         href: "https://claude.ai" }
+                { label: "Outline", href: "https://claude.ai" },
+                { label: "Progress Tracker", href: "/pc/progress/unit_08_progress.html" },
+                { label: "Warm Ups", href: "/pc/warmups/unit_08_warmups.html" },
             ],
-
             sections: [
-
-                {
-                    title: "Evaluating Logarithmic Functions",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Logarithmic Properties",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Solving Exponential Equations",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Solving Logarithmic Equations",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                },
-
-                {
-                    title: "Graphing Logarithmic and Exponential Functions",
-                    resources: [
-                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
-                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
-                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
-                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
-                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
-                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
-                    ]
-                }
-
-            ] // end sections — Unit 08
-
-        } // end Unit 08  ← no trailing comma, this is the last unit
+                { title: "Evaluating Logarithmic Functions",              studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u8_1_notes/u8_1_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_8_1/practice_set_8_1_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u8_1_investigation/u8_1_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u8_1_act1/u8_1_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u8_1_act2/u8_1_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_8_1/practice_set_8_1_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_8_1/cyu_8.1.html" }
+                    ] },
+                { title: "Logarithmic Properties",                        studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u8_2_notes/u8_2_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_8_2/practice_set_8_2_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u8_2_investigation/u8_2_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u8_2_act1/u8_2_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u8_2_act2/u8_2_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_8_2/practice_set_8_2_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_8_2/cyu_8.2.html" }
+                    ] },
+                { title: "Solving Exponential Equations",                 studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u8_3_notes/u8_3_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_8_3/practice_set_8_3_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u8_3_investigation/u8_3_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u8_3_act1/u8_3_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u8_3_act2/u8_3_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_8_3/practice_set_8_3_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_8_3/cyu_8.3.html" }
+                    ] },
+                { title: "Solving Logarithmic Equations",                 studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u8_4_notes/u8_4_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_8_4/practice_set_8_4_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u8_4_investigation/u8_4_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u8_4_act1/u8_4_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u8_4_act2/u8_4_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_8_4/practice_set_8_4_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_8_4/cyu_8.4.html" }
+                    ] },
+                { title: "Graphing Logarithmic and Exponential Functions", studentResources: [
+                        { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "/pc/notes/u8_5_notes/u8_5_notes.html" },
+                        { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "/pc/practice_sets/practice_sets_8_5/practice_set_8_5_1.html" },
+                        { label: "Investigation",  cls: "",         icon: "ti-search",   href: "/pc/investigations/u8_5_investigation/u8_5_investigation.html" },
+                        { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u8_5_act1/u8_5_act1.html" },
+                        { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "/pc/activities/u8_5_act2/u8_5_act2.html" },
+                        { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "/pc/practice_sets/practice_sets_8_5/practice_set_8_5_4.html" },
+                        { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "/pc/practice_sets/practice_sets_8_5/cyu_8.5.html" }
+                    ] }
+            ]
+        } // end Unit 08  ← no trailing comma, last item
 
     ]; // end units array
 
 
     // ============================================================
+    // DEFAULT RESOURCE HELPERS
+    // Units 02–08 share the same placeholder resource sets.
+    // When you have real links, replace these calls with explicit
+    // arrays (like Units A, B, and 01 above) or just update
+    // the href values directly in the defaultStudentRes() function below.
+    // ============================================================
+
+    function defaultStudentRes() {
+        return [
+            { label: "Notes",          cls: "primary", icon: "ti-notes",    href: "https://claude.ai" },
+            { label: "Practice Set",   cls: "primary", icon: "ti-pencil",   href: "https://claude.ai" },
+            { label: "Investigation",  cls: "",         icon: "ti-search",   href: "https://claude.ai" },
+            { label: "Activity 1",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
+            { label: "Activity 2",     cls: "",         icon: "ti-puzzle",   href: "https://claude.ai" },
+            { label: "Extra Practice", cls: "",         icon: "ti-plus",     href: "https://claude.ai" },
+            { label: "C.Y.U.",         cls: "",         icon: "ti-checkbox", href: "https://claude.ai" }
+        ];
+    }
+
+
+
+    // ============================================================
     // RENDERING FUNCTIONS
-    // Build HTML from the data above and inject into the page.
-    // You should rarely need to edit below this line.
     // ============================================================
 
 
@@ -1356,11 +1037,12 @@
     // ------------------------------------------------------------
     function buildUnit(u) {
 
-        // Build the unit-level meta chips (Outline, Progress Tracker, etc.)
+        // Build meta chips
         const metaHTML = u.meta
             .map(function(m) {
+                const cls = 'unit-meta-chip';
                 return (
-                    '<a href="' + m.href + '" class="unit-meta-chip" target="_blank">' +
+                    '<a href="' + m.href + '" class="' + cls + '" target="_blank">' +
                         m.label +
                     '</a>'
                 );
@@ -1374,7 +1056,6 @@
             })
             .join('\n');
 
-        // Assemble and return the block element
         const block = document.createElement('div');
         block.className = 'unit-block';
 
@@ -1404,14 +1085,14 @@
 
     // ------------------------------------------------------------
     // buildSection(unitId, index, sec)
-    // Returns the HTML string for one section row.
+    // Returns HTML for one section row with student resources.
     // ------------------------------------------------------------
     function buildSection(unitId, index, sec) {
 
         const num = unitId + '.' + index;
 
-        // Build resource buttons
-        const buttonsHTML = sec.resources
+        // Student resource buttons
+        const studentBtns = sec.studentResources
             .map(function(r) {
                 return (
                     '<a href="' + r.href + '" class="r-btn ' + r.cls + '" target="_blank">' +
@@ -1422,17 +1103,23 @@
             })
             .join('\n                ');
 
+
         return (
             '<div class="section-row">' +
 
                 '<div class="section-head" onclick="toggleSection(this)">' +
-                    '<span class="section-num">'   + num      + '</span>' +
+                    '<span class="section-num">'   + num       + '</span>' +
                     '<span class="section-title">' + sec.title + '</span>' +
                     '<i class="ti ti-chevron-down section-chevron" aria-hidden="true"></i>' +
                 '</div>' +
 
                 '<div class="section-body">' +
-                    buttonsHTML +
+
+                    '<div class="btn-row">' +
+                        '<div class="btn-row-label">Student resources</div>' +
+                        studentBtns +
+                    '</div>' +
+
                 '</div>' +
 
             '</div>'
@@ -1441,8 +1128,7 @@
 
 
     // ------------------------------------------------------------
-    // toggleUnit(header)
-    // Opens or closes a unit's collapsible content area.
+    // toggleUnit / toggleSection
     // ------------------------------------------------------------
     function toggleUnit(header) {
 
@@ -1453,11 +1139,6 @@
         chevron.classList.toggle('open', isOpen);
     }
 
-
-    // ------------------------------------------------------------
-    // toggleSection(header)
-    // Opens or closes a section's resource button row.
-    // ------------------------------------------------------------
     function toggleSection(header) {
 
         const body    = header.nextElementSibling;
@@ -1469,7 +1150,7 @@
 
 
     // ------------------------------------------------------------
-    // INIT — inject all unit blocks into the page
+    // INIT — render all units into the page
     // ------------------------------------------------------------
     const container = document.getElementById('units');
 
