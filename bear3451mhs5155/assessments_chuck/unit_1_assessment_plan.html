@@ -1,0 +1,2392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Unit 1 Assessment Plan and Bank</title>
+<script>window.MathJax = { tex: { inlineMath: [["\\(","\\)"],["$","$"]], displayMath: [["\\[","\\]"],["$$","$$"]] } };</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+/* ======================= RESET / PAGE ======================= */
+@page { size: letter; margin: 0.45in; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.45;
+  color: #222;
+  background: #fff;
+  font-size: 11pt;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.container { max-width: 980px; margin: 0 auto; }
+.page-break { page-break-before: always; break-before: page; }
+.unbreakable, .assessment-card, .outline-card, .rubric-card, .ladder-table, .progress-tracker { break-inside: avoid; page-break-inside: avoid; }
+
+/* ======================= HEADER / TITLES ======================= */
+h1 { color: #00003d; font-size: 26pt; line-height: 1.1; margin-bottom: 8px; }
+h2 { color: #00003d; font-size: 17pt; margin: 18px 0 10px 0; border-left: 6px solid #00003d; padding-left: 10px; }
+h3 { color: #004d99; font-size: 13pt; margin: 12px 0 6px 0; }
+p { margin: 6px 0; }
+ul, ol { margin: 6px 0 8px 28px; }
+li { margin-bottom: 4px; }
+.small-note { font-size: 9.5pt; color: #555; font-style: italic; }
+
+/* ======================= OUTLINE CARDS ======================= */
+.outline-card {
+  border: 1px solid #9aa9bd;
+  border-left: 7px solid #00003d;
+  padding: 12px 14px;
+  margin: 12px 0;
+  background: #fff;
+}
+.outline-card-title { color: #00003d; font-weight: 800; font-size: 13.5pt; margin-bottom: 4px; }
+.essential-standard { font-size: 12pt; border: 2px solid #00003d; padding: 12px 14px; margin: 12px 0 16px 0; background: #f8fbff; }
+
+/* ======================= TABLES ======================= */
+table { border-collapse: collapse; width: 100%; margin: 10px 0 14px 0; }
+th, td { border: 1px solid #777; padding: 7px 8px; vertical-align: top; }
+th { background: #eaf1fb; color: #00003d; font-weight: 800; text-align: left; }
+.ladder-table th { background: #00003d; color: #fff; }
+.ladder-table .dok4 { background: #eef4ff; }
+.ladder-table .dok3 { background: #f6fbff; }
+.ladder-table .dok2 { background: #fffdf2; }
+.ladder-table .dok1 { background: #ffffff; }
+.table-block, .parent-table, table.values { width: auto; margin: 10px auto 12px auto; border-collapse: collapse; }
+.table-block td, .table-block th, .parent-table td, .parent-table th, table.values td, table.values th { border: 1px solid #777; padding: 6px 14px; text-align: center; vertical-align: middle; }
+
+/* ======================= PROGRESS TRACKING ======================= */
+.progress-tracker { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 12px 0 18px 0; }
+.progress-box { border: 1px solid #777; padding: 12px; min-height: 0.8in; }
+.progress-box strong { color: #00003d; }
+
+/* ======================= DOK SECTIONS ======================= */
+.dok-bar {
+  background: #000;
+  color: #fff;
+  font-weight: 900;
+  font-size: 15pt;
+  padding: 9px 12px;
+  margin: 22px 0 12px 0;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.dok-method-card { border: 1px solid #777; padding: 12px 14px; margin: 10px 0 16px 0; background: #fff; break-inside: avoid; page-break-inside: avoid; }
+.assessment-ideas { margin-left: 24px; }
+.assessment-ideas a { color: #005aa0; font-weight: 800; text-decoration: underline; }
+.timing-label { display: inline-block; background: #fff7cf; border: 1px solid #d1c27a; border-radius: 4px; padding: 1px 6px; font-weight: 800; color: #4a3f17; margin-left: 6px; }
+.what-tells { border-left: 5px solid #777; padding-left: 10px; margin-top: 10px; color: #333; }
+
+/* ======================= SUMMATIVE / RUBRIC ======================= */
+.summative-card { border: 2px solid #00003d; padding: 12px 14px; margin: 14px 0; background: #f8fbff; break-inside: avoid; page-break-inside: avoid; }
+.summative-card a { color: #005aa0; font-weight: 800; }
+.rubric-card { border: 1px solid #777; padding: 12px 14px; margin: 10px 0; }
+.rubric-level { color: #00003d; font-weight: 900; font-size: 12.5pt; }
+
+/* ======================= ASSESSMENT BANK ======================= */
+.bank-intro { border: 2px solid #00003d; padding: 12px 14px; margin: 12px 0 16px 0; background: #f8fbff; }
+.assessment-card {
+  border: 1px solid #777;
+  padding: 12px 14px;
+  margin: 12px 0;
+  background: #fff;
+}
+.problem-number { font-weight: 900; color: #00003d; font-size: 13pt; margin-bottom: 8px; }
+.problem-meta { color: #555; font-weight: 700; font-size: 10.5pt; margin-left: 8px; }
+.assessment-card p { margin-bottom: 7px; }
+.assessment-card ol, .assessment-card ul { margin-left: 26px; }
+.assessment-card li { margin-bottom: 6px; }
+.performance-notes { border-left: 5px solid #444; background: #f7f7f7; padding: 8px 10px; margin-top: 10px; font-size: 10pt; }
+.lower-alpha { list-style-type: lower-alpha; }
+.lower-roman { list-style-type: lower-roman; }
+
+/* ======================= FIGURE / GRAPH SYSTEM ======================= */
+.figure-block, .graph-block { margin: 12px 0 10px 0; text-align: center; break-inside: avoid; page-break-inside: avoid; }
+.figure-block img, .graph-block img { max-width: 100%; height: auto; border: 1px solid #ccc; background: #fff; }
+.figure-xs img { max-width: 1.4in; }
+.figure-sm img { max-width: 2.1in; }
+.figure-md img { max-width: 2.8in; }
+.figure-lg img { max-width: 3.8in; }
+.figure-xl img { max-width: 4.7in; }
+.graph-xs img { max-width: 2.0in; }
+.graph-sm img { max-width: 2.5in; }
+.graph-md img { max-width: 3.2in; }
+.graph-lg img { max-width: 4.1in; }
+.graph-xl img { max-width: 5.1in; }
+
+/* ======================= PRINT CONTROL ======================= */
+@media print {
+  body { font-size: 10.5pt; }
+  h1 { font-size: 24pt; }
+  h2 { font-size: 16pt; }
+  .assessment-card { padding: 10px 12px; }
+}
+</style>
+
+</head>
+<body>
+<div class="container">
+<!-- ======================= UNIT 1 OUTLINE START ======================= -->
+<h1>Precalculus – Unit 01: Function Foundations</h1>
+<h2>Essential Standard</h2>
+<div class="essential-standard">Students will analyze, represent, and transform functions using multiple representations in order to interpret structure, behavior, and solutions algebraically and graphically.</div>
+<!-- ======================= SECTION OUTLINE START ======================= -->
+<section class="outline-card">
+<div class="outline-card-title">Section 1.1: Function Notation &amp; Solving</div>
+<p><strong>Learning Target: Students will evaluate functions and solve equations of the form f(x) = a using tables, algebraic and graphical methods.</strong></p>
+<ul>
+<li>I can evaluate a function written in function notation for given input values.</li>
+<li>I can solve equations of the form f(x) = a algebraically when f(x) is linear or  a factorable quadratic,.</li>
+<li>I can solve equations of the form f(x) = a graphically or with a table.</li>
+<li>I can verify and interpret solutions within the context of the function and its graph.</li>
+</ul></section>
+<section class="outline-card">
+<div class="outline-card-title">Section 1.2: Interval &amp; Inequality Notation</div>
+<p><strong>Learning Target: Students will represent and interpret sets using interval or inequality notation and graphically on a number line.</strong></p>
+<ul>
+<li>I can translate between inequalities and interval notation.</li>
+<li>I can represent solution sets graphically on a number line.</li>
+<li>I can determine whether endpoints are included or excluded and justify my reasoning.</li>
+</ul></section>
+<section class="outline-card">
+<div class="outline-card-title">Section 1.3: Domain &amp; Range</div>
+<p><strong>Learning Target: Students will determine and justify the domain and range of functions using graphical and algebraic reasoning.</strong></p>
+<ul>
+<li>I can determine the domain of a function from its graph or equation.</li>
+<li>I can determine the range of a function from its graph or equation.</li>
+<li>I can explain restrictions in domain and range based on function structure.</li>
+</ul></section>
+<section class="outline-card">
+<div class="outline-card-title">Section 1.4: Transformations of Parent Functions</div>
+<p><strong>Learning Target: Students will analyze and apply transformations of parent functions using the form a*f(x - h) + k.</strong></p>
+<ul>
+<li>I can identify and describe vertical and horizontal shifts of parent functions.</li>
+<li>I can determine the effects of reflections and vertical stretches or compressions on parent functions.</li>
+<li>I can sketch transformed functions using structural reasoning or write an equation based on a graph.</li>
+</ul></section>
+<section class="outline-card">
+<div class="outline-card-title">Section 1.5: Limits Graphically</div>
+<p><strong>Learning Target: Students will analyze limits graphically by examining how functions behave as x approaches a value from the left and right.</strong></p>
+<ul>
+<li>I can determine left-hand and right-hand limits from a graph.</li>
+<li>I can determine whether a limit exists using left-hand and right-hand limits near jumps, holes, and vertical asymptotes.</li>
+<li>I can distinguish between the limit of a function and the actual function value shown on a graph.</li>
+</ul></section>
+<!-- ======================= SECTION OUTLINE END ======================= -->
+<!-- ======================= LEARNING LADDER START ======================= -->
+<h2>Learning Ladder</h2>
+<table class="ladder-table">
+<tr><th>Rung</th><th>I Can Statement</th><th>Math Practice</th><th>DOK</th><th>Level</th></tr>
+<tr class="dok4"><td>8</td><td>I can model a real-world situation involving functions, select appropriate representations, justify my reasoning, and evaluate whether my model is reasonable in context.</td><td>4. Model with Math / 3. Construct Arguments</td><td>DOK 4</td><td>Above</td></tr>
+<tr class="dok4"><td>7</td><td>I can design and evaluate a solution strategy for a multi-step function problem, defend my approach, and critique alternative methods.</td><td>1. Make Sense &amp; Persevere / 3. Construct Arguments</td><td>DOK 4</td><td>Above</td></tr>
+<tr class="dok3"><td>6</td><td>I can analyze multiple representations of a function and explain how transformations affect its structure, key features, and behavior.</td><td>7. Look for Structure / 8. Look for Regularity</td><td>DOK 3</td><td>Essential</td></tr>
+<tr class="dok3"><td>5</td><td>I can determine the domain and range of a function and explain algebraic and graphical restrictions, connecting them to the function’s real-world or mathematical meaning.</td><td>2. Reason Abstractly &amp; Quantitatively</td><td>DOK 3</td><td>Essential</td></tr>
+<tr class="dok2"><td>4</td><td>I can determine left-hand and right-hand limits from graphs and explain how they relate to the existence of a limit.</td><td>6. Attend to Precision</td><td>DOK 2</td><td>Essential</td></tr>
+<tr class="dok2"><td>3</td><td>I can translate between interval notation, inequalities, and graphical representations, and explain why a given representation is appropriate.</td><td>5. Use Tools Strategically</td><td>DOK 2</td><td>Essential</td></tr>
+<tr class="dok1"><td>2</td><td>I can determine the domain and range of a function from its graph or equation.</td><td>2. Reason Abstractly</td><td>DOK 1</td><td>Essential</td></tr>
+<tr class="dok1"><td>1</td><td>I can evaluate a function using function notation and interpret the meaning of the input and output.</td><td>1. Make Sense of Problems</td><td>DOK 1</td><td>Essential</td></tr>
+</table>
+<!-- ======================= LEARNING LADDER END ======================= -->
+<!-- ======================= PROGRESS TRACKING START ======================= -->
+<h2>Progress Tracking</h2>
+<div class="progress-tracker"><div class="progress-box"><strong>Not Yet:</strong> I need more instruction and practice.</div><div class="progress-box"><strong>Getting There:</strong> I understand most of it but need more practice.</div><div class="progress-box"><strong>Got It!:</strong> I can do this independently.</div></div>
+<!-- ======================= PROGRESS TRACKING END ======================= -->
+<!-- ======================= ASSESSMENT METHODS START ======================= -->
+<h2>Assessment Methods by DOK Level</h2>
+<div class="dok-bar">DOK 1 — Rungs 1–2</div>
+<section class="dok-method-card">
+<p><strong>Format: 3–5 minute warm-up, quick check, or exit ticket</strong></p>
+<p>Purpose: Check whether students can recall vocabulary, evaluate functions, read basic graph features, and use notation accurately without needing multi-step reasoning.</p>
+<h3>Assessment Ideas</h3><ol class="assessment-ideas">
+<li><a href="formative/unit_1_formative_assessments/u1-dok1-1.html">Function Notation Fluency Check</a> <span class="timing-label">Can Be Assessed After Unit 3, Section 1</span> – Students evaluate 2–3 functions such as f(3), g(−2), or h(a), then write one sentence explaining what the input and output represent.</li>
+<li><a href="formative/unit_1_formative_assessments/u1-dok1-2.html">Domain and Range Identification Check</a> <span class="timing-label">Can Be Assessed After Unit 3, Section 3</span> – Students are given a simple graph or equation and identify the domain or range using interval notation.</li>
+<li><a href="formative/unit_1_formative_assessments/u1-dok1-3.html">Transformation Vocabulary Match</a> <span class="timing-label">Can Be Assessed After Unit 3, Section 4</span> – Students match equations such as f(x)+3, f(x−4), −f(x), and 2f(x) to transformation descriptions.</li>
+<li><a href="formative/unit_1_formative_assessments/u1-dok1-4.html">Limit Reading Check</a> <span class="timing-label">Can Be Assessed After Unit 3, Section 5</span> – Students read a graph and identify a left-hand limit, right-hand limit, or function value at a point.</li>
+</ol>
+<div class="what-tells"><strong>What this tells the teacher:</strong><br>Students who struggle here need more direct practice with notation, vocabulary, and graph reading before moving into explanation-based tasks.</div>
+</section>
+<div class="dok-bar">DOK 2 — Rungs 3–4</div>
+<section class="dok-method-card">
+<p><strong>Format: Exit ticket, partner check, whiteboard response, or short written explanation</strong></p>
+<p>Purpose: Check whether students can apply procedures in context, connect representations, and explain a decision using correct mathematical language.</p>
+<h3>Assessment Ideas</h3><ol class="assessment-ideas">
+<li><a href="formative/unit_1_formative_assessments/u1-dok2-1.html">Notation Translation Task</a> <span class="timing-label">Can Be Assessed After Unit 3, Section 2</span> – Students convert between inequality notation, interval notation, and number-line graphs. They must justify endpoint inclusion or exclusion.</li>
+<li><a href="formative/unit_1_formative_assessments/u1-dok2-2.html">Graphical Limit Decision</a> <span class="timing-label">Can Be Assessed After Unit 3, Section 5</span> – Students determine left-hand and right-hand limits and whether a limit exists.</li>
+<li><a href="formative/unit_1_formative_assessments/u1-dok2-3.html">Transformation Identification from Equation or Graph</a> <span class="timing-label">Can Be Assessed After Unit 3, Section 4</span> – Students identify shifts, reflections, and vertical stretches/compressions from a transformed equation or graph.</li>
+<li><a href="formative/unit_1_formative_assessments/u1-dok2-4.html">Solve f(x)=a Two Ways</a> <span class="timing-label">Can Be Assessed After Unit 3, Section 1</span> – Students solve a simple equation algebraically and confirm it graphically or with a table.</li>
+</ol>
+<div class="what-tells"><strong>What this tells the teacher:</strong><br>Students at this level can usually perform the skill, but the formative check reveals whether they understand when and why a representation or method is appropriate.</div>
+</section>
+<div class="dok-bar">DOK 3 — Rungs 5–6</div>
+<section class="dok-method-card">
+<p><strong>Format: Constructed response, gallery walk, error analysis, or group explanation</strong></p>
+<p>Purpose: Check whether students can reason strategically, justify conclusions, compare representations, and explain structure.</p>
+<h3>Assessment Ideas</h3><ol class="assessment-ideas">
+<li><a href="formative/unit_1_formative_assessments/u1-dok3-1.html">Domain Restriction Explanation</a> <span class="timing-label">Can Be Assessed After Unit 3, Section 3</span> – Students determine domain and range, then explain why restrictions occur using function structure, graph behavior, or context.</li>
+<li><a href="formative/unit_1_formative_assessments/u1-dok3-2.html">Transformation Analysis Task</a> <span class="timing-label">Can Be Assessed After Unit 3, Section 4</span> – Students compare a parent function and a transformed function, then explain how a, h, and k affect structure, key features, and graph behavior.</li>
+<li><a href="formative/unit_1_formative_assessments/u1-dok3-3.html">Limit Reasoning Task</a> <span class="timing-label">Can Be Assessed After Unit 3, Section 5</span> – Students analyze graphs with holes, jumps, point values, and vertical asymptotes, then explain why limits exist or fail to exist.</li>
+<li><a href="formative/unit_1_formative_assessments/u1-dok3-4.html">Error Analysis Response</a> <span class="timing-label">Can Be Assessed After Unit 3, Section 5</span> – Students critique an incorrect solution, identify the misconception, and write a corrected explanation.</li>
+</ol>
+<div class="what-tells"><strong>What this tells the teacher:</strong><br>This level shows whether students truly understand the mathematics behind the procedures. These tasks are ideal for deciding who is ready for extension or who needs reteaching.</div>
+</section>
+<div class="dok-bar">DOK 4 — Rungs 7–8</div>
+<section class="dok-method-card">
+<p><strong>Format: Performance task, extended response, modeling task, or strategy defense</strong></p>
+<p>Purpose: Check whether students can synthesize multiple concepts, make decisions, justify a model, and evaluate reasonableness.</p>
+<h3>Assessment Ideas</h3><ol class="assessment-ideas">
+<li><a href="formative/unit_1_formative_assessments/u1-dok4-1.html">Function Modeling Task</a> <span class="timing-label">Can Be Assessed After Unit 3, Section 5</span> – Students model a situation using a function, choose an appropriate representation, explain key features, and evaluate whether the model is reasonable.</li>
+<li><a href="formative/unit_1_formative_assessments/u1-dok4-2.html">Design-a-Graph Task</a> <span class="timing-label">Can Be Assessed After Unit 3, Section 5</span> – Students create a graph that satisfies several conditions involving domain, range, transformations, and limit behavior, then justify their design.</li>
+<li><a href="formative/unit_1_formative_assessments/u1-dok4-3.html">Strategy Defense Task</a> <span class="timing-label">Can Be Assessed After Unit 3, Section 5</span> – Students solve a multi-step function problem using more than one method and defend which method is more efficient or more reliable.</li>
+<li><a href="formative/unit_1_formative_assessments/u1-dok4-4.html">Critique and Redesign Task</a> <span class="timing-label">Can Be Assessed After Unit 3, Section 5</span> – Students evaluate a flawed mathematical argument involving domain, transformations, or limits, then revise it into a correct solution.</li>
+</ol>
+<div class="what-tells"><strong>What this tells the teacher:</strong><br>DOK 4 tasks show whether students can transfer learning to unfamiliar situations. These are best used sparingly, often as short performance checks or unit-level extensions.</div>
+</section>
+<!-- ======================= ASSESSMENT METHODS END ======================= -->
+<!-- ======================= SUMMATIVE PLAN START ======================= -->
+<h2>Summative Assessment Plan</h2><section class="summative-card">
+<p><a href="summative/unit1_summative_assessments/unit1_summative_assessments.html">Unit 1 Summative Assessment</a> <span class="timing-label">Unit 1 Assessed During Unit 3</span></p>
+<p>Assessment is designed for a 45-minute time limit.</p>
+<p>5 Questions DoK 1 – Function evaluation, domain/range identification, basic transformations</p>
+<p>4 Questions DoK 2 – Translation between representations, limit determination, transformation identification</p>
+<p>2 Questions DoK 3 – Explanation of restrictions, transformation reasoning, limit justification</p>
+<p>1 Question DoK 4 – Multi-step reasoning, modeling, or critique task</p>
+</section><!-- ======================= SUMMATIVE PLAN END ======================= -->
+<!-- ======================= HOLISTIC RUBRIC START ======================= -->
+<h2>Holistic Rubric</h2>
+<section class="rubric-card">
+<div class="rubric-level">A — Highly Proficient</div>
+<p>The student demonstrates a strong and flexible understanding of Unit 1 concepts. Work is accurate, well-organized, and supported by clear reasoning. The student can move between algebraic, graphical, tabular, and verbal representations and can justify conclusions using appropriate mathematical language. Minor errors, if present, do not interfere with the overall reasoning.</p></section>
+<section class="rubric-card">
+<div class="rubric-level">B — Proficient</div>
+<p>The student demonstrates solid understanding of the essential Unit 1 concepts. Most work is accurate, and the student can complete standard and moderately complex tasks independently. Explanations are generally clear, though they may lack some precision or depth. Errors are minor or isolated and do not show major misconceptions.</p></section>
+<section class="rubric-card">
+<div class="rubric-level">C — Developing Proficiency</div>
+<p>The student demonstrates partial but passable understanding of Unit 1 concepts. The student can complete many routine tasks but may need support with multi-step reasoning, justification, or connecting representations. Work may contain errors, incomplete explanations, or inconsistent notation, but there is enough evidence that the student understands the main ideas.</p></section>
+<section class="rubric-card">
+<div class="rubric-level">Not Yet — Insufficient Evidence</div>
+<p>The student does not yet demonstrate sufficient understanding of the essential Unit 1 concepts. Work shows major errors, missing reasoning, incorrect notation, or confusion between key ideas such as function value vs. limit, domain vs. range, or transformation effects. The student may need reteaching, additional practice, or reassessment to show proficiency.</p></section>
+<!-- ======================= HOLISTIC RUBRIC END ======================= -->
+<!-- ======================= UNIT 1 OUTLINE END ======================= -->
+<div class="page-break"></div>
+<!-- ======================= STRICTLY ASSESSMENT BANK START ======================= -->
+<h1>Strictly Assessment Bank</h1>
+<div class="bank-intro"><p><strong>Unit 1 Assessment Bank:</strong> Problems are organized by Depth of Knowledge and pulled from the uploaded teacher banks. These are intended as source items for formative assessments, reassessments, and summative assessment versions.</p><p class="small-note">Rolling timing: Unit 1 is assessed during Unit 3.</p></div>
+<div class="dok-bar">Assessment Bank DOK 1</div>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 001 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.001">
+<div class="problem-number">Assessment Bank DOK 1.001<span class="problem-meta">U1S1-001 | Section 1.1 | DoK 1</span></div>
+
+<p>Let \(f(x)=2x^2-3\). Evaluate:</p><ol type="a"><li>\(f(2)\)</li><li>\(f(-3)\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 001 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 002 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.002">
+<div class="problem-number">Assessment Bank DOK 1.002<span class="problem-meta">U1S1-002 | Section 1.1 | DoK 1</span></div>
+
+<p>Let \(f(x)=x^2-2x\). Evaluate:</p><ol type="a"><li>\(f(3)\)</li><li>\(f(-2)\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 002 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 003 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.003">
+<div class="problem-number">Assessment Bank DOK 1.003<span class="problem-meta">U1S1-003 | Section 1.1 | DoK 1</span></div>
+
+<p>Let \(g(x)=x^2-2x\). Evaluate:</p><ol type="a"><li>\(g(a)\)</li><li>\(g(t-2)\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 003 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 004 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.004">
+<div class="problem-number">Assessment Bank DOK 1.004<span class="problem-meta">U1S1-004 | Section 1.1 | DoK 1</span></div>
+
+<p>Let \(m(x)=4x-7\). Evaluate:</p><ol type="a"><li>\(m(0)\)</li><li>\(m(5)\)</li><li>\(m(-2)\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 004 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 005 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.005">
+<div class="problem-number">Assessment Bank DOK 1.005<span class="problem-meta">U1S1-005 | Section 1.1 | DoK 1</span></div>
+
+<p>Let \(p(x)=-3x^2+1\). Evaluate:</p><ol type="a"><li>\(p(1)\)</li><li>\(p(-2)\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 005 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 006 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.006">
+<div class="problem-number">Assessment Bank DOK 1.006<span class="problem-meta">U1S1-006 | Section 1.1 | DoK 1</span></div>
+
+<p>Use the table for \(f(x)\).</p><table class="table-block"><tr><th>\(x\)</th><td>-2</td><td>-1</td><td>0</td><td>1</td><td>2</td></tr><tr><th>\(f(x)\)</th><td>7</td><td>3</td><td>-1</td><td>3</td><td>7</td></tr></table><ol type="a"><li>Find \(f(-1)\).</li><li>Find \(f(2)\).</li><li>Find the value(s) of \(x\) where \(f(x)=7\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 006 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 007 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.007">
+<div class="problem-number">Assessment Bank DOK 1.007<span class="problem-meta">U1S1-007 | Section 1.1 | DoK 1</span></div>
+
+<p>Use the table for \(h(x)\).</p><table class="table-block"><tr><th>\(x\)</th><td>-3</td><td>-1</td><td>0</td><td>2</td><td>4</td></tr><tr><th>\(h(x)\)</th><td>10</td><td>4</td><td>1</td><td>-5</td><td>-11</td></tr></table><ol type="a"><li>Find \(h(0)\).</li><li>Solve \(h(x)=4\) using the table.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 007 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 008 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.008">
+<div class="problem-number">Assessment Bank DOK 1.008<span class="problem-meta">U1S1-008 | Section 1.1 | DoK 1</span></div>
+
+<p>Solve \(f(x)=9\) when \(f(x)=3x-6\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 008 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 009 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.009">
+<div class="problem-number">Assessment Bank DOK 1.009<span class="problem-meta">U1S1-009 | Section 1.1 | DoK 1</span></div>
+
+<p>Solve \(g(x)=0\) when \(g(x)=x^2-5x\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 009 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 010 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.010">
+<div class="problem-number">Assessment Bank DOK 1.010<span class="problem-meta">U1S1-010 | Section 1.1 | DoK 1</span></div>
+
+<p>Solve \(r(x)=12\) when \(r(x)=2x^2-6\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 010 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 011 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.011">
+<div class="problem-number">Assessment Bank DOK 1.011<span class="problem-meta">U1S1-011 | Section 1.1 | DoK 1</span></div>
+
+<p>Let \(A(t)=5t+12\). Find the input \(t\) when \(A(t)=37\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 011 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 012 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.012">
+<div class="problem-number">Assessment Bank DOK 1.012<span class="problem-meta">U1S1-012 | Section 1.1 | DoK 1</span></div>
+
+<p>Let \(B(x)=(x-4)(x+2)\). Solve \(B(x)=0\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 012 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 013 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.013">
+<div class="problem-number">Assessment Bank DOK 1.013<span class="problem-meta">U1S1-013 | Section 1.1 | DoK 1</span></div>
+
+<p>Use the table to solve \(q(x)=6\).</p><table class="table-block"><tr><th>\(x\)</th><td>-4</td><td>-2</td><td>0</td><td>2</td><td>4</td></tr><tr><th>\(q(x)\)</th><td>14</td><td>6</td><td>2</td><td>6</td><td>14</td></tr></table>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 013 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 014 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.014">
+<div class="problem-number">Assessment Bank DOK 1.014<span class="problem-meta">U1S1-014 | Section 1.1 | DoK 1</span></div>
+
+<p>Let \(C(n)=2n^2+n\). Evaluate \(C(3)\) and \(C(-1)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 014 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 015 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.015">
+<div class="problem-number">Assessment Bank DOK 1.015<span class="problem-meta">U1S2-001 | Section 1.2 | DoK 1</span></div>
+
+<p>Write the inequality \(-2 \le x &lt; 5\) in interval notation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 015 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 016 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.016">
+<div class="problem-number">Assessment Bank DOK 1.016<span class="problem-meta">U1S2-002 | Section 1.2 | DoK 1</span></div>
+
+<p>Write the interval \((3, 9]\) as an inequality.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 016 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 017 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.017">
+<div class="problem-number">Assessment Bank DOK 1.017<span class="problem-meta">U1S2-003 | Section 1.2 | DoK 1</span></div>
+
+<p>Write the inequality \(x \ge -4\) in interval notation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 017 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 018 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.018">
+<div class="problem-number">Assessment Bank DOK 1.018<span class="problem-meta">U1S2-004 | Section 1.2 | DoK 1</span></div>
+
+<p>Write the interval \(( -\infty, 7 )\) as an inequality.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 018 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 019 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.019">
+<div class="problem-number">Assessment Bank DOK 1.019<span class="problem-meta">U1S2-005 | Section 1.2 | DoK 1</span></div>
+
+<p>Determine whether each endpoint is included or excluded in \([1, 6)\).</p><ol type="a"><li>Endpoint \(1\)</li><li>Endpoint \(6\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 019 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 020 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.020">
+<div class="problem-number">Assessment Bank DOK 1.020<span class="problem-meta">U1S2-006 | Section 1.2 | DoK 1</span></div>
+
+<p>Write the set of all real numbers greater than \(-3\) using interval notation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 020 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 021 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.021">
+<div class="problem-number">Assessment Bank DOK 1.021<span class="problem-meta">U1S2-007 | Section 1.2 | DoK 1</span></div>
+
+<p>Write the set of all real numbers less than or equal to \(8\) using inequality notation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 021 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 022 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.022">
+<div class="problem-number">Assessment Bank DOK 1.022<span class="problem-meta">U1S2-008 | Section 1.2 | DoK 1</span></div>
+
+<p>Circle the correct interval notation for \(-5 &lt; x \le 2\).</p><ol type="a"><li>\([-5,2]\)</li><li>\((-5,2]\)</li><li>\([-5,2)\)</li><li>\((-5,2)\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 022 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 023 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.023">
+<div class="problem-number">Assessment Bank DOK 1.023<span class="problem-meta">U1S2-009 | Section 1.2 | DoK 1</span></div>
+
+<p>Write the interval shown on the number line in interval notation.</p>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-009" src="figures/u1-u1s2-009-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 023 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 024 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.024">
+<div class="problem-number">Assessment Bank DOK 1.024<span class="problem-meta">U1S2-010 | Section 1.2 | DoK 1</span></div>
+
+<p>Write the graph shown on the number line as an inequality.</p>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-010" src="figures/u1-u1s2-010-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 024 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 025 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.025">
+<div class="problem-number">Assessment Bank DOK 1.025<span class="problem-meta">U1S2-011 | Section 1.2 | DoK 1</span></div>
+
+<p>Write the graph shown on the number line in interval notation.</p>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-011" src="figures/u1-u1s2-011-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 025 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 026 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.026">
+<div class="problem-number">Assessment Bank DOK 1.026<span class="problem-meta">U1S2-012 | Section 1.2 | DoK 1</span></div>
+
+<p>Write the graph shown on the number line as an inequality.</p>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-012" src="figures/u1-u1s2-012-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 026 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 027 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.027">
+<div class="problem-number">Assessment Bank DOK 1.027<span class="problem-meta">U1S2-013 | Section 1.2 | DoK 1</span></div>
+
+<p>Choose the correct symbol to make the statement match the interval \(( -\infty, 4 ]\): \(x \; \_ \; 4\).</p><ol type="a"><li>\(&lt;\)</li><li>\(\le\)</li><li>\(&gt;\)</li><li>\(\ge\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 027 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 028 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.028">
+<div class="problem-number">Assessment Bank DOK 1.028<span class="problem-meta">U1S2-014 | Section 1.2 | DoK 1</span></div>
+
+<p>State whether \(x=3\) is included in each set.</p><ol type="a"><li>\((3, 10]\)</li><li>\([3, 10)\)</li><li>\(x&gt;3\)</li><li>\(x\le 3\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 028 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 029 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.029">
+<div class="problem-number">Assessment Bank DOK 1.029<span class="problem-meta">U1S3-001 | Section 1.3 | DoK 1</span></div>
+
+<p>Determine the domain of $f(x)=x^2-4x+7$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 029 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 030 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.030">
+<div class="problem-number">Assessment Bank DOK 1.030<span class="problem-meta">U1S3-002 | Section 1.3 | DoK 1</span></div>
+
+<p>Determine the domain of $g(x)=\sqrt{x-5}$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 030 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 031 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.031">
+<div class="problem-number">Assessment Bank DOK 1.031<span class="problem-meta">U1S3-003 | Section 1.3 | DoK 1</span></div>
+
+<p>Determine the domain of $h(x)=\sqrt{x+2}$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 031 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 032 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.032">
+<div class="problem-number">Assessment Bank DOK 1.032<span class="problem-meta">U1S3-004 | Section 1.3 | DoK 1</span></div>
+
+<p>Determine the domain of $p(x)=\frac{1}{x-3}$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 032 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 033 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.033">
+<div class="problem-number">Assessment Bank DOK 1.033<span class="problem-meta">U1S3-005 | Section 1.3 | DoK 1</span></div>
+
+<p>Determine the domain of $r(x)=\frac{2x+1}{x+4}$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 033 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 034 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.034">
+<div class="problem-number">Assessment Bank DOK 1.034<span class="problem-meta">U1S3-006 | Section 1.3 | DoK 1</span></div>
+
+<p>Use the graph to determine the range of the function. Write your answer in interval notation.</p>
+<!-- Graph of an upward-opening parabola with vertex at (2,-3) and arrows continuing upward. -->
+<div class="graph-block graph-md">
+<img alt="Graph of an upward-opening parabola with vertex at (2,-3) and arrows continuing upward." src="figures/u1-u1s3-006-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 034 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 035 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.035">
+<div class="problem-number">Assessment Bank DOK 1.035<span class="problem-meta">U1S3-007 | Section 1.3 | DoK 1</span></div>
+
+<p>Use the graph to determine the domain of the function. Write your answer in interval notation.</p>
+<!-- Graph of a line segment from (-4,1) closed endpoint to (3,5) open endpoint. -->
+<div class="graph-block graph-md">
+<img alt="Graph of a line segment from (-4,1) closed endpoint to (3,5) open endpoint." src="figures/u1-u1s3-007-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 035 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 036 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.036">
+<div class="problem-number">Assessment Bank DOK 1.036<span class="problem-meta">U1S3-008 | Section 1.3 | DoK 1</span></div>
+
+<p>Use the graph to determine the domain and range of the function.</p>
+<!-- Graph of a curve beginning at a closed point (-2,-1), increasing to an open point (4,3). -->
+<div class="graph-block graph-md">
+<img alt="Graph of a curve beginning at a closed point (-2,-1), increasing to an open point (4,3)." src="figures/u1-u1s3-008-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 036 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 037 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.037">
+<div class="problem-number">Assessment Bank DOK 1.037<span class="problem-meta">U1S3-009 | Section 1.3 | DoK 1</span></div>
+
+<p>State whether each endpoint is included or excluded in $[-3,7)$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 037 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 038 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.038">
+<div class="problem-number">Assessment Bank DOK 1.038<span class="problem-meta">U1S3-010 | Section 1.3 | DoK 1</span></div>
+
+<p>Rewrite the set $x\ge -1$ in interval notation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 038 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 039 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.039">
+<div class="problem-number">Assessment Bank DOK 1.039<span class="problem-meta">U1S3-011 | Section 1.3 | DoK 1</span></div>
+
+<p>Rewrite the set $-5<x\le 2$="" in="" interval="" notation.<="" p="">
+</x\le></p>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 039 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 040 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.040">
+<div class="problem-number">Assessment Bank DOK 1.040<span class="problem-meta">U1S3-012 | Section 1.3 | DoK 1</span></div>
+
+<p>Use the number line to write the set in interval notation.</p>
+<!-- Number line with an open circle at -2, closed circle at 5, and shading between them. -->
+<div class="figure-block figure-md">
+<img alt="Number line with an open circle at -2, closed circle at 5, and shading between them." src="figures/u1-u1s3-012-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 040 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 041 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.041">
+<div class="problem-number">Assessment Bank DOK 1.041<span class="problem-meta">U1S3-013 | Section 1.3 | DoK 1</span></div>
+
+<p>Determine the domain of $f(x)=\sqrt{9-x}$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 041 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 042 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.042">
+<div class="problem-number">Assessment Bank DOK 1.042<span class="problem-meta">U1S3-014 | Section 1.3 | DoK 1</span></div>
+
+<p>Determine the domain of $f(x)=\frac{x+2}{x^2-9}$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 042 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 043 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.043">
+<div class="problem-number">Assessment Bank DOK 1.043<span class="problem-meta">U1S4-001 | Section 1.4 | DoK 1</span></div>
+
+<p>For \(g(x)=f(x)+4\), describe the transformation from \(f(x)\) to \(g(x)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 043 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 044 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.044">
+<div class="problem-number">Assessment Bank DOK 1.044<span class="problem-meta">U1S4-002 | Section 1.4 | DoK 1</span></div>
+
+<p>For \(g(x)=f(x-3)\), describe the transformation from \(f(x)\) to \(g(x)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 044 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 045 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.045">
+<div class="problem-number">Assessment Bank DOK 1.045<span class="problem-meta">U1S4-003 | Section 1.4 | DoK 1</span></div>
+
+<p>For \(g(x)=-f(x)\), describe the transformation from \(f(x)\) to \(g(x)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 045 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 046 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.046">
+<div class="problem-number">Assessment Bank DOK 1.046<span class="problem-meta">U1S4-004 | Section 1.4 | DoK 1</span></div>
+
+<p>For \(g(x)=2f(x)\), describe the transformation from \(f(x)\) to \(g(x)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 046 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 047 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.047">
+<div class="problem-number">Assessment Bank DOK 1.047<span class="problem-meta">U1S4-005 | Section 1.4 | DoK 1</span></div>
+
+<p>Use the graph to identify the horizontal and vertical shifts from the parent function.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-005" src="figures/u1-u1s4-005-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 047 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 048 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.048">
+<div class="problem-number">Assessment Bank DOK 1.048<span class="problem-meta">U1S4-006 | Section 1.4 | DoK 1</span></div>
+
+<p>Use the graph to identify the reflection and shifts from the parent function.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-006" src="figures/u1-u1s4-006-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 048 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 049 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.049">
+<div class="problem-number">Assessment Bank DOK 1.049<span class="problem-meta">U1S4-007 | Section 1.4 | DoK 1</span></div>
+
+<p>Use the graph to identify the vertical stretch/compression and shifts from the parent function.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-007" src="figures/u1-u1s4-007-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 049 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 050 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.050">
+<div class="problem-number">Assessment Bank DOK 1.050<span class="problem-meta">U1S4-008 | Section 1.4 | DoK 1</span></div>
+
+<p>Use the graph to identify the parent function and describe the transformation.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-008" src="figures/u1-u1s4-008-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 050 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 051 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.051">
+<div class="problem-number">Assessment Bank DOK 1.051<span class="problem-meta">U1S4-009 | Section 1.4 | DoK 1</span></div>
+
+<p>Write the transformation form for “shift \(f(x)\) left 5 units and down 2 units.”</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 051 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 052 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.052">
+<div class="problem-number">Assessment Bank DOK 1.052<span class="problem-meta">U1S4-010 | Section 1.4 | DoK 1</span></div>
+
+<p>Write the transformation form for “reflect \(f(x)\) over the \(x\)-axis and shift up 6 units.”</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 052 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 053 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.053">
+<div class="problem-number">Assessment Bank DOK 1.053<span class="problem-meta">U1S4-011 | Section 1.4 | DoK 1</span></div>
+
+<p>Identify the value of \(a\), \(h\), and \(k\) in \(g(x)=-3f(x+2)-5\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 053 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 054 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.054">
+<div class="problem-number">Assessment Bank DOK 1.054<span class="problem-meta">U1S4-012 | Section 1.4 | DoK 1</span></div>
+
+<p>Identify the value of \(a\), \(h\), and \(k\) in \(g(x)=\frac{1}{2}f(x-4)+1\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 054 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 055 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.055">
+<div class="problem-number">Assessment Bank DOK 1.055<span class="problem-meta">U1S4-013 | Section 1.4 | DoK 1</span></div>
+
+<p>For \(g(x)=|x-6|+2\), identify the parent function and the transformations.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 055 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 056 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.056">
+<div class="problem-number">Assessment Bank DOK 1.056<span class="problem-meta">U1S4-014 | Section 1.4 | DoK 1</span></div>
+
+<p>For \(g(x)=-(x+1)^2-3\), identify the parent function and the transformations.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 056 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 057 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.057">
+<div class="problem-number">Assessment Bank DOK 1.057<span class="problem-meta">U1S5-001 | Section 1.5 | DoK 1</span></div>
+
+<p>Use the graph to determine \(\lim_{x\to 2} f(x)\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-001" src="figures/u1-u1s5-001-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 057 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 058 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.058">
+<div class="problem-number">Assessment Bank DOK 1.058<span class="problem-meta">U1S5-002 | Section 1.5 | DoK 1</span></div>
+
+<p>Use the graph to determine \(\lim_{x\to 1^-} f(x)\) and \(\lim_{x\to 1^+} f(x)\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-002" src="figures/u1-u1s5-002-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 058 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 059 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.059">
+<div class="problem-number">Assessment Bank DOK 1.059<span class="problem-meta">U1S5-003 | Section 1.5 | DoK 1</span></div>
+
+<p>Use the graph to describe what happens to \(f(x)\) as \(x\to 2^-\) and as \(x\to 2^+\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-003" src="figures/u1-u1s5-003-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 059 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 060 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.060">
+<div class="problem-number">Assessment Bank DOK 1.060<span class="problem-meta">U1S5-004 | Section 1.5 | DoK 1</span></div>
+
+<p>Use the graph to determine \(\lim_{x\to 1} f(x)\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-004" src="figures/u1-u1s5-004-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 060 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 061 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.061">
+<div class="problem-number">Assessment Bank DOK 1.061<span class="problem-meta">U1S5-005 | Section 1.5 | DoK 1</span></div>
+
+<p>Use the graph to determine \(\lim_{x\to 0} f(x)\) and \(f(0)\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-005" src="figures/u1-u1s5-005-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 061 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 062 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.062">
+<div class="problem-number">Assessment Bank DOK 1.062<span class="problem-meta">U1S5-006 | Section 1.5 | DoK 1</span></div>
+
+<p>Use the graph to determine the left-hand and right-hand limits as \(x\to -1\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-006" src="figures/u1-u1s5-006-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 062 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 063 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.063">
+<div class="problem-number">Assessment Bank DOK 1.063<span class="problem-meta">U1S5-007 | Section 1.5 | DoK 1</span></div>
+
+<p>Use the graph to determine \(\lim_{x\to 2} f(x)\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-007" src="figures/u1-u1s5-007-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 063 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 064 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.064">
+<div class="problem-number">Assessment Bank DOK 1.064<span class="problem-meta">U1S5-008 | Section 1.5 | DoK 1</span></div>
+
+<p>Use the graph to describe the limit as \(x\to -1\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-008" src="figures/u1-u1s5-008-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 064 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 065 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.065">
+<div class="problem-number">Assessment Bank DOK 1.065<span class="problem-meta">U1S5-009 | Section 1.5 | DoK 1</span></div>
+
+<p>Use the graph to find \(\lim_{x\to -2^-} f(x)\), \(\lim_{x\to -2^+} f(x)\), and \(f(-2)\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-009" src="figures/u1-u1s5-009-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 065 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 066 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.066">
+<div class="problem-number">Assessment Bank DOK 1.066<span class="problem-meta">U1S5-010 | Section 1.5 | DoK 1</span></div>
+
+<p>Use the graph to determine whether \(\lim_{x\to -3} f(x)\) exists.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-010" src="figures/u1-u1s5-010-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 066 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 067 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.067">
+<div class="problem-number">Assessment Bank DOK 1.067<span class="problem-meta">U1S5-011 | Section 1.5 | DoK 1</span></div>
+
+<p>Use the graph to determine \(\lim_{x\to -1} f(x)\) and \(f(-1)\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-011" src="figures/u1-u1s5-011-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 067 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 068 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.068">
+<div class="problem-number">Assessment Bank DOK 1.068<span class="problem-meta">U1S5-012 | Section 1.5 | DoK 1</span></div>
+
+<p>Use the graph to describe the behavior of \(f(x)\) as \(x\to -2\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-012" src="figures/u1-u1s5-012-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 068 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 069 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.069">
+<div class="problem-number">Assessment Bank DOK 1.069<span class="problem-meta">U1S5-013 | Section 1.5 | DoK 1</span></div>
+
+<p>Complete the statement: If \(\lim_{x\to a^-} f(x)=3\) and \(\lim_{x\to a^+} f(x)=3\), then \(\lim_{x\to a} f(x)=\underline{\hspace{1in}}\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 069 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 070 START ======================= -->
+<section class="assessment-card" id="U1-DOK1.070">
+<div class="problem-number">Assessment Bank DOK 1.070<span class="problem-meta">U1S5-014 | Section 1.5 | DoK 1</span></div>
+
+<p>Complete the statement: If the left-hand and right-hand limits are not equal, then the two-sided limit \(\underline{\hspace{1.5in}}\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 070 END ======================= -->
+<div class="dok-bar">Assessment Bank DOK 2</div>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 001 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.001">
+<div class="problem-number">Assessment Bank DOK 2.001<span class="problem-meta">U1S1-015 | Section 1.1 | DoK 2</span></div>
+
+<p>Let \(f(x)=x^2-6x+8\).</p><ol type="a"><li>Solve \(f(x)=0\) algebraically.</li><li>Explain what the solutions mean in terms of the graph of \(y=f(x)\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 001 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 002 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.002">
+<div class="problem-number">Assessment Bank DOK 2.002<span class="problem-meta">U1S1-016 | Section 1.1 | DoK 2</span></div>
+
+<p>Let \(g(x)=2x+1\).</p><ol type="a"><li>Solve \(g(x)=9\) algebraically.</li><li>Create a two-row table that confirms your solution.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 002 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 003 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.003">
+<div class="problem-number">Assessment Bank DOK 2.003<span class="problem-meta">U1S1-017 | Section 1.1 | DoK 2</span></div>
+
+<p>The graph of \(f(x)=2x-3\) and the horizontal line \(y=5\) are shown. Use the graph to solve \(f(x)=5\), then verify algebraically.</p>
+<div class="graph-block graph-md">
+<img alt="Graph for U1S1-017" src="figures/u1-u1s1-017-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 003 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 004 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.004">
+<div class="problem-number">Assessment Bank DOK 2.004<span class="problem-meta">U1S1-018 | Section 1.1 | DoK 2</span></div>
+
+<p>The graph of \(g(x)=x^2-4\) and the horizontal line \(y=5\) are shown. Use the graph to solve \(g(x)=5\), then verify algebraically.</p>
+<div class="graph-block graph-md">
+<img alt="Graph for U1S1-018" src="figures/u1-u1s1-018-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 004 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 005 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.005">
+<div class="problem-number">Assessment Bank DOK 2.005<span class="problem-meta">U1S1-019 | Section 1.1 | DoK 2</span></div>
+
+<p>The graph of \(h(x)=-(x-1)^2+4\) is shown. Use the graph to solve \(h(x)=0\). Then check your solutions by substitution.</p>
+<div class="graph-block graph-md">
+<img alt="Graph for U1S1-019" src="figures/u1-u1s1-019-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 005 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 006 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.006">
+<div class="problem-number">Assessment Bank DOK 2.006<span class="problem-meta">U1S1-020 | Section 1.1 | DoK 2</span></div>
+
+<p>The graph of \(p(x)=\frac12x+2\) and the horizontal line \(y=-1\) are shown. Use the graph to estimate the solution to \(p(x)=-1\), then solve exactly.</p>
+<div class="graph-block graph-md">
+<img alt="Graph for U1S1-020" src="figures/u1-u1s1-020-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 006 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 007 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.007">
+<div class="problem-number">Assessment Bank DOK 2.007<span class="problem-meta">U1S1-021 | Section 1.1 | DoK 2</span></div>
+
+<p>A function \(f\) is represented by the table below.</p><table class="table-block"><tr><th>\(x\)</th><td>-2</td><td>-1</td><td>0</td><td>1</td><td>2</td><td>3</td></tr><tr><th>\(f(x)\)</th><td>-3</td><td>0</td><td>1</td><td>0</td><td>-3</td><td>-8</td></tr></table><ol type="a"><li>Solve \(f(x)=0\) using the table.</li><li>Describe what those solutions would look like on a graph.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 007 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 008 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.008">
+<div class="problem-number">Assessment Bank DOK 2.008<span class="problem-meta">U1S1-022 | Section 1.1 | DoK 2</span></div>
+
+<p>Let \(k(x)=x^2+2x-8\).</p><ol type="a"><li>Solve \(k(x)=0\) by factoring.</li><li>State the ordered pairs where the graph crosses the \(x\)-axis.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 008 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 009 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.009">
+<div class="problem-number">Assessment Bank DOK 2.009<span class="problem-meta">U1S1-023 | Section 1.1 | DoK 2</span></div>
+
+<p>Let \(m(x)=3x^2-12\).</p><ol type="a"><li>Solve \(m(x)=0\).</li><li>Solve \(m(x)=15\).</li><li>Explain why the second equation has different solutions than the first.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 009 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 010 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.010">
+<div class="problem-number">Assessment Bank DOK 2.010<span class="problem-meta">U1S1-024 | Section 1.1 | DoK 2</span></div>
+
+<p>Let \(P(t)=25-5t\), where \(P(t)\) is the number of pages left to read after \(t\) minutes.</p><ol type="a"><li>Find \(P(3)\).</li><li>Solve \(P(t)=0\).</li><li>Interpret both answers in context.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 010 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 011 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.011">
+<div class="problem-number">Assessment Bank DOK 2.011<span class="problem-meta">U1S1-025 | Section 1.1 | DoK 2</span></div>
+
+<p>Use the table to estimate the solution(s) to \(f(x)=10\).</p><table class="table-block"><tr><th>\(x\)</th><td>-1</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><th>\(f(x)\)</th><td>18</td><td>10</td><td>6</td><td>6</td><td>10</td><td>18</td></tr></table><p>Then write a sentence explaining how the table shows your answer.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 011 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 012 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.012">
+<div class="problem-number">Assessment Bank DOK 2.012<span class="problem-meta">U1S1-026 | Section 1.1 | DoK 2</span></div>
+
+<p>Let \(f(x)=2(x-1)(x+4)\).</p><ol type="a"><li>Solve \(f(x)=0\).</li><li>Evaluate \(f(0)\).</li><li>Explain the difference between solving \(f(x)=0\) and evaluating \(f(0)\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 012 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 013 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.013">
+<div class="problem-number">Assessment Bank DOK 2.013<span class="problem-meta">U1S1-027 | Section 1.1 | DoK 2</span></div>
+
+<p>Let \(T(x)=4x+7\).</p><ol type="a"><li>Create a table for \(x=-2,-1,0,1,2\).</li><li>Use the table to solve \(T(x)=3\).</li><li>Verify algebraically.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 013 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 014 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.014">
+<div class="problem-number">Assessment Bank DOK 2.014<span class="problem-meta">U1S1-028 | Section 1.1 | DoK 2</span></div>
+
+<p>Let \(f(x)=x^2-9\). A student says the solution to \(f(x)=0\) is \(x=3\). Determine whether the student is correct and explain.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 014 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 015 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.015">
+<div class="problem-number">Assessment Bank DOK 2.015<span class="problem-meta">U1S2-015 | Section 1.2 | DoK 2</span></div>
+
+<p>Translate each representation.</p><ol type="a"><li>Write \([-2, 4)\) as an inequality.</li><li>Describe how you would graph the endpoints on a number line.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 015 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 016 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.016">
+<div class="problem-number">Assessment Bank DOK 2.016<span class="problem-meta">U1S2-016 | Section 1.2 | DoK 2</span></div>
+
+<p>Translate each representation.</p><ol type="a"><li>Write \(-6 &lt; x &lt; 1\) in interval notation.</li><li>Describe the graph using open or closed circles.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 016 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 017 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.017">
+<div class="problem-number">Assessment Bank DOK 2.017<span class="problem-meta">U1S2-017 | Section 1.2 | DoK 2</span></div>
+
+<p>A solution set is described as: all real numbers at least \(2\) and less than \(9\).</p><ol type="a"><li>Write the set as an inequality.</li><li>Write the set in interval notation.</li><li>Describe its number-line graph.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 017 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 018 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.018">
+<div class="problem-number">Assessment Bank DOK 2.018<span class="problem-meta">U1S2-018 | Section 1.2 | DoK 2</span></div>
+
+<p>A solution set is described as: all real numbers greater than \(-5\) but no more than \(3\).</p><ol type="a"><li>Write the set as an inequality.</li><li>Write the set in interval notation.</li><li>Explain which endpoints are included.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 018 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 019 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.019">
+<div class="problem-number">Assessment Bank DOK 2.019<span class="problem-meta">U1S2-019 | Section 1.2 | DoK 2</span></div>
+
+<p>Complete the table.</p><table class="table-block"><tr><th>Description</th><th>Inequality</th><th>Interval Notation</th></tr><tr><td>All values from \(-1\) to \(6\), including both endpoints</td><td></td><td></td></tr><tr><td>All values less than \(4\)</td><td></td><td></td></tr></table>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 019 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 020 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.020">
+<div class="problem-number">Assessment Bank DOK 2.020<span class="problem-meta">U1S2-020 | Section 1.2 | DoK 2</span></div>
+
+<p>Write two different representations for the set of values shown: all real numbers greater than or equal to \(-2\).</p><ol type="a"><li>Inequality notation</li><li>Interval notation</li><li>Number-line description</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 020 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 021 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.021">
+<div class="problem-number">Assessment Bank DOK 2.021<span class="problem-meta">U1S2-021 | Section 1.2 | DoK 2</span></div>
+
+<p>Determine whether each value belongs to the interval \((-3, 5]\).</p><ol type="a"><li>\(-3\)</li><li>\(0\)</li><li>\(5\)</li><li>\(6\)</li></ol><p>Explain one of your decisions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 021 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 022 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.022">
+<div class="problem-number">Assessment Bank DOK 2.022<span class="problem-meta">U1S2-022 | Section 1.2 | DoK 2</span></div>
+
+<p>The number line shows a solution set.</p><ol type="a"><li>Write the set in interval notation.</li><li>Write the set as an inequality.</li><li>Explain how the open endpoints affect the notation.</li></ol>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-022" src="figures/u1-u1s2-022-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 022 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 023 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.023">
+<div class="problem-number">Assessment Bank DOK 2.023<span class="problem-meta">U1S2-023 | Section 1.2 | DoK 2</span></div>
+
+<p>The number line shows a solution set.</p><ol type="a"><li>Write the set in interval notation.</li><li>Write the set as an inequality.</li><li>Explain why the endpoint is included.</li></ol>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-023" src="figures/u1-u1s2-023-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 023 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 024 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.024">
+<div class="problem-number">Assessment Bank DOK 2.024<span class="problem-meta">U1S2-024 | Section 1.2 | DoK 2</span></div>
+
+<p>The number line shows a solution set.</p><ol type="a"><li>Write the set in interval notation.</li><li>Write the set as an inequality.</li><li>Explain why the endpoint is excluded.</li></ol>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-024" src="figures/u1-u1s2-024-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 024 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 025 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.025">
+<div class="problem-number">Assessment Bank DOK 2.025<span class="problem-meta">U1S2-025 | Section 1.2 | DoK 2</span></div>
+
+<p>A student writes \(x&gt; -1\) as \([-1,\infty)\). Identify the mistake and write the correct interval notation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 025 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 026 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.026">
+<div class="problem-number">Assessment Bank DOK 2.026<span class="problem-meta">U1S2-026 | Section 1.2 | DoK 2</span></div>
+
+<p>A student writes \([0,7)\) as \(0 \le x \le 7\). Identify the mistake and write the correct inequality notation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 026 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 027 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.027">
+<div class="problem-number">Assessment Bank DOK 2.027<span class="problem-meta">U1S2-027 | Section 1.2 | DoK 2</span></div>
+
+<p>Graph \(-4 \le x &lt; 2\) on a number line. Then write one sentence explaining your endpoint choices.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 027 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 028 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.028">
+<div class="problem-number">Assessment Bank DOK 2.028<span class="problem-meta">U1S2-028 | Section 1.2 | DoK 2</span></div>
+
+<p>Graph \(( -\infty, 1 ]\) on a number line. Then write the equivalent inequality.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 028 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 029 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.029">
+<div class="problem-number">Assessment Bank DOK 2.029<span class="problem-meta">U1S3-015 | Section 1.3 | DoK 2</span></div>
+
+<p>Determine the domain of $f(x)=\sqrt{2x-6}$ and write it in interval notation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 029 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 030 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.030">
+<div class="problem-number">Assessment Bank DOK 2.030<span class="problem-meta">U1S3-016 | Section 1.3 | DoK 2</span></div>
+
+<p>Determine the domain of $g(x)=\sqrt{12-3x}$ and write it in interval notation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 030 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 031 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.031">
+<div class="problem-number">Assessment Bank DOK 2.031<span class="problem-meta">U1S3-017 | Section 1.3 | DoK 2</span></div>
+
+<p>Determine the domain of $h(x)=\frac{x+5}{x^2-4x}$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 031 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 032 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.032">
+<div class="problem-number">Assessment Bank DOK 2.032<span class="problem-meta">U1S3-018 | Section 1.3 | DoK 2</span></div>
+
+<p>Determine the domain of $p(x)=\frac{3}{(x+1)(x-6)}$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 032 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 033 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.033">
+<div class="problem-number">Assessment Bank DOK 2.033<span class="problem-meta">U1S3-019 | Section 1.3 | DoK 2</span></div>
+
+<p>Determine the domain and range of the graphed function. Use interval notation.</p>
+<!-- Graph of a downward-opening parabola with vertex at (-1,4) and arrows continuing downward. -->
+<div class="graph-block graph-md">
+<img alt="Graph of a downward-opening parabola with vertex at (-1,4) and arrows continuing downward." src="figures/u1-u1s3-019-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 033 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 034 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.034">
+<div class="problem-number">Assessment Bank DOK 2.034<span class="problem-meta">U1S3-020 | Section 1.3 | DoK 2</span></div>
+
+<p>Determine the domain and range of the graphed function. Use interval notation.</p>
+<!-- Piecewise graph with closed point at (-5,2), line segment to open point at (0,-1), and separate ray starting closed at (2,0) increasing to the right. -->
+<div class="graph-block graph-md">
+<img alt="Piecewise graph with closed point at (-5,2), line segment to open point at (0,-1), and separate ray starting closed at (2,0) increasing to the right." src="figures/u1-u1s3-020-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 034 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 035 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.035">
+<div class="problem-number">Assessment Bank DOK 2.035<span class="problem-meta">U1S3-021 | Section 1.3 | DoK 2</span></div>
+
+<p>Determine the domain and range of the graphed function. Use interval notation.</p>
+<!-- Graph of a square root function starting at closed point (3,-2) and increasing to the right. -->
+<div class="graph-block graph-md">
+<img alt="Graph of a square root function starting at closed point (3,-2) and increasing to the right." src="figures/u1-u1s3-021-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 035 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 036 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.036">
+<div class="problem-number">Assessment Bank DOK 2.036<span class="problem-meta">U1S3-022 | Section 1.3 | DoK 2</span></div>
+
+<p>A function has domain $(-\infty,-2]\cup(1,\infty)$. Describe what this means in words.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 036 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 037 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.037">
+<div class="problem-number">Assessment Bank DOK 2.037<span class="problem-meta">U1S3-023 | Section 1.3 | DoK 2</span></div>
+
+<p>A graph has domain $[-4,6)$ and range $(-2,5]$. Describe the possible endpoints and output values.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 037 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 038 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.038">
+<div class="problem-number">Assessment Bank DOK 2.038<span class="problem-meta">U1S3-024 | Section 1.3 | DoK 2</span></div>
+
+<p>The table gives values of a function. Determine the domain and range of the relation.</p>
+<ol type="a">
+<li>$x$: $-3,-1,0,4,7$</li>
+<li>$f(x)$: $5,2,2,-6,1$</li>
+</ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 038 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 039 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.039">
+<div class="problem-number">Assessment Bank DOK 2.039<span class="problem-meta">U1S3-025 | Section 1.3 | DoK 2</span></div>
+
+<p>The table gives values of a function. Determine the domain and range of the relation.</p>
+<ol type="a">
+<li>$x$: $-2,-2,1,3,5$</li>
+<li>$g(x)$: $4,6,0,0,-1$</li>
+</ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 039 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 040 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.040">
+<div class="problem-number">Assessment Bank DOK 2.040<span class="problem-meta">U1S3-026 | Section 1.3 | DoK 2</span></div>
+
+<p>A function $C(t)$ represents the cost of renting a kayak for $t$ hours. The rental shop allows rentals from $0$ to $8$ hours. State the reasonable domain in interval notation and explain the endpoint inclusion.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 040 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 041 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.041">
+<div class="problem-number">Assessment Bank DOK 2.041<span class="problem-meta">U1S3-027 | Section 1.3 | DoK 2</span></div>
+
+<p>A function $H(t)$ represents the height of a ball thrown from the ground. The maximum height is $64$ feet and the ball returns to the ground. State a reasonable range and explain it.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 041 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 042 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.042">
+<div class="problem-number">Assessment Bank DOK 2.042<span class="problem-meta">U1S3-028 | Section 1.3 | DoK 2</span></div>
+
+<p>Determine the domain of $f(x)=\frac{\sqrt{x-1}}{x-5}$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 042 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 043 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.043">
+<div class="problem-number">Assessment Bank DOK 2.043<span class="problem-meta">U1S4-015 | Section 1.4 | DoK 2</span></div>
+
+<p>Write an equation for the graph of \(y=x^2\) shifted right 4 units and up 1 unit.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 043 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 044 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.044">
+<div class="problem-number">Assessment Bank DOK 2.044<span class="problem-meta">U1S4-016 | Section 1.4 | DoK 2</span></div>
+
+<p>Write an equation for the graphed quadratic transformation.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-016" src="figures/u1-u1s4-016-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 044 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 045 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.045">
+<div class="problem-number">Assessment Bank DOK 2.045<span class="problem-meta">U1S4-017 | Section 1.4 | DoK 2</span></div>
+
+<p>Write an equation for the graphed absolute value transformation.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-017" src="figures/u1-u1s4-017-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 045 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 046 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.046">
+<div class="problem-number">Assessment Bank DOK 2.046<span class="problem-meta">U1S4-018 | Section 1.4 | DoK 2</span></div>
+
+<p>Write an equation for the graphed cube root transformation.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-018" src="figures/u1-u1s4-018-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 046 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 047 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.047">
+<div class="problem-number">Assessment Bank DOK 2.047<span class="problem-meta">U1S4-019 | Section 1.4 | DoK 2</span></div>
+
+<p>Write an equation for the graphed square root transformation.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-019" src="figures/u1-u1s4-019-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 047 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 048 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.048">
+<div class="problem-number">Assessment Bank DOK 2.048<span class="problem-meta">U1S4-020 | Section 1.4 | DoK 2</span></div>
+
+<p>Compare the parent graph and transformed graph. Write the equation of the transformed graph.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-020" src="figures/u1-u1s4-020-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 048 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 049 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.049">
+<div class="problem-number">Assessment Bank DOK 2.049<span class="problem-meta">U1S4-021 | Section 1.4 | DoK 2</span></div>
+
+<p>Compare the parent graph and transformed graph. Write the equation of the transformed graph.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-021" src="figures/u1-u1s4-021-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 049 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 050 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.050">
+<div class="problem-number">Assessment Bank DOK 2.050<span class="problem-meta">U1S4-022 | Section 1.4 | DoK 2</span></div>
+
+<p>Let \(f(x)=x^2\). Write \(g(x)\) if \(f(x)\) is reflected over the \(x\)-axis, vertically stretched by a factor of 3, and shifted down 2 units.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 050 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 051 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.051">
+<div class="problem-number">Assessment Bank DOK 2.051<span class="problem-meta">U1S4-023 | Section 1.4 | DoK 2</span></div>
+
+<p>Let \(f(x)=|x|\). Write \(g(x)\) if \(f(x)\) is shifted left 4 units and vertically compressed by a factor of \(\frac{1}{2}\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 051 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 052 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.052">
+<div class="problem-number">Assessment Bank DOK 2.052<span class="problem-meta">U1S4-024 | Section 1.4 | DoK 2</span></div>
+
+<p>Let \(f(x)=\sqrt{x}\). Write \(g(x)\) if \(f(x)\) is shifted right 7 units and up 3 units.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 052 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 053 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.053">
+<div class="problem-number">Assessment Bank DOK 2.053<span class="problem-meta">U1S4-025 | Section 1.4 | DoK 2</span></div>
+
+<p>Let \(f(x)=x^3\). Write \(g(x)\) if \(f(x)\) is reflected over the \(x\)-axis and shifted left 2 units.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 053 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 054 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.054">
+<div class="problem-number">Assessment Bank DOK 2.054<span class="problem-meta">U1S4-026 | Section 1.4 | DoK 2</span></div>
+
+<p>Describe the transformations of \(g(x)=4\sqrt{x+5}-1\) from the parent function.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 054 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 055 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.055">
+<div class="problem-number">Assessment Bank DOK 2.055<span class="problem-meta">U1S4-027 | Section 1.4 | DoK 2</span></div>
+
+<p>Describe the transformations of \(g(x)=-\frac{1}{3}|x-2|+6\) from the parent function.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 055 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 056 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.056">
+<div class="problem-number">Assessment Bank DOK 2.056<span class="problem-meta">U1S4-028 | Section 1.4 | DoK 2</span></div>
+
+<p>Describe the transformations of \(g(x)=2(x+3)^2-4\) from the parent function.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 056 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 057 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.057">
+<div class="problem-number">Assessment Bank DOK 2.057<span class="problem-meta">U1S5-015 | Section 1.5 | DoK 2</span></div>
+
+<p>Use the graph to determine the left-hand limit, right-hand limit, function value, and whether the two-sided limit exists at \(x=0\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-015" src="figures/u1-u1s5-015-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 057 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 058 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.058">
+<div class="problem-number">Assessment Bank DOK 2.058<span class="problem-meta">U1S5-016 | Section 1.5 | DoK 2</span></div>
+
+<p>Use the graph to determine whether the limit exists at \(x=-1\). Explain using left-hand and right-hand limits.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-016" src="figures/u1-u1s5-016-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 058 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 059 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.059">
+<div class="problem-number">Assessment Bank DOK 2.059<span class="problem-meta">U1S5-017 | Section 1.5 | DoK 2</span></div>
+
+<p>Use the graph to compare \(\lim_{x\to 0} f(x)\) and \(f(0)\). Are they equal?</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-017" src="figures/u1-u1s5-017-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 059 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 060 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.060">
+<div class="problem-number">Assessment Bank DOK 2.060<span class="problem-meta">U1S5-018 | Section 1.5 | DoK 2</span></div>
+
+<p>Use the graph to determine whether the limit exists at the vertical asymptote. Explain the one-sided behavior.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-018" src="figures/u1-u1s5-018-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 060 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 061 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.061">
+<div class="problem-number">Assessment Bank DOK 2.061<span class="problem-meta">U1S5-019 | Section 1.5 | DoK 2</span></div>
+
+<p>Use the graph to determine the limits at \(x=-2\) and \(x=2\). State whether each limit exists.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-019" src="figures/u1-u1s5-019-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 061 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 062 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.062">
+<div class="problem-number">Assessment Bank DOK 2.062<span class="problem-meta">U1S5-020 | Section 1.5 | DoK 2</span></div>
+
+<p>Use the graph to determine \(\lim_{x\to 2} f(x)\), \(f(2)\), and whether the function value affects the limit.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-020" src="figures/u1-u1s5-020-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 062 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 063 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.063">
+<div class="problem-number">Assessment Bank DOK 2.063<span class="problem-meta">U1S5-021 | Section 1.5 | DoK 2</span></div>
+
+<p>Use the graph to determine whether the limit exists at \(x=2\). Justify using left-hand and right-hand limits.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-021" src="figures/u1-u1s5-021-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 063 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 064 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.064">
+<div class="problem-number">Assessment Bank DOK 2.064<span class="problem-meta">U1S5-022 | Section 1.5 | DoK 2</span></div>
+
+<p>Use the graph to determine the limit as \(x\to 1\). If it does not exist, explain why.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-022" src="figures/u1-u1s5-022-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 064 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 065 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.065">
+<div class="problem-number">Assessment Bank DOK 2.065<span class="problem-meta">U1S5-023 | Section 1.5 | DoK 2</span></div>
+
+<p>Use the graph to determine \(\lim_{x\to 3} f(x)\). Then explain why \(f(3)\) is different.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-023" src="figures/u1-u1s5-023-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 065 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 066 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.066">
+<div class="problem-number">Assessment Bank DOK 2.066<span class="problem-meta">U1S5-024 | Section 1.5 | DoK 2</span></div>
+
+<p>Use the graph to identify one \(x\)-value where a limit exists and one \(x\)-value where a limit does not exist. Justify both.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-024" src="figures/u1-u1s5-024-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 066 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 067 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.067">
+<div class="problem-number">Assessment Bank DOK 2.067<span class="problem-meta">U1S5-025 | Section 1.5 | DoK 2</span></div>
+
+<p>A graph has a hole at \((4,2)\) and a closed point at \((4,-1)\). What are \(\lim_{x\to 4} f(x)\) and \(f(4)\)?</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 067 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 068 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.068">
+<div class="problem-number">Assessment Bank DOK 2.068<span class="problem-meta">U1S5-026 | Section 1.5 | DoK 2</span></div>
+
+<p>A graph has a jump at \(x=5\), with \(\lim_{x\to 5^-} f(x)=1\) and \(\lim_{x\to 5^+} f(x)=6\). Does \(\lim_{x\to 5} f(x)\) exist? Explain.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 068 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 069 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.069">
+<div class="problem-number">Assessment Bank DOK 2.069<span class="problem-meta">U1S5-027 | Section 1.5 | DoK 2</span></div>
+
+<p>A graph approaches \(+\infty\) from both sides as \(x\to -3\). Describe \(\lim_{x\to -3} f(x)\) using appropriate language.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 069 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 070 START ======================= -->
+<section class="assessment-card" id="U1-DOK2.070">
+<div class="problem-number">Assessment Bank DOK 2.070<span class="problem-meta">U1S5-028 | Section 1.5 | DoK 2</span></div>
+
+<p>Explain why a pointy corner can still have a limit even if the graph is not smooth there.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 070 END ======================= -->
+<div class="dok-bar">Assessment Bank DOK 3</div>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 001 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.001">
+<div class="problem-number">Assessment Bank DOK 3.001<span class="problem-meta">U1S1-029 | Section 1.1 | DoK 3</span></div>
+
+<p>Two students solve \(f(x)=0\) for \(f(x)=x^2-7x+10\).</p><p><strong>Student A:</strong> \((x-5)(x-2)=0\), so \(x=5\) or \(x=2\).</p><p><strong>Student B:</strong> \(x^2=7x-10\), so \(x=7\) or \(x=-10\).</p><p>Which student is correct? Explain the error in the other solution.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 001 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 002 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.002">
+<div class="problem-number">Assessment Bank DOK 3.002<span class="problem-meta">U1S1-030 | Section 1.1 | DoK 3</span></div>
+
+<p>The graph of \(f(x)=(x+2)(x-3)\) is shown.</p><ol type="a"><li>Solve \(f(x)=0\) graphically.</li><li>Verify algebraically.</li><li>Explain how the graph and algebra show the same solutions.</li></ol>
+<div class="graph-block graph-md">
+<img alt="Graph for U1S1-030" src="figures/u1-u1s1-030-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 002 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 003 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.003">
+<div class="problem-number">Assessment Bank DOK 3.003<span class="problem-meta">U1S1-031 | Section 1.1 | DoK 3</span></div>
+
+<p>The graph of \(r(x)=-x^2+2x+3\) and the horizontal line \(y=3\) are shown.</p><ol type="a"><li>Solve \(r(x)=3\) graphically.</li><li>Solve \(r(x)=3\) algebraically.</li><li>Explain why one solution is easy to miss if you only estimate from the graph.</li></ol>
+<div class="graph-block graph-md">
+<img alt="Graph for U1S1-031" src="figures/u1-u1s1-031-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 003 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 004 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.004">
+<div class="problem-number">Assessment Bank DOK 3.004<span class="problem-meta">U1S1-032 | Section 1.1 | DoK 3</span></div>
+
+<p>The graph of \(s(x)=1.5x-2\) and the line \(y=4\) are shown.</p><ol type="a"><li>Solve \(s(x)=4\).</li><li>Write the solution as an ordered pair on the graph.</li><li>Explain what the ordered pair means.</li></ol>
+<div class="graph-block graph-md">
+<img alt="Graph for U1S1-032" src="figures/u1-u1s1-032-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 004 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 005 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.005">
+<div class="problem-number">Assessment Bank DOK 3.005<span class="problem-meta">U1S1-033 | Section 1.1 | DoK 3</span></div>
+
+<p>Let \(f(x)=2x^2-8x\).</p><ol type="a"><li>Solve \(f(x)=0\) by factoring.</li><li>Evaluate \(f(4)\).</li><li>Explain why \(x=4\) is not the only important input even though \(f(4)=0\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 005 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 006 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.006">
+<div class="problem-number">Assessment Bank DOK 3.006<span class="problem-meta">U1S1-034 | Section 1.1 | DoK 3</span></div>
+
+<p>A table for \(f(x)\) is shown.</p><table class="table-block"><tr><th>\(x\)</th><td>-3</td><td>-2</td><td>-1</td><td>0</td><td>1</td><td>2</td><td>3</td></tr><tr><th>\(f(x)\)</th><td>12</td><td>5</td><td>0</td><td>-3</td><td>-4</td><td>-3</td><td>0</td></tr></table><ol type="a"><li>Solve \(f(x)=0\) from the table.</li><li>Can you determine all solutions to \(f(x)=0\) from this table? Justify your answer.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 006 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 007 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.007">
+<div class="problem-number">Assessment Bank DOK 3.007<span class="problem-meta">U1S1-035 | Section 1.1 | DoK 3</span></div>
+
+<p>Let \(f(x)=x^2+bx+12\). One solution to \(f(x)=0\) is \(x=3\). Determine a possible value of \(b\), then verify your answer.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 007 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 008 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.008">
+<div class="problem-number">Assessment Bank DOK 3.008<span class="problem-meta">U1S1-036 | Section 1.1 | DoK 3</span></div>
+
+<p>A student evaluates \(f(-2)\) for \(f(x)=3x^2-4x+1\) and gets \(-3\).</p><ol type="a"><li>Identify the student's likely mistake.</li><li>Find the correct value of \(f(-2)\).</li><li>Explain how parentheses affect evaluation.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 008 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 009 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.009">
+<div class="problem-number">Assessment Bank DOK 3.009<span class="problem-meta">U1S1-037 | Section 1.1 | DoK 3</span></div>
+
+<p>Compare these two tasks for \(f(x)=x^2-4x\):</p><ol type="a"><li>Evaluate \(f(6)\).</li><li>Solve \(f(x)=6\).</li></ol><p>Complete both tasks and explain how they are different.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 009 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 010 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.010">
+<div class="problem-number">Assessment Bank DOK 3.010<span class="problem-meta">U1S1-038 | Section 1.1 | DoK 3</span></div>
+
+<p>Create a factorable quadratic function \(f(x)\) such that \(f(x)=0\) has solutions \(x=-1\) and \(x=4\). Then verify both solutions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 010 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 011 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.011">
+<div class="problem-number">Assessment Bank DOK 3.011<span class="problem-meta">U1S1-039 | Section 1.1 | DoK 3</span></div>
+
+<p>The graph models revenue \(R(x)\), in dollars, from selling \(x\) items.</p><ol type="a"><li>Use the graph to estimate when \(R(x)=32\).</li><li>Interpret the solutions in context.</li><li>Explain why two different inputs can give the same output.</li></ol>
+<div class="graph-block graph-md">
+<img alt="Graph for U1S1-039" src="figures/u1-u1s1-039-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 011 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 012 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.012">
+<div class="problem-number">Assessment Bank DOK 3.012<span class="problem-meta">U1S1-040 | Section 1.1 | DoK 3</span></div>
+
+<p>Let \(f(x)=a(x-2)(x+5)\). Choose a value of \(a\) and describe what stays the same and what changes about the solutions to \(f(x)=0\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 012 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 013 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.013">
+<div class="problem-number">Assessment Bank DOK 3.013<span class="problem-meta">U1S2-029 | Section 1.2 | DoK 3</span></div>
+
+<p>Compare the sets \((-2, 5]\) and \([-2, 5)\).</p><ol type="a"><li>How are they alike?</li><li>How are they different?</li><li>Give one value that belongs to the first set but not the second.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 013 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 014 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.014">
+<div class="problem-number">Assessment Bank DOK 3.014<span class="problem-meta">U1S2-030 | Section 1.2 | DoK 3</span></div>
+
+<p>Explain why \((-\infty, 3]\) cannot be written as \(-\infty \le x \le 3\). Use complete mathematical reasoning.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 014 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 015 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.015">
+<div class="problem-number">Assessment Bank DOK 3.015<span class="problem-meta">U1S2-031 | Section 1.2 | DoK 3</span></div>
+
+<p>A student says, “Parentheses mean the endpoint is not part of the set, so infinity should use brackets when it goes on forever.” Is the student correct? Explain.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 015 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 016 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.016">
+<div class="problem-number">Assessment Bank DOK 3.016<span class="problem-meta">U1S2-032 | Section 1.2 | DoK 3</span></div>
+
+<p>Create two different intervals that both contain \(0\) but differ in whether they include \(4\). Write each interval in inequality notation and explain the difference.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 016 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 017 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.017">
+<div class="problem-number">Assessment Bank DOK 3.017<span class="problem-meta">U1S2-033 | Section 1.2 | DoK 3</span></div>
+
+<p>A student drew the number line shown for the inequality \(-5 &lt; x &lt; -1\).</p><ol type="a"><li>Identify the error in the graph.</li><li>Draw or describe the corrected graph.</li><li>Write the correct interval notation.</li></ol>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-033" src="figures/u1-u1s2-033-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 017 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 018 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.018">
+<div class="problem-number">Assessment Bank DOK 3.018<span class="problem-meta">U1S2-034 | Section 1.2 | DoK 3</span></div>
+
+<p>A function has a domain described by \(-3 \le x &lt; 6\).</p><ol type="a"><li>Write the domain in interval notation.</li><li>Explain what values are allowed and what values are not allowed.</li><li>Describe how the graph should show each endpoint.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 018 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 019 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.019">
+<div class="problem-number">Assessment Bank DOK 3.019<span class="problem-meta">U1S2-035 | Section 1.2 | DoK 3</span></div>
+
+<p>Decide whether the statement is always true, sometimes true, or never true:</p><p>“If an endpoint is included in interval notation, the graph must use a closed circle at that endpoint.”</p><p>Justify your answer.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 019 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 020 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.020">
+<div class="problem-number">Assessment Bank DOK 3.020<span class="problem-meta">U1S2-036 | Section 1.2 | DoK 3</span></div>
+
+<p>A set is represented by the inequality \(x&lt;2\). Another set is represented by \(x\le2\).</p><ol type="a"><li>Write both in interval notation.</li><li>Explain how a single point changes the notation and graph.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 020 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 021 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.021">
+<div class="problem-number">Assessment Bank DOK 3.021<span class="problem-meta">U1S2-037 | Section 1.2 | DoK 3</span></div>
+
+<p>Write a set that includes exactly the values between \(-7\) and \(7\), includes \(-7\), but excludes \(7\).</p><ol type="a"><li>Write the inequality.</li><li>Write the interval notation.</li><li>Explain your endpoint choices.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 021 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 022 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.022">
+<div class="problem-number">Assessment Bank DOK 3.022<span class="problem-meta">U1S2-038 | Section 1.2 | DoK 3</span></div>
+
+<p>The number line could represent the possible input values for a function.</p><ol type="a"><li>Write the domain in interval notation.</li><li>Write the domain as an inequality.</li><li>Explain why the endpoints might be excluded in a real problem.</li></ol>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-038" src="figures/u1-u1s2-038-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 022 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 023 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.023">
+<div class="problem-number">Assessment Bank DOK 3.023<span class="problem-meta">U1S2-039 | Section 1.2 | DoK 3</span></div>
+
+<p>A student writes the solution set “all numbers no more than \(10\)” as \((10,\infty)\).</p><ol type="a"><li>Explain the meaning of “no more than.”</li><li>Correct the interval notation.</li><li>Write the inequality notation.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 023 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 024 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.024">
+<div class="problem-number">Assessment Bank DOK 3.024<span class="problem-meta">U1S2-040 | Section 1.2 | DoK 3</span></div>
+
+<p>Given the interval \((-4, 8]\), write a real-world situation where \(-4\) is not allowed but \(8\) is allowed. Explain why the endpoint choices make sense.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 024 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 025 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.025">
+<div class="problem-number">Assessment Bank DOK 3.025<span class="problem-meta">U1S3-029 | Section 1.3 | DoK 3</span></div>
+
+<p>A student says the domain of $f(x)=\sqrt{x-4}$ is all real numbers because any number can be substituted for $x$. Explain the error and give the correct domain.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 025 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 026 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.026">
+<div class="problem-number">Assessment Bank DOK 3.026<span class="problem-meta">U1S3-030 | Section 1.3 | DoK 3</span></div>
+
+<p>Explain why $x=2$ must be excluded from the domain of $g(x)=\frac{x+1}{x-2}$ even though the numerator is defined at $x=2$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 026 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 027 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.027">
+<div class="problem-number">Assessment Bank DOK 3.027<span class="problem-meta">U1S3-031 | Section 1.3 | DoK 3</span></div>
+
+<p>Compare the domains of $f(x)=\sqrt{x-3}$ and $g(x)=\frac{1}{x-3}$. Explain why the restrictions are different.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 027 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 028 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.028">
+<div class="problem-number">Assessment Bank DOK 3.028<span class="problem-meta">U1S3-032 | Section 1.3 | DoK 3</span></div>
+
+<p>Two students analyze the same graph. Student A says the range is $[-2,5]$. Student B says the range is $(-2,5]$. The graph has an open point at the lowest output and a closed point at the highest output. Who is correct? Explain.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 028 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 029 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.029">
+<div class="problem-number">Assessment Bank DOK 3.029<span class="problem-meta">U1S3-033 | Section 1.3 | DoK 3</span></div>
+
+<p>Use the graph to determine the domain and range. Then justify how endpoint types and arrows affected your answer.</p>
+<!-- Graph has a closed point at (-3,4), decreases to an open point at (1,-2), then a ray starts at open point (1,0) and continues upward/right forever. -->
+<div class="graph-block graph-md">
+<img alt="Graph has a closed point at (-3,4), decreases to an open point at (1,-2), then a ray starts at open point (1,0) and continues upward/right forever." src="figures/u1-u1s3-033-1.png"/>
+</div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 029 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 030 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.030">
+<div class="problem-number">Assessment Bank DOK 3.030<span class="problem-meta">U1S3-034 | Section 1.3 | DoK 3</span></div>
+
+<p>For $f(x)=\sqrt{x+6}$, determine the domain algebraically. Then describe what the graph must look like near its left endpoint.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 030 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 031 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.031">
+<div class="problem-number">Assessment Bank DOK 3.031<span class="problem-meta">U1S3-035 | Section 1.3 | DoK 3</span></div>
+
+<p>A function models the number of students remaining in a gym after dismissal. Explain why the domain and range should not automatically be all real numbers, even if a formula could be evaluated for all real $x$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 031 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 032 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.032">
+<div class="problem-number">Assessment Bank DOK 3.032<span class="problem-meta">U1S3-036 | Section 1.3 | DoK 3</span></div>
+
+<p>A student finds the domain of $f(x)=\frac{x}{x^2-25}$ and writes $(-\infty,\infty)$ because the denominator is a polynomial. Identify the mistake and correct the domain.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 032 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 033 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.033">
+<div class="problem-number">Assessment Bank DOK 3.033<span class="problem-meta">U1S3-037 | Section 1.3 | DoK 3</span></div>
+
+<p>A table shows outputs $-1,0,3,3,7$ for inputs $-4,-2,0,2,4$. A graph of the same function has arrows continuing beyond the table. Explain why the table alone may not show the full domain and range.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 033 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 034 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.034">
+<div class="problem-number">Assessment Bank DOK 3.034<span class="problem-meta">U1S3-038 | Section 1.3 | DoK 3</span></div>
+
+<p>Explain how the domain restriction of $f(x)=\frac{1}{x+8}$ appears in the graph of the function.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 034 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 035 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.035">
+<div class="problem-number">Assessment Bank DOK 3.035<span class="problem-meta">U1S3-039 | Section 1.3 | DoK 3</span></div>
+
+<p>Compare the domains of $f(x)=\sqrt{x}$, $g(x)=\sqrt{-x}$, and $h(x)=x^2$. Explain how the structure of each function determines its domain.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 035 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 036 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.036">
+<div class="problem-number">Assessment Bank DOK 3.036<span class="problem-meta">U1S3-040 | Section 1.3 | DoK 3</span></div>
+
+<p>A graph has domain $[-6,2)\cup(2,8]$ and range $[-3,5]$. Describe one possible graphical feature that could cause $x=2$ to be excluded while nearby $x$-values are included.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 036 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 037 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.037">
+<div class="problem-number">Assessment Bank DOK 3.037<span class="problem-meta">U1S4-029 | Section 1.4 | DoK 3</span></div>
+
+<p>A student says \(g(x)=f(x-5)\) shifts the graph left 5 units because of the minus sign. Explain the error and give the correct transformation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 037 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 038 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.038">
+<div class="problem-number">Assessment Bank DOK 3.038<span class="problem-meta">U1S4-030 | Section 1.4 | DoK 3</span></div>
+
+<p>A student says \(g(x)=-2f(x)+3\) only shifts the graph up 3 units. Explain what transformation was missed and how it affects the graph.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 038 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 039 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.039">
+<div class="problem-number">Assessment Bank DOK 3.039<span class="problem-meta">U1S4-031 | Section 1.4 | DoK 3</span></div>
+
+<p>Use the graph to write an equation and justify each transformation using \(a\), \(h\), and \(k\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-031" src="figures/u1-u1s4-031-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 039 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 040 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.040">
+<div class="problem-number">Assessment Bank DOK 3.040<span class="problem-meta">U1S4-032 | Section 1.4 | DoK 3</span></div>
+
+<p>Use the graph to write an equation and justify each transformation using \(a\), \(h\), and \(k\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-032" src="figures/u1-u1s4-032-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 040 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 041 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.041">
+<div class="problem-number">Assessment Bank DOK 3.041<span class="problem-meta">U1S4-033 | Section 1.4 | DoK 3</span></div>
+
+<p>Use the graph to write an equation and justify each transformation using \(a\), \(h\), and \(k\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-033" src="figures/u1-u1s4-033-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 041 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 042 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.042">
+<div class="problem-number">Assessment Bank DOK 3.042<span class="problem-meta">U1S4-034 | Section 1.4 | DoK 3</span></div>
+
+<p>Use the graph to write an equation and justify each transformation using \(a\), \(h\), and \(k\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-034" src="figures/u1-u1s4-034-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 042 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 043 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.043">
+<div class="problem-number">Assessment Bank DOK 3.043<span class="problem-meta">U1S4-035 | Section 1.4 | DoK 3</span></div>
+
+<p>Two students describe \(g(x)=3f(x+2)-4\). Student A says the graph shifts left 2, stretches vertically by 3, and shifts down 4. Student B says the graph shifts right 2, stretches vertically by 3, and shifts down 4. Who is correct? Justify your answer.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 043 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 044 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.044">
+<div class="problem-number">Assessment Bank DOK 3.044<span class="problem-meta">U1S4-036 | Section 1.4 | DoK 3</span></div>
+
+<p>Compare \(g(x)=2f(x-1)+5\) and \(h(x)=2f(x+5)-1\). Explain how the transformations are the same and different.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 044 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 045 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.045">
+<div class="problem-number">Assessment Bank DOK 3.045<span class="problem-meta">U1S4-037 | Section 1.4 | DoK 3</span></div>
+
+<p>Explain how the vertex or locator point helps you sketch \(g(x)=-|x-3|+2\) without making a table.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 045 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 046 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.046">
+<div class="problem-number">Assessment Bank DOK 3.046<span class="problem-meta">U1S4-038 | Section 1.4 | DoK 3</span></div>
+
+<p>Explain how the locator point helps you sketch \(g(x)=\sqrt{x+4}-6\) without making a table.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 046 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 047 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.047">
+<div class="problem-number">Assessment Bank DOK 3.047<span class="problem-meta">U1S4-039 | Section 1.4 | DoK 3</span></div>
+
+<p>Given that \(f(x)\) has point \((2,5)\), determine the corresponding point on \(g(x)=-2f(x-3)+1\). Explain your reasoning.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 047 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 048 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.048">
+<div class="problem-number">Assessment Bank DOK 3.048<span class="problem-meta">U1S4-040 | Section 1.4 | DoK 3</span></div>
+
+<p>Given that \(f(x)\) has point \((-1,4)\), determine the corresponding point on \(g(x)=\frac{1}{2}f(x+2)-3\). Explain your reasoning.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 048 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 049 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.049">
+<div class="problem-number">Assessment Bank DOK 3.049<span class="problem-meta">U1S5-029 | Section 1.5 | DoK 3</span></div>
+
+<p>A student claims the limit at \(x=-1\) does not exist because the graph has a break. Use the graph to evaluate the claim.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-029" src="figures/u1-u1s5-029-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 049 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 050 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.050">
+<div class="problem-number">Assessment Bank DOK 3.050<span class="problem-meta">U1S5-030 | Section 1.5 | DoK 3</span></div>
+
+<p>A student says \(\lim_{x\to 0} f(x)=4\) because \(f(0)=4\). Use the graph to explain whether the student is correct.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-030" src="figures/u1-u1s5-030-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 050 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 051 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.051">
+<div class="problem-number">Assessment Bank DOK 3.051<span class="problem-meta">U1S5-031 | Section 1.5 | DoK 3</span></div>
+
+<p>Use the graph to explain why the limit at \(x=-2\) does or does not exist. Your explanation must reference one-sided limits.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-031" src="figures/u1-u1s5-031-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 051 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 052 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.052">
+<div class="problem-number">Assessment Bank DOK 3.052<span class="problem-meta">U1S5-032 | Section 1.5 | DoK 3</span></div>
+
+<p>Use the graph to explain why the limit at \(x=0\) is an infinite limit rather than a finite number.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-032" src="figures/u1-u1s5-032-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 052 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 053 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.053">
+<div class="problem-number">Assessment Bank DOK 3.053<span class="problem-meta">U1S5-033 | Section 1.5 | DoK 3</span></div>
+
+<p>Use the graph to classify each special behavior shown as a jump, hole, point value difference, or vertical asymptote. Then state which limits exist.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-033" src="figures/u1-u1s5-033-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 053 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 054 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.054">
+<div class="problem-number">Assessment Bank DOK 3.054<span class="problem-meta">U1S5-034 | Section 1.5 | DoK 3</span></div>
+
+<p>Use the graph to explain how the limit and function value can be different at the same \(x\)-value.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-034" src="figures/u1-u1s5-034-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 054 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 055 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.055">
+<div class="problem-number">Assessment Bank DOK 3.055<span class="problem-meta">U1S5-035 | Section 1.5 | DoK 3</span></div>
+
+<p>Use the graph to explain why changing one point on a graph may not change the limit.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-035" src="figures/u1-u1s5-035-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 055 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 056 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.056">
+<div class="problem-number">Assessment Bank DOK 3.056<span class="problem-meta">U1S5-036 | Section 1.5 | DoK 3</span></div>
+
+<p>Use the graph to explain why a vertical asymptote prevents the limit from being a finite value.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-036" src="figures/u1-u1s5-036-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 056 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 057 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.057">
+<div class="problem-number">Assessment Bank DOK 3.057<span class="problem-meta">U1S5-037 | Section 1.5 | DoK 3</span></div>
+
+<p>Compare these situations: a removable discontinuity, a jump discontinuity, and a vertical asymptote. Explain how limits behave differently in each case.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 057 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 058 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.058">
+<div class="problem-number">Assessment Bank DOK 3.058<span class="problem-meta">U1S5-038 | Section 1.5 | DoK 3</span></div>
+
+<p>Create a short explanation that would help another student decide whether a two-sided limit exists from a graph.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 058 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 059 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.059">
+<div class="problem-number">Assessment Bank DOK 3.059<span class="problem-meta">U1S5-039 | Section 1.5 | DoK 3</span></div>
+
+<p>A student says, “If \(f(a)\) is undefined, then \(\lim_{x\to a} f(x)\) cannot exist.” Explain why this statement is false.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 059 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 060 START ======================= -->
+<section class="assessment-card" id="U1-DOK3.060">
+<div class="problem-number">Assessment Bank DOK 3.060<span class="problem-meta">U1S5-040 | Section 1.5 | DoK 3</span></div>
+
+<p>A student says, “If the graph has a sharp corner, the limit does not exist.” Explain why this statement is false.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 060 END ======================= -->
+<div class="dok-bar">Assessment Bank DOK 4</div>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 001 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.001">
+<div class="problem-number">Assessment Bank DOK 4.001<span class="problem-meta">U1S1-041 | Section 1.1 | DoK 4</span></div>
+
+<p>Design a table for a function \(f\) with exactly two visible solutions to \(f(x)=4\). Then write a short explanation of how your table shows those solutions.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 001 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 002 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.002">
+<div class="problem-number">Assessment Bank DOK 4.002<span class="problem-meta">U1S1-042 | Section 1.1 | DoK 4</span></div>
+
+<p>Create a real-world situation that can be modeled by a linear function \(f(x)\). Define the input and output, write the function, and explain what solving \(f(x)=a\) means in your context.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 002 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 003 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.003">
+<div class="problem-number">Assessment Bank DOK 4.003<span class="problem-meta">U1S1-043 | Section 1.1 | DoK 4</span></div>
+
+<p>Create a factorable quadratic function with two solutions to \(f(x)=0\). Then write a second question using the same function where students must evaluate \(f(c)\) for a specific input \(c\). Explain why these two questions assess different skills.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 003 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 004 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.004">
+<div class="problem-number">Assessment Bank DOK 4.004<span class="problem-meta">U1S1-044 | Section 1.1 | DoK 4</span></div>
+
+<p>A classmate claims, “Solving \(f(x)=a\) is the same thing as evaluating \(f(a)\).” Write a response that uses an example, algebra, and words to prove or disprove the claim.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 004 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 005 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.005">
+<div class="problem-number">Assessment Bank DOK 4.005<span class="problem-meta">U1S1-045 | Section 1.1 | DoK 4</span></div>
+
+<p>The graph models the height \(A(t)\), in meters, of an object after \(t\) seconds.</p><ol type="a"><li>Estimate the times when \(A(t)=16.2\).</li><li>Explain why both solutions make sense in the context.</li><li>Describe a time value that would not make sense in this context and explain why.</li></ol>
+<div class="graph-block graph-md">
+<img alt="Graph for U1S1-045" src="figures/u1-u1s1-045-1.png"/>
+</div>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 005 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 006 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.006">
+<div class="problem-number">Assessment Bank DOK 4.006<span class="problem-meta">U1S1-046 | Section 1.1 | DoK 4</span></div>
+
+<p>Build a problem that requires students to solve \(f(x)=a\) using a table first and then verify algebraically. Include the function, the table, the value of \(a\), and the expected solution(s).</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 006 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 007 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.007">
+<div class="problem-number">Assessment Bank DOK 4.007<span class="problem-meta">U1S1-047 | Section 1.1 | DoK 4</span></div>
+
+<p>Choose a linear function and a factorable quadratic function that both have \(f(2)=6\). Compare how solving \(f(x)=6\) is different for the two functions.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 007 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 008 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.008">
+<div class="problem-number">Assessment Bank DOK 4.008<span class="problem-meta">U1S1-048 | Section 1.1 | DoK 4</span></div>
+
+<p>Write and solve a context problem where a quadratic function has two possible input values for the same output. Explain why both answers are mathematically correct and how the context determines whether both answers are reasonable.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 008 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 009 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.009">
+<div class="problem-number">Assessment Bank DOK 4.009<span class="problem-meta">U1S2-041 | Section 1.2 | DoK 4</span></div>
+
+<p>Design a matching activity with three representations of the same set: a verbal description, an inequality, and interval notation. Include the correct answer and explain why the representations match.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 009 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 010 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.010">
+<div class="problem-number">Assessment Bank DOK 4.010<span class="problem-meta">U1S2-042 | Section 1.2 | DoK 4</span></div>
+
+<p>Create a real-world restriction that should be represented by \([0,\infty)\). Write the context, define the variable, and explain why \(0\) is included.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 010 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 011 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.011">
+<div class="problem-number">Assessment Bank DOK 4.011<span class="problem-meta">U1S2-043 | Section 1.2 | DoK 4</span></div>
+
+<p>Create a real-world restriction that should be represented by \((0,\infty)\). Write the context, define the variable, and explain why \(0\) is excluded.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 011 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 012 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.012">
+<div class="problem-number">Assessment Bank DOK 4.012<span class="problem-meta">U1S2-044 | Section 1.2 | DoK 4</span></div>
+
+<p>A classmate claims, “The intervals \([2, 5]\), \((2, 5)\), \([2, 5)\), and \((2, 5]\) are basically the same because they all go from \(2\) to \(5\).” Write a response that explains why the endpoint notation matters.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 012 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 013 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.013">
+<div class="problem-number">Assessment Bank DOK 4.013<span class="problem-meta">U1S2-045 | Section 1.2 | DoK 4</span></div>
+
+<p>Create two different solution sets that would look almost identical on a number line but are not the same because of endpoint inclusion. Write both sets in interval notation and explain the difference.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 013 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 014 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.014">
+<div class="problem-number">Assessment Bank DOK 4.014<span class="problem-meta">U1S2-046 | Section 1.2 | DoK 4</span></div>
+
+<p>The number line could represent the number of months a student may participate in a program.</p><ol type="a"><li>Write a possible real-world interpretation for the graph.</li><li>Write the interval notation.</li><li>Explain why both endpoints are included in the context.</li></ol>
+<div class="figure-block figure-lg">
+<img alt="Number line for U1S2-046" src="figures/u1-u1s2-046-1.png"/>
+</div>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 014 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 015 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.015">
+<div class="problem-number">Assessment Bank DOK 4.015<span class="problem-meta">U1S2-047 | Section 1.2 | DoK 4</span></div>
+
+<p>Write a mini-lesson for a student who keeps confusing parentheses and brackets in interval notation. Include one example with a finite interval and one example with infinity.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 015 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 016 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.016">
+<div class="problem-number">Assessment Bank DOK 4.016<span class="problem-meta">U1S2-048 | Section 1.2 | DoK 4</span></div>
+
+<p>Create a complete problem where students must move between all three representations: inequality notation, interval notation, and a number-line graph. Include the problem, the correct answer, and a brief explanation.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 016 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 017 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.017">
+<div class="problem-number">Assessment Bank DOK 4.017<span class="problem-meta">U1S3-041 | Section 1.3 | DoK 4</span></div>
+
+<p>Create a function whose domain is $[4,\infty)$. Explain why your function has that domain.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 017 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 018 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.018">
+<div class="problem-number">Assessment Bank DOK 4.018<span class="problem-meta">U1S3-042 | Section 1.3 | DoK 4</span></div>
+
+<p>Create a rational function whose domain excludes exactly $x=-3$ and $x=5$. Explain your reasoning.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 018 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 019 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.019">
+<div class="problem-number">Assessment Bank DOK 4.019<span class="problem-meta">U1S3-043 | Section 1.3 | DoK 4</span></div>
+
+<p>Design a graph with domain $(-\infty,1]\cup(3,\infty)$ and range $[-2,\infty)$. Describe the graph or sketch it.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 019 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 020 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.020">
+<div class="problem-number">Assessment Bank DOK 4.020<span class="problem-meta">U1S3-044 | Section 1.3 | DoK 4</span></div>
+
+<p>A student claims that every function with a restricted domain must have a restricted range. Decide whether this claim is always true, sometimes true, or never true. Support your answer with examples.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 020 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 021 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.021">
+<div class="problem-number">Assessment Bank DOK 4.021<span class="problem-meta">U1S3-045 | Section 1.3 | DoK 4</span></div>
+
+<p>A school sells tickets for a dance. Tickets cost $8 each, and the room can hold at most 250 students. Define a function for revenue based on tickets sold. State a reasonable domain and range, and explain why both are restricted.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 021 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 022 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.022">
+<div class="problem-number">Assessment Bank DOK 4.022<span class="problem-meta">U1S3-046 | Section 1.3 | DoK 4</span></div>
+
+<p>Create two different functions with the same domain $x
+e 2$ but different ranges. Explain how you know the domains match and the ranges differ.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 022 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 023 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.023">
+<div class="problem-number">Assessment Bank DOK 4.023<span class="problem-meta">U1S3-047 | Section 1.3 | DoK 4</span></div>
+
+<p>A student models the height of water in a tank with $h(t)=20-2t$ and gives the domain $(-\infty,\infty)$. Critique the domain and propose a more reasonable domain and range.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 023 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 024 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.024">
+<div class="problem-number">Assessment Bank DOK 4.024<span class="problem-meta">U1S3-048 | Section 1.3 | DoK 4</span></div>
+
+<p>Write an equation, table, or graph description for a function with domain $[-2,6]$ and range $[1,9]$. Then explain how your representation guarantees both the domain and range.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 024 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 025 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.025">
+<div class="problem-number">Assessment Bank DOK 4.025<span class="problem-meta">U1S4-041 | Section 1.4 | DoK 4</span></div>
+
+<p>Create an equation of the form \(g(x)=a|x-h|+k\) whose graph has vertex \((3,-2)\), opens downward, and is narrower than the parent function. Justify your equation.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 025 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 026 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.026">
+<div class="problem-number">Assessment Bank DOK 4.026<span class="problem-meta">U1S4-042 | Section 1.4 | DoK 4</span></div>
+
+<p>Create an equation of the form \(g(x)=a(x-h)^2+k\) whose graph has vertex \((-4,5)\), opens upward, and is wider than the parent function. Justify your equation.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 026 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 027 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.027">
+<div class="problem-number">Assessment Bank DOK 4.027<span class="problem-meta">U1S4-043 | Section 1.4 | DoK 4</span></div>
+
+<p>A graph is shown. Write a possible equation and explain why more than one equation might be possible if the parent function is not identified.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-043" src="figures/u1-u1s4-043-1.png"/></div>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 027 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 028 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.028">
+<div class="problem-number">Assessment Bank DOK 4.028<span class="problem-meta">U1S4-044 | Section 1.4 | DoK 4</span></div>
+
+<p>A graph is shown. Write a possible equation and explain how the vertex or locator point helped you choose the parent function.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-044" src="figures/u1-u1s4-044-1.png"/></div>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 028 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 029 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.029">
+<div class="problem-number">Assessment Bank DOK 4.029<span class="problem-meta">U1S4-045 | Section 1.4 | DoK 4</span></div>
+
+<p>A graph is shown. Write a possible equation and justify the order in which you identified the transformations.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-045" src="figures/u1-u1s4-045-1.png"/></div>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 029 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 030 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.030">
+<div class="problem-number">Assessment Bank DOK 4.030<span class="problem-meta">U1S4-046 | Section 1.4 | DoK 4</span></div>
+
+<p>A graph is shown. Write a possible equation and justify how the endpoint or locator point helped determine the transformation.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-046" src="figures/u1-u1s4-046-1.png"/></div>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 030 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 031 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.031">
+<div class="problem-number">Assessment Bank DOK 4.031<span class="problem-meta">U1S4-047 | Section 1.4 | DoK 4</span></div>
+
+<p>Create two different transformed functions using the same parent function \(f(x)\) that both have a vertical shift up 2 but different stretches or reflections. Explain how their graphs would differ.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 031 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 032 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.032">
+<div class="problem-number">Assessment Bank DOK 4.032<span class="problem-meta">U1S4-048 | Section 1.4 | DoK 4</span></div>
+
+<p>Design a transformed function that has a key point at \((-2,7)\) and is a reflection of a parent function over the \(x\)-axis. State your parent function, write the equation, and justify your choices.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 032 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 033 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.033">
+<div class="problem-number">Assessment Bank DOK 4.033<span class="problem-meta">U1S5-041 | Section 1.5 | DoK 4</span></div>
+
+<p>Create a graph where \(\lim_{x\to 2} f(x)=5\) but \(f(2)=-1\). Include a brief explanation of how your graph satisfies both conditions.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 033 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 034 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.034">
+<div class="problem-number">Assessment Bank DOK 4.034<span class="problem-meta">U1S5-042 | Section 1.5 | DoK 4</span></div>
+
+<p>Create a graph where \(\lim_{x\to -3^-} f(x)=2\), \(\lim_{x\to -3^+} f(x)=-4\), and \(f(-3)=0\). Explain why the two-sided limit does not exist.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 034 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 035 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.035">
+<div class="problem-number">Assessment Bank DOK 4.035<span class="problem-meta">U1S5-043 | Section 1.5 | DoK 4</span></div>
+
+<p>Create a graph where \(\lim_{x\to 1} f(x)\) does not exist because of a vertical asymptote. Describe the one-sided behavior.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 035 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 036 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.036">
+<div class="problem-number">Assessment Bank DOK 4.036<span class="problem-meta">U1S5-044 | Section 1.5 | DoK 4</span></div>
+
+<p>Use the graph to write a complete limit analysis at each special \(x\)-value shown. Include left-hand limits, right-hand limits, function values, and whether each two-sided limit exists.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-044" src="figures/u1-u1s5-044-1.png"/></div>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 036 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 037 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.037">
+<div class="problem-number">Assessment Bank DOK 4.037<span class="problem-meta">U1S5-045 | Section 1.5 | DoK 4</span></div>
+
+<p>Use the graph to write a complete explanation of the relationship between the limit and function value at the removable discontinuity.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-045" src="figures/u1-u1s5-045-1.png"/></div>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 037 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 038 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.038">
+<div class="problem-number">Assessment Bank DOK 4.038<span class="problem-meta">U1S5-046 | Section 1.5 | DoK 4</span></div>
+
+<p>Use the graph to create two true limit statements and one false limit statement. Then explain why the false statement is false.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-046" src="figures/u1-u1s5-046-1.png"/></div>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 038 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 039 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.039">
+<div class="problem-number">Assessment Bank DOK 4.039<span class="problem-meta">U1S5-047 | Section 1.5 | DoK 4</span></div>
+
+<p>Use the graph to revise a student’s incorrect claim: “The limit exists because the function has a value at \(x=0\).”</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-047" src="figures/u1-u1s5-047-1.png"/></div>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 039 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 040 START ======================= -->
+<section class="assessment-card" id="U1-DOK4.040">
+<div class="problem-number">Assessment Bank DOK 4.040<span class="problem-meta">U1S5-048 | Section 1.5 | DoK 4</span></div>
+
+<p>Design a graph that includes a hole, a jump, and a point where the limit exists but is not equal to the function value. Label the important points and write one limit statement for each feature.</p>
+
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use as an extended response or short performance check. Score for reasoning, representation choice, justification, and mathematical precision.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 040 END ======================= -->
+<!-- ======================= STRICTLY ASSESSMENT BANK END ======================= -->
+</div>
+</body>
+</html>
