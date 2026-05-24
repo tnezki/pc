@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Set 2.4.3</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Practice Set 2.4.3</h1>
+<div class="unit-intro">Practice set aligned to Unit 2.4 with rolling review from Unit B.4 and Unit 1.4.</div>
+<div class="section-label">Unit 2.4 — Difference Quotient</div>
+<section class="problem" id="problem-1">
+<div class="problem-number">1</div>
+<p>Fill in the blanks.</p><ol class="lower-alpha"><li>\(\frac{f(x+h)-f(x)}{h}\) represents the slope of a ____________________ line.</li><li>The two \(x\)-values being compared are ____________________ and ____________________.</li><li>\(h\) represents the change in ____________________.</li></ol>
+
+
+</section>
+<section class="problem" id="problem-2">
+<div class="problem-number">2</div>
+<p>Use a graph of \(f(x)=x^3-3x\) to estimate the average rate of change from \(x=-2\) to \(x=1\). Explain what the secant line represents.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U2S4-023" src="practice_files/figures/U2S4-023.png"/></div>
+
+
+</section>
+<section class="problem" id="problem-3">
+<div class="problem-number">3</div>
+<p>Explain how the difference quotient connects average rate of change, slope of a secant line, and change in output divided by change in input.</p>
+
+
+</section>
+<section class="problem" id="problem-4">
+<div class="problem-number">4</div>
+<p>Use a graph to explain how secant slopes approach a tangent slope as \(h\) gets closer to 0.</p><ol class="lower-alpha"><li>Describe what changes in the picture.</li><li>Explain what stays fixed.</li><li>Connect your explanation to the difference quotient.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U2S4-048" src="practice_files/figures/U2S4-048.png"/></div>
+
+
+</section>
+<div class="section-label">Unit B.4 — Linear Equations Spiral</div>
+<section class="problem" id="problem-5">
+<div class="problem-number">5</div>
+<p>State the \(y\)-intercept of each line.</p><ol class="lower-alpha" type="a"><li><p>\(y=4x-8\)</p></li><li><p>\(y=-x+11\)</p></li><li><p>\(y=\frac35x\)</p></li><li><p>\(y=-2x+\frac12\)</p></li></ol>
+
+
+</section>
+<section class="problem" id="problem-6">
+<div class="problem-number">6</div>
+<p>State whether each line has positive slope, negative slope, zero slope, or undefined slope.</p><ol class="lower-alpha" type="a"><li><p>A line rises from left to right.</p></li><li><p>A line falls from left to right.</p></li><li><p>A horizontal line.</p></li><li><p>A vertical line.</p></li></ol>
+
+
+</section>
+<section class="problem" id="problem-7">
+<div class="problem-number">7</div>
+<p>Which equation represents a horizontal line?</p><ol class="lower-alpha" type="a"><li><p>\(y=4\)</p></li><li><p>\(x=4\)</p></li><li><p>\(y=4x\)</p></li><li><p>\(y=x+4\)</p></li></ol>
+
+
+</section>
+<section class="problem" id="problem-8">
+<div class="problem-number">8</div>
+<p>A line passes through the point \((0,-5)\) and has slope \(3\).</p><p>What is the \(y\)-intercept?</p><p>Write the equation.</p>
+
+
+</section>
+<section class="problem" id="problem-9">
+<div class="problem-number">9</div>
+<p>Write an equation of the line through the points:</p><p>\[(1,5)\quad \text{and}\quad (4,17)\]</p>
+
+
+</section>
+<section class="problem" id="problem-10">
+<div class="problem-number">10</div>
+<p>Determine whether each table appears linear. If it is linear, write an equation.</p><ol class="lower-alpha" type="a"><li><table class="parent-table"><tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><th>\(y\)</th><td>6</td><td>10</td><td>14</td><td>18</td><td>22</td></tr></table></li><li><table class="parent-table"><tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><th>\(y\)</th><td>2</td><td>5</td><td>10</td><td>17</td><td>26</td></tr></table></li></ol>
+
+
+</section>
+<section class="problem" id="problem-11">
+<div class="problem-number">11</div>
+<p>Compare the equations:</p><p>\[f(x)=2x+5\]</p><p>\[g(x)=2(x-3)+11\]</p><ol class="lower-alpha" type="a"><li><p>Rewrite \(g(x)\) in slope-intercept form.</p></li><li><p>Determine whether the functions are equivalent.</p></li><li><p>Explain how different forms can represent the same line.</p></li></ol>
+
+
+</section>
+<section class="problem" id="problem-12">
+<div class="problem-number">12</div>
+<p>Two students are writing an equation for the line through \((-1,7)\) and \((5,-5)\).</p><p>Student A writes:</p><p>\[y-7=-2(x+1)\]</p><p>Student B writes:</p><p>\[y+5=-2(x-5)\]</p><ol class="lower-alpha" type="a"><li><p>Determine whether Student A is correct.</p></li><li><p>Determine whether Student B is correct.</p></li><li><p>Show that the equations are equivalent.</p></li><li><p>Rewrite the equation in slope-intercept form.</p></li><li><p>Explain why point-slope form can look different but still represent the same line.</p></li></ol>
+
+
+</section>
+<div class="section-label">Unit 1.4 — Transformations Spiral</div>
+<section class="problem" id="problem-13">
+<div class="problem-number">13</div>
+<p>For \(g(x)=-f(x)\), describe the transformation from \(f(x)\) to \(g(x)\).</p>
+
+
+</section>
+<section class="problem" id="problem-14">
+<div class="problem-number">14</div>
+<p>Write an equation for the graphed quadratic transformation.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-016" src="practice_files/figures/U1S4-016.png"/></div>
+
+
+</section>
+<section class="problem" id="problem-15">
+<div class="problem-number">15</div>
+<p>Use the graph to write an equation and justify each transformation using \(a\), \(h\), and \(k\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S4-031" src="practice_files/figures/U1S4-028.png"/></div>
+
+
+</section>
+<section class="problem" id="problem-16">
+<div class="problem-number">16</div>
+<p>Create an equation of the form \(g(x)=a|x-h|+k\) whose graph has vertex \((3,-2)\), opens downward, and is narrower than the parent function. Justify your equation.</p>
+
+
+</section>
+<div class="page-break"></div>
+<h2>Check Your Understanding 2.4</h2>
+<div class="unit-intro">Formative spiral check focused on Unit B.4 linear equations, slopes, graphs, tables, and modeling.</div>
+<section class="problem" id="problem-CYU-1">
+<div class="problem-number">CYU-1</div>
+<p>Identify the slope and \(y\)-intercept of each line.</p><ol class="lower-alpha" type="a"><li><p>\(y=3x+5\)</p></li><li><p>\(y=-2x+7\)</p></li><li><p>\(y=\frac12x-4\)</p></li><li><p>\(y=-\frac34x\)</p></li></ol>
+
+
+</section>
+<section class="problem" id="problem-CYU-2">
+<div class="problem-number">CYU-2</div>
+<p>Find the slope between each pair of points.</p><ol class="lower-alpha" type="a"><li><p>\((0,3),\ (4,11)\)</p></li><li><p>\((2,-5),\ (8,7)\)</p></li><li><p>\((-3,4),\ (1,-8)\)</p></li><li><p>\((5,2),\ (9,2)\)</p></li></ol>
+
+
+</section>
+<section class="problem" id="problem-CYU-3">
+<div class="problem-number">CYU-3</div>
+<p>Fill in the blanks.</p><p>The form \[y=mx+b\] is called ______ form. The value \(m\) represents the ______, and the value \(b\) represents the ______.</p>
+
+
+</section>
+<section class="problem" id="problem-CYU-4">
+<div class="problem-number">CYU-4</div>
+<p>A line passes through the point \((0,-5)\) and has slope \(3\).</p><p>What is the \(y\)-intercept?</p><p>Write the equation.</p>
+
+
+</section>
+<section class="problem" id="problem-CYU-5">
+<div class="problem-number">CYU-5</div>
+<p>The table shows a linear relationship.</p><table class="parent-table"><tr><th>\(x\)</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><th>\(y\)</th><td>2</td><td>5</td><td>8</td><td>11</td><td>14</td></tr></table><ol class="lower-alpha" type="a"><li><p>Find the slope.</p></li><li><p>Identify the \(y\)-intercept.</p></li><li><p>Write an equation.</p></li></ol>
+
+
+</section>
+<section class="problem" id="problem-CYU-6">
+<div class="problem-number">CYU-6</div>
+<p>Write an equation for a line parallel to:</p><p>\[y=3x-8\]</p><p>that passes through \((4,7)\).</p>
+
+
+</section>
+<section class="problem" id="problem-CYU-7">
+<div class="problem-number">CYU-7</div>
+<p>A student says:</p><p><em>“The slope of the line through \((2,5)\) and \((6,13)\) is \(\frac{2}{4}\) because \(6-2=4\) and \(13-5=8\), so I put the smaller number on top.”</em></p><p>Identify the error and find the correct slope.</p>
+
+
+</section>
+<section class="problem" id="problem-CYU-8">
+<div class="problem-number">CYU-8</div>
+<p>A student works at a summer job. After \(3\) hours, the student has earned \(\$45\). After \(8\) hours, the student has earned \(\$120\).</p><ol class="lower-alpha" type="a"><li><p>Write a linear equation relating earnings \(E\) to hours \(h\).</p></li><li><p>Interpret the slope.</p></li><li><p>Interpret the \(E\)-intercept.</p></li><li><p>Use the equation to predict earnings after \(12\) hours.</p></li><li><p>Explain whether the model makes sense for all possible values of \(h\).</p></li></ol>
+
+
+</section>
+</div>
+</body>
+</html>

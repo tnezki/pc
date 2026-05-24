@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Set 2.3.2</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Practice Set 2.3.2</h1>
+<div class="unit-intro">Practice set aligned to Unit 2.3 with rolling review from Unit B.3 and Unit 1.3.</div>
+<div class="section-label">Unit 2.3 — Function Composition</div>
+<section class="problem" id="problem-1">
+<div class="problem-number">1</div>
+<p>Let \(f(x)=x+5\) and \(g(x)=3x\). Find:</p>
+<ol class="lower-alpha"><li>\((f\circ g)(x)\)</li><li>\((g\circ f)(x)\)</li></ol>
+
+
+</section>
+<section class="problem" id="problem-2">
+<div class="problem-number">2</div>
+<p>Use the table.</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td></tr><tr><th>\(f(x)\)</th><td>\(0\)</td><td>\(2\)</td><td>\(3\)</td><td>\(1\)</td><td>\(-1\)</td></tr><tr><th>\(g(x)\)</th><td>\(3\)</td><td>\(1\)</td><td>\(0\)</td><td>\(-1\)</td><td>\(2\)</td></tr></table>
+<ol class="lower-alpha"><li>\(f(g(1))\)</li><li>\(g(f(0))\)</li><li>\(g(g(2))\)</li></ol>
+
+
+</section>
+<section class="problem" id="problem-3">
+<div class="problem-number">3</div>
+<p>Let \(f(x)=\sqrt{x}\) and \(g(x)=x-5\).</p>
+<ol class="lower-alpha"><li>Find \(f(g(x))\).</li><li>State the domain of \(f(g(x))\).</li><li>Explain why the domain is restricted.</li></ol>
+
+
+</section>
+<section class="problem" id="problem-4">
+<div class="problem-number">4</div>
+<p>A student claims, “Function composition is commutative because \(f(g(x))\) and \(g(f(x))\) use the same two functions.”</p>
+<ol class="lower-alpha"><li>Test the claim using an example.</li><li>Decide whether the claim is true.</li><li>Write a complete explanation.</li></ol>
+
+
+</section>
+<div class="section-label">Unit B.3 — Simplifying and Evaluating Radical Expressions Spiral</div>
+<section class="problem" id="problem-5">
+<div class="problem-number">5</div>
+<p>Evaluate each expression without a calculator.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(\sqrt{100}\)</p></li>
+<li><p>\(\sqrt[3]{-27}\)</p></li>
+<li><p>\(\sqrt[5]{32}\)</p></li>
+<li><p>\(\sqrt[4]{16}\)</p></li>
+</ol>
+
+
+</section>
+<section class="problem" id="problem-6">
+<div class="problem-number">6</div>
+<p>Identify the largest perfect-cube factor of each radicand.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(24\)</p></li>
+<li><p>\(54\)</p></li>
+<li><p>\(81\)</p></li>
+<li><p>\(250\)</p></li>
+</ol>
+
+
+</section>
+<section class="problem" id="problem-7">
+<div class="problem-number">7</div>
+<p>Simplify each cube root.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(\sqrt[3]{16}\)</p></li>
+<li><p>\(\sqrt[3]{24}\)</p></li>
+<li><p>\(\sqrt[3]{54}\)</p></li>
+<li><p>\(\sqrt[3]{128}\)</p></li>
+</ol>
+
+
+</section>
+<section class="problem" id="problem-8">
+<div class="problem-number">8</div>
+<p>State whether each pair is made of like radicals.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(3\sqrt{5},\ 7\sqrt{5}\)</p></li>
+<li><p>\(2\sqrt{3},\ 5\sqrt{12}\)</p></li>
+<li><p>\(4\sqrt[3]{2},\ -9\sqrt[3]{2}\)</p></li>
+<li><p>\(\sqrt{8},\ \sqrt[3]{8}\)</p></li>
+</ol>
+
+
+</section>
+<section class="problem" id="problem-9">
+<div class="problem-number">9</div>
+<p>Simplify each radical expression.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(\sqrt{45}\)</p></li>
+<li><p>\(\sqrt{80}\)</p></li>
+<li><p>\(\sqrt{108}\)</p></li>
+<li><p>\(\sqrt{192}\)</p></li>
+</ol>
+
+
+</section>
+<section class="problem" id="problem-10">
+<div class="problem-number">10</div>
+<p>Simplify by first simplifying each radical, then combining like radicals.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(\sqrt{20}+\sqrt{45}\)</p></li>
+<li><p>\(\sqrt{18}+\sqrt{50}\)</p></li>
+<li><p>\(3\sqrt{12}-\sqrt{75}\)</p></li>
+<li><p>\(2\sqrt{27}+5\sqrt{48}\)</p></li>
+</ol>
+
+
+</section>
+<section class="problem" id="problem-11">
+<div class="problem-number">11</div>
+<p>A student says:</p>
+<p><em>“\(\sqrt{a+b}=\sqrt{a}+\sqrt{b}\).”</em></p>
+<p>Use numbers to show this statement is not always true.</p>
+
+
+</section>
+<section class="problem" id="problem-12">
+<div class="problem-number">12</div>
+<p>Simplify completely.</p>
+<p>\[(2\sqrt{3}-\sqrt{5})(4\sqrt{3}+3\sqrt{5})\]</p>
+<ol class="lower-alpha" type="a">
+<li><p>Expand the product.</p></li>
+<li><p>Simplify all radical products.</p></li>
+<li><p>Combine like terms.</p></li>
+<li><p>Explain how this is similar to multiplying binomials.</p></li>
+</ol>
+
+
+</section>
+<div class="section-label">Unit 1.3 — Domain & Range Spiral</div>
+<section class="problem" id="problem-13">
+<div class="problem-number">13</div>
+<p>Determine the domain of $g(x)=\sqrt{x-5}$.</p>
+
+
+</section>
+<section class="problem" id="problem-14">
+<div class="problem-number">14</div>
+<p>Determine the domain and range of the graphed function. Use interval notation.</p>
+<!-- Graph of a downward-opening parabola with vertex at (-1,4) and arrows continuing downward. -->
+<div class="graph-block graph-md">
+<img alt="Graph of a downward-opening parabola with vertex at (-1,4) and arrows continuing downward." src="practice_files/figures/1_3_19.png"/>
+</div>
+
+
+</section>
+<section class="problem" id="problem-15">
+<div class="problem-number">15</div>
+<p>Compare the domains of $f(x)=\sqrt{x-3}$ and $g(x)=\frac{1}{x-3}$. Explain why the restrictions are different.</p>
+
+
+</section>
+<section class="problem" id="problem-16">
+<div class="problem-number">16</div>
+<p>Create a rational function whose domain excludes exactly $x=-3$ and $x=5$. Explain your reasoning.</p>
+
+
+</section>
+</div>
+</body>
+</html>
