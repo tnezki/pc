@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420">
+<rect width="640" height="420" fill="white" stroke="black"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="black"/></marker></defs>
+<line x1="30" y1="210" x2="610" y2="210" stroke="black" marker-end="url(#arrow)"/>
+<line x1="320" y1="390" x2="320" y2="30" stroke="black" marker-end="url(#arrow)"/>
+<line x1="68" y1="206" x2="68" y2="214" stroke="black"/><text x="68" y="228" font-size="10" text-anchor="middle">-6</text>
+<line x1="316" y1="402" x2="324" y2="402" stroke="black"/><text x="312" y="406" font-size="10" text-anchor="end">-6</text>
+<line x1="110" y1="206" x2="110" y2="214" stroke="black"/><text x="110" y="228" font-size="10" text-anchor="middle">-5</text>
+<line x1="316" y1="370" x2="324" y2="370" stroke="black"/><text x="312" y="374" font-size="10" text-anchor="end">-5</text>
+<line x1="152" y1="206" x2="152" y2="214" stroke="black"/><text x="152" y="228" font-size="10" text-anchor="middle">-4</text>
+<line x1="316" y1="338" x2="324" y2="338" stroke="black"/><text x="312" y="342" font-size="10" text-anchor="end">-4</text>
+<line x1="194" y1="206" x2="194" y2="214" stroke="black"/><text x="194" y="228" font-size="10" text-anchor="middle">-3</text>
+<line x1="316" y1="306" x2="324" y2="306" stroke="black"/><text x="312" y="310" font-size="10" text-anchor="end">-3</text>
+<line x1="236" y1="206" x2="236" y2="214" stroke="black"/><text x="236" y="228" font-size="10" text-anchor="middle">-2</text>
+<line x1="316" y1="274" x2="324" y2="274" stroke="black"/><text x="312" y="278" font-size="10" text-anchor="end">-2</text>
+<line x1="278" y1="206" x2="278" y2="214" stroke="black"/><text x="278" y="228" font-size="10" text-anchor="middle">-1</text>
+<line x1="316" y1="242" x2="324" y2="242" stroke="black"/><text x="312" y="246" font-size="10" text-anchor="end">-1</text>
+<line x1="320" y1="206" x2="320" y2="214" stroke="black"/><text x="320" y="228" font-size="10" text-anchor="middle">0</text>
+<line x1="316" y1="210" x2="324" y2="210" stroke="black"/><text x="312" y="214" font-size="10" text-anchor="end">0</text>
+<line x1="362" y1="206" x2="362" y2="214" stroke="black"/><text x="362" y="228" font-size="10" text-anchor="middle">1</text>
+<line x1="316" y1="178" x2="324" y2="178" stroke="black"/><text x="312" y="182" font-size="10" text-anchor="end">1</text>
+<line x1="404" y1="206" x2="404" y2="214" stroke="black"/><text x="404" y="228" font-size="10" text-anchor="middle">2</text>
+<line x1="316" y1="146" x2="324" y2="146" stroke="black"/><text x="312" y="150" font-size="10" text-anchor="end">2</text>
+<line x1="446" y1="206" x2="446" y2="214" stroke="black"/><text x="446" y="228" font-size="10" text-anchor="middle">3</text>
+<line x1="316" y1="114" x2="324" y2="114" stroke="black"/><text x="312" y="118" font-size="10" text-anchor="end">3</text>
+<line x1="488" y1="206" x2="488" y2="214" stroke="black"/><text x="488" y="228" font-size="10" text-anchor="middle">4</text>
+<line x1="316" y1="82" x2="324" y2="82" stroke="black"/><text x="312" y="86" font-size="10" text-anchor="end">4</text>
+<line x1="530" y1="206" x2="530" y2="214" stroke="black"/><text x="530" y="228" font-size="10" text-anchor="middle">5</text>
+<line x1="316" y1="50" x2="324" y2="50" stroke="black"/><text x="312" y="54" font-size="10" text-anchor="end">5</text>
+<line x1="572" y1="206" x2="572" y2="214" stroke="black"/><text x="572" y="228" font-size="10" text-anchor="middle">6</text>
+<line x1="316" y1="18" x2="324" y2="18" stroke="black"/><text x="312" y="22" font-size="10" text-anchor="end">6</text>
+<polyline points="446.4,53.2 447.9,56.8 449.4,59.1 450.8,60.9 452.3,62.4 453.8,63.8 455.2,65.0 456.7,66.2 458.2,67.2 459.6,68.2 461.1,69.2 462.6,70.1 464.1,71.0 465.5,71.8 467.0,72.6 468.5,73.4 469.9,74.2 471.4,74.9 472.9,75.6 474.4,76.3 475.8,77.0 477.3,77.6 478.8,78.3 480.2,78.9 481.7,79.5 483.2,80.1 484.6,80.7 486.1,81.3 487.6,81.8 489.1,82.4 490.5,82.9 492.0,83.5 493.5,84.0 494.9,84.5 496.4,85.1 497.9,85.6 499.3,86.1 500.8,86.6 502.3,87.0 503.8,87.5 505.2,88.0 506.7,88.5 508.2,88.9 509.6,89.4 511.1,89.8 512.6,90.3 514.0,90.7 515.5,91.2 517.0,91.6 518.5,92.0 519.9,92.5 521.4,92.9 522.9,93.3 524.3,93.7 525.8,94.1 527.3,94.5 528.7,94.9 530.2,95.3 531.7,95.7 533.1,96.1 534.6,96.5 536.1,96.9 537.6,97.2 539.0,97.6 540.5,98.0 542.0,98.4 543.4,98.7 544.9,99.1 546.4,99.5 547.9,99.8 549.3,100.2 550.8,100.5 552.3,100.9 553.7,101.2 555.2,101.6 556.7,101.9 558.1,102.3 559.6,102.6 561.1,103.0 562.5,103.3 564.0,103.6 565.5,104.0 567.0,104.3 568.4,104.6 569.9,105.0 571.4,105.3 572.8,105.6 574.3,105.9 575.8,106.3 577.2,106.6 578.7,106.9 580.2,107.2 581.7,107.5 583.1,107.8 584.6,108.1 586.1,108.4 587.5,108.7 589.0,109.0 590.5,109.4 592.0,109.7 593.4,110.0 594.9,110.3 596.4,110.5 597.8,110.8 599.3,111.1 600.8,111.4 602.2,111.7 603.7,112.0 605.2,112.3 606.6,112.6 608.1,112.9 609.6,113.2 611.1,113.4 612.5,113.7 614.0,114.0" fill="none" stroke="#1f77b4" stroke-width="3"/>
+<circle cx="446" cy="50" r="5" fill="black"/><text x="454" y="42" font-size="12">locator</text>
+<text x="320" y="22" text-anchor="middle" font-family="Arial" font-size="16">Transformed rational exponent graph</text></svg>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Practice Set 4.2.3</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Practice Set 4.2.3</h1>
+<div class="lesson-header"><h2>Precalculus Practice Set</h2><div class="lesson-subtitle">Current unit practice with rolling spiral review.</div></div>
+<div class="section-label">Unit 4.2 — Sum, Difference, and Pythagorean Identities</div>
+
+<section class="problem">
+<div class="problem-number">1.</div>
+<p>Evaluate exactly: \[\cos\left(\frac{\pi}{4}-\frac{\pi}{6}\right)\]</p>
+</section>
+<section class="problem">
+<div class="problem-number">2.</div>
+<p>Use sum/difference identities to evaluate \(\sin\left(\frac{5\pi}{12}\right)\).</p>
+</section>
+<section class="problem">
+<div class="problem-number">3.</div>
+<p>A student simplifies \(\sin^2(x)+\cos^2(x)\) as \((\sin(x)+\cos(x))^2\).</p><ol class="lower-alpha"><li>Explain the mistake.</li><li>Expand the incorrect expression.</li><li>Compare the two results.</li></ol>
+</section>
+<section class="problem">
+<div class="problem-number">4.</div>
+<p>Create a trigonometric identity that simplifies to \(1\). Your identity must use at least two of the following: reciprocal identities, quotient identities, or Pythagorean identities. Then verify it line by line and explain why each rewrite is valid.</p>
+</section>
+<div class="review-preview-label">Unit 2.2 — Formative Spiral: Function Arithmetic</div>
+<section class="problem">
+<div class="problem-number">5.</div>
+<p>Let \( f(x)=3x-2 \) and \( g(x)=x+5 \).</p>
+<ol class="lower-alpha"><li>Find \((f+g)(x)\).</li><li>Find \((f-g)(x)\).</li></ol>
+</section>
+<section class="problem">
+<div class="problem-number">6.</div>
+<p>Let \( f(x)=x^2 \) and \( g(x)=2x \).</p>
+<ol class="lower-alpha"><li>Evaluate \((fg)(3)\).</li><li>Evaluate \(\left(\frac{f}{g}\right)(4)\).</li></ol>
+</section>
+<section class="problem">
+<div class="problem-number">7.</div>
+<p>Use the table.</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(2\)</td></tr><tr><th>\(f(x)\)</th><td>\(3\)</td><td>\(1\)</td><td>\(5\)</td></tr><tr><th>\(g(x)\)</th><td>\(2\)</td><td>\(-4\)</td><td>\(1\)</td></tr></table>
+<ol class="lower-alpha"><li>Find \((f+g)(0)\).</li><li>Find \((fg)(2)\).</li></ol>
+</section>
+<section class="problem">
+<div class="problem-number">8.</div>
+<p>State the domain restriction for:</p><p style="text-align:center;">\(\frac{x+1}{x-7}\)</p>
+</section>
+<section class="problem">
+<div class="problem-number">9.</div>
+<p>Given:</p><p style="text-align:center;">\(f(x)=\sqrt{x+4}\qquad g(x)=\frac{1}{x-2}\)</p>
+<p>Determine the domain of:</p><ul><li>\(f+g\)</li><li>\(fg\)</li></ul><p>Explain your reasoning.</p>
+</section>
+<section class="problem">
+<div class="problem-number">10.</div>
+<p>Given:</p><p style="text-align:center;">\(f(x)=x^2-9\qquad g(x)=x-3\)</p>
+<ol class="lower-alpha"><li>Simplify \(\frac{f(x)}{g(x)}\).</li><li>Explain why the domain restriction still exists after simplification.</li></ol>
+</section>
+<section class="problem">
+<div class="problem-number">11.</div>
+<p>Explain the difference between simplifying a quotient of functions and changing the function itself.</p>
+<p>Use \(\frac{x^2-1}{x-1}\) as your example. Mention excluded values, holes, or domain restrictions.</p>
+</section>
+<section class="problem">
+<div class="problem-number">12.</div>
+<p>A student argues that function arithmetic is “just combining equations,” so domain does not need to be checked separately.</p>
+<ol class="lower-alpha"><li>Critique the student’s argument.</li><li>Give at least two examples that show why domain matters.</li><li>Write a corrected explanation that could be used as a class note.</li></ol>
+</section>
+<div class="review-preview-label">Unit 3.2 — Review Spiral: Solve Square Root Equations</div>
+<section class="problem">
+<div class="problem-number">13.</div>
+<p>Solve: \[\sqrt{2x+1}=5\]</p>
+</section>
+<section class="problem">
+<div class="problem-number">14.</div>
+<p>Solve and identify any extraneous solution: \[\sqrt{x+1}=x-1\]</p>
+</section>
+<section class="problem">
+<div class="problem-number">15.</div>
+<p>Solve \(\sqrt{x+6}=x\). Then explain why one solution works and the other does not.</p>
+</section>
+<section class="problem">
+<div class="problem-number">16.</div>
+<p>Create a square root equation that has exactly one valid solution and one extraneous solution after squaring.</p><ol class="lower-alpha"><li>Write the equation.</li><li>Solve it.</li><li>Identify the extraneous solution.</li><li>Explain how you designed it.</li></ol>
+</section>
+<div class="page-break"></div>
+<h2>Check Your Understanding 4.2</h2>
+<div class="intro-text">Formative check focused on Unit 2.2: function arithmetic, tables, graphs, domain restrictions, and contextual interpretation.</div>
+<section class="problem">
+<div class="problem-number">1.</div>
+<p>Let \(f(x)=2x+3\) and \(g(x)=x^2-4\).</p>
+<ol class="lower-alpha"><li>Find \((f+g)(x)\).</li><li>Find \((f-g)(x)\).</li><li>Find \((fg)(x)\).</li></ol>
+</section>
+<section class="problem">
+<div class="problem-number">2.</div>
+<p>The graphs of \(f\) and \(g\) are shown.</p>
+<ol class="lower-alpha"><li>Estimate \(f(2)\) and \(g(2)\).</li><li>Estimate \((f+g)(2)\).</li><li>Estimate \((f-g)(2)\).</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-003" src="practice_files/figures/U2S2-003.png"/></div>
+</section>
+<section class="problem">
+<div class="problem-number">3.</div>
+<p>Let \(f(x)=x^2-1\) and \(g(x)=2x+5\).</p>
+<ol class="lower-alpha"><li>Find \((f+g)(x)\).</li><li>Find \((f-g)(x)\).</li><li>Find \((fg)(x)\).</li><li>Find \(\left(\frac{f}{g}\right)(x)\) and state its domain restriction.</li></ol>
+</section>
+<section class="problem">
+<div class="problem-number">4.</div>
+<p>Use the table to compare function operations.</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr><tr><th>\(f(x)\)</th><td>\(4\)</td><td>\(3\)</td><td>\(0\)</td><td>\(-2\)</td></tr><tr><th>\(g(x)\)</th><td>\(2\)</td><td>\(-1\)</td><td>\(5\)</td><td>\(0\)</td></tr></table>
+<ol class="lower-alpha"><li>Find \((f+g)(1)\).</li><li>Find \((fg)(0)\).</li><li>Find \(\left(\frac{f}{g}\right)(-1)\).</li><li>Explain why \(\left(\frac{f}{g}\right)(2)\) is undefined.</li></ol>
+</section>
+<section class="problem">
+<div class="problem-number">5.</div>
+<p>A student simplified \(\frac{x^2-9}{x-3}\) to \(x+3\) and said the domain is all real numbers.</p>
+<ol class="lower-alpha"><li>What did the student do correctly?</li><li>What domain detail did the student miss?</li><li>Write the correct simplified expression and domain restriction.</li></ol>
+</section>
+<section class="problem">
+<div class="problem-number">6.</div>
+<p>A fundraiser has revenue \(R(x)=12x+40\) and cost \(C(x)=8x+100\), where \(x\) is the number of items sold.</p>
+<ol class="lower-alpha"><li>Write a function for profit \(P(x)=R(x)-C(x)\).</li><li>Interpret \(P(10)\) in context.</li><li>Explain why subtracting functions makes sense in this situation.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-029" src="practice_files/figures/U2S2-019.png"/></div>
+</section>
+<section class="problem">
+<div class="problem-number">7.</div>
+<p>Explain the difference between simplifying a quotient of functions and changing the function itself.</p>
+<p>Use \(\frac{x^2-1}{x-1}\) as your example. Mention excluded values, holes, or domain restrictions.</p>
+</section>
+<section class="problem">
+<div class="problem-number">8.</div>
+<p>Create two functions \(f\) and \(g\) so that:</p>
+<ol class="lower-alpha"><li>\((f+g)(x)\) is linear.</li><li>\((fg)(x)\) is quadratic.</li><li>\(\frac{f}{g}\) has an excluded value.</li></ol>
+<p>Explain why your choices satisfy all three conditions.</p>
+</section>
+</div>
+</body>
+</html>
