@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Set 1.4.3</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Check Your Understanding 1.4</h1>
+<div class="unit-intro">Unit A.4 formative readiness check. No workspace included.</div>
+<div class="section-label">Unit A.4 — Formative Questions</div>
+<section class="problem" id="problem-CYU-1">
+<div class="problem-number">CYU 1.</div>
+<p>Identify the form of each quadratic equation: standard form, vertex form, or intercept form.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=2x^2-5x+3\)</p></li>
+<li><p>\(y=-3(x-4)^2+7\)</p></li>
+<li><p>\(y=(x+2)(x-6)\)</p></li>
+<li><p>\(y=-\frac12(x-1)(x+5)\)</p></li>
+</ol>
+
+
+</section>
+<section class="problem" id="problem-CYU-2">
+<div class="problem-number">CYU 2.</div>
+<p>State the vertex from each equation.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=(x-5)^2+2\)</p></li>
+<li><p>\(y=-4(x+3)^2-1\)</p></li>
+<li><p>\(y=\frac12(x-8)^2\)</p></li>
+</ol>
+
+
+</section>
+<section class="problem" id="problem-CYU-3">
+<div class="problem-number">CYU 3.</div>
+<p>State the zeros from each equation.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=(x-2)(x+9)\)</p></li>
+<li><p>\(y=-3(x+4)(x-6)\)</p></li>
+<li><p>\(y=5(x-1)^2\)</p></li>
+</ol>
+
+
+</section>
+<section class="problem" id="problem-CYU-4">
+<div class="problem-number">CYU 4.</div>
+<p>For each table, determine whether the relationship appears linear, quadratic, or neither.<br/><br/>
+\[
+\begin{array}{c|ccccc}
+x&amp;0&amp;1&amp;2&amp;3&amp;4\\
+\hline
+y&amp;1&amp;4&amp;7&amp;10&amp;13
+\end{array}
+\]
+\[
+\begin{array}{c|ccccc}
+x&amp;0&amp;1&amp;2&amp;3&amp;4\\
+\hline
+y&amp;2&amp;5&amp;10&amp;17&amp;26
+\end{array}
+\]
+\[
+\begin{array}{c|ccccc}
+x&amp;0&amp;1&amp;2&amp;3&amp;4\\
+\hline
+y&amp;1&amp;2&amp;4&amp;8&amp;16
+\end{array}
+\]</p>
+
+
+</section>
+<section class="problem" id="problem-CYU-5">
+<div class="problem-number">CYU 5.</div>
+<p>A quadratic has vertex \((2,5)\) and passes through \((4,13)\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the equation in vertex form.</p></li>
+<li><p>Verify using the point \((4,13)\).</p></li>
+</ol>
+
+
+</section>
+<section class="problem" id="problem-CYU-6">
+<div class="problem-number">CYU 6.</div>
+<p>A quadratic has zeros \(-3\) and \(5\), and passes through \((1,-16)\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the equation in intercept form.</p></li>
+<li><p>Find the \(y\)-intercept.</p></li>
+</ol>
+
+
+</section>
+<section class="problem" id="problem-CYU-7">
+<div class="problem-number">CYU 7.</div>
+<p>A student writes an equation for a quadratic with zeros \(-2\) and \(5\):
+\[
+y=(x-2)(x+5)
+\]
+Identify the error and write the correct equation using \(a=1\).</p>
+
+
+</section>
+<section class="problem" id="problem-CYU-8">
+<div class="problem-number">CYU 8.</div>
+<p>A quadratic has vertex \((5,18)\) and passes through \((2,0)\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write the equation in vertex form.</p></li>
+<li><p>Find the second \(x\)-intercept using symmetry.</p></li>
+<li><p>Rewrite the equation in intercept form.</p></li>
+<li><p>Rewrite the equation in standard form.</p></li>
+<li><p>Explain how symmetry helped you move from vertex form to intercept form.</p></li>
+</ol>
+
+
+</section>
+</div>
+</body>
+</html>
