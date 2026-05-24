@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Extra Practice 3.1.4</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Extra Practice 3.1.4</h1>
+<div class="unit-intro">Practice set aligned to Unit 3.1 with rolling review from Unit 1.1 and Unit 2.1.</div>
+<div class="section-label">Unit 3.1 — Solve Using Roots</div>
+<section class="problem" id="problem-1">
+<div class="problem-number">1</div>
+<p>Solve: \[2(x-1)^2=18\]</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-2">
+<div class="problem-number">2</div>
+<p>Solve: \[4(x-3)^3=108\]</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-3">
+<div class="problem-number">3</div>
+<p>Use the graph of \(y=x^3\).</p><ol class="lower-alpha"><li>Explain why every horizontal line intersects exactly once.</li><li>Explain how this relates to solving cube root equations.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U3S1-035" src="practice_files/figures/U3S1-035.png"/></div>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-240"></div></section>
+<section class="problem" id="problem-4">
+<div class="problem-number">4</div>
+<p>Create a multi-representation problem involving an equation, a graph, and a table where students solve \(x^2=d\). Explain how all three representations show the same solutions.</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-260"></div></section>
+<div class="section-label">Unit 1.1 — Function Notation & Solving Formative Spiral</div>
+<section class="problem" id="problem-5">
+<div class="problem-number">5</div>
+<p>Let \(p(x)=-3x^2+1\). Evaluate:</p><ol type="a"><li>\(p(1)\)</li><li>\(p(-2)\)</li></ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-6">
+<div class="problem-number">6</div>
+<p>Use the table for \(f(x)\).</p><table class="table-block"><tr><th>\(x\)</th><td>-2</td><td>-1</td><td>0</td><td>1</td><td>2</td></tr><tr><th>\(f(x)\)</th><td>7</td><td>3</td><td>-1</td><td>3</td><td>7</td></tr></table><ol type="a"><li>Find \(f(-1)\).</li><li>Find \(f(2)\).</li><li>Find the value(s) of \(x\) where \(f(x)=7\).</li></ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-220"></div></section>
+<section class="problem" id="problem-7">
+<div class="problem-number">7</div>
+<p>Use the table to solve \(q(x)=6\).</p><table class="table-block"><tr><th>\(x\)</th><td>-4</td><td>-2</td><td>0</td><td>2</td><td>4</td></tr><tr><th>\(q(x)\)</th><td>14</td><td>6</td><td>2</td><td>6</td><td>14</td></tr></table>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-220"></div></section>
+<section class="problem" id="problem-8">
+<div class="problem-number">8</div>
+<p>Let \(C(n)=2n^2+n\). Evaluate \(C(3)\) and \(C(-1)\).</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-9">
+<div class="problem-number">9</div>
+<p>The graph of \(g(x)=x^2-4\) and the horizontal line \(y=5\) are shown. Use the graph to solve \(g(x)=5\), then verify algebraically.</p>
+<div class="graph-block graph-md">
+<img alt="Graph for U1S1-018" src="practice_files/figures/U1S1-018.png"/>
+</div>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-240"></div></section>
+<section class="problem" id="problem-10">
+<div class="problem-number">10</div>
+<p>Let \(f(x)=2(x-1)(x+4)\).</p><ol type="a"><li>Solve \(f(x)=0\).</li><li>Evaluate \(f(0)\).</li><li>Explain the difference between solving \(f(x)=0\) and evaluating \(f(0)\).</li></ol>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-240"></div></section>
+<section class="problem" id="problem-11">
+<div class="problem-number">11</div>
+<p>The graph models revenue \(R(x)\), in dollars, from selling \(x\) items.</p><ol type="a"><li>Use the graph to estimate when \(R(x)=32\).</li><li>Interpret the solutions in context.</li><li>Explain why two different inputs can give the same output.</li></ol>
+<div class="graph-block graph-md">
+<img alt="Graph for U1S1-039" src="practice_files/figures/U1S1-039.png"/>
+</div>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-240"></div></section>
+<section class="problem" id="problem-12">
+<div class="problem-number">12</div>
+<p>Write and solve a context problem where a quadratic function has two possible input values for the same output. Explain why both answers are mathematically correct and how the context determines whether both answers are reasonable.</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-240"></div></section>
+<div class="section-label">Unit 2.1 — Odd and Even Functions Spiral</div>
+<section class="problem" id="problem-13">
+<div class="problem-number">13</div>
+<p>Use the table to determine whether the function appears even, odd, or neither.</p><table class="parent-table"><tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(2\)</td></tr><tr><th>\(f(x)\)</th><td>\(-4\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(4\)</td></tr></table><p>Justify using the table.</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-240"></div></section>
+<section class="problem" id="problem-14">
+<div class="problem-number">14</div>
+<p>A graph is shown.</p><ol class="lower-alpha"><li>Classify the function as even, odd, or neither.</li><li>Describe how the symmetry appears in the graph.</li><li>Write a possible equation for a function with this symmetry.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S1-012" src="practice_files/figures/U2S1-012.png"/></div>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-220"></div></section>
+<section class="problem" id="problem-15">
+<div class="problem-number">15</div>
+<p>Compare the symmetry of \(x^2\), \(x^3\), and \(x^2+x\).</p><p>Explain how the structure of each equation connects to its graph.</p>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-240"></div></section>
+<section class="problem" id="problem-16">
+<div class="problem-number">16</div>
+<p>Create a function that is symmetric about the \(y\)-axis, has a maximum at \((0,5)\), and is not quadratic.</p><p>Write the equation, sketch or describe the graph, and justify why it satisfies all conditions.</p>
+<div class="graph-block graph-md"><img alt="Graph for U2S1-030" src="practice_files/figures/U2S1-030.png"/></div>
+
+
+<div class="workspace-label">Workspace</div><div class="workspace workspace-260"></div></section>
+</div>
+</body>
+</html>
