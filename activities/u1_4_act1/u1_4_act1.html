@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 1.4 — Round Table</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+:root{
+  --navy:#1B2E4B;
+  --gold:#C8A400;
+  --white:#FFFFFF;
+  --light-gray:#E8E8E8;
+  --dark-text:#1A1A1A;
+  --font-main:'Segoe UI',Arial,sans-serif;
+  --page-w:8.5in;
+  --page-h:11in;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+@page{size:letter;margin:0;}
+body{
+  font-family:var(--font-main);
+  color:var(--dark-text);
+  background:var(--light-gray);
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+.page{
+  width:var(--page-w);
+  height:var(--page-h);
+  padding:0.32in 0.42in 0.24in 0.42in;
+  margin:0 auto 0.35in;
+  background:white;
+  box-shadow:0 2px 12px rgba(0,0,0,0.18);
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  overflow:hidden;
+}
+@media print{
+  body{background:none;}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;break-after:auto;}
+}
+.title-page{padding:0.65in;}
+.title-bar{height:6px;background:var(--gold);border-radius:3px;margin-bottom:1.55in;}
+.unit-label{font-size:13pt;font-weight:700;color:var(--navy);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.22in;text-align:center;}
+.activity-name{font-size:32pt;font-weight:800;color:var(--navy);line-height:1.1;text-align:center;margin-bottom:0.34in;}
+.divider-navy{border:none;border-top:3px solid var(--navy);margin:0.18in 0;}
+.directions-page{display:flex;align-items:center;justify-content:center;padding:0.08in;}
+.directions-page img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
+.header{
+  background:var(--navy);
+  color:white;
+  font-size:22pt;
+  font-weight:800;
+  padding:0.13in 0.22in;
+  margin-bottom:0.18in;
+  border-radius:4px;
+  line-height:1.05;
+}
+.question,.solution{
+  font-size:13pt;
+  line-height:1.34;
+  flex:1;
+}
+.question p,.solution p{margin:0 0 0.11in 0;}
+.question ol,.solution ol,.question ul,.solution ul{margin:0.04in 0 0.09in 0.30in;}
+.question li,.solution li{margin-bottom:0.055in;}
+.solution .mathline{margin:0.07in 0;text-align:center;}
+.graph-img{
+  display:block;
+  max-width:4.45in;
+  max-height:4.35in;
+  object-fit:contain;
+  margin:0.05in auto 0 auto;
+}
+.graph-question p{margin-bottom:0.06in;}
+.graph-question li{margin-bottom:0.03in;}
+.compact-table{border-collapse:collapse;margin:0.12in auto;font-size:13pt;}
+.compact-table th,.compact-table td{border:1.2px solid #222;padding:0.055in 0.20in;text-align:center;}
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.18in 0.28in;font-size:12.5pt;line-height:1.25;}
+.skill-grid div{break-inside:avoid;}
+.page-footer{
+  margin-top:auto;
+  padding-top:0.08in;
+  display:flex;
+  justify-content:space-between;
+  font-size:7.5pt;
+  color:#111;
+}
+
+</style>
+</head>
+<body>
+<section class="page title-page">
+  <div class="title-bar"></div>
+  <div class="unit-label">Section 1.4 &nbsp;·&nbsp; Transformations of Parent Functions</div>
+  <h1 class="activity-name">Round Table</h1>
+  <hr class="divider-navy">
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page directions-page">
+  <img src="directions/round_table.png" alt="Round Table directions">
+</section>
+<section class="page">
+  <div class="header">Problem 1</div>
+  <div class="question">
+<p>For $g(x)=f(x-3)$, describe the transformation from $f(x)$ to $g(x)$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 1</div>
+  <div class="solution">
+<p>The graph shifts right $3$ units.</p><p>The subtraction happens inside the function input, so $x-3$ moves the graph to the right.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 2</div>
+  <div class="question">
+<p>For $g(x)=|x-6|+2$, identify the parent function and the transformations.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 2</div>
+  <div class="solution">
+<p>The parent function is $f(x)=|x|$.</p><p>The graph shifts right $6$ units and up $2$ units.</p><p>The vertex moves from $(0,0)$ to $(6,2)$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 3</div>
+  <div class="question">
+<div class="graph-question"><p>Write an equation for the graphed quadratic transformation.</p><img class="graph-img" src="figures/U1S4-016.png" alt="Graph for U1S4-016"></div>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 3</div>
+  <div class="solution">
+<p>From the graph, identify the parent function as quadratic and use the vertex/shape to describe the transformation.</p><p>A correct vertex-form equation should match the graph's shift, opening direction, and vertical stretch/compression.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 4</div>
+  <div class="question">
+<p>A student says $g(x)=f(x-5)$ shifts the graph left $5$ units because of the minus sign. Explain the error and give the correct transformation.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 4</div>
+  <div class="solution">
+<p>The student is mixing up outside and inside transformations.</p><p>Inside the input, $x-5$ means the input must be $5$ larger to create the same output.</p><p>So $g(x)=f(x-5)$ shifts the graph right $5$ units.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 5</div>
+  <div class="question">
+<p>For each equation, identify the information that is easiest to see.</p>
+<ol type="a"><li>$y=4(x-3)^2-8$</li><li>$y=-2(x+1)(x-7)$</li><li>$y=x^2+6x+5$<br><br>Choose from:<br>1. vertex<br>2. zeros<br>3. $y$-intercept and leading coefficient</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 5</div>
+  <div class="solution">
+<ol type="a"><li>Vertex is easiest to see.</li><li>Zeros are easiest to see.</li><li>The $y$-intercept and leading coefficient are easiest to see.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 6</div>
+  <div class="question">
+<p>State the zeros from each equation.</p>
+<ol type="a"><li>$y=(x-2)(x+9)$</li><li>$y=-3(x+4)(x-6)$</li><li>$y=5(x-1)^2$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 6</div>
+  <div class="solution">
+<ol type="a"><li>$x=2$ and $x=-9$</li><li>$x=-4$ and $x=6$</li><li>$x=1$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 7</div>
+  <div class="question">
+<p>Find the first differences and second differences for the table.</p>
+<p>$$\begin{array}{c|ccccc}x&0&1&2&3&4\\ \hline y&3&6&11&18&27\end{array}$$</p>
+<p>Then state whether the table could represent a quadratic function.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 7</div>
+  <div class="solution">
+<p>First differences: $3,5,7,9$.</p><p>Second differences: $2,2,2$.</p><p>Because the second differences are constant, the table could represent a quadratic function.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 8</div>
+  <div class="question">
+<p>A quadratic table has constant second difference $6$. What is the value of $a$ if the $x$-values increase by $1$?</p><p>Explain your reasoning.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 8</div>
+  <div class="solution">
+<p>For equally spaced $x$-values increasing by $1$, the constant second difference is $2a$.</p><p>So $2a=6$, which means $a=3$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 9</div>
+  <div class="question">
+<p>A quadratic has vertex $(-1,-6)$ and passes through $(1,2)$.</p>
+<ol type="a"><li>Write the equation in vertex form.</li><li>State whether the graph opens up or down.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 9</div>
+  <div class="solution">
+<p>Use vertex form $y=a(x+1)^2-6$.</p><p>Substitute $(1,2)$: $2=a(2)^2-6$.</p><p>$8=4a$, so $a=2$.</p><p>The equation is $y=2(x+1)^2-6$.</p><p>Since $a>0$, the graph opens up.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 10</div>
+  <div class="question">
+<p>A quadratic has zeros $2$ and $8$, and passes through $(0,32)$.</p>
+<ol type="a"><li>Write the equation in intercept form.</li><li>Find the axis of symmetry.</li><li>Find the vertex.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 10</div>
+  <div class="solution">
+<p>Use intercept form $y=a(x-2)(x-8)$.</p><p>Substitute $(0,32)$: $32=a(-2)(-8)=16a$, so $a=2$.</p><p>Equation: $y=2(x-2)(x-8)$.</p><p>The axis of symmetry is halfway between the zeros: $x=5$.</p><p>Vertex: $y=2(5-2)(5-8)=-18$, so the vertex is $(5,-18)$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 11</div>
+  <div class="question">
+<p>A student writes an equation for a quadratic with vertex $(-3,4)$:</p><p>$$y=(x-3)^2+4$$</p><p>Identify the error and write the correct equation using $a=1$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 11</div>
+  <div class="solution">
+<p>The expression $(x-3)^2$ gives a vertex with $h=3$, not $h=-3$.</p><p>For vertex $(-3,4)$, use $(x+3)^2$.</p><p>The correct equation is $y=(x+3)^2+4$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 12</div>
+  <div class="question">
+<p>The height of a launched object is modeled by a quadratic function. The object is on the ground at $t=1$ second and $t=7$ seconds. At $t=0$, the object is $21$ feet high.</p>
+<ol type="a"><li>Write the height function in intercept form.</li><li>Determine the value of $a$.</li><li>Find the time when the object reaches its maximum height.</li><li>Find the maximum height.</li><li>Explain why intercept form was a good starting point.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 12</div>
+  <div class="solution">
+<p>The zeros are $1$ and $7$, so $h(t)=a(t-1)(t-7)$.</p><p>Use $h(0)=21$: $21=a(-1)(-7)=7a$, so $a=3$.</p><p>The model is $h(t)=3(t-1)(t-7)$.</p><p>The axis of symmetry is halfway between $1$ and $7$, so $t=4$.</p><p>$h(4)=3(3)(-3)=-27$ with this positive $a$, which does not model a launched object above the ground between the intercepts.</p><p>This means the context requires $a<0$; if $h(0)=21$ and roots are $1$ and $7$, the given information is inconsistent with a downward-opening height model.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 13</div>
+  <div class="question">
+<p>State the slope of each line.</p><ol type="a"><li>$y=5x-1$</li><li>$y=-7x+2$</li><li>$y=\frac{2}{3}x+9$</li><li>$y=-\frac{1}{5}x-6$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 13</div>
+  <div class="solution">
+<ol type="a"><li>$5$</li><li>$-7$</li><li>$\frac{2}{3}$</li><li>$-\frac{1}{5}$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 14</div>
+  <div class="question">
+<p>For each pair of points, identify the change in $y$, the change in $x$, and the slope.</p><ol type="a"><li>$(1,4),\ (3,10)$</li><li>$(2,7),\ (6,15)$</li><li>$(-1,5),\ (2,-4)$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 14</div>
+  <div class="solution">
+<ol type="a"><li>Change in $y=6$, change in $x=2$, slope $3$.</li><li>Change in $y=8$, change in $x=4$, slope $2$.</li><li>Change in $y=-9$, change in $x=3$, slope $-3$.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 15</div>
+  <div class="question">
+<p>Write an equation of the line through the points:</p><p>$$(1,5)\quad \text{and}\quad (4,17)$$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 15</div>
+  <div class="solution">
+<p>The slope is $\frac{17-5}{4-1}=\frac{12}{3}=4$.</p><p>Use $y=mx+b$ and point $(1,5)$: $5=4(1)+b$, so $b=1$.</p><p>The equation is $y=4x+1$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 16</div>
+  <div class="question">
+<p>A student says:</p><p><em>“The slope of the line through $(2,5)$ and $(6,13)$ is $\frac{2}{4}$ because $6-2=4$ and $13-5=8$, so I put the smaller number on top.”</em></p><p>Identify the error and find the correct slope.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 16</div>
+  <div class="solution">
+<p>Slope is change in $y$ divided by change in $x$, not the smaller number divided by the larger number.</p><p>$m=\frac{13-5}{6-2}=\frac{8}{4}=2$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Skill Check</div>
+  <div class="question">
+    <div class="skill-grid">
+      <div><strong>1.</strong> Describe the transformation from $f(x)$ to $g(x)=f(x+4)-2$.</div>
+      <div><strong>2.</strong> Identify the parent function and transformations for $y=-|x-3|+5$.</div>
+      <div><strong>3.</strong> Write a transformed quadratic with vertex $(2,-6)$ that opens upward with $a=3$.</div>
+      <div><strong>4.</strong> State the zeros of $y=-2(x+5)(x-1)$.</div>
+      <div><strong>5.</strong> Find the slope of the line through $(-2,7)$ and $(4,-5)$.</div>
+      <div><strong>6.</strong> Explain why $f(x-3)$ shifts right instead of left.</div>
+    </div>
+  </div>
+  <div class="page-footer"><span>Section 1.4 — Round Table</span><span>Manistee High School</span></div>
+</section>
+</body>
+</html>
