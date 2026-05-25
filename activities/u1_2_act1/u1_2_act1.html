@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 1.2 — Whiteboard Indy</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{
+  --navy:#1B2E4B;
+  --gold:#C8A400;
+  --white:#FFFFFF;
+  --light-gray:#E8E8E8;
+  --dark-text:#1A1A1A;
+  --font-main:'Segoe UI',Arial,sans-serif;
+  --page-w:8.5in;
+  --page-h:11in;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+@page{size:letter;margin:0;}
+body{
+  font-family:var(--font-main);
+  color:var(--dark-text);
+  background:var(--light-gray);
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+.page{
+  width:var(--page-w);
+  height:var(--page-h);
+  padding:0.32in 0.42in 0.24in 0.42in;
+  margin:0 auto 0.35in;
+  background:white;
+  box-shadow:0 2px 12px rgba(0,0,0,0.18);
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  overflow:hidden;
+}
+@media print{
+  body{background:none;}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;break-after:auto;}
+}
+.title-page{padding:0.65in;}
+.title-bar{height:6px;background:var(--gold);border-radius:3px;margin-bottom:1.55in;}
+.unit-label{font-size:13pt;font-weight:700;color:var(--navy);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.22in;text-align:center;}
+.activity-name{font-size:32pt;font-weight:800;color:var(--navy);line-height:1.1;text-align:center;margin-bottom:0.34in;}
+.divider-navy{border:none;border-top:3px solid var(--navy);margin:0.18in 0;}
+.directions-page{display:flex;align-items:center;justify-content:center;padding:0.08in;}
+.directions-page img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
+.header{
+  background:var(--navy);
+  color:white;
+  font-size:22pt;
+  font-weight:800;
+  padding:0.13in 0.22in;
+  margin-bottom:0.18in;
+  border-radius:4px;
+  line-height:1.05;
+}
+.question,.solution{
+  font-size:13pt;
+  line-height:1.34;
+  flex:1;
+}
+.question p,.solution p{margin:0 0 0.11in 0;}
+.question ol,.solution ol,.question ul,.solution ul{margin:0.04in 0 0.09in 0.30in;}
+.question li,.solution li{margin-bottom:0.055in;}
+.solution .mathline{margin:0.07in 0;text-align:center;}
+.graph-img{
+  display:block;
+  max-width:4.45in;
+  max-height:4.35in;
+  object-fit:contain;
+  margin:0.05in auto 0 auto;
+}
+.number-line-img{
+  display:block;
+  max-width:5.75in;
+  max-height:2.05in;
+  object-fit:contain;
+  margin:0.08in auto 0 auto;
+}
+.graph-question p{margin-bottom:0.06in;}
+.graph-question li{margin-bottom:0.03in;}
+.compact-table{border-collapse:collapse;margin:0.12in auto;font-size:13pt;}
+.compact-table th,.compact-table td{border:1.2px solid #222;padding:0.055in 0.20in;text-align:center;}
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.18in 0.28in;font-size:12.5pt;line-height:1.25;}
+.skill-grid div{break-inside:avoid;}
+.page-footer{
+  margin-top:auto;
+  padding-top:0.08in;
+  display:flex;
+  justify-content:space-between;
+  font-size:7.5pt;
+  color:#111;
+}
+</style>
+</head>
+<body>
+<section class="page title-page">
+  <div class="title-bar"></div>
+  <div class="unit-label">Section 1.2 &nbsp;·&nbsp; Interval & Inequality Notation</div>
+  <h1 class="activity-name">Whiteboard Indy</h1>
+  <hr class="divider-navy">
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page directions-page">
+  <img src="directions/whiteboards_indy.png" alt="Whiteboard Indy directions">
+</section>
+<section class="page">
+  <div class="header">Problem 1</div>
+  <div class="question">
+<p>Write the inequality $x \ge -4$ in interval notation.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 1</div>
+  <div class="solution">
+<p>The values include $-4$ and continue to the right forever.</p>
+<p>Answer: $[-4,\infty)$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 2</div>
+  <div class="question">
+<p>Write the interval $( -\infty, 7 )$ as an inequality.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 2</div>
+  <div class="solution">
+<p>The interval includes all values less than $7$, but does not include $7$.</p>
+<p>Answer: $x&lt;7$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 3</div>
+  <div class="question">
+<div class="graph-question">
+<p>The number line shows a solution set.</p>
+<ol type="a"><li>Write the set in interval notation.</li><li>Write the set as an inequality.</li><li>Explain how the open endpoints affect the notation.</li></ol>
+<img class="number-line-img" src="figures/u1s2_022.png" alt="Number line solution set">
+</div>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 3</div>
+  <div class="solution">
+<ol type="a"><li>Interval notation: $(-2,4)$</li><li>Inequality notation: $-2&lt;x&lt;4$</li><li>Open endpoints mean the endpoint values are not included, so parentheses and strict inequalities are used.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 4</div>
+  <div class="question">
+<div class="graph-question">
+<p>A student drew the number line shown for the inequality $-5&lt;x&lt;-1$.</p>
+<ol type="a"><li>Identify the error in the graph.</li><li>Draw or describe the corrected graph.</li><li>Write the correct interval notation.</li></ol>
+<img class="number-line-img" src="figures/u1s2_033.png" alt="Student number line error">
+</div>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 4</div>
+  <div class="solution">
+<ol type="a"><li>The endpoints should be open circles because the inequality uses $&lt;$, not $\le$.</li><li>The corrected graph has open circles at $-5$ and $-1$ with the region shaded between them.</li><li>Correct interval notation: $(-5,-1)$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 5</div>
+  <div class="question">
+<p>Factor each expression completely.</p>
+<ol type="a"><li>$x^2-11x+24$</li><li>$x^2+3x-28$</li><li>$x^2-25$</li><li>$x^2+10x+25$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 5</div>
+  <div class="solution">
+<ol type="a"><li>$(x-3)(x-8)$</li><li>$(x+7)(x-4)$</li><li>$(x-5)(x+5)$</li><li>$(x+5)^2$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 6</div>
+  <div class="question">
+<p>Match each equation to its solutions.</p>
+<ol type="a"><li>$(x-2)(x+7)=0$</li><li>$x(x-5)=0$</li><li>$(3x+1)(x-4)=0$</li><li>$(x+6)^2=0$</li></ol>
+<p>Solutions:</p>
+<ol><li>$x=0,5$</li><li>$x=2,-7$</li><li>$x=-6$</li><li>$x=-\frac{1}{3},4$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 6</div>
+  <div class="solution">
+<ol type="a"><li>Matches solution set 2: $x=2,-7$</li><li>Matches solution set 1: $x=0,5$</li><li>Matches solution set 4: $x=-\frac{1}{3},4$</li><li>Matches solution set 3: $x=-6$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 7</div>
+  <div class="question">
+<p>Fill in the blanks.</p>
+<p>If $f(x)=2(x-5)(x+3)$, then the zeros are ______ and ______, and the $x$-intercepts are ______ and ______.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 7</div>
+  <div class="solution">
+<p>The zeros are $5$ and $-3$.</p>
+<p>The $x$-intercepts are $(5,0)$ and $(-3,0)$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 8</div>
+  <div class="question">
+<p>Which expression is equivalent to $x^2-5x-24$?</p>
+<ol type="a"><li>$(x-8)(x+3)$</li><li>$(x+8)(x-3)$</li><li>$(x-6)(x+4)$</li><li>$(x+6)(x-4)$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 8</div>
+  <div class="solution">
+<p>The correct choice is <strong>a</strong>.</p>
+<p>$(x-8)(x+3)=x^2-5x-24$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 9</div>
+  <div class="question">
+<p>Solve by factoring.</p>
+<ol type="a"><li>$x^2-12x+35=0$</li><li>$x^2+2x-48=0$</li><li>$x^2+16x+64=0$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 9</div>
+  <div class="solution">
+<ol type="a"><li>$(x-5)(x-7)=0$, so $x=5,7$.</li><li>$(x+8)(x-6)=0$, so $x=-8,6$.</li><li>$(x+8)^2=0$, so $x=-8$.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 10</div>
+  <div class="question">
+<p>For the function:</p>
+<p class="mathline">$g(x)=3(x+1)(x-5)$</p>
+<ol type="a"><li>Identify the zeros.</li><li>Find the $y$-intercept.</li><li>State the axis of symmetry.</li><li>Explain how the zeros help you find the axis of symmetry.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 10</div>
+  <div class="solution">
+<ol type="a"><li>The zeros are $x=-1$ and $x=5$.</li><li>$g(0)=3(1)(-5)=-15$, so the $y$-intercept is $(0,-15)$.</li><li>The axis of symmetry is $x=2$.</li><li>The axis is halfway between the zeros: $\frac{-1+5}{2}=2$.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 11</div>
+  <div class="question">
+<p>A student says:</p>
+<p><em>“The graph of $y=(x-2)(x+6)$ has $x$-intercepts at $2$ and $6$.”</em></p>
+<p>Explain the mistake. Then state the correct $x$-intercepts.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 11</div>
+  <div class="solution">
+<p>The student forgot that $x+6=0$ gives $x=-6$, not $x=6$.</p>
+<p>The correct $x$-intercepts are $(2,0)$ and $(-6,0)$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 12</div>
+  <div class="question">
+<div class="graph-question">
+<p>A company models profit with $P(x)=-(x-4)(x-12)$, where $x$ is the number of items sold in hundreds and $P(x)$ is profit in thousands of dollars.</p>
+<ol type="a"><li>What are the break-even points?</li><li>What do the zeros mean in context?</li><li>For what value of $x$ is profit maximized?</li><li>What is the maximum profit?</li><li>Explain why the model predicts positive profit only between the zeros.</li></ol>
+<img class="graph-img" src="figures/uas2_045_grid.png" alt="Coordinate grid for profit model">
+</div>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 12</div>
+  <div class="solution">
+<ol type="a"><li>The break-even points occur at $x=4$ and $x=12$.</li><li>The company makes $0$ profit when it sells $400$ or $1200$ items.</li><li>The profit is maximized halfway between the zeros: $x=8$.</li><li>$P(8)=-(8-4)(8-12)=16$, so the maximum profit is $16$ thousand dollars.</li><li>The graph opens downward, so the function is above the $x$-axis between the zeros.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 13</div>
+  <div class="question">
+<p>Rewrite each radical using rational exponent notation.</p>
+<ol type="a"><li>$\sqrt{x^3}$</li><li>$\sqrt[3]{x^2}$</li><li>$\sqrt[4]{x^7}$</li><li>$\sqrt[5]{x^4}$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 13</div>
+  <div class="solution">
+<ol type="a"><li>$x^{3/2}$</li><li>$x^{2/3}$</li><li>$x^{7/4}$</li><li>$x^{4/5}$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 14</div>
+  <div class="question">
+<p>Fill in the blanks.</p>
+<p>For $x^{m/n}$, the denominator $n$ tells the ______, and the numerator $m$ tells the ______.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 14</div>
+  <div class="solution">
+<p>For $x^{m/n}$, the denominator $n$ tells the root, and the numerator $m$ tells the power.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 15</div>
+  <div class="question">
+<p>Evaluate each expression without a calculator.</p>
+<ol type="a"><li>$25^{3/2}$</li><li>$8^{2/3}$</li><li>$16^{3/4}$</li><li>$32^{2/5}$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 15</div>
+  <div class="solution">
+<ol type="a"><li>$(\sqrt{25})^3=5^3=125$</li><li>$(\sqrt[3]{8})^2=2^2=4$</li><li>$(\sqrt[4]{16})^3=2^3=8$</li><li>$(\sqrt[5]{32})^2=2^2=4$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 16</div>
+  <div class="question">
+<p>A student says:</p>
+<p><em>“The numerator in $x^{m/n}$ is always the root.”</em></p>
+<p>Explain the mistake using the expression $x^{3/5}$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 16</div>
+  <div class="solution">
+<p>The denominator tells the root, and the numerator tells the power.</p>
+<p>$x^{3/5}=\sqrt[5]{x^3}$, so the root is the fifth root and the power is $3$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Skill Check</div>
+  <div class="question">
+    <div class="skill-grid">
+      <div><strong>1.</strong> Write $x\le 3$ in interval notation.</div>
+      <div><strong>2.</strong> Write $(-6,\infty)$ as an inequality.</div>
+      <div><strong>3.</strong> Explain the difference between $[-2,5)$ and $(-2,5)$.</div>
+      <div><strong>4.</strong> Factor $x^2-9x+20$ completely.</div>
+      <div><strong>5.</strong> Solve $(x+4)(x-7)=0$.</div>
+      <div><strong>6.</strong> Rewrite $\sqrt[3]{x^5}$ using rational exponent notation.</div>
+    </div>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Whiteboard Indy</span><span>Manistee High School</span></div>
+</section>
+</body>
+</html>
