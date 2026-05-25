@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 1.5 — Stations</title>
+<script>
+window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]]}};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--navy:#1B2E4B;--gold:#C8A400;--white:#FFFFFF;--light-gray:#E8E8E8;--dark-text:#1A1A1A;--font-main:'Segoe UI',Arial,sans-serif;--page-w:8.5in;--page-h:11in;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+@page{size:letter;margin:0;}
+body{font-family:var(--font-main);color:var(--dark-text);background:var(--light-gray);-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.page{width:var(--page-w);height:var(--page-h);padding:0.32in 0.42in 0.24in;margin:0 auto 0.35in;background:white;box-shadow:0 2px 12px rgba(0,0,0,0.18);display:flex;flex-direction:column;position:relative;overflow:hidden;}
+@media print{body{background:none;}.page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}.page:last-child{page-break-after:auto;break-after:auto;}}
+.title-page{padding:0.65in;}.title-bar{height:6px;background:var(--gold);border-radius:3px;margin-bottom:1.55in;}.unit-label{font-size:13pt;font-weight:700;color:var(--navy);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.22in;text-align:center;}.activity-name{font-size:32pt;font-weight:800;color:var(--navy);line-height:1.1;text-align:center;margin-bottom:0.34in;}.divider-navy{border:none;border-top:3px solid var(--navy);margin:0.18in 0;}.directions-page{display:flex;align-items:center;justify-content:center;padding:0.08in;}.directions-page img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
+.header{background:var(--navy);color:white;font-size:21pt;font-weight:800;padding:0.11in 0.20in;margin-bottom:0.12in;border-radius:4px;line-height:1.05;}
+.station-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.10in 0.13in;flex:1;}
+.station-problem{border:1.2px solid #222;border-radius:5px;padding:0.08in;font-size:9.6pt;line-height:1.22;break-inside:avoid;overflow:hidden;}
+.station-problem h3{font-size:11pt;color:var(--navy);margin-bottom:0.035in;}
+.station-problem p{margin:0 0 0.045in 0;}.station-problem ol,.station-problem ul{margin:0.02in 0 0.04in 0.18in;}.station-problem li{margin-bottom:0.025in;}
+.graph-block,.figure-block{text-align:center;margin:0.03in auto;width:100%;}.graph-block img,.figure-block img,.station-img{display:block;max-width:100%;max-height:3.35in;object-fit:contain;margin:0 auto;border:0;}
+.solution-list{font-size:11pt;line-height:1.30;}.solution-item{border-bottom:1px solid #bbb;padding:0.06in 0;break-inside:avoid;}.solution-item h3{font-size:12pt;color:var(--navy);margin-bottom:0.03in;}.solution-item p{margin:0 0 0.045in 0;}.solution-item ol,.solution-item ul{margin-left:0.22in;}.solution-item li{margin-bottom:0.025in;}
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.18in 0.28in;font-size:12.5pt;line-height:1.25;}.skill-grid div{break-inside:avoid;}
+.page-footer{margin-top:auto;padding-top:0.08in;display:flex;justify-content:space-between;font-size:7.5pt;color:#111;}
+</style></head><body>
+<section class="page title-page"><div class="title-bar"></div><div class="unit-label">Section 1.5 &nbsp;·&nbsp; Limits Graphically</div><h1 class="activity-name">Stations</h1><hr class="divider-navy"><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page directions-page"><img src="directions/stations.png" alt="Stations directions"></section>
+<section class="page"><div class="header">Section 1.5 Station 1</div><div class="station-grid"><div class="station-problem"><h3>Question 1</h3>
+
+<p>Use the graph to determine the left-hand and right-hand limits as \(x\to -1\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-006" class="station-img" src="figures/U1S5-006.png"/></div>
+</div><div class="station-problem"><h3>Question 2</h3>
+
+<p>Use the graph to determine \(\lim_{x\to 2} f(x)\), \(f(2)\), and whether the function value affects the limit.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-020" class="station-img" src="figures/U1S5-020.png"/></div>
+</div><div class="station-problem"><h3>Question 3</h3>
+
+<p>Compare these situations: a removable discontinuity, a jump discontinuity, and a vertical asymptote. Explain how limits behave differently in each case.</p>
+</div><div class="station-problem"><h3>Question 4</h3>
+
+<p>Use the graph to write a complete limit analysis at each special \(x\)-value shown. Include left-hand limits, right-hand limits, function values, and whether each two-sided limit exists.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-044" class="station-img" src="figures/U1S5-041.png"/></div>
+</div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page"><div class="header">Section 1.5 Station 1 Solutions</div><div class="solution-list"><div class="solution-item"><h3>Question 1</h3><ol type="a"><li>As $x\to -1^-$, $f(x)\to 2$.</li><li>As $x\to -1^+$, $f(x)\to 2$.</li><li>Both one-sided limits are equal, so $\lim_{x\to -1} f(x)=2$.</li></ol></div><div class="solution-item"><h3>Question 2</h3><ol type="a"><li>$\lim_{x\to 2} f(x)=3$.</li><li>$f(2)=-2$.</li><li>The function value does not affect the limit because the graph approaches $3$ from both sides.</li></ol></div><div class="solution-item"><h3>Question 3</h3><p>A removable discontinuity can still have a two-sided limit because both sides approach the same value, even if the function value is missing or different.</p><p>A jump discontinuity has different left-hand and right-hand limits, so the two-sided limit does not exist.</p><p>At a vertical asymptote, the function grows without bound on at least one side, so there is no finite two-sided limit.</p></div><div class="solution-item"><h3>Question 4</h3><ol type="a"><li>At $x=-3$: $\lim_{x\to -3^-}f(x)=1$, $\lim_{x\to -3^+}f(x)=1$, $f(-3)=-3$, so $\lim_{x\to -3}f(x)=1$.</li><li>At $x=0$: $\lim_{x\to 0^-}f(x)=2$, $\lim_{x\to 0^+}f(x)=-1$, $f(0)=-1$, so $\lim_{x\to 0}f(x)$ does not exist.</li><li>At $x=3$: $\lim_{x\to 3^-}f(x)=-1$, $\lim_{x\to 3^+}f(x)=1$, $f(3)=4$, so $\lim_{x\to 3}f(x)$ does not exist.</li></ol></div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page"><div class="header">Section 1.5 Station 2</div><div class="station-grid"><div class="station-problem"><h3>Question 5</h3>
+
+<p>For each function, identify the domain.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=x^2-5x+6\)</p></li>
+<li><p>\(y=-2(x-1)^2+4\)</p></li>
+<li><p>\(y=0.5x^2+7x-2\)</p></li>
+</ol>
+</div><div class="station-problem"><h3>Question 6</h3>
+
+<p>Which function has a maximum value?</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=2x^2+3x-1\)</p></li>
+<li><p>\(y=-x^2+6x+4\)</p></li>
+<li><p>\(y=5(x-2)^2-8\)</p></li>
+<li><p>\(y=\frac13x^2-7\)</p></li>
+</ol><p>Explain how you know.</p>
+</div><div class="station-problem"><h3>Question 7</h3>
+
+<p>A quadratic function has vertex \((5,12)\) and opens downward.</p>
+<ol class="lower-alpha" type="a">
+<li><p>What is the maximum value?</p></li>
+<li><p>What is the axis of symmetry?</p></li>
+<li><p>What is the range?</p></li>
+</ol>
+</div><div class="station-problem"><h3>Question 8</h3>
+
+<p>A quadratic function has vertex \((-3,-8)\) and opens upward.</p>
+<ol class="lower-alpha" type="a">
+<li><p>What is the minimum value?</p></li>
+<li><p>What is the axis of symmetry?</p></li>
+<li><p>What is the range?</p></li>
+</ol>
+</div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page"><div class="header">Section 1.5 Station 2 Solutions</div><div class="solution-list"><div class="solution-item"><h3>Question 5</h3><ol type="a"><li>All real numbers.</li><li>All real numbers.</li><li>All real numbers.</li></ol></div><div class="solution-item"><h3>Question 6</h3><p>Choice <strong>b</strong>, $y=-x^2+6x+4$, has a maximum value because its leading coefficient is negative, so it opens downward.</p></div><div class="solution-item"><h3>Question 7</h3><ol type="a"><li>The maximum value is $12$.</li><li>The axis of symmetry is $x=5$.</li><li>The range is $y\le 12$.</li></ol></div><div class="solution-item"><h3>Question 8</h3><ol type="a"><li>The minimum value is $-8$.</li><li>The axis of symmetry is $x=-3$.</li><li>The range is $y\ge -8$.</li></ol></div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page"><div class="header">Section 1.5 Station 3</div><div class="station-grid"><div class="station-problem"><h3>Question 9</h3>
+
+<p>For the function</p><p style="text-align:center;">\(h(x)=2x^2+4x-7\)</p><p>find:</p>
+<ol class="lower-alpha" type="a">
+<li><p>the axis of symmetry</p></li>
+<li><p>the vertex</p></li>
+<li><p>the \(y\)-intercept</p></li>
+<li><p>the domain</p></li>
+<li><p>the range</p></li>
+</ol>
+</div><div class="station-problem"><h3>Question 10</h3>
+
+<p>The height of a ball is modeled by</p><p style="text-align:center;">\(h(t)=-16t^2+64t+5\)</p><p>where \(t\) is time in seconds and \(h(t)\) is height in feet.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the time when the ball reaches its maximum height.</p></li>
+<li><p>Find the maximum height.</p></li>
+<li><p>What is the initial height?</p></li>
+<li><p>Explain what the vertex means in context.</p></li>
+</ol>
+</div><div class="station-problem"><h3>Question 11</h3>
+
+<p>Compare the functions:</p><p style="text-align:center;">\(f(x)=x^2-4x+1\)</p><p style="text-align:center;">\(g(x)=-(x^2-4x+1)\)</p>
+<ol class="lower-alpha" type="a">
+<li><p>How are their axes of symmetry related?</p></li>
+<li><p>How are their vertices related?</p></li>
+<li><p>How are their maximum/minimum values related?</p></li>
+<li><p>Explain the effect of multiplying by \(-1\).</p></li>
+</ol>
+</div><div class="station-problem"><h3>Question 12</h3>
+
+<p>A company sells \(400\) items when the price is \(\$20\). For each \(\$1\) increase in price, the company sells \(10\) fewer items.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write an expression for the price.</p></li>
+<li><p>Write an expression for the number of items sold.</p></li>
+<li><p>Write a revenue function.</p></li>
+<li><p>Find the price that maximizes revenue.</p></li>
+<li><p>Find the maximum revenue.</p></li>
+<li><p>Explain why the revenue model is quadratic.</p></li>
+</ol>
+</div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page"><div class="header">Section 1.5 Station 3 Solutions</div><div class="solution-list"><div class="solution-item"><h3>Question 9</h3><ol type="a"><li>Axis of symmetry: $x=-\frac{4}{2(2)}=-1$.</li><li>Vertex: $h(-1)=2(-1)^2+4(-1)-7=-9$, so $(-1,-9)$.</li><li>$y$-intercept: $(0,-7)$.</li><li>Domain: all real numbers.</li><li>Range: $y\ge -9$.</li></ol></div><div class="solution-item"><h3>Question 10</h3><ol type="a"><li>The ball reaches its maximum at $t=-\frac{64}{2(-16)}=2$ seconds.</li><li>The maximum height is $h(2)=69$ feet.</li><li>The initial height is $h(0)=5$ feet.</li><li>The vertex means the ball reaches $69$ feet after $2$ seconds.</li></ol></div><div class="solution-item"><h3>Question 11</h3><ol type="a"><li>Their axes of symmetry are the same: $x=2$.</li><li>$f$ has vertex $(2,-3)$ and $g$ has vertex $(2,3)$.</li><li>$f$ has a minimum value of $-3$; $g$ has a maximum value of $3$.</li><li>Multiplying by $-1$ reflects the graph over the $x$-axis.</li></ol></div><div class="solution-item"><h3>Question 12</h3><ol type="a"><li>Let $x$ be the number of $1$ dollar increases. Price: $20+x$.</li><li>Items sold: $400-10x$.</li><li>$R(x)=(20+x)(400-10x)=-10x^2+200x+8000$.</li><li>The maximum occurs at $x=-\frac{200}{2(-10)}=10$, so the price is $30$.</li><li>The maximum revenue is $30(300)=9000$ dollars.</li><li>The model is quadratic because it is the product of two linear expressions.</li></ol></div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page"><div class="header">Section 1.5 Station 4</div><div class="station-grid"><div class="station-problem"><h3>Question 13</h3>
+
+<p>Evaluate each expression when \(x=4\) and \(y=-1\).</p>
+<ol class="lower-alpha" type="a"><li><p>\(x+y\)</p></li><li><p>\(xy\)</p></li><li><p>\(x^2-y\)</p></li><li><p>\(2x-3y\)</p></li></ol>
+</div><div class="station-problem"><h3>Question 14</h3>
+
+<p>If \(f(x)=2x^2-x+3\), write and simplify each expression.</p><ol class="lower-alpha" type="a"><li><p>\(f(x+1)\)</p></li><li><p>\(f(x-2)\)</p></li><li><p>\(f(2x)\)</p></li></ol>
+</div><div class="station-problem"><h3>Question 15</h3>
+
+<p>The same function is represented three ways.</p><p>Equation: \(f(x)=2x-3\)</p>
+<p>Table:</p><table class="table-block"><tr><th>\(x\)</th><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td></tr><tr><th>\(f(x)\)</th><td>\(-3\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(3\)</td></tr></table>
+<p>Description: “Double the input, then subtract \(3\).”</p><p>Explain how the equation, table, and description all show the same relationship.</p>
+</div><div class="station-problem"><h3>Question 16</h3>
+
+<p>Two expressions are shown:</p><p>\[A(x)=\frac{x^2-25}{x-5}\]</p><p>\[B(x)=x+5\]</p><ol class="lower-alpha" type="a"><li><p>Simplify \(A(x)\).</p></li><li><p>State any excluded value for \(A(x)\).</p></li><li><p>Compare \(A(x)\) and \(B(x)\) as expressions and as functions.</p></li><li><p>Evaluate both at \(x=7\).</p></li><li><p>Explain why restrictions matter when connecting algebra and graphs.</p></li></ol>
+</div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page"><div class="header">Section 1.5 Station 4 Solutions</div><div class="solution-list"><div class="solution-item"><h3>Question 13</h3><ol type="a"><li>$x+y=4+(-1)=3$</li><li>$xy=4(-1)=-4$</li><li>$x^2-y=16-(-1)=17$</li><li>$2x-3y=8-3(-1)=11$</li></ol></div><div class="solution-item"><h3>Question 14</h3><ol type="a"><li>$f(x+1)=2(x+1)^2-(x+1)+3=2x^2+3x+4$</li><li>$f(x-2)=2(x-2)^2-(x-2)+3=2x^2-9x+13$</li><li>$f(2x)=2(2x)^2-2x+3=8x^2-2x+3$</li></ol></div><div class="solution-item"><h3>Question 15</h3><p>All three representations show the rule “multiply the input by $2$, then subtract $3$.” The table confirms this pattern because each output equals $2x-3$ for the listed input values.</p></div><div class="solution-item"><h3>Question 16</h3><ol type="a"><li>$A(x)=\frac{(x-5)(x+5)}{x-5}=x+5$, when $x\ne 5$.</li><li>The excluded value is $x=5$.</li><li>As expressions after simplification they look the same, but as functions $A(x)$ has a hole at $x=5$ while $B(x)$ is defined there.</li><li>$A(7)=12$ and $B(7)=12$.</li><li>Restrictions matter because simplifying can hide holes or excluded values in a graph.</li></ol></div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page"><div class="header">Section 1.5 Station 1</div><div class="station-grid"><div class="station-problem"><h3>Question 1</h3>
+
+<p>Use the graph to determine the left-hand and right-hand limits as \(x\to -1\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-006" class="station-img" src="figures/U1S5-006.png"/></div>
+</div><div class="station-problem"><h3>Question 2</h3>
+
+<p>Use the graph to determine \(\lim_{x\to 2} f(x)\), \(f(2)\), and whether the function value affects the limit.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-020" class="station-img" src="figures/U1S5-020.png"/></div>
+</div><div class="station-problem"><h3>Question 3</h3>
+
+<p>Compare these situations: a removable discontinuity, a jump discontinuity, and a vertical asymptote. Explain how limits behave differently in each case.</p>
+</div><div class="station-problem"><h3>Question 4</h3>
+
+<p>Use the graph to write a complete limit analysis at each special \(x\)-value shown. Include left-hand limits, right-hand limits, function values, and whether each two-sided limit exists.</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-044" class="station-img" src="figures/U1S5-041.png"/></div>
+</div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page"><div class="header">Section 1.5 Station 1 Solutions</div><div class="solution-list"><div class="solution-item"><h3>Question 1</h3><ol type="a"><li>As $x\to -1^-$, $f(x)\to 2$.</li><li>As $x\to -1^+$, $f(x)\to 2$.</li><li>Both one-sided limits are equal, so $\lim_{x\to -1} f(x)=2$.</li></ol></div><div class="solution-item"><h3>Question 2</h3><ol type="a"><li>$\lim_{x\to 2} f(x)=3$.</li><li>$f(2)=-2$.</li><li>The function value does not affect the limit because the graph approaches $3$ from both sides.</li></ol></div><div class="solution-item"><h3>Question 3</h3><p>A removable discontinuity can still have a two-sided limit because both sides approach the same value, even if the function value is missing or different.</p><p>A jump discontinuity has different left-hand and right-hand limits, so the two-sided limit does not exist.</p><p>At a vertical asymptote, the function grows without bound on at least one side, so there is no finite two-sided limit.</p></div><div class="solution-item"><h3>Question 4</h3><ol type="a"><li>At $x=-3$: $\lim_{x\to -3^-}f(x)=1$, $\lim_{x\to -3^+}f(x)=1$, $f(-3)=-3$, so $\lim_{x\to -3}f(x)=1$.</li><li>At $x=0$: $\lim_{x\to 0^-}f(x)=2$, $\lim_{x\to 0^+}f(x)=-1$, $f(0)=-1$, so $\lim_{x\to 0}f(x)$ does not exist.</li><li>At $x=3$: $\lim_{x\to 3^-}f(x)=-1$, $\lim_{x\to 3^+}f(x)=1$, $f(3)=4$, so $\lim_{x\to 3}f(x)$ does not exist.</li></ol></div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page"><div class="header">Section 1.5 Station 2</div><div class="station-grid"><div class="station-problem"><h3>Question 5</h3>
+
+<p>For each function, identify the domain.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=x^2-5x+6\)</p></li>
+<li><p>\(y=-2(x-1)^2+4\)</p></li>
+<li><p>\(y=0.5x^2+7x-2\)</p></li>
+</ol>
+</div><div class="station-problem"><h3>Question 6</h3>
+
+<p>Which function has a maximum value?</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=2x^2+3x-1\)</p></li>
+<li><p>\(y=-x^2+6x+4\)</p></li>
+<li><p>\(y=5(x-2)^2-8\)</p></li>
+<li><p>\(y=\frac13x^2-7\)</p></li>
+</ol><p>Explain how you know.</p>
+</div><div class="station-problem"><h3>Question 7</h3>
+
+<p>A quadratic function has vertex \((5,12)\) and opens downward.</p>
+<ol class="lower-alpha" type="a">
+<li><p>What is the maximum value?</p></li>
+<li><p>What is the axis of symmetry?</p></li>
+<li><p>What is the range?</p></li>
+</ol>
+</div><div class="station-problem"><h3>Question 8</h3>
+
+<p>A quadratic function has vertex \((-3,-8)\) and opens upward.</p>
+<ol class="lower-alpha" type="a">
+<li><p>What is the minimum value?</p></li>
+<li><p>What is the axis of symmetry?</p></li>
+<li><p>What is the range?</p></li>
+</ol>
+</div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page"><div class="header">Section 1.5 Station 2 Solutions</div><div class="solution-list"><div class="solution-item"><h3>Question 5</h3><ol type="a"><li>All real numbers.</li><li>All real numbers.</li><li>All real numbers.</li></ol></div><div class="solution-item"><h3>Question 6</h3><p>Choice <strong>b</strong>, $y=-x^2+6x+4$, has a maximum value because its leading coefficient is negative, so it opens downward.</p></div><div class="solution-item"><h3>Question 7</h3><ol type="a"><li>The maximum value is $12$.</li><li>The axis of symmetry is $x=5$.</li><li>The range is $y\le 12$.</li></ol></div><div class="solution-item"><h3>Question 8</h3><ol type="a"><li>The minimum value is $-8$.</li><li>The axis of symmetry is $x=-3$.</li><li>The range is $y\ge -8$.</li></ol></div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page"><div class="header">Section 1.5 Station 3</div><div class="station-grid"><div class="station-problem"><h3>Question 9</h3>
+
+<p>For the function</p><p style="text-align:center;">\(h(x)=2x^2+4x-7\)</p><p>find:</p>
+<ol class="lower-alpha" type="a">
+<li><p>the axis of symmetry</p></li>
+<li><p>the vertex</p></li>
+<li><p>the \(y\)-intercept</p></li>
+<li><p>the domain</p></li>
+<li><p>the range</p></li>
+</ol>
+</div><div class="station-problem"><h3>Question 10</h3>
+
+<p>The height of a ball is modeled by</p><p style="text-align:center;">\(h(t)=-16t^2+64t+5\)</p><p>where \(t\) is time in seconds and \(h(t)\) is height in feet.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the time when the ball reaches its maximum height.</p></li>
+<li><p>Find the maximum height.</p></li>
+<li><p>What is the initial height?</p></li>
+<li><p>Explain what the vertex means in context.</p></li>
+</ol>
+</div><div class="station-problem"><h3>Question 11</h3>
+
+<p>Compare the functions:</p><p style="text-align:center;">\(f(x)=x^2-4x+1\)</p><p style="text-align:center;">\(g(x)=-(x^2-4x+1)\)</p>
+<ol class="lower-alpha" type="a">
+<li><p>How are their axes of symmetry related?</p></li>
+<li><p>How are their vertices related?</p></li>
+<li><p>How are their maximum/minimum values related?</p></li>
+<li><p>Explain the effect of multiplying by \(-1\).</p></li>
+</ol>
+</div><div class="station-problem"><h3>Question 12</h3>
+
+<p>A company sells \(400\) items when the price is \(\$20\). For each \(\$1\) increase in price, the company sells \(10\) fewer items.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write an expression for the price.</p></li>
+<li><p>Write an expression for the number of items sold.</p></li>
+<li><p>Write a revenue function.</p></li>
+<li><p>Find the price that maximizes revenue.</p></li>
+<li><p>Find the maximum revenue.</p></li>
+<li><p>Explain why the revenue model is quadratic.</p></li>
+</ol>
+</div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page"><div class="header">Section 1.5 Station 3 Solutions</div><div class="solution-list"><div class="solution-item"><h3>Question 9</h3><ol type="a"><li>Axis of symmetry: $x=-\frac{4}{2(2)}=-1$.</li><li>Vertex: $h(-1)=2(-1)^2+4(-1)-7=-9$, so $(-1,-9)$.</li><li>$y$-intercept: $(0,-7)$.</li><li>Domain: all real numbers.</li><li>Range: $y\ge -9$.</li></ol></div><div class="solution-item"><h3>Question 10</h3><ol type="a"><li>The ball reaches its maximum at $t=-\frac{64}{2(-16)}=2$ seconds.</li><li>The maximum height is $h(2)=69$ feet.</li><li>The initial height is $h(0)=5$ feet.</li><li>The vertex means the ball reaches $69$ feet after $2$ seconds.</li></ol></div><div class="solution-item"><h3>Question 11</h3><ol type="a"><li>Their axes of symmetry are the same: $x=2$.</li><li>$f$ has vertex $(2,-3)$ and $g$ has vertex $(2,3)$.</li><li>$f$ has a minimum value of $-3$; $g$ has a maximum value of $3$.</li><li>Multiplying by $-1$ reflects the graph over the $x$-axis.</li></ol></div><div class="solution-item"><h3>Question 12</h3><ol type="a"><li>Let $x$ be the number of $1$ dollar increases. Price: $20+x$.</li><li>Items sold: $400-10x$.</li><li>$R(x)=(20+x)(400-10x)=-10x^2+200x+8000$.</li><li>The maximum occurs at $x=-\frac{200}{2(-10)}=10$, so the price is $30$.</li><li>The maximum revenue is $30(300)=9000$ dollars.</li><li>The model is quadratic because it is the product of two linear expressions.</li></ol></div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page"><div class="header">Section 1.5 Station 4</div><div class="station-grid"><div class="station-problem"><h3>Question 13</h3>
+
+<p>Evaluate each expression when \(x=4\) and \(y=-1\).</p>
+<ol class="lower-alpha" type="a"><li><p>\(x+y\)</p></li><li><p>\(xy\)</p></li><li><p>\(x^2-y\)</p></li><li><p>\(2x-3y\)</p></li></ol>
+</div><div class="station-problem"><h3>Question 14</h3>
+
+<p>If \(f(x)=2x^2-x+3\), write and simplify each expression.</p><ol class="lower-alpha" type="a"><li><p>\(f(x+1)\)</p></li><li><p>\(f(x-2)\)</p></li><li><p>\(f(2x)\)</p></li></ol>
+</div><div class="station-problem"><h3>Question 15</h3>
+
+<p>The same function is represented three ways.</p><p>Equation: \(f(x)=2x-3\)</p>
+<p>Table:</p><table class="table-block"><tr><th>\(x\)</th><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td></tr><tr><th>\(f(x)\)</th><td>\(-3\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(3\)</td></tr></table>
+<p>Description: “Double the input, then subtract \(3\).”</p><p>Explain how the equation, table, and description all show the same relationship.</p>
+</div><div class="station-problem"><h3>Question 16</h3>
+
+<p>Two expressions are shown:</p><p>\[A(x)=\frac{x^2-25}{x-5}\]</p><p>\[B(x)=x+5\]</p><ol class="lower-alpha" type="a"><li><p>Simplify \(A(x)\).</p></li><li><p>State any excluded value for \(A(x)\).</p></li><li><p>Compare \(A(x)\) and \(B(x)\) as expressions and as functions.</p></li><li><p>Evaluate both at \(x=7\).</p></li><li><p>Explain why restrictions matter when connecting algebra and graphs.</p></li></ol>
+</div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page"><div class="header">Section 1.5 Station 4 Solutions</div><div class="solution-list"><div class="solution-item"><h3>Question 13</h3><ol type="a"><li>$x+y=4+(-1)=3$</li><li>$xy=4(-1)=-4$</li><li>$x^2-y=16-(-1)=17$</li><li>$2x-3y=8-3(-1)=11$</li></ol></div><div class="solution-item"><h3>Question 14</h3><ol type="a"><li>$f(x+1)=2(x+1)^2-(x+1)+3=2x^2+3x+4$</li><li>$f(x-2)=2(x-2)^2-(x-2)+3=2x^2-9x+13$</li><li>$f(2x)=2(2x)^2-2x+3=8x^2-2x+3$</li></ol></div><div class="solution-item"><h3>Question 15</h3><p>All three representations show the rule “multiply the input by $2$, then subtract $3$.” The table confirms this pattern because each output equals $2x-3$ for the listed input values.</p></div><div class="solution-item"><h3>Question 16</h3><ol type="a"><li>$A(x)=\frac{(x-5)(x+5)}{x-5}=x+5$, when $x\ne 5$.</li><li>The excluded value is $x=5$.</li><li>As expressions after simplification they look the same, but as functions $A(x)$ has a hole at $x=5$ while $B(x)$ is defined there.</li><li>$A(7)=12$ and $B(7)=12$.</li><li>Restrictions matter because simplifying can hide holes or excluded values in a graph.</li></ol></div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+<section class="page"><div class="header">Skill Check</div><div class="skill-grid"><div><strong>1.</strong> Use a graph to decide whether $\lim_{x\to a}f(x)$ exists when the left-hand and right-hand limits are different.</div><div><strong>2.</strong> If $\lim_{x\to 2^-}f(x)=5$ and $\lim_{x\to 2^+}f(x)=5$, find $\lim_{x\to 2}f(x)$.</div><div><strong>3.</strong> Explain why $f(a)$ can be different from $\lim_{x\to a}f(x)$.</div><div><strong>4.</strong> For a parabola with vertex $(5,12)$ that opens downward, state the maximum value and range.</div><div><strong>5.</strong> Find the axis of symmetry for $y=2x^2+4x-7$.</div><div><strong>6.</strong> Simplify $\frac{x^2-25}{x-5}$ and state the excluded value.</div></div><div class="page-footer"><span>Section 1.5 — Stations</span><span>Manistee High School</span></div></section>
+</body></html>

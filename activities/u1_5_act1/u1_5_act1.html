@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 1.5 — Mathematical Hot Seat</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--navy:#1B2E4B;--gold:#C8A400;--white:#FFFFFF;--light-gray:#E8E8E8;--dark-text:#1A1A1A;--font-main:'Segoe UI',Arial,sans-serif;--page-w:8.5in;--page-h:11in;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+@page{size:letter;margin:0;}
+body{font-family:var(--font-main);color:var(--dark-text);background:var(--light-gray);-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.page{width:var(--page-w);height:var(--page-h);padding:0.32in 0.42in 0.24in 0.42in;margin:0 auto 0.35in;background:white;box-shadow:0 2px 12px rgba(0,0,0,0.18);display:flex;flex-direction:column;position:relative;overflow:hidden;}
+@media print{body{background:none;}.page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}.page:last-child{page-break-after:auto;break-after:auto;}}
+.title-page{padding:0.65in;}.title-bar{height:6px;background:var(--gold);border-radius:3px;margin-bottom:1.55in;}.unit-label{font-size:13pt;font-weight:700;color:var(--navy);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.22in;text-align:center;}.activity-name{font-size:32pt;font-weight:800;color:var(--navy);line-height:1.1;text-align:center;margin-bottom:0.34in;}.divider-navy{border:none;border-top:3px solid var(--navy);margin:0.18in 0;}.directions-page{display:flex;align-items:center;justify-content:center;padding:0.08in;}.directions-page img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
+.header{background:var(--navy);color:white;font-size:22pt;font-weight:800;padding:0.13in 0.22in;margin-bottom:0.18in;border-radius:4px;line-height:1.05;}
+.question,.solution{font-size:13pt;line-height:1.34;flex:1;}.question p,.solution p{margin:0 0 0.11in 0;}.question ol,.solution ol,.question ul,.solution ul{margin:0.04in 0 0.09in 0.30in;}.question li,.solution li{margin-bottom:0.055in;}.solution .mathline{margin:0.07in 0;text-align:center;}
+.graph-img{display:block;max-width:4.65in;max-height:4.50in;object-fit:contain;margin:0.05in auto 0 auto;}.graph-block{text-align:center;margin:0.05in auto;}.graph-block img{display:block;max-width:4.65in;max-height:4.50in;object-fit:contain;margin:0 auto;}.graph-question p{margin-bottom:0.06in;}.graph-question li{margin-bottom:0.03in;}.compact-table{border-collapse:collapse;margin:0.12in auto;font-size:13pt;}.compact-table th,.compact-table td{border:1.2px solid #222;padding:0.055in 0.20in;text-align:center;}.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.18in 0.28in;font-size:12.5pt;line-height:1.25;}.skill-grid div{break-inside:avoid;}.page-footer{margin-top:auto;padding-top:0.08in;display:flex;justify-content:space-between;font-size:7.5pt;color:#111;}
+</style>
+</head>
+<body>
+<section class="page title-page">
+  <div class="title-bar"></div>
+  <div class="unit-label">Section 1.5 &nbsp;·&nbsp; Limits Graphically</div>
+  <h1 class="activity-name">Mathematical Hot Seat</h1>
+  <hr class="divider-navy">
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page directions-page">
+  <img src="directions/mathematical_hot_seat.png" alt="Mathematical Hot Seat directions">
+</section>
+<section class="page">
+  <div class="header">Problem 1</div>
+  <div class="question">
+
+<p>Use the graph to describe what happens to \(f(x)\) as \(x\to 2^-\) and as \(x\to 2^+\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-003" class="graph-img" src="figures/U1S5-003.png"/></div>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 1</div>
+  <div class="solution"><p>As $x\to 2^-$, the graph is on the left branch and moves downward toward very large negative values.</p><p>As $x\to 2^+$, the graph is on the right branch and moves upward toward very large positive values.</p></div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 2</div>
+  <div class="question">
+
+<p>Complete the statement: If \(\lim_{x\to a^-} f(x)=3\) and \(\lim_{x\to a^+} f(x)=3\), then \(\lim_{x\to a} f(x)=\underline{\hspace{1in}}\).</p>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 2</div>
+  <div class="solution"><p>Since the left-hand and right-hand limits are both $3$, the two-sided limit is $3$.</p><p>$\lim_{x\to a} f(x)=3$</p></div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 3</div>
+  <div class="question">
+
+<p>Use the graph to determine the left-hand limit, right-hand limit, function value, and whether the two-sided limit exists at \(x=0\).</p>
+<div class="graph-block graph-md"><img alt="Graph for U1S5-015" class="graph-img" src="figures/U1S5-015.png"/></div>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 3</div>
+  <div class="solution"><ol type="a"><li>Left-hand limit: $\lim_{x\to 0^-}f(x)=2$.</li><li>Right-hand limit: $\lim_{x\to 0^+}f(x)=-3$.</li><li>Function value: $f(0)=0$.</li><li>The two-sided limit does not exist because the one-sided limits are different.</li></ol></div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 4</div>
+  <div class="question">
+
+<p>A student says, “If \(f(a)\) is undefined, then \(\lim_{x\to a} f(x)\) cannot exist.” Explain why this statement is false.</p>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 4</div>
+  <div class="solution"><p>The statement is false because a limit depends on what the function approaches near $x=a$, not necessarily the value at $x=a$.</p><p>A graph can have a hole at $x=a$, so $f(a)$ is undefined while $\lim_{x\to a}f(x)$ still exists.</p></div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 5</div>
+  <div class="question">
+
+<p>For each quadratic, determine whether the vertex is a maximum or a minimum.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=x^2+6x+2\)</p></li>
+<li><p>\(y=-2x^2+4x+5\)</p></li>
+<li><p>\(y=5(x-3)^2-8\)</p></li>
+<li><p>\(y=-\frac12(x+1)^2+7\)</p></li>
+</ol>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 5</div>
+  <div class="solution"><ol type="a"><li>Minimum, because the parabola opens up.</li><li>Maximum, because the parabola opens down.</li><li>Minimum, because the parabola opens up.</li><li>Maximum, because the parabola opens down.</li></ol></div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 6</div>
+  <div class="question">
+
+<p>Use the formula</p>
+<p style="text-align:center;">\(x=-\frac{b}{2a}\)</p>
+<p>to find the axis of symmetry for each quadratic.</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=x^2-8x+3\)</p></li>
+<li><p>\(y=2x^2+12x-1\)</p></li>
+<li><p>\(y=-x^2+10x+4\)</p></li>
+</ol>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 6</div>
+  <div class="solution"><ol type="a"><li>$x=-\frac{-8}{2(1)}=4$</li><li>$x=-\frac{12}{2(2)}=-3$</li><li>$x=-\frac{10}{2(-1)}=5$</li></ol></div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 7</div>
+  <div class="question">
+
+<p>Match each description to the correct range.</p>
+<ol class="lower-alpha" type="a">
+<li><p>A parabola opens up and has vertex \((3,-4)\).</p></li>
+<li><p>A parabola opens down and has vertex \((-2,7)\).</p></li>
+<li><p>A parabola opens up and has vertex \((0,5)\).</p></li>
+<li><p>A parabola opens down and has vertex \((6,-1)\).</p></li>
+</ol>
+<p>Ranges:</p>
+<ol>
+<li><p>\(y\le 7\)</p></li>
+<li><p>\(y\ge -4\)</p></li>
+<li><p>\(y\le -1\)</p></li>
+<li><p>\(y\ge 5\)</p></li>
+</ol>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 7</div>
+  <div class="solution"><ol type="a"><li>$y\ge -4$</li><li>$y\le 7$</li><li>$y\ge 5$</li><li>$y\le -1$</li></ol></div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 8</div>
+  <div class="question">
+
+<p>Which function has a minimum value of \(-6\)?</p>
+<ol class="lower-alpha" type="a">
+<li><p>\(y=(x+4)^2-6\)</p></li>
+<li><p>\(y=-(x+4)^2-6\)</p></li>
+<li><p>\(y=(x-6)^2+4\)</p></li>
+<li><p>\(y=-6(x+4)^2\)</p></li>
+</ol>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 8</div>
+  <div class="solution"><p>Choice <strong>a</strong>: $y=(x+4)^2-6$.</p><p>The parabola opens upward and has vertex $(-4,-6)$, so the minimum value is $-6$.</p></div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 9</div>
+  <div class="question">
+
+<p>For the function</p><p style="text-align:center;">\(g(x)=-x^2+8x-10\)</p><p>find:</p>
+<ol class="lower-alpha" type="a">
+<li><p>the \(y\)-intercept</p></li>
+<li><p>the axis of symmetry</p></li>
+<li><p>the vertex</p></li>
+<li><p>whether the vertex is a maximum or minimum</p></li>
+<li><p>the range</p></li>
+</ol>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 9</div>
+  <div class="solution"><ol type="a"><li>$y$-intercept: $g(0)=-10$, so $(0,-10)$.</li><li>Axis of symmetry: $x=-\frac{8}{2(-1)}=4$.</li><li>Vertex: $g(4)=-(4)^2+8(4)-10=6$, so $(4,6)$.</li><li>The vertex is a maximum.</li><li>Range: $y\le 6$.</li></ol></div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 10</div>
+  <div class="question">
+
+<p>A quadratic function has zeros \(x=1\) and \(x=9\).</p>
+<ol class="lower-alpha" type="a">
+<li><p>Find the axis of symmetry.</p></li>
+<li><p>If the graph opens downward, where is the function increasing?</p></li>
+<li><p>If the graph opens downward, where is the function decreasing?</p></li>
+<li><p>What kind of value does the vertex represent?</p></li>
+</ol>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 10</div>
+  <div class="solution"><ol type="a"><li>The axis of symmetry is halfway between $1$ and $9$: $x=5$.</li><li>If it opens downward, the function is increasing on $(-\infty,5)$.</li><li>It is decreasing on $(5,\infty)$.</li><li>The vertex represents a maximum.</li></ol></div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 11</div>
+  <div class="question">
+
+<p>A student says:</p><p style="margin-left:20px;">“The range of \(y=-3(x-2)^2+5\) is \(y\ge 5\) because the vertex has \(y=5\).”</p><p>Explain the mistake and state the correct range.</p>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 11</div>
+  <div class="solution"><p>The mistake is that the parabola opens downward because $a=-3$.</p><p>The vertex is $(2,5)$, and it is a maximum.</p><p>The correct range is $y\le 5$.</p></div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 12</div>
+  <div class="question">
+
+<p>A farmer has \(100\) meters of fencing to enclose a rectangular field along a river. No fencing is needed along the river. Let \(x\) be the width perpendicular to the river.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Write an area function in terms of \(x\).</p></li>
+<li><p>Find the dimensions that maximize area.</p></li>
+<li><p>Find the maximum area.</p></li>
+<li><p>State a reasonable domain for the model.</p></li>
+<li><p>Explain why the domain is restricted in context.</p></li>
+</ol>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 12</div>
+  <div class="solution"><ol type="a"><li>If the width is $x$, then the fenced length is $100-2x$, so $A(x)=x(100-2x)$.</li><li>$A(x)=-2x^2+100x$. The vertex occurs at $x=-\frac{100}{2(-2)}=25$.</li><li>The dimensions are $25$ meters by $50$ meters.</li><li>The maximum area is $25(50)=1250$ square meters.</li><li>A reasonable domain is $0<x<50$.</li><li>The domain is restricted because dimensions must be positive.</li></ol></div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 13</div>
+  <div class="question">
+
+<p>Evaluate each expression when \(a=-2\).</p>
+<ol class="lower-alpha" type="a"><li><p>\(a^2+3\)</p></li><li><p>\(4a-7\)</p></li><li><p>\(-2a^2\)</p></li><li><p>\((a+5)^2\)</p></li></ol>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 13</div>
+  <div class="solution"><ol type="a"><li>$(-2)^2+3=7$</li><li>$4(-2)-7=-15$</li><li>$-2(-2)^2=-8$</li><li>$(-2+5)^2=9$</li></ol></div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 14</div>
+  <div class="question">
+
+<p>If \(g(x)=x^2-5\), evaluate each.</p>
+<ol class="lower-alpha" type="a"><li><p>\(g(0)\)</p></li><li><p>\(g(2)\)</p></li><li><p>\(g(-2)\)</p></li><li><p>\(g(5)\)</p></li></ol>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 14</div>
+  <div class="solution"><ol type="a"><li>$g(0)=-5$</li><li>$g(2)=-1$</li><li>$g(-2)=-1$</li><li>$g(5)=20$</li></ol></div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 15</div>
+  <div class="question">
+
+<p>If \(g(x)=\frac{x+6}{x-2}\), evaluate each.</p><ol class="lower-alpha" type="a"><li><p>\(g(3)\)</p></li><li><p>\(g(8)\)</p></li><li><p>\(g(0)\)</p></li><li><p>Explain why \(g(2)\) is undefined.</p></li></ol>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 15</div>
+  <div class="solution"><ol type="a"><li>$g(3)=\frac{3+6}{3-2}=9$</li><li>$g(8)=\frac{8+6}{8-2}=\frac{14}{6}=\frac{7}{3}$</li><li>$g(0)=\frac{0+6}{0-2}=-3$</li><li>$g(2)$ is undefined because the denominator becomes $0$.</li></ol></div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 16</div>
+  <div class="question">
+
+<p>A student evaluates \(f(x)=x^2+4x\) at \(x=-3\) and writes:</p><p>\[f(-3)=-3^2+4(-3)=-9-12=-21.\]</p><p>Identify the error and evaluate correctly.</p>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 16</div>
+  <div class="solution"><p>The error is that $(-3)^2$ should be positive. Parentheses matter when substituting a negative input.</p><p>$f(-3)=(-3)^2+4(-3)=9-12=-3$.</p></div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Skill Check</div>
+  <div class="question">
+<div class="skill-grid">
+  <div><strong>1.</strong> From a graph, $\lim_{x\to 4^-}f(x)=2$ and $\lim_{x\to 4^+}f(x)=2$. What is $\lim_{x\to 4}f(x)$?</div>
+  <div><strong>2.</strong> If $\lim_{x\to 1^-}g(x)=5$ and $\lim_{x\to 1^+}g(x)=-2$, does $\lim_{x\to 1}g(x)$ exist? Explain.</div>
+  <div><strong>3.</strong> Can $f(3)$ be different from $\lim_{x\to 3}f(x)$? Explain.</div>
+  <div><strong>4.</strong> For $y=-2(x-1)^2+8$, state whether the vertex is a maximum or minimum and give the range.</div>
+  <div><strong>5.</strong> Find the axis of symmetry for $y=3x^2-12x+7$.</div>
+  <div><strong>6.</strong> Evaluate $h(x)=\frac{x+4}{x-1}$ at $x=3$ and explain why $h(1)$ is undefined.</div>
+</div>
+</div>
+  <div class="page-footer"><span>Section 1.5 — Mathematical Hot Seat</span><span>Manistee High School</span></div>
+</section>
+</body>
+</html>
