@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Unit 02 Progress Tracker</title>
+<!-- ====================================================== -->
+<!-- MATHJAX -->
+<!-- ====================================================== -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- ====================================================== -->
+<!-- STYLES -->
+<!-- ====================================================== -->
+<style>
+
+/* ====================================================== */
+/* RESET */
+/* ====================================================== */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+/* ====================================================== */
+/* PAGE */
+/* ====================================================== */
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.45;
+  color:#111;
+  background:white;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* ====================================================== */
+/* HEADINGS */
+/* ====================================================== */
+
+h1{
+  font-size:1.75rem;
+  color:#00003d;
+  margin-bottom:8px;
+}
+
+h2{
+  font-size:1.35rem;
+  color:#00003d;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+  margin:18px 0 10px;
+}
+
+h3{
+  font-size:1.05rem;
+  margin:0 0 8px;
+}
+
+/* ====================================================== */
+/* TOP HEADER */
+/* ====================================================== */
+
+.name-line{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:8px;
+  font-size:1rem;
+}
+
+.name-blank{
+  display:inline-block;
+  border-bottom:1px solid #111;
+  width:340px;
+  height:1.1em;
+}
+
+/* ====================================================== */
+/* PROGRESS TRACKING KEY */
+/* ====================================================== */
+
+.key{
+  border:1px solid #222;
+  padding:10px 12px;
+  margin:10px 0 14px;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.key-title{
+  font-weight:700;
+  margin-bottom:4px;
+}
+
+/* ====================================================== */
+/* PROGRESS TRACKING CARDS */
+/* ====================================================== */
+
+.black-box{
+  background:#111;
+  color:white;
+  padding:12px 14px;
+  margin:14px 0 0;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.black-box strong{
+  font-size:1.02rem;
+}
+
+.tracking-card{
+  border:1px solid #222;
+  margin:0 0 18px;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.tracking-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  border-top:1px solid #222;
+}
+
+.tracking-cell{
+  padding:12px;
+  border-right:1px solid #222;
+  min-height:126px;
+}
+
+.tracking-cell:last-child{
+  border-right:0;
+}
+
+.check-list div{
+  margin:5px 0;
+}
+
+/* ====================================================== */
+/* PAGE BREAKS */
+/* ====================================================== */
+
+.page-break{
+  page-break-before:always;
+}
+
+/* ====================================================== */
+/* PRACTICE BY DEPTH OF KNOWLEDGE */
+/* ====================================================== */
+
+.practice-title{
+  color:#00003d;
+  font-size:1.5rem;
+  margin:24px 0 18px 0;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+.black-dok{
+  background:#111;
+  color:#fff;
+  padding:12px 14px;
+  font-weight:800;
+  font-size:1.05rem;
+  margin:18px 0 14px 0;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.black-dok .dok-small{
+  display:block;
+  font-size:0.88rem;
+  font-weight:500;
+  font-style:italic;
+  color:#f0f0f0;
+  margin-top:6px;
+}
+
+/* ====================================================== */
+/* PROBLEMS */
+/* ====================================================== */
+
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin:0 0 16px;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* ====================================================== */
+/* TABLES */
+/* ====================================================== */
+
+.parent-table,
+.table-block,
+.param-table,
+table.values{
+  width:auto;
+  border-collapse:collapse;
+  margin:10px auto 12px;
+}
+
+.parent-table th,
+.parent-table td,
+.table-block th,
+.table-block td,
+.param-table th,
+.param-table td,
+table.values th,
+table.values td{
+  border:1px solid #333;
+  padding:6px 12px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+
+/* ====================================================== */
+/* FIGURES AND GRAPHS */
+/* ====================================================== */
+
+.figure-block,
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img,
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+.figure-full img{ max-width:100%; }
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* ====================================================== */
+/* WORKSPACE */
+/* ====================================================== */
+
+.workspace-label{
+  font-size:.82rem;
+  font-weight:600;
+  color:#444;
+  margin-top:8px;
+}
+
+.workspace{
+  width:100%;
+  height:150px;
+  border-top:1px solid #777;
+  margin-top:8px;
+  break-inside:avoid;
+  page-break-inside:avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-140{height:140px;}
+.workspace-150{height:150px;}
+.workspace-160{height:160px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-260{height:260px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+/* ====================================================== */
+/* LIST HELPERS */
+/* ====================================================== */
+
+.lower-alpha{
+  list-style-type:lower-alpha;
+}
+
+.lower-roman{
+  list-style-type:lower-roman;
+}
+
+/* ====================================================== */
+/* PRINT */
+/* ====================================================== */
+
+@media print{
+
+  body{
+    padding:14px;
+  }
+
+  .container{
+    max-width:100%;
+  }
+
+  .page-break{
+    page-break-before:always;
+  }
+
+  .problem,
+  .black-box,
+  .black-dok,
+  .tracking-card{
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+
+  .black-box,
+  .black-dok{
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- DOCUMENT HEADER -->
+<!-- ====================================================== -->
+
+<div class="name-line">
+<div>
+    Name:<span class="name-blank"></span>
+</div>
+<div>
+<strong>Unit 2: More Functions</strong>
+</div>
+</div>
+<h1>Unit 2 Progress Tracker</h1>
+
+<!-- ====================================================== -->
+<!-- PROGRESS TRACKING KEY -->
+<!-- ====================================================== -->
+
+<div class="key">
+<div class="key-title">Progress Tracking Key</div>
+<div><strong>Not Yet:</strong> I need more instruction and practice.</div>
+<div><strong>Getting There:</strong> I understand most of it but need more practice.</div>
+<div><strong>Got It!:</strong> I can do this independently.</div>
+<div><strong>Teach It!:</strong> I can teach it.</div>
+</div>
+
+<!-- ====================================================== -->
+<!-- PROGRESS TRACKING -->
+<!-- ====================================================== -->
+
+<h2>Progress Tracking</h2>
+
+
+<!-- ====================================================== -->
+<!-- DoK 1 PROGRESS CARD -->
+<!-- ====================================================== -->
+
+<div class="tracking-card">
+<div class="black-box">
+<strong>DoK 1 — </strong>Students can recognize functions from equations, graphs, tables, and descriptions; evaluate simple function notation; and identify core vocabulary for symmetry, function operations, composition, average rate of change, and inverses.
+  </div>
+<div class="tracking-grid">
+<div class="tracking-cell">
+<h3>Progress Tracking<br/>Check One</h3>
+<div class="check-list">
+<div>☐ Teach It!</div>
+<div>☐ Got It!</div>
+<div>☐ Getting There</div>
+<div>☐ Not Yet</div>
+</div>
+</div>
+<div class="tracking-cell">
+<h3>Evidence — assessment name and score</h3>
+</div>
+</div>
+</div>
+
+
+<!-- ====================================================== -->
+<!-- DoK 2 PROGRESS CARD -->
+<!-- ====================================================== -->
+
+<div class="tracking-card">
+<div class="black-box">
+<strong>DoK 2 — </strong>Students can evaluate function operations, compositions, inverse expressions, and average rates of change from multiple representations, then calculate and simplify function arithmetic, composite functions, difference quotients, and inverse functions while identifying restrictions when needed.
+  </div>
+<div class="tracking-grid">
+<div class="tracking-cell">
+<h3>Progress Tracking<br/>Check One</h3>
+<div class="check-list">
+<div>☐ Teach It!</div>
+<div>☐ Got It!</div>
+<div>☐ Getting There</div>
+<div>☐ Not Yet</div>
+</div>
+</div>
+<div class="tracking-cell">
+<h3>Evidence — assessment name and score</h3>
+</div>
+</div>
+</div>
+
+
+<!-- ====================================================== -->
+<!-- DoK 3 PROGRESS CARD -->
+<!-- ====================================================== -->
+
+<div class="tracking-card">
+<div class="black-box">
+<strong>DoK 3 — </strong>Students can justify conclusions about symmetry, domain restrictions, composition, average rate of change, and inverse relationships while explaining how function structure changes across representations.
+  </div>
+<div class="tracking-grid">
+<div class="tracking-cell">
+<h3>Progress Tracking<br/>Check One</h3>
+<div class="check-list">
+<div>☐ Teach It!</div>
+<div>☐ Got It!</div>
+<div>☐ Getting There</div>
+<div>☐ Not Yet</div>
+</div>
+</div>
+<div class="tracking-cell">
+<h3>Evidence — assessment name and score</h3>
+</div>
+</div>
+</div>
+
+
+<!-- ====================================================== -->
+<!-- DoK 4 PROGRESS CARD -->
+<!-- ====================================================== -->
+
+<div class="tracking-card">
+<div class="black-box">
+<strong>DoK 4 — </strong>Students can compare and defend multiple strategies, model and analyze situations involving function operations, composition, rates of change, symmetry, or inverses, and evaluate whether conclusions are reasonable in context.
+  </div>
+<div class="tracking-grid">
+<div class="tracking-cell">
+<h3>Progress Tracking<br/>Check One</h3>
+<div class="check-list">
+<div>☐ Teach It!</div>
+<div>☐ Got It!</div>
+<div>☐ Getting There</div>
+<div>☐ Not Yet</div>
+</div>
+</div>
+<div class="tracking-cell">
+<h3>Evidence — assessment name and score</h3>
+</div>
+</div>
+</div>
+
+
+<!-- ====================================================== -->
+<!-- PAGE BREAK AFTER DOK 4 TRACKING -->
+<!-- ====================================================== -->
+
+<div class="page-break"></div>
+
+<!-- ====================================================== -->
+<!-- PRACTICE BY DEPTH OF KNOWLEDGE -->
+<!-- ====================================================== -->
+
+<h2 class="practice-title">Unit 2 Practice by Depth of Knowledge</h2>
+
+
+<!-- ====================================================== -->
+<!-- DOK 1 — RUNGS 1–2 -->
+<!-- ====================================================== -->
+
+<div class="black-dok">
+<strong>DoK 1 — Rungs 1–2</strong>
+<span class="dok-small">
+    Students can recognize functions from equations, graphs, tables, and descriptions; evaluate simple function notation; and identify core vocabulary for symmetry, function operations, composition, average rate of change, and inverses.
+  </span>
+</div>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S1-003 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S1-003">
+<div class="problem-number">1.</div>
+<p>A graph is shown. Use symmetry to classify the function as even, odd, or neither.</p><ol class="lower-alpha"><li>What type of symmetry do you see?</li><li>What should be true about \(f(-x)\)?</li></ol>
+<div class="graph-block graph-md"><img alt="Odd function graph" src="figures/u02_progress_dok1_01_odd_function.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S1-005 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S1-005">
+<div class="problem-number">2.</div>
+<p>Use the table to determine whether the function appears even, odd, or neither.</p><table class="parent-table"><tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(2\)</td></tr><tr><th>\(f(x)\)</th><td>\(4\)</td><td>\(1\)</td><td>\(1\)</td><td>\(4\)</td></tr></table><p>Justify using the table.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S2-003 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S2-003">
+<div class="problem-number">3.</div>
+<p>The graphs of \(f\) and \(g\) are shown.</p>
+<ol class="lower-alpha"><li>Estimate \(f(2)\) and \(g(2)\).</li><li>Estimate \((f+g)(2)\).</li><li>Estimate \((f-g)(2)\).</li></ol>
+<div class="graph-block graph-md"><img alt="Graphs of f as a parabola and g as a line" src="figures/u02_progress_dok1_03_f_parabola_g_line.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S2-004 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S2-004">
+<div class="problem-number">4.</div>
+<p>Use the table to evaluate each expression.</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-2\)</td><td>\(0\)</td><td>\(3\)</td></tr><tr><th>\(f(x)\)</th><td>\(5\)</td><td>\(1\)</td><td>\(-4\)</td></tr><tr><th>\(g(x)\)</th><td>\(-2\)</td><td>\(6\)</td><td>\(3\)</td></tr></table>
+<ol class="lower-alpha"><li>\((f+g)(0)\)</li><li>\((fg)(-2)\)</li><li>\(\left(\frac{f}{g}\right)(3)\)</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-150"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S3-004 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S3-004">
+<div class="problem-number">5.</div>
+<p>Use the table.</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr><tr><th>\(f(x)\)</th><td>\(1\)</td><td>\(3\)</td><td>\(2\)</td><td>\(-1\)</td><td>\(0\)</td></tr><tr><th>\(g(x)\)</th><td>\(2\)</td><td>\(0\)</td><td>\(-1\)</td><td>\(3\)</td><td>\(1\)</td></tr></table>
+<ol class="lower-alpha"><li>\(f(g(0))\)</li><li>\(g(f(2))\)</li><li>\(f(f(1))\)</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-180"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S3-008 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S3-008">
+<div class="problem-number">6.</div>
+<p>Decide whether each expression represents function composition or function arithmetic.</p>
+<ol class="lower-alpha"><li>\(f(g(x))\)</li><li>\(f(x)+g(x)\)</li><li>\((f\circ g)(x)\)</li><li>\(f(x)g(x)\)</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S4-012 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S4-012">
+<div class="problem-number">7.</div>
+<p>Use the table to find the average rate of change from \(x=0\) to \(x=3\).</p><table class="parent-table"><tr><th>\(x\)</th><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td></tr><tr><th>\(f(x)\)</th><td>\(2\)</td><td>\(5\)</td><td>\(10\)</td><td>\(17\)</td></tr></table>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-120"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S5-014 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S5-014">
+<div class="problem-number">8.</div>
+<p>Use the horizontal line test to decide whether each graph has an inverse that is a function.</p>
+<div class="graph-block graph-lg"><img alt="Graph with three turns for horizontal line test" src="figures/u02_progress_dok1_08_three_turn_graph.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+
+<!-- ====================================================== -->
+<!-- DOK 2 — RUNGS 3–4 -->
+<!-- ====================================================== -->
+
+<div class="black-dok">
+<strong>DoK 2 — Rungs 3–4</strong>
+<span class="dok-small">
+    Students can evaluate function operations, compositions, inverse expressions, and average rates of change from multiple representations, then calculate and simplify function arithmetic, composite functions, difference quotients, and inverse functions while identifying restrictions when needed.
+  </span>
+</div>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S2-023 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S2-023">
+<div class="problem-number">1.</div>
+<p>The graph of \(f\) and the graph of \(g\) are shown separately.</p>
+<ol class="lower-alpha"><li>Estimate \(f(1)\) and \(g(1)\), then find \((f+g)(1)\).</li><li>Estimate \(f(4)\) and \(g(4)\), then find \((f-g)(4)\).</li><li>Use your graph values to find \((fg)(1)\).</li><li>Explain how you used the two graphs.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph of f as a square root function" src="figures/u02_progress_dok2_01_f_sqrt.png"/></div>
+<div class="graph-block graph-lg"><img alt="Graph of g as a parabola" src="figures/u02_progress_dok2_01_g_parabola.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S3-048 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S3-048">
+<div class="problem-number">2.</div>
+<p>Use the graph of \(f\) and the table for \(g\).</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr><tr><th>\(g(x)\)</th><td>\(1\)</td><td>\(3\)</td><td>\(-1\)</td><td>\(2\)</td><td>\(0\)</td></tr></table>
+<ol class="lower-alpha"><li>Find \(g(0)\).</li><li>Use the graph of \(f\) to find \(f(g(0))\).</li><li>Find \(g(2)\).</li><li>Use the graph of \(f\) to find \(f(g(2))\).</li><li>Explain how the table output becomes the graph input.</li></ol>
+<div class="graph-block graph-lg"><img alt="Linear graph of f" src="figures/u02_progress_dok2_02_linear_f_graph.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S3-049 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S3-049">
+<div class="problem-number">3.</div>
+<p>Use the equation for \(f\) and the graph of \(g\).</p><p style="text-align:center;">\(f(x)=2x-1\)</p>
+<ol class="lower-alpha"><li>Estimate \(g(3)\) from the graph.</li><li>Find \(f(g(3))\).</li><li>Estimate \(g(-1)\) from the graph.</li><li>Find \(f(g(-1))\).</li><li>Explain why the graph value must be found before using the equation.</li></ol>
+<div class="graph-block graph-lg"><img alt="Linear graph of g" src="figures/u02_progress_dok2_03_linear_g_graph.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S4-022 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S4-022">
+<div class="problem-number">4.</div>
+<p>Use a graph of \(f(x)=x^2-2\) to estimate the average rate of change from \(x=1\) to \(x=3\). Explain how this matches the idea of the difference quotient.</p>
+<div class="graph-block graph-lg"><img alt="Graph of f(x)=x squared minus 2" src="figures/u02_progress_dok2_04_x2_minus_2.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S4-029 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S4-029">
+<div class="problem-number">5.</div>
+<p>For \(f(x)=\sqrt{x}\), use a graph to estimate the average rate of change from \(x=1\) to \(x=4\). Then verify using exact function values.</p>
+<div class="graph-block graph-lg"><img alt="Graph of f(x)=sqrt(x)" src="figures/u02_progress_dok2_05_sqrt_x.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S5-027 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S5-027">
+<div class="problem-number">6.</div>
+<p>Use the graph of \(f\).</p><ol class="lower-alpha"><li>Sketch \(f^{-1}\).</li><li>Identify two reflected point pairs.</li><li>State whether \(f^{-1}\) is a function.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph of f(x)=5-x squared" src="figures/u02_progress_dok2_06_5_minus_x2.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S3-014 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S3-014">
+<div class="problem-number">7.</div>
+<p>Let \(f(x)=\sqrt{x}\) and \(g(x)=x-5\).</p>
+<ol class="lower-alpha"><li>Find \(f(g(x))\).</li><li>State the domain of \(f(g(x))\).</li><li>Explain why the domain is restricted.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-200"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S5-025 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S5-025">
+<div class="problem-number">8.</div>
+<p>Verify that \(f(x)=2x-1\) and \(g(x)=\frac{x+1}{2}\) are inverses using composition.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-220"></div>
+</section>
+
+
+
+<!-- ====================================================== -->
+<!-- DOK 3 — RUNGS 5–6 -->
+<!-- ====================================================== -->
+
+<div class="black-dok">
+<strong>DoK 3 — Rungs 5–6</strong>
+<span class="dok-small">
+    Students can justify conclusions about symmetry, domain restrictions, composition, average rate of change, and inverse relationships while explaining how function structure changes across representations.
+  </span>
+</div>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S1-021 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S1-021">
+<div class="problem-number">1.</div>
+<p>Consider the piecewise-defined function.</p><p style="text-align:center;">\(f(x)=\begin{cases}x^2 &amp; x\ge 0\\ -x^2 &amp; x&lt;0\end{cases}\)</p><ol class="lower-alpha"><li>Classify the function as even, odd, or neither.</li><li>Justify algebraically.</li><li>Describe its symmetry.</li></ol>
+
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S2-033 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S2-033">
+<div class="problem-number">2.</div>
+<p>Let \(f(x)=\sqrt{x+1}\) and \(g(x)=6-x\).</p>
+<ol class="lower-alpha"><li>Find the domain of \(f+g\).</li><li>Find the domain of \(fg\).</li><li>Find the domain of \(\frac{f}{g}\).</li><li>Explain why the quotient has one additional restriction.</li></ol>
+
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S3-050 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S3-050">
+<div class="problem-number">3.</div>
+<p>Use the graph of \(f\) and the graph of \(g\).</p>
+<ol class="lower-alpha"><li>Estimate \(g(1)\), then use that value to estimate \(f(g(1))\).</li><li>Estimate \(f(1)\), then use that value to estimate \(g(f(1))\).</li><li>Are the results the same?</li><li>Explain why the order of composition matters using the graphs.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graphs of f as a cube root function and g as a line" src="figures/u02_progress_dok3_03_cuberoot_line.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S4-035 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S4-035">
+<div class="problem-number">4.</div>
+<p>Use graph values to estimate average rate of change from \(x=-2\) to \(x=2\). Then explain why another interval with the same length may have a different average rate of change.</p>
+<div class="graph-block graph-lg"><img alt="Parabola graph for average rate of change" src="figures/u02_progress_dok3_04_parabola.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S4-036 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S4-036">
+<div class="problem-number">5.</div>
+<p>A cyclist’s distance is modeled by \(d(t)=4t^2+8t\).</p><ol class="lower-alpha"><li>Find the average speed from \(t=1\) to \(t=4\).</li><li>Find the average speed from \(t=4\) to \(t=7\).</li><li>Explain why the two average speeds are different.</li></ol>
+
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S5-041 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S5-041">
+<div class="problem-number">6.</div>
+<p>A graph is reflected across \(y=x\). Explain how:</p><ol class="lower-alpha"><li>domain and range change</li><li>\(x\)- and \(y\)-intercepts change</li><li>points on the graph change</li></ol>
+
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S3-035 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S3-035">
+<div class="problem-number">7.</div>
+<p>Compare function arithmetic and function composition.</p><p>Use examples to explain the difference between \((f+g)(x)\) and \(f(g(x))\).</p><p>Your explanation should include meaning, notation, and order.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S5-039 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S5-039">
+<div class="problem-number">8.</div>
+<p>A student finds the inverse of \(f(x)=\sqrt{x+6}\) as \(f^{-1}(x)=x^2+6\).</p><ol class="lower-alpha"><li>Identify the error.</li><li>Find the correct inverse.</li><li>State the correct domain of the inverse.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-250"></div>
+</section>
+
+
+
+<!-- ====================================================== -->
+<!-- DOK 4 — RUNGS 7–8 -->
+<!-- ====================================================== -->
+
+<div class="black-dok">
+<strong>DoK 4 — Rungs 7–8</strong>
+<span class="dok-small">
+    Students can compare and defend multiple strategies, model and analyze situations involving function operations, composition, rates of change, symmetry, or inverses, and evaluate whether conclusions are reasonable in context.
+  </span>
+</div>
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S1-027 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S1-027">
+<div class="problem-number">1.</div>
+<p>A student says, “If a graph looks symmetric, then it must be even or odd.”</p><ol class="lower-alpha"><li>Is this always true?</li><li>Use the figure or another example as a counterexample.</li><li>Explain the difference between visual symmetry and the algebraic definitions of even and odd functions.</li></ol>
+
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S1-030 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S1-030">
+<div class="problem-number">2.</div>
+<p>Create a function that is symmetric about the \(y\)-axis, has a maximum at \((0,5)\), and is not quadratic.</p><p>Write the equation, sketch or describe the graph, and justify why it satisfies all conditions.</p>
+<div class="graph-block graph-lg"><img alt="Blank coordinate plane" src="figures/u02_progress_blank_plane_01.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S2-044 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S2-044">
+<div class="problem-number">3.</div>
+<p>A school store sells shirts and hats. Let \(S(x)\) be shirt revenue and \(H(x)\) be hat revenue after \(x\) days.</p>
+<ol class="lower-alpha"><li>Create reasonable functions \(S(x)\) and \(H(x)\).</li><li>Write and interpret \((S+H)(x)\).</li><li>Write and interpret \((S-H)(x)\).</li><li>Explain whether \(\frac{S(x)}{H(x)}\) has a meaningful interpretation.</li></ol>
+
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S4-048 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S4-048">
+<div class="problem-number">4.</div>
+<p>Use a graph to explain how secant slopes approach a tangent slope as \(h\) gets closer to 0.</p><ol class="lower-alpha"><li>Describe what changes in the picture.</li><li>Explain what stays fixed.</li><li>Connect your explanation to the difference quotient.</li></ol>
+<div class="graph-block graph-lg"><img alt="Blank coordinate plane" src="figures/u02_progress_blank_plane_02.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S5-049 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S5-049">
+<div class="problem-number">5.</div>
+<p>Design a graph that has an inverse relation but not an inverse function.</p><ol class="lower-alpha"><li>Sketch or describe the graph.</li><li>Explain why the inverse relation exists.</li><li>Explain why the inverse is not a function.</li></ol>
+<div class="graph-block graph-lg"><img alt="Blank coordinate plane" src="figures/u02_progress_blank_plane_03.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S2-041 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S2-041">
+<div class="problem-number">6.</div>
+<p>Create two functions \(f\) and \(g\) so that:</p>
+<ol class="lower-alpha"><li>\((f+g)(x)\) is linear.</li><li>\((fg)(x)\) is quadratic.</li><li>\(\frac{f}{g}\) has an excluded value.</li></ol>
+<p>Explain why your choices satisfy all three conditions.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S3-041 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S3-041">
+<div class="problem-number">7.</div>
+<p>Design a real-world situation involving two steps where the order matters.</p>
+<ol class="lower-alpha"><li>Define both functions.</li><li>Write both compositions.</li><li>Explain why one order matches the situation and the other does not.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+<!-- ====================================================== -->
+<!-- SOURCE PROBLEM U2S5-045 -->
+<!-- ====================================================== -->
+
+<section class="problem" id="problem-U2S5-045">
+<div class="problem-number">8.</div>
+<p>Design two functions that are inverses of each other.</p><ol class="lower-alpha"><li>Write both functions.</li><li>Verify by composition.</li><li>Explain how the graphs would relate.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-300"></div>
+</section>
+
+
+</div>
+</body>
+</html>
