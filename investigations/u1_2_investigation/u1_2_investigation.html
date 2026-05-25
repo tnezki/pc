@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>u1_2_investigation</title>
+  <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+/* ======================= RESET / BASE ======================= */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.45;color:#222;background:#fff;padding:20px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.container{max-width:900px;margin:0 auto;}
+.page-break{page-break-before:always;}
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.45rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.1rem;margin-top:8px;margin-bottom:8px;}
+h4{color:#00003d;font-size:1rem;margin:10px 0 6px 0;}
+p{margin-bottom:8px;}
+ul,ol{margin-left:24px;margin-bottom:8px;}
+li{margin-bottom:6px;}
+strong{color:#00003d;}
+/* ======================= TITLE / HEADER ======================= */
+.title-page{min-height:9.5in;display:flex;flex-direction:column;justify-content:center;text-align:center;border:4px solid #00003d;padding:42px;break-inside:avoid;page-break-inside:avoid;}
+.title-page .course{font-size:1rem;text-transform:uppercase;letter-spacing:2px;color:#555;margin-bottom:18px;}
+.title-page h1{font-size:2.35rem;line-height:1.15;margin-bottom:18px;}
+.title-page .subtitle{font-size:1.35rem;color:#004d99;font-weight:700;margin-bottom:24px;}
+.title-page .details{font-size:1.05rem;color:#333;margin-top:18px;}
+.header-strip{background:#00003d;color:#fff;padding:10px 14px;margin:0 0 14px 0;font-weight:700;font-size:1.1rem;break-after:avoid;}
+/* ======================= CARDS / PROBLEMS ======================= */
+.problem,.teacher-box,.key-point{border:1px solid #777;padding:14px 14px 12px 14px;margin-bottom:14px;break-inside:avoid;page-break-inside:avoid;}
+.problem-number{font-weight:700;color:#00003d;margin-bottom:8px;font-size:1.03rem;}
+.small-note{font-size:.92rem;color:#555;}
+.teacher-note{background:#f7f7f7;border-left:4px solid #777;padding:8px 10px;margin:10px 0;}
+.dok-bar{background:#000;color:#fff;font-weight:700;padding:8px 12px;margin:18px 0 12px 0;break-after:avoid;}
+.workspace{width:100%;margin-top:8px;border-top:1px solid #777;break-inside:avoid;page-break-inside:avoid;}
+.workspace-60{height:60px}.workspace-80{height:80px}.workspace-100{height:100px}.workspace-120{height:120px}.workspace-150{height:150px}.workspace-180{height:180px}.workspace-220{height:220px}.workspace-260{height:260px}
+.workspace-label{margin-top:8px;font-size:.85rem;font-weight:600;color:#444;}
+.tag{font-size:.85rem;background:#eaf1fb;border:1px solid #a9b9cf;color:#22354d;padding:2px 7px;border-radius:4px;margin-left:6px;}
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0;}
+.sort-card{border:1px solid #999;padding:10px;min-height:54px;display:flex;align-items:center;justify-content:center;text-align:center;background:#fff;break-inside:avoid;page-break-inside:avoid;}
+.sort-card strong{display:block;margin-bottom:4px;}
+.number-line{font-family:'Courier New',monospace;letter-spacing:1px;white-space:pre;text-align:center;border:1px solid #aaa;background:#fafafa;padding:10px;margin:8px 0;font-size:.95rem;overflow:hidden;}
+.rule-box{background:#f7f7f7;border-left:4px solid #00003d;padding:10px;margin:10px 0;}
+/* ======================= TABLES ======================= */
+table{width:100%;border-collapse:collapse;margin:10px 0;break-inside:avoid;page-break-inside:avoid;}
+th,td{border:1px solid #888;padding:7px;text-align:center;vertical-align:middle;}
+th{background:#eaf1fb;color:#00003d;}
+td.left,th.left{text-align:left;}
+/* ======================= PRINT ======================= */
+@media print{body{padding:10px}.container{max-width:100%}.title-page{min-height:9.75in}.card-grid{grid-template-columns:1fr 1fr;gap:8px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ======================= TITLE PAGE ======================= -->
+    <section class="title-page">
+      <div class="course">Precalculus - Unit 1</div>
+      <h1>Section 1.2 Investigation</h1>
+      <div class="subtitle">Interval &amp; Inequality Notation</div>
+      <p><strong>Investigation:</strong> How do inequalities, intervals, and number-line graphs show the same set?</p>
+      <p><strong>Time:</strong> 15-20 minutes</p>
+      <p><strong>Format:</strong> Card sort, endpoint investigation, partner talk, and whole-class discussion</p>
+      <div class="details">Learning Target: Represent and interpret sets using interval notation, inequality notation, and number-line graphs.</div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= DIRECTIONS PAGE ======================= -->
+    <section>
+      <div class="header-strip">Investigation Directions</div>
+      <div class="problem">
+        <h2>Setup</h2>
+        <ul>
+          <li><strong>Grouping:</strong> Partners or groups of 3.</li>
+          <li><strong>Materials:</strong> Student handout, pencil</li>
+          <li><strong>Teacher display:</strong> Project one number-line graph and one matching interval during the launch.</li>
+          <li><strong>Timing:</strong> 5 minutes for card matching, 7-9 minutes for endpoint rule discovery, 5 minutes for discussion and synthesis.</li>
+        </ul>
+      </div>
+      <div class="problem">
+        <h2>Student Goal</h2>
+        <p>Today you will compare three ways to describe the same set of numbers.</p>
+        <p style="text-align:center;font-size:1.15rem;">$\text{Inequality} \qquad \text{Interval} \qquad \text{Number-line Graph}$</p>
+        <p>By the end, you should be able to explain when to use parentheses, brackets, open circles, and closed circles.</p>
+      </div>
+      <div class="problem">
+        <h2>Norms for the Investigation</h2>
+        <ul>
+          <li>Match by meaning, not by symbols only.</li>
+          <li>Ask: “Are the endpoint numbers included?” before choosing a bracket or circle.</li>
+          <li>Use test values to check whether a graph, inequality, and interval describe the same set.</li>
+          <li>Be ready to explain why infinity never gets a bracket.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= STUDENT HANDOUT ======================= -->
+    <section>
+      <div class="header-strip">Student Investigation Handout</div>
+      <div class="problem">
+        <h2>Part 1: Card Sort - Match the Same Set</h2>
+        <p>Each row below contains an inequality, an interval, a number-line graph, and a verbal description. Some cards are already grouped, but one card in each row is missing. Fill in the missing representation.</p>
+        <table>
+          <tr><th>Set</th><th>Inequality</th><th>Interval Notation</th><th>Number-line Graph</th><th>Verbal Description</th></tr>
+          <tr>
+            <td>A</td>
+            <td>$x \le -2$</td>
+            <td></td>
+            <td><div class="number-line">&lt;====●----------------
+     -2</div></td>
+            <td>All numbers less than or equal to $-2$.</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>$x&gt;5$</td>
+            <td></td>
+            <td><div class="number-line">----------------○====&gt;
+                 5</div></td>
+            <td>All numbers greater than $5$.</td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td></td>
+            <td>$(-3,4]$</td>
+            <td><div class="number-line">-----○==========●-----
+    -3         4</div></td>
+            <td>Numbers greater than $-3$ and less than or equal to $4$.</td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td></td>
+            <td>$[-1,6)$</td>
+            <td><div class="number-line">-----●==========○-----
+    -1         6</div></td>
+            <td>Numbers from $-1$ up to but not including $6$.</td>
+          </tr>
+        </table>
+        <div class="workspace-label">What patterns do you notice?</div>
+        <div class="workspace workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <h2>Part 2: Endpoint Investigation</h2>
+        <p>For each situation, decide whether each endpoint should be included or not included. Then write an inequality and interval notation.</p>
+        <table>
+          <tr><th>Situation</th><th>Endpoint Included?</th><th>Inequality</th><th>Interval Notation</th></tr>
+          <tr>
+            <td class="left">A ride requires riders to be at least 48 inches tall.</td>
+            <td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td class="left">A coupon is valid for purchases under $30.</td>
+            <td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td class="left">A quiz score is passing if it is from 70 to 100, including both.</td>
+            <td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td class="left">A machine works only when the temperature is greater than $-5^\circ$ and no more than $12^\circ$.</td>
+            <td></td><td></td><td></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="problem">
+        <h2>Part 3: Build the Rule</h2>
+        <p>Use your matches from Parts 1 and 2 to complete each rule.</p>
+        <ol>
+          <li>A closed circle means the endpoint is ______________________.</li>
+          <li>An open circle means the endpoint is ______________________.</li>
+          <li>A bracket, $[$ or $]$, means the endpoint is ______________________.</li>
+          <li>A parenthesis, $( $ or $ )$, means the endpoint is ______________________.</li>
+          <li>Infinity, $\infty$ or $-\infty$, always uses ______________________ because infinity is not a number you can include.</li>
+        </ol>
+      </div>
+
+      <div class="problem">
+        <h2>Part 4: Challenge Matches</h2>
+        <p>Complete each row. Then test one value inside the set and one value outside the set.</p>
+        <table>
+          <tr><th>Graph or Interval</th><th>Inequality</th><th>Test Value Inside</th><th>Test Value Outside</th></tr>
+          <tr>
+            <td>$(-\infty,2]$</td>
+            <td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>$x&gt;-4$</td>
+            <td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>$[0,9]$</td>
+            <td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>$-6&lt;x\le1$</td>
+            <td></td><td></td><td></td>
+          </tr>
+        </table>
+        <div class="workspace-label">Explain one row.</div>
+        <div class="workspace workspace-100"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= DISCUSSION QUESTIONS ======================= -->
+    <section>
+      <div class="header-strip">Discussion Questions</div>
+      <div class="problem">
+        <ol>
+          <li>How does the word “at least” help you decide between an open circle and a closed circle?</li>
+          <li>Why does $(-3,4]$ use a parenthesis on one side and a bracket on the other?</li>
+          <li>Why do $(-\infty,5)$ and $x&lt;5$ represent the same set?</li>
+          <li>Why does infinity always use a parenthesis instead of a bracket?</li>
+          <li>A student says $x\le7$ should be written as $( -\infty,7 )$. What is correct about the student’s thinking, and what needs to be fixed?</li>
+        </ol>
+        <div class="workspace-label">Class Notes / Final Rule</div>
+        <div class="workspace workspace-180"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= TEACHER SCRIPT ======================= -->
+    <section>
+      <div class="header-strip">Teaching Resource 1: Teacher Script</div>
+      <div class="teacher-box">
+        <h2>Purpose</h2>
+        <p>This investigation helps students discover that inequalities, interval notation, and number-line graphs are three representations of the same set of numbers. The main conceptual goal is endpoint inclusion: students should connect inclusive language to closed circles and brackets, and exclusive language to open circles and parentheses.</p>
+      </div>
+      <div class="teacher-box">
+        <h2>Launch: 2 minutes</h2>
+        <p><strong>Say:</strong> “Today you are not memorizing a notation chart first. You are going to match examples and use those matches to build the rules for yourself.”</p>
+        <p><strong>Quick display:</strong> Show $x\ge2$ and ask students whether $2$ itself is allowed. Then connect that one decision to a closed circle and a bracket.</p>
+      </div>
+      <div class="teacher-box">
+        <h2>Investigation: 10-12 minutes</h2>
+        <ol>
+          <li><strong>Part 1:</strong> Circulate and ask, “Is the endpoint included?” before students fill the interval notation.</li>
+          <li><strong>Part 2:</strong> Push students to use the language of the situation. Words like “at least,” “no more than,” and “including” should trigger inclusion.</li>
+          <li><strong>Part 3:</strong> Do not give the rules too early. Let students use the completed rows to write the rules.</li>
+          <li><strong>Part 4:</strong> Ask students to verify with test values. This prevents symbol-only matching.</li>
+        </ol>
+      </div>
+      <div class="teacher-box">
+        <h2>Synthesis: 5 minutes</h2>
+        <div class="teacher-note">
+          <p>Final summary: A closed circle and a bracket mean the endpoint is included. An open circle and a parenthesis mean the endpoint is not included. Infinity always uses a parenthesis because infinity is a direction, not a number that can be included.</p>
+        </div>
+        <p><strong>Closure prompt:</strong> “Write one set three ways: as an inequality, as interval notation, and as a number-line graph.”</p>
+      </div>
+      <div class="teacher-box">
+        <h2>Common Misconceptions to Watch For</h2>
+        <ul>
+          <li>Students may reverse the direction of a one-sided inequality when converting to interval notation.</li>
+          <li>Students may use brackets with infinity.</li>
+          <li>Students may confuse $<$ with $\le$ when reading verbal phrases.</li>
+          <li>Students may treat $(-3,4]$ as two separate numbers instead of all values between them.</li>
+          <li>Students may write compound inequalities in the wrong order, such as $4&lt;x\le-3$.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= ANSWER KEY ======================= -->
+    <section>
+      <div class="header-strip">Teaching Resource 2: Answer Key</div>
+      <div class="problem">
+        <div class="problem-number">Part 1: Card Sort - Match the Same Set</div>
+        <table>
+          <tr><th>Set</th><th>Inequality</th><th>Interval Notation</th><th>Verbal Description</th></tr>
+          <tr><td>A</td><td>$x\ge-2$</td><td>$[-2,\infty)$</td><td>All numbers greater than or equal to $-2$.</td></tr>
+          <tr><td>B</td><td>$x&lt;5$</td><td>$(-\infty,5)$</td><td>All numbers less than $5$.</td></tr>
+          <tr><td>C</td><td>$-3&lt;x\le4$</td><td>$(-3,4]$</td><td>Numbers greater than $-3$ and less than or equal to $4$.</td></tr>
+          <tr><td>D</td><td>$-1\le x&lt;6$</td><td>$[-1,6)$</td><td>Numbers from $-1$ up to but not including $6$.</td></tr>
+        </table>
+        <p><strong>Pattern:</strong> Closed circles match brackets and inclusive inequalities. Open circles match parentheses and strict inequalities.</p>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 2: Endpoint Investigation</div>
+        <table>
+          <tr><th>Situation</th><th>Endpoint Included?</th><th>Inequality</th><th>Interval Notation</th></tr>
+          <tr><td class="left">A ride requires riders to be at least 48 inches tall.</td><td>48 included</td><td>$h\ge48$</td><td>$[48,\infty)$</td></tr>
+          <tr><td class="left">A coupon is valid for purchases under $30.</td><td>30 not included</td><td>$p&lt;30$</td><td>$(-\infty,30)$</td></tr>
+          <tr><td class="left">A quiz score is passing if it is from 70 to 100, including both.</td><td>70 and 100 included</td><td>$70\le s\le100$</td><td>$[70,100]$</td></tr>
+          <tr><td class="left">A machine works only when the temperature is greater than $-5^\circ$ and no more than $12^\circ$.</td><td>$-5$ not included; $12$ included</td><td>$-5&lt;t\le12$</td><td>$(-5,12]$</td></tr>
+        </table>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 3: Build the Rule</div>
+        <ol>
+          <li>A closed circle means the endpoint is <strong>included</strong>.</li>
+          <li>An open circle means the endpoint is <strong>not included</strong>.</li>
+          <li>A bracket, $[$ or $]$, means the endpoint is <strong>included</strong>.</li>
+          <li>A parenthesis, $( $ or $ )$, means the endpoint is <strong>not included</strong>.</li>
+          <li>Infinity, $\infty$ or $-\infty$, always uses <strong>a parenthesis</strong> because infinity is not a number you can include.</li>
+        </ol>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 4: Challenge Matches</div>
+        <table>
+          <tr><th>Graph or Interval</th><th>Inequality</th><th>Sample Inside</th><th>Sample Outside</th></tr>
+          <tr><td>$(-\infty,2]$</td><td>$x\le2$</td><td>$0$ or $2$</td><td>$3$</td></tr>
+          <tr><td>$x&gt;-4$</td><td>$(-4,\infty)$</td><td>$0$</td><td>$-4$ or $-5$</td></tr>
+          <tr><td>$[0,9]$</td><td>$0\le x\le9$</td><td>$5$ or $0$</td><td>$10$ or $-1$</td></tr>
+          <tr><td>$-6&lt;x\le1$</td><td>$(-6,1]$</td><td>$0$ or $1$</td><td>$-6$ or $2$</td></tr>
+        </table>
+        <p><strong>Sample explanation:</strong> For $-6&lt;x\le1$, $-6$ is not included because the symbol is strict, but $1$ is included because the symbol allows equality.</p>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Discussion Questions</div>
+        <ol>
+          <li><strong>At least:</strong> “At least” means the value can equal the endpoint, so it uses a closed circle or bracket.</li>
+          <li><strong>$(-3,4]$:</strong> $-3$ is not included, but $4$ is included.</li>
+          <li><strong>$(-\infty,5)$ and $x&lt;5$:</strong> Both describe every number less than $5$.</li>
+          <li><strong>Infinity:</strong> Infinity is not a fixed endpoint value, so it cannot be included.</li>
+          <li><strong>Student error:</strong> The student knows the set goes left forever and stops at $7$, but $7$ must be included, so the correct interval is $(-\infty,7]$.</li>
+        </ol>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
