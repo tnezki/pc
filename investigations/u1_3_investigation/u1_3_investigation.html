@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>u1_3_investigation</title>
+  <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+/* ======================= RESET / BASE ======================= */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.45;color:#222;background:#fff;padding:20px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.container{max-width:900px;margin:0 auto;}
+.page-break{page-break-before:always;}
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.45rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.1rem;margin-top:8px;margin-bottom:8px;}
+h4{color:#00003d;font-size:1rem;margin:10px 0 6px 0;}
+p{margin-bottom:8px;}
+ul,ol{margin-left:24px;margin-bottom:8px;}
+li{margin-bottom:6px;}
+strong{color:#00003d;}
+/* ======================= TITLE / HEADER ======================= */
+.title-page{min-height:9.5in;display:flex;flex-direction:column;justify-content:center;text-align:center;border:4px solid #00003d;padding:42px;break-inside:avoid;page-break-inside:avoid;}
+.title-page .course{font-size:1rem;text-transform:uppercase;letter-spacing:2px;color:#555;margin-bottom:18px;}
+.title-page h1{font-size:2.35rem;line-height:1.15;margin-bottom:18px;}
+.title-page .subtitle{font-size:1.35rem;color:#004d99;font-weight:700;margin-bottom:24px;}
+.title-page .details{font-size:1.05rem;color:#333;margin-top:18px;}
+.header-strip{background:#00003d;color:#fff;padding:10px 14px;margin:0 0 14px 0;font-weight:700;font-size:1.1rem;break-after:avoid;}
+/* ======================= CARDS / PROBLEMS ======================= */
+.problem,.teacher-box,.key-point{border:1px solid #777;padding:14px 14px 12px 14px;margin-bottom:14px;break-inside:avoid;page-break-inside:avoid;}
+.problem-number{font-weight:700;color:#00003d;margin-bottom:8px;font-size:1.03rem;}
+.small-note{font-size:.92rem;color:#555;}
+.teacher-note{background:#f7f7f7;border-left:4px solid #777;padding:8px 10px;margin:10px 0;}
+.dok-bar{background:#000;color:#fff;font-weight:700;padding:8px 12px;margin:18px 0 12px 0;break-after:avoid;}
+.workspace{width:100%;margin-top:8px;border-top:1px solid #777;break-inside:avoid;page-break-inside:avoid;}
+.workspace-60{height:60px}.workspace-80{height:80px}.workspace-100{height:100px}.workspace-120{height:120px}.workspace-150{height:150px}.workspace-180{height:180px}.workspace-220{height:220px}.workspace-260{height:260px}
+.workspace-label{margin-top:8px;font-size:.85rem;font-weight:600;color:#444;}
+.tag{font-size:.85rem;background:#eaf1fb;border:1px solid #a9b9cf;color:#22354d;padding:2px 7px;border-radius:4px;margin-left:6px;}
+.rep-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:14px;align-items:start;}
+.graph-block{text-align:center;margin:8px 0;break-inside:avoid;page-break-inside:avoid;}
+.graph-block img{max-width:100%;height:auto;border:1px solid #bbb;background:#fff;}
+.graph-small img{max-width:4.2in;}
+/* ======================= TABLES ======================= */
+table{width:100%;border-collapse:collapse;margin:10px 0;break-inside:avoid;page-break-inside:avoid;}
+th,td{border:1px solid #888;padding:7px;text-align:center;vertical-align:middle;}
+th{background:#eaf1fb;color:#00003d;}
+td.left,th.left{text-align:left;}
+/* ======================= PRINT ======================= */
+@media print{body{padding:10px}.container{max-width:100%}.title-page{min-height:9.75in}.rep-grid{grid-template-columns:1fr 1.1fr;gap:10px}.graph-small img{max-width:4.0in}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ======================= TITLE PAGE ======================= -->
+    <section class="title-page">
+      <div class="course">Precalculus - Unit 1</div>
+      <h1>Section 1.3 Investigation</h1>
+      <div class="subtitle">Domain &amp; Range</div>
+      <p><strong>Investigation:</strong> Where can the graph live?</p>
+      <p><strong>Time:</strong> 15-20 minutes</p>
+      <p><strong>Format:</strong> Partner investigation, graph-shadow reasoning, equation restriction lab, and whole-class discussion</p>
+      <div class="details">Learning Target: Determine and justify the domain and range of functions using graphical and algebraic reasoning.</div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= DIRECTIONS PAGE ======================= -->
+    <section>
+      <div class="header-strip">Investigation Directions</div>
+      <div class="problem">
+        <h2>Setup</h2>
+        <ul>
+          <li><strong>Grouping:</strong> Partners or groups of 3.</li>
+          <li><strong>Materials:</strong> Student handout and pencil.</li>
+          <li><strong>Teacher display:</strong> Project one graph during the launch and model the idea of shadowing onto an axis.</li>
+          <li><strong>Timing:</strong> 4 minutes for graph shadows, 7-9 minutes for the equation restriction lab, and 5 minutes for discussion and synthesis.</li>
+        </ul>
+      </div>
+      <div class="problem">
+        <h2>Student Goal</h2>
+        <p>Today you will discover how domain and range can be seen from a graph and explained from an equation.</p>
+        <p style="text-align:center;font-size:1.15rem;">\[\text{Domain: possible inputs} \qquad \text{Range: possible outputs}\]</p>
+        <p>Instead of memorizing rules first, you will look for patterns: endpoints, arrows, holes, square roots, and denominators all give clues.</p>
+      </div>
+      <div class="problem">
+        <h2>Norms for the Investigation</h2>
+        <ul>
+          <li>Read domain from left to right using the x-values touched by the graph.</li>
+          <li>Read range from bottom to top using the y-values touched by the graph.</li>
+          <li>Pay attention to open circles, closed circles, arrows, and breaks.</li>
+          <li>When using an equation, test values near the restriction before writing a final rule.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= STUDENT HANDOUT ======================= -->
+    <section>
+      <div class="header-strip">Student Investigation Handout</div>
+      <div class="problem">
+        <h2>Part 1: Graph Shadows</h2>
+        <p>For each graph, imagine shining a light straight down to the x-axis. The shadow on the x-axis is the <strong>domain</strong>. Then imagine shining a light sideways to the y-axis. The shadow on the y-axis is the <strong>range</strong>.</p>
+        <ol>
+          <li>Write the domain in interval notation.</li>
+          <li>Write the range in interval notation.</li>
+          <li>Circle the feature that affected your answer most: endpoint, arrow, open circle, closed circle, hole, or break.</li>
+        </ol>
+      </div>
+      <div class="rep-grid">
+        <div class="problem">
+          <div class="problem-number">Graph A: Segment</div>
+          <div class="graph-block graph-small"><img src="figures/u1_3_graph_1_segment.png" alt="Line segment from closed point to open point"></div>
+          <p>Domain: ____________________</p>
+          <p>Range: ____________________</p>
+        </div>
+        <div class="problem">
+          <div class="problem-number">Graph B: Parabola</div>
+          <div class="graph-block graph-small"><img src="figures/u1_3_graph_2_parabola.png" alt="Upward-opening parabola with arrows"></div>
+          <p>Domain: ____________________</p>
+          <p>Range: ____________________</p>
+        </div>
+      </div>
+      <div class="rep-grid">
+        <div class="problem">
+          <div class="problem-number">Graph C: Square Root Shape</div>
+          <div class="graph-block graph-small"><img src="figures/u1_3_graph_3_sqrt.png" alt="Square root graph starting at a closed point"></div>
+          <p>Domain: ____________________</p>
+          <p>Range: ____________________</p>
+        </div>
+        <div class="problem">
+          <div class="problem-number">Graph D: Rational Shape</div>
+          <div class="graph-block graph-small"><img src="figures/u1_3_graph_4_rational.png" alt="Rational graph with vertical and horizontal asymptotes"></div>
+          <p>Domain: ____________________</p>
+          <p>Range: ____________________</p>
+        </div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <section>
+      <div class="header-strip">Part 2: Equation Restriction Lab</div>
+      <div class="problem">
+        <h2>Why are some inputs not allowed?</h2>
+        <p>For each equation, test the suggested x-values. Then decide which x-values are allowed and write the domain in interval notation.</p>
+        <table>
+          <tr><th>Function</th><th>Test Values</th><th>What goes wrong?</th><th>Domain</th></tr>
+          <tr><td>\(f(x)=x^2-4\)</td><td>\(-2,0,3\)</td><td></td><td></td></tr>
+          <tr><td>\(g(x)=\sqrt{x-3}\)</td><td>\(2,3,4\)</td><td></td><td></td></tr>
+          <tr><td>\(h(x)=\sqrt{6-x}\)</td><td>\(5,6,7\)</td><td></td><td></td></tr>
+          <tr><td>\(p(x)=\dfrac{1}{x+2}\)</td><td>\(-3,-2,-1\)</td><td></td><td></td></tr>
+          <tr><td>\(q(x)=\dfrac{x+1}{x^2-9}\)</td><td>\(-3,0,3\)</td><td></td><td></td></tr>
+        </table>
+      </div>
+      <div class="problem">
+        <h2>Pattern Finding</h2>
+        <ol>
+          <li>What kind of equation usually has no domain restriction?</li>
+          <li>What must be true inside a square root?</li>
+          <li>What must never happen in a denominator?</li>
+          <li>How is finding domain from a graph different from finding domain from an equation?</li>
+        </ol>
+        <div class="workspace-label">Pattern Notes</div>
+        <div class="workspace workspace-180"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <section>
+      <div class="header-strip">Part 3: Match the Reason to the Restriction</div>
+      <div class="problem">
+        <h2>Classify the Restriction</h2>
+        <p>Match each function or graph description to the reason its domain or range is restricted.</p>
+        <table>
+          <tr><th>Function or Graph</th><th>Restriction Reason</th><th>Domain or Range</th></tr>
+          <tr><td>\(y=\sqrt{x+4}\)</td><td></td><td></td></tr>
+          <tr><td>\(y=\dfrac{5}{x-1}\)</td><td></td><td></td></tr>
+          <tr><td>A line segment from a closed point at \(x=-2\) to an open point at \(x=6\)</td><td></td><td></td></tr>
+          <tr><td>An upward-opening parabola with vertex \((3,-5)\)</td><td></td><td></td></tr>
+          <tr><td>A discrete relation with five plotted points</td><td></td><td></td></tr>
+        </table>
+      </div>
+      <div class="rep-grid">
+        <div class="problem">
+          <div class="problem-number">Graph E: Discrete Points</div>
+          <div class="graph-block graph-small"><img src="figures/u1_3_graph_5_discrete.png" alt="Discrete relation with five plotted points"></div>
+          <p>Domain: ____________________</p>
+          <p>Range: ____________________</p>
+        </div>
+        <div class="problem">
+          <div class="problem-number">Graph F: Piecewise Graph</div>
+          <div class="graph-block graph-small"><img src="figures/u1_3_graph_6_piecewise.png" alt="Piecewise graph with endpoint and ray"></div>
+          <p>Domain: ____________________</p>
+          <p>Range: ____________________</p>
+        </div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= DISCUSSION QUESTIONS ======================= -->
+    <section>
+      <div class="header-strip">Discussion Questions</div>
+      <div class="problem">
+        <ol>
+          <li>How can you tell the difference between domain and range from a graph?</li>
+          <li>Why does an open point change interval notation?</li>
+          <li>Why does \(\sqrt{x-3}\) have a restricted domain, but \(x^2-3\) does not?</li>
+          <li>Why must values that make a denominator zero be excluded?</li>
+          <li>A student says, “If the graph has arrows, both domain and range are all real numbers.” What is correct about this idea, and what needs to be fixed?</li>
+        </ol>
+        <div class="workspace-label">Class Notes / Final Rule</div>
+        <div class="workspace workspace-180"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= TEACHER SCRIPT ======================= -->
+    <section>
+      <div class="header-strip">Teaching Resource 1: Teacher Script</div>
+      <div class="teacher-box">
+        <h2>Purpose</h2>
+        <p>This investigation helps students discover that domain is the set of possible input values and range is the set of possible output values. Students first reason graphically using shadows on the axes, then explain algebraic restrictions caused by square roots and denominators.</p>
+      </div>
+      <div class="teacher-box">
+        <h2>Launch: 2 minutes</h2>
+        <p><strong>Say:</strong> “Today we are asking where a function is allowed to live. Domain is where the graph lives left to right. Range is where the graph lives bottom to top.”</p>
+        <p><strong>Teacher move:</strong> Project Graph A and physically trace the x-values touched by the graph, then the y-values touched by the graph.</p>
+      </div>
+      <div class="teacher-box">
+        <h2>Investigation: 10-12 minutes</h2>
+        <ol>
+          <li>For Graph Shadows, listen for students reading domain from left to right and range from bottom to top.</li>
+          <li>When students see open endpoints, ask, “Is that exact x-value or y-value included?”</li>
+          <li>For the equation lab, press students to explain what goes wrong, not just write a rule.</li>
+          <li>For square roots, ask, “Can the radicand be negative if we are staying in real numbers?”</li>
+          <li>For rational functions, ask, “What happens if the denominator equals zero?”</li>
+        </ol>
+      </div>
+      <div class="teacher-box">
+        <h2>Synthesis: 5 minutes</h2>
+        <div class="teacher-note">
+          <p>Final summary: Domain is the set of allowed inputs. Range is the set of possible outputs. Graphs show domain through horizontal coverage and range through vertical coverage. Equations may restrict domain when square roots require nonnegative radicands or rational functions require nonzero denominators.</p>
+        </div>
+        <p><strong>Closure prompt:</strong> “Which is more useful for finding domain: a graph or an equation? Give one example where each is useful.”</p>
+      </div>
+      <div class="teacher-box">
+        <h2>Common Misconceptions to Watch For</h2>
+        <ul>
+          <li>Students may confuse domain and range by reading both left to right.</li>
+          <li>Students may ignore open circles when writing interval notation.</li>
+          <li>Students may assume every graph with arrows has domain and range \(( -\infty,\infty )\).</li>
+          <li>Students may think square roots can have negative radicands in real-valued functions.</li>
+          <li>Students may exclude values that make the numerator zero instead of the denominator zero.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= ANSWER KEY ======================= -->
+    <section>
+      <div class="header-strip">Teaching Resource 2: Answer Key</div>
+      <div class="problem">
+        <div class="problem-number">Part 1: Graph Shadows</div>
+        <p><strong>Graph A Question:</strong> Write the domain and range of the segment.</p>
+        <p><strong>Answer:</strong> Domain \([-5,3)\). Range \([-\frac{1}{2},\frac{7}{2})\). The left endpoint is closed and the right endpoint is open.</p>
+        <p><strong>Graph B Question:</strong> Write the domain and range of the parabola.</p>
+        <p><strong>Answer:</strong> Domain \(( -\infty,\infty )\). Range \([-4,\infty)\). The arrows show the parabola continues upward forever, and the vertex gives the minimum output.</p>
+        <p><strong>Graph C Question:</strong> Write the domain and range of the square root shape.</p>
+        <p><strong>Answer:</strong> Domain \([2,\infty)\). Range \([-3,\infty)\). The graph starts at \((2,-3)\) and continues right/up.</p>
+        <p><strong>Graph D Question:</strong> Write the domain and range of the rational shape.</p>
+        <p><strong>Answer:</strong> Domain \(( -\infty,2 )\cup( 2,\infty )\). Range \(( -\infty,1 )\cup( 1,\infty )\). The vertical asymptote excludes \(x=2\), and the horizontal asymptote means \(y=1\) is not reached.</p>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Part 2: Equation Restriction Lab</div>
+        <p><strong>Question:</strong> Determine the domain of \(f(x)=x^2-4\).</p>
+        <p><strong>Answer:</strong> \(( -\infty,\infty )\). A polynomial has no real-number input restriction.</p>
+        <p><strong>Question:</strong> Determine the domain of \(g(x)=\sqrt{x-3}\).</p>
+        <p><strong>Answer:</strong> \([3,\infty)\). The radicand must satisfy \(x-3\ge0\).</p>
+        <p><strong>Question:</strong> Determine the domain of \(h(x)=\sqrt{6-x}\).</p>
+        <p><strong>Answer:</strong> \(( -\infty,6]\). The radicand must satisfy \(6-x\ge0\), so \(x\le6\).</p>
+        <p><strong>Question:</strong> Determine the domain of \(p(x)=\dfrac{1}{x+2}\).</p>
+        <p><strong>Answer:</strong> \(( -\infty,-2 )\cup( -2,\infty )\). The denominator cannot equal zero, so \(x\ne -2\).</p>
+        <p><strong>Question:</strong> Determine the domain of \(q(x)=\dfrac{x+1}{x^2-9}\).</p>
+        <p><strong>Answer:</strong> \(( -\infty,-3 )\cup( -3,3 )\cup( 3,\infty )\). The denominator cannot equal zero, so \(x\ne -3,3\).</p>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Part 2 Pattern Finding</div>
+        <ol>
+          <li><strong>What kind of equation usually has no domain restriction?</strong> Polynomial functions usually have domain all real numbers.</li>
+          <li><strong>What must be true inside a square root?</strong> The radicand must be greater than or equal to zero for real outputs.</li>
+          <li><strong>What must never happen in a denominator?</strong> The denominator must never equal zero.</li>
+          <li><strong>How is graph domain different from equation domain?</strong> A graph shows allowed x-values visually; an equation requires finding input values that make the expression undefined or non-real.</li>
+        </ol>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Part 3: Match the Reason to the Restriction</div>
+        <p><strong>Question:</strong> \(y=\sqrt{x+4}\)</p>
+        <p><strong>Answer:</strong> Square root restriction. Domain \([-4,\infty)\).</p>
+        <p><strong>Question:</strong> \(y=\dfrac{5}{x-1}\)</p>
+        <p><strong>Answer:</strong> Denominator restriction. Domain \(( -\infty,1 )\cup( 1,\infty )\).</p>
+        <p><strong>Question:</strong> Segment from closed \(x=-2\) to open \(x=6\)</p>
+        <p><strong>Answer:</strong> Endpoint restriction. Domain \([-2,6)\).</p>
+        <p><strong>Question:</strong> Upward-opening parabola with vertex \((3,-5)\)</p>
+        <p><strong>Answer:</strong> Range restriction from minimum value. Domain \(( -\infty,\infty )\), range \([-5,\infty)\).</p>
+        <p><strong>Question:</strong> Discrete relation with five plotted points</p>
+        <p><strong>Answer:</strong> Only listed inputs and outputs are included. Domain and range are written as finite sets.</p>
+        <p><strong>Graph E Answer:</strong> Domain \(\{-4,-2,0,3,5\}\). Range \(\{-1,1,2,5\}\).</p>
+        <p><strong>Graph F Answer:</strong> Domain \([-6,-1)\cup[2,\infty)\). Range \([-2,\infty)\). The open point at \((-1,1.6)\) excludes \(x=-1\), and the ray continues upward/right.</p>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Discussion Questions</div>
+        <ol>
+          <li><strong>Domain vs. range:</strong> Domain uses x-values/input coverage. Range uses y-values/output coverage.</li>
+          <li><strong>Open points:</strong> An open point means that exact endpoint is not included, so use a parenthesis.</li>
+          <li><strong>Square root vs. polynomial:</strong> \(\sqrt{x-3}\) needs \(x-3\ge0\), but \(x^2-3\) is defined for every real x-value.</li>
+          <li><strong>Denominator zero:</strong> Division by zero is undefined, so any input making the denominator zero must be excluded.</li>
+          <li><strong>Arrows misconception:</strong> Arrows show continuation, but they do not automatically mean both domain and range are all real numbers. A parabola with arrows up has all real x-values but a restricted range.</li>
+        </ol>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
