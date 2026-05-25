@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 1.3 — Speed Dating Math</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+
+:root{
+  --navy:#1B2E4B;
+  --gold:#C8A400;
+  --white:#FFFFFF;
+  --light-gray:#E8E8E8;
+  --dark-text:#1A1A1A;
+  --font-main:'Segoe UI',Arial,sans-serif;
+  --page-w:8.5in;
+  --page-h:11in;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+@page{size:letter;margin:0;}
+body{
+  font-family:var(--font-main);
+  color:var(--dark-text);
+  background:var(--light-gray);
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+.page{
+  width:var(--page-w);
+  height:var(--page-h);
+  padding:0.32in 0.42in 0.24in 0.42in;
+  margin:0 auto 0.35in;
+  background:white;
+  box-shadow:0 2px 12px rgba(0,0,0,0.18);
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  overflow:hidden;
+}
+@media print{
+  body{background:none;}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;break-after:auto;}
+}
+.title-page{padding:0.65in;}
+.title-bar{height:6px;background:var(--gold);border-radius:3px;margin-bottom:1.55in;}
+.unit-label{font-size:13pt;font-weight:700;color:var(--navy);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.22in;text-align:center;}
+.activity-name{font-size:32pt;font-weight:800;color:var(--navy);line-height:1.1;text-align:center;margin-bottom:0.34in;}
+.divider-navy{border:none;border-top:3px solid var(--navy);margin:0.18in 0;}
+.directions-page{display:flex;align-items:center;justify-content:center;padding:0.08in;}
+.directions-page img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
+.header{
+  background:var(--navy);
+  color:white;
+  font-size:22pt;
+  font-weight:800;
+  padding:0.13in 0.22in;
+  margin-bottom:0.18in;
+  border-radius:4px;
+  line-height:1.05;
+}
+.question,.solution{
+  font-size:13pt;
+  line-height:1.34;
+  flex:1;
+}
+.question p,.solution p{margin:0 0 0.11in 0;}
+.question ol,.solution ol,.question ul,.solution ul{margin:0.04in 0 0.09in 0.30in;}
+.question li,.solution li{margin-bottom:0.055in;}
+.solution .mathline{margin:0.07in 0;text-align:center;}
+.graph-img{
+  display:block;
+  max-width:4.45in;
+  max-height:4.35in;
+  object-fit:contain;
+  margin:0.05in auto 0 auto;
+}
+.graph-question p{margin-bottom:0.06in;}
+.graph-question li{margin-bottom:0.03in;}
+.compact-table{border-collapse:collapse;margin:0.12in auto;font-size:13pt;}
+.compact-table th,.compact-table td{border:1.2px solid #222;padding:0.055in 0.20in;text-align:center;}
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.18in 0.28in;font-size:12.5pt;line-height:1.25;}
+.skill-grid div{break-inside:avoid;}
+.page-footer{
+  margin-top:auto;
+  padding-top:0.08in;
+  display:flex;
+  justify-content:space-between;
+  font-size:7.5pt;
+  color:#111;
+}
+
+
+
+</style>
+</head>
+<body>
+<section class="page title-page">
+  <div class="title-bar"></div>
+  <div class="unit-label">Section 1.3 &nbsp;·&nbsp; Domain &amp; Range</div>
+  <h1 class="activity-name">Speed Dating Math</h1>
+  <hr class="divider-navy">
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page directions-page">
+  <img src="directions/speed_dating_math.png" alt="Speed Dating Math directions">
+</section>
+<section class="page">
+  <div class="header">Problem 1</div>
+  <div class="question">
+<p>Determine the domain of $h(x)=\sqrt{x+2}$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 1</div>
+  <div class="solution">
+<p>For a square root, the expression under the radical must be nonnegative.</p>
+<p>$x+2\ge 0$</p>
+<p>$x\ge -2$</p>
+<p>Domain: $[-2,\infty)$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 2</div>
+  <div class="question">
+<div class="graph-question">
+<p>Use the number line to write the set in interval notation.</p>
+<img class="graph-img" src="figures/1_3_12.png" alt="Number line with an open circle at -2, closed circle at 5, and shading between them">
+</div>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 2</div>
+  <div class="solution">
+<p>The graph starts at $-2$ with an open circle and ends at $5$ with a closed circle.</p>
+<p>Interval notation: $(-2,5]$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 3</div>
+  <div class="question">
+<div class="graph-question">
+<p>Determine the domain and range of the graphed function. Use interval notation.</p>
+<img class="graph-img" src="figures/1_3_19.png" alt="Graph of a downward-opening parabola with vertex at (-1,4)">
+</div>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 3</div>
+  <div class="solution">
+<p>The graph continues left and right forever, so the domain is all real numbers.</p>
+<p>Domain: $(-\infty,\infty)$</p>
+<p>The highest point is the vertex $(-1,4)$, and the graph continues downward forever.</p>
+<p>Range: $(-\infty,4]$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 4</div>
+  <div class="question">
+<p>A student says the domain of $f(x)=\sqrt{x-4}$ is all real numbers because any number can be substituted for $x$. Explain the error and give the correct domain.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 4</div>
+  <div class="solution">
+<p>The error is ignoring the square root restriction. The radicand must be nonnegative.</p>
+<p>$x-4\ge 0$</p>
+<p>$x\ge 4$</p>
+<p>Correct domain: $[4,\infty)$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 5</div>
+  <div class="question">
+<p>Which equation has exactly one real solution?</p>
+<ol type="a"><li>$x^2-10x+25=0$</li><li>$x^2-10x+21=0$</li><li>$x^2-10x+30=0$</li><li>$x^2+10x+21=0$</li></ol>
+<p>Explain how you know.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 5</div>
+  <div class="solution">
+<p>The correct choice is <strong>a</strong>.</p>
+<p>$x^2-10x+25=(x-5)^2$, so the equation has one repeated solution: $x=5$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 6</div>
+  <div class="question">
+<p>Which equation has no real solutions?</p>
+<ol type="a"><li>$x^2+6x+9=0$</li><li>$x^2+6x+5=0$</li><li>$x^2+6x+10=0$</li><li>$x^2-6x+5=0$</li></ol>
+<p>Explain how you know.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 6</div>
+  <div class="solution">
+<p>The correct choice is <strong>c</strong>.</p>
+<p>For $x^2+6x+10=0$, the discriminant is $6^2-4(1)(10)=36-40=-4$.</p>
+<p>A negative discriminant means there are no real solutions.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 7</div>
+  <div class="question">
+<p>For each expression, state what number must be added to complete the square.</p>
+<ol type="a"><li>$x^2+10x$</li><li>$x^2-14x$</li><li>$x^2+3x$</li><li>$x^2-\frac{2}{3}x$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 7</div>
+  <div class="solution">
+<p>Use $\left(\frac{b}{2}\right)^2$.</p>
+<ol type="a"><li>$25$</li><li>$49$</li><li>$\frac{9}{4}$</li><li>$\frac{1}{9}$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 8</div>
+  <div class="question">
+<p>Which expression is equivalent to:</p>
+<p>$$x^2-6x+9$$</p>
+<ol type="a"><li>$(x-3)^2$</li><li>$(x+3)^2$</li><li>$(x-6)^2$</li><li>$(x-9)^2$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 8</div>
+  <div class="solution">
+<p>The correct choice is <strong>a</strong>.</p>
+<p>$(x-3)^2=(x-3)(x-3)=x^2-6x+9$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 9</div>
+  <div class="question">
+<p>Solve by completing the square.</p>
+<p>$$x^2+8x+7=0$$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 9</div>
+  <div class="solution">
+<p>Move the constant term.</p>
+<p>$x^2+8x=-7$</p>
+<p>Add $16$ to both sides.</p>
+<p>$x^2+8x+16=9$</p>
+<p>$(x+4)^2=9$</p>
+<p>$x+4=\pm3$</p>
+<p>$x=-1$ or $x=-7$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 10</div>
+  <div class="question">
+<p>Solve using the quadratic formula.</p>
+<p>$$2x^2-5x-3=0$$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 10</div>
+  <div class="solution">
+<p>Use $a=2$, $b=-5$, and $c=-3$.</p>
+<p>$x=\frac{-(-5)\pm\sqrt{(-5)^2-4(2)(-3)}}{2(2)}$</p>
+<p>$x=\frac{5\pm\sqrt{25+24}}{4}$</p>
+<p>$x=\frac{5\pm7}{4}$</p>
+<p>$x=3$ or $x=-\frac{1}{2}$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 11</div>
+  <div class="question">
+<p>A student calculates the discriminant for:</p>
+<p>$$2x^2-3x+8=0$$</p>
+<p>as:</p>
+<p>$$\Delta=(-3)^2-4(2)(8)=9-64=-55$$</p>
+<p><em>“Since the discriminant is negative, there are no solutions.”</em></p>
+<p>What should the student have said instead? Explain carefully.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 11</div>
+  <div class="solution">
+<p>The student should have said there are no <em>real</em> solutions.</p>
+<p>A negative discriminant means the solutions are not real numbers. The equation still has complex solutions.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 12</div>
+  <div class="question">
+<p>A company models profit by:</p>
+<p>$$P(x)=-2x^2+24x-50$$</p>
+<p>where $x$ is the number of items sold in hundreds and $P(x)$ is profit in thousands of dollars.</p>
+<ol type="a"><li>Complete the square to rewrite the function in vertex form.</li><li>Interpret the vertex in context.</li><li>Use the discriminant to determine whether the company has break-even points.</li><li>Find the break-even points exactly.</li><li>Explain what interval of $x$-values gives positive profit.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 12</div>
+  <div class="solution">
+<ol type="a"><li>$P(x)=-2(x^2-12x)-50=-2[(x-6)^2-36]-50=-2(x-6)^2+72-50=-2(x-6)^2+22$.</li><li>The vertex is $(6,22)$, so the maximum profit is $22$ thousand dollars when $600$ items are sold.</li><li>The discriminant is $24^2-4(-2)(-50)=576-400=176$, so there are two real break-even points.</li><li>$x=\frac{-24\pm\sqrt{176}}{-4}=6\mp\sqrt{11}$, so the break-even points are $x=6-\sqrt{11}$ and $x=6+\sqrt{11}$.</li><li>Positive profit occurs between the break-even points: $(6-\sqrt{11},6+\sqrt{11})$.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 13</div>
+  <div class="question">
+<p>Evaluate each expression without a calculator.</p>
+<ol type="a"><li>$\sqrt{100}$</li><li>$\sqrt[3]{-27}$</li><li>$\sqrt[5]{32}$</li><li>$\sqrt[4]{16}$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 13</div>
+  <div class="solution">
+<ol type="a"><li>$10$</li><li>$-3$</li><li>$2$</li><li>$2$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 14</div>
+  <div class="question">
+<p>Determine whether each expression is real.</p>
+<ol type="a"><li>$\sqrt{-9}$</li><li>$\sqrt[3]{-8}$</li><li>$\sqrt[4]{-16}$</li><li>$\sqrt[5]{-32}$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 14</div>
+  <div class="solution">
+<ol type="a"><li>not real</li><li>real</li><li>not real</li><li>real</li></ol>
+<p>Even roots of negative numbers are not real. Odd roots of negative numbers are real.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 15</div>
+  <div class="question">
+<p>Simplify by first simplifying each radical, then combining like radicals.</p>
+<ol type="a"><li>$\sqrt{20}+\sqrt{45}$</li><li>$\sqrt{18}+\sqrt{50}$</li><li>$3\sqrt{12}-\sqrt{75}$</li><li>$2\sqrt{27}+5\sqrt{48}$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 15</div>
+  <div class="solution">
+<ol type="a"><li>$2\sqrt{5}+3\sqrt{5}=5\sqrt{5}$</li><li>$3\sqrt{2}+5\sqrt{2}=8\sqrt{2}$</li><li>$3(2\sqrt{3})-5\sqrt{3}=\sqrt{3}$</li><li>$2(3\sqrt{3})+5(4\sqrt{3})=26\sqrt{3}$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 16</div>
+  <div class="question">
+<p>A student simplifies:</p>
+<p>$$\sqrt{72}=\sqrt{36+36}=6+6=12.$$</p>
+<p>Explain the error and simplify correctly.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 16</div>
+  <div class="solution">
+<p>The error is splitting a square root across addition. In general, $\sqrt{a+b}\ne \sqrt{a}+\sqrt{b}$.</p>
+<p>Use multiplication with a perfect-square factor:</p>
+<p>$\sqrt{72}=\sqrt{36\cdot2}=6\sqrt{2}$</p>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Skill Check</div>
+  <div class="question">
+<div class="skill-grid">
+  <div><strong>1.</strong> Determine the domain of $f(x)=\sqrt{x-7}$.</div>
+  <div><strong>2.</strong> Determine the domain of $g(x)=\frac{1}{x+4}$.</div>
+  <div><strong>3.</strong> A graph has arrows extending forever left and right and a highest point at $y=6$. State the range.</div>
+  <div><strong>4.</strong> Write the number line with an open circle at $-3$, closed circle at $2$, and shading between them in interval notation.</div>
+  <div><strong>5.</strong> Determine whether $x=-1$ is in the domain of $h(x)=\sqrt{x+1}$.</div>
+  <div><strong>6.</strong> Explain why domain restrictions matter for square-root functions.</div>
+</div>
+  </div>
+  <div class="page-footer"><span>Section 1.3 — Speed Dating Math</span><span>Manistee High School</span></div>
+</section>
+</body>
+</html>

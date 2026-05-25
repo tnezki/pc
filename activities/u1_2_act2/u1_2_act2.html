@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 1.2 — Showdown</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+:root{
+  --navy:#1B2E4B;
+  --gold:#C8A400;
+  --white:#FFFFFF;
+  --light-gray:#E8E8E8;
+  --dark-text:#1A1A1A;
+  --font-main:'Segoe UI',Arial,sans-serif;
+  --page-w:8.5in;
+  --page-h:11in;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+@page{size:letter;margin:0;}
+body{
+  font-family:var(--font-main);
+  color:var(--dark-text);
+  background:var(--light-gray);
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+.page{
+  width:var(--page-w);
+  height:var(--page-h);
+  padding:0.32in 0.42in 0.24in 0.42in;
+  margin:0 auto 0.35in;
+  background:white;
+  box-shadow:0 2px 12px rgba(0,0,0,0.18);
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  overflow:hidden;
+}
+@media print{
+  body{background:none;}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;break-after:auto;}
+}
+.title-page{padding:0.65in;}
+.title-bar{height:6px;background:var(--gold);border-radius:3px;margin-bottom:1.55in;}
+.unit-label{font-size:13pt;font-weight:700;color:var(--navy);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.22in;text-align:center;}
+.activity-name{font-size:32pt;font-weight:800;color:var(--navy);line-height:1.1;text-align:center;margin-bottom:0.34in;}
+.divider-navy{border:none;border-top:3px solid var(--navy);margin:0.18in 0;}
+.directions-page{display:flex;align-items:center;justify-content:center;padding:0.08in;}
+.directions-page img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
+.header{
+  background:var(--navy);
+  color:white;
+  font-size:22pt;
+  font-weight:800;
+  padding:0.13in 0.22in;
+  margin-bottom:0.18in;
+  border-radius:4px;
+  line-height:1.05;
+}
+.question,.solution{
+  font-size:13pt;
+  line-height:1.34;
+  flex:1;
+}
+.question p,.solution p{margin:0 0 0.11in 0;}
+.question ol,.solution ol,.question ul,.solution ul{margin:0.04in 0 0.09in 0.30in;}
+.question li,.solution li{margin-bottom:0.055in;}
+.solution .mathline{margin:0.07in 0;text-align:center;}
+.graph-img{
+  display:block;
+  max-width:4.45in;
+  max-height:4.35in;
+  object-fit:contain;
+  margin:0.05in auto 0 auto;
+}
+.graph-question p{margin-bottom:0.06in;}
+.graph-question li{margin-bottom:0.03in;}
+.compact-table{border-collapse:collapse;margin:0.12in auto;font-size:13pt;}
+.compact-table th,.compact-table td{border:1.2px solid #222;padding:0.055in 0.20in;text-align:center;}
+.skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.18in 0.28in;font-size:12.5pt;line-height:1.25;}
+.skill-grid div{break-inside:avoid;}
+.page-footer{
+  margin-top:auto;
+  padding-top:0.08in;
+  display:flex;
+  justify-content:space-between;
+  font-size:7.5pt;
+  color:#111;
+}
+
+
+</style>
+</head>
+<body>
+<section class="page title-page">
+  <div class="title-bar"></div>
+  <div class="unit-label">Section 1.2 &nbsp;·&nbsp; Interval & Inequality Notation</div>
+  <h1 class="activity-name">Showdown</h1>
+  <hr class="divider-navy">
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page directions-page">
+  <img src="directions/showdown.png" alt="Showdown directions">
+</section>
+<section class="page">
+  <div class="header">Problem 1</div>
+  <div class="question">
+<p>Determine whether each endpoint is included or excluded in $[1,6)$.</p>
+<ol type="a"><li>Endpoint $1$</li><li>Endpoint $6$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 1</div>
+  <div class="solution">
+<ol type="a"><li>Endpoint $1$ is included because the interval uses a square bracket: $[$.</li><li>Endpoint $6$ is excluded because the interval uses a parenthesis: $)$.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 2</div>
+  <div class="question">
+<div class="graph-question"><p>The number line shows a solution set.</p>
+<ol type="a"><li>Write the set in interval notation.</li><li>Write the set as an inequality.</li><li>Explain why the endpoint is included.</li></ol>
+<img class="graph-img" src="figures/U1S2-023.png" alt="Number line for a solution set"></div>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 2</div>
+  <div class="solution">
+<ol type="a"><li>$[-4,\infty)$</li><li>$x\ge -4$</li><li>The endpoint is included because the number line uses a closed circle at $-4$.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 3</div>
+  <div class="question">
+<p>Compare the sets $(-2,5]$ and $[-2,5)$.</p>
+<ol type="a"><li>How are they alike?</li><li>How are they different?</li><li>Give one value that belongs to the first set but not the second.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 3</div>
+  <div class="solution">
+<ol type="a"><li>Both sets contain values between $-2$ and $5$.</li><li>$(-2,5]$ excludes $-2$ and includes $5$, while $[-2,5)$ includes $-2$ and excludes $5$.</li><li>One value in the first set but not the second is $5$.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 4</div>
+  <div class="question">
+<p>A classmate claims, “The intervals $[2,5]$, $(2,5)$, $[2,5)$, and $(2,5]$ are basically the same because they all go from $2$ to $5$.” Write a response that explains why the endpoint notation matters.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 4</div>
+  <div class="solution">
+<p>The endpoint notation matters because brackets include endpoints and parentheses exclude endpoints.</p>
+<p>For example, $[2,5]$ includes both $2$ and $5$, but $(2,5)$ includes neither endpoint. These intervals contain different numbers, even though they all describe values between $2$ and $5$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 5</div>
+  <div class="question">
+<p>Factor out the greatest common factor.</p>
+<ol type="a"><li>$6x^2+18x$</li><li>$-4x^2+20x$</li><li>$3x^3-12x^2$</li><li>$5x^2y-15xy$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 5</div>
+  <div class="solution">
+<ol type="a"><li>$6x(x+3)$</li><li>$-4x(x-5)$</li><li>$3x^2(x-4)$</li><li>$5xy(x-3)$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 6</div>
+  <div class="question">
+<p>Identify which factoring pattern could be used.</p>
+<ol type="a"><li>$x^2-49$</li><li>$x^2+14x+49$</li><li>$x^2-8x+15$</li><li>$4x^2-25$</li></ol>
+<p>Choices: difference of squares, perfect square trinomial, trinomial factoring.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 6</div>
+  <div class="solution">
+<ol type="a"><li>difference of squares</li><li>perfect square trinomial</li><li>trinomial factoring</li><li>difference of squares</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 7</div>
+  <div class="question">
+<p>State whether each expression is factorable over the integers.</p>
+<ol type="a"><li>$x^2+5x+6$</li><li>$x^2+5x+7$</li><li>$x^2-2x-35$</li><li>$x^2+4x+4$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 7</div>
+  <div class="solution">
+<ol type="a"><li>factorable: $(x+2)(x+3)$</li><li>not factorable over the integers</li><li>factorable: $(x-7)(x+5)$</li><li>factorable: $(x+2)^2$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 8</div>
+  <div class="question">
+<p>A student says the roots, zeros, solutions, and $x$-intercepts always mean exactly the same thing.</p>
+<p>What is correct about this statement? What needs to be clarified?</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 8</div>
+  <div class="solution">
+<p>They are related because they often identify the $x$-values where a function equals $0$.</p>
+<p>The clarification is that $x$-intercepts are points on the graph, such as $(3,0)$, while roots, zeros, and solutions are usually the input values, such as $x=3$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 9</div>
+  <div class="question">
+<p>Solve each equation by first factoring out the GCF.</p>
+<ol type="a"><li>$3x^2-15x=0$</li><li>$2x^2+14x=0$</li><li>$-5x^2+45x=0$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 9</div>
+  <div class="solution">
+<ol type="a"><li>$3x(x-5)=0$, so $x=0$ or $x=5$.</li><li>$2x(x+7)=0$, so $x=0$ or $x=-7$.</li><li>$-5x(x-9)=0$, so $x=0$ or $x=9$.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 10</div>
+  <div class="question">
+<p>Write a quadratic function in factored form with zeros $-6$ and $2$, and $a=1$.</p>
+<p>Then rewrite it in standard form.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 10</div>
+  <div class="solution">
+<p>Zeros $-6$ and $2$ give factors $(x+6)$ and $(x-2)$.</p>
+<p>Factored form: $f(x)=(x+6)(x-2)$.</p>
+<p>Standard form: $f(x)=x^2+4x-12$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 11</div>
+  <div class="question">
+<div class="graph-question"><p>The table shows values of a quadratic function.</p>
+<table class="compact-table"><tr><th>$x$</th><td>$-3$</td><td>$-1$</td><td>$1$</td><td>$3$</td><td>$5$</td></tr><tr><th>$f(x)$</th><td>$0$</td><td>$-8$</td><td>$-12$</td><td>$-8$</td><td>$0$</td></tr></table>
+<ol type="a"><li>Identify the zeros.</li><li>State the axis of symmetry.</li><li>Write an equation in factored form.</li><li>Explain how the table shows symmetry.</li></ol>
+<img class="graph-img" src="figures/UAS2-037_grid.png" alt="Coordinate grid for table values"></div>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 11</div>
+  <div class="solution">
+<ol type="a"><li>The zeros are $x=-3$ and $x=5$.</li><li>The axis of symmetry is halfway between the zeros: $x=1$.</li><li>Use $f(x)=a(x+3)(x-5)$. Since $f(1)=-12$, $-12=a(4)(-4)$, so $a=\frac{3}{4}$. Thus $f(x)=\frac{3}{4}(x+3)(x-5)$.</li><li>The table shows symmetry because values the same distance from $x=1$ have the same output.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 12</div>
+  <div class="question">
+<div class="graph-question"><p>A quadratic function has zeros $x=-5$ and $x=3$. The graph passes through $(1,-24)$.</p>
+<ol type="a"><li>Write the equation in factored form.</li><li>Rewrite the equation in standard form.</li><li>Find the axis of symmetry.</li><li>Find the vertex.</li><li>Explain how each form reveals different information.</li></ol>
+<img class="graph-img" src="figures/UAS2-046_grid.png" alt="Coordinate grid for quadratic function"></div>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 12</div>
+  <div class="solution">
+<ol type="a"><li>Start with $f(x)=a(x+5)(x-3)$. Use $(1,-24)$: $-24=a(6)(-2)$, so $a=2$. Factored form: $f(x)=2(x+5)(x-3)$.</li><li>$f(x)=2(x^2+2x-15)=2x^2+4x-30$.</li><li>The axis of symmetry is halfway between $-5$ and $3$: $x=-1$.</li><li>$f(-1)=2(4)(-4)=-32$, so the vertex is $(-1,-32)$.</li><li>Factored form shows zeros. Standard form shows the $y$-intercept. Vertex information comes from symmetry.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 13</div>
+  <div class="question">
+<p>For each expression, identify the root and the power.</p>
+<ol type="a"><li>$x^{2/3}$</li><li>$x^{5/2}$</li><li>$x^{3/4}$</li><li>$x^{1/6}$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 13</div>
+  <div class="solution">
+<ol type="a"><li>cube root; power $2$</li><li>square root; power $5$</li><li>fourth root; power $3$</li><li>sixth root; power $1$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 14</div>
+  <div class="question">
+<p>Rewrite each expression in two equivalent radical forms.</p>
+<p>Example: $x^{2/3}=\sqrt[3]{x^2}=(\sqrt[3]{x})^2$</p>
+<ol type="a"><li>$x^{3/2}$</li><li>$x^{4/5}$</li><li>$x^{5/3}$</li><li>$x^{7/4}$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 14</div>
+  <div class="solution">
+<ol type="a"><li>$\sqrt{x^3}=(\sqrt{x})^3$</li><li>$\sqrt[5]{x^4}=(\sqrt[5]{x})^4$</li><li>$\sqrt[3]{x^5}=(\sqrt[3]{x})^5$</li><li>$\sqrt[4]{x^7}=(\sqrt[4]{x})^7$</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 15</div>
+  <div class="question">
+<p>Which expressions are equivalent to $x^{5/3}$?</p>
+<ol type="a"><li>$\sqrt[3]{x^5}$</li><li>$(\sqrt[3]{x})^5$</li><li>$\sqrt[5]{x^3}$</li><li>$x\sqrt[3]{x^2}$</li><li>$(x^5)^{1/3}$</li></ol>
+<p>Explain your choices.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 15</div>
+  <div class="solution">
+<p>Equivalent choices are <strong>a</strong>, <strong>b</strong>, <strong>d</strong>, and <strong>e</strong>.</p>
+<p>Each of those simplifies to $x^{5/3}$. Choice <strong>c</strong> is $x^{3/5}$, not $x^{5/3}$.</p>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Problem 16</div>
+  <div class="question">
+<p>A teacher writes:</p><p>$$x^{m/n}=\sqrt[n]{x^m}$$</p>
+<p>and asks students to explain the formula.</p>
+<ol type="a"><li>Explain what $m$ represents.</li><li>Explain what $n$ represents.</li><li>Use $x^{3/2}$ as an example.</li><li>Use $x^{2/3}$ as an example.</li><li>Explain why $n\ne 0$.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Solution 16</div>
+  <div class="solution">
+<ol type="a"><li>$m$ is the power.</li><li>$n$ is the root.</li><li>$x^{3/2}=\sqrt{x^3}=(\sqrt{x})^3$.</li><li>$x^{2/3}=\sqrt[3]{x^2}=(\sqrt[3]{x})^2$.</li><li>$n\ne0$ because a zero root is not defined, and division by zero in the exponent is not allowed.</li></ol>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+<section class="page">
+  <div class="header">Skill Check</div>
+  <div class="question">
+<div class="skill-grid">
+  <div><strong>1.</strong> Write $x\le 9$ in interval notation.</div>
+  <div><strong>2.</strong> Write $(-3,8]$ as an inequality.</div>
+  <div><strong>3.</strong> In $[4,\infty)$, is $4$ included or excluded? Explain.</div>
+  <div><strong>4.</strong> Compare $(1,6)$ and $[1,6]$. What changes?</div>
+  <div><strong>5.</strong> Write an interval for all numbers greater than $-2$ but less than or equal to $5$.</div>
+  <div><strong>6.</strong> Describe the number line for $(-\infty,3)$.</div>
+</div>
+  </div>
+  <div class="page-footer"><span>Section 1.2 — Showdown</span><span>Manistee High School</span></div>
+</section>
+</body>
+</html>
