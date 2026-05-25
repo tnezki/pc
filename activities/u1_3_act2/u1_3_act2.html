@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 1.3 — Find Someone Who</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+:root{
+  --navy:#1B2E4B;
+  --gold:#C8A400;
+  --light-gray:#E8E8E8;
+  --dark-text:#1A1A1A;
+  --font-main:'Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+@page{size:letter;margin:0.35in;}
+body{
+  font-family:var(--font-main);
+  color:var(--dark-text);
+  background:var(--light-gray);
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+  line-height:1.35;
+}
+.page{
+  width:8.5in;
+  min-height:11in;
+  margin:0 auto 0.35in;
+  background:#fff;
+  padding:0.55in 0.65in;
+  box-shadow:0 2px 12px rgba(0,0,0,0.18);
+  position:relative;
+  page-break-after:always;
+  break-after:page;
+}
+.title-page{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.title-bar{height:6px;background:var(--gold);border-radius:3px;width:100%;margin-bottom:1.25in;}
+.unit-label{font-size:13pt;font-weight:700;color:var(--navy);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.22in;text-align:center;}
+.activity-name{font-size:36pt;font-weight:800;color:var(--navy);line-height:1.1;text-align:center;margin-bottom:0.25in;}
+.divider-navy{border:none;border-top:3px solid var(--navy);width:100%;margin:0.18in 0;}
+.directions-page{display:flex;align-items:center;justify-content:center;padding:0.25in;}
+.directions-page img{max-width:100%;max-height:10.25in;object-fit:contain;display:block;}
+.container{
+  width:8.5in;
+  margin:0 auto 0.35in;
+  background:#fff;
+  padding:0.35in 0.45in;
+  box-shadow:0 2px 12px rgba(0,0,0,0.18);
+}
+h1{color:var(--navy);font-size:26pt;margin-bottom:0.08in;}
+.unit-intro{font-size:11pt;color:#555;margin-bottom:0.12in;}
+.section-label{
+  background:var(--navy);
+  color:#fff;
+  font-weight:800;
+  font-size:14pt;
+  padding:0.10in 0.16in;
+  margin:0.22in 0 0.14in 0;
+  border-radius:4px;
+  break-after:avoid;
+}
+.problem{
+  border:1.5px solid #222;
+  border-left:8px solid var(--navy);
+  padding:0.15in 0.18in 0.12in 0.18in;
+  margin-bottom:0.18in;
+  break-inside:avoid;
+  page-break-inside:avoid;
+  background:#fff;
+}
+.problem-number{font-weight:800;font-size:15pt;color:var(--navy);margin-bottom:0.04in;}
+.signature-line{font-size:10.5pt;font-weight:700;color:#333;margin:0 0 0.10in 0;padding-bottom:0.05in;border-bottom:1px solid #bbb;}
+.problem p{margin-bottom:0.08in;}
+.problem ol,.problem ul{margin-left:0.32in;margin-bottom:0.08in;}
+.problem li{margin-bottom:0.04in;}
+.graph-block,.figure-block{margin:0.08in 0;text-align:center;}
+.graph-block img,.figure-block img{display:block;margin:0 auto;max-width:4.4in;max-height:3.25in;width:auto;height:auto;border:1px solid #ccc;background:#fff;}
+.workspace-label{font-size:10pt;font-weight:700;color:#444;margin-top:0.08in;}
+.workspace{height:1.55in;border:1px dashed #999;background:repeating-linear-gradient(0deg,#fff,#fff 23px,#f1f1f1 24px);break-inside:avoid;page-break-inside:avoid;}
+.workspace-180,.workspace-220{height:1.55in;}
+.parent-table,.table-block{border-collapse:collapse;margin:0.10in auto;font-size:12pt;}
+.parent-table th,.parent-table td,.table-block th,.table-block td{border:1px solid #222;padding:0.05in 0.14in;text-align:center;}
+.page-break{page-break-before:always;break-before:page;}
+@media print{
+  body{background:#fff;}
+  .page,.container{box-shadow:none;margin:0;width:auto;}
+}
+
+</style>
+</head>
+<body>
+<section class="page title-page">
+  <div class="title-bar"></div>
+  <div class="unit-label">Section 1.3 &nbsp;·&nbsp; Domain &amp; Range</div>
+  <h1 class="activity-name">Find Someone Who</h1>
+  <hr class="divider-navy">
+  <div class="unit-intro">Activity 2</div>
+</section>
+<section class="page directions-page">
+  <img src="directions/find_someone_who.png" alt="Find Someone Who directions">
+</section>
+<div class="container">
+<h1>Find Someone Who</h1>
+<div class="unit-intro">Section 1.3 — Domain &amp; Range. Find a classmate to help with each problem, then complete the work in the space provided.</div>
+<div class="section-label">Unit 1.3 — Domain &amp; Range</div>
+<section class="problem" id="problem-1">
+<div class="problem-number">1.</div><div class="signature-line">Find someone who can solve this: ________________________________</div>
+<p>Use the graph to determine the range of the function. Write your answer in interval notation.</p>
+<!-- Graph of an upward-opening parabola with vertex at (2,-3) and arrows continuing upward. -->
+<div class="graph-block graph-md">
+<img alt="Graph of an upward-opening parabola with vertex at (2,-3) and arrows continuing upward." src="practice_files/figures/1_3_06.png"/>
+</div>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-2">
+<div class="problem-number">2.</div><div class="signature-line">Find someone who can solve this: ________________________________</div>
+<p>Use the graph to determine the domain of the function. Write your answer in interval notation.</p>
+<!-- Graph of a line segment from (-4,1) closed endpoint to (3,5) open endpoint. -->
+<div class="graph-block graph-md">
+<img alt="Graph of a line segment from (-4,1) closed endpoint to (3,5) open endpoint." src="practice_files/figures/1_3_07.png"/>
+</div>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-3">
+<div class="problem-number">3.</div><div class="signature-line">Find someone who can solve this: ________________________________</div>
+<p>Determine the domain of $g(x)=\sqrt{x-5}$.</p>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-4">
+<div class="problem-number">4.</div><div class="signature-line">Find someone who can solve this: ________________________________</div>
+<p>The table gives values of a function. Determine the domain and range of the relation.</p>
+<ol type="a">
+<li>$x$: $-3,-1,0,4,7$</li>
+<li>$f(x)$: $5,2,2,-6,1$</li>
+</ol>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<div class="section-label">Unit A.3 Spiral — Completing the Square, Quadratic Formula, and Discriminant</div>
+<section class="problem" id="problem-5">
+<div class="problem-number">5.</div><div class="signature-line">Find someone who can solve this: ________________________________</div>
+<p>For each quadratic equation, identify $a$, $b$, and $c$.</p>
+<ol class="lower-alpha" type="a">
+<li><p>$x^2+5x+6=0$</p></li>
+<li><p>$2x^2-7x+3=0$</p></li>
+<li><p>$-3x^2+4x-9=0$</p></li>
+<li><p>$x^2-16=0$</p></li>
+</ol>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-6">
+<div class="problem-number">6.</div><div class="signature-line">Find someone who can solve this: ________________________________</div>
+<p>Calculate the discriminant $\Delta=b^2-4ac$ for each equation.</p>
+<ol class="lower-alpha" type="a">
+<li><p>$x^2-6x+8=0$</p></li>
+<li><p>$x^2+4x+4=0$</p></li>
+<li><p>$x^2+2x+5=0$</p></li>
+</ol>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-7">
+<div class="problem-number">7.</div><div class="signature-line">Find someone who can solve this: ________________________________</div>
+<p>For each value of $\Delta$, state the number of real solutions.</p>
+<ol class="lower-alpha" type="a">
+<li><p>$\Delta=25$</p></li>
+<li><p>$\Delta=0$</p></li>
+<li><p>$\Delta=-12$</p></li>
+<li><p>$\Delta=3$</p></li>
+</ol>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-8">
+<div class="problem-number">8.</div><div class="signature-line">Find someone who can solve this: ________________________________</div>
+<p>Match each equation to the description of its graph.</p>
+<ol class="lower-alpha" type="a">
+<li><p>$y=x^2-4x+4$</p></li>
+<li><p>$y=x^2-4x+1$</p></li>
+<li><p>$y=x^2-4x+9$</p></li>
+</ol>
+<p>Descriptions:</p>
+<ol class="lower-alpha" type="a">
+<li><p>crosses the $x$-axis twice</p></li>
+<li><p>touches the $x$-axis once</p></li>
+<li><p>does not touch the $x$-axis</p></li>
+</ol>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-9">
+<div class="problem-number">9.</div><div class="signature-line">Find someone who can solve this: ________________________________</div>
+<p>Solve using the quadratic formula.</p>
+<p>$$x^2-7x+10=0$$</p>
+<p>Then explain why the result matches what factoring would give.</p>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-10">
+<div class="problem-number">10.</div><div class="signature-line">Find someone who can solve this: ________________________________</div>
+<p>For each equation:</p>
+<ol class="lower-alpha" type="a">
+<li><p>calculate $\Delta$</p></li>
+<li><p>predict the number of real solutions</p></li>
+<li><p>solve if real solutions exist</p></li>
+</ol>
+<ol class="lower-alpha" type="a">
+<li><p>$x^2-12x+36=0$</p></li>
+<li><p>$x^2-12x+20=0$</p></li>
+<li><p>$x^2-12x+40=0$</p></li>
+</ol>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-11">
+<div class="problem-number">11.</div><div class="signature-line">Find someone who can solve this: ________________________________</div>
+<p>A quadratic function has no $x$-intercepts. What must be true about its discriminant?</p>
+<p>Explain how this connects the equation, graph, and solutions.</p>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-12">
+<div class="problem-number">12.</div><div class="signature-line">Find someone who can solve this: ________________________________</div>
+<p>A quadratic equation has discriminant $\Delta=0$.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Explain what this means algebraically.</p></li>
+<li><p>Explain what this means graphically.</p></li>
+<li><p>Create one quadratic equation with this property.</p></li>
+<li><p>Solve your equation using two different methods.</p></li>
+<li><p>Explain why both methods agree.</p></li>
+</ol>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<div class="section-label">Unit B.3 Spiral — Simplifying and Evaluating Radical Expressions</div>
+<section class="problem" id="problem-13">
+<div class="problem-number">13.</div><div class="signature-line">Find someone who can solve this: ________________________________</div>
+<p>Evaluate each expression without a calculator.</p>
+<ol class="lower-alpha" type="a">
+<li><p>$\sqrt{49}$</p></li>
+<li><p>$\sqrt{121}$</p></li>
+<li><p>$\sqrt[3]{64}$</p></li>
+<li><p>$\sqrt[4]{81}$</p></li>
+</ol>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-14">
+<div class="problem-number">14.</div><div class="signature-line">Find someone who can solve this: ________________________________</div>
+<p>Simplify each square root.</p>
+<ol class="lower-alpha" type="a">
+<li><p>$\sqrt{12}$</p></li>
+<li><p>$\sqrt{20}$</p></li>
+<li><p>$\sqrt{27}$</p></li>
+<li><p>$\sqrt{75}$</p></li>
+</ol>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-15">
+<div class="problem-number">15.</div><div class="signature-line">Find someone who can solve this: ________________________________</div>
+<p>Which expression is equivalent to $\sqrt{48}$?</p>
+<ol class="lower-alpha" type="a">
+<li><p>$4\sqrt{3}$</p></li>
+<li><p>$3\sqrt{4}$</p></li>
+<li><p>$2\sqrt{12}$</p></li>
+<li><p>$\sqrt{16}\sqrt{3}$</p></li>
+</ol>
+<p>Explain how you know.</p>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<section class="problem" id="problem-16">
+<div class="problem-number">16.</div><div class="signature-line">Find someone who can solve this: ________________________________</div>
+<p>Simplify each radical expression.</p>
+<ol class="lower-alpha" type="a">
+<li><p>$\sqrt{18}$</p></li>
+<li><p>$\sqrt{32}$</p></li>
+<li><p>$\sqrt{98}$</p></li>
+<li><p>$\sqrt{147}$</p></li>
+</ol>
+<div class="workspace-label">Workspace</div><div class="workspace workspace-180"></div></section>
+<div class="page-break"></div>
+<h1>Check Your Understanding 1.3</h1>
+<div class="unit-intro">Unit A.3 formative readiness check. No workspace included.</div>
+<div class="section-label">Unit A.3 — Formative Questions</div>
+<section class="problem" id="problem-CYU-1">
+<div class="problem-number">CYU 1.</div>
+<p>For each quadratic equation, identify $a$, $b$, and $c$.</p>
+<ol class="lower-alpha" type="a">
+<li><p>$x^2+5x+6=0$</p></li>
+<li><p>$2x^2-7x+3=0$</p></li>
+<li><p>$-3x^2+4x-9=0$</p></li>
+<li><p>$x^2-16=0$</p></li>
+</ol>
+</section>
+<section class="problem" id="problem-CYU-2">
+<div class="problem-number">CYU 2.</div>
+<p>Calculate the discriminant $\Delta=b^2-4ac$ for each equation.</p>
+<ol class="lower-alpha" type="a">
+<li><p>$x^2-6x+8=0$</p></li>
+<li><p>$x^2+4x+4=0$</p></li>
+<li><p>$x^2+2x+5=0$</p></li>
+</ol>
+</section>
+<section class="problem" id="problem-CYU-3">
+<div class="problem-number">CYU 3.</div>
+<p>For each value of $\Delta$, state the number of real solutions.</p>
+<ol class="lower-alpha" type="a">
+<li><p>$\Delta=25$</p></li>
+<li><p>$\Delta=0$</p></li>
+<li><p>$\Delta=-12$</p></li>
+<li><p>$\Delta=3$</p></li>
+</ol>
+</section>
+<section class="problem" id="problem-CYU-4">
+<div class="problem-number">CYU 4.</div>
+<p>Solve using the quadratic formula.</p>
+<p>$$x^2-7x+10=0$$</p>
+<p>Then explain why the result matches what factoring would give.</p>
+</section>
+<section class="problem" id="problem-CYU-5">
+<div class="problem-number">CYU 5.</div>
+<p>For each equation:</p>
+<ol class="lower-alpha" type="a">
+<li><p>calculate $\Delta$</p></li>
+<li><p>predict the number of real solutions</p></li>
+<li><p>solve if real solutions exist</p></li>
+</ol>
+<ol class="lower-alpha" type="a">
+<li><p>$x^2-12x+36=0$</p></li>
+<li><p>$x^2-12x+20=0$</p></li>
+<li><p>$x^2-12x+40=0$</p></li>
+</ol>
+</section>
+<section class="problem" id="problem-CYU-6">
+<div class="problem-number">CYU 6.</div>
+<p>A student calculates the discriminant for:</p>
+<p>$$2x^2-3x+8=0$$</p>
+<p>as:</p>
+<p>$$\Delta=(-3)^2-4(2)(8)=9-64=-55$$</p>
+<p><em>“Since the discriminant is negative, there are no solutions.”</em></p>
+<p>What should the student have said instead? Explain carefully.</p>
+</section>
+<section class="problem" id="problem-CYU-7">
+<div class="problem-number">CYU 7.</div>
+<p>A quadratic function has no $x$-intercepts. What must be true about its discriminant?</p>
+<p>Explain how this connects the equation, graph, and solutions.</p>
+</section>
+<section class="problem" id="problem-CYU-8">
+<div class="problem-number">CYU 8.</div>
+<p>A ball is thrown upward from a platform. Its height is modeled by:</p>
+<p>$$h(t)=-16t^2+48t+64$$</p>
+<p>where $h(t)$ is height in feet and $t$ is time in seconds.</p>
+<ol class="lower-alpha" type="a">
+<li><p>Rewrite the function in vertex form by completing the square.</p></li>
+<li><p>Identify and interpret the vertex.</p></li>
+<li><p>Use the quadratic formula to determine when the ball hits the ground.</p></li>
+<li><p>Explain why one solution may not make sense in context.</p></li>
+<li><p>State a reasonable domain for the model.</p></li>
+</ol>
+</section>
+</div>
+</body>
+</html>
