@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>u1_5_investigation</title>
+  <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']],
+    displayMath: [['$$', '$$'], ['\[', '\]']]
+  }
+};
+</script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+/* ======================= RESET / BASE ======================= */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.45;color:#222;background:#fff;padding:20px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.container{max-width:900px;margin:0 auto;}
+.page-break{page-break-before:always;}
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.45rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.1rem;margin-top:8px;margin-bottom:8px;}
+h4{color:#00003d;font-size:1rem;margin:10px 0 6px 0;}
+p{margin-bottom:8px;}
+ul,ol{margin-left:24px;margin-bottom:8px;}
+li{margin-bottom:6px;}
+strong{color:#00003d;}
+/* ======================= TITLE / HEADER ======================= */
+.title-page{min-height:9.5in;display:flex;flex-direction:column;justify-content:center;text-align:center;border:4px solid #00003d;padding:42px;break-inside:avoid;page-break-inside:avoid;}
+.title-page .course{font-size:1rem;text-transform:uppercase;letter-spacing:2px;color:#555;margin-bottom:18px;}
+.title-page h1{font-size:2.35rem;line-height:1.15;margin-bottom:18px;}
+.title-page .subtitle{font-size:1.35rem;color:#004d99;font-weight:700;margin-bottom:24px;}
+.title-page .details{font-size:1.05rem;color:#333;margin-top:18px;}
+.header-strip{background:#00003d;color:#fff;padding:10px 14px;margin:0 0 14px 0;font-weight:700;font-size:1.1rem;break-after:avoid;}
+/* ======================= CARDS / PROBLEMS ======================= */
+.problem,.teacher-box,.key-point{border:1px solid #777;padding:14px 14px 12px 14px;margin-bottom:14px;break-inside:avoid;page-break-inside:avoid;}
+.problem-number{font-weight:700;color:#00003d;margin-bottom:8px;font-size:1.03rem;}
+.small-note{font-size:.92rem;color:#555;}
+.teacher-note{background:#f7f7f7;border-left:4px solid #777;padding:8px 10px;margin:10px 0;}
+.dok-bar{background:#000;color:#fff;font-weight:700;padding:8px 12px;margin:18px 0 12px 0;break-after:avoid;}
+.workspace{width:100%;margin-top:8px;border-top:1px solid #777;break-inside:avoid;page-break-inside:avoid;}
+.workspace-60{height:60px}.workspace-80{height:80px}.workspace-100{height:100px}.workspace-120{height:120px}.workspace-150{height:150px}.workspace-180{height:180px}.workspace-220{height:220px}.workspace-260{height:260px}
+.workspace-label{margin-top:8px;font-size:.85rem;font-weight:600;color:#444;}
+.tag{font-size:.85rem;background:#eaf1fb;border:1px solid #a9b9cf;color:#22354d;padding:2px 7px;border-radius:4px;margin-left:6px;}
+.rep-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;}
+.graph-block{text-align:center;margin:8px 0;break-inside:avoid;page-break-inside:avoid;}
+.graph-block img{max-width:80%;height:auto;border:1px solid #bbb;background:#fff;}
+.mini-rule{background:#f8fbff;border:1px solid #9aa9bd;padding:10px 12px;margin:8px 0;break-inside:avoid;page-break-inside:avoid;}
+/* ======================= TABLES ======================= */
+table{width:100%;border-collapse:collapse;margin:10px 0;break-inside:avoid;page-break-inside:avoid;}
+th,td{border:1px solid #888;padding:7px;text-align:center;vertical-align:middle;}
+th{background:#eaf1fb;color:#00003d;}
+td.left,th.left{text-align:left;}
+/* ======================= PRINT ======================= */
+@media print{body{padding:10px}.container{max-width:100%}.title-page{min-height:9.75in}.rep-grid{grid-template-columns:1fr 1fr;gap:10px}}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ======================= TITLE PAGE ======================= -->
+    <section class="title-page">
+      <div class="course">Precalculus - Unit 1</div>
+      <h1>Section 1.5 Investigation</h1>
+      <div class="subtitle">Limits Graphically</div>
+      <p><strong>Investigation:</strong> What does a graph approach, and does the actual point matter?</p>
+      <p><strong>Time:</strong> 15-20 minutes</p>
+      <p><strong>Format:</strong> Graph behavior sort, partner investigation, and whole-class discussion</p>
+      <div class="details">Learning Target: Analyze limits graphically by examining how functions behave as $x$ approaches a value from the left and right.</div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= DIRECTIONS PAGE ======================= -->
+    <section>
+      <div class="header-strip">Investigation Directions</div>
+      <div class="problem">
+        <h2>Setup</h2>
+        <ul>
+          <li><strong>Grouping:</strong> Partners or groups of 3.</li>
+          <li><strong>Materials:</strong> Student handout and pencil.</li>
+          <li><strong>Teacher display:</strong> Project one graph during the launch, then use the six graph cards for the sort.</li>
+          <li><strong>Timing:</strong> 2-minute launch, 10-12 minutes of graph sorting and evidence collection, 5-minute discussion.</li>
+        </ul>
+      </div>
+      <div class="problem">
+        <h2>Student Goal</h2>
+        <p>Today you will compare what a graph does from the left, what it does from the right, and what happens exactly at the target $x$-value.</p>
+        <p style="text-align:center;font-size:1.15rem;">$\displaystyle \lim_{x\to a^-} f(x) \qquad \lim_{x\to a^+} f(x) \qquad f(a)$</p>
+        <p>By the end, you should be able to explain when a two-sided limit exists and when the actual function value is different from the limit.</p>
+      </div>
+      <div class="problem">
+        <h2>Norms for the Investigation</h2>
+        <ul>
+          <li>Do not start by looking only at the filled-in point.</li>
+          <li>Trace the graph from the left side of the target $x$-value.</li>
+          <li>Trace the graph from the right side of the target $x$-value.</li>
+          <li>Only after checking both sides, decide whether the two-sided limit exists.</li>
+          <li>Use complete phrases: approaches from the left, approaches from the right, limit exists, limit does not exist, function value.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= STUDENT HANDOUT ======================= -->
+    <section>
+      <div class="header-strip">Student Investigation Handout</div>
+      <div class="problem">
+        <h2>Part 1: What Are We Looking For?</h2>
+        <p>For each graph, your group will look near the marked target $x$-value. Record what the graph approaches from each side and what the function value is exactly at the target.</p>
+        <div class="mini-rule">
+          <p><strong>Left-hand behavior:</strong> Follow the graph as $x$ approaches the target from smaller $x$-values.</p>
+          <p><strong>Right-hand behavior:</strong> Follow the graph as $x$ approaches the target from larger $x$-values.</p>
+          <p><strong>Function value:</strong> Look for the filled-in point at the target $x$-value. If there is no filled-in point, the function value may be undefined.</p>
+        </div>
+      </div>
+      <div class="problem">
+        <h2>Part 2: First Prediction</h2>
+        <ol>
+          <li>Can the graph have a hole and still have a limit? Explain your first guess.</li>
+          <li>Can the graph have a filled-in point at one height but approach a different height? Explain your first guess.</li>
+          <li>What would make a left-hand and right-hand limit disagree?</li>
+        </ol>
+        <div class="workspace workspace-120"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= GRAPH SORT CARDS ======================= -->
+    <section>
+      <div class="header-strip">Graph Behavior Sort</div>
+      <div class="problem">
+        <h2>How to Sort</h2>
+        <p>Analyze each graph. Then classify its behavior and decide whether the two-sided limit exists at the target $x$-value.</p>
+      </div>
+      
+      <div class="problem">
+        <h2>Graph A <span class="tag">Target value: $x=2$</span></h2>
+        <div class="graph-block"><img src="figures/u1_5_graph_A_continuous.png" alt="Graph A: Continuous Graph"></div>
+        <table>
+          <tr><th>Behavior from the Left</th><th>Behavior from the Right</th><th>Actual Function Value</th><th>Does the Limit Exist?</th></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </table>
+        <p><strong>Sort this graph:</strong> continuous, hole, point value difference, jump, vertical asymptote, or corner?</p>
+        <div class="workspace workspace-60"></div>
+      </div>
+
+      <div class="problem">
+        <h2>Graph B <span class="tag">Target value: $x=1$</span></h2>
+        <div class="graph-block"><img src="figures/u1_5_graph_B_hole.png" alt="Graph B: Hole"></div>
+        <table>
+          <tr><th>Behavior from the Left</th><th>Behavior from the Right</th><th>Actual Function Value</th><th>Does the Limit Exist?</th></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </table>
+        <p><strong>Sort this graph:</strong> continuous, hole, point value difference, jump, vertical asymptote, or corner?</p>
+        <div class="workspace workspace-60"></div>
+      </div>
+
+    </section>
+    <div class="page-break"></div>
+
+    <section>
+      <div class="header-strip">Graph Behavior Sort Continued</div>
+      
+      <div class="problem">
+        <h2>Graph C <span class="tag">Target value: $x=-2$</span></h2>
+        <div class="graph-block"><img src="figures/u1_5_graph_C_point_difference.png" alt="Graph C: Point Value Difference"></div>
+        <table>
+          <tr><th>Behavior from the Left</th><th>Behavior from the Right</th><th>Actual Function Value</th><th>Does the Limit Exist?</th></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </table>
+        <p><strong>Sort this graph:</strong> continuous, hole, point value difference, jump, vertical asymptote, or corner?</p>
+        <div class="workspace workspace-60"></div>
+      </div>
+
+      <div class="problem">
+        <h2>Graph D <span class="tag">Target value: $x=0$</span></h2>
+        <div class="graph-block"><img src="figures/u1_5_graph_D_jump.png" alt="Graph D: Jump"></div>
+        <table>
+          <tr><th>Behavior from the Left</th><th>Behavior from the Right</th><th>Actual Function Value</th><th>Does the Limit Exist?</th></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </table>
+        <p><strong>Sort this graph:</strong> continuous, hole, point value difference, jump, vertical asymptote, or corner?</p>
+        <div class="workspace workspace-60"></div>
+      </div>
+
+    </section>
+    <div class="page-break"></div>
+
+    <section>
+      <div class="header-strip">Graph Behavior Sort Continued</div>
+      
+      <div class="problem">
+        <h2>Graph E <span class="tag">Target value: $x=1$</span></h2>
+        <div class="graph-block"><img src="figures/u1_5_graph_E_asymptote.png" alt="Graph E: Vertical Asymptote"></div>
+        <table>
+          <tr><th>Behavior from the Left</th><th>Behavior from the Right</th><th>Actual Function Value</th><th>Does the Limit Exist?</th></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </table>
+        <p><strong>Sort this graph:</strong> continuous, hole, point value difference, jump, vertical asymptote, or corner?</p>
+        <div class="workspace workspace-60"></div>
+      </div>
+
+      <div class="problem">
+        <h2>Graph F <span class="tag">Target value: $x=-1$</span></h2>
+        <div class="graph-block"><img src="figures/u1_5_graph_F_corner.png" alt="Graph F: Corner"></div>
+        <table>
+          <tr><th>Behavior from the Left</th><th>Behavior from the Right</th><th>Actual Function Value</th><th>Does the Limit Exist?</th></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+        </table>
+        <p><strong>Sort this graph:</strong> continuous, hole, point value difference, jump, vertical asymptote, or corner?</p>
+        <div class="workspace workspace-60"></div>
+      </div>
+
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= SUMMARY PAGE ======================= -->
+    <section>
+      <div class="header-strip">Class Summary Page</div>
+      <div class="problem">
+        <h2>Collect the Patterns</h2>
+        <table>
+          <tr><th>Graph</th><th>Behavior Type</th><th>Left-Hand Limit</th><th>Right-Hand Limit</th><th>$f(a)$</th><th>Two-Sided Limit?</th></tr>
+          <tr><td>A</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>B</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>C</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>D</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>E</td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>F</td><td></td><td></td><td></td><td></td><td></td></tr>
+        </table>
+      </div>
+      <div class="problem">
+        <h2>Pattern Finding</h2>
+        <ol>
+          <li>Which graphs have a two-sided limit because the left and right sides approach the same value?</li>
+          <li>Which graphs do not have a two-sided limit because the left and right sides disagree or grow without bound?</li>
+          <li>Which graphs show that the limit and function value can be different?</li>
+          <li>Which graph proves that a corner does not automatically stop a limit from existing?</li>
+        </ol>
+        <div class="workspace-label">Pattern Notes</div>
+        <div class="workspace workspace-180"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= DISCUSSION QUESTIONS ======================= -->
+    <section>
+      <div class="header-strip">Discussion Questions</div>
+      <div class="problem">
+        <ol>
+          <li>Why should you check both sides of the graph before deciding whether a limit exists?</li>
+          <li>How can a graph have a limit at $x=a$ even if $f(a)$ is undefined?</li>
+          <li>How can $\lim_{x\to a} f(x)$ and $f(a)$ be different?</li>
+          <li>What is the difference between a jump and a hole when thinking about limits?</li>
+          <li>A student says, “If the graph has a break, the limit cannot exist.” What is correct about this statement, and what needs to be fixed?</li>
+        </ol>
+        <div class="workspace-label">Class Notes / Final Rule</div>
+        <div class="workspace workspace-180"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= TEACHER SCRIPT ======================= -->
+    <section>
+      <div class="header-strip">Teaching Resource 1: Teacher Script</div>
+      <div class="teacher-box">
+        <h2>Purpose</h2>
+        <p>This investigation helps students discover that a limit is about approaching behavior, not simply the value of the function at a point. Students sort common graphical behaviors and compare left-hand limits, right-hand limits, and function values.</p>
+      </div>
+      <div class="teacher-box">
+        <h2>Launch: 2 minutes</h2>
+        <p><strong>Say:</strong> “Today we are not asking, ‘What is the dot?’ first. We are asking, ‘What height is the graph approaching from the left and from the right?’ The dot matters for $f(a)$, but approaching behavior determines the limit.”</p>
+        <p><strong>Model:</strong> Use Graph A quickly. Trace from both sides toward $x=2$ and show that both sides approach the same height.</p>
+      </div>
+      <div class="teacher-box">
+        <h2>Investigation: 10-12 minutes</h2>
+        <ol>
+          <li>Ask groups to complete the left-hand/right-hand/function-value table for each graph.</li>
+          <li>When a group looks only at the filled dot, ask, “What happens as you approach from the left? What happens as you approach from the right?”</li>
+          <li>For Graph B and Graph C, press students to separate the limit from $f(a)$.</li>
+          <li>For Graph D, ask students to state both one-sided limits before saying the two-sided limit does not exist.</li>
+          <li>For Graph E, allow students to describe unbounded behavior informally before naming it as vertical-asymptote behavior.</li>
+        </ol>
+      </div>
+      <div class="teacher-box">
+        <h2>Synthesis: 5 minutes</h2>
+        <div class="teacher-note">
+          <p>Final summary: A two-sided limit exists when the left-hand and right-hand limits approach the same value. The function value $f(a)$ may be the same, different, or undefined. A hole does not automatically prevent a limit from existing, but a jump prevents the two-sided limit because the sides approach different values.</p>
+        </div>
+        <p><strong>Closure prompt:</strong> “How would you explain the difference between $\lim_{x\to a} f(x)$ and $f(a)$ to a student who keeps looking only at the filled-in dot?”</p>
+      </div>
+      <div class="teacher-box">
+        <h2>Common Misconceptions to Watch For</h2>
+        <ul>
+          <li>Students may think the filled-in point determines the limit.</li>
+          <li>Students may think a hole automatically means the limit does not exist.</li>
+          <li>Students may report only one side of a jump and forget to compare both sides.</li>
+          <li>Students may confuse an undefined function value with a nonexistent limit.</li>
+          <li>Students may think a sharp corner prevents a limit from existing.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= ANSWER KEY ======================= -->
+    <section>
+      <div class="header-strip">Teaching Resource 2: Answer Key</div>
+      <div class="problem">
+        <div class="problem-number">Part 2: First Prediction</div>
+        <p><strong>Question 1:</strong> Can the graph have a hole and still have a limit?</p>
+        <p><strong>Answer:</strong> Yes. If both sides approach the same height, the limit exists even if the function is not defined at that exact point.</p>
+        <p><strong>Question 2:</strong> Can the graph have a filled-in point at one height but approach a different height?</p>
+        <p><strong>Answer:</strong> Yes. The filled point gives $f(a)$, but the limit depends on nearby graph behavior.</p>
+        <p><strong>Question 3:</strong> What would make a left-hand and right-hand limit disagree?</p>
+        <p><strong>Answer:</strong> A jump or different branch behavior can make the two sides approach different heights.</p>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Graph A: Continuous Graph</div>
+        <p><strong>Question:</strong> Record left-hand behavior, right-hand behavior, actual function value, and whether the limit exists at $x=2$.</p>
+        <p><strong>Answer:</strong> Left-hand limit $=3$, right-hand limit $=3$, $f(2)=3$, and $\lim_{x\to2} f(x)=3$. Behavior type: continuous.</p>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Graph B: Hole</div>
+        <p><strong>Question:</strong> Record left-hand behavior, right-hand behavior, actual function value, and whether the limit exists at $x=1$.</p>
+        <p><strong>Answer:</strong> Left-hand limit $=2$, right-hand limit $=2$, $f(1)$ is undefined, and $\lim_{x\to1} f(x)=2$. Behavior type: hole.</p>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Graph C: Point Value Difference</div>
+        <p><strong>Question:</strong> Record left-hand behavior, right-hand behavior, actual function value, and whether the limit exists at $x=-2$.</p>
+        <p><strong>Answer:</strong> Left-hand limit $=1$, right-hand limit $=1$, $f(-2)=4$, and $\lim_{x\to-2} f(x)=1$. Behavior type: point value difference.</p>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Graph D: Jump</div>
+        <p><strong>Question:</strong> Record left-hand behavior, right-hand behavior, actual function value, and whether the limit exists at $x=0$.</p>
+        <p><strong>Answer:</strong> Left-hand limit $=2$, right-hand limit $=-1$, $f(0)=-1$, and $\lim_{x\to0} f(x)$ does not exist because the one-sided limits are different. Behavior type: jump.</p>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Graph E: Vertical Asymptote</div>
+        <p><strong>Question:</strong> Record left-hand behavior, right-hand behavior, actual function value, and whether the limit exists at $x=1$.</p>
+        <p><strong>Answer:</strong> From the left, the graph decreases without bound; from the right, it increases without bound. $f(1)$ is undefined. The finite two-sided limit does not exist. Behavior type: vertical asymptote.</p>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Graph F: Corner</div>
+        <p><strong>Question:</strong> Record left-hand behavior, right-hand behavior, actual function value, and whether the limit exists at $x=-1$.</p>
+        <p><strong>Answer:</strong> Left-hand limit $=-2$, right-hand limit $=-2$, $f(-1)=-2$, and $\lim_{x\to-1} f(x)=-2$. Behavior type: corner.</p>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Discussion Questions</div>
+        <ol>
+          <li><strong>Check both sides:</strong> A two-sided limit only exists when the left and right sides approach the same value.</li>
+          <li><strong>Hole:</strong> A hole can still have a limit because nearby values may approach the same height from both sides.</li>
+          <li><strong>Limit vs. function value:</strong> $\lim_{x\to a} f(x)$ describes approaching behavior; $f(a)$ is the actual defined value at $x=a$.</li>
+          <li><strong>Jump vs. hole:</strong> A hole has both sides approaching the same height but may be undefined there. A jump has the two sides approaching different heights.</li>
+          <li><strong>Student statement:</strong> A break can prevent a limit when it is a jump or asymptote, but a removable hole may still have a limit.</li>
+        </ol>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

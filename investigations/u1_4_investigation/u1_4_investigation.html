@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>u1_4_investigation</title>
+  <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+/* ======================= RESET / BASE ======================= */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.45;color:#222;background:#fff;padding:20px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.container{max-width:900px;margin:0 auto;}
+.page-break{page-break-before:always;}
+h1{color:#00003d;font-size:2rem;margin-bottom:8px;}
+h2{color:#00003d;font-size:1.45rem;margin-top:10px;margin-bottom:10px;border-left:5px solid #00003d;padding-left:10px;}
+h3{color:#004d99;font-size:1.1rem;margin-top:8px;margin-bottom:8px;}
+h4{color:#00003d;font-size:1rem;margin:10px 0 6px 0;}
+p{margin-bottom:8px;}
+ul,ol{margin-left:24px;margin-bottom:8px;}
+li{margin-bottom:6px;}
+strong{color:#00003d;}
+/* ======================= TITLE / HEADER ======================= */
+.title-page{min-height:9.5in;display:flex;flex-direction:column;justify-content:center;text-align:center;border:4px solid #00003d;padding:42px;break-inside:avoid;page-break-inside:avoid;}
+.title-page .course{font-size:1rem;text-transform:uppercase;letter-spacing:2px;color:#555;margin-bottom:18px;}
+.title-page h1{font-size:2.35rem;line-height:1.15;margin-bottom:18px;}
+.title-page .subtitle{font-size:1.35rem;color:#004d99;font-weight:700;margin-bottom:24px;}
+.title-page .details{font-size:1.05rem;color:#333;margin-top:18px;}
+.header-strip{background:#00003d;color:#fff;padding:10px 14px;margin:0 0 14px 0;font-weight:700;font-size:1.1rem;break-after:avoid;}
+/* ======================= CARDS / PROBLEMS ======================= */
+.problem,.teacher-box,.key-point{border:1px solid #777;padding:14px 14px 12px 14px;margin-bottom:14px;break-inside:avoid;page-break-inside:avoid;}
+.problem-number{font-weight:700;color:#00003d;margin-bottom:8px;font-size:1.03rem;}
+.small-note{font-size:.92rem;color:#555;}
+.teacher-note{background:#f7f7f7;border-left:4px solid #777;padding:8px 10px;margin:10px 0;}
+.desmos-link{font-weight:700;color:#004d99;}
+.dok-bar{background:#000;color:#fff;font-weight:700;padding:8px 12px;margin:18px 0 12px 0;break-after:avoid;}
+.workspace{width:100%;margin-top:8px;border-top:1px solid #777;break-inside:avoid;page-break-inside:avoid;}
+.workspace-60{height:60px}.workspace-80{height:80px}.workspace-100{height:100px}.workspace-120{height:120px}.workspace-150{height:150px}.workspace-180{height:180px}.workspace-220{height:220px}.workspace-260{height:260px}
+.workspace-label{margin-top:8px;font-size:.85rem;font-weight:600;color:#444;}
+.tag{font-size:.85rem;background:#eaf1fb;border:1px solid #a9b9cf;color:#22354d;padding:2px 7px;border-radius:4px;margin-left:6px;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;}
+.rule-box{border:1px solid #aaa;background:#f8fbff;padding:10px;margin:8px 0;break-inside:avoid;page-break-inside:avoid;}
+/* ======================= TABLES ======================= */
+table{width:100%;border-collapse:collapse;margin:10px 0;break-inside:avoid;page-break-inside:avoid;}
+th,td{border:1px solid #888;padding:7px;text-align:center;vertical-align:middle;}
+th{background:#eaf1fb;color:#00003d;}
+td.left,th.left{text-align:left;}
+/* ======================= PRINT ======================= */
+@media print{body{padding:10px}.container{max-width:100%}.title-page{min-height:9.75in}.two-col{grid-template-columns:1fr 1fr;gap:10px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ======================= TITLE PAGE ======================= -->
+    <section class="title-page">
+      <div class="course">Precalculus - Unit 1</div>
+      <h1>Section 1.4 Investigation</h1>
+      <div class="subtitle">Transformations of Parent Functions</div>
+      <p><strong>Investigation:</strong> What do $a$, $h$, and $k$ do to a parent function?</p>
+      <p><strong>Time:</strong> 15-20 minutes</p>
+      <p><strong>Format:</strong> Desmos slider exploration, point tracking, and whole-class discussion</p>
+      <div class="details">Learning Target: Analyze and apply transformations of parent functions using the form $a f(x-h)+k$.</div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= DIRECTIONS PAGE ======================= -->
+    <section>
+      <div class="header-strip">Investigation Directions</div>
+      <div class="problem">
+        <h2>Setup</h2>
+        <ul>
+          <li><strong>Grouping:</strong> Partners or groups of 3.</li>
+          <li><strong>Materials:</strong> Student handout, pencil, and one device per group.</li>
+          <li><strong>Technology:</strong> Open <span class="desmos-link">desmos.com/calculator</span>.</li>
+          <li><strong>Teacher display:</strong> Project Desmos during the launch and closure.</li>
+        </ul>
+      </div>
+      <div class="problem">
+        <h2>Student Goal</h2>
+        <p>Today you will use sliders and point tracking to discover how a transformed function is built from a parent function.</p>
+        <p style="text-align:center;font-size:1.15rem;">$$g(x)=a f(x-h)+k$$</p>
+        <p>By the end, you should be able to describe how $a$, $h$, and $k$ affect the graph and how key points move.</p>
+      </div>
+      <div class="problem">
+        <h2>Desmos Start</h2>
+        <ol>
+          <li>Enter the parent function: $f(x)=x^2$.</li>
+          <li>Enter the transformation: $g(x)=a f(x-h)+k$.</li>
+          <li>Create sliders for $a$, $h$, and $k$.</li>
+          <li>Keep two sliders fixed while changing only one slider at a time.</li>
+          <li>After each discovery, test your rule with a second parent function such as $f(x)=|x|$ or $f(x)=\sqrt{x}$.</li>
+        </ol>
+      </div>
+      <div class="problem">
+        <h2>Norms for the Investigation</h2>
+        <ul>
+          <li>Change only one parameter at a time until the handout tells you to combine them.</li>
+          <li>Record what happens to the graph before writing a rule.</li>
+          <li>Use transformation language: shift, reflect, vertical stretch, vertical compression, left, right, up, and down.</li>
+          <li>For point tracking, describe how an original point $(x,y)$ moves to a new point.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= STUDENT HANDOUT ======================= -->
+    <section>
+      <div class="header-strip">Student Investigation Handout</div>
+      <div class="problem">
+        <div class="problem-number">Part 1: Parent Function Baseline</div>
+        <p>Start with $f(x)=x^2$ and $g(x)=a f(x-h)+k$.</p>
+        <ol>
+          <li>Set $a=1$, $h=0$, and $k=0$. What do you notice about $f$ and $g$?</li>
+          <li>List three easy points on $f(x)=x^2$.</li>
+          <li>Why do you think these points are useful for tracking transformations?</li>
+        </ol>
+        <div class="workspace-label">Observations</div>
+        <div class="workspace workspace-120"></div>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 2: Investigate $k$ <span class="tag">Vertical Shift</span></div>
+        <p>Keep $a=1$ and $h=0$. Change only $k$.</p>
+        <table>
+          <tr><th>Transformation</th><th>What happened to the graph?</th><th>What happened to the point $(0,0)$?</th></tr>
+          <tr><td>$g(x)=f(x)+3$</td><td></td><td></td></tr>
+          <tr><td>$g(x)=f(x)-4$</td><td></td><td></td></tr>
+          <tr><td>$g(x)=f(x)+1$</td><td></td><td></td></tr>
+        </table>
+        <p><strong>Write a rule:</strong> What does $k$ do?</p>
+        <div class="workspace workspace-80"></div>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 3: Investigate $h$ <span class="tag">Horizontal Shift</span></div>
+        <p>Keep $a=1$ and $k=0$. Change only $h$. Pay attention to the expression $x-h$.</p>
+        <table>
+          <tr><th>Transformation</th><th>Value of $h$</th><th>What happened to the graph?</th><th>What happened to $(0,0)$?</th></tr>
+          <tr><td>$g(x)=f(x-2)$</td><td></td><td></td><td></td></tr>
+          <tr><td>$g(x)=f(x+3)$</td><td></td><td></td><td></td></tr>
+          <tr><td>$g(x)=f(x-5)$</td><td></td><td></td><td></td></tr>
+        </table>
+        <p><strong>Write a rule:</strong> What does $h$ do?</p>
+        <div class="workspace workspace-80"></div>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 4: Investigate $a$ <span class="tag">Reflection / Vertical Scale</span></div>
+        <p>Keep $h=0$ and $k=0$. Change only $a$.</p>
+        <table>
+          <tr><th>Transformation</th><th>Reflection?</th><th>Stretch or Compression?</th><th>What happened to $(1,1)$?</th></tr>
+          <tr><td>$g(x)=2f(x)$</td><td></td><td></td><td></td></tr>
+          <tr><td>$g(x)=\frac12 f(x)$</td><td></td><td></td><td></td></tr>
+          <tr><td>$g(x)=-f(x)$</td><td></td><td></td><td></td></tr>
+          <tr><td>$g(x)=-3f(x)$</td><td></td><td></td><td></td></tr>
+        </table>
+        <p><strong>Write a rule:</strong> What does $a$ do?</p>
+        <div class="workspace workspace-100"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <section>
+      <div class="header-strip">Student Investigation Handout Continued</div>
+      <div class="problem">
+        <div class="problem-number">Part 5: Track Points Instead of Memorizing</div>
+        <p>Use your discoveries to predict how points move. Start with these parent-function points:</p>
+        <table>
+          <tr><th>Parent Function</th><th>Original Points</th></tr>
+          <tr><td>$f(x)=x^2$</td><td>$(-2,4),(-1,1),(0,0),(1,1),(2,4)$</td></tr>
+          <tr><td>$f(x)=|x|$</td><td>$(-2,2),(-1,1),(0,0),(1,1),(2,2)$</td></tr>
+          <tr><td>$f(x)=\sqrt{x}$</td><td>$(0,0),(1,1),(4,2),(9,3)$</td></tr>
+        </table>
+        <p>For each transformation, predict the new point locations before checking in Desmos.</p>
+        <table>
+          <tr><th>Parent Point</th><th>$g(x)=f(x-3)+2$</th><th>$g(x)=-2f(x)+1$</th><th>$g(x)=\frac12 f(x+4)-3$</th></tr>
+          <tr><td>$(0,0)$</td><td></td><td></td><td></td></tr>
+          <tr><td>$(1,1)$</td><td></td><td></td><td></td></tr>
+          <tr><td>$(-2,4)$</td><td></td><td></td><td></td></tr>
+        </table>
+        <p><strong>Generalize:</strong> If $(x,y)$ is on $f(x)$, what point is on $g(x)=a f(x-h)+k$?</p>
+        <div class="workspace workspace-100"></div>
+      </div>
+
+      <div class="problem">
+        <div class="problem-number">Part 6: Combine Transformations</div>
+        <p>Predict the transformations without graphing first. Then check in Desmos.</p>
+        <table>
+          <tr><th>Equation</th><th>Parent</th><th>Transformations</th><th>Locator Point / Key Point</th></tr>
+          <tr><td>$g(x)=2(x-3)^2+4$</td><td></td><td></td><td></td></tr>
+          <tr><td>$g(x)=-|x+1|-2$</td><td></td><td></td><td></td></tr>
+          <tr><td>$g(x)=\sqrt{x-5}+1$</td><td></td><td></td><td></td></tr>
+          <tr><td>$g(x)=-\frac12\sqrt{x+2}+3$</td><td></td><td></td><td></td></tr>
+        </table>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= DISCUSSION QUESTIONS ======================= -->
+    <section>
+      <div class="header-strip">Discussion Questions</div>
+      <div class="problem">
+        <ol>
+          <li>Why does $f(x-3)$ shift right even though the expression contains a minus sign?</li>
+          <li>How are $f(x)+4$ and $f(x+4)$ different?</li>
+          <li>What does a negative value of $a$ do to the graph?</li>
+          <li>How can point tracking help you sketch a transformed graph without making a full table?</li>
+          <li>A student says $g(x)=-2f(x+5)-1$ shifts right 5 and down 1. What is correct and what needs to be fixed?</li>
+        </ol>
+        <div class="workspace-label">Class Notes / Final Rule</div>
+        <div class="workspace workspace-180"></div>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= TEACHER SCRIPT ======================= -->
+    <section>
+      <div class="header-strip">Teaching Resource 1: Teacher Script</div>
+      <div class="teacher-box">
+        <h2>Purpose</h2>
+        <p>This investigation helps students discover the structure of $g(x)=a f(x-h)+k$. Students should leave understanding that $h$ changes inputs horizontally, $k$ changes outputs vertically, and $a$ scales or reflects output values.</p>
+      </div>
+      <div class="teacher-box">
+        <h2>Launch: 2 minutes</h2>
+        <p><strong>Say:</strong> “Today we are not memorizing transformation rules first. We are going to move one number at a time, collect evidence, and explain what each number does.”</p>
+        <p><strong>Check:</strong> Every group should have $f(x)=x^2$ and $g(x)=a f(x-h)+k$ in Desmos with sliders created.</p>
+      </div>
+      <div class="teacher-box">
+        <h2>Investigation: 10-12 minutes</h2>
+        <ol>
+          <li><strong>Part 1:</strong> Make sure students see that $a=1$, $h=0$, and $k=0$ leaves the parent function unchanged.</li>
+          <li><strong>Part 2:</strong> Ask, “Are the x-values changing, or are the y-values changing?” Students should connect $k$ to vertical movement.</li>
+          <li><strong>Part 3:</strong> When students say $x+3$ means right 3, ask, “What value of $x$ makes the inside equal to 0?”</li>
+          <li><strong>Part 4:</strong> Press for precise language: $a<0$ reflects over the $x$-axis; $|a|>1$ is a vertical stretch; $0<|a|<1$ is a vertical compression.</li>
+          <li><strong>Part 5:</strong> Use point tracking to connect the algebraic form to graph construction.</li>
+        </ol>
+      </div>
+      <div class="teacher-box">
+        <h2>Synthesis: 5 minutes</h2>
+        <div class="teacher-note">
+          <p>Final summary: In $g(x)=a f(x-h)+k$, $h$ shifts the graph horizontally, $k$ shifts it vertically, and $a$ controls reflection over the $x$-axis and vertical stretch/compression. A point $(x,y)$ on $f$ moves to $(x+h, ay+k)$ on $g$.</p>
+        </div>
+        <p><strong>Closure prompt:</strong> “Describe $g(x)=-3f(x+2)+5$ and explain what happens to the point $(4,-1)$.”</p>
+      </div>
+      <div class="teacher-box">
+        <h2>Common Misconceptions to Watch For</h2>
+        <ul>
+          <li>Students may reverse horizontal shifts because of the sign inside the parentheses.</li>
+          <li>Students may confuse vertical shifts $f(x)+k$ with horizontal shifts $f(x-h)$.</li>
+          <li>Students may say a negative $a$ shifts the graph down instead of reflecting it over the $x$-axis.</li>
+          <li>Students may describe vertical stretches as horizontal narrowing without connecting it to output values.</li>
+          <li>Students may forget that $a$ and $k$ affect y-values while $h$ affects x-values.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="page-break"></div>
+
+    <!-- ======================= ANSWER KEY ======================= -->
+    <section>
+      <div class="header-strip">Teaching Resource 2: Answer Key</div>
+      <div class="problem">
+        <div class="problem-number">Part 1: Parent Function Baseline</div>
+        <p><strong>Question:</strong> Set $a=1$, $h=0$, and $k=0$. What do you notice?</p>
+        <p><strong>Answer:</strong> $g(x)=f(x)$, so the transformed graph matches the parent function exactly.</p>
+        <p><strong>Question:</strong> List three easy points on $f(x)=x^2$.</p>
+        <p><strong>Answer:</strong> Sample points include $(-1,1)$, $(0,0)$, and $(1,1)$.</p>
+        <p><strong>Question:</strong> Why are these useful?</p>
+        <p><strong>Answer:</strong> They are easy reference points, so students can see how each transformation moves inputs and outputs.</p>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Part 2: Investigate $k$</div>
+        <table>
+          <tr><th>Transformation</th><th>What happened?</th><th>Point Movement</th></tr>
+          <tr><td>$g(x)=f(x)+3$</td><td>Shifted up 3</td><td>$(0,0)\to(0,3)$</td></tr>
+          <tr><td>$g(x)=f(x)-4$</td><td>Shifted down 4</td><td>$(0,0)\to(0,-4)$</td></tr>
+          <tr><td>$g(x)=f(x)+1$</td><td>Shifted up 1</td><td>$(0,0)\to(0,1)$</td></tr>
+        </table>
+        <p><strong>Rule:</strong> $k$ shifts the graph up or down. It adds to every output value.</p>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Part 3: Investigate $h$</div>
+        <table>
+          <tr><th>Transformation</th><th>Value of $h$</th><th>What happened?</th><th>Point Movement</th></tr>
+          <tr><td>$g(x)=f(x-2)$</td><td>$2$</td><td>Shifted right 2</td><td>$(0,0)\to(2,0)$</td></tr>
+          <tr><td>$g(x)=f(x+3)$</td><td>$-3$</td><td>Shifted left 3</td><td>$(0,0)\to(-3,0)$</td></tr>
+          <tr><td>$g(x)=f(x-5)$</td><td>$5$</td><td>Shifted right 5</td><td>$(0,0)\to(5,0)$</td></tr>
+        </table>
+        <p><strong>Rule:</strong> $h$ shifts the graph left or right. The form is $x-h$, so $x+3$ means $h=-3$.</p>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Part 4: Investigate $a$</div>
+        <table>
+          <tr><th>Transformation</th><th>Reflection?</th><th>Stretch / Compression</th><th>Point Movement</th></tr>
+          <tr><td>$g(x)=2f(x)$</td><td>No</td><td>Vertical stretch by 2</td><td>$(1,1)\to(1,2)$</td></tr>
+          <tr><td>$g(x)=\frac12 f(x)$</td><td>No</td><td>Vertical compression by $\frac12$</td><td>$(1,1)\to(1,\frac12)$</td></tr>
+          <tr><td>$g(x)=-f(x)$</td><td>Yes</td><td>Same vertical scale</td><td>$(1,1)\to(1,-1)$</td></tr>
+          <tr><td>$g(x)=-3f(x)$</td><td>Yes</td><td>Vertical stretch by 3</td><td>$(1,1)\to(1,-3)$</td></tr>
+        </table>
+        <p><strong>Rule:</strong> $a$ multiplies output values. If $a<0$, the graph reflects over the $x$-axis. If $|a|>1$, it is vertically stretched. If $0<|a|<1$, it is vertically compressed.</p>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Part 5: Track Points Instead of Memorizing</div>
+        <table>
+          <tr><th>Parent Point</th><th>$g(x)=f(x-3)+2$</th><th>$g(x)=-2f(x)+1$</th><th>$g(x)=\frac12 f(x+4)-3$</th></tr>
+          <tr><td>$(0,0)$</td><td>$(3,2)$</td><td>$(0,1)$</td><td>$(-4,-3)$</td></tr>
+          <tr><td>$(1,1)$</td><td>$(4,3)$</td><td>$(1,-1)$</td><td>$(-3,-\frac52)$</td></tr>
+          <tr><td>$(-2,4)$</td><td>$(1,6)$</td><td>$(-2,-7)$</td><td>$(-6,-1)$</td></tr>
+        </table>
+        <p><strong>General rule:</strong> If $(x,y)$ is on $f(x)$, then $(x+h, ay+k)$ is on $g(x)=a f(x-h)+k$.</p>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Part 6: Combine Transformations</div>
+        <table>
+          <tr><th>Equation</th><th>Parent</th><th>Transformations</th><th>Locator Point / Key Point</th></tr>
+          <tr><td>$g(x)=2(x-3)^2+4$</td><td>$x^2$</td><td>Right 3, vertical stretch by 2, up 4</td><td>Vertex $(3,4)$</td></tr>
+          <tr><td>$g(x)=-|x+1|-2$</td><td>$|x|$</td><td>Left 1, reflect over $x$-axis, down 2</td><td>Vertex $(-1,-2)$</td></tr>
+          <tr><td>$g(x)=\sqrt{x-5}+1$</td><td>$\sqrt{x}$</td><td>Right 5, up 1</td><td>Start point $(5,1)$</td></tr>
+          <tr><td>$g(x)=-\frac12\sqrt{x+2}+3$</td><td>$\sqrt{x}$</td><td>Left 2, reflect over $x$-axis, vertical compression by $\frac12$, up 3</td><td>Start point $(-2,3)$</td></tr>
+        </table>
+      </div>
+      <div class="problem">
+        <div class="problem-number">Discussion Questions</div>
+        <ol>
+          <li><strong>Why does $f(x-3)$ shift right?</strong> The input must be 3 larger to make the inside match the original input. Equivalently, the key point $(0,0)$ moves to $(3,0)$.</li>
+          <li><strong>How are $f(x)+4$ and $f(x+4)$ different?</strong> $f(x)+4$ shifts up 4. $f(x+4)$ shifts left 4.</li>
+          <li><strong>What does negative $a$ do?</strong> It reflects the graph over the $x$-axis.</li>
+          <li><strong>How does point tracking help?</strong> It moves known parent-function points to transformed locations without creating a full table.</li>
+          <li><strong>Student error:</strong> $g(x)=-2f(x+5)-1$ shifts left 5, not right 5. It also reflects over the $x$-axis, vertically stretches by 2, and shifts down 1.</li>
+        </ol>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
