@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 02 Warm Ups</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+
+.warmup-meta{font-size:0.95rem;color:#555;margin-bottom:14px;}
+.problem-source{font-size:0.82rem;color:#666;font-style:italic;margin-top:4px;}
+
+
+/* =======================
+   WARM UP PACKAGE LOCKED SYSTEM
+   ======================= */
+.warmup-page{
+  page-break-after: auto;
+}
+@media print{
+  .problem{ break-inside: avoid; page-break-inside: avoid; }
+}
+
+</style>
+</head>
+
+
+<body>
+<div class="container warmup-page">
+<h1>Warm Up Unit 2.1.1</h1>
+<div class="lesson-header"><h2>Prerequisite Skills for Odd and Even Functions</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Evaluate each expression for both values of the variable.</p><ol class="lower-alpha"><li>For $f(x)=x^2-3$, find $f(4)$ and $f(-4)$.</li><li>For $g(x)=2x^3+x$, find $g(2)$ and $g(-2)$.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">2</div>
+<p>Use the ordered pairs $(-3,5)$, $(3,5)$, $(-2,-4)$, and $(2,4)$.</p><ol class="lower-alpha"><li>Which pair shows matching outputs for opposite inputs?</li><li>Which pair shows opposite outputs for opposite inputs?</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">3</div>
+<p>Use the graph to describe the visible symmetry.</p><ol class="lower-alpha"><li>Does the graph appear symmetric about the $y$-axis, the origin, or neither?</li><li>What would you expect to happen at $x=-4$ if you know the value at $x=4$?</li></ol>
+<div class="graph-block graph-md"><img alt="Warm up figure" src="figures/wu2-1-1-3.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">4</div>
+<p>Complete each substitution.</p><ol class="lower-alpha"><li>If $f(x)=3x^2-1$, write and simplify $f(-x)$.</li><li>If $h(x)=5x^3-2x$, write and simplify $h(-x)$.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</div>
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 2.1.2</h1>
+<div class="lesson-header"><h2>Odd/Even Functions with Spiral Review</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Determine whether the function is even, odd, or neither. Show the $f(-x)$ test.</p><p style="text-align:center;">$f(x)=x^4-6x^2+1$</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">2</div>
+<p>Use the graph to classify the function as even, odd, or neither. Explain your evidence using symmetry.</p>
+<div class="graph-block graph-md"><img alt="Warm up figure" src="figures/wu2-1-2-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: Let $p(x)=x^2-5x+6$.</p><ol class="lower-alpha"><li>Evaluate $p(0)$.</li><li>Solve $p(x)=0$.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: Simplify. Write answers with positive exponents.</p><ol class="lower-alpha"><li>$x^3\cdot x^{-7}$</li><li>$\dfrac{4a^5b^{-2}}{8a^{-1}b^3}$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</div>
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 2.1.3</h1>
+<div class="lesson-header"><h2>Higher-Level Odd/Even Reasoning with Spirals</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>A student claims $f(x)=x^5+x^3+x$ is odd because every term has an odd exponent.</p><ol class="lower-alpha"><li>Verify the claim algebraically.</li><li>Explain why the structure of the equation supports your answer.</li></ol>
+<div class="graph-block graph-md"><img alt="Warm up figure" src="figures/wu2-1-3-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">2</div>
+<p>Create one polynomial that is even and one polynomial that is neither even nor odd. Justify both using $f(-x)$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: A function has domain $[-4,6)$ and range $(-2,8]$.</p><ol class="lower-alpha"><li>Write a sentence interpreting each interval.</li><li>Explain which endpoints are included and which are excluded.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: A student says $(2x^3)^2=2x^6$.</p><ol class="lower-alpha"><li>Identify the mistake.</li><li>Correct the simplification and explain the exponent rule.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</div>
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 2.2.1</h1>
+<div class="lesson-header"><h2>Prerequisite Skills for Function Arithmetic</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Evaluate each function at the given input.</p><ol class="lower-alpha"><li>If $f(x)=2x-5$, find $f(4)$.</li><li>If $g(x)=x^2+3$, find $g(-2)$.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">2</div>
+<p>Use the graphs of $f$ and $g$.</p><ol class="lower-alpha"><li>Estimate $f(2)$ and $g(2)$.</li><li>Find $f(2)+g(2)$ and $f(2)-g(2)$.</li></ol>
+<div class="graph-block graph-md"><img alt="Warm up figure" src="figures/wu2-2-1-2.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">3</div>
+<p>Use the table.</p><table class="parent-table"><tr><th>$x$</th><td>-1</td><td>0</td><td>2</td></tr><tr><th>$f(x)$</th><td>4</td><td>1</td><td>-3</td></tr><tr><th>$g(x)$</th><td>2</td><td>-5</td><td>6</td></tr></table><ol class="lower-alpha"><li>Find $f(0)+g(0)$.</li><li>Find $f(2)g(2)$.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">4</div>
+<p>State the value that makes each denominator zero.</p><ol class="lower-alpha"><li>$\dfrac{x+4}{x-3}$</li><li>$\dfrac{2x-1}{x+7}$</li><li>$\dfrac{x^2}{2x-10}$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</div>
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 2.2.2</h1>
+<div class="lesson-header"><h2>Function Arithmetic with Spiral Review</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Let $f(x)=x^2-4$ and $g(x)=3x+1$.</p><ol class="lower-alpha"><li>Find $(f+g)(x)$.</li><li>Find $(fg)(x)$.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">2</div>
+<p>Let $f(x)=x+2$ and $g(x)=x^2-1$.</p><ol class="lower-alpha"><li>Use the graph to estimate $(f+g)(1)$.</li><li>Use the graph to estimate $(fg)(-1)$.</li></ol>
+<div class="graph-block graph-md"><img alt="Warm up figure" src="figures/wu2-2-2-3.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: Translate the solution set $-3\le x<5$ into interval notation and describe how the endpoints would appear on a number line.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: Rewrite each expression using rational exponent notation.</p><ol class="lower-alpha"><li>$\sqrt[3]{x^5}$</li><li>$\dfrac{1}{\sqrt{x}}$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</div>
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 2.2.3</h1>
+<div class="lesson-header"><h2>Function Arithmetic Reasoning with Spirals</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>The expression $\dfrac{x^2-4}{x-2}$ simplifies to $x+2$.</p><ol class="lower-alpha"><li>State the excluded input.</li><li>Explain why the exclusion remains after simplification.</li><li>Use the graph as evidence.</li></ol>
+<div class="graph-block graph-md"><img alt="Warm up figure" src="figures/wu2-2-3-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">2</div>
+<p>A student says the domain of $\dfrac{f}{g}$ is always the domain of $f$.</p><ol class="lower-alpha"><li>Give a counterexample using simple functions.</li><li>Explain the role of $g(x)=0$.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: Create a function with domain $[0,\infty)$ and explain why negative inputs are not allowed.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: A student says $x^{1/3}$ means one-third of $x$.</p><ol class="lower-alpha"><li>Explain the misconception.</li><li>Use $x=8$ to prove the statement is false.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</div>
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 2.3.1</h1>
+<div class="lesson-header"><h2>Prerequisite Skills for Function Composition</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Let $f(x)=2x+3$ and $g(x)=x-4$.</p><ol class="lower-alpha"><li>Find $g(5)$.</li><li>Use that output as the input for $f$. What is $f(g(5))$?</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">2</div>
+<p>Use the table.</p><table class="parent-table"><tr><th>$x$</th><td>-2</td><td>0</td><td>1</td><td>4</td></tr><tr><th>$f(x)$</th><td>5</td><td>1</td><td>0</td><td>-3</td></tr><tr><th>$g(x)$</th><td>1</td><td>4</td><td>0</td><td>-2</td></tr></table><ol class="lower-alpha"><li>Find $g(0)$.</li><li>Find $f(g(0))$.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">3</div>
+<p>Evaluate carefully.</p><ol class="lower-alpha"><li>If $h(x)=x^2+1$, find $h(3)$.</li><li>If $h(x)=x^2+1$, find $h(a+2)$.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">4</div>
+<p>Use the graphs of $f$ and $g$ to estimate $f(g(2))$. Show the two-step input-output path.</p>
+<div class="graph-block graph-md"><img alt="Warm up figure" src="figures/wu2-3-1-4.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</div>
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 2.3.2</h1>
+<div class="lesson-header"><h2>Function Composition with Spiral Review</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Let $f(x)=x^2-1$ and $g(x)=3x+2$.</p><ol class="lower-alpha"><li>Find $f(g(x))$.</li><li>Find $g(f(x))$.</li><li>Are the results the same?</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">2</div>
+<p>Given $f(x)=\sqrt{x+2}$ and $g(x)=3-x$, use the graph to decide whether $f(g(5))$ is defined. Explain your reasoning.</p>
+<div class="graph-block graph-md"><img alt="Warm up figure" src="figures/wu2-3-2-2.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: Let $T(x)=2x^2-8x$.</p><ol class="lower-alpha"><li>Solve $T(x)=0$.</li><li>Explain what the solutions mean on the graph.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: Find the slope of the line through $(-2,5)$ and $(4,-1)$, then write an equation in slope-intercept form.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</div>
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 2.3.3</h1>
+<div class="lesson-header"><h2>Composition Reasoning with Spirals</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Let $f(x)=\sqrt{x}$ and $g(x)=x-4$.</p><ol class="lower-alpha"><li>Find a formula for $f(g(x))$.</li><li>Determine the domain of $f(g(x))$.</li><li>Use the graph to explain why the inside function controls the restriction.</li></ol>
+<div class="graph-block graph-md"><img alt="Warm up figure" src="figures/wu2-3-3-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">2</div>
+<p>A student says $f(g(x))$ means the same thing as $(fg)(x)$.</p><ol class="lower-alpha"><li>Choose simple functions to test the claim.</li><li>Explain the difference between composition and multiplication.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: A graph has a hole at $x=2$, a filled point at $(2,5)$, and approaches $y=1$ from both sides. State $\lim_{x\to 2} f(x)$ and $f(2)$, then explain the difference.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: Simplify and justify each step.</p><p style="text-align:center;">$\dfrac{(3x^{-2}y^4)^2}{9x^3y^{-1}}$</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</div>
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 2.4.1</h1>
+<div class="lesson-header"><h2>Prerequisite Skills for Difference Quotient</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Find the slope between each pair of points.</p><ol class="lower-alpha"><li>$(1,4)$ and $(5,12)$</li><li>$(-2,7)$ and $(3,-3)$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">2</div>
+<p>Use the table to find the average rate of change from $x=0$ to $x=4$.</p><table class="parent-table"><tr><th>$x$</th><td>0</td><td>2</td><td>4</td></tr><tr><th>$f(x)$</th><td>3</td><td>7</td><td>11</td></tr></table>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">3</div>
+<p>Use the graph to estimate the slope of the line. Explain how you chose two points.</p>
+<div class="graph-block graph-md"><img alt="Warm up figure" src="figures/wu2-4-1-3.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">4</div>
+<p>Simplify each expression.</p><ol class="lower-alpha"><li>$(x+h)^2$</li><li>$3(x+h)-3x$</li><li>$\dfrac{6h}{h}$, where $h\ne0$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</div>
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 2.4.2</h1>
+<div class="lesson-header"><h2>Difference Quotient with Spiral Review</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>For $f(x)=2x+5$, calculate and simplify:</p><p style="text-align:center;">$\dfrac{f(x+h)-f(x)}{h}$</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">2</div>
+<p>Use the graph to estimate the average rate of change from $x=0$ to $x=4$. Interpret the result as a secant slope.</p>
+<div class="graph-block graph-md"><img alt="Warm up figure" src="figures/wu2-4-2-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: Let $f(x)=x^2$ and $g(x)=x+3$.</p><ol class="lower-alpha"><li>Find $(f+g)(x)$.</li><li>Find $f(g(2))$.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: Rewrite $\sqrt[4]{x^3}$ using rational exponent notation, then explain which number represents the root.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</div>
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 2.4.3</h1>
+<div class="lesson-header"><h2>Difference Quotient Reasoning with Spirals</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>For $f(x)=x^2$, calculate and simplify:</p><p style="text-align:center;">$\dfrac{f(x+h)-f(x)}{h}$</p><p>Then explain what happens when $h$ gets very small.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">2</div>
+<p>The graph shows two points on $f(x)=x^2$ corresponding to $x=1$ and $x=1+h$ when $h=2$.</p><ol class="lower-alpha"><li>Find the secant slope.</li><li>Connect your result to the difference quotient.</li></ol>
+<div class="graph-block graph-md"><img alt="Warm up figure" src="figures/wu2-4-3-2.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: A student solves $f(x)=6$ by finding $f(6)$. Explain the error and give a correct example showing the difference between evaluating and solving.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: A line passes through $(2,-1)$ and $(8,11)$.</p><ol class="lower-alpha"><li>Find the slope.</li><li>Write an equation.</li><li>Explain what the slope means as a rate of change.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</div>
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 2.5.1</h1>
+<div class="lesson-header"><h2>Prerequisite Skills for Function Inverses</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Solve each equation for $x$.</p><ol class="lower-alpha"><li>$y=3x-7$</li><li>$y=\dfrac{x+5}{2}$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">2</div>
+<p>Use the graph of a function and its inverse.</p><ol class="lower-alpha"><li>Describe how the two graphs are related to the line $y=x$.</li><li>If $(3,7)$ is on $f$, what point should be on $f^{-1}$?</li></ol>
+<div class="graph-block graph-md"><img alt="Warm up figure" src="figures/wu2-5-1-2.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">3</div>
+<p>Use the table.</p><table class="parent-table"><tr><th>$x$</th><td>-1</td><td>0</td><td>2</td><td>5</td></tr><tr><th>$f(x)$</th><td>4</td><td>1</td><td>-3</td><td>0</td></tr></table><ol class="lower-alpha"><li>Write two inverse ordered pairs.</li><li>What is $f^{-1}(-3)$?</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">4</div>
+<p>Determine whether each set of ordered pairs represents a function.</p><ol class="lower-alpha"><li>$\{(1,4),(2,4),(3,5)\}$</li><li>$\{(1,4),(1,6),(2,8)\}$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</div>
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 2.5.2</h1>
+<div class="lesson-header"><h2>Inverse Functions with Spiral Review</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Find the inverse of $f(x)=4x-9$. Show the switch-and-solve process.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">2</div>
+<p>Use the graph to decide whether the function shown has an inverse function without restricting the domain. Explain using the horizontal line test.</p>
+<div class="graph-block graph-md"><img alt="Warm up figure" src="figures/wu2-5-2-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: For $f(x)=x^2+1$ and $g(x)=2x-3$, find $f(g(x))$ and state whether $g(f(x))$ would be the same expression.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: Evaluate exactly.</p><ol class="lower-alpha"><li>$27^{2/3}$</li><li>$16^{-3/4}$</li><li>$\sqrt[3]{-64}$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</div>
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 2.5.3</h1>
+<div class="lesson-header"><h2>Inverse Function Reasoning with Spirals</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>The graph shows a function, its inverse, and the line $y=x$.</p><ol class="lower-alpha"><li>Explain how the graph supports the inverse relationship.</li><li>Choose one point on the function and describe its inverse point.</li></ol>
+<div class="graph-block graph-md"><img alt="Warm up figure" src="figures/wu2-5-3-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">2</div>
+<p>A student finds the inverse of $f(x)=\dfrac{x-2}{5}$ and gets $f^{-1}(x)=\dfrac{x+2}{5}$.</p><ol class="lower-alpha"><li>Identify the error.</li><li>Find the correct inverse.</li><li>Verify using composition.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: Calculate and interpret the average rate of change of $p(x)=x^2-4x$ from $x=1$ to $x=5$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section><section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: A radical expression is defined by $r(x)=\sqrt{x-6}$.</p><ol class="lower-alpha"><li>Determine the domain.</li><li>Explain the restriction using real-number reasoning.</li><li>Write the domain in interval notation.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+</div>
+</body>
+</html>

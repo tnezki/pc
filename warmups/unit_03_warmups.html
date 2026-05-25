@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 03 Warm Ups</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+
+
+/* =======================
+   RESET
+   ======================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =======================
+   PAGE
+   ======================= */
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height:1.55;
+  color:#222;
+  background:#fff;
+  padding:20px;
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* print color support */
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+/* =======================
+   PAGE BREAK HELPERS
+   ======================= */
+.page-break{
+  page-break-before:always;
+}
+
+/* =======================
+   HEADINGS
+   ======================= */
+h1{
+  color:#00003d;
+  font-size:2rem;
+  margin-bottom:8px;
+}
+
+h2{
+  color:#00003d;
+  font-size:1.5rem;
+  margin-top:10px;
+  margin-bottom:10px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.15rem;
+  margin-top:4px;
+  margin-bottom:10px;
+}
+
+/* =======================
+   INTRO / LABEL TEXT
+   ======================= */
+.intro-text{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+.section-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+.review-preview-label{
+  background:#f7f0cf;
+  border:1px solid #c7bb8c;
+  color:#4a3f17;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+/* =======================
+   LESSON HEADER
+   ======================= */
+.lesson-header{
+  margin-bottom:18px;
+}
+
+.lesson-subtitle{
+  font-style:italic;
+  color:#555;
+  margin-top:2px;
+}
+
+/* =======================
+   PROBLEM WRAPPER
+   ======================= */
+.problem{
+  border:1px solid #777;
+  padding:14px 14px 12px 14px;
+  margin-bottom:16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.problem-number{
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:8px;
+}
+
+.problem p{
+  margin-bottom:8px;
+}
+
+.problem ol,
+.problem ul{
+  margin-left:24px;
+  margin-bottom:8px;
+}
+
+.problem li{
+  margin-bottom:6px;
+}
+
+/* =======================
+   TABLES
+   ======================= */
+.parent-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:12px 0;
+}
+
+.parent-table th,
+.parent-table td{
+  border:1px solid #888;
+  padding:10px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.parent-table th{
+  background:#f3f5f8;
+  font-size:1rem;
+}
+
+/* =======================
+   FIGURE CONTROL
+   Edit these classes if figures need resizing
+   ======================= */
+.figure-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.figure-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px dashed #bbb;
+  padding:4px;
+  background:#fff;
+}
+
+.figure-xs img{ max-width:160px; }
+.figure-sm img{ max-width:220px; }
+.figure-md img{ max-width:300px; }
+.figure-lg img{ max-width:380px; }
+.figure-xl img{ max-width:460px; }
+
+/* =======================
+   GRAPH IMAGE CONTROL
+   Edit these classes if graph images need resizing
+   ======================= */
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+
+/* =======================
+   WORKSPACE SYSTEM
+   Edit heights here for easy control
+   ======================= */
+.workspace{
+  width:100%;
+  margin-top:10px;
+  border-top:1px solid #777;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-80{height:80px;}
+.workspace-100{height:100px;}
+.workspace-120{height:120px;}
+.workspace-150{height:150px;}
+.workspace-180{height:180px;}
+.workspace-200{height:200px;}
+.workspace-220{height:220px;}
+.workspace-250{height:250px;}
+.workspace-300{height:300px;}
+.workspace-350{height:350px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace-label{
+  margin-top:8px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:#444;
+}
+
+/* workspace image support */
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+/* =======================
+   SMALL TEXT / LINKS
+   ======================= */
+.hw-help{
+  color:#444;
+  font-size:0.95rem;
+}
+
+.inline-italic{
+  font-style:italic;
+}
+
+/* =======================
+   MERGE COMPATIBILITY
+   Added because later files used these classes.
+   ======================= */
+.figure-full img{ max-width:100%; }
+ol.lower-alpha{ list-style-type: lower-alpha; }
+
+
+.figure-full img{ max-width:100%; }
+.lower-alpha{ list-style-type: lower-alpha; }
+.closure-note{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+
+
+/* =======================
+   MERGE COMPATIBILITY HELPERS
+   ======================= */
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.table-block{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+
+
+/* =======================
+   UNIT SORT COMPATIBILITY HELPERS
+   ======================= */
+.problem-lesson{
+  font-weight:600;
+  color:#555;
+  margin-left:12px;
+  font-size:0.9rem;
+}
+.lower-alpha{ list-style-type: lower-alpha; }
+.lower-roman{ list-style-type: lower-roman; }
+.figure-xxxs img{ max-width:40px; }
+.figure-xxs img{ max-width:100px; }
+.figure-full img{ max-width:100%; }
+.workspace-260{height:260px;}
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:8px 0;
+}
+.col-sm-3{ flex:1 1 22%; min-width:120px; }
+.col-sm-4{ flex:1 1 30%; min-width:160px; }
+.col-sm-6{ flex:1 1 45%; min-width:220px; }
+.col-sm-8{ flex:1 1 62%; min-width:300px; }
+.col-sm-9{ flex:1 1 70%; min-width:320px; }
+.ebooksOnly{ display:none; }
+.table-wrap{
+  overflow-x:auto;
+  margin:12px 0;
+}
+.table-block,
+.param-table,
+table.values{
+  margin:10px auto 12px auto;
+  border-collapse:collapse;
+}
+.table-block td,
+.table-block th,
+.param-table td,
+.param-table th,
+table.values td,
+table.values th{
+  border:1px solid #000;
+  padding:6px 14px;
+  text-align:center;
+}
+.graph-block{
+  margin:12px 0 10px 0;
+  text-align:center;
+}
+.graph-block img{
+  display:block;
+  margin:0 auto;
+  height:auto;
+  width:auto;
+  max-width:100%;
+  border:1px solid #ccc;
+  background:#fff;
+}
+.graph-xs img{ max-width:220px; }
+.graph-sm img{ max-width:280px; }
+.graph-md img{ max-width:340px; }
+.graph-lg img{ max-width:420px; }
+.graph-xl img{ max-width:520px; }
+.unit-intro{
+  font-size:0.95rem;
+  color:#555;
+  margin-bottom:14px;
+}
+.source-label{
+  background:#eaf1fb;
+  border:1px solid #a9b9cf;
+  color:#22354d;
+  font-weight:700;
+  font-size:0.95rem;
+  padding:8px 12px;
+  margin:18px 0 10px 0;
+  border-radius:4px;
+}
+
+
+.warmup-meta{font-size:0.95rem;color:#555;margin-bottom:14px;}
+.problem-source{font-size:0.82rem;color:#666;font-style:italic;margin-top:4px;}
+
+
+/* =======================
+   WARM UP PACKAGE LOCKED SYSTEM
+   ======================= */
+.warmup-page{
+  page-break-after: auto;
+}
+@media print{
+  .problem{ break-inside: avoid; page-break-inside: avoid; }
+}
+
+</style>
+</head>
+
+
+
+<body>
+<div class="container warmup-page">
+<h1>Warm Up Unit 3.1.1</h1>
+<div class="lesson-header"><h2>Prerequisite Skills for Solving Using Roots</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Evaluate each root exactly.</p><ol class="lower-alpha"><li>$\sqrt{121}$</li><li>$\sqrt[3]{-125}$</li><li>$\sqrt{0}$</li><li>$\sqrt[3]{64}$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">2</div>
+<p>Solve each basic equation.</p><ol class="lower-alpha"><li>$x^2=36$</li><li>$x^3=-27$</li></ol><p>Explain why the first equation may have a different number of real solutions than the second.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">3</div>
+<p>Use the graph of $y=x^2$ and the line $y=9$.</p><ol class="lower-alpha"><li>Estimate the intersection points.</li><li>Use the intersections to solve $x^2=9$.</li></ol>
+<div class="graph-block graph-lg"><img alt="Warm up figure" src="figures/wu3-1-1-3.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">4</div>
+<p>Complete each inverse operation.</p><ol class="lower-alpha"><li>If $(x-2)^2=25$, what equation(s) come after taking square roots?</li><li>If $(x+5)^3=-64$, what equation comes after taking cube roots?</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+
+</div>
+
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 3.1.2</h1>
+<div class="lesson-header"><h2>Solving with Roots and Spiral Review</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Solve and verify both solutions.</p><p style="text-align:center;">$3(x-4)^2=75$</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">2</div>
+<p>Solve using cube roots.</p><p style="text-align:center;">$2(x+1)^3-5=49$</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: Let $f(x)=x^2-4x$ and $g(x)=2x+1$.</p><ol class="lower-alpha"><li>Find $(f+g)(x)$.</li><li>Evaluate $f(g(2))$.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: Use interval notation and inequality notation to describe all real numbers greater than or equal to $-2$ and less than $7$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+
+</div>
+
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 3.1.3</h1>
+<div class="lesson-header"><h2>Root Equation Reasoning with Spirals</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Use the graph to compare the number of solutions.</p><ol class="lower-alpha"><li>Explain why $(x-2)^2=9$ has two real solutions.</li><li>State the solutions and explain why they are symmetric around $x=2$.</li></ol>
+<div class="graph-block graph-lg"><img alt="Warm up figure" src="figures/wu3-1-3-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">2</div>
+<p>A student solves $(x+3)^2=49$ and writes $x+3=7$, so $x=4$.</p><ol class="lower-alpha"><li>Identify what is incomplete.</li><li>Solve correctly.</li><li>Explain how verification helps catch the issue.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: A function has graph symmetry about the origin and passes through $(2,5)$.</p><ol class="lower-alpha"><li>What other point must be on the graph?</li><li>Classify the function as odd, even, or neither if this pattern holds for all inputs.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: A graph has domain $[-3,\infty)$ and range $(-\infty,4]$.</p><ol class="lower-alpha"><li>Describe the endpoint behavior in words.</li><li>Explain whether $x=-3$ is included.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+
+</div>
+
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 3.2.1</h1>
+<div class="lesson-header"><h2>Prerequisite Skills for Square Root Equations</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Isolate the radical expression in each equation, but do not solve completely.</p><ol class="lower-alpha"><li>$\sqrt{x+5}+3=11$</li><li>$4\sqrt{2x-1}=20$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">2</div>
+<p>Use the graph to estimate the solution to $\sqrt{x}=x-2$.</p><ol class="lower-alpha"><li>Where do the graphs intersect?</li><li>Why does a graphical check help before solving algebraically?</li></ol>
+<div class="graph-block graph-lg"><img alt="Warm up figure" src="figures/wu3-2-1-2.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">3</div>
+<p>Solve each equation mentally.</p><ol class="lower-alpha"><li>$\sqrt{x}=8$</li><li>$\sqrt{x-4}=5$</li><li>$2\sqrt{x+1}=10$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">4</div>
+<p>Check whether each value is a solution to $\sqrt{x+8}=x$.</p><ol class="lower-alpha"><li>$x=4$</li><li>$x=-2$</li><li>$x=8$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+
+</div>
+
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 3.2.2</h1>
+<div class="lesson-header"><h2>Square Root Equations and Spiral Review</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Solve and check.</p><p style="text-align:center;">$\sqrt{2x+7}=5$</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">2</div>
+<p>Solve and identify any extraneous solution.</p><p style="text-align:center;">$\sqrt{x+4}=x-2$</p><p>Use the graph to support your conclusion.</p>
+<div class="graph-block graph-lg"><img alt="Warm up figure" src="figures/wu3-2-2-2.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: Find the inverse of $f(x)=3x-8$, then verify one direction using composition.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: Let $h(x)=x^2-6x+5$.</p><ol class="lower-alpha"><li>Solve $h(x)=0$.</li><li>Explain what the solutions mean on the graph.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+
+</div>
+
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 3.2.3</h1>
+<div class="lesson-header"><h2>Extraneous Solution Reasoning with Spirals</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Solve $\sqrt{x+6}=x$.</p><ol class="lower-alpha"><li>Show the algebra after squaring.</li><li>Check all possible solutions.</li><li>Use the graph to explain why only the valid solution remains.</li></ol>
+<div class="graph-block graph-lg"><img alt="Warm up figure" src="figures/wu3-2-3-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">2</div>
+<p>A student says, “Once I square both sides correctly, every answer from the quadratic works.”</p><ol class="lower-alpha"><li>Use an example to disprove the claim.</li><li>Explain why checking in the original equation is required.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: Calculate the average rate of change of $f(x)=x^2+1$ from $x=1$ to $x=4$, then interpret it as a secant slope.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: A student writes $(2,7)$ on $f$ as $(2,7)$ on $f^{-1}$.</p><ol class="lower-alpha"><li>Correct the inverse point.</li><li>Explain the coordinate switch.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+
+</div>
+
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 3.3.1</h1>
+<div class="lesson-header"><h2>Prerequisite Skills for Cube Root Equations</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Evaluate each cube root exactly.</p><ol class="lower-alpha"><li>$\sqrt[3]{27}$</li><li>$\sqrt[3]{-216}$</li><li>$\sqrt[3]{0}$</li><li>$\sqrt[3]{1000}$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">2</div>
+<p>Solve each basic cube equation.</p><ol class="lower-alpha"><li>$x^3=64$</li><li>$x^3=-8$</li><li>$x^3=125$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">3</div>
+<p>Use the cube root parent graph.</p><ol class="lower-alpha"><li>Estimate $\sqrt[3]{8}$ and $\sqrt[3]{-8}$ from the graph.</li><li>Describe why cube root graphs allow negative inputs.</li></ol>
+<div class="graph-block graph-lg"><img alt="Warm up figure" src="figures/wu3-3-1-3.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">4</div>
+<p>Simplify each expression before solving.</p><ol class="lower-alpha"><li>$3(x-2)^3=81$</li><li>$(x+4)^3-10=-18$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+
+</div>
+
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 3.3.2</h1>
+<div class="lesson-header"><h2>Cube Root Equations and Spiral Review</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Solve and verify.</p><p style="text-align:center;">$\sqrt[3]{x-1}+2=4$</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">2</div>
+<p>Solve using inverse operations.</p><p style="text-align:center;">$5\sqrt[3]{2x+6}-3=17$</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: Determine whether $f(x)=x^3-4x$ is odd, even, or neither. Justify using $f(-x)$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: Translate $(-4,9]$ into inequality notation and explain the endpoint symbols.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+
+</div>
+
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 3.3.3</h1>
+<div class="lesson-header"><h2>Cube Root Reasoning with Spirals</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>The graph shows $f(x)=\sqrt[3]{x+3}-1$.</p><ol class="lower-alpha"><li>State the transformation from $y=\sqrt[3]{x}$.</li><li>Estimate the $x$-intercept.</li><li>Explain why the domain is all real numbers.</li></ol>
+<div class="graph-block graph-lg"><img alt="Warm up figure" src="figures/wu3-3-3-2.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">2</div>
+<p>Compare solving $(x-2)^2=16$ and $(x-2)^3=64$.</p><ol class="lower-alpha"><li>Solve both equations.</li><li>Explain why one produces two real solutions and the other produces one.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: A quotient of functions simplifies from $\dfrac{x^2-16}{x-4}$ to $x+4$.</p><ol class="lower-alpha"><li>State the original domain restriction.</li><li>Explain what the graph would show at the restricted input.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: Create a factorable quadratic with zeros at $x=-2$ and $x=5$, then verify both zeros.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+
+</div>
+
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 3.4.1</h1>
+<div class="lesson-header"><h2>Prerequisite Skills for Graphing Radical Functions</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Complete the table for $f(x)=\sqrt{x}$.</p><table class="parent-table"><tr><th>$x$</th><td>0</td><td>1</td><td>4</td><td>9</td></tr><tr><th>$f(x)$</th><td></td><td></td><td></td><td></td></tr></table>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">2</div>
+<p>Use the graph to compare $y=\sqrt{x}$ and $y=\sqrt[3]{x}$.</p><ol class="lower-alpha"><li>Which graph begins at an endpoint?</li><li>Which graph continues left and right forever?</li></ol>
+<div class="graph-block graph-lg"><img alt="Warm up figure" src="figures/wu3-4-1-2.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">3</div>
+<p>For each function, describe the transformation from the parent function.</p><ol class="lower-alpha"><li>$g(x)=\sqrt{x-5}$</li><li>$h(x)=\sqrt[3]{x}+2$</li><li>$p(x)=-\sqrt{x}$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">4</div>
+<p>Determine the domain of each function.</p><ol class="lower-alpha"><li>$f(x)=\sqrt{x+6}$</li><li>$g(x)=\sqrt{x-3}$</li><li>$h(x)=\sqrt[3]{x-10}$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+
+</div>
+
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 3.4.2</h1>
+<div class="lesson-header"><h2>Graphing Radical Functions and Spiral Review</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Use the graph of $f(x)=\sqrt{x-2}+1$.</p><ol class="lower-alpha"><li>State the starting point.</li><li>Determine the domain and range.</li><li>List two locator points shown by the transformation.</li></ol>
+<div class="graph-block graph-lg"><img alt="Warm up figure" src="figures/wu3-4-2-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">2</div>
+<p>For $g(x)=-\sqrt{x+4}+3$:</p><ol class="lower-alpha"><li>Identify the transformations.</li><li>State the domain.</li><li>State the range.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: Let $f(x)=x+1$ and $g(x)=x^2-2$.</p><ol class="lower-alpha"><li>Find $f(g(x))$.</li><li>Find $(fg)(x)$.</li><li>Explain how the operations differ.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: Determine the domain and range of a graph with a closed endpoint at $(-2,5)$ that increases forever to the right.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+
+</div>
+
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 3.4.3</h1>
+<div class="lesson-header"><h2>Radical Graph Analysis with Spirals</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Compare the two radical graphs.</p><ol class="lower-alpha"><li>Which graph has a restricted domain?</li><li>Which graph has domain all real numbers?</li><li>Explain how the equation structure tells you this before graphing.</li></ol>
+<div class="graph-block graph-lg"><img alt="Warm up figure" src="figures/wu3-4-3-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">2</div>
+<p>Create a square root function with domain $[4,\infty)$ and range $(-\infty,2]$.</p><ol class="lower-alpha"><li>Write the equation.</li><li>Describe the transformations.</li><li>Justify the domain and range.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: A function is one-to-one and contains the points $(-1,3)$, $(0,5)$, and $(4,9)$.</p><ol class="lower-alpha"><li>Write three points on the inverse.</li><li>Explain why the original must be one-to-one for its inverse to be a function.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: A graph has a jump at $x=1$. The left-hand limit is $4$ and the right-hand limit is $-2$.</p><ol class="lower-alpha"><li>Does $\lim_{x\to1} f(x)$ exist?</li><li>Explain using one-sided limits.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+
+</div>
+
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 3.5.1</h1>
+<div class="lesson-header"><h2>Prerequisite Skills for Rational Exponent Functions</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Rewrite each expression in radical form.</p><ol class="lower-alpha"><li>$x^{1/2}$</li><li>$x^{3/2}$</li><li>$x^{2/3}$</li><li>$x^{5/4}$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">2</div>
+<p>Rewrite each radical using rational exponents.</p><ol class="lower-alpha"><li>$\sqrt[3]{x^4}$</li><li>$\sqrt{x^7}$</li><li>$\sqrt[5]{x^2}$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">3</div>
+<p>Use the graph to compare $x^{1/2}$ and $x^{1/3}$.</p><ol class="lower-alpha"><li>Which graph has a restricted domain?</li><li>Which graph accepts negative inputs?</li></ol>
+<div class="graph-block graph-lg"><img alt="Warm up figure" src="figures/wu3-5-1-3.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">4</div>
+<p>Evaluate exactly.</p><ol class="lower-alpha"><li>$16^{1/2}$</li><li>$27^{2/3}$</li><li>$32^{3/5}$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+
+</div>
+
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 3.5.2</h1>
+<div class="lesson-header"><h2>Rational Exponent Functions and Spiral Review</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>Analyze $f(x)=(x-1)^{2/3}$ using the graph.</p><ol class="lower-alpha"><li>State the domain.</li><li>Estimate the minimum value.</li><li>Explain why the exponent denominator matters for allowed inputs.</li></ol>
+<div class="graph-block graph-lg"><img alt="Warm up figure" src="figures/wu3-5-2-2.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">2</div>
+<p>Rewrite and evaluate.</p><ol class="lower-alpha"><li>$64^{2/3}$</li><li>$81^{3/4}$</li><li>$(-32)^{3/5}$</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: Calculate and simplify the difference quotient for $f(x)=3x-7$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: Use $a*f(x-h)+k$ language to describe the transformation from $f(x)$ to $g(x)=-2f(x+3)-5$.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+
+</div>
+
+<div class="page-break"></div>
+<div class="container warmup-page">
+<h1>Warm Up Unit 3.5.3</h1>
+<div class="lesson-header"><h2>Rational Exponent Reasoning with Spirals</h2><div class="lesson-subtitle">Show work and mark answers clearly.</div></div>
+<section class="problem">
+<div class="problem-number">1</div>
+<p>The graphs show two rational-exponent functions with the same inside expression.</p><ol class="lower-alpha"><li>Explain why they have the same domain restriction.</li><li>Compare how quickly they grow.</li><li>Connect each graph to radical structure.</li></ol>
+<div class="graph-block graph-lg"><img alt="Warm up figure" src="figures/wu3-5-3-1.png"/></div>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">2</div>
+<p>A student says $x^{2/3}$ and $x^{3/2}$ are basically the same because both use $2$ and $3$.</p><ol class="lower-alpha"><li>Rewrite each in radical form.</li><li>Compare their domains over the real numbers.</li><li>Explain why the order of the numerator and denominator matters.</li></ol>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">3</div>
+<p>Spiral Review: Create two functions $f$ and $g$ so that $f(g(x))$ has a domain restriction even though $g(x)$ alone is defined for all real numbers. Explain your design.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+<section class="problem">
+<div class="problem-number">4</div>
+<p>Formative Spiral: Design a graph description with domain $[-1,6)$, range $[0,\infty)$, and a hole at $x=6$. Explain how each feature would appear visually.</p>
+<div class="workspace-label">Workspace</div>
+<div class="workspace workspace-400"></div>
+</section>
+
+</div>
+
+</body>
+</html>
