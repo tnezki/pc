@@ -1,0 +1,2313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Unit 4 Assessment Plan and Bank</title>
+<script>window.MathJax = { tex: { inlineMath: [["\\(","\\)"],["$","$"]], displayMath: [["\\[","\\]"],["$$","$$"]] } };</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+/* ======================= RESET / PAGE ======================= */
+@page { size: letter; margin: 0.45in; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.45;
+  color: #222;
+  background: #fff;
+  font-size: 11pt;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.container { max-width: 980px; margin: 0 auto; }
+.page-break { page-break-before: always; break-before: page; }
+.unbreakable, .assessment-card, .outline-card, .rubric-card, .ladder-table, .progress-tracker { break-inside: avoid; page-break-inside: avoid; }
+
+/* ======================= HEADER / TITLES ======================= */
+h1 { color: #00003d; font-size: 26pt; line-height: 1.1; margin-bottom: 8px; }
+h2 { color: #00003d; font-size: 17pt; margin: 18px 0 10px 0; border-left: 6px solid #00003d; padding-left: 10px; }
+h3 { color: #004d99; font-size: 13pt; margin: 12px 0 6px 0; }
+p { margin: 6px 0; }
+ul, ol { margin: 6px 0 8px 28px; }
+li { margin-bottom: 4px; }
+.small-note { font-size: 9.5pt; color: #555; font-style: italic; }
+
+/* ======================= OUTLINE CARDS ======================= */
+.outline-card {
+  border: 1px solid #9aa9bd;
+  border-left: 7px solid #00003d;
+  padding: 12px 14px;
+  margin: 12px 0;
+  background: #fff;
+}
+.outline-card-title { color: #00003d; font-weight: 800; font-size: 13.5pt; margin-bottom: 4px; }
+.essential-standard { font-size: 12pt; border: 2px solid #00003d; padding: 12px 14px; margin: 12px 0 16px 0; background: #f8fbff; }
+
+/* ======================= TABLES ======================= */
+table { border-collapse: collapse; width: 100%; margin: 10px 0 14px 0; }
+th, td { border: 1px solid #777; padding: 7px 8px; vertical-align: top; }
+th { background: #eaf1fb; color: #00003d; font-weight: 800; text-align: left; }
+.ladder-table th { background: #00003d; color: #fff; }
+.ladder-table .dok4 { background: #eef4ff; }
+.ladder-table .dok3 { background: #f6fbff; }
+.ladder-table .dok2 { background: #fffdf2; }
+.ladder-table .dok1 { background: #ffffff; }
+.table-block, .parent-table, table.values { width: auto; margin: 10px auto 12px auto; border-collapse: collapse; }
+.table-block td, .table-block th, .parent-table td, .parent-table th, table.values td, table.values th { border: 1px solid #777; padding: 6px 14px; text-align: center; vertical-align: middle; }
+
+/* ======================= PROGRESS TRACKING ======================= */
+.progress-tracker { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 12px 0 18px 0; }
+.progress-box { border: 1px solid #777; padding: 12px; min-height: 0.8in; }
+.progress-box strong { color: #00003d; }
+
+/* ======================= DOK SECTIONS ======================= */
+.dok-bar {
+  background: #000;
+  color: #fff;
+  font-weight: 900;
+  font-size: 15pt;
+  padding: 9px 12px;
+  margin: 22px 0 12px 0;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.dok-method-card { border: 1px solid #777; padding: 12px 14px; margin: 10px 0 16px 0; background: #fff; break-inside: avoid; page-break-inside: avoid; }
+.assessment-ideas { margin-left: 24px; }
+.assessment-ideas a { color: #005aa0; font-weight: 800; text-decoration: underline; }
+.timing-label { display: inline-block; background: #fff7cf; border: 1px solid #d1c27a; border-radius: 4px; padding: 1px 6px; font-weight: 800; color: #4a3f17; margin-left: 6px; }
+.what-tells { border-left: 5px solid #777; padding-left: 10px; margin-top: 10px; color: #333; }
+
+/* ======================= SUMMATIVE / RUBRIC ======================= */
+.summative-card { border: 2px solid #00003d; padding: 12px 14px; margin: 14px 0; background: #f8fbff; break-inside: avoid; page-break-inside: avoid; }
+.summative-card a { color: #005aa0; font-weight: 800; }
+.rubric-card { border: 1px solid #777; padding: 12px 14px; margin: 10px 0; }
+.rubric-level { color: #00003d; font-weight: 900; font-size: 12.5pt; }
+
+/* ======================= ASSESSMENT BANK ======================= */
+.bank-intro { border: 2px solid #00003d; padding: 12px 14px; margin: 12px 0 16px 0; background: #f8fbff; }
+.assessment-card {
+  border: 1px solid #777;
+  padding: 12px 14px;
+  margin: 12px 0;
+  background: #fff;
+}
+.problem-number { font-weight: 900; color: #00003d; font-size: 13pt; margin-bottom: 8px; }
+.problem-meta { color: #555; font-weight: 700; font-size: 10.5pt; margin-left: 8px; }
+.assessment-card p { margin-bottom: 7px; }
+.assessment-card ol, .assessment-card ul { margin-left: 26px; }
+.assessment-card li { margin-bottom: 6px; }
+.performance-notes { border-left: 5px solid #444; background: #f7f7f7; padding: 8px 10px; margin-top: 10px; font-size: 10pt; }
+.lower-alpha { list-style-type: lower-alpha; }
+.lower-roman { list-style-type: lower-roman; }
+
+/* ======================= FIGURE / GRAPH SYSTEM ======================= */
+.figure-block, .graph-block { margin: 12px 0 10px 0; text-align: center; break-inside: avoid; page-break-inside: avoid; }
+.figure-block img, .graph-block img { max-width: 100%; height: auto; border: 1px solid #ccc; background: #fff; }
+.figure-xs img { max-width: 1.4in; }
+.figure-sm img { max-width: 2.1in; }
+.figure-md img { max-width: 2.8in; }
+.figure-lg img { max-width: 3.8in; }
+.figure-xl img { max-width: 4.7in; }
+.graph-xs img { max-width: 2.0in; }
+.graph-sm img { max-width: 2.5in; }
+.graph-md img { max-width: 3.2in; }
+.graph-lg img { max-width: 4.1in; }
+.graph-xl img { max-width: 5.1in; }
+
+/* ======================= PRINT CONTROL ======================= */
+@media print {
+  body { font-size: 10.5pt; }
+  h1 { font-size: 24pt; }
+  h2 { font-size: 16pt; }
+  .assessment-card { padding: 10px 12px; }
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<!-- ======================= UNIT 3 OUTLINE START ======================= -->
+<h1>Precalculus – Unit 04: Trigonometry</h1>
+<h2>Essential Standard</h2>
+<div class="essential-standard">Students will analyze trigonometric relationships and functions in order to model periodic behavior, interpret structure, and justify solutions.</div>
+<!-- ======================= SECTION OUTLINE START ======================= -->
+<section class="outline-card">
+<div class="outline-card-title">Section 4.1: Unit Circle</div>
+<p><strong>Learning Target: Students will use the unit circle to determine exact trigonometric values in radians.</strong></p>
+<ul>
+<li>I can draw special angles on the unit circle using radian measure.</li>
+<li>I can determine exact values of sine, cosine, and tangent using the unit circle.</li>
+<li>I can use unit circle coordinates to find exact values of all six trigonometric functions.</li>
+</ul></section>
+<section class="outline-card">
+<div class="outline-card-title">Section 4.2: Sum, Difference, and Pythagorean Identities</div>
+<p><strong>Learning Target: Students will apply sum, difference, and Pythagorean identities to simplify and verify trigonometric expressions.</strong></p>
+<ul>
+<li>I can apply Pythagorean identities to simplify trigonometric expressions.</li>
+<li>I can apply sum and difference identities to evaluate or rewrite trigonometric expressions.</li>
+<li>I can verify trigonometric identities algebraically using known identities.</li>
+</ul></section>
+<section class="outline-card">
+<div class="outline-card-title">Section 4.3: Half Angle and Double Angle Identities</div>
+<p><strong>Learning Target: Students will apply half-angle and double-angle identities to rewrite and evaluate trigonometric expressions.</strong></p>
+<ul>
+<li>I can apply double-angle identities to simplify or evaluate trigonometric expressions.</li>
+<li>I can apply half-angle identities to simplify or evaluate trigonometric expressions.</li>
+<li>I can choose appropriate trigonometric identities to rewrite expressions efficiently.</li>
+</ul></section>
+<section class="outline-card">
+<div class="outline-card-title">Section 4.4: Graphing and Writing Trig Functions</div>
+<p><strong>Learning Target: Students will graph and write sine and cosine functions using transformations and radian measure.</strong></p>
+<ul>
+<li>I can graph sine and cosine functions using the five-point method.</li>
+<li>I can identify amplitude, period, phase shift, and vertical shift of sine and cosine functions.</li>
+<li>I can write equations of sine and cosine functions from graphs.</li>
+</ul></section>
+<section class="outline-card">
+<div class="outline-card-title">Section 4.5: Solving Trig Equations</div>
+<p><strong>Learning Target: Students will solve trigonometric equations involving sine, cosine, and tangent.</strong></p>
+<ul>
+<li>I can solve trigonometric equations involving sine, cosine, and tangent.</li>
+<li>I can find all solutions to trigonometric equations within a given interval.</li>
+<li>I can use identities to solve more complex trigonometric equations.</li>
+</ul></section>
+<!-- ======================= SECTION OUTLINE END ======================= -->
+<!-- ======================= LEARNING LADDER START ======================= -->
+<h2>Learning Ladder</h2>
+<table class="ladder-table">
+<tr><th>Rung</th><th>I Can Statement</th><th>Math Practice</th><th>DOK</th><th>Level</th></tr>
+<tr class="dok4"><td>8</td><td>I can model and analyze real-world periodic behavior using trigonometric functions, justify the reasonableness of a model, and interpret amplitude, period, phase shift, and solutions in context.</td><td>4. Model with Math / 3. Construct Arguments</td><td>DOK 4</td><td>Above</td></tr>
+<tr class="dok4"><td>7</td><td>I can design and defend strategies for solving complex trigonometric equations or proving identities, compare multiple approaches, and critique incorrect reasoning.</td><td>1. Make Sense &amp; Persevere / 3. Construct Arguments</td><td>DOK 4</td><td>Above</td></tr>
+<tr class="dok3"><td>6</td><td>I can analyze trigonometric functions and identities using algebraic, graphical, and unit-circle reasoning to explain structure and periodic behavior.</td><td>7. Look for Structure / 8. Look for Regularity</td><td>DOK 3</td><td>Essential</td></tr>
+<tr class="dok3"><td>5</td><td>I can verify and apply trigonometric identities and explain how identities are used to simplify expressions or solve equations.</td><td>2. Reason Abstractly &amp; Quantitatively / 6. Attend to Precision</td><td>DOK 3</td><td>Essential</td></tr>
+<tr class="dok2"><td>4</td><td>I can graph sine and cosine functions and identify amplitude, period, phase shift, vertical shift, intercepts, extrema, and intervals of increase or decrease.</td><td>5. Use Tools Strategically / 7. Look for Structure</td><td>DOK 2</td><td>Essential</td></tr>
+<tr class="dok2"><td>3</td><td>I can solve trigonometric equations using exact values, inverse operations, and identities.</td><td>6. Attend to Precision</td><td>DOK 2</td><td>Essential</td></tr>
+<tr class="dok1"><td>2</td><td>I can determine exact trigonometric values using the unit circle and radian measure.</td><td>2. Reason Abstractly</td><td>DOK 1</td><td>Essential</td></tr>
+<tr class="dok1"><td>1</td><td>I can identify and use unit-circle coordinates and special angles to evaluate trigonometric functions.</td><td>1. Make Sense of Problems</td><td>DOK 1</td><td>Essential</td></tr>
+</table>
+<!-- ======================= LEARNING LADDER END ======================= -->
+<!-- ======================= PROGRESS TRACKING START ======================= -->
+<h2>Progress Tracking</h2>
+<div class="progress-tracker">
+<div class="progress-box"><strong>Not Yet:</strong> I need more instruction and practice.</div>
+<div class="progress-box"><strong>Getting There:</strong> I understand most of it but need more practice.</div>
+<div class="progress-box"><strong>Got It!:</strong> I can do this independently.</div>
+</div>
+<!-- ======================= PROGRESS TRACKING END ======================= -->
+<!-- ======================= ASSESSMENT METHODS START ======================= -->
+<h2>Assessment Methods by DOK Level</h2>
+<div class="dok-bar">DOK 1 — Rungs 1–2</div>
+<section class="dok-method-card">
+<p><strong>Format: 3–5 minute warm-up, quick check, or exit ticket</strong></p>
+<p>Purpose: Check whether students can identify special angles, evaluate trigonometric functions on the unit circle, and use exact values correctly.</p>
+<h3>Assessment Ideas</h3><ol class="assessment-ideas">
+<li><a href="u4-dok1-1.html">Unit Circle Fluency Check</a> <span class="timing-label">Can Be Assessed After Unit 6, Section 1</span> – Students identify coordinates and exact values of sine, cosine, and tangent for standard angles in radians.</li>
+<li><a href="u4-dok1-2.html">Trig Value Match Task</a> <span class="timing-label">Can Be Assessed After Unit 6, Section 5</span> – Students match exact trigonometric values to corresponding angles on the unit circle.</li>
+<li><a href="u4-dok1-3.html">Radians and Angle Recognition Check</a> <span class="timing-label">Can Be Assessed After Unit 6, Section 5</span> – Students convert between degree and radian measure and identify coterminal angles.</li>
+<li><a href="u4-dok1-4.html">Exact Value Evaluation Check</a> <span class="timing-label">Can Be Assessed After Unit 6, Section 5</span> – Students evaluate expressions involving sine, cosine, and tangent using exact values.</li>
+</ol>
+<div class="what-tells"><strong>What this tells the teacher:</strong><br>Students who struggle here need additional fluency practice with the unit circle, radian measure, and exact trigonometric values before moving into identities or graphing.</div>
+</section>
+<div class="dok-bar">DOK 2 — Rungs 3-4</div>
+<section class="dok-method-card">
+<p><strong>Format: Exit ticket, partner check, whiteboard response, or short written explanation</strong></p>
+<p>Purpose: Check whether students can graph trigonometric functions, solve equations, and apply identities using procedural understanding and graphical interpretation.</p>
+<h3>Assessment Ideas</h3><ol class="assessment-ideas">
+<li><a href="u4-dok2-1.html">Trig Equation Solving Task</a> <span class="timing-label">Can Be Assessed After Unit 6, Section 5</span> – Students solve equations involving sine, cosine, or tangent over a specified interval.</li>
+<li><a href="u4-dok2-2.html">Five-Point Graphing Task</a> <span class="timing-label">Can Be Assessed After Unit 6, Section 4</span> – Students graph sine or cosine functions using amplitude, period, phase shift, and vertical shift.</li>
+<li><a href="u4-dok2-3.html">Transformation Identification Check</a> <span class="timing-label">Can Be Assessed After Unit 6, Section 4</span> – Students identify transformations from equations or graphs of trigonometric functions.</li>
+<li><a href="u4-dok2-4.html">Identity Simplification Task</a> <span class="timing-label">Can Be Assessed After Unit 6, Section 5</span> – Students simplify trigonometric expressions using Pythagorean, sum, difference, double-angle, or half-angle identities.</li>
+</ol>
+<div class="what-tells"><strong>What this tells the teacher:</strong><br>Students at this level can generally carry out procedures, but the assessment reveals whether they understand how algebraic structure connects to periodic graph behavior and trig relationships.</div>
+</section>
+<div class="dok-bar">DOK 3 — Rungs 5-6</div>
+<section class="dok-method-card">
+<p><strong>Format: Constructed response, error analysis, gallery walk, or group explanation</strong></p>
+<p>Purpose: Check whether students can reason strategically, justify identities, explain graph structure, and connect multiple representations of trigonometric relationships.</p>
+<h3>Assessment Ideas</h3><ol class="assessment-ideas">
+<li><a href="u4-dok3-1.html">Identity Verification Task</a> <span class="timing-label">Can Be Assessed After Unit 6, Section 5</span> – Students verify a trigonometric identity algebraically and explain each transformation step.</li>
+<li><a href="u4-dok3-2.html">Trig Graph Analysis Task</a> <span class="timing-label">Can Be Assessed After Unit 6, Section 4</span> – Students analyze a transformed sine or cosine graph and explain amplitude, period, phase shift, extrema, and intervals of increase or decrease.</li>
+<li><a href="u4-dok3-3.html">Equation Strategy Comparison Task</a> <span class="timing-label">Can Be Assessed After Unit 6, Section 5</span> – Students solve a trigonometric equation using two methods and compare the efficiency and reliability of each strategy.</li>
+<li><a href="u4-dok3-4.html">Error Analysis Response</a> <span class="timing-label">Can Be Assessed After Unit 6, Section 5</span> – Students critique an incorrect trigonometric identity proof or trig equation solution, identify the misconception, and write a corrected explanation.</li>
+</ol>
+<div class="what-tells"><strong>What this tells the teacher:</strong><br>This level reveals whether students truly understand the structure of trigonometric relationships rather than simply memorizing procedures. These tasks help determine who is ready for advanced modeling or proof-based reasoning.</div>
+</section>
+<div class="dok-bar">DOK 4 — Rungs 7-8</div>
+<section class="dok-method-card">
+<p><strong>Format: Performance task, extended response, modeling task, or strategy defense</strong></p>
+<p>Purpose: Check whether students can synthesize unit-circle reasoning, identities, graphing, and equation solving to model periodic behavior and justify conclusions.</p>
+<h3>Assessment Ideas</h3><ol class="assessment-ideas">
+<li><a href="u4-dok4-1.html">Periodic Modeling Task</a> <span class="timing-label">Can Be Assessed After Unit 6, Section 5</span> – Students model a real-world periodic situation using a sine or cosine function, interpret key features, and justify the reasonableness of the model.</li>
+<li><a href="u4-dok4-2.html">Design-a-Function Task</a> <span class="timing-label">Can Be Assessed After Unit 6, Section 5</span> – Students create a trigonometric function satisfying given conditions involving amplitude, period, phase shift, intercepts, and extrema.</li>
+<li><a href="u4-dok4-3.html">Strategy Defense Task</a> <span class="timing-label">Can Be Assessed After Unit 6, Section 5</span> – Students solve a complex trigonometric equation using multiple approaches and defend which method is most efficient and mathematically appropriate.</li>
+<li><a href="u4-dok4-4.html">Critique and Redesign Task</a> <span class="timing-label">Can Be Assessed After Unit 6, Section 5</span> – Students evaluate flawed trigonometric reasoning involving identities, graphing, or solutions and revise the work into a valid mathematical argument.</li>
+</ol>
+<div class="what-tells"><strong>What this tells the teacher:</strong><br>DOK 4 tasks reveal whether students can transfer trigonometric understanding to unfamiliar situations and defend mathematical reasoning with precision. These are best used as performance assessments, modeling extensions, or summative-level tasks.</div>
+</section>
+<!-- ======================= ASSESSMENT METHODS END ======================= -->
+<!-- ======================= SUMMATIVE PLAN START ======================= -->
+<h2>Summative Assessment Plan</h2><section class="summative-card">
+<p><a href="u4-sum.html">Unit 4 Summative Assessment</a> <span class="timing-label">Unit 4 Assessed During Unit 6</span></p>
+<p>Assessment is designed for a 45-minute paper-only time limit and is built around balanced evidence rather than a fixed question-count breakdown. Each version includes a mix of procedural fluency, graphing/application tasks, and short reasoning or critique prompts aligned to the unit learning targets and Depth of Knowledge expectations.</p>
+<p>Assessments emphasize algebraic accuracy, interpretation of mathematical structure, graphing and representation skills, explanation of reasoning, and application of concepts in both familiar and unfamiliar situations.</p>
+<p>Summative assessments are intentionally focused on DoK 1–3 evidence within a paper-only environment. Extended DoK 4 modeling, investigation, performance, or technology-based tasks are assessed separately through activities, investigations, discourse tasks, or formative performance assessments rather than embedded directly into the summative exam.</p>
+</section><!-- ======================= SUMMATIVE PLAN END ======================= -->
+<!-- ======================= HOLISTIC RUBRIC START ======================= -->
+<h2>Holistic Rubric</h2>
+<section class="rubric-card"><div class="rubric-level">A — Highly Proficient</div><p>The student demonstrates a strong and flexible understanding of Unit 4 concepts. Work is accurate, well-organized, and supported by clear reasoning. The student can use the unit circle fluently, verify identities, graph and analyze trigonometric functions, solve equations using multiple strategies, and justify conclusions using precise mathematical language.</p></section>
+<section class="rubric-card"><div class="rubric-level">B — Proficient</div><p>The student demonstrates solid understanding of the essential Unit 4 concepts. Most work is accurate, and the student can complete standard and moderately complex tasks independently. The student can evaluate trigonometric functions, solve equations, graph transformed trig functions, and apply identities with generally clear reasoning. Errors are minor or isolated and do not show major misconceptions.</p></section>
+<section class="rubric-card"><div class="rubric-level">C — Developing Proficiency</div><p>The student demonstrates partial but passable understanding of Unit 4 concepts. The student can complete many routine tasks but may need support with multi-step equations, identity verification, graph analysis, or connecting representations. Work may contain errors, incomplete explanations, or inconsistent notation, but there is enough evidence that the student understands the main ideas.</p></section>
+<section class="rubric-card"><div class="rubric-level">Not Yet — Insufficient Evidence</div><p>The student does not yet demonstrate sufficient understanding of the essential Unit 4 concepts. Work shows major errors, missing reasoning, incorrect use of identities, confusion with unit-circle values or transformations, or difficulty interpreting trigonometric graphs and equations. The student may need reteaching, additional practice, or reassessment to demonstrate proficiency.</p></section>
+<!-- ======================= HOLISTIC RUBRIC END ======================= -->
+<!-- ======================= UNIT 3 OUTLINE END ======================= -->
+<div class="page-break"></div>
+<!-- ======================= STRICTLY ASSESSMENT BANK START ======================= -->
+<h1>Strictly Assessment Bank</h1>
+<div class="bank-intro"><p><strong>Unit 4 Assessment Bank:</strong> Problems are organized by Depth of Knowledge and pulled from the uploaded teacher banks. These are intended as source items for formative assessments, reassessments, and summative assessment versions.</p><p class="small-note">Rolling timing: Unit 4 is assessed during Unit 6.</p></div>
+<div class="dok-bar">Assessment Bank DOK 1</div>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 001 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.001">
+<div class="problem-number">Assessment Bank DOK 1.001<span class="problem-meta">U4S1-001 | Section 4.1 | DoK 1</span></div>
+
+<p>Convert \(60^\circ\) to radians.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 001 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 002 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.002">
+<div class="problem-number">Assessment Bank DOK 1.002<span class="problem-meta">U4S1-002 | Section 4.1 | DoK 1</span></div>
+
+<p>Convert \(\frac{5\pi}{6}\) to degrees.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 002 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 003 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.003">
+<div class="problem-number">Assessment Bank DOK 1.003<span class="problem-meta">U4S1-003 | Section 4.1 | DoK 1</span></div>
+
+<p>Find a positive coterminal angle for \(-\frac{3\pi}{4}\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 003 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 004 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.004">
+<div class="problem-number">Assessment Bank DOK 1.004<span class="problem-meta">U4S1-004 | Section 4.1 | DoK 1</span></div>
+
+<p>Find a negative coterminal angle for \(\frac{11\pi}{6}\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 004 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 005 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.005">
+<div class="problem-number">Assessment Bank DOK 1.005<span class="problem-meta">U4S1-005 | Section 4.1 | DoK 1</span></div>
+
+<p>State the coordinates on the unit circle for \(\theta=\frac{\pi}{3}\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 005 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 006 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.006">
+<div class="problem-number">Assessment Bank DOK 1.006<span class="problem-meta">U4S1-006 | Section 4.1 | DoK 1</span></div>
+
+<p>State the coordinates on the unit circle for \(\theta=\frac{5\pi}{4}\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 006 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 007 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.007">
+<div class="problem-number">Assessment Bank DOK 1.007<span class="problem-meta">U4S1-007 | Section 4.1 | DoK 1</span></div>
+
+<p>Evaluate exactly: \[\sin\left(\frac{\pi}{6}\right)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 007 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 008 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.008">
+<div class="problem-number">Assessment Bank DOK 1.008<span class="problem-meta">U4S1-008 | Section 4.1 | DoK 1</span></div>
+
+<p>Evaluate exactly: \[\cos\left(\frac{3\pi}{4}\right)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 008 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 009 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.009">
+<div class="problem-number">Assessment Bank DOK 1.009<span class="problem-meta">U4S1-009 | Section 4.1 | DoK 1</span></div>
+
+<p>Evaluate exactly: \[\tan\left(\frac{2\pi}{3}\right)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 009 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 010 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.010">
+<div class="problem-number">Assessment Bank DOK 1.010<span class="problem-meta">U4S1-010 | Section 4.1 | DoK 1</span></div>
+
+<p>Evaluate exactly: \[\sin\left(\frac{7\pi}{6}\right)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 010 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 011 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.011">
+<div class="problem-number">Assessment Bank DOK 1.011<span class="problem-meta">U4S1-011 | Section 4.1 | DoK 1</span></div>
+
+<p>Evaluate exactly: \[\cos\left(-\frac{\pi}{3}\right)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 011 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 012 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.012">
+<div class="problem-number">Assessment Bank DOK 1.012<span class="problem-meta">U4S1-012 | Section 4.1 | DoK 1</span></div>
+
+<p>Evaluate exactly: \[\tan\left(\frac{5\pi}{4}\right)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 012 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 013 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.013">
+<div class="problem-number">Assessment Bank DOK 1.013<span class="problem-meta">U4S1-013 | Section 4.1 | DoK 1</span></div>
+
+<p>Fill in the blanks.</p><ol class="lower-alpha"><li>On the unit circle, cosine represents the __________ coordinate.</li><li>On the unit circle, sine represents the __________ coordinate.</li><li>Tangent equals __________ divided by __________.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 013 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 014 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.014">
+<div class="problem-number">Assessment Bank DOK 1.014<span class="problem-meta">U4S1-014 | Section 4.1 | DoK 1</span></div>
+
+<p>Determine the quadrant for each angle.</p><ol class="lower-alpha"><li>\(\frac{5\pi}{6}\)</li><li>\(-\frac{2\pi}{3}\)</li><li>\(\frac{11\pi}{4}\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 014 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 015 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.015">
+<div class="problem-number">Assessment Bank DOK 1.015<span class="problem-meta">U4S1-015 | Section 4.1 | DoK 1</span></div>
+
+<p>State whether each value is positive, negative, or zero.</p><ol class="lower-alpha"><li>\(\sin\left(\frac{4\pi}{3}\right)\)</li><li>\(\cos\left(\frac{7\pi}{4}\right)\)</li><li>\(\tan(\pi)\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 015 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 016 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.016">
+<div class="problem-number">Assessment Bank DOK 1.016<span class="problem-meta">U4S2-001 | Section 4.2 | DoK 1</span></div>
+
+<p>State the Pythagorean Identity involving sine and cosine.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 016 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 017 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.017">
+<div class="problem-number">Assessment Bank DOK 1.017<span class="problem-meta">U4S2-002 | Section 4.2 | DoK 1</span></div>
+
+<p>Rewrite \(1-\sin^2(x)\) using a Pythagorean identity.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 017 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 018 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.018">
+<div class="problem-number">Assessment Bank DOK 1.018<span class="problem-meta">U4S2-003 | Section 4.2 | DoK 1</span></div>
+
+<p>Rewrite \(1+\tan^2(x)\) using a Pythagorean identity.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 018 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 019 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.019">
+<div class="problem-number">Assessment Bank DOK 1.019<span class="problem-meta">U4S2-004 | Section 4.2 | DoK 1</span></div>
+
+<p>Rewrite \(\sec^2(x)-1\) using a Pythagorean identity.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 019 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 020 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.020">
+<div class="problem-number">Assessment Bank DOK 1.020<span class="problem-meta">U4S2-005 | Section 4.2 | DoK 1</span></div>
+
+<p>Simplify: \[\sin^2(x)+\cos^2(x)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 020 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 021 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.021">
+<div class="problem-number">Assessment Bank DOK 1.021<span class="problem-meta">U4S2-006 | Section 4.2 | DoK 1</span></div>
+
+<p>Simplify: \[\frac{\sin(x)}{\cos(x)}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 021 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 022 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.022">
+<div class="problem-number">Assessment Bank DOK 1.022<span class="problem-meta">U4S2-007 | Section 4.2 | DoK 1</span></div>
+
+<p>Evaluate exactly: \[\sin\left(\frac{\pi}{6}+\frac{\pi}{3}\right)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 022 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 023 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.023">
+<div class="problem-number">Assessment Bank DOK 1.023<span class="problem-meta">U4S2-008 | Section 4.2 | DoK 1</span></div>
+
+<p>Evaluate exactly: \[\cos\left(\frac{\pi}{4}-\frac{\pi}{6}\right)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 023 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 024 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.024">
+<div class="problem-number">Assessment Bank DOK 1.024<span class="problem-meta">U4S2-009 | Section 4.2 | DoK 1</span></div>
+
+<p>Evaluate exactly: \[\sin(75^\circ)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 024 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 025 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.025">
+<div class="problem-number">Assessment Bank DOK 1.025<span class="problem-meta">U4S2-010 | Section 4.2 | DoK 1</span></div>
+
+<p>Evaluate exactly: \[\cos(15^\circ)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 025 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 026 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.026">
+<div class="problem-number">Assessment Bank DOK 1.026<span class="problem-meta">U4S2-011 | Section 4.2 | DoK 1</span></div>
+
+<p>Fill in the blanks.</p><ol class="lower-alpha"><li>\(\sin(A+B)=\) __________</li><li>\(\cos(A-B)=\) __________</li><li>\(\tan(x)=\frac{\sin(x)}{\_\_\_\_\_\_\_}\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 026 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 027 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.027">
+<div class="problem-number">Assessment Bank DOK 1.027<span class="problem-meta">U4S2-012 | Section 4.2 | DoK 1</span></div>
+
+<p>Determine whether the statement is true or false: \[\sin(A+B)=\sin(A)+\sin(B)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 027 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 028 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.028">
+<div class="problem-number">Assessment Bank DOK 1.028<span class="problem-meta">U4S2-013 | Section 4.2 | DoK 1</span></div>
+
+<p>Determine whether \(\sin^2(x)-\cos^2(x)\) can be simplified using a Pythagorean identity directly. Explain.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 028 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 029 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.029">
+<div class="problem-number">Assessment Bank DOK 1.029<span class="problem-meta">U4S3-001 | Section 4.3 | DoK 1</span></div>
+
+<p>State the double-angle identity for \(\sin(2x)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 029 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 030 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.030">
+<div class="problem-number">Assessment Bank DOK 1.030<span class="problem-meta">U4S3-002 | Section 4.3 | DoK 1</span></div>
+
+<p>State one double-angle identity for \(\cos(2x)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 030 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 031 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.031">
+<div class="problem-number">Assessment Bank DOK 1.031<span class="problem-meta">U4S3-003 | Section 4.3 | DoK 1</span></div>
+
+<p>Rewrite \(2\sin(x)\cos(x)\) using a double-angle identity.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 031 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 032 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.032">
+<div class="problem-number">Assessment Bank DOK 1.032<span class="problem-meta">U4S3-004 | Section 4.3 | DoK 1</span></div>
+
+<p>Rewrite \(\cos^2(x)-\sin^2(x)\) using a double-angle identity.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 032 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 033 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.033">
+<div class="problem-number">Assessment Bank DOK 1.033<span class="problem-meta">U4S3-005 | Section 4.3 | DoK 1</span></div>
+
+<p>Rewrite \(1-2\sin^2(x)\) using a double-angle identity.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 033 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 034 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.034">
+<div class="problem-number">Assessment Bank DOK 1.034<span class="problem-meta">U4S3-006 | Section 4.3 | DoK 1</span></div>
+
+<p>Rewrite \(2\cos^2(x)-1\) using a double-angle identity.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 034 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 035 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.035">
+<div class="problem-number">Assessment Bank DOK 1.035<span class="problem-meta">U4S3-007 | Section 4.3 | DoK 1</span></div>
+
+<p>State the half-angle identity for \(\sin\left(\frac{x}{2}\right)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 035 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 036 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.036">
+<div class="problem-number">Assessment Bank DOK 1.036<span class="problem-meta">U4S3-008 | Section 4.3 | DoK 1</span></div>
+
+<p>State the half-angle identity for \(\cos\left(\frac{x}{2}\right)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 036 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 037 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.037">
+<div class="problem-number">Assessment Bank DOK 1.037<span class="problem-meta">U4S3-009 | Section 4.3 | DoK 1</span></div>
+
+<p>Evaluate exactly: \[\sin(2\cdot45^\circ)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 037 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 038 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.038">
+<div class="problem-number">Assessment Bank DOK 1.038<span class="problem-meta">U4S3-010 | Section 4.3 | DoK 1</span></div>
+
+<p>Evaluate exactly: \[\cos(2\cdot30^\circ)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 038 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 039 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.039">
+<div class="problem-number">Assessment Bank DOK 1.039<span class="problem-meta">U4S3-011 | Section 4.3 | DoK 1</span></div>
+
+<p>Evaluate exactly: \[\sin\left(\frac{\pi}{8}\right)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 039 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 040 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.040">
+<div class="problem-number">Assessment Bank DOK 1.040<span class="problem-meta">U4S3-012 | Section 4.3 | DoK 1</span></div>
+
+<p>Evaluate exactly: \[\cos\left(\frac{\pi}{8}\right)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 040 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 041 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.041">
+<div class="problem-number">Assessment Bank DOK 1.041<span class="problem-meta">U4S3-013 | Section 4.3 | DoK 1</span></div>
+
+<p>Fill in the blanks.</p><ol class="lower-alpha"><li>\(\sin(2x)=\) __________</li><li>\(\cos(2x)=\) __________</li><li>Half-angle identities involve __________ square roots.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 041 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 042 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.042">
+<div class="problem-number">Assessment Bank DOK 1.042<span class="problem-meta">U4S4-001 | Section 4.4 | DoK 1</span></div>
+
+<p>State the amplitude of \(y=3\sin(x)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 042 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 043 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.043">
+<div class="problem-number">Assessment Bank DOK 1.043<span class="problem-meta">U4S4-002 | Section 4.4 | DoK 1</span></div>
+
+<p>State the period of \(y=\sin(x)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 043 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 044 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.044">
+<div class="problem-number">Assessment Bank DOK 1.044<span class="problem-meta">U4S4-003 | Section 4.4 | DoK 1</span></div>
+
+<p>State the amplitude and period of \(y=2\cos(x)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 044 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 045 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.045">
+<div class="problem-number">Assessment Bank DOK 1.045<span class="problem-meta">U4S4-004 | Section 4.4 | DoK 1</span></div>
+
+<p>State the vertical shift of \(y=\sin(x)-4\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 045 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 046 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.046">
+<div class="problem-number">Assessment Bank DOK 1.046<span class="problem-meta">U4S4-005 | Section 4.4 | DoK 1</span></div>
+
+<p>State the phase shift of \(y=\cos\left(x-\frac{\pi}{3}\right)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 046 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 047 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.047">
+<div class="problem-number">Assessment Bank DOK 1.047<span class="problem-meta">U4S4-006 | Section 4.4 | DoK 1</span></div>
+
+<p>Identify the parent function.</p><ol class="lower-alpha"><li>\(y=\sin(x)\)</li><li>\(y=-2\sin(x)+1\)</li><li>\(y=3\cos(2x)\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 047 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 048 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.048">
+<div class="problem-number">Assessment Bank DOK 1.048<span class="problem-meta">U4S4-007 | Section 4.4 | DoK 1</span></div>
+
+<p>Determine whether the graph is reflected across the \(x\)-axis.</p><ol class="lower-alpha"><li>\(y=-\sin(x)\)</li><li>\(y=\cos(x)\)</li><li>\(y=-4\cos(x)\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 048 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 049 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.049">
+<div class="problem-number">Assessment Bank DOK 1.049<span class="problem-meta">U4S4-008 | Section 4.4 | DoK 1</span></div>
+
+<p>State the midline of \(y=5\sin(x)+2\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 049 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 050 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.050">
+<div class="problem-number">Assessment Bank DOK 1.050<span class="problem-meta">U4S4-009 | Section 4.4 | DoK 1</span></div>
+
+<p>State the amplitude, period, and vertical shift of \(y=-3\cos(x)-5\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 050 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 051 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.051">
+<div class="problem-number">Assessment Bank DOK 1.051<span class="problem-meta">U4S4-010 | Section 4.4 | DoK 1</span></div>
+
+<p>Complete the five-point table for \(y=\sin(x)\) over one period.</p><table class="parent-table"><tr><th>\(x\)</th><td>0</td><td>\(\frac{\pi}{2}\)</td><td>\(\pi\)</td><td>\(\frac{3\pi}{2}\)</td><td>\(2\pi\)</td></tr><tr><th>\(y\)</th><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 051 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 052 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.052">
+<div class="problem-number">Assessment Bank DOK 1.052<span class="problem-meta">U4S4-011 | Section 4.4 | DoK 1</span></div>
+
+<p>Complete the five-point table for \(y=\cos(x)\) over one period.</p><table class="parent-table"><tr><th>\(x\)</th><td>0</td><td>\(\frac{\pi}{2}\)</td><td>\(\pi\)</td><td>\(\frac{3\pi}{2}\)</td><td>\(2\pi\)</td></tr><tr><th>\(y\)</th><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 052 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 053 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.053">
+<div class="problem-number">Assessment Bank DOK 1.053<span class="problem-meta">U4S4-012 | Section 4.4 | DoK 1</span></div>
+
+<p>Determine whether each description is usually modeled first with sine or cosine.</p><ol class="lower-alpha"><li>The graph starts at a maximum.</li><li>The graph starts at the midline and increases.</li><li>The graph starts at a minimum.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 053 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 054 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.054">
+<div class="problem-number">Assessment Bank DOK 1.054<span class="problem-meta">U4S4-013 | Section 4.4 | DoK 1</span></div>
+
+<p>State whether the following functions have the same amplitude, same period, both, or neither.</p><ol class="lower-alpha"><li>\(y=\sin(x)\) and \(y=2\sin(x)\)</li><li>\(y=\sin(x)\) and \(y=\sin(2x)\)</li><li>\(y=3\cos(4x)\) and \(y=-3\sin(4x)\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 054 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 055 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.055">
+<div class="problem-number">Assessment Bank DOK 1.055<span class="problem-meta">U4S5-001 | Section 4.5 | DoK 1</span></div>
+
+<p>Solve $\sin(x)=\frac12$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 055 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 056 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.056">
+<div class="problem-number">Assessment Bank DOK 1.056<span class="problem-meta">U4S5-002 | Section 4.5 | DoK 1</span></div>
+
+<p>Solve $\cos(x)=-\frac{\sqrt2}{2}$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 056 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 057 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.057">
+<div class="problem-number">Assessment Bank DOK 1.057<span class="problem-meta">U4S5-003 | Section 4.5 | DoK 1</span></div>
+
+<p>Solve $\tan(x)=1$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 057 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 058 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.058">
+<div class="problem-number">Assessment Bank DOK 1.058<span class="problem-meta">U4S5-004 | Section 4.5 | DoK 1</span></div>
+
+<p>Solve $\sin(x)=0$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 058 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 059 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.059">
+<div class="problem-number">Assessment Bank DOK 1.059<span class="problem-meta">U4S5-005 | Section 4.5 | DoK 1</span></div>
+
+<p>Solve $\cos(x)=1$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 059 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 060 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.060">
+<div class="problem-number">Assessment Bank DOK 1.060<span class="problem-meta">U4S5-006 | Section 4.5 | DoK 1</span></div>
+
+<p>Evaluate $\sin^{-1}(\frac{\sqrt3}{2})$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 060 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 061 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.061">
+<div class="problem-number">Assessment Bank DOK 1.061<span class="problem-meta">U4S5-007 | Section 4.5 | DoK 1</span></div>
+
+<p>Evaluate $\cos^{-1}(-\frac12)$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 061 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 062 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.062">
+<div class="problem-number">Assessment Bank DOK 1.062<span class="problem-meta">U4S5-008 | Section 4.5 | DoK 1</span></div>
+
+<p>Evaluate $\tan^{-1}(1)$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 062 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 063 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.063">
+<div class="problem-number">Assessment Bank DOK 1.063<span class="problem-meta">U4S5-009 | Section 4.5 | DoK 1</span></div>
+
+<p>Determine whether $\sin(x)=2$ has real solutions. Explain.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 063 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 064 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.064">
+<div class="problem-number">Assessment Bank DOK 1.064<span class="problem-meta">U4S5-010 | Section 4.5 | DoK 1</span></div>
+
+<p>State the ranges of inverse sine, inverse cosine, and inverse tangent.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 064 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 065 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.065">
+<div class="problem-number">Assessment Bank DOK 1.065<span class="problem-meta">U4S5-011 | Section 4.5 | DoK 1</span></div>
+
+<p>State all angles where $\sin(x)=-1$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 065 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 066 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.066">
+<div class="problem-number">Assessment Bank DOK 1.066<span class="problem-meta">U4S5-012 | Section 4.5 | DoK 1</span></div>
+
+<p>State all angles where $\cos(x)=0$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 066 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 067 START ======================= -->
+<section class="assessment-card" id="U4-DOK1.067">
+<div class="problem-number">Assessment Bank DOK 1.067<span class="problem-meta">U4S5-013 | Section 4.5 | DoK 1</span></div>
+
+<p>State all angles where $\tan(x)$ is undefined on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 067 END ======================= -->
+<div class="dok-bar">Assessment Bank DOK 2</div>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 001 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.001">
+<div class="problem-number">Assessment Bank DOK 2.001<span class="problem-meta">U4S1-016 | Section 4.1 | DoK 2</span></div>
+
+<p>Sketch \(\theta=\frac{2\pi}{3}\) on the unit circle and determine the coordinates, sine, cosine, and tangent.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S1-016" src="figures/u4-u4s1-016-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 001 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 002 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.002">
+<div class="problem-number">Assessment Bank DOK 2.002<span class="problem-meta">U4S1-017 | Section 4.1 | DoK 2</span></div>
+
+<p>Sketch \(\theta=-\frac{5\pi}{6}\) and determine all six trigonometric functions.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S1-017" src="figures/u4-u4s1-017-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 002 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 003 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.003">
+<div class="problem-number">Assessment Bank DOK 2.003<span class="problem-meta">U4S1-018 | Section 4.1 | DoK 2</span></div>
+
+<p>Use the unit circle to evaluate \(\sin\left(\frac{11\pi}{6}\right)\), \(\cos\left(\frac{11\pi}{6}\right)\), and \(\tan\left(\frac{11\pi}{6}\right)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 003 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 004 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.004">
+<div class="problem-number">Assessment Bank DOK 2.004<span class="problem-meta">U4S1-019 | Section 4.1 | DoK 2</span></div>
+
+<p>Evaluate exactly: \[\sin\left(\frac{13\pi}{6}\right)\]</p><p>Explain why the answer matches another special angle.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 004 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 005 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.005">
+<div class="problem-number">Assessment Bank DOK 2.005<span class="problem-meta">U4S1-020 | Section 4.1 | DoK 2</span></div>
+
+<p>Evaluate exactly: \[\cos\left(-\frac{7\pi}{4}\right)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 005 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 006 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.006">
+<div class="problem-number">Assessment Bank DOK 2.006<span class="problem-meta">U4S1-021 | Section 4.1 | DoK 2</span></div>
+
+<p>Evaluate exactly: \[\tan\left(\frac{9\pi}{4}\right)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 006 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 007 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.007">
+<div class="problem-number">Assessment Bank DOK 2.007<span class="problem-meta">U4S1-022 | Section 4.1 | DoK 2</span></div>
+
+<p>A point on the unit circle has coordinates \(\left(-\frac{\sqrt3}{2},\frac12\right)\). Determine \(\sin(\theta)\), \(\cos(\theta)\), \(\tan(\theta)\), and the angle \(\theta\).</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S1-022" src="figures/u4-u4s1-022-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 007 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 008 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.008">
+<div class="problem-number">Assessment Bank DOK 2.008<span class="problem-meta">U4S1-023 | Section 4.1 | DoK 2</span></div>
+
+<p>A point on the unit circle has coordinates \(\left(\frac{\sqrt2}{2},-\frac{\sqrt2}{2}\right)\). Determine all six trig functions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 008 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 009 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.009">
+<div class="problem-number">Assessment Bank DOK 2.009<span class="problem-meta">U4S1-024 | Section 4.1 | DoK 2</span></div>
+
+<p>Use a \(45^\circ-45^\circ-90^\circ\) triangle to explain why \(\sin\left(\frac{\pi}{4}\right)=\frac{\sqrt2}{2}\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 009 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 010 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.010">
+<div class="problem-number">Assessment Bank DOK 2.010<span class="problem-meta">U4S1-025 | Section 4.1 | DoK 2</span></div>
+
+<p>Use a \(30^\circ-60^\circ-90^\circ\) triangle to explain why \(\cos\left(\frac{\pi}{3}\right)=\frac12\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 010 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 011 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.011">
+<div class="problem-number">Assessment Bank DOK 2.011<span class="problem-meta">U4S1-026 | Section 4.1 | DoK 2</span></div>
+
+<p>Determine all angles in \(0\le\theta&lt;2\pi\) such that \(\sin(\theta)=\frac12\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 011 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 012 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.012">
+<div class="problem-number">Assessment Bank DOK 2.012<span class="problem-meta">U4S1-027 | Section 4.1 | DoK 2</span></div>
+
+<p>Determine all angles in \(0\le\theta&lt;2\pi\) such that \(\cos(\theta)=-\frac{\sqrt2}{2}\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 012 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 013 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.013">
+<div class="problem-number">Assessment Bank DOK 2.013<span class="problem-meta">U4S1-028 | Section 4.1 | DoK 2</span></div>
+
+<p>Determine all angles in \(0\le\theta&lt;2\pi\) such that \(\tan(\theta)=\sqrt3\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 013 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 014 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.014">
+<div class="problem-number">Assessment Bank DOK 2.014<span class="problem-meta">U4S1-029 | Section 4.1 | DoK 2</span></div>
+
+<p>A student says, “\(\sin(\theta)\) and \(\cos(\theta)\) are always positive on the unit circle.” Use examples and the unit circle to explain why this is false.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 014 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 015 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.015">
+<div class="problem-number">Assessment Bank DOK 2.015<span class="problem-meta">U4S1-030 | Section 4.1 | DoK 2</span></div>
+
+<p>Use the unit circle to explain why \(\tan(\theta)=\frac{\sin(\theta)}{\cos(\theta)}\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 015 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 016 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.016">
+<div class="problem-number">Assessment Bank DOK 2.016<span class="problem-meta">U4S2-014 | Section 4.2 | DoK 2</span></div>
+
+<p>Simplify: \[\frac{1-\cos^2(x)}{\sin(x)}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 016 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 017 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.017">
+<div class="problem-number">Assessment Bank DOK 2.017<span class="problem-meta">U4S2-015 | Section 4.2 | DoK 2</span></div>
+
+<p>Simplify: \[\frac{\sec^2(x)-1}{\tan(x)}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 017 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 018 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.018">
+<div class="problem-number">Assessment Bank DOK 2.018<span class="problem-meta">U4S2-016 | Section 4.2 | DoK 2</span></div>
+
+<p>Simplify: \[(\sin(x)+\cos(x))^2\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 018 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 019 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.019">
+<div class="problem-number">Assessment Bank DOK 2.019<span class="problem-meta">U4S2-017 | Section 4.2 | DoK 2</span></div>
+
+<p>Simplify: \[(\sin(x)-\cos(x))^2\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 019 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 020 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.020">
+<div class="problem-number">Assessment Bank DOK 2.020<span class="problem-meta">U4S2-018 | Section 4.2 | DoK 2</span></div>
+
+<p>Rewrite \(\sin(x)\cos(x)\) using a double-angle identity.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 020 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 021 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.021">
+<div class="problem-number">Assessment Bank DOK 2.021<span class="problem-meta">U4S2-019 | Section 4.2 | DoK 2</span></div>
+
+<p>Evaluate exactly: \[\sin(105^\circ)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 021 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 022 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.022">
+<div class="problem-number">Assessment Bank DOK 2.022<span class="problem-meta">U4S2-020 | Section 4.2 | DoK 2</span></div>
+
+<p>Evaluate exactly: \[\cos(105^\circ)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 022 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 023 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.023">
+<div class="problem-number">Assessment Bank DOK 2.023<span class="problem-meta">U4S2-021 | Section 4.2 | DoK 2</span></div>
+
+<p>Evaluate exactly: \[\tan(75^\circ)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 023 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 024 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.024">
+<div class="problem-number">Assessment Bank DOK 2.024<span class="problem-meta">U4S2-022 | Section 4.2 | DoK 2</span></div>
+
+<p>Use sum/difference identities to evaluate \(\sin\left(\frac{5\pi}{12}\right)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 024 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 025 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.025">
+<div class="problem-number">Assessment Bank DOK 2.025<span class="problem-meta">U4S2-023 | Section 4.2 | DoK 2</span></div>
+
+<p>Use sum/difference identities to evaluate \(\cos\left(\frac{7\pi}{12}\right)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 025 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 026 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.026">
+<div class="problem-number">Assessment Bank DOK 2.026<span class="problem-meta">U4S2-024 | Section 4.2 | DoK 2</span></div>
+
+<p>Rewrite \(\cos(A)\cos(B)-\sin(A)\sin(B)\) as a single trig function.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 026 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 027 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.027">
+<div class="problem-number">Assessment Bank DOK 2.027<span class="problem-meta">U4S2-025 | Section 4.2 | DoK 2</span></div>
+
+<p>Rewrite \(\sin(A)\cos(B)+\cos(A)\sin(B)\) as a single trig function.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 027 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 028 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.028">
+<div class="problem-number">Assessment Bank DOK 2.028<span class="problem-meta">U4S2-026 | Section 4.2 | DoK 2</span></div>
+
+<p>Simplify: \[\frac{\cos(x)}{\sec(x)}+\frac{\sin(x)}{\csc(x)}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 028 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 029 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.029">
+<div class="problem-number">Assessment Bank DOK 2.029<span class="problem-meta">U4S2-027 | Section 4.2 | DoK 2</span></div>
+
+<p>Verify: \[\frac{1-\cos^2(x)}{\sin(x)}=\sin(x)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 029 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 030 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.030">
+<div class="problem-number">Assessment Bank DOK 2.030<span class="problem-meta">U4S2-028 | Section 4.2 | DoK 2</span></div>
+
+<p>Verify: \[\frac{\tan(x)\cos(x)}{\sin(x)}=1\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 030 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 031 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.031">
+<div class="problem-number">Assessment Bank DOK 2.031<span class="problem-meta">U4S3-014 | Section 4.3 | DoK 2</span></div>
+
+<p>Rewrite \(4\sin(x)\cos(x)\) as a single trig function.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 031 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 032 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.032">
+<div class="problem-number">Assessment Bank DOK 2.032<span class="problem-meta">U4S3-015 | Section 4.3 | DoK 2</span></div>
+
+<p>Rewrite \(8\sin(x)\cos(x)\) using double-angle identities.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 032 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 033 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.033">
+<div class="problem-number">Assessment Bank DOK 2.033<span class="problem-meta">U4S3-016 | Section 4.3 | DoK 2</span></div>
+
+<p>Simplify: \[\sin^2(x)-\cos^2(x)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 033 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 034 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.034">
+<div class="problem-number">Assessment Bank DOK 2.034<span class="problem-meta">U4S3-017 | Section 4.3 | DoK 2</span></div>
+
+<p>Rewrite \(\cos^2(x)\) using a half-angle identity.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 034 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 035 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.035">
+<div class="problem-number">Assessment Bank DOK 2.035<span class="problem-meta">U4S3-018 | Section 4.3 | DoK 2</span></div>
+
+<p>Rewrite \(\sin^2(x)\) using a half-angle identity.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 035 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 036 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.036">
+<div class="problem-number">Assessment Bank DOK 2.036<span class="problem-meta">U4S3-019 | Section 4.3 | DoK 2</span></div>
+
+<p>Evaluate \(\sin(90^\circ)\) using a double-angle identity.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 036 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 037 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.037">
+<div class="problem-number">Assessment Bank DOK 2.037<span class="problem-meta">U4S3-020 | Section 4.3 | DoK 2</span></div>
+
+<p>Evaluate \(\cos(120^\circ)\) using a double-angle identity.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 037 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 038 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.038">
+<div class="problem-number">Assessment Bank DOK 2.038<span class="problem-meta">U4S3-021 | Section 4.3 | DoK 2</span></div>
+
+<p>Evaluate exactly: \[\sin\left(\frac{\pi}{12}\right)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 038 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 039 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.039">
+<div class="problem-number">Assessment Bank DOK 2.039<span class="problem-meta">U4S3-022 | Section 4.3 | DoK 2</span></div>
+
+<p>Evaluate exactly: \[\cos\left(\frac{\pi}{12}\right)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 039 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 040 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.040">
+<div class="problem-number">Assessment Bank DOK 2.040<span class="problem-meta">U4S3-023 | Section 4.3 | DoK 2</span></div>
+
+<p>Evaluate exactly: \[\tan\left(\frac{\pi}{8}\right)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 040 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 041 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.041">
+<div class="problem-number">Assessment Bank DOK 2.041<span class="problem-meta">U4S3-024 | Section 4.3 | DoK 2</span></div>
+
+<p>Use a half-angle identity to determine \(\cos(15^\circ)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 041 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 042 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.042">
+<div class="problem-number">Assessment Bank DOK 2.042<span class="problem-meta">U4S3-025 | Section 4.3 | DoK 2</span></div>
+
+<p>Use a half-angle identity to determine \(\sin(15^\circ)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 042 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 043 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.043">
+<div class="problem-number">Assessment Bank DOK 2.043<span class="problem-meta">U4S3-026 | Section 4.3 | DoK 2</span></div>
+
+<p>Verify: \[2\sin(x)\cos(x)=\sin(2x)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 043 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 044 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.044">
+<div class="problem-number">Assessment Bank DOK 2.044<span class="problem-meta">U4S3-027 | Section 4.3 | DoK 2</span></div>
+
+<p>Verify: \[1-2\sin^2(x)=\cos(2x)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 044 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 045 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.045">
+<div class="problem-number">Assessment Bank DOK 2.045<span class="problem-meta">U4S3-028 | Section 4.3 | DoK 2</span></div>
+
+<p>Rewrite \(\sin^2(x)\cos^2(x)\) using double-angle identities.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 045 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 046 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.046">
+<div class="problem-number">Assessment Bank DOK 2.046<span class="problem-meta">U4S4-014 | Section 4.4 | DoK 2</span></div>
+
+<p>Graph \(y=2\sin(x)\). State amplitude, period, midline, maximum, and minimum.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 046 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 047 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.047">
+<div class="problem-number">Assessment Bank DOK 2.047<span class="problem-meta">U4S4-015 | Section 4.4 | DoK 2</span></div>
+
+<p>Graph \(y=-3\cos(x)\). Describe the reflection and vertical stretch.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 047 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 048 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.048">
+<div class="problem-number">Assessment Bank DOK 2.048<span class="problem-meta">U4S4-016 | Section 4.4 | DoK 2</span></div>
+
+<p>Graph \(y=\sin(x)+4\). State the vertical shift and midline.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 048 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 049 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.049">
+<div class="problem-number">Assessment Bank DOK 2.049<span class="problem-meta">U4S4-017 | Section 4.4 | DoK 2</span></div>
+
+<p>Graph \(y=\cos\left(x-\frac{\pi}{2}\right)\). State the phase shift and list the five key points for one period.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 049 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 050 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.050">
+<div class="problem-number">Assessment Bank DOK 2.050<span class="problem-meta">U4S4-018 | Section 4.4 | DoK 2</span></div>
+
+<p>Graph \(y=2\sin(2x)\). State amplitude, period, interval length between key points, and five key points.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 050 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 051 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.051">
+<div class="problem-number">Assessment Bank DOK 2.051<span class="problem-meta">U4S4-019 | Section 4.4 | DoK 2</span></div>
+
+<p>Graph \(y=-\cos\left(\frac{x}{2}\right)\). State the period and describe the reflection.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 051 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 052 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.052">
+<div class="problem-number">Assessment Bank DOK 2.052<span class="problem-meta">U4S4-020 | Section 4.4 | DoK 2</span></div>
+
+<p>Graph \(y=3\cos(x+\pi)-1\). State amplitude, period, phase shift, vertical shift, and midline.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 052 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 053 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.053">
+<div class="problem-number">Assessment Bank DOK 2.053<span class="problem-meta">U4S4-021 | Section 4.4 | DoK 2</span></div>
+
+<p>Use the five-point method to graph \(y=2\sin\left(x-\frac{\pi}{4}\right)+1\). Label the five key points.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 053 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 054 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.054">
+<div class="problem-number">Assessment Bank DOK 2.054<span class="problem-meta">U4S4-022 | Section 4.4 | DoK 2</span></div>
+
+<p>Use the five-point method to graph \(y=-4\cos(2x)-3\). Label the five key points and the midline.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 054 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 055 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.055">
+<div class="problem-number">Assessment Bank DOK 2.055<span class="problem-meta">U4S4-023 | Section 4.4 | DoK 2</span></div>
+
+<p>Write an equation for a sine graph with amplitude \(3\), period \(2\pi\), and vertical shift \(1\). Then identify the maximum and minimum values.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 055 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 056 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.056">
+<div class="problem-number">Assessment Bank DOK 2.056<span class="problem-meta">U4S4-024 | Section 4.4 | DoK 2</span></div>
+
+<p>Write an equation for a cosine graph with amplitude \(2\), period \(\pi\), and reflection across the \(x\)-axis. Then state the value of \(B\) in \(y=a\cos(Bx)+d\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 056 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 057 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.057">
+<div class="problem-number">Assessment Bank DOK 2.057<span class="problem-meta">U4S4-025 | Section 4.4 | DoK 2</span></div>
+
+<p>A graph has maximum \(5\) and minimum \(-1\). Determine the amplitude and midline. Then write a possible sine equation with period \(2\pi\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 057 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 058 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.058">
+<div class="problem-number">Assessment Bank DOK 2.058<span class="problem-meta">U4S4-026 | Section 4.4 | DoK 2</span></div>
+
+<p>A graph completes one cycle over \(0\le x\le\pi\). Determine the period and the value of \(B\) in \(y=\sin(Bx)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 058 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 059 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.059">
+<div class="problem-number">Assessment Bank DOK 2.059<span class="problem-meta">U4S4-027 | Section 4.4 | DoK 2</span></div>
+
+<p>Given the trig graph, determine amplitude, period, phase shift, vertical shift, maximum, and minimum.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S4-027" src="figures/u4-u4s4-027-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 059 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 060 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.060">
+<div class="problem-number">Assessment Bank DOK 2.060<span class="problem-meta">U4S4-028 | Section 4.4 | DoK 2</span></div>
+
+<p>Given the trig graph, write a possible equation in cosine form. Then explain how the graph shows the amplitude, period, shift, and reflection.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S4-028" src="figures/u4-u4s4-028-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 060 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 061 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.061">
+<div class="problem-number">Assessment Bank DOK 2.061<span class="problem-meta">U4S5-014 | Section 4.5 | DoK 2</span></div>
+
+<p>Solve $2\sin(x)-1=0$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 061 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 062 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.062">
+<div class="problem-number">Assessment Bank DOK 2.062<span class="problem-meta">U4S5-015 | Section 4.5 | DoK 2</span></div>
+
+<p>Solve $2\cos(x)+\sqrt3=0$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 062 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 063 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.063">
+<div class="problem-number">Assessment Bank DOK 2.063<span class="problem-meta">U4S5-016 | Section 4.5 | DoK 2</span></div>
+
+<p>Solve $3\tan(x)=\sqrt3$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 063 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 064 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.064">
+<div class="problem-number">Assessment Bank DOK 2.064<span class="problem-meta">U4S5-017 | Section 4.5 | DoK 2</span></div>
+
+<p>Solve $2\sin^2(x)-1=0$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 064 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 065 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.065">
+<div class="problem-number">Assessment Bank DOK 2.065<span class="problem-meta">U4S5-018 | Section 4.5 | DoK 2</span></div>
+
+<p>Solve $2\cos^2(x)+\cos(x)-1=0$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 065 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 066 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.066">
+<div class="problem-number">Assessment Bank DOK 2.066<span class="problem-meta">U4S5-019 | Section 4.5 | DoK 2</span></div>
+
+<p>Solve $\sin(x)\cos(x)=0$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 066 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 067 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.067">
+<div class="problem-number">Assessment Bank DOK 2.067<span class="problem-meta">U4S5-020 | Section 4.5 | DoK 2</span></div>
+
+<p>Solve $\cos(x)(2\sin(x)+1)=0$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 067 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 068 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.068">
+<div class="problem-number">Assessment Bank DOK 2.068<span class="problem-meta">U4S5-021 | Section 4.5 | DoK 2</span></div>
+
+<p>Solve $\sin(2x)=0$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 068 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 069 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.069">
+<div class="problem-number">Assessment Bank DOK 2.069<span class="problem-meta">U4S5-022 | Section 4.5 | DoK 2</span></div>
+
+<p>Solve $\sin(2x)=\frac{\sqrt3}{2}$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 069 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 070 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.070">
+<div class="problem-number">Assessment Bank DOK 2.070<span class="problem-meta">U4S5-023 | Section 4.5 | DoK 2</span></div>
+
+<p>Solve $\cos(2x)=\frac12$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 070 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 071 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.071">
+<div class="problem-number">Assessment Bank DOK 2.071<span class="problem-meta">U4S5-024 | Section 4.5 | DoK 2</span></div>
+
+<p>Solve $\tan(2x)=-1$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 071 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 072 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.072">
+<div class="problem-number">Assessment Bank DOK 2.072<span class="problem-meta">U4S5-025 | Section 4.5 | DoK 2</span></div>
+
+<p>Use the graph to solve $2\sin(x)-1=0$ and verify algebraically.</p>
+<div class="graph-block"><img alt="Graph for U4S5-025" src="figures/u4-u4s5-025-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 072 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 073 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.073">
+<div class="problem-number">Assessment Bank DOK 2.073<span class="problem-meta">U4S5-026 | Section 4.5 | DoK 2</span></div>
+
+<p>Use the graph to solve $\cos(x)=\sin(x)$.</p>
+<div class="graph-block"><img alt="Graph for U4S5-026" src="figures/u4-u4s5-026-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 073 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 074 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.074">
+<div class="problem-number">Assessment Bank DOK 2.074<span class="problem-meta">U4S5-027 | Section 4.5 | DoK 2</span></div>
+
+<p>A student gives only $x=\frac{\pi}{3}$ for $2\cos(x)=1$. Explain the error and give all solutions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 074 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 075 START ======================= -->
+<section class="assessment-card" id="U4-DOK2.075">
+<div class="problem-number">Assessment Bank DOK 2.075<span class="problem-meta">U4S5-028 | Section 4.5 | DoK 2</span></div>
+
+<p>Solve $2\sin(x)-\sqrt2=0$ for all real $x$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 075 END ======================= -->
+<div class="dok-bar">Assessment Bank DOK 3</div>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 001 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.001">
+<div class="problem-number">Assessment Bank DOK 3.001<span class="problem-meta">U4S1-031 | Section 4.1 | DoK 3</span></div>
+
+<p>Explain why \(\sin^2(\theta)+\cos^2(\theta)=1\) for every point on the unit circle.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 001 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 002 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.002">
+<div class="problem-number">Assessment Bank DOK 3.002<span class="problem-meta">U4S1-032 | Section 4.1 | DoK 3</span></div>
+
+<p>Compare \(\sin\left(\frac{\pi}{6}\right)\) and \(\cos\left(\frac{\pi}{3}\right)\). Explain why the values are equal geometrically.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 002 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 003 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.003">
+<div class="problem-number">Assessment Bank DOK 3.003<span class="problem-meta">U4S1-033 | Section 4.1 | DoK 3</span></div>
+
+<p>A student says, “Angles bigger than \(2\pi\) are not on the unit circle.” Respond with examples and reasoning.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S1-033" src="figures/u4-u4s1-033-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 003 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 004 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.004">
+<div class="problem-number">Assessment Bank DOK 3.004<span class="problem-meta">U4S1-034 | Section 4.1 | DoK 3</span></div>
+
+<p>Explain why \(\sin(-\theta)=-\sin(\theta)\) using unit-circle symmetry.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 004 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 005 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.005">
+<div class="problem-number">Assessment Bank DOK 3.005<span class="problem-meta">U4S1-035 | Section 4.1 | DoK 3</span></div>
+
+<p>Explain why \(\cos(-\theta)=\cos(\theta)\) using unit-circle symmetry.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 005 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 006 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.006">
+<div class="problem-number">Assessment Bank DOK 3.006<span class="problem-meta">U4S1-036 | Section 4.1 | DoK 3</span></div>
+
+<p>Compare the signs of sine, cosine, and tangent in all four quadrants. Then explain how the unit circle helps predict trig values without memorization.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S1-036" src="figures/u4-u4s1-036-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 006 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 007 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.007">
+<div class="problem-number">Assessment Bank DOK 3.007<span class="problem-meta">U4S1-037 | Section 4.1 | DoK 3</span></div>
+
+<p>A student evaluates \(\tan\left(\frac{\pi}{2}\right)=1\).</p><ol class="lower-alpha"><li>Explain the mistake.</li><li>Determine the correct value.</li><li>Explain geometrically why tangent is undefined there.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 007 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 008 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.008">
+<div class="problem-number">Assessment Bank DOK 3.008<span class="problem-meta">U4S1-038 | Section 4.1 | DoK 3</span></div>
+
+<p>Use the unit circle to explain why \(\sin\left(\frac{5\pi}{6}\right)=\sin\left(\frac{\pi}{6}\right)\), but \(\cos\left(\frac{5\pi}{6}\right)\ne\cos\left(\frac{\pi}{6}\right)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 008 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 009 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.009">
+<div class="problem-number">Assessment Bank DOK 3.009<span class="problem-meta">U4S1-039 | Section 4.1 | DoK 3</span></div>
+
+<p>A point on the unit circle has \(\sin(\theta)=\frac35\) and lies in Quadrant II. Determine \(\cos(\theta)\) and \(\tan(\theta)\). Explain how you know the signs.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 009 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 010 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.010">
+<div class="problem-number">Assessment Bank DOK 3.010<span class="problem-meta">U4S1-040 | Section 4.1 | DoK 3</span></div>
+
+<p>Explain how the unit circle connects radians, coordinates, triangles, trigonometric functions, and graph behavior.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 010 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 011 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.011">
+<div class="problem-number">Assessment Bank DOK 3.011<span class="problem-meta">U4S2-029 | Section 4.2 | DoK 3</span></div>
+
+<p>Explain why \(\sin^2(\theta)+\cos^2(\theta)=1\) is true geometrically using the unit circle.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S2-029" src="figures/u4-u4s2-029-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 011 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 012 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.012">
+<div class="problem-number">Assessment Bank DOK 3.012<span class="problem-meta">U4S2-030 | Section 4.2 | DoK 3</span></div>
+
+<p>A student claims \(\sin(A+B)=\sin(A)+\sin(B)\). Use exact values to show why this is false.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 012 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 013 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.013">
+<div class="problem-number">Assessment Bank DOK 3.013<span class="problem-meta">U4S2-031 | Section 4.2 | DoK 3</span></div>
+
+<p>Verify: \[\frac{\sec(x)-1}{1-\cos(x)}=\sec(x)\]</p><p>Explain each major step.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 013 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 014 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.014">
+<div class="problem-number">Assessment Bank DOK 3.014<span class="problem-meta">U4S2-032 | Section 4.2 | DoK 3</span></div>
+
+<p>Verify: \[\frac{\csc(x)-\cot(x)}{\sin(x)}=\frac{1}{1+\cos(x)}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 014 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 015 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.015">
+<div class="problem-number">Assessment Bank DOK 3.015<span class="problem-meta">U4S2-033 | Section 4.2 | DoK 3</span></div>
+
+<p>A student simplifies \(\sin^2(x)+\cos^2(x)\) as \((\sin(x)+\cos(x))^2\).</p><ol class="lower-alpha"><li>Explain the mistake.</li><li>Expand the incorrect expression.</li><li>Compare the two results.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 015 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 016 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.016">
+<div class="problem-number">Assessment Bank DOK 3.016<span class="problem-meta">U4S2-034 | Section 4.2 | DoK 3</span></div>
+
+<p>Explain why \(\sin(75^\circ)=\cos(15^\circ)\) using cofunction relationships, a unit-circle diagram, and graph behavior.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S2-034" src="figures/u4-u4s2-034-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 016 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 017 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.017">
+<div class="problem-number">Assessment Bank DOK 3.017<span class="problem-meta">U4S2-035 | Section 4.2 | DoK 3</span></div>
+
+<p>Verify: \[\frac{\tan(x)}{\sec(x)}=\sin(x)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 017 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 018 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.018">
+<div class="problem-number">Assessment Bank DOK 3.018<span class="problem-meta">U4S2-036 | Section 4.2 | DoK 3</span></div>
+
+<p>Use identities to rewrite \(\sin^2(x)-\cos^2(x)\) in two different forms.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 018 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 019 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.019">
+<div class="problem-number">Assessment Bank DOK 3.019<span class="problem-meta">U4S2-037 | Section 4.2 | DoK 3</span></div>
+
+<p>A student says, “Pythagorean identities only work with sine and cosine.” Respond using examples.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 019 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 020 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.020">
+<div class="problem-number">Assessment Bank DOK 3.020<span class="problem-meta">U4S2-038 | Section 4.2 | DoK 3</span></div>
+
+<p>Compare \(\sin(A+B)\) and \(\sin(A-B)\). Explain structurally how the formulas are similar and different.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 020 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 021 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.021">
+<div class="problem-number">Assessment Bank DOK 3.021<span class="problem-meta">U4S2-039 | Section 4.2 | DoK 3</span></div>
+
+<p>Verify: \[\frac{1+\tan^2(x)}{\sec^2(x)}=1\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 021 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 022 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.022">
+<div class="problem-number">Assessment Bank DOK 3.022<span class="problem-meta">U4S2-040 | Section 4.2 | DoK 3</span></div>
+
+<p>Use exact values and identities to prove: \[\sin(15^\circ)=\frac{\sqrt6-\sqrt2}{4}\]</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S2-040" src="figures/u4-u4s2-040-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 022 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 023 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.023">
+<div class="problem-number">Assessment Bank DOK 3.023<span class="problem-meta">U4S3-029 | Section 4.3 | DoK 3</span></div>
+
+<p>Explain geometrically why \(\sin(2x)=2\sin(x)\cos(x)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 023 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 024 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.024">
+<div class="problem-number">Assessment Bank DOK 3.024<span class="problem-meta">U4S3-030 | Section 4.3 | DoK 3</span></div>
+
+<p>A student claims \(\cos(2x)=\cos^2(x)+\sin^2(x)\).</p><ol class="lower-alpha"><li>Explain the mistake.</li><li>State the correct identity.</li><li>Show why the student’s result simplifies incorrectly.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 024 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 025 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.025">
+<div class="problem-number">Assessment Bank DOK 3.025<span class="problem-meta">U4S3-031 | Section 4.3 | DoK 3</span></div>
+
+<p>Verify: \[\frac{1-\cos(2x)}{2}=\sin^2(x)\]</p><p>Explain each step.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 025 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 026 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.026">
+<div class="problem-number">Assessment Bank DOK 3.026<span class="problem-meta">U4S3-032 | Section 4.3 | DoK 3</span></div>
+
+<p>Verify: \[\frac{1+\cos(2x)}{2}=\cos^2(x)\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 026 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 027 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.027">
+<div class="problem-number">Assessment Bank DOK 3.027<span class="problem-meta">U4S3-033 | Section 4.3 | DoK 3</span></div>
+
+<p>Explain why half-angle identities require \(\pm\) in front of the square root.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 027 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 028 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.028">
+<div class="problem-number">Assessment Bank DOK 3.028<span class="problem-meta">U4S3-034 | Section 4.3 | DoK 3</span></div>
+
+<p>Determine \(\sin\left(\frac{x}{2}\right)\) given \(\cos(x)=\frac35\) and \(\pi<x<2\pi\). determines="" explain="" how="" information="" p="" quadrant="" sign.<="" the="">
+<div class="graph-block graph-lg"><img alt="Figure for U4S3-034" src="figures/u4-u4s3-034-1.png"/></div>
+
+
+</x<2\pi\).></p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 028 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 029 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.029">
+<div class="problem-number">Assessment Bank DOK 3.029<span class="problem-meta">U4S3-035 | Section 4.3 | DoK 3</span></div>
+
+<p>Determine \(\cos\left(\frac{x}{2}\right)\) given \(\sin(x)=-\frac45\) and \(\pi<x<\frac{3\pi}{2}\).< p="">
+
+
+</x<\frac{3\pi}{2}\).<></p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 029 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 030 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.030">
+<div class="problem-number">Assessment Bank DOK 3.030<span class="problem-meta">U4S3-036 | Section 4.3 | DoK 3</span></div>
+
+<p>Use identities to rewrite \(\sin^4(x)-\cos^4(x)\) in a simpler form.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 030 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 031 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.031">
+<div class="problem-number">Assessment Bank DOK 3.031<span class="problem-meta">U4S3-037 | Section 4.3 | DoK 3</span></div>
+
+<p>A student says, “Double-angle identities are just shortcuts and do not reveal anything important.” Respond using examples involving graph structure and exact values.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 031 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 032 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.032">
+<div class="problem-number">Assessment Bank DOK 3.032<span class="problem-meta">U4S3-038 | Section 4.3 | DoK 3</span></div>
+
+<p>Compare \(\cos(2x)\) written as \(\cos^2(x)-\sin^2(x)\) and as \(1-2\sin^2(x)\). Explain when each form is strategically useful.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 032 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 033 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.033">
+<div class="problem-number">Assessment Bank DOK 3.033<span class="problem-meta">U4S3-039 | Section 4.3 | DoK 3</span></div>
+
+<p>Use identities to prove \(\sin(75^\circ)=\frac{\sqrt6+\sqrt2}{4}\).</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S3-039" src="figures/u4-u4s3-039-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 033 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 034 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.034">
+<div class="problem-number">Assessment Bank DOK 3.034<span class="problem-meta">U4S3-040 | Section 4.3 | DoK 3</span></div>
+
+<p>Use graph behavior to explain how \(\sin(x)\) and \(\sin(2x)\) are related. Discuss period, symmetry, zeros, and amplitude.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S3-040" src="figures/u4-u4s3-040-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 034 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 035 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.035">
+<div class="problem-number">Assessment Bank DOK 3.035<span class="problem-meta">U4S4-029 | Section 4.4 | DoK 3</span></div>
+
+<p>Explain how amplitude affects the graph of \(y=a\sin(x)\). Include what changes and what does not change.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 035 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 036 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.036">
+<div class="problem-number">Assessment Bank DOK 3.036<span class="problem-meta">U4S4-030 | Section 4.4 | DoK 3</span></div>
+
+<p>Explain how the coefficient inside the function affects period. Compare \(\sin(x)\) and \(\sin(3x)\), and describe how many cycles occur on \(0\le x\le2\pi\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 036 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 037 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.037">
+<div class="problem-number">Assessment Bank DOK 3.037<span class="problem-meta">U4S4-031 | Section 4.4 | DoK 3</span></div>
+
+<p>A student says, “The graph of \(y=\sin(x-2)\) shifts left 2.” Explain the mistake and correct it.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 037 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 038 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.038">
+<div class="problem-number">Assessment Bank DOK 3.038<span class="problem-meta">U4S4-032 | Section 4.4 | DoK 3</span></div>
+
+<p>Compare \(y=\sin(x)\) and \(y=\cos(x)\). Explain how the graphs are related using phase shift, unit-circle coordinates, and key points.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 038 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 039 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.039">
+<div class="problem-number">Assessment Bank DOK 3.039<span class="problem-meta">U4S4-033 | Section 4.4 | DoK 3</span></div>
+
+<p>A student says, “Amplitude changes the period.” Use two equations and graph-feature reasoning to explain why this is false.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 039 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 040 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.040">
+<div class="problem-number">Assessment Bank DOK 3.040<span class="problem-meta">U4S4-034 | Section 4.4 | DoK 3</span></div>
+
+<p>Analyze \(y=-2\sin\left(\frac{x}{2}\right)+3\). State amplitude, period, phase shift, vertical shift, midline, maxima/minima, and intervals of increase/decrease over one cycle.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 040 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 041 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.041">
+<div class="problem-number">Assessment Bank DOK 3.041<span class="problem-meta">U4S4-035 | Section 4.4 | DoK 3</span></div>
+
+<p>Analyze \(y=4\cos(3x-\pi)-1\). Rewrite it to reveal the phase shift, then state amplitude, period, phase shift, vertical shift, midline, and maxima/minima.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 041 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 042 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.042">
+<div class="problem-number">Assessment Bank DOK 3.042<span class="problem-meta">U4S4-036 | Section 4.4 | DoK 3</span></div>
+
+<p>Given the graph, write one sine equation and one cosine equation that model the graph. Justify why both equations produce the same curve.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S4-036" src="figures/u4-u4s4-036-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 042 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 043 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.043">
+<div class="problem-number">Assessment Bank DOK 3.043<span class="problem-meta">U4S4-037 | Section 4.4 | DoK 3</span></div>
+
+<p>Explain why \(y=\sin(x)\) and \(y=\cos\left(x-\frac{\pi}{2}\right)\) represent the same graph. Use both key points and phase-shift reasoning.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 043 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 044 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.044">
+<div class="problem-number">Assessment Bank DOK 3.044<span class="problem-meta">U4S4-038 | Section 4.4 | DoK 3</span></div>
+
+<p>Compare \(y=\sin(x)\) and \(y=\sin(2x)\). Discuss period, zeros, horizontal compression, number of cycles, and symmetry.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 044 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 045 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.045">
+<div class="problem-number">Assessment Bank DOK 3.045<span class="problem-meta">U4S4-039 | Section 4.4 | DoK 3</span></div>
+
+<p>A graph has amplitude \(5\), midline \(y=-2\), and period \(4\pi\). Write a possible sine equation and a possible cosine equation. Justify both choices.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 045 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 046 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.046">
+<div class="problem-number">Assessment Bank DOK 3.046<span class="problem-meta">U4S4-040 | Section 4.4 | DoK 3</span></div>
+
+<p>Explain how the five-point method helps graph sinusoidal functions efficiently. Use \(y=-3\cos(2x)+1\) as an example and describe how each key point is transformed.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 046 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 047 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.047">
+<div class="problem-number">Assessment Bank DOK 3.047<span class="problem-meta">U4S5-029 | Section 4.5 | DoK 3</span></div>
+
+<p>Explain why $\sin(x)=\frac12$ has two solutions on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 047 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 048 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.048">
+<div class="problem-number">Assessment Bank DOK 3.048<span class="problem-meta">U4S5-030 | Section 4.5 | DoK 3</span></div>
+
+<p>Explain why inverse trig functions do not automatically give all solutions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 048 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 049 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.049">
+<div class="problem-number">Assessment Bank DOK 3.049<span class="problem-meta">U4S5-031 | Section 4.5 | DoK 3</span></div>
+
+<p>Solve $2\sin^2(x)+\sin(x)-1=0$ on $0\le x&lt;2\pi$ using substitution.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 049 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 050 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.050">
+<div class="problem-number">Assessment Bank DOK 3.050<span class="problem-meta">U4S5-032 | Section 4.5 | DoK 3</span></div>
+
+<p>Solve $2\cos^2(x)-3\cos(x)+1=0$ on $0\le x&lt;2\pi$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 050 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 051 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.051">
+<div class="problem-number">Assessment Bank DOK 3.051<span class="problem-meta">U4S5-033 | Section 4.5 | DoK 3</span></div>
+
+<p>Solve $\sin(x)=\cos(x)$ and explain geometrically why the solutions occur.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 051 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 052 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.052">
+<div class="problem-number">Assessment Bank DOK 3.052<span class="problem-meta">U4S5-034 | Section 4.5 | DoK 3</span></div>
+
+<p>Use identities to solve $1-\cos^2(x)=\frac34$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 052 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 053 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.053">
+<div class="problem-number">Assessment Bank DOK 3.053<span class="problem-meta">U4S5-035 | Section 4.5 | DoK 3</span></div>
+
+<p>Use identities to solve $2\sin(x)\cos(x)=1$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 053 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 054 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.054">
+<div class="problem-number">Assessment Bank DOK 3.054<span class="problem-meta">U4S5-036 | Section 4.5 | DoK 3</span></div>
+
+<p>Explain why $\tan(x)=0$ has infinitely many solutions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 054 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 055 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.055">
+<div class="problem-number">Assessment Bank DOK 3.055<span class="problem-meta">U4S5-037 | Section 4.5 | DoK 3</span></div>
+
+<p>Compare solving $\sin(x)=\frac12$ and $\sin(2x)=\frac12$.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 055 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 056 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.056">
+<div class="problem-number">Assessment Bank DOK 3.056<span class="problem-meta">U4S5-038 | Section 4.5 | DoK 3</span></div>
+
+<p>Explain how graphing verifies trig equation solutions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 056 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 057 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.057">
+<div class="problem-number">Assessment Bank DOK 3.057<span class="problem-meta">U4S5-039 | Section 4.5 | DoK 3</span></div>
+
+<p>Solve $\sin^2(x)-\cos^2(x)=0$ using identities.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 057 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 058 START ======================= -->
+<section class="assessment-card" id="U4-DOK3.058">
+<div class="problem-number">Assessment Bank DOK 3.058<span class="problem-meta">U4S5-040 | Section 4.5 | DoK 3</span></div>
+
+<p>Explain why $\sin(x)=2$ has no real solution.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 058 END ======================= -->
+<div class="dok-bar">Assessment Bank DOK 4</div>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 001 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.001">
+<div class="problem-number">Assessment Bank DOK 4.001<span class="problem-meta">U4S1-041 | Section 4.1 | DoK 4</span></div>
+
+<p>Create an angle whose sine is positive, cosine is negative, and tangent is negative. Then sketch it, give one radian measure, and explain how you know the signs.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 001 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 002 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.002">
+<div class="problem-number">Assessment Bank DOK 4.002<span class="problem-meta">U4S1-042 | Section 4.1 | DoK 4</span></div>
+
+<p>Create a unit-circle problem where students must determine all six trig functions from one coordinate. Then solve your own problem.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 002 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 003 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.003">
+<div class="problem-number">Assessment Bank DOK 4.003<span class="problem-meta">U4S1-043 | Section 4.1 | DoK 4</span></div>
+
+<p>Design an error-analysis problem involving coterminal angles.</p><ol class="lower-alpha"><li>Write incorrect student work.</li><li>Identify the misconception.</li><li>Correct the work.</li><li>Explain how to avoid the error.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 003 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 004 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.004">
+<div class="problem-number">Assessment Bank DOK 4.004<span class="problem-meta">U4S1-044 | Section 4.1 | DoK 4</span></div>
+
+<p>Create a real-world periodic situation where radians are more useful than degrees. Explain why.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 004 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 005 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.005">
+<div class="problem-number">Assessment Bank DOK 4.005<span class="problem-meta">U4S1-045 | Section 4.1 | DoK 4</span></div>
+
+<p>Design a unit-circle puzzle involving coterminal angles, exact values, and quadrant reasoning. Then provide the solution.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 005 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 006 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.006">
+<div class="problem-number">Assessment Bank DOK 4.006<span class="problem-meta">U4S1-046 | Section 4.1 | DoK 4</span></div>
+
+<p>Create a comparison task between \(\sin(\theta)\) and \(\cos(\theta)\) where students must use geometry and symmetry to justify relationships.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 006 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 007 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.007">
+<div class="problem-number">Assessment Bank DOK 4.007<span class="problem-meta">U4S1-047 | Section 4.1 | DoK 4</span></div>
+
+<p>A student claims, “Memorizing the unit circle is enough to understand trigonometry.” Critique this statement using examples involving coordinates, symmetry, and graph behavior.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 007 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 008 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.008">
+<div class="problem-number">Assessment Bank DOK 4.008<span class="problem-meta">U4S1-048 | Section 4.1 | DoK 4</span></div>
+
+<p>Create a graph/unit-circle connection problem where students relate a point on the unit circle, sine/cosine values, and a point on a trig graph. Explain the connection.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S1-048" src="figures/u4-u4s1-048-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 008 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 009 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.009">
+<div class="problem-number">Assessment Bank DOK 4.009<span class="problem-meta">U4S1-049 | Section 4.1 | DoK 4</span></div>
+
+<p>Create a multi-representation problem involving radians, coordinates, trig values, and special triangles. Then solve it completely.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 009 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 010 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.010">
+<div class="problem-number">Assessment Bank DOK 4.010<span class="problem-meta">U4S1-050 | Section 4.1 | DoK 4</span></div>
+
+<p>Design a challenge problem involving exact trig values, coterminal angles, symmetry, and all four quadrants. Then provide a full justification.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S1-050" src="figures/u4-u4s1-050-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 010 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 011 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.011">
+<div class="problem-number">Assessment Bank DOK 4.011<span class="problem-meta">U4S2-041 | Section 4.2 | DoK 4</span></div>
+
+<p>Create a trigonometric identity that simplifies to \(1\). Your identity must use at least two of the following: reciprocal identities, quotient identities, or Pythagorean identities. Then verify it line by line and explain why each rewrite is valid.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 011 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 012 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.012">
+<div class="problem-number">Assessment Bank DOK 4.012<span class="problem-meta">U4S2-042 | Section 4.2 | DoK 4</span></div>
+
+<p>Create a sum/difference identity problem whose exact answer contains radicals. Use angles that are not basic unit-circle angles by themselves, such as \(15^\circ\), \(75^\circ\), \(\frac{5\pi}{12}\), or \(\frac{7\pi}{12}\). Then solve it exactly.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 012 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 013 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.013">
+<div class="problem-number">Assessment Bank DOK 4.013<span class="problem-meta">U4S2-043 | Section 4.2 | DoK 4</span></div>
+
+<p>Design an error-analysis problem involving \(\sin(A+B)\).</p><ol class="lower-alpha"><li>Write incorrect student work that treats sine as if it distributes over addition.</li><li>Identify the misconception.</li><li>Correct the work using the sum identity.</li><li>Explain how to test the error using special angles.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 013 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 014 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.014">
+<div class="problem-number">Assessment Bank DOK 4.014<span class="problem-meta">U4S2-044 | Section 4.2 | DoK 4</span></div>
+
+<p>Create a trig expression that can be simplified in two different valid ways. One method should use a Pythagorean identity and the other should use quotient or reciprocal identities. Show both approaches and explain which is more efficient.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 014 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 015 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.015">
+<div class="problem-number">Assessment Bank DOK 4.015<span class="problem-meta">U4S2-045 | Section 4.2 | DoK 4</span></div>
+
+<p>Create a real-world periodic scenario where two shifted sinusoidal quantities are combined. Write an expression using a sum or difference identity to simplify or interpret the model, then explain what the simplified expression means in context.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 015 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 016 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.016">
+<div class="problem-number">Assessment Bank DOK 4.016<span class="problem-meta">U4S2-046 | Section 4.2 | DoK 4</span></div>
+
+<p>Design a challenge problem involving exact trig values, sum/difference identities, radicals, and unit-circle reasoning. Your problem must require decomposing an angle into two special angles. Then solve it completely.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S2-046" src="figures/u4-u4s2-046-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 016 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 017 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.017">
+<div class="problem-number">Assessment Bank DOK 4.017<span class="problem-meta">U4S2-047 | Section 4.2 | DoK 4</span></div>
+
+<p>Create a comparison task involving \(\sin(A+B)\) and \(\cos(A+B)\). Include two specific angle pairs, ask students to compute both expressions, and require a written comparison of how the formulas are structurally similar and different.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 017 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 018 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.018">
+<div class="problem-number">Assessment Bank DOK 4.018<span class="problem-meta">U4S2-048 | Section 4.2 | DoK 4</span></div>
+
+<p>Create a multi-representation problem involving unit-circle coordinates, identities, exact values, and graph behavior. Use a specific angle such as \(\frac{5\pi}{12}\). Require students to:</p><ol class="lower-alpha"><li>write it as a sum or difference of special angles,</li><li>find exact sine and cosine values,</li><li>locate the corresponding unit-circle point,</li><li>explain how those values appear on sine and cosine graphs.</li></ol>
+<div class="graph-block graph-lg"><img alt="Figure for U4S2-048" src="figures/u4-u4s2-048-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 018 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 019 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.019">
+<div class="problem-number">Assessment Bank DOK 4.019<span class="problem-meta">U4S2-049 | Section 4.2 | DoK 4</span></div>
+
+<p>A student claims, “Memorizing identities is enough to understand trigonometry.” Critique this statement using one example from geometry, one from graph behavior, and one from exact-value calculation.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 019 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 020 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.020">
+<div class="problem-number">Assessment Bank DOK 4.020<span class="problem-meta">U4S2-050 | Section 4.2 | DoK 4</span></div>
+
+<p>Create a verification problem that requires multiple identities, strategic rewriting, and careful algebra. Your identity must include at least one reciprocal function and one Pythagorean identity. Then provide a full justification.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 020 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 021 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.021">
+<div class="problem-number">Assessment Bank DOK 4.021<span class="problem-meta">U4S3-041 | Section 4.3 | DoK 4</span></div>
+
+<p>Create and solve a verification problem that requires both a double-angle identity and a Pythagorean identity. Your identity must begin with an expression involving \(\sin^2(x)\), \(\cos^2(x)\), and \(\sin(2x)\), and it must simplify to a single trig function. Show every step and explain why each rewrite is valid.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 021 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 022 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.022">
+<div class="problem-number">Assessment Bank DOK 4.022<span class="problem-meta">U4S3-042 | Section 4.3 | DoK 4</span></div>
+
+<p>Create a half-angle problem where quadrant reasoning matters. Choose an angle \(x\) such that \(\cos(x)\) is known and \(\frac{x}{2}\) lies in a different quadrant than \(x\). Ask for \(\sin\left(\frac{x}{2}\right)\) or \(\cos\left(\frac{x}{2}\right)\), then solve it fully with exact values and a sign explanation.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 022 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 023 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.023">
+<div class="problem-number">Assessment Bank DOK 4.023<span class="problem-meta">U4S3-043 | Section 4.3 | DoK 4</span></div>
+
+<p>Design an error-analysis problem involving \(\cos(2x)\).</p><ol class="lower-alpha"><li>Write incorrect student work that uses \(\cos(2x)=\cos^2(x)+\sin^2(x)\).</li><li>Identify the misconception.</li><li>Correct the identity.</li><li>Test both expressions using \(x=45^\circ\).</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 023 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 024 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.024">
+<div class="problem-number">Assessment Bank DOK 4.024<span class="problem-meta">U4S3-044 | Section 4.3 | DoK 4</span></div>
+
+<p>Create a problem where \(\sin(2x)\) must be used to simplify a complicated expression. The original expression should include a product \(\sin(x)\cos(x)\). Solve it in two ways: first by using the double-angle identity early, and second by expanding or substituting first. Compare the efficiency.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 024 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 025 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.025">
+<div class="problem-number">Assessment Bank DOK 4.025<span class="problem-meta">U4S3-045 | Section 4.3 | DoK 4</span></div>
+
+<p>Design a real-world periodic scenario where doubling the angle changes the frequency of oscillation. Write two models, one using \(\sin(x)\) and one using \(\sin(2x)\), then explain how the graphs differ in period, zeros, and number of cycles over the same interval.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S3-045" src="figures/u4-u4s3-045-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 025 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 026 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.026">
+<div class="problem-number">Assessment Bank DOK 4.026<span class="problem-meta">U4S3-046 | Section 4.3 | DoK 4</span></div>
+
+<p>Create a specific challenge problem involving exact trig values, half-angle identities, radicals, and unit-circle reasoning. Use the angle \(\frac{\pi}{8}\) or \(\frac{3\pi}{8}\). Require students to determine both sine and cosine exactly, justify the signs using the unit circle, and simplify the radicals as much as possible.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S3-046" src="figures/u4-u4s3-046-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 026 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 027 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.027">
+<div class="problem-number">Assessment Bank DOK 4.027<span class="problem-meta">U4S3-047 | Section 4.3 | DoK 4</span></div>
+
+<p>Create a comparison task involving \(\sin(2x)\) and \(\cos(2x)\). Include a graph, two identities for each function, and prompts asking students to compare zeros, symmetry, period, and which identity form is most useful for solving equations.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S3-047" src="figures/u4-u4s3-047-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 027 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 028 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.028">
+<div class="problem-number">Assessment Bank DOK 4.028<span class="problem-meta">U4S3-048 | Section 4.3 | DoK 4</span></div>
+
+<p>Create a multi-representation problem involving unit-circle coordinates, half-angle identities, exact values, and graph behavior. Use an angle such as \(\frac{3\pi}{4}\) and ask students to find exact values for \(\sin\left(\frac{3\pi}{8}\right)\) and \(\cos\left(\frac{3\pi}{8}\right)\), justify signs geometrically, and explain where those values appear on sine and cosine graphs.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S3-048" src="figures/u4-u4s3-048-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 028 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 029 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.029">
+<div class="problem-number">Assessment Bank DOK 4.029<span class="problem-meta">U4S3-049 | Section 4.3 | DoK 4</span></div>
+
+<p>A student claims, “Half-angle identities are just memorization.” Critique this statement using one example involving geometry, one involving exact values, one involving graph reasoning, and one involving strategic simplification.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 029 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 030 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.030">
+<div class="problem-number">Assessment Bank DOK 4.030<span class="problem-meta">U4S3-050 | Section 4.3 | DoK 4</span></div>
+
+<p>Create a verification problem requiring multiple identities, careful algebra, strategic substitution, and exact-value reasoning. Your problem must use at least one double-angle identity, one half-angle identity, and one known unit-circle value. Then provide a full justification.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 030 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 031 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.031">
+<div class="problem-number">Assessment Bank DOK 4.031<span class="problem-meta">U4S4-041 | Section 4.4 | DoK 4</span></div>
+
+<p>Create a sine function with amplitude \(4\), period \(\pi\), phase shift right \(\frac{\pi}{2}\), and vertical shift down \(3\). Write the equation in transformed form, determine the five key points for one full cycle, and explain how each parameter affects the graph.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 031 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 032 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.032">
+<div class="problem-number">Assessment Bank DOK 4.032<span class="problem-meta">U4S4-042 | Section 4.4 | DoK 4</span></div>
+
+<p>Create a cosine graph whose maximum is \(7\), minimum is \(-1\), and period is \(2\pi\). Write the equation, identify the amplitude and midline from the max/min values, and justify how the graph matches every condition.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 032 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 033 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.033">
+<div class="problem-number">Assessment Bank DOK 4.033<span class="problem-meta">U4S4-043 | Section 4.4 | DoK 4</span></div>
+
+<p>Design an error-analysis problem involving phase shift for \(y=2\sin(3x-\pi)+1\).</p><ol class="lower-alpha"><li>Write incorrect student work that identifies the phase shift as \(\pi\).</li><li>Identify the misconception.</li><li>Rewrite the equation to reveal the correct phase shift.</li><li>Explain how to check the shift using key points.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 033 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 034 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.034">
+<div class="problem-number">Assessment Bank DOK 4.034<span class="problem-meta">U4S4-044 | Section 4.4 | DoK 4</span></div>
+
+<p>Use the graph shown to create two equations that model the same curve: one in sine form and one in cosine form. Then explain why both equations work by comparing starting point, phase shift, midline, and maximum/minimum values.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S4-044" src="figures/u4-u4s4-044-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 034 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 035 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.035">
+<div class="problem-number">Assessment Bank DOK 4.035<span class="problem-meta">U4S4-045 | Section 4.4 | DoK 4</span></div>
+
+<p>Design a real-world periodic situation involving temperature, tides, breathing, or circular motion. The situation must have amplitude \(6\), period \(12\), and midline \(20\). Write a sinusoidal model, interpret each parameter in context, and explain what one full cycle represents.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 035 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 036 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.036">
+<div class="problem-number">Assessment Bank DOK 4.036<span class="problem-meta">U4S4-046 | Section 4.4 | DoK 4</span></div>
+
+<p>Create a challenge problem involving a transformed sine or cosine graph with amplitude \(3\), vertical shift \(-2\), period \(\frac{2\pi}{5}\), and a nonzero phase shift. Ask students to graph two cycles, write the five key points for one cycle, and identify all maxima and minima shown.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 036 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 037 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.037">
+<div class="problem-number">Assessment Bank DOK 4.037<span class="problem-meta">U4S4-047 | Section 4.4 | DoK 4</span></div>
+
+<p>Create a comparison task involving \(y=\sin(x)\) and \(y=\cos(x)\). Require students to compare phase shift, symmetry, zeros, maxima, minima, and unit-circle meaning. Include at least one prompt asking students to explain why cosine can be written as a shifted sine function.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 037 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 038 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.038">
+<div class="problem-number">Assessment Bank DOK 4.038<span class="problem-meta">U4S4-048 | Section 4.4 | DoK 4</span></div>
+
+<p>Create a multi-representation problem using the graph shown. Include the equation \(y=4\sin\left(\frac12(x-\pi)\right)-1\), a table of key values, and the graph. Require students to determine amplitude, period, phase shift, vertical shift, maxima/minima, and explain how the table and graph agree.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S4-048" src="figures/u4-u4s4-048-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 038 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 039 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.039">
+<div class="problem-number">Assessment Bank DOK 4.039<span class="problem-meta">U4S4-049 | Section 4.4 | DoK 4</span></div>
+
+<p>A student claims, “Graphing trig functions is just memorizing shapes.” Critique this statement using transformations, periodic behavior, unit-circle reasoning, and graph structure. Include at least two equations in your response to support the critique.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 039 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 040 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.040">
+<div class="problem-number">Assessment Bank DOK 4.040<span class="problem-meta">U4S4-050 | Section 4.4 | DoK 4</span></div>
+
+<p>Create a modeling problem where a sinusoidal function describes daylight hours over a year, tide height, sound waves, or circular motion. Your task must include a graph, a model equation, interpretation of amplitude/period/midline/phase shift, a prediction using the model, and a justification of whether the prediction is reasonable.</p>
+<div class="graph-block graph-lg"><img alt="Figure for U4S4-050" src="figures/u4-u4s4-050-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 040 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 041 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.041">
+<div class="problem-number">Assessment Bank DOK 4.041<span class="problem-meta">U4S5-041 | Section 4.5 | DoK 4</span></div>
+
+<p>Solve $2\sin(x)-1=0$ on $0\le x&lt;2\pi$. Then verify graphically, identify the corresponding unit-circle coordinates, and explain why exactly two solutions occur.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 041 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 042 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.042">
+<div class="problem-number">Assessment Bank DOK 4.042<span class="problem-meta">U4S5-042 | Section 4.5 | DoK 4</span></div>
+
+<p>Solve $2\sin^2(x)+\sin(x)-1=0$ for $0\le x&lt;2\pi$. Use substitution, verify graphically, and explain why one trig value creates two angle solutions.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 042 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 043 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.043">
+<div class="problem-number">Assessment Bank DOK 4.043<span class="problem-meta">U4S5-043 | Section 4.5 | DoK 4</span></div>
+
+<p>A student solves $2\cos(x)=1$ and gives only $x=\frac{\pi}{3}$. Explain the error, find all solutions on $0\le x&lt;2\pi$, and justify geometrically why another solution exists.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 043 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 044 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.044">
+<div class="problem-number">Assessment Bank DOK 4.044<span class="problem-meta">U4S5-044 | Section 4.5 | DoK 4</span></div>
+
+<p>Solve $\tan(x)=\sqrt3$ for all real $x$. Explain why the solutions repeat every $\pi$ and compare this repetition to sine and cosine periodicity.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 044 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 045 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.045">
+<div class="problem-number">Assessment Bank DOK 4.045<span class="problem-meta">U4S5-045 | Section 4.5 | DoK 4</span></div>
+
+<p>The height of a rider on a Ferris wheel is modeled by $h(t)=4\sin(t)+6$. Determine when the rider is at height $8$ during one cycle, interpret both solutions, and explain how graph behavior verifies them.</p>
+<div class="graph-block"><img alt="Graph for U4S5-045" src="figures/u4-u4s5-045-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 045 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 046 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.046">
+<div class="problem-number">Assessment Bank DOK 4.046<span class="problem-meta">U4S5-046 | Section 4.5 | DoK 4</span></div>
+
+<p>Solve $2\sin(x)\cos(x)=1$ on $0\le x&lt;2\pi$. Rewrite using a double-angle identity, solve algebraically, and verify graphically.</p>
+<div class="graph-block"><img alt="Graph for U4S5-046" src="figures/u4-u4s5-046-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 046 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 047 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.047">
+<div class="problem-number">Assessment Bank DOK 4.047<span class="problem-meta">U4S5-047 | Section 4.5 | DoK 4</span></div>
+
+<p>Compare solving $\sin(x)=\frac12$ and $\tan(x)=1$ on $0\le x&lt;2\pi$. Compare the number of solutions, periodicity, and unit-circle structure.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 047 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 048 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.048">
+<div class="problem-number">Assessment Bank DOK 4.048<span class="problem-meta">U4S5-048 | Section 4.5 | DoK 4</span></div>
+
+<p>Solve $2\cos(x)-1=0$. Solve algebraically, verify graphically, locate all solutions on the unit circle, and explain how all representations confirm the same answers.</p>
+<div class="graph-block"><img alt="Graph for U4S5-048" src="figures/u4-u4s5-048-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 048 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 049 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.049">
+<div class="problem-number">Assessment Bank DOK 4.049<span class="problem-meta">U4S5-049 | Section 4.5 | DoK 4</span></div>
+
+<p>Solve $\sin(2x)=\frac{\sqrt3}{2}$ on $0\le x&lt;2\pi$. Explain why doubling the angle changes the number of solutions and compare to solving $\sin(x)=\frac{\sqrt3}{2}$.</p>
+<div class="graph-block"><img alt="Graph for U4S5-049" src="figures/u4-u4s5-049-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 049 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 050 START ======================= -->
+<section class="assessment-card" id="U4-DOK4.050">
+<div class="problem-number">Assessment Bank DOK 4.050<span class="problem-meta">U4S5-050 | Section 4.5 | DoK 4</span></div>
+
+<p>Solve $\sin^2(x)-\cos^2(x)=0$ on $0\le x&lt;2\pi$. Rewrite using identities, solve using at least two methods, verify graphically, and explain why no other solutions exist.</p>
+<div class="graph-block"><img alt="Graph for U4S5-050" src="figures/u4-u4s5-050-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 050 END ======================= -->
+<!-- ======================= STRICTLY ASSESSMENT BANK END ======================= -->
+</div>
+</body>
+</html>
