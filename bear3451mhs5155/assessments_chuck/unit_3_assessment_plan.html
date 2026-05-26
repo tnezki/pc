@@ -1,0 +1,2307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Unit 3 Assessment Plan and Bank</title>
+<script>window.MathJax = { tex: { inlineMath: [["\\(","\\)"],["$","$"]], displayMath: [["\\[","\\]"],["$$","$$"]] } };</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+/* ======================= RESET / PAGE ======================= */
+@page { size: letter; margin: 0.45in; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.45;
+  color: #222;
+  background: #fff;
+  font-size: 11pt;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.container { max-width: 980px; margin: 0 auto; }
+.page-break { page-break-before: always; break-before: page; }
+.unbreakable, .assessment-card, .outline-card, .rubric-card, .ladder-table, .progress-tracker { break-inside: avoid; page-break-inside: avoid; }
+
+/* ======================= HEADER / TITLES ======================= */
+h1 { color: #00003d; font-size: 26pt; line-height: 1.1; margin-bottom: 8px; }
+h2 { color: #00003d; font-size: 17pt; margin: 18px 0 10px 0; border-left: 6px solid #00003d; padding-left: 10px; }
+h3 { color: #004d99; font-size: 13pt; margin: 12px 0 6px 0; }
+p { margin: 6px 0; }
+ul, ol { margin: 6px 0 8px 28px; }
+li { margin-bottom: 4px; }
+.small-note { font-size: 9.5pt; color: #555; font-style: italic; }
+
+/* ======================= OUTLINE CARDS ======================= */
+.outline-card {
+  border: 1px solid #9aa9bd;
+  border-left: 7px solid #00003d;
+  padding: 12px 14px;
+  margin: 12px 0;
+  background: #fff;
+}
+.outline-card-title { color: #00003d; font-weight: 800; font-size: 13.5pt; margin-bottom: 4px; }
+.essential-standard { font-size: 12pt; border: 2px solid #00003d; padding: 12px 14px; margin: 12px 0 16px 0; background: #f8fbff; }
+
+/* ======================= TABLES ======================= */
+table { border-collapse: collapse; width: 100%; margin: 10px 0 14px 0; }
+th, td { border: 1px solid #777; padding: 7px 8px; vertical-align: top; }
+th { background: #eaf1fb; color: #00003d; font-weight: 800; text-align: left; }
+.ladder-table th { background: #00003d; color: #fff; }
+.ladder-table .dok4 { background: #eef4ff; }
+.ladder-table .dok3 { background: #f6fbff; }
+.ladder-table .dok2 { background: #fffdf2; }
+.ladder-table .dok1 { background: #ffffff; }
+.table-block, .parent-table, table.values { width: auto; margin: 10px auto 12px auto; border-collapse: collapse; }
+.table-block td, .table-block th, .parent-table td, .parent-table th, table.values td, table.values th { border: 1px solid #777; padding: 6px 14px; text-align: center; vertical-align: middle; }
+
+/* ======================= PROGRESS TRACKING ======================= */
+.progress-tracker { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 12px 0 18px 0; }
+.progress-box { border: 1px solid #777; padding: 12px; min-height: 0.8in; }
+.progress-box strong { color: #00003d; }
+
+/* ======================= DOK SECTIONS ======================= */
+.dok-bar {
+  background: #000;
+  color: #fff;
+  font-weight: 900;
+  font-size: 15pt;
+  padding: 9px 12px;
+  margin: 22px 0 12px 0;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.dok-method-card { border: 1px solid #777; padding: 12px 14px; margin: 10px 0 16px 0; background: #fff; break-inside: avoid; page-break-inside: avoid; }
+.assessment-ideas { margin-left: 24px; }
+.assessment-ideas a { color: #005aa0; font-weight: 800; text-decoration: underline; }
+.timing-label { display: inline-block; background: #fff7cf; border: 1px solid #d1c27a; border-radius: 4px; padding: 1px 6px; font-weight: 800; color: #4a3f17; margin-left: 6px; }
+.what-tells { border-left: 5px solid #777; padding-left: 10px; margin-top: 10px; color: #333; }
+
+/* ======================= SUMMATIVE / RUBRIC ======================= */
+.summative-card { border: 2px solid #00003d; padding: 12px 14px; margin: 14px 0; background: #f8fbff; break-inside: avoid; page-break-inside: avoid; }
+.summative-card a { color: #005aa0; font-weight: 800; }
+.rubric-card { border: 1px solid #777; padding: 12px 14px; margin: 10px 0; }
+.rubric-level { color: #00003d; font-weight: 900; font-size: 12.5pt; }
+
+/* ======================= ASSESSMENT BANK ======================= */
+.bank-intro { border: 2px solid #00003d; padding: 12px 14px; margin: 12px 0 16px 0; background: #f8fbff; }
+.assessment-card {
+  border: 1px solid #777;
+  padding: 12px 14px;
+  margin: 12px 0;
+  background: #fff;
+}
+.problem-number { font-weight: 900; color: #00003d; font-size: 13pt; margin-bottom: 8px; }
+.problem-meta { color: #555; font-weight: 700; font-size: 10.5pt; margin-left: 8px; }
+.assessment-card p { margin-bottom: 7px; }
+.assessment-card ol, .assessment-card ul { margin-left: 26px; }
+.assessment-card li { margin-bottom: 6px; }
+.performance-notes { border-left: 5px solid #444; background: #f7f7f7; padding: 8px 10px; margin-top: 10px; font-size: 10pt; }
+.lower-alpha { list-style-type: lower-alpha; }
+.lower-roman { list-style-type: lower-roman; }
+
+/* ======================= FIGURE / GRAPH SYSTEM ======================= */
+.figure-block, .graph-block { margin: 12px 0 10px 0; text-align: center; break-inside: avoid; page-break-inside: avoid; }
+.figure-block img, .graph-block img { max-width: 100%; height: auto; border: 1px solid #ccc; background: #fff; }
+.figure-xs img { max-width: 1.4in; }
+.figure-sm img { max-width: 2.1in; }
+.figure-md img { max-width: 2.8in; }
+.figure-lg img { max-width: 3.8in; }
+.figure-xl img { max-width: 4.7in; }
+.graph-xs img { max-width: 2.0in; }
+.graph-sm img { max-width: 2.5in; }
+.graph-md img { max-width: 3.2in; }
+.graph-lg img { max-width: 4.1in; }
+.graph-xl img { max-width: 5.1in; }
+
+/* ======================= PRINT CONTROL ======================= */
+@media print {
+  body { font-size: 10.5pt; }
+  h1 { font-size: 24pt; }
+  h2 { font-size: 16pt; }
+  .assessment-card { padding: 10px 12px; }
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<!-- ======================= UNIT 3 OUTLINE START ======================= -->
+<h1>Precalculus – Unit 03: Radical Functions</h1>
+<h2>Essential Standard</h2>
+<div class="essential-standard">Students will solve and analyze radical equations and functions in order to interpret solutions, model relationships, and justify results algebraically and graphically.</div>
+<!-- ======================= SECTION OUTLINE START ======================= -->
+<section class="outline-card">
+<div class="outline-card-title">Section 3.1: Solve Using Roots</div>
+<p><strong>Learning Target: Students will solve equations using square roots and cube roots.</strong></p>
+<ul>
+<li>I can solve equations of the form x² = d and x³ = d using roots.</li>
+<li>I can solve transformed equations involving squared or cubed expressions.</li>
+<li>I can verify solutions to equations solved using roots.</li>
+</ul></section>
+<section class="outline-card">
+<div class="outline-card-title">Section 3.2: Solve Square Root Equations</div>
+<p><strong>Learning Target: Students will solve equations involving square roots and identify extraneous solutions.</strong></p>
+<ul>
+<li>I can isolate square root expressions in equations.</li>
+<li>I can solve square root equations with constants or variable terms on both sides.</li>
+<li>I can identify and explain extraneous solutions in square root equations.</li>
+</ul></section>
+<section class="outline-card">
+<div class="outline-card-title">Section 3.3: Solve Cube Root Equations</div>
+<p><strong>Learning Target: Students will solve equations involving cube roots.</strong></p>
+<ul>
+<li>I can isolate cube root expressions in equations.</li>
+<li>I can solve cube root equations involving transformed expressions.</li>
+<li>I can verify solutions to cube root equations algebraically.</li>
+</ul></section>
+<section class="outline-card">
+<div class="outline-card-title">Section 3.4: Graph Square and Cube Root Functions</div>
+<p><strong>Learning Target: Students will analyze and graph square root and cube root functions using transformations and key features.</strong></p>
+<ul>
+<li>I can graph square root and cube root functions using transformations.</li>
+<li>I can determine the domain and range of radical functions from graphs and equations.</li>
+<li>I can identify key features of radical functions, including intercepts, locator points, extrema, and intervals of increase or decrease.</li>
+</ul></section>
+<section class="outline-card">
+<div class="outline-card-title">Section 3.5: Exploring Rational Exponents</div>
+<p><strong>Learning Target: Students will explore functions with rational exponents and connect their graphs to radical structure.</strong></p>
+<ul>
+<li>I can rewrite expressions using rational exponents and radicals.</li>
+<li>I can graph functions with rational exponents using technology.</li>
+<li>I can interpret key features of functions with rational exponents from their graphs.</li>
+</ul></section>
+<!-- ======================= SECTION OUTLINE END ======================= -->
+<!-- ======================= LEARNING LADDER START ======================= -->
+<h2>Learning Ladder</h2>
+<table class="ladder-table">
+<tr><th>Rung</th><th>I Can Statement</th><th>Math Practice</th><th>DOK</th><th>Level</th></tr>
+<tr class="dok4"><td>8</td><td>I can model or analyze a real-world situation involving radical functions, justify the chosen representation, evaluate the reasonableness of solutions, and explain any restrictions or extraneous results in context.</td><td>4. Model with Math / 3. Construct Arguments</td><td>DOK 4</td><td>Above</td></tr>
+<tr class="dok4"><td>7</td><td>I can design and defend a solution strategy for a multi-step radical equation or radical function problem, compare approaches, and critique errors involving roots, domains, or extraneous solutions.</td><td>1. Make Sense &amp; Persevere / 3. Construct Arguments</td><td>DOK 4</td><td>Above</td></tr>
+<tr class="dok3"><td>6</td><td>I can analyze radical functions using multiple representations and explain how transformations affect domain, range, intercepts, locator points, extrema, and intervals of increase or decrease.</td><td>7. Look for Structure / 8. Look for Regularity</td><td>DOK 3</td><td>Essential</td></tr>
+<tr class="dok3"><td>5</td><td>I can solve radical equations, verify solutions, and explain why extraneous solutions can occur when equations are squared.</td><td>2. Reason Abstractly &amp; Quantitatively / 6. Attend to Precision</td><td>DOK 3</td><td>Essential</td></tr>
+<tr class="dok2"><td>4</td><td>I can graph square root and cube root functions using transformations and identify key features from graphs and equations.</td><td>5. Use Tools Strategically / 7. Look for Structure</td><td>DOK 2</td><td>Essential</td></tr>
+<tr class="dok2"><td>3</td><td>I can solve square root and cube root equations by isolating the radical expression and applying inverse operations.</td><td>6. Attend to Precision</td><td>DOK 2</td><td>Essential</td></tr>
+<tr class="dok1"><td>2</td><td>I can solve equations using square roots and cube roots and verify solutions by substitution.</td><td>2. Reason Abstractly</td><td>DOK 1</td><td>Essential</td></tr>
+<tr class="dok1"><td>1</td><td>I can rewrite radical expressions using rational exponents and identify basic domain restrictions of radical functions.</td><td>1. Make Sense of Problems</td><td>DOK 1</td><td>Essential</td></tr>
+</table>
+<!-- ======================= LEARNING LADDER END ======================= -->
+<!-- ======================= PROGRESS TRACKING START ======================= -->
+<h2>Progress Tracking</h2>
+<div class="progress-tracker">
+<div class="progress-box"><strong>Not Yet:</strong> I need more instruction and practice.</div>
+<div class="progress-box"><strong>Getting There:</strong> I understand most of it but need more practice.</div>
+<div class="progress-box"><strong>Got It!:</strong> I can do this independently.</div>
+</div>
+<!-- ======================= PROGRESS TRACKING END ======================= -->
+<!-- ======================= ASSESSMENT METHODS START ======================= -->
+<h2>Assessment Methods by DOK Level</h2>
+<div class="dok-bar">DOK 1 — Rungs 1–2</div>
+<section class="dok-method-card">
+<p><strong>Format: 3–5 minute warm-up, quick check, or exit ticket</strong></p>
+<p>Purpose: Check whether students can evaluate roots, rewrite radicals using rational exponents, solve basic root equations, and recognize simple domain restrictions.</p>
+<h3>Assessment Ideas</h3><ol class="assessment-ideas">
+<li><a href="u3-dok1-1.html">Root Equation Fluency Check</a> <span class="timing-label">Can Be Assessed After Unit 5, Section 1</span> – Students solve equations using roots and verify solutions by substitution.</li>
+<li><a href="u3-dok1-2.html">Rational Exponent Rewrite Check</a> <span class="timing-label">Can Be Assessed After Unit 5, Section 5</span> – Students rewrite expressions between radical and rational exponent form.</li>
+<li><a href="u3-dok1-3.html">Basic Radical Domain Check</a> <span class="timing-label">Can Be Assessed After Unit 5, Section 4</span> – Students identify the domain of simple radical functions.</li>
+<li><a href="u3-dok1-4.html">Radical Evaluation Check</a> <span class="timing-label">Can Be Assessed After Unit 5, Section 5</span> – Students evaluate radical functions for given inputs and identify invalid inputs.</li>
+</ol>
+<div class="what-tells"><strong>What this tells the teacher:</strong><br>Students who struggle here need more direct practice with root meanings, inverse operations, notation, and domain restrictions before moving into multi-step equations or graph analysis.</div>
+</section>
+<div class="dok-bar">DOK 2 — Rungs 3–4</div>
+<section class="dok-method-card">
+<p><strong>Format: Exit ticket, partner check, whiteboard response, or short written explanation</strong></p>
+<p>Purpose: Check whether students can apply procedures, graph transformed radical functions, identify key features, and connect algebraic steps to graphical meaning.</p>
+<h3>Assessment Ideas</h3><ol class="assessment-ideas">
+<li><a href="u3-dok2-1.html">Solve and Verify Radical Equation Task</a> <span class="timing-label">Can Be Assessed After Unit 5, Section 1</span> – Students solve radical equations and verify solutions.</li>
+<li><a href="u3-dok2-2.html">Transformation Graphing Task</a> <span class="timing-label">Can Be Assessed After Unit 5, Section 4</span> – Students graph square root or cube root functions using transformations.</li>
+<li><a href="u3-dok2-3.html">Domain and Range from Equation or Graph</a> <span class="timing-label">Can Be Assessed After Unit 5, Section 4</span> – Students determine domain and range from radical equations and graphs.</li>
+<li><a href="u3-dok2-4.html">Rational Exponent Graphing Check</a> <span class="timing-label">Can Be Assessed After Unit 5, Section 5</span> – Students analyze rational exponent functions using technology.</li>
+</ol>
+<div class="what-tells"><strong>What this tells the teacher:</strong><br>Students at this level can usually carry out procedures, but the check reveals whether they understand restrictions and graph behavior.</div>
+</section>
+<div class="dok-bar">DOK 3 — Rungs 5–6</div>
+<section class="dok-method-card">
+<p><strong>Format: Constructed response, error analysis, gallery walk, or group explanation</strong></p>
+<p>Purpose: Check whether students can reason strategically, justify solutions, explain extraneous results, and connect multiple representations of radical functions.</p>
+<h3>Assessment Ideas</h3><ol class="assessment-ideas">
+<li><a href="u3-dok3-1.html">Extraneous Solution Explanation</a> <span class="timing-label">Can Be Assessed After Unit 5, Section 2</span> – Students solve a square root equation that produces an extraneous solution, identify the invalid solution, and explain why it appeared.</li>
+<li><a href="u3-dok3-2.html">Radical Function Analysis Task</a> <span class="timing-label">Can Be Assessed After Unit 5, Section 4</span> – Students analyze a transformed radical function using an equation, graph, and table, then explain domain, range, intercepts, extrema, and intervals of increase or decrease.</li>
+<li><a href="u3-dok3-3.html">Compare Square Root and Cube Root Structure</a> <span class="timing-label">Can Be Assessed After Unit 5, Section 3</span> – Students compare transformations and key features of square root and cube root functions, explaining similarities and differences in domain, range, and graph behavior.</li>
+<li><a href="u3-dok3-4.html">Error Analysis Response</a> <span class="timing-label">Can Be Assessed After Unit 5, Section 5</span> – Students critique an incorrect radical equation solution, identify the misconception, correct the work, and explain how to avoid the error.</li>
+</ol>
+<div class="what-tells"><strong>What this tells the teacher:</strong><br>This level shows whether students understand the mathematics behind the procedures. These tasks are useful for deciding who is ready for modeling or who needs reteaching on verification, restrictions, and graph structure.</div>
+</section>
+<div class="dok-bar">DOK 4 — Rungs 7–8</div>
+<section class="dok-method-card">
+<p><strong>Format: Performance task, extended response, modeling task, or strategy defense</strong></p>
+<p>Purpose: Check whether students can synthesize solving, graphing, domain reasoning, and interpretation in unfamiliar or contextual situations.</p>
+<h3>Assessment Ideas</h3><ol class="assessment-ideas">
+<li><a href="u3-dok4-1.html">Radical Modeling Task</a> <span class="timing-label">Can Be Assessed After Unit 5, Section 5</span> – Students model a situation using a radical function, interpret the meaning of the domain and range, and justify whether the model is reasonable.</li>
+<li><a href="u3-dok4-2.html">Design-a-Radical-Function Task</a> <span class="timing-label">Can Be Assessed After Unit 5, Section 5</span> – Students create a radical function that satisfies given conditions involving domain, range, intercepts, transformations, and key features, then justify their design.</li>
+<li><a href="u3-dok4-3.html">Strategy Defense Task</a> <span class="timing-label">Can Be Assessed After Unit 5, Section 5</span> – Students solve a multi-step radical equation using a chosen strategy, verify all solutions, and defend why the method is efficient and reliable.</li>
+<li><a href="u3-dok4-4.html">Critique and Redesign Task</a> <span class="timing-label">Can Be Assessed After Unit 5, Section 5</span> – Students evaluate a flawed radical equation or function analysis, identify errors involving roots, restrictions, or extraneous solutions, and revise it into a correct solution.</li>
+</ol>
+<div class="what-tells"><strong>What this tells the teacher:</strong><br>DOK 4 tasks show whether students can transfer radical function understanding to unfamiliar situations. These are best used sparingly as performance checks, extensions, or summative-level tasks.</div>
+</section>
+<!-- ======================= ASSESSMENT METHODS END ======================= -->
+<!-- ======================= SUMMATIVE PLAN START ======================= -->
+<h2>Summative Assessment Plan</h2><section class="summative-card">
+<p><a href="u3-sum.html">Unit 3 Summative Assessment</a> <span class="timing-label">Unit 3 Assessed During Unit 5</span></p>
+<p>Assessment is designed for a 45-minute paper-only time limit and is built around balanced evidence rather than a fixed question-count breakdown. Each version includes a mix of procedural fluency, graphing/application tasks, and short reasoning or critique prompts aligned to the unit learning targets and Depth of Knowledge expectations.</p>
+<p>Assessments emphasize algebraic accuracy, interpretation of mathematical structure, graphing and representation skills, explanation of reasoning, and application of concepts in both familiar and unfamiliar situations.</p>
+<p>Summative assessments are intentionally focused on DoK 1–3 evidence within a paper-only environment. Extended DoK 4 modeling, investigation, performance, or technology-based tasks are assessed separately through activities, investigations, discourse tasks, or formative performance assessments rather than embedded directly into the summative exam.</p>
+</section><!-- ======================= SUMMATIVE PLAN END ======================= -->
+<!-- ======================= HOLISTIC RUBRIC START ======================= -->
+<h2>Holistic Rubric</h2>
+<section class="rubric-card"><div class="rubric-level">A — Highly Proficient</div><p>The student demonstrates a strong and flexible understanding of Unit 3 concepts. Work is accurate, well-organized, and supported by clear reasoning.</p></section>
+<section class="rubric-card"><div class="rubric-level">B — Proficient</div><p>The student demonstrates solid understanding of the essential Unit 3 concepts. Most work is accurate, and the student can complete standard and moderately complex tasks independently.</p></section>
+<section class="rubric-card"><div class="rubric-level">C — Developing Proficiency</div><p>The student demonstrates partial but passable understanding of Unit 3 concepts.</p></section>
+<section class="rubric-card"><div class="rubric-level">Not Yet — Insufficient Evidence</div><p>The student does not yet demonstrate sufficient understanding of the essential Unit 3 concepts.</p></section>
+<!-- ======================= HOLISTIC RUBRIC END ======================= -->
+<!-- ======================= UNIT 3 OUTLINE END ======================= -->
+<div class="page-break"></div>
+<!-- ======================= STRICTLY ASSESSMENT BANK START ======================= -->
+<h1>Strictly Assessment Bank</h1>
+<div class="bank-intro"><p><strong>Unit 3 Assessment Bank:</strong> Problems are organized by Depth of Knowledge and pulled from the uploaded teacher banks. These are intended as source items for formative assessments, reassessments, and summative assessment versions.</p><p class="small-note">Rolling timing: Unit 3 is assessed during Unit 5.</p></div>
+<div class="dok-bar">Assessment Bank DOK 1</div>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 001 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.001">
+<div class="problem-number">Assessment Bank DOK 1.001<span class="problem-meta">U3S1-001 | Section 3.1 | DoK 1</span></div>
+
+<p>Solve: \[x^2=49\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 001 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 002 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.002">
+<div class="problem-number">Assessment Bank DOK 1.002<span class="problem-meta">U3S1-002 | Section 3.1 | DoK 1</span></div>
+
+<p>Solve: \[x^3=125\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 002 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 003 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.003">
+<div class="problem-number">Assessment Bank DOK 1.003<span class="problem-meta">U3S1-003 | Section 3.1 | DoK 1</span></div>
+
+<p>Solve: \[x^2=81\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 003 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 004 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.004">
+<div class="problem-number">Assessment Bank DOK 1.004<span class="problem-meta">U3S1-004 | Section 3.1 | DoK 1</span></div>
+
+<p>Solve: \[x^3=-64\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 004 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 005 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.005">
+<div class="problem-number">Assessment Bank DOK 1.005<span class="problem-meta">U3S1-005 | Section 3.1 | DoK 1</span></div>
+
+<p>Evaluate:</p><ol class="lower-alpha"><li>\(\sqrt{144}\)</li><li>\(\sqrt[3]{-216}\)</li><li>\(\sqrt{0}\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 005 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 006 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.006">
+<div class="problem-number">Assessment Bank DOK 1.006<span class="problem-meta">U3S1-006 | Section 3.1 | DoK 1</span></div>
+
+<p>Solve: \[(x-4)^2=36\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 006 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 007 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.007">
+<div class="problem-number">Assessment Bank DOK 1.007<span class="problem-meta">U3S1-007 | Section 3.1 | DoK 1</span></div>
+
+<p>Solve: \[(x+2)^3=-27\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 007 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 008 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.008">
+<div class="problem-number">Assessment Bank DOK 1.008<span class="problem-meta">U3S1-008 | Section 3.1 | DoK 1</span></div>
+
+<p>Solve: \[5x^2=80\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 008 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 009 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.009">
+<div class="problem-number">Assessment Bank DOK 1.009<span class="problem-meta">U3S1-009 | Section 3.1 | DoK 1</span></div>
+
+<p>Solve: \[2(x-1)^2=18\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 009 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 010 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.010">
+<div class="problem-number">Assessment Bank DOK 1.010<span class="problem-meta">U3S1-010 | Section 3.1 | DoK 1</span></div>
+
+<p>Solve: \[3(x+2)^3=192\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 010 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 011 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.011">
+<div class="problem-number">Assessment Bank DOK 1.011<span class="problem-meta">U3S1-011 | Section 3.1 | DoK 1</span></div>
+
+<p>Fill in the blanks.</p><ol class="lower-alpha"><li>If \(x^2=25\), then \(x=\) __________</li><li>If \(x^3=-8\), then \(x=\) __________</li><li>The square root of a positive number has __________ real solutions.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 011 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 012 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.012">
+<div class="problem-number">Assessment Bank DOK 1.012<span class="problem-meta">U3S1-012 | Section 3.1 | DoK 1</span></div>
+
+<p>Determine whether each equation has two real solutions, one real solution, or no real solutions.</p><ol class="lower-alpha"><li>\(x^2=36\)</li><li>\(x^2=-9\)</li><li>\(x^3=-27\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 012 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 013 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.013">
+<div class="problem-number">Assessment Bank DOK 1.013<span class="problem-meta">U3S1-013 | Section 3.1 | DoK 1</span></div>
+
+<p>Simplify completely.</p><ol class="lower-alpha"><li>\(\sqrt{72}\)</li><li>\(\sqrt[3]{54}\)</li><li>\(\sqrt{50x^2}\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 013 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 014 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.014">
+<div class="problem-number">Assessment Bank DOK 1.014<span class="problem-meta">U3S2-001 | Section 3.2 | DoK 1</span></div>
+
+<p>Solve: \[\sqrt{x}=7\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 014 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 015 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.015">
+<div class="problem-number">Assessment Bank DOK 1.015<span class="problem-meta">U3S2-002 | Section 3.2 | DoK 1</span></div>
+
+<p>Solve: \[\sqrt{x+5}=9\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 015 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 016 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.016">
+<div class="problem-number">Assessment Bank DOK 1.016<span class="problem-meta">U3S2-003 | Section 3.2 | DoK 1</span></div>
+
+<p>Solve: \[\sqrt{x-3}=4\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 016 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 017 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.017">
+<div class="problem-number">Assessment Bank DOK 1.017<span class="problem-meta">U3S2-004 | Section 3.2 | DoK 1</span></div>
+
+<p>Solve: \[2\sqrt{x}=12\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 017 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 018 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.018">
+<div class="problem-number">Assessment Bank DOK 1.018<span class="problem-meta">U3S2-005 | Section 3.2 | DoK 1</span></div>
+
+<p>Solve: \[\sqrt{x}+3=10\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 018 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 019 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.019">
+<div class="problem-number">Assessment Bank DOK 1.019<span class="problem-meta">U3S2-006 | Section 3.2 | DoK 1</span></div>
+
+<p>Solve: \[\sqrt{x-1}+5=11\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 019 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 020 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.020">
+<div class="problem-number">Assessment Bank DOK 1.020<span class="problem-meta">U3S2-007 | Section 3.2 | DoK 1</span></div>
+
+<p>Solve: \[3\sqrt{x+2}=15\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 020 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 021 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.021">
+<div class="problem-number">Assessment Bank DOK 1.021<span class="problem-meta">U3S2-008 | Section 3.2 | DoK 1</span></div>
+
+<p>Solve: \[\sqrt{2x+1}=5\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 021 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 022 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.022">
+<div class="problem-number">Assessment Bank DOK 1.022<span class="problem-meta">U3S2-009 | Section 3.2 | DoK 1</span></div>
+
+<p>Solve: \[\sqrt{4x-7}=3\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 022 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 023 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.023">
+<div class="problem-number">Assessment Bank DOK 1.023<span class="problem-meta">U3S2-010 | Section 3.2 | DoK 1</span></div>
+
+<p>State the first step needed to solve each equation.</p><ol class="lower-alpha"><li>\(\sqrt{x+4}+2=9\)</li><li>\(3\sqrt{x-1}=18\)</li><li>\(\sqrt{2x+5}=x-1\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 023 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 024 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.024">
+<div class="problem-number">Assessment Bank DOK 1.024<span class="problem-meta">U3S2-011 | Section 3.2 | DoK 1</span></div>
+
+<p>Determine whether each value is a solution to \(\sqrt{x+6}=x\).</p><ol class="lower-alpha"><li>\(x=3\)</li><li>\(x=-2\)</li><li>\(x=6\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 024 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 025 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.025">
+<div class="problem-number">Assessment Bank DOK 1.025<span class="problem-meta">U3S2-012 | Section 3.2 | DoK 1</span></div>
+
+<p>Fill in the blanks.</p><ol class="lower-alpha"><li>To solve a square root equation, first __________ the radical.</li><li>After squaring both sides, you must __________ your solution.</li><li>A solution that appears from algebra but does not work in the original equation is called __________.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 025 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 026 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.026">
+<div class="problem-number">Assessment Bank DOK 1.026<span class="problem-meta">U3S2-013 | Section 3.2 | DoK 1</span></div>
+
+<p>Solve and check: \[\sqrt{x+12}=6\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 026 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 027 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.027">
+<div class="problem-number">Assessment Bank DOK 1.027<span class="problem-meta">U3S3-001 | Section 3.3 | DoK 1</span></div>
+
+<p>Solve: \[\sqrt[3]{x}=4\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 027 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 028 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.028">
+<div class="problem-number">Assessment Bank DOK 1.028<span class="problem-meta">U3S3-002 | Section 3.3 | DoK 1</span></div>
+
+<p>Solve: \[\sqrt[3]{x+5}=3\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 028 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 029 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.029">
+<div class="problem-number">Assessment Bank DOK 1.029<span class="problem-meta">U3S3-003 | Section 3.3 | DoK 1</span></div>
+
+<p>Solve: \[\sqrt[3]{x-7}=-2\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 029 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 030 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.030">
+<div class="problem-number">Assessment Bank DOK 1.030<span class="problem-meta">U3S3-004 | Section 3.3 | DoK 1</span></div>
+
+<p>Solve: \[2\sqrt[3]{x}=10\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 030 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 031 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.031">
+<div class="problem-number">Assessment Bank DOK 1.031<span class="problem-meta">U3S3-005 | Section 3.3 | DoK 1</span></div>
+
+<p>Solve: \[\sqrt[3]{x}+6=1\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 031 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 032 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.032">
+<div class="problem-number">Assessment Bank DOK 1.032<span class="problem-meta">U3S3-006 | Section 3.3 | DoK 1</span></div>
+
+<p>Solve: \[3\sqrt[3]{x-2}=18\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 032 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 033 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.033">
+<div class="problem-number">Assessment Bank DOK 1.033<span class="problem-meta">U3S3-007 | Section 3.3 | DoK 1</span></div>
+
+<p>Solve: \[\sqrt[3]{2x+1}=5\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 033 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 034 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.034">
+<div class="problem-number">Assessment Bank DOK 1.034<span class="problem-meta">U3S3-008 | Section 3.3 | DoK 1</span></div>
+
+<p>Solve: \[\sqrt[3]{5x-4}=-3\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 034 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 035 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.035">
+<div class="problem-number">Assessment Bank DOK 1.035<span class="problem-meta">U3S3-009 | Section 3.3 | DoK 1</span></div>
+
+<p>State the first step needed to solve each equation.</p><ol class="lower-alpha"><li>\(\sqrt[3]{x+4}+3=11\)</li><li>\(5\sqrt[3]{x-2}=25\)</li><li>\(\sqrt[3]{2x+1}=x\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 035 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 036 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.036">
+<div class="problem-number">Assessment Bank DOK 1.036<span class="problem-meta">U3S3-010 | Section 3.3 | DoK 1</span></div>
+
+<p>Fill in the blanks.</p><ol class="lower-alpha"><li>To solve a cube root equation, first __________ the radical.</li><li>After isolating, use the inverse operation of __________.</li><li>Cube root equations typically produce __________ real solution(s).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 036 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 037 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.037">
+<div class="problem-number">Assessment Bank DOK 1.037<span class="problem-meta">U3S3-011 | Section 3.3 | DoK 1</span></div>
+
+<p>Determine whether each value is a solution to \(\sqrt[3]{x+1}=2\).</p><ol class="lower-alpha"><li>\(x=7\)</li><li>\(x=8\)</li><li>\(x=9\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 037 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 038 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.038">
+<div class="problem-number">Assessment Bank DOK 1.038<span class="problem-meta">U3S3-012 | Section 3.3 | DoK 1</span></div>
+
+<p>Solve and verify: \[\sqrt[3]{x+10}=4\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 038 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 039 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.039">
+<div class="problem-number">Assessment Bank DOK 1.039<span class="problem-meta">U3S3-013 | Section 3.3 | DoK 1</span></div>
+
+<p>Solve: \[4+\sqrt[3]{x-5}=1\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 039 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 040 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.040">
+<div class="problem-number">Assessment Bank DOK 1.040<span class="problem-meta">U3S4-001 | Section 3.4 | DoK 1</span></div>
+
+<p>Sketch the parent function \(f(x)=\sqrt{x}\). State the domain and range.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 040 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 041 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.041">
+<div class="problem-number">Assessment Bank DOK 1.041<span class="problem-meta">U3S4-002 | Section 3.4 | DoK 1</span></div>
+
+<p>Sketch the parent function \(f(x)=\sqrt[3]{x}\). State the domain and range.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 041 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 042 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.042">
+<div class="problem-number">Assessment Bank DOK 1.042<span class="problem-meta">U3S4-003 | Section 3.4 | DoK 1</span></div>
+
+<p>Complete a table of values for \(f(x)=\sqrt{x}\) using \(x=0,1,4,9,16\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 042 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 043 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.043">
+<div class="problem-number">Assessment Bank DOK 1.043<span class="problem-meta">U3S4-004 | Section 3.4 | DoK 1</span></div>
+
+<p>Complete a table of values for \(g(x)=\sqrt[3]{x}\) using \(x=-8,-1,0,1,8\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 043 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 044 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.044">
+<div class="problem-number">Assessment Bank DOK 1.044<span class="problem-meta">U3S4-005 | Section 3.4 | DoK 1</span></div>
+
+<p>Identify the domain of each function.</p><ol class="lower-alpha"><li>\(f(x)=\sqrt{x-3}\)</li><li>\(g(x)=\sqrt{x+5}\)</li><li>\(h(x)=\sqrt[3]{x-4}\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 044 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 045 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.045">
+<div class="problem-number">Assessment Bank DOK 1.045<span class="problem-meta">U3S4-006 | Section 3.4 | DoK 1</span></div>
+
+<p>Identify the range of each function.</p><ol class="lower-alpha"><li>\(f(x)=\sqrt{x}+2\)</li><li>\(g(x)=\sqrt{x-4}-3\)</li><li>\(h(x)=\sqrt[3]{x}+1\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 045 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 046 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.046">
+<div class="problem-number">Assessment Bank DOK 1.046<span class="problem-meta">U3S4-007 | Section 3.4 | DoK 1</span></div>
+
+<p>Describe the transformation from \(y=\sqrt{x}\).</p><ol class="lower-alpha"><li>\(y=\sqrt{x-5}\)</li><li>\(y=\sqrt{x}+4\)</li><li>\(y=-\sqrt{x}\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 046 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 047 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.047">
+<div class="problem-number">Assessment Bank DOK 1.047<span class="problem-meta">U3S4-008 | Section 3.4 | DoK 1</span></div>
+
+<p>Describe the transformation from \(y=\sqrt[3]{x}\).</p><ol class="lower-alpha"><li>\(y=\sqrt[3]{x+2}\)</li><li>\(y=\sqrt[3]{x}-6\)</li><li>\(y=-\sqrt[3]{x}\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 047 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 048 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.048">
+<div class="problem-number">Assessment Bank DOK 1.048<span class="problem-meta">U3S4-009 | Section 3.4 | DoK 1</span></div>
+
+<p>For \(f(x)=\sqrt{x-2}+3\), state the starting point/locator point.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 048 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 049 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.049">
+<div class="problem-number">Assessment Bank DOK 1.049<span class="problem-meta">U3S4-010 | Section 3.4 | DoK 1</span></div>
+
+<p>For \(g(x)=\sqrt[3]{x+4}-1\), state the center/locator point.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 049 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 050 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.050">
+<div class="problem-number">Assessment Bank DOK 1.050<span class="problem-meta">U3S4-011 | Section 3.4 | DoK 1</span></div>
+
+<p>Match each equation to its description.</p><ol class="lower-alpha"><li>\(y=\sqrt{x}+5\)</li><li>\(y=\sqrt{x-5}\)</li><li>\(y=2\sqrt{x}\)</li><li>\(y=-\sqrt{x}\)</li></ol><p>Descriptions: reflected across the \(x\)-axis, shifted right 5, shifted up 5, vertically stretched by 2.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 050 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 051 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.051">
+<div class="problem-number">Assessment Bank DOK 1.051<span class="problem-meta">U3S4-012 | Section 3.4 | DoK 1</span></div>
+
+<p>State whether each function is increasing, decreasing, or neither.</p><ol class="lower-alpha"><li>\(f(x)=\sqrt{x}\)</li><li>\(g(x)=-\sqrt{x}\)</li><li>\(h(x)=\sqrt[3]{x}\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 051 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 052 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.052">
+<div class="problem-number">Assessment Bank DOK 1.052<span class="problem-meta">U3S4-013 | Section 3.4 | DoK 1</span></div>
+
+<p>Identify whether each graph would have an endpoint or continue forever in both directions.</p><ol class="lower-alpha"><li>\(y=\sqrt{x}\)</li><li>\(y=\sqrt[3]{x}\)</li><li>\(y=\sqrt{x+6}-2\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 052 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 053 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.053">
+<div class="problem-number">Assessment Bank DOK 1.053<span class="problem-meta">U3S5-001 | Section 3.5 | DoK 1</span></div>
+
+<p>Rewrite in radical form: \[x^{1/2}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 053 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 054 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.054">
+<div class="problem-number">Assessment Bank DOK 1.054<span class="problem-meta">U3S5-002 | Section 3.5 | DoK 1</span></div>
+
+<p>Rewrite in radical form: \[x^{1/3}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 054 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 055 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.055">
+<div class="problem-number">Assessment Bank DOK 1.055<span class="problem-meta">U3S5-003 | Section 3.5 | DoK 1</span></div>
+
+<p>Rewrite in radical form: \[x^{3/2}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 055 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 056 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.056">
+<div class="problem-number">Assessment Bank DOK 1.056<span class="problem-meta">U3S5-004 | Section 3.5 | DoK 1</span></div>
+
+<p>Rewrite in rational exponent form: \[\sqrt{x^5}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 056 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 057 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.057">
+<div class="problem-number">Assessment Bank DOK 1.057<span class="problem-meta">U3S5-005 | Section 3.5 | DoK 1</span></div>
+
+<p>Rewrite in rational exponent form: \[\sqrt[3]{x^4}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 057 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 058 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.058">
+<div class="problem-number">Assessment Bank DOK 1.058<span class="problem-meta">U3S5-006 | Section 3.5 | DoK 1</span></div>
+
+<p>Evaluate without a calculator: \[16^{1/2}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 058 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 059 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.059">
+<div class="problem-number">Assessment Bank DOK 1.059<span class="problem-meta">U3S5-007 | Section 3.5 | DoK 1</span></div>
+
+<p>Evaluate without a calculator: \[27^{1/3}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 059 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 060 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.060">
+<div class="problem-number">Assessment Bank DOK 1.060<span class="problem-meta">U3S5-008 | Section 3.5 | DoK 1</span></div>
+
+<p>Evaluate without a calculator: \[32^{2/5}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 060 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 061 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.061">
+<div class="problem-number">Assessment Bank DOK 1.061<span class="problem-meta">U3S5-009 | Section 3.5 | DoK 1</span></div>
+
+<p>Evaluate without a calculator: \[81^{3/4}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 061 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 062 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.062">
+<div class="problem-number">Assessment Bank DOK 1.062<span class="problem-meta">U3S5-010 | Section 3.5 | DoK 1</span></div>
+
+<p>Fill in the blanks.</p><ol class="lower-alpha"><li>\(x^{1/2}\) means __________.</li><li>\(x^{1/3}\) means __________.</li><li>\(x^{m/n}\) can be written as __________.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 062 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 063 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.063">
+<div class="problem-number">Assessment Bank DOK 1.063<span class="problem-meta">U3S5-011 | Section 3.5 | DoK 1</span></div>
+
+<p>Simplify: \[x^{1/2}\cdot x^{3/2}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 063 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 064 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.064">
+<div class="problem-number">Assessment Bank DOK 1.064<span class="problem-meta">U3S5-012 | Section 3.5 | DoK 1</span></div>
+
+<p>Simplify: \[\frac{x^{5/3}}{x^{2/3}}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 064 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 065 START ======================= -->
+<section class="assessment-card" id="U3-DOK1.065">
+<div class="problem-number">Assessment Bank DOK 1.065<span class="problem-meta">U3S5-013 | Section 3.5 | DoK 1</span></div>
+
+<p>State whether each function has a domain of all real numbers or a restricted domain.</p><ol class="lower-alpha"><li>\(f(x)=x^{1/2}\)</li><li>\(g(x)=x^{1/3}\)</li><li>\(h(x)=x^{2/3}\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 065 END ======================= -->
+<div class="dok-bar">Assessment Bank DOK 2</div>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 001 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.001">
+<div class="problem-number">Assessment Bank DOK 2.001<span class="problem-meta">U3S1-014 | Section 3.1 | DoK 2</span></div>
+
+<p>Solve \((x-5)^2=64\). Verify each solution.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 001 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 002 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.002">
+<div class="problem-number">Assessment Bank DOK 2.002<span class="problem-meta">U3S1-015 | Section 3.1 | DoK 2</span></div>
+
+<p>Solve: \[2(x+1)^2-10=40\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 002 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 003 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.003">
+<div class="problem-number">Assessment Bank DOK 2.003<span class="problem-meta">U3S1-016 | Section 3.1 | DoK 2</span></div>
+
+<p>Solve: \[4(x-3)^3=108\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 003 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 004 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.004">
+<div class="problem-number">Assessment Bank DOK 2.004<span class="problem-meta">U3S1-017 | Section 3.1 | DoK 2</span></div>
+
+<p>Solve: \[5(x+2)^2+7=52\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 004 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 005 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.005">
+<div class="problem-number">Assessment Bank DOK 2.005<span class="problem-meta">U3S1-018 | Section 3.1 | DoK 2</span></div>
+
+<p>Solve: \[(x-1)^3+6=70\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 005 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 006 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.006">
+<div class="problem-number">Assessment Bank DOK 2.006<span class="problem-meta">U3S1-019 | Section 3.1 | DoK 2</span></div>
+
+<p>Solve \(7(x+4)^2=175\). Then verify both solutions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 006 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 007 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.007">
+<div class="problem-number">Assessment Bank DOK 2.007<span class="problem-meta">U3S1-020 | Section 3.1 | DoK 2</span></div>
+
+<p>Simplify and solve: \[\sqrt{3x^2}=6\]</p><p>Discuss why absolute value matters.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 007 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 008 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.008">
+<div class="problem-number">Assessment Bank DOK 2.008<span class="problem-meta">U3S1-021 | Section 3.1 | DoK 2</span></div>
+
+<p>Use the table.</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-4\)</td><td>\(-3\)</td><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td><td>\(4\)</td></tr><tr><th>\(y=x^2\)</th><td>\(16\)</td><td>\(9\)</td><td>\(4\)</td><td>\(1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(4\)</td><td>\(9\)</td><td>\(16\)</td></tr></table>
+<ol class="lower-alpha"><li>Estimate solutions to \(x^2=10\).</li><li>Explain why there are two solutions.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 008 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 009 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.009">
+<div class="problem-number">Assessment Bank DOK 2.009<span class="problem-meta">U3S1-022 | Section 3.1 | DoK 2</span></div>
+
+<p>Use the graph of \(y=x^3\).</p><ol class="lower-alpha"><li>Estimate the solution to \(x^3=20\).</li><li>Explain why there is only one real solution.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U3S1-022" src="figures/u3-u3s1-022-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 009 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 010 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.010">
+<div class="problem-number">Assessment Bank DOK 2.010<span class="problem-meta">U3S1-023 | Section 3.1 | DoK 2</span></div>
+
+<p>A square has area \(196\text{ ft}^2\).</p><ol class="lower-alpha"><li>Write an equation for the side length.</li><li>Solve.</li><li>Explain why only one solution makes sense in context.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 010 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 011 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.011">
+<div class="problem-number">Assessment Bank DOK 2.011<span class="problem-meta">U3S1-024 | Section 3.1 | DoK 2</span></div>
+
+<p>The volume of a cube is \(512\text{ in}^3\).</p><ol class="lower-alpha"><li>Write an equation for the side length.</li><li>Solve.</li><li>Verify.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 011 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 012 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.012">
+<div class="problem-number">Assessment Bank DOK 2.012<span class="problem-meta">U3S1-025 | Section 3.1 | DoK 2</span></div>
+
+<p>A student solves \((x-3)^2=49\) by writing \(x-3=7\).</p><p>Explain the mistake and solve correctly.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 012 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 013 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.013">
+<div class="problem-number">Assessment Bank DOK 2.013<span class="problem-meta">U3S1-026 | Section 3.1 | DoK 2</span></div>
+
+<p>Solve \(2(x-5)^2+8=200\). Then check each solution algebraically.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 013 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 014 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.014">
+<div class="problem-number">Assessment Bank DOK 2.014<span class="problem-meta">U3S1-027 | Section 3.1 | DoK 2</span></div>
+
+<p>Solve: \[\frac{1}{2}(x+6)^3=32\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 014 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 015 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.015">
+<div class="problem-number">Assessment Bank DOK 2.015<span class="problem-meta">U3S2-014 | Section 3.2 | DoK 2</span></div>
+
+<p>Solve and check: \[\sqrt{x+4}+2=8\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 015 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 016 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.016">
+<div class="problem-number">Assessment Bank DOK 2.016<span class="problem-meta">U3S2-015 | Section 3.2 | DoK 2</span></div>
+
+<p>Solve and check: \[5-\sqrt{x-1}=2\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 016 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 017 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.017">
+<div class="problem-number">Assessment Bank DOK 2.017<span class="problem-meta">U3S2-016 | Section 3.2 | DoK 2</span></div>
+
+<p>Solve: \[4\sqrt{2x-3}=20\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 017 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 018 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.018">
+<div class="problem-number">Assessment Bank DOK 2.018<span class="problem-meta">U3S2-017 | Section 3.2 | DoK 2</span></div>
+
+<p>Solve: \[\sqrt{3x+1}-4=5\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 018 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 019 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.019">
+<div class="problem-number">Assessment Bank DOK 2.019<span class="problem-meta">U3S2-018 | Section 3.2 | DoK 2</span></div>
+
+<p>Solve and check: \[2\sqrt{x+7}+1=9\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 019 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 020 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.020">
+<div class="problem-number">Assessment Bank DOK 2.020<span class="problem-meta">U3S2-019 | Section 3.2 | DoK 2</span></div>
+
+<p>Solve: \[\sqrt{x+10}=x\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 020 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 021 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.021">
+<div class="problem-number">Assessment Bank DOK 2.021<span class="problem-meta">U3S2-020 | Section 3.2 | DoK 2</span></div>
+
+<p>Solve: \[\sqrt{x+6}=x-2\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 021 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 022 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.022">
+<div class="problem-number">Assessment Bank DOK 2.022<span class="problem-meta">U3S2-021 | Section 3.2 | DoK 2</span></div>
+
+<p>Solve: \[\sqrt{2x+9}=x\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 022 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 023 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.023">
+<div class="problem-number">Assessment Bank DOK 2.023<span class="problem-meta">U3S2-022 | Section 3.2 | DoK 2</span></div>
+
+<p>Solve: \[\sqrt{x+3}=x-3\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 023 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 024 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.024">
+<div class="problem-number">Assessment Bank DOK 2.024<span class="problem-meta">U3S2-023 | Section 3.2 | DoK 2</span></div>
+
+<p>Solve and identify any extraneous solution: \[\sqrt{x+1}=x-1\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 024 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 025 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.025">
+<div class="problem-number">Assessment Bank DOK 2.025<span class="problem-meta">U3S2-024 | Section 3.2 | DoK 2</span></div>
+
+<p>Solve and identify any extraneous solution: \[\sqrt{2x+4}=x\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 025 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 026 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.026">
+<div class="problem-number">Assessment Bank DOK 2.026<span class="problem-meta">U3S2-025 | Section 3.2 | DoK 2</span></div>
+
+<p>A student solves \(\sqrt{x+5}=x-1\) and gets \(x=4\) and \(x=-1\).</p><ol class="lower-alpha"><li>Check both solutions.</li><li>Identify any extraneous solution.</li><li>Explain why it is extraneous.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 026 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 027 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.027">
+<div class="problem-number">Assessment Bank DOK 2.027<span class="problem-meta">U3S2-026 | Section 3.2 | DoK 2</span></div>
+
+<p>Use the table to estimate the solution to \(\sqrt{x+2}=x-2\).</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(2\)</td><td>\(3\)</td><td>\(4\)</td><td>\(5\)</td><td>\(6\)</td><td>\(7\)</td></tr><tr><th>\(\sqrt{x+2}\)</th><td>\(2\)</td><td>\(\sqrt5\)</td><td>\(\sqrt6\)</td><td>\(\sqrt7\)</td><td>\(\sqrt8\)</td><td>\(3\)</td></tr><tr><th>\(x-2\)</th><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td><td>\(4\)</td><td>\(5\)</td></tr></table>
+<p>Explain how the table helps.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 027 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 028 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.028">
+<div class="problem-number">Assessment Bank DOK 2.028<span class="problem-meta">U3S2-027 | Section 3.2 | DoK 2</span></div>
+
+<p>Use a graph to solve: \[\sqrt{x+4}=x-2\]</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S2-027" src="figures/u3-u3s2-027-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 028 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 029 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.029">
+<div class="problem-number">Assessment Bank DOK 2.029<span class="problem-meta">U3S2-028 | Section 3.2 | DoK 2</span></div>
+
+<p>A square root equation has the possible solutions \(x=1\) and \(x=8\) after squaring. Explain why both must be checked in the original equation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 029 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 030 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.030">
+<div class="problem-number">Assessment Bank DOK 2.030<span class="problem-meta">U3S3-014 | Section 3.3 | DoK 2</span></div>
+
+<p>Solve and verify: \[\sqrt[3]{x+7}+2=6\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 030 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 031 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.031">
+<div class="problem-number">Assessment Bank DOK 2.031<span class="problem-meta">U3S3-015 | Section 3.3 | DoK 2</span></div>
+
+<p>Solve: \[5-\sqrt[3]{x-1}=3\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 031 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 032 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.032">
+<div class="problem-number">Assessment Bank DOK 2.032<span class="problem-meta">U3S3-016 | Section 3.3 | DoK 2</span></div>
+
+<p>Solve: \[4\sqrt[3]{2x-5}=12\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 032 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 033 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.033">
+<div class="problem-number">Assessment Bank DOK 2.033<span class="problem-meta">U3S3-017 | Section 3.3 | DoK 2</span></div>
+
+<p>Solve: \[\sqrt[3]{3x+4}-1=4\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 033 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 034 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.034">
+<div class="problem-number">Assessment Bank DOK 2.034<span class="problem-meta">U3S3-018 | Section 3.3 | DoK 2</span></div>
+
+<p>Solve and verify: \[2\sqrt[3]{x+8}+3=9\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 034 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 035 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.035">
+<div class="problem-number">Assessment Bank DOK 2.035<span class="problem-meta">U3S3-019 | Section 3.3 | DoK 2</span></div>
+
+<p>Solve: \[\sqrt[3]{x+1}=x\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 035 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 036 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.036">
+<div class="problem-number">Assessment Bank DOK 2.036<span class="problem-meta">U3S3-020 | Section 3.3 | DoK 2</span></div>
+
+<p>Solve: \[\sqrt[3]{x+8}=x-1\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 036 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 037 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.037">
+<div class="problem-number">Assessment Bank DOK 2.037<span class="problem-meta">U3S3-021 | Section 3.3 | DoK 2</span></div>
+
+<p>Solve: \[\sqrt[3]{2x+9}=x\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 037 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 038 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.038">
+<div class="problem-number">Assessment Bank DOK 2.038<span class="problem-meta">U3S3-022 | Section 3.3 | DoK 2</span></div>
+
+<p>Solve: \[\sqrt[3]{x+5}=x-2\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 038 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 039 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.039">
+<div class="problem-number">Assessment Bank DOK 2.039<span class="problem-meta">U3S3-023 | Section 3.3 | DoK 2</span></div>
+
+<p>A student solves \(\sqrt[3]{x+8}=x-1\) and gets \(x=2\).</p><ol class="lower-alpha"><li>Verify the solution.</li><li>Explain how checking works for cube root equations.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 039 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 040 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.040">
+<div class="problem-number">Assessment Bank DOK 2.040<span class="problem-meta">U3S3-024 | Section 3.3 | DoK 2</span></div>
+
+<p>Use the table to estimate the solution to \(\sqrt[3]{x+1}=x-1\).</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td><td>\(4\)</td></tr><tr><th>\(\sqrt[3]{x+1}\)</th><td>\(1\)</td><td>\(\sqrt[3]{2}\)</td><td>\(\sqrt[3]{3}\)</td><td>\(\sqrt[3]{4}\)</td><td>\(\sqrt[3]{5}\)</td></tr><tr><th>\(x-1\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td></tr></table><p>Explain how the table helps estimate the solution.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 040 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 041 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.041">
+<div class="problem-number">Assessment Bank DOK 2.041<span class="problem-meta">U3S3-025 | Section 3.3 | DoK 2</span></div>
+
+<p>Use a graph to solve: \[\sqrt[3]{x+4}=x-2\]</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S3-025" src="figures/u3-u3s3-025-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 041 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 042 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.042">
+<div class="problem-number">Assessment Bank DOK 2.042<span class="problem-meta">U3S3-026 | Section 3.3 | DoK 2</span></div>
+
+<p>Solve \[2\sqrt[3]{x-1}-5=7\]</p><p>Then verify algebraically.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 042 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 043 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.043">
+<div class="problem-number">Assessment Bank DOK 2.043<span class="problem-meta">U3S3-027 | Section 3.3 | DoK 2</span></div>
+
+<p>Solve: \[\sqrt[3]{4x+3}=2x-1\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 043 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 044 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.044">
+<div class="problem-number">Assessment Bank DOK 2.044<span class="problem-meta">U3S4-014 | Section 3.4 | DoK 2</span></div>
+
+<p>Graph \(f(x)=\sqrt{x-4}\). State the domain, range, and locator point.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 044 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 045 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.045">
+<div class="problem-number">Assessment Bank DOK 2.045<span class="problem-meta">U3S4-015 | Section 3.4 | DoK 2</span></div>
+
+<p>Graph \(f(x)=\sqrt{x}+3\). State the domain, range, and \(y\)-intercept.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 045 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 046 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.046">
+<div class="problem-number">Assessment Bank DOK 2.046<span class="problem-meta">U3S4-016 | Section 3.4 | DoK 2</span></div>
+
+<p>Graph \(f(x)=2\sqrt{x}\). Compare it to the parent function.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 046 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 047 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.047">
+<div class="problem-number">Assessment Bank DOK 2.047<span class="problem-meta">U3S4-017 | Section 3.4 | DoK 2</span></div>
+
+<p>Graph \(f(x)=-\sqrt{x}+4\). State the domain, range, and intervals of increase or decrease.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 047 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 048 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.048">
+<div class="problem-number">Assessment Bank DOK 2.048<span class="problem-meta">U3S4-018 | Section 3.4 | DoK 2</span></div>
+
+<p>Graph \(f(x)=\sqrt{x+2}-5\). State the domain and range.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 048 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 049 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.049">
+<div class="problem-number">Assessment Bank DOK 2.049<span class="problem-meta">U3S4-019 | Section 3.4 | DoK 2</span></div>
+
+<p>Graph \(g(x)=\sqrt[3]{x-3}\). State the domain, range, and locator point.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 049 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 050 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.050">
+<div class="problem-number">Assessment Bank DOK 2.050<span class="problem-meta">U3S4-020 | Section 3.4 | DoK 2</span></div>
+
+<p>Graph \(g(x)=\sqrt[3]{x}+4\). State the domain, range, and intercepts.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 050 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 051 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.051">
+<div class="problem-number">Assessment Bank DOK 2.051<span class="problem-meta">U3S4-021 | Section 3.4 | DoK 2</span></div>
+
+<p>Graph \(g(x)=-\sqrt[3]{x}\). Describe the reflection and state intervals of increase or decrease.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 051 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 052 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.052">
+<div class="problem-number">Assessment Bank DOK 2.052<span class="problem-meta">U3S4-022 | Section 3.4 | DoK 2</span></div>
+
+<p>Graph \(g(x)=2\sqrt[3]{x+1}-3\). State the locator point and describe all transformations.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 052 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 053 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.053">
+<div class="problem-number">Assessment Bank DOK 2.053<span class="problem-meta">U3S4-023 | Section 3.4 | DoK 2</span></div>
+
+<p>Create a table of values and graph \(f(x)=\sqrt{x-1}+2\). Use at least four points.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 053 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 054 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.054">
+<div class="problem-number">Assessment Bank DOK 2.054<span class="problem-meta">U3S4-024 | Section 3.4 | DoK 2</span></div>
+
+<p>Create a table of values and graph \(g(x)=\sqrt[3]{x+2}-1\). Use at least five points.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 054 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 055 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.055">
+<div class="problem-number">Assessment Bank DOK 2.055<span class="problem-meta">U3S4-025 | Section 3.4 | DoK 2</span></div>
+
+<p>Given a graph of a square root function, identify the locator point, domain, range, and whether it is increasing or decreasing.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S4-025" src="figures/u3-u3s4-025-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 055 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 056 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.056">
+<div class="problem-number">Assessment Bank DOK 2.056<span class="problem-meta">U3S4-026 | Section 3.4 | DoK 2</span></div>
+
+<p>Given a graph of a cube root function, identify the locator point, domain, range, and intercepts.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S4-026" src="figures/u3-u3s4-026-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 056 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 057 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.057">
+<div class="problem-number">Assessment Bank DOK 2.057<span class="problem-meta">U3S4-027 | Section 3.4 | DoK 2</span></div>
+
+<p>A square root graph starts at \((3,-2)\) and increases to the right. Write a possible equation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 057 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 058 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.058">
+<div class="problem-number">Assessment Bank DOK 2.058<span class="problem-meta">U3S4-028 | Section 3.4 | DoK 2</span></div>
+
+<p>A cube root graph has locator point \((-4,5)\) and is reflected over the \(x\)-axis. Write a possible equation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 058 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 059 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.059">
+<div class="problem-number">Assessment Bank DOK 2.059<span class="problem-meta">U3S5-014 | Section 3.5 | DoK 2</span></div>
+
+<p>Rewrite each expression in radical form and simplify if possible.</p><ol class="lower-alpha"><li>\(x^{5/2}\)</li><li>\(x^{4/3}\)</li><li>\(x^{-1/2}\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 059 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 060 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.060">
+<div class="problem-number">Assessment Bank DOK 2.060<span class="problem-meta">U3S5-015 | Section 3.5 | DoK 2</span></div>
+
+<p>Rewrite each expression using rational exponents.</p><ol class="lower-alpha"><li>\(\sqrt[4]{x^3}\)</li><li>\(\frac{1}{\sqrt{x}}\)</li><li>\(\sqrt[3]{x^2y^4}\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 060 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 061 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.061">
+<div class="problem-number">Assessment Bank DOK 2.061<span class="problem-meta">U3S5-016 | Section 3.5 | DoK 2</span></div>
+
+<p>Simplify: \[(x^{2/3})(x^{5/3})\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 061 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 062 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.062">
+<div class="problem-number">Assessment Bank DOK 2.062<span class="problem-meta">U3S5-017 | Section 3.5 | DoK 2</span></div>
+
+<p>Simplify: \[(x^{3/4})^2\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 062 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 063 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.063">
+<div class="problem-number">Assessment Bank DOK 2.063<span class="problem-meta">U3S5-018 | Section 3.5 | DoK 2</span></div>
+
+<p>Simplify: \[\frac{x^{7/2}}{x^{3/2}}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 063 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 064 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.064">
+<div class="problem-number">Assessment Bank DOK 2.064<span class="problem-meta">U3S5-019 | Section 3.5 | DoK 2</span></div>
+
+<p>Evaluate \(64^{2/3}\). Show two different methods.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 064 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 065 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.065">
+<div class="problem-number">Assessment Bank DOK 2.065<span class="problem-meta">U3S5-020 | Section 3.5 | DoK 2</span></div>
+
+<p>Evaluate: \[125^{-2/3}\]</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 065 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 066 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.066">
+<div class="problem-number">Assessment Bank DOK 2.066<span class="problem-meta">U3S5-021 | Section 3.5 | DoK 2</span></div>
+
+<p>Use technology to graph \(f(x)=x^{1/2}\). State the domain, range, intercepts, and interval of increase/decrease.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S5-021" src="figures/u3-u3s5-021-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 066 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 067 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.067">
+<div class="problem-number">Assessment Bank DOK 2.067<span class="problem-meta">U3S5-022 | Section 3.5 | DoK 2</span></div>
+
+<p>Use technology to graph \(g(x)=x^{1/3}\). State the domain, range, intercepts, and interval of increase/decrease.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S5-022" src="figures/u3-u3s5-022-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 067 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 068 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.068">
+<div class="problem-number">Assessment Bank DOK 2.068<span class="problem-meta">U3S5-023 | Section 3.5 | DoK 2</span></div>
+
+<p>Use technology to graph \(h(x)=x^{2/3}\). State the domain, range, intercepts, and symmetry.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 068 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 069 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.069">
+<div class="problem-number">Assessment Bank DOK 2.069<span class="problem-meta">U3S5-024 | Section 3.5 | DoK 2</span></div>
+
+<p>Compare the graphs of \(f(x)=x^{1/2}\) and \(g(x)=x^{1/3}\). Explain how their domains and ranges differ.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 069 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 070 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.070">
+<div class="problem-number">Assessment Bank DOK 2.070<span class="problem-meta">U3S5-025 | Section 3.5 | DoK 2</span></div>
+
+<p>Use a table to compare:</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-8\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(8\)</td></tr><tr><th>\(x^{1/3}\)</th><td></td><td></td><td></td><td></td><td></td></tr><tr><th>\(x^{2/3}\)</th><td></td><td></td><td></td><td></td><td></td></tr></table>
+<p>Then describe how the graphs differ.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 070 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 071 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.071">
+<div class="problem-number">Assessment Bank DOK 2.071<span class="problem-meta">U3S5-026 | Section 3.5 | DoK 2</span></div>
+
+<p>Graph \(f(x)=(x-2)^{1/2}+3\). State the domain, range, and locator point.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 071 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 072 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.072">
+<div class="problem-number">Assessment Bank DOK 2.072<span class="problem-meta">U3S5-027 | Section 3.5 | DoK 2</span></div>
+
+<p>Graph \(g(x)=(x+4)^{1/3}-1\). State the domain, range, and locator point.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 072 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 073 START ======================= -->
+<section class="assessment-card" id="U3-DOK2.073">
+<div class="problem-number">Assessment Bank DOK 2.073<span class="problem-meta">U3S5-028 | Section 3.5 | DoK 2</span></div>
+
+<p>A student says \(x^{3/2}=x^3+x^{1/2}\). Explain the mistake and rewrite \(x^{3/2}\) correctly.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 073 END ======================= -->
+<div class="dok-bar">Assessment Bank DOK 3</div>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 001 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.001">
+<div class="problem-number">Assessment Bank DOK 3.001<span class="problem-meta">U3S1-028 | Section 3.1 | DoK 3</span></div>
+
+<p>Explain why \(x^2=49\) has two real solutions while \(x^3=125\) has only one real solution.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 001 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 002 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.002">
+<div class="problem-number">Assessment Bank DOK 3.002<span class="problem-meta">U3S1-029 | Section 3.1 | DoK 3</span></div>
+
+<p>A student says: “Taking the square root always gives one answer.” Is this true? Use examples and reasoning.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 002 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 003 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.003">
+<div class="problem-number">Assessment Bank DOK 3.003<span class="problem-meta">U3S1-030 | Section 3.1 | DoK 3</span></div>
+
+<p>Compare solving \((x-2)^2=25\) and \((x-2)^3=27\). Explain why the solution processes are similar but the number of solutions differs.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 003 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 004 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.004">
+<div class="problem-number">Assessment Bank DOK 3.004<span class="problem-meta">U3S1-031 | Section 3.1 | DoK 3</span></div>
+
+<p>A student solves \((x+1)^2=16\) as \(x+1=\pm16\).</p><ol class="lower-alpha"><li>Identify the error.</li><li>Solve correctly.</li><li>Explain why the mistake changes the solutions.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 004 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 005 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.005">
+<div class="problem-number">Assessment Bank DOK 3.005<span class="problem-meta">U3S1-032 | Section 3.1 | DoK 3</span></div>
+
+<p>A student claims: “If \(x^2=a\), then \(x=\sqrt{a}\).” Explain why this statement is incomplete.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 005 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 006 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.006">
+<div class="problem-number">Assessment Bank DOK 3.006<span class="problem-meta">U3S1-033 | Section 3.1 | DoK 3</span></div>
+
+<p>Solve \((x-4)^2=81\). Then explain geometrically why the solutions are symmetric around \(x=4\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 006 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 007 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.007">
+<div class="problem-number">Assessment Bank DOK 3.007<span class="problem-meta">U3S1-034 | Section 3.1 | DoK 3</span></div>
+
+<p>Use the graph of \(y=x^2\).</p><ol class="lower-alpha"><li>Explain why horizontal lines above the vertex intersect the graph twice.</li><li>Explain why this creates two solutions.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U3S1-034" src="figures/u3-u3s1-034-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 007 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 008 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.008">
+<div class="problem-number">Assessment Bank DOK 3.008<span class="problem-meta">U3S1-035 | Section 3.1 | DoK 3</span></div>
+
+<p>Use the graph of \(y=x^3\).</p><ol class="lower-alpha"><li>Explain why every horizontal line intersects exactly once.</li><li>Explain how this relates to solving cube root equations.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U3S1-035" src="figures/u3-u3s1-035-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 008 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 009 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.009">
+<div class="problem-number">Assessment Bank DOK 3.009<span class="problem-meta">U3S1-036 | Section 3.1 | DoK 3</span></div>
+
+<p>A function is defined by \(f(x)=x^2\).</p><ol class="lower-alpha"><li>Explain why \(f\) is not one-to-one.</li><li>Explain how this affects solving equations of the form \(x^2=d\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 009 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 010 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.010">
+<div class="problem-number">Assessment Bank DOK 3.010<span class="problem-meta">U3S1-037 | Section 3.1 | DoK 3</span></div>
+
+<p>A student solves \(3(x-1)^2=27\) and gets \(x=4\). Verify whether the solution is complete.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 010 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 011 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.011">
+<div class="problem-number">Assessment Bank DOK 3.011<span class="problem-meta">U3S1-038 | Section 3.1 | DoK 3</span></div>
+
+<p>Explain why checking solutions is especially important when solving equations involving roots and powers.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 011 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 012 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.012">
+<div class="problem-number">Assessment Bank DOK 3.012<span class="problem-meta">U3S1-039 | Section 3.1 | DoK 3</span></div>
+
+<p>Solve \((x+3)^3=-125\). Then explain why cube root equations do not produce the same “\(\pm\)” issue as square root equations.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 012 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 013 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.013">
+<div class="problem-number">Assessment Bank DOK 3.013<span class="problem-meta">U3S1-040 | Section 3.1 | DoK 3</span></div>
+
+<p>Compare the graphs of \(y=x^2\) and \(y=x^3\). Explain how graph structure affects the number of solutions to equations involving roots.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S1-040" src="figures/u3-u3s1-040-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 013 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 014 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.014">
+<div class="problem-number">Assessment Bank DOK 3.014<span class="problem-meta">U3S2-029 | Section 3.2 | DoK 3</span></div>
+
+<p>Explain why squaring both sides of an equation can create extraneous solutions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 014 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 015 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.015">
+<div class="problem-number">Assessment Bank DOK 3.015<span class="problem-meta">U3S2-030 | Section 3.2 | DoK 3</span></div>
+
+<p>A student solves \(\sqrt{x+3}=x-1\). They square both sides and get \(x+3=x^2-1\).</p><ol class="lower-alpha"><li>Identify the algebra mistake.</li><li>Correct the equation after squaring.</li><li>Solve correctly and check.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 015 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 016 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.016">
+<div class="problem-number">Assessment Bank DOK 3.016<span class="problem-meta">U3S2-031 | Section 3.2 | DoK 3</span></div>
+
+<p>Solve \(\sqrt{x+6}=x\). Then explain why one solution works and the other does not.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 016 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 017 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.017">
+<div class="problem-number">Assessment Bank DOK 3.017<span class="problem-meta">U3S2-032 | Section 3.2 | DoK 3</span></div>
+
+<p>Solve \(\sqrt{3x+4}=x+2\). Then explain why checking is required even if the algebra seems correct.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 017 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 018 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.018">
+<div class="problem-number">Assessment Bank DOK 3.018<span class="problem-meta">U3S2-033 | Section 3.2 | DoK 3</span></div>
+
+<p>Solve \(\sqrt{x+9}=x-3\). Then explain how the domain restriction \(x-3\ge0\) helps predict possible solutions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 018 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 019 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.019">
+<div class="problem-number">Assessment Bank DOK 3.019<span class="problem-meta">U3S2-034 | Section 3.2 | DoK 3</span></div>
+
+<p>A student says: “If I square both sides correctly, all answers from the quadratic are automatically solutions.” Respond with an example and explanation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 019 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 020 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.020">
+<div class="problem-number">Assessment Bank DOK 3.020<span class="problem-meta">U3S2-035 | Section 3.2 | DoK 3</span></div>
+
+<p>Use a graph of \(y=\sqrt{x+1}\) and \(y=x-1\).</p><ol class="lower-alpha"><li>Estimate the intersection.</li><li>Solve algebraically.</li><li>Explain how the graph helps identify the valid solution.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U3S2-035" src="figures/u3-u3s2-035-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 020 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 021 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.021">
+<div class="problem-number">Assessment Bank DOK 3.021<span class="problem-meta">U3S2-036 | Section 3.2 | DoK 3</span></div>
+
+<p>Solve: \[\sqrt{x+4}+\sqrt{x-1}=5\]</p><p>Show why this equation requires careful isolation and checking.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 021 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 022 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.022">
+<div class="problem-number">Assessment Bank DOK 3.022<span class="problem-meta">U3S2-037 | Section 3.2 | DoK 3</span></div>
+
+<p>Solve: \[\sqrt{2x+5}=x+1\]</p><p>Then explain how the solution relates to the intersection of two functions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 022 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 023 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.023">
+<div class="problem-number">Assessment Bank DOK 3.023<span class="problem-meta">U3S2-038 | Section 3.2 | DoK 3</span></div>
+
+<p>A student solves \(\sqrt{x+8}=x-2\) and rejects \(x=1\) because it is less than 2.</p><ol class="lower-alpha"><li>Is the reasoning correct?</li><li>Explain what should actually be checked.</li><li>Solve the equation completely.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 023 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 024 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.024">
+<div class="problem-number">Assessment Bank DOK 3.024<span class="problem-meta">U3S2-039 | Section 3.2 | DoK 3</span></div>
+
+<p>Compare these two equations:</p><p style="text-align:center;">\(\sqrt{x+5}=x-1\)</p><p style="text-align:center;">\(\sqrt{x+5}=1-x\)</p><p>Explain how the right side changes the possible solution set.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 024 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 025 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.025">
+<div class="problem-number">Assessment Bank DOK 3.025<span class="problem-meta">U3S2-040 | Section 3.2 | DoK 3</span></div>
+
+<p>Create a flowchart or written process for solving square root equations that includes isolating, squaring, solving, checking, and rejecting extraneous solutions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 025 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 026 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.026">
+<div class="problem-number">Assessment Bank DOK 3.026<span class="problem-meta">U3S3-028 | Section 3.3 | DoK 3</span></div>
+
+<p>Explain why cube root equations usually produce one real solution while square root equations can produce two.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 026 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 027 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.027">
+<div class="problem-number">Assessment Bank DOK 3.027<span class="problem-meta">U3S3-029 | Section 3.3 | DoK 3</span></div>
+
+<p>A student says: “Cube root equations need \(\pm\) just like square root equations.” Is this true? Use examples and reasoning.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 027 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 028 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.028">
+<div class="problem-number">Assessment Bank DOK 3.028<span class="problem-meta">U3S3-030 | Section 3.3 | DoK 3</span></div>
+
+<p>Compare solving \(\sqrt{x+4}=6\) and \(\sqrt[3]{x+4}=6\).</p><p>Explain the solving process, the inverse operation, and the number of solutions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 028 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 029 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.029">
+<div class="problem-number">Assessment Bank DOK 3.029<span class="problem-meta">U3S3-031 | Section 3.3 | DoK 3</span></div>
+
+<p>Solve \[\sqrt[3]{x+7}=x\]</p><p>Then explain why the solution works geometrically using graph behavior.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 029 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 030 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.030">
+<div class="problem-number">Assessment Bank DOK 3.030<span class="problem-meta">U3S3-032 | Section 3.3 | DoK 3</span></div>
+
+<p>A student solves \(\sqrt[3]{x-2}=4\) by writing \(x-2=\pm64\).</p><ol class="lower-alpha"><li>Identify the error.</li><li>Solve correctly.</li><li>Explain why the mistake changes the solution set.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 030 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 031 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.031">
+<div class="problem-number">Assessment Bank DOK 3.031<span class="problem-meta">U3S3-033 | Section 3.3 | DoK 3</span></div>
+
+<p>Use the graph of \(y=\sqrt[3]{x}\).</p><ol class="lower-alpha"><li>Explain why every horizontal line intersects exactly once.</li><li>Explain how this relates to solving cube root equations.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U3S3-033" src="figures/u3-u3s3-033-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 031 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 032 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.032">
+<div class="problem-number">Assessment Bank DOK 3.032<span class="problem-meta">U3S3-034 | Section 3.3 | DoK 3</span></div>
+
+<p>Solve \[\sqrt[3]{x+5}=x-1\]</p><p>Then explain how graph intersections help verify the solution.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 032 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 033 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.033">
+<div class="problem-number">Assessment Bank DOK 3.033<span class="problem-meta">U3S3-035 | Section 3.3 | DoK 3</span></div>
+
+<p>A student says: “Checking solutions is unnecessary for cube root equations.” Respond using a specific example and explanation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 033 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 034 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.034">
+<div class="problem-number">Assessment Bank DOK 3.034<span class="problem-meta">U3S3-036 | Section 3.3 | DoK 3</span></div>
+
+<p>Compare these equations:</p><p style="text-align:center;">\(\sqrt[3]{x+4}=x\)</p><p style="text-align:center;">\(\sqrt[3]{x+4}=-x\)</p><p>Explain how changing the right side changes the possible solutions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 034 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 035 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.035">
+<div class="problem-number">Assessment Bank DOK 3.035<span class="problem-meta">U3S3-037 | Section 3.3 | DoK 3</span></div>
+
+<p>Solve \[\sqrt[3]{2x+1}=x+1\]</p><p>Then explain how the solution relates to intersections of two functions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 035 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 036 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.036">
+<div class="problem-number">Assessment Bank DOK 3.036<span class="problem-meta">U3S3-038 | Section 3.3 | DoK 3</span></div>
+
+<p>A student solves \(\sqrt[3]{x+9}=x-1\) and rejects a solution because it is negative.</p><ol class="lower-alpha"><li>Is the reasoning correct?</li><li>Explain what should actually be checked.</li><li>Solve completely.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 036 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 037 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.037">
+<div class="problem-number">Assessment Bank DOK 3.037<span class="problem-meta">U3S3-039 | Section 3.3 | DoK 3</span></div>
+
+<p>Create a written process or flowchart for solving cube root equations. Your process should include isolating, cubing, solving, and checking.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 037 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 038 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.038">
+<div class="problem-number">Assessment Bank DOK 3.038<span class="problem-meta">U3S3-040 | Section 3.3 | DoK 3</span></div>
+
+<p>Compare the graphs of \(y=\sqrt{x}\) and \(y=\sqrt[3]{x}\). Explain how graph structure affects domain, range, number of intersections, and number of solutions.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S3-040" src="figures/u3-u3s3-040-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 038 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 039 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.039">
+<div class="problem-number">Assessment Bank DOK 3.039<span class="problem-meta">U3S4-029 | Section 3.4 | DoK 3</span></div>
+
+<p>Compare \(f(x)=\sqrt{x-3}\) and \(g(x)=\sqrt[3]{x-3}\). Explain how their domains, ranges, and graph shapes differ.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 039 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 040 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.040">
+<div class="problem-number">Assessment Bank DOK 3.040<span class="problem-meta">U3S4-030 | Section 3.4 | DoK 3</span></div>
+
+<p>Explain why square root functions have restricted domains but cube root functions usually do not.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 040 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 041 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.041">
+<div class="problem-number">Assessment Bank DOK 3.041<span class="problem-meta">U3S4-031 | Section 3.4 | DoK 3</span></div>
+
+<p>A student says: “The graph of \(y=\sqrt{x-4}\) moves left 4 because of the minus sign.” Respond with a correction and explanation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 041 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 042 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.042">
+<div class="problem-number">Assessment Bank DOK 3.042<span class="problem-meta">U3S4-032 | Section 3.4 | DoK 3</span></div>
+
+<p>A student says: “The domain of \(f(x)=\sqrt{x+7}-2\) is \(x\ge 7\).” Identify the error and correct the domain.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 042 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 043 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.043">
+<div class="problem-number">Assessment Bank DOK 3.043<span class="problem-meta">U3S4-033 | Section 3.4 | DoK 3</span></div>
+
+<p>Use transformations to explain why \(f(x)=-3\sqrt{x-2}+1\) has range \(y\le1\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 043 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 044 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.044">
+<div class="problem-number">Assessment Bank DOK 3.044<span class="problem-meta">U3S4-034 | Section 3.4 | DoK 3</span></div>
+
+<p>Analyze \(f(x)=\sqrt{x+4}-6\). State domain, range, locator point, \(x\)-intercept, \(y\)-intercept, and interval of increase/decrease.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 044 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 045 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.045">
+<div class="problem-number">Assessment Bank DOK 3.045<span class="problem-meta">U3S4-035 | Section 3.4 | DoK 3</span></div>
+
+<p>Analyze \(g(x)=-2\sqrt[3]{x-1}+3\). State domain, range, locator point, intercepts, and interval of increase/decrease.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 045 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 046 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.046">
+<div class="problem-number">Assessment Bank DOK 3.046<span class="problem-meta">U3S4-036 | Section 3.4 | DoK 3</span></div>
+
+<p>Given a graph of a square root function, write an equation and justify how each transformation appears in the graph.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S4-036" src="figures/u3-u3s4-036-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 046 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 047 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.047">
+<div class="problem-number">Assessment Bank DOK 3.047<span class="problem-meta">U3S4-037 | Section 3.4 | DoK 3</span></div>
+
+<p>Given a graph of a cube root function, write an equation and justify how each transformation appears in the graph.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S4-037" src="figures/u3-u3s4-037-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 047 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 048 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.048">
+<div class="problem-number">Assessment Bank DOK 3.048<span class="problem-meta">U3S4-038 | Section 3.4 | DoK 3</span></div>
+
+<p>Compare \(f(x)=\sqrt{x}\) and \(g(x)=\sqrt{x}+4\). Explain how the range changes and why the domain does not.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 048 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 049 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.049">
+<div class="problem-number">Assessment Bank DOK 3.049<span class="problem-meta">U3S4-039 | Section 3.4 | DoK 3</span></div>
+
+<p>Compare \(f(x)=\sqrt[3]{x}\) and \(g(x)=\sqrt[3]{x-5}+2\). Explain how the locator point changes but the domain and range remain all real numbers.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 049 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 050 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.050">
+<div class="problem-number">Assessment Bank DOK 3.050<span class="problem-meta">U3S4-040 | Section 3.4 | DoK 3</span></div>
+
+<p>A function has domain \([2,\infty)\), range \((-\infty,5]\), and endpoint \((2,5)\). Write a possible square root function and justify your choice.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 050 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 051 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.051">
+<div class="problem-number">Assessment Bank DOK 3.051<span class="problem-meta">U3S5-029 | Section 3.5 | DoK 3</span></div>
+
+<p>Explain why \(x^{1/2}\) has a restricted real-number domain, but \(x^{1/3}\) does not.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 051 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 052 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.052">
+<div class="problem-number">Assessment Bank DOK 3.052<span class="problem-meta">U3S5-030 | Section 3.5 | DoK 3</span></div>
+
+<p>Compare \(x^{2/3}\) and \(x^{3/2}\). Discuss meaning, domain, graph shape, and how each can be rewritten with radicals.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 052 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 053 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.053">
+<div class="problem-number">Assessment Bank DOK 3.053<span class="problem-meta">U3S5-031 | Section 3.5 | DoK 3</span></div>
+
+<p>A student evaluates \(32^{2/5}\) by squaring first and then taking the fifth root.</p><ol class="lower-alpha"><li>Is the method valid?</li><li>Is it efficient?</li><li>Show a better method.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 053 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 054 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.054">
+<div class="problem-number">Assessment Bank DOK 3.054<span class="problem-meta">U3S5-032 | Section 3.5 | DoK 3</span></div>
+
+<p>A student claims \(x^{1/2}+x^{1/2}=x\).</p><ol class="lower-alpha"><li>Identify the misconception.</li><li>Correct the simplification.</li><li>Explain why exponent rules do not apply to addition the same way.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 054 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 055 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.055">
+<div class="problem-number">Assessment Bank DOK 3.055<span class="problem-meta">U3S5-033 | Section 3.5 | DoK 3</span></div>
+
+<p>Simplify \(\frac{x^{5/2}y^{-1/3}}{x^{1/2}y^{2/3}}\). Then rewrite using radicals and positive exponents.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 055 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 056 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.056">
+<div class="problem-number">Assessment Bank DOK 3.056<span class="problem-meta">U3S5-034 | Section 3.5 | DoK 3</span></div>
+
+<p>Analyze \(f(x)=-(x-3)^{1/2}+5\). State domain, range, locator point, intercepts, and interval of increase/decrease.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S5-034" src="figures/u3-u3s5-034-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 056 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 057 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.057">
+<div class="problem-number">Assessment Bank DOK 3.057<span class="problem-meta">U3S5-035 | Section 3.5 | DoK 3</span></div>
+
+<p>Analyze \(g(x)=2(x+1)^{1/3}-4\). State domain, range, locator point, intercepts, and interval of increase/decrease.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S5-035" src="figures/u3-u3s5-035-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 057 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 058 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.058">
+<div class="problem-number">Assessment Bank DOK 3.058<span class="problem-meta">U3S5-036 | Section 3.5 | DoK 3</span></div>
+
+<p>Use graphs of \(y=x^{1/2}\), \(y=x^{1/3}\), and \(y=x^{2/3}\). Compare their domains, ranges, intercepts, and symmetry.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S5-036" src="figures/u3-u3s5-036-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 058 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 059 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.059">
+<div class="problem-number">Assessment Bank DOK 3.059<span class="problem-meta">U3S5-037 | Section 3.5 | DoK 3</span></div>
+
+<p>A student says: “All rational exponent functions are just radical functions, so they all have the same shape.” Respond with examples and explanation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 059 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 060 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.060">
+<div class="problem-number">Assessment Bank DOK 3.060<span class="problem-meta">U3S5-038 | Section 3.5 | DoK 3</span></div>
+
+<p>Explain why the denominator of a rational exponent affects the type of root and therefore affects the graph’s domain.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 060 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 061 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.061">
+<div class="problem-number">Assessment Bank DOK 3.061<span class="problem-meta">U3S5-039 | Section 3.5 | DoK 3</span></div>
+
+<p>Create a table of values for \(f(x)=x^{4/3}\) using \(x=-8,-1,0,1,8\). Then explain why the outputs are nonnegative.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 061 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 062 START ======================= -->
+<section class="assessment-card" id="U3-DOK3.062">
+<div class="problem-number">Assessment Bank DOK 3.062<span class="problem-meta">U3S5-040 | Section 3.5 | DoK 3</span></div>
+
+<p>Compare \(f(x)=x^{2/3}\) and \(g(x)=x^{4/3}\). Explain similarities and differences in graph shape, symmetry, and growth.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 062 END ======================= -->
+<div class="dok-bar">Assessment Bank DOK 4</div>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 001 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.001">
+<div class="problem-number">Assessment Bank DOK 4.001<span class="problem-meta">U3S1-041 | Section 3.1 | DoK 4</span></div>
+
+<p>Create a quadratic equation with two irrational solutions, symmetric solutions, and solutions centered around \(x=5\). Then solve and verify.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 001 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 002 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.002">
+<div class="problem-number">Assessment Bank DOK 4.002<span class="problem-meta">U3S1-042 | Section 3.1 | DoK 4</span></div>
+
+<p>Create a cube root equation whose solution is negative and non-integer. Then solve exactly or approximately.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 002 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 003 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.003">
+<div class="problem-number">Assessment Bank DOK 4.003<span class="problem-meta">U3S1-043 | Section 3.1 | DoK 4</span></div>
+
+<p>Design a real-world problem that can be solved using \(x^2=d\).</p><ol class="lower-alpha"><li>Define the variables.</li><li>Write the equation.</li><li>Solve.</li><li>Explain which solutions make sense.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 003 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 004 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.004">
+<div class="problem-number">Assessment Bank DOK 4.004<span class="problem-meta">U3S1-044 | Section 3.1 | DoK 4</span></div>
+
+<p>Design a real-world cube problem that requires solving \(x^3=d\). Then solve and interpret the answer.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 004 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 005 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.005">
+<div class="problem-number">Assessment Bank DOK 4.005<span class="problem-meta">U3S1-045 | Section 3.1 | DoK 4</span></div>
+
+<p>Create an equation where isolating first is necessary, the final step requires square roots, and both solutions are integers. Then solve.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 005 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 006 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.006">
+<div class="problem-number">Assessment Bank DOK 4.006<span class="problem-meta">U3S1-046 | Section 3.1 | DoK 4</span></div>
+
+<p>A student says: “Square root equations and cube root equations are basically the same.” Write a response comparing structure, number of solutions, graph behavior, and verification.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 006 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 007 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.007">
+<div class="problem-number">Assessment Bank DOK 4.007<span class="problem-meta">U3S1-047 | Section 3.1 | DoK 4</span></div>
+
+<p>Create a graphable situation where \((x-2)^2=9\) represents intersections.</p><ol class="lower-alpha"><li>Describe the graph.</li><li>Explain why there are two intersection points.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 007 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 008 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.008">
+<div class="problem-number">Assessment Bank DOK 4.008<span class="problem-meta">U3S1-048 | Section 3.1 | DoK 4</span></div>
+
+<p>Create a function whose graph intersects \(y=64\) at exactly one point. Explain why.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 008 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 009 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.009">
+<div class="problem-number">Assessment Bank DOK 4.009<span class="problem-meta">U3S1-049 | Section 3.1 | DoK 4</span></div>
+
+<p>Design an error-analysis problem involving \((x-5)^2=49\).</p><ol class="lower-alpha"><li>Write incorrect student work.</li><li>Identify the misconception.</li><li>Correct the work.</li><li>Explain how to avoid the mistake.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 009 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 010 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.010">
+<div class="problem-number">Assessment Bank DOK 4.010<span class="problem-meta">U3S1-050 | Section 3.1 | DoK 4</span></div>
+
+<p>Create a multi-representation problem involving an equation, a graph, and a table where students solve \(x^2=d\). Explain how all three representations show the same solutions.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 010 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 011 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.011">
+<div class="problem-number">Assessment Bank DOK 4.011<span class="problem-meta">U3S2-041 | Section 3.2 | DoK 4</span></div>
+
+<p>Create a square root equation that has exactly one valid solution and one extraneous solution after squaring.</p><ol class="lower-alpha"><li>Write the equation.</li><li>Solve it.</li><li>Identify the extraneous solution.</li><li>Explain how you designed it.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 011 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 012 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.012">
+<div class="problem-number">Assessment Bank DOK 4.012<span class="problem-meta">U3S2-042 | Section 3.2 | DoK 4</span></div>
+
+<p>Create a square root equation that has no real solution because all possible solutions are extraneous.</p><p>Show the algebra and explain why no solution remains.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 012 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 013 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.013">
+<div class="problem-number">Assessment Bank DOK 4.013<span class="problem-meta">U3S2-043 | Section 3.2 | DoK 4</span></div>
+
+<p>Design a real-world problem that leads to a square root equation.</p><ol class="lower-alpha"><li>Define the variables.</li><li>Write the equation.</li><li>Solve.</li><li>Explain which solution makes sense in context.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 013 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 014 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.014">
+<div class="problem-number">Assessment Bank DOK 4.014<span class="problem-meta">U3S2-044 | Section 3.2 | DoK 4</span></div>
+
+<p>A student argues: “Graphing is unnecessary because algebra always gives the answer.” Critique this claim using a square root equation that produces an extraneous solution.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 014 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 015 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.015">
+<div class="problem-number">Assessment Bank DOK 4.015<span class="problem-meta">U3S2-045 | Section 3.2 | DoK 4</span></div>
+
+<p>Create an error-analysis problem involving \(\sqrt{x+7}=x-1\).</p><ol class="lower-alpha"><li>Write incorrect student work.</li><li>Identify the misconception.</li><li>Correct the solution.</li><li>Explain how checking reveals the error.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 015 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 016 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.016">
+<div class="problem-number">Assessment Bank DOK 4.016<span class="problem-meta">U3S2-046 | Section 3.2 | DoK 4</span></div>
+
+<p>Design a graph-based square root equation problem where students solve by finding an intersection.</p><ol class="lower-alpha"><li>Write the two functions.</li><li>Describe the graph.</li><li>Solve algebraically.</li><li>Explain how the graph and algebra agree.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U3S2-046" src="figures/u3-u3s2-046-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 016 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 017 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.017">
+<div class="problem-number">Assessment Bank DOK 4.017<span class="problem-meta">U3S2-047 | Section 3.2 | DoK 4</span></div>
+
+<p>Create a square root equation with a solution greater than 10. Then solve and verify.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 017 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 018 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.018">
+<div class="problem-number">Assessment Bank DOK 4.018<span class="problem-meta">U3S2-048 | Section 3.2 | DoK 4</span></div>
+
+<p>Create a square root equation where the first step is not squaring.</p><ol class="lower-alpha"><li>Write the equation.</li><li>Explain why isolating must happen first.</li><li>Solve and check.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 018 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 019 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.019">
+<div class="problem-number">Assessment Bank DOK 4.019<span class="problem-meta">U3S2-049 | Section 3.2 | DoK 4</span></div>
+
+<p>Create two square root equations that have the same squared equation but different valid solution sets. Explain why checking in the original equation changes the final answer.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 019 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 020 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.020">
+<div class="problem-number">Assessment Bank DOK 4.020<span class="problem-meta">U3S2-050 | Section 3.2 | DoK 4</span></div>
+
+<p>Create a multi-representation problem involving an equation, a graph, and a table where students solve a square root equation and identify an extraneous solution.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S2-050" src="figures/u3-u3s2-050-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 020 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 021 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.021">
+<div class="problem-number">Assessment Bank DOK 4.021<span class="problem-meta">U3S3-041 | Section 3.3 | DoK 4</span></div>
+
+<p>Create a cube root equation with one integer solution, a negative solution, and a transformed cube root expression. Then solve and verify.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 021 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 022 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.022">
+<div class="problem-number">Assessment Bank DOK 4.022<span class="problem-meta">U3S3-042 | Section 3.3 | DoK 4</span></div>
+
+<p>Create a cube root equation whose solution is irrational. Then solve exactly or approximately.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 022 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 023 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.023">
+<div class="problem-number">Assessment Bank DOK 4.023<span class="problem-meta">U3S3-043 | Section 3.3 | DoK 4</span></div>
+
+<p>Design a real-world problem modeled by \(\sqrt[3]{x}=a\).</p><ol class="lower-alpha"><li>Define the variables.</li><li>Write the equation.</li><li>Solve.</li><li>Explain the meaning of the solution.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 023 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 024 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.024">
+<div class="problem-number">Assessment Bank DOK 4.024<span class="problem-meta">U3S3-044 | Section 3.3 | DoK 4</span></div>
+
+<p>A student argues: “Cube root equations are easier because they never create extraneous solutions.” Critique this statement using examples and reasoning.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 024 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 025 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.025">
+<div class="problem-number">Assessment Bank DOK 4.025<span class="problem-meta">U3S3-045 | Section 3.3 | DoK 4</span></div>
+
+<p>Create an error-analysis problem involving \(\sqrt[3]{x+7}=x-1\).</p><ol class="lower-alpha"><li>Write incorrect student work.</li><li>Identify the misconception.</li><li>Correct the work.</li><li>Explain how checking helps.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 025 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 026 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.026">
+<div class="problem-number">Assessment Bank DOK 4.026<span class="problem-meta">U3S3-046 | Section 3.3 | DoK 4</span></div>
+
+<p>Design a graph-based cube root equation problem where students solve by finding an intersection.</p><ol class="lower-alpha"><li>Write the functions.</li><li>Describe the graph.</li><li>Solve algebraically.</li><li>Explain how the graph and algebra agree.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U3S3-046" src="figures/u3-u3s3-046-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 026 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 027 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.027">
+<div class="problem-number">Assessment Bank DOK 4.027<span class="problem-meta">U3S3-047 | Section 3.3 | DoK 4</span></div>
+
+<p>Create a cube root equation where the first step is not cubing.</p><ol class="lower-alpha"><li>Write the equation.</li><li>Explain why isolating must happen first.</li><li>Solve and verify.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 027 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 028 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.028">
+<div class="problem-number">Assessment Bank DOK 4.028<span class="problem-meta">U3S3-048 | Section 3.3 | DoK 4</span></div>
+
+<p>Create two different cube root equations that have the same solution. Explain why the equations are structurally different but equivalent.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 028 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 029 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.029">
+<div class="problem-number">Assessment Bank DOK 4.029<span class="problem-meta">U3S3-049 | Section 3.3 | DoK 4</span></div>
+
+<p>Create a cube root equation whose graph intersects a line at exactly one point.</p><ol class="lower-alpha"><li>Write the equation.</li><li>Describe the graph behavior.</li><li>Explain why only one solution exists.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 029 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 030 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.030">
+<div class="problem-number">Assessment Bank DOK 4.030<span class="problem-meta">U3S3-050 | Section 3.3 | DoK 4</span></div>
+
+<p>Create a multi-representation problem involving an equation, a graph, and a table where students solve a cube root equation and explain how all three representations show the same solution.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S3-050" src="figures/u3-u3s3-050-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 030 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 031 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.031">
+<div class="problem-number">Assessment Bank DOK 4.031<span class="problem-meta">U3S4-041 | Section 3.4 | DoK 4</span></div>
+
+<p>Create a square root function with domain \([-3,\infty)\), range \([4,\infty)\), and increasing behavior. Graph it and explain how your equation matches the conditions.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 031 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 032 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.032">
+<div class="problem-number">Assessment Bank DOK 4.032<span class="problem-meta">U3S4-042 | Section 3.4 | DoK 4</span></div>
+
+<p>Create a square root function with endpoint \((5,2)\), reflected across the \(x\)-axis, and vertical stretch by 3. State the domain and range.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 032 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 033 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.033">
+<div class="problem-number">Assessment Bank DOK 4.033<span class="problem-meta">U3S4-043 | Section 3.4 | DoK 4</span></div>
+
+<p>Create a cube root function with locator point \((-2,6)\), reflection across the \(x\)-axis, and vertical stretch by 2. Graph and explain your choices.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 033 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 034 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.034">
+<div class="problem-number">Assessment Bank DOK 4.034<span class="problem-meta">U3S4-044 | Section 3.4 | DoK 4</span></div>
+
+<p>Design two different radical functions that share the same locator point but have different domains and ranges. Explain why the differences occur.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 034 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 035 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.035">
+<div class="problem-number">Assessment Bank DOK 4.035<span class="problem-meta">U3S4-045 | Section 3.4 | DoK 4</span></div>
+
+<p>Create a square root function that passes through \((1,0)\) and has endpoint \((-3,-4)\). Verify that your function satisfies both conditions.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 035 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 036 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.036">
+<div class="problem-number">Assessment Bank DOK 4.036<span class="problem-meta">U3S4-046 | Section 3.4 | DoK 4</span></div>
+
+<p>Create a cube root function that passes through \((0,1)\) and has locator point \((8,-3)\). Verify using substitution.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 036 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 037 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.037">
+<div class="problem-number">Assessment Bank DOK 4.037<span class="problem-meta">U3S4-047 | Section 3.4 | DoK 4</span></div>
+
+<p>Design a real-world situation modeled by a square root function.</p><ol class="lower-alpha"><li>Define the variables.</li><li>Write a function.</li><li>State the reasonable domain and range.</li><li>Explain what the endpoint means in context.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 037 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 038 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.038">
+<div class="problem-number">Assessment Bank DOK 4.038<span class="problem-meta">U3S4-048 | Section 3.4 | DoK 4</span></div>
+
+<p>Design a real-world situation modeled by a cube root function.</p><ol class="lower-alpha"><li>Define the variables.</li><li>Write a function.</li><li>State the domain and range.</li><li>Explain why negative inputs may or may not make sense.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 038 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 039 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.039">
+<div class="problem-number">Assessment Bank DOK 4.039<span class="problem-meta">U3S4-049 | Section 3.4 | DoK 4</span></div>
+
+<p>Create an error-analysis problem where a student incorrectly identifies the domain and range of a transformed square root function. Write the incorrect solution, identify the misconception, and correct it.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 039 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 040 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.040">
+<div class="problem-number">Assessment Bank DOK 4.040<span class="problem-meta">U3S4-050 | Section 3.4 | DoK 4</span></div>
+
+<p>Create a multi-representation problem involving an equation, a graph, and a table where students analyze a radical function’s domain, range, locator point, intercepts, and intervals of increase or decrease.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S4-050" src="figures/u3-u3s4-050-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 040 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 041 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.041">
+<div class="problem-number">Assessment Bank DOK 4.041<span class="problem-meta">U3S5-041 | Section 3.5 | DoK 4</span></div>
+
+<p>Create a rational exponent function with domain \([4,\infty)\), range \([-2,\infty)\), and increasing behavior. Write the equation and explain how it meets the conditions.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 041 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 042 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.042">
+<div class="problem-number">Assessment Bank DOK 4.042<span class="problem-meta">U3S5-042 | Section 3.5 | DoK 4</span></div>
+
+<p>Create a rational exponent function with domain all real numbers, range \([0,\infty)\), and symmetry about the \(y\)-axis. Write the equation and justify.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 042 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 043 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.043">
+<div class="problem-number">Assessment Bank DOK 4.043<span class="problem-meta">U3S5-043 | Section 3.5 | DoK 4</span></div>
+
+<p>Create two different rational exponent functions with the same locator point but different domains. Explain why the domains differ.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 043 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 044 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.044">
+<div class="problem-number">Assessment Bank DOK 4.044<span class="problem-meta">U3S5-044 | Section 3.5 | DoK 4</span></div>
+
+<p>Design a real-world situation modeled by \(f(x)=a\sqrt{x-h}+k\).</p><ol class="lower-alpha"><li>Define variables.</li><li>Write the function.</li><li>State a reasonable domain and range.</li><li>Interpret the locator point.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 044 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 045 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.045">
+<div class="problem-number">Assessment Bank DOK 4.045<span class="problem-meta">U3S5-045 | Section 3.5 | DoK 4</span></div>
+
+<p>Design a real-world situation modeled by a cube root or rational exponent function with domain all real numbers.</p><ol class="lower-alpha"><li>Define variables.</li><li>Write the function.</li><li>Explain why negative inputs may make sense.</li><li>Interpret the key features.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 045 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 046 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.046">
+<div class="problem-number">Assessment Bank DOK 4.046<span class="problem-meta">U3S5-046 | Section 3.5 | DoK 4</span></div>
+
+<p>Create an error-analysis problem involving rational exponents.</p><ol class="lower-alpha"><li>Write incorrect student work.</li><li>Identify the misconception.</li><li>Correct the work.</li><li>Explain how to avoid the error.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 046 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 047 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.047">
+<div class="problem-number">Assessment Bank DOK 4.047<span class="problem-meta">U3S5-047 | Section 3.5 | DoK 4</span></div>
+
+<p>Create a function involving rational exponents that passes through \((8,6)\) and has locator point \((0,2)\). Verify using substitution.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 047 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 048 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.048">
+<div class="problem-number">Assessment Bank DOK 4.048<span class="problem-meta">U3S5-048 | Section 3.5 | DoK 4</span></div>
+
+<p>Create a multi-representation problem involving an equation with a rational exponent, a table, and a graph. Students must identify domain, range, intercepts, and intervals of increase/decrease.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S5-048" src="figures/u3-u3s5-048-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 048 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 049 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.049">
+<div class="problem-number">Assessment Bank DOK 4.049<span class="problem-meta">U3S5-049 | Section 3.5 | DoK 4</span></div>
+
+<p>A student argues: “Technology is enough to understand rational exponent graphs.” Critique this claim using algebraic structure, domain restrictions, and graph interpretation.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 049 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 050 START ======================= -->
+<section class="assessment-card" id="U3-DOK4.050">
+<div class="problem-number">Assessment Bank DOK 4.050<span class="problem-meta">U3S5-050 | Section 3.5 | DoK 4</span></div>
+
+<p>Create a comparison task where students must decide which of three rational exponent functions best matches a graph. Include three equations, key graph features, and a justification prompt.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U3S5-050" src="figures/u3-u3s5-050-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check, extension, or discussion-based task. Students should justify choices, verify solutions, connect representations, and explain restrictions or extraneous results rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 050 END ======================= -->
+<!-- ======================= STRICTLY ASSESSMENT BANK END ======================= -->
+</div>
+</body>
+</html>
