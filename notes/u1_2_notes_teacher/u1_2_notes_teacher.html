@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 1.2 - Interval &amp; Inequality Notation Teacher Notes</title>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+      line-height:1.7;
+      color:#333;
+      background:#ffffff;
+      padding:20px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .container{max-width:900px;margin:auto;}
+    .page-break{page-break-before:always;}
+
+    h1{color:#00003d;font-size:2.5em;margin-bottom:20px;line-height:1.15;}
+
+    h2{
+      color:#00003d;
+      font-size:1.8em;
+      margin-top:30px;
+      margin-bottom:15px;
+      border-left:5px solid #00003d;
+      padding-left:10px;
+    }
+
+    h3{
+      color:#004d99;
+      font-size:1.3em;
+      margin-top:16px;
+      margin-bottom:8px;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    p{margin-bottom:10px;}
+    ol, ul{margin-left:22px;}
+    li{margin-bottom:6px;}
+
+    .title-page{
+      min-height:930px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      border:2px solid #00003d;
+      padding:56px;
+      border-radius:10px;
+      background:linear-gradient(180deg,#ffffff 0%,#f6f8ff 100%);
+    }
+
+    .title-kicker{font-weight:800;color:#004d99;text-transform:uppercase;letter-spacing:2px;margin-bottom:18px;}
+    .title-main{font-size:3em;color:#00003d;font-weight:900;line-height:1.1;margin-bottom:18px;}
+    .title-sub{font-size:1.3em;color:#333;margin-bottom:28px;}
+    .quote-box{border-left:6px solid #00003d;background:#eef3ff;padding:18px 22px;border-radius:6px;margin-top:26px;font-size:1.15em;}
+    .title-note{margin-top:26px;color:#555;font-size:1.05em;}
+
+    .intro-text{
+      font-size:1.05em;
+      color:#555;
+      margin-bottom:10px;
+      font-style:italic;
+    }
+
+    .objectives{
+      background:#f0f4f8;
+      padding:20px;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .definition{
+      background:#fffacd;
+      border-left:5px solid #ffd700;
+      padding:16px;
+      margin:16px 0;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .key-point{
+      background:#e8f5e9;
+      border-left:5px solid #4caf50;
+      padding:16px;
+      margin:16px 0;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .strategy-box{
+      background:#eef3ff;
+      border-left:5px solid #4a6fdc;
+      padding:16px;
+      margin:16px 0;
+      border-radius:6px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .annotation-box{
+      border:1px solid #bfc8d8;
+      border-radius:6px;
+      padding:14px;
+      margin:14px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .example-box{
+      border:none;
+      border-radius:0;
+      padding:0;
+      margin:6px 0 12px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .example-box h3{margin-top:0;margin-bottom:8px;}
+
+    .problem{
+      break-inside: avoid;
+      page-break-inside: avoid;
+      margin-bottom:12px;
+    }
+
+    /* =======================
+       PRINT GROUPING CONTROL
+       Use this wrapper when a section title/intro should stay with the first task.
+       This prevents orphaned headers at the bottom of a printed page.
+       Add around only small chunks; do not wrap an entire long section.
+       ======================= */
+    .section-title-task-group{
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    section{margin-bottom:30px;}
+
+    /* =======================
+       WORKSPACE HEIGHT CONTROL
+       Adjust these heights if you want more or less student writing space.
+       Use classes such as workspace-180, workspace-260, workspace-discuss, etc.
+       ======================= */
+
+    .workspace,
+    .workspace-100,
+    .workspace-120,
+    .workspace-140,
+    .workspace-150,
+    .workspace-180,
+    .workspace-200,
+    .workspace-220,
+    .workspace-240,
+    .workspace-260,
+    .workspace-300,
+    .workspace-350,
+    .workspace-400,
+    .workspace-500,
+    .workspace-600{
+      width:100%;
+      margin-top:8px;
+      border-bottom:0px solid #000;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .workspace-100{height:100px;}
+    .workspace-120{height:120px;}
+    .workspace-140{height:140px;}
+    .workspace-150{height:150px;}
+    .workspace-180{height:180px;}
+    .workspace-200{height:200px;}
+    .workspace-220{height:220px;}
+    .workspace-240{height:240px;}
+    .workspace-260{height:260px;}
+    .workspace-300{height:300px;}
+    .workspace-350{height:350px;}
+    .workspace-400{height:400px;}
+    .workspace-500{height:500px;}
+    .workspace-600{height:600px;}
+    .workspace-discuss{height:220px;}
+    .workspace-context{height:300px;}
+
+    .workspace,
+    .workspace-100,
+    .workspace-120,
+    .workspace-140,
+    .workspace-150,
+    .workspace-180,
+    .workspace-200,
+    .workspace-220,
+    .workspace-240,
+    .workspace-260,
+    .workspace-300,
+    .workspace-350,
+    .workspace-400,
+    .workspace-500,
+    .workspace-600,
+    .workspace-discuss,
+    .workspace-context{
+      border-top:1px solid #e4e4e4;
+    }
+
+    /* =======================
+       TABLE CONTROL
+       Adjust table padding here if tables need to become more compact.
+       ======================= */
+
+    .table-block{
+      margin:10px auto 12px auto;
+      border-collapse:collapse;
+    }
+    .table-block td,
+    .table-block th{
+      border:1px solid #000;
+      padding:8px 18px;
+      text-align:center;
+    }
+
+    /* =======================
+       GRAPH / IMAGE SIZE CONTROL
+       Change max-width below to manually resize all graphs at once.
+       Use the optional graph-sm / graph-md / graph-lg classes for individual control.
+       ======================= */
+    .graph-block{
+      margin:12px 0 10px 0;
+      text-align:center;
+      break-inside:avoid;
+      page-break-inside:avoid;
+    }
+    .graph-block img{
+      display:block;
+      margin:0 auto;
+      height:auto;
+      max-width:360px;
+      width:100%;
+      border:1px solid #ccc;
+      background:#fff;
+    }
+    .graph-sm img{max-width:300px;}
+    .graph-md img{max-width:360px;}
+    .graph-lg img{max-width:430px;}
+
+    /* =======================
+       NUMBER LINE CONTROL
+       These are editable HTML number lines, not images. Adjust width/height here.
+       ======================= */
+    .number-line{
+      width:520px;
+      max-width:100%;
+      height:92px;
+      margin:12px auto 16px auto;
+      position:relative;
+      break-inside:avoid;
+      page-break-inside:avoid;
+    }
+    .nl-axis{position:absolute;left:36px;right:36px;top:42px;border-top:3px solid #111;}
+    .nl-arrow-left,.nl-arrow-right{position:absolute;top:34px;font-size:22px;font-weight:900;line-height:1;}
+    .nl-arrow-left{left:20px;}.nl-arrow-right{right:20px;}
+    .tick{position:absolute;top:34px;width:2px;height:18px;background:#111;}
+    .tick-label{position:absolute;top:56px;transform:translateX(-50%);font-size:0.9em;}
+    .shade{position:absolute;top:38px;height:8px;background:#111;}
+    .point{position:absolute;top:33px;width:20px;height:20px;border:3px solid #111;border-radius:50%;background:#fff;transform:translateX(-50%);}
+    .point.closed{background:#111;}
+
+    .two-column{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      align-items:start;
+    }
+
+
+
+    /* =======================
+       TEACHER ANSWER CONTROL
+       Teacher-only notes are red and compact. Existing workspace remains unchanged.
+       ======================= */
+    .teacher-answer{
+      color:#b00000;
+      border-left:4px solid #b00000;
+      background:#fff6f6;
+      padding:10px 12px;
+      margin:10px 0 12px 0;
+      font-size:0.95em;
+      break-inside:avoid;
+      page-break-inside:avoid;
+    }
+    .teacher-answer p{margin-bottom:6px;}
+    .teacher-answer ul,
+    .teacher-answer ol{margin-left:22px;}
+    .teacher-answer li{margin-bottom:4px;}
+
+    @media print{
+      body{padding:12px;}
+      .title-page{min-height:9.7in;}
+      .two-column{display:block;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <section class="title-page">
+      <div class="title-kicker">Precalculus - Unit 01</div>
+      <div class="title-main">Section 1.2<br>Interval &amp; Inequality Notation<br><span style="font-size:0.45em;letter-spacing:1px;">Teacher Notes</span></div>
+      <div class="title-sub">Describing sets of numbers with words, symbols, intervals, and number lines.</div>
+      <div class="quote-box">
+        <p><strong>Mathematical idea:</strong> Notation is a language for precision. A bracket, parenthesis, endpoint, or arrow can completely change which numbers belong to a set.</p>
+      </div>
+      <p class="title-note">In this section, you will learn how to describe solution sets clearly, move between representations, and justify whether endpoints are included or excluded.</p>
+    </section>
+
+    <div class="page-break"></div>
+
+    <section>
+      <div class="problem">
+        <!-- LEARNING TARGET START -->
+        <h2>Learning Target</h2>
+        <div class="objectives">
+          <p>Students will represent and interpret sets using interval or inequality notation and graphically on a number line.</p>
+          <p><strong>I can statements</strong></p>
+          <ul>
+            <li>I can translate between inequalities and interval notation.</li>
+            <li>I can represent solution sets graphically on a number line.</li>
+            <li>I can determine whether endpoints are included or excluded and justify my reasoning.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- WHAT’S TO COME START -->
+        <h2>What’s To Come</h2>
+        <p>
+          Later in this section, you will return to the task below. For now, do not solve it. Instead, annotate it individually. Circle anything familiar, underline symbols or directions that seem important, and write notes about what information you think will be needed.
+        </p>
+        <p>As you annotate, ask yourself: What values are allowed? Which endpoints matter? Should the endpoint be included or excluded? How could words, inequalities, interval notation, and a number line all describe the same set?</p>
+
+        <div class="annotation-box">
+          <p><strong>Future Task</strong></p>
+          <p>A community swimming pool allows children to use the deep end only if their height is at least $48$ inches and less than $72$ inches.</p>
+          <ol>
+            <li>Define a variable for height.</li>
+            <li>Write the allowed heights as an inequality.</li>
+            <li>Write the same set in interval notation.</li>
+            <li>Represent the set on a number line.</li>
+            <li>Justify why one endpoint is included and the other is excluded.</li>
+            <li>Create a second real-world situation with almost the same graph but different endpoint inclusion, then explain the difference.</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+          <div class="teacher-answer">
+            <p><strong>Teacher Note</strong></p>
+            <p>Do not solve this yet. Listen for students noticing “at least,” “less than,” endpoint inclusion, and the need for multiple representations. The extension is DOK 4 because students create a near-matching context and justify the endpoint change.</p>
+          </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- INTRO START -->
+        <h2>Intro</h2>
+
+        <div class="strategy-box">
+          <p><strong>Directions</strong></p>
+          <p>Read the introduction aloud with a partner or in a small group. As you read, annotate the text by marking important ideas, circling key vocabulary, and writing short notes about connections, questions, or predictions in the margins.</p>
+        </div>
+
+        <p>
+          Many mathematical answers are not single numbers. Sometimes the answer is a whole set of values: every number greater than $3$, all values from $-2$ to $5$, or all inputs that make sense in a situation. Interval and inequality notation help us describe those sets clearly and efficiently.
+        </p>
+
+        <p>
+          Inequality notation uses symbols such as $<$, $\le$, $>$, and $\ge$ to compare a variable to one or more boundary values. Interval notation uses parentheses and brackets to show the same information in a compact form. Parentheses mean an endpoint is not included. Brackets mean an endpoint is included.
+        </p>
+
+        <p>
+          Number lines give a visual representation of the same set. Open circles show excluded endpoints, closed circles show included endpoints, and shading shows all values that belong to the set. Arrows show that a set continues forever in one direction.
+        </p>
+
+        <p>
+          This kind of notation matters throughout precalculus because it is used to describe solution sets, domain, range, restrictions, and intervals where a function behaves in a certain way. Small notation choices are important because they communicate exactly which values are allowed.
+        </p>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>Why are some mathematical answers sets instead of single numbers?</li>
+            <li>What is the difference between a parenthesis and a bracket in interval notation?</li>
+            <li>What does an open circle mean on a number line?</li>
+            <li>Why does this notation matter when describing domain, range, or restrictions?</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+          <div class="teacher-answer">
+            <p><strong>Sample Discussion Responses</strong></p>
+            <ol>
+              <li>Some problems describe many possible values, not one exact answer.</li>
+              <li>Parentheses exclude an endpoint; brackets include an endpoint.</li>
+              <li>An open circle means the endpoint is not part of the solution set.</li>
+              <li>Domain, range, and restrictions must communicate exactly which values are allowed.</li>
+            </ol>
+          </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- INEQUALITIES DESCRIBE SETS START -->
+        <h2>Inequalities Describe Sets of Values</h2>
+        <p>An inequality describes all values that make a statement true. The endpoint is the boundary value, and the inequality symbol tells whether that boundary is included.</p>
+        <div class="definition">
+          <p><strong>Inequality Symbols</strong></p>
+          <ul>
+            <li>$x&lt;5$ means values less than $5$.</li>
+            <li>$x\le5$ means values less than or equal to $5$.</li>
+            <li>$x&gt;5$ means values greater than $5$.</li>
+            <li>$x\ge5$ means values greater than or equal to $5$.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- EXAMPLE START -->
+          <h3>Example 1</h3>
+          <p>Describe each set in words and state whether the endpoint is included.</p>
+          <ol>
+            <li>$x\ge -4$</li>
+            <li>$x&lt;7$</li>
+            <li>$-2\le x&lt;5$</li>
+          </ol>
+          <div class="workspace-240"></div>
+          <div class="teacher-answer">
+            <p><strong>Example 1 Answer</strong></p>
+            <ol>
+              <li>$x\ge -4$: all values greater than or equal to $-4$; endpoint $-4$ is included.</li>
+              <li>$x&lt;7$: all values less than $7$; endpoint $7$ is excluded.</li>
+              <li>$-2\le x&lt;5$: all values from $-2$ to $5$; $-2$ included, $5$ excluded.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 1</h3>
+          <p>Describe each set in words and state whether each endpoint is included.</p>
+          <ol>
+            <li>$x&gt;-3$</li>
+            <li>$x\le8$</li>
+            <li>$1&lt;x\le6$</li>
+          </ol>
+          <div class="workspace-220"></div>
+          <div class="teacher-answer">
+            <p><strong>You Try It 1 Answer</strong></p>
+            <ol>
+              <li>$x&gt;-3$: greater than $-3$; $-3$ excluded.</li>
+              <li>$x\le8$: less than or equal to $8$; $8$ included.</li>
+              <li>$1&lt;x\le6$: between $1$ and $6$; $1$ excluded, $6$ included.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>How does the symbol tell you whether the endpoint is included?</li>
+            <li>Why is $x&lt;7$ different from $x\le7$ even though they look almost the same?</li>
+            <li>What does a compound inequality such as $-2\le x&lt;5$ communicate?</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+          <div class="teacher-answer">
+            <p><strong>Sample Discussion Responses</strong></p>
+            <ol>
+              <li>$\le$ and $\ge$ include the endpoint; $&lt;$ and $&gt;$ exclude it.</li>
+              <li>$x&lt;7$ leaves out $7$; $x\le7$ includes $7$.</li>
+              <li>A compound inequality gives a lower boundary, upper boundary, and inclusion information for each side.</li>
+            </ol>
+          </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- INTERVAL NOTATION START -->
+        <h2>Interval Notation Compresses the Same Information</h2>
+        <p>Interval notation gives a compact way to write a set from left to right. The smaller boundary is written first, then the larger boundary.</p>
+        <div class="key-point">
+          <p><strong>Endpoint Notation</strong></p>
+          <ul>
+            <li>Use $($ or $)$ when an endpoint is excluded.</li>
+            <li>Use $[$ or $]$ when an endpoint is included.</li>
+            <li>Always use parentheses with $-\infty$ or $\infty$ because infinity is not a number you can reach or include.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- EXAMPLE START -->
+          <h3>Example 2</h3>
+          <p>Translate each inequality into interval notation.</p>
+          <ol>
+            <li>$-2\le x&lt;5$</li>
+            <li>$x&gt;-3$</li>
+            <li>$x\le8$</li>
+          </ol>
+          <div class="workspace-240"></div>
+          <div class="teacher-answer">
+            <p><strong>Example 2 Answer</strong></p>
+            <ol>
+              <li>$[-2,5)$</li>
+              <li>$(-3,\infty)$</li>
+              <li>$(-\infty,8]$</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 2</h3>
+          <p>Translate each interval into inequality notation.</p>
+          <ol>
+            <li>$(3,9]$</li>
+            <li>$(-\infty,7)$</li>
+            <li>$[-1,6)$</li>
+          </ol>
+          <div class="workspace-240"></div>
+          <div class="teacher-answer">
+            <p><strong>You Try It 2 Answer</strong></p>
+            <ol>
+              <li>$3&lt;x\le9$</li>
+              <li>$x&lt;7$</li>
+              <li>$-1\le x&lt;6$</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>Why does $(-\infty,7)$ use a parenthesis next to $-\infty$?</li>
+            <li>How can you tell whether the left endpoint is included?</li>
+            <li>Why must interval notation be written from left to right?</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+          <div class="teacher-answer">
+            <p><strong>Sample Discussion Responses</strong></p>
+            <ol>
+              <li>Infinity is not a reachable endpoint, so it cannot be included.</li>
+              <li>The left symbol tells whether the left boundary is included: bracket means yes, parenthesis means no.</li>
+              <li>Writing left to right preserves the order on the number line and avoids reversing the set.</li>
+            </ol>
+          </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title-task-group">
+        <div class="problem">
+          <!-- NUMBER LINES REPRESENT THE SET START -->
+          <h2>Number Lines Represent the Set Visually</h2>
+          <p>A number line shows the same information using endpoints and shading. This visual form is useful because it makes inclusion, exclusion, and direction easy to see.</p>
+          <div class="definition">
+            <p><strong>Visual Meaning</strong></p>
+            <ul>
+              <li>Open circle: endpoint is excluded.</li>
+              <li>Closed circle: endpoint is included.</li>
+              <li>Shading: all values in the set.</li>
+              <li>Arrow: the set continues forever.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="problem">
+          <div class="example-box">
+            <!-- EXAMPLE START -->
+            <h3>Example 3</h3>
+            <p>Write the number line in inequality notation and interval notation.</p>
+            <div class="graph-block graph-lg"><img src="figures/u1_2_numberline_example3.png" alt="Number line showing closed endpoint at -2, open endpoint at 4, shaded between."></div>
+            <div class="workspace-220"></div>
+          <div class="teacher-answer">
+            <p><strong>Example 3 Answer</strong></p>
+            <p>The graph shows a closed endpoint at $-2$ and an open endpoint at $4$, shaded between.</p>
+            <p><strong>Inequality:</strong> $-2\le x&lt;4$</p>
+            <p><strong>Interval:</strong> $[-2,4)$</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 3</h3>
+          <p>Write the number line in inequality notation and interval notation.</p>
+          <div class="graph-block graph-lg"><img src="figures/u1_2_numberline_youtry3.png" alt="Number line showing open endpoint at -1 with shading to the right."></div>
+          <div class="workspace-220"></div>
+          <div class="teacher-answer">
+            <p><strong>You Try It 3 Answer</strong></p>
+            <p>The graph shows an open endpoint at $-1$ with shading to the right.</p>
+            <p><strong>Inequality:</strong> $x&gt;-1$</p>
+            <p><strong>Interval:</strong> $(-1,\infty)$</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>How does the graph show whether an endpoint is included?</li>
+            <li>How does shading help you read the inequality?</li>
+            <li>How can the same graph be described in both interval and inequality notation?</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+          <div class="teacher-answer">
+            <p><strong>Sample Discussion Responses</strong></p>
+            <ol>
+              <li>Open means excluded; closed means included.</li>
+              <li>Shading shows all values that satisfy the set; direction matters for inequalities.</li>
+              <li>The graph, inequality, and interval should name the same endpoints and the same inclusion choices.</li>
+            </ol>
+          </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- TRANSLATING BETWEEN REPRESENTATIONS START -->
+        <h2>Translating Between Representations</h2>
+        <p>A complete understanding means you can move between words, inequalities, interval notation, and number-line graphs. Each representation should describe exactly the same set.</p>
+        <table class="table-block">
+          <tr><th>Words</th><th>Inequality</th><th>Interval</th></tr>
+          <tr><td>At least $2$ and less than $9$</td><td>$2\le x&lt;9$</td><td>$[2,9)$</td></tr>
+          <tr><td>Greater than $-5$ but no more than $3$</td><td>$-5&lt;x\le3$</td><td>$(-5,3]$</td></tr>
+        </table>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- EXAMPLE START -->
+          <h3>Example 4</h3>
+          <p>A solution set is described as: all real numbers at least $2$ and less than $9$.</p>
+          <ol>
+            <li>Write the set as an inequality.</li>
+            <li>Write the set in interval notation.</li>
+            <li>Describe its number-line graph.</li>
+          </ol>
+          <div class="workspace-260"></div>
+          <div class="teacher-answer">
+            <p><strong>Example 4 Answer</strong></p>
+            <ol>
+              <li>$2\le x&lt;9$</li>
+              <li>$[2,9)$</li>
+              <li>Closed circle at $2$, open circle at $9$, shaded between.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 4</h3>
+          <p>A solution set is described as: all real numbers greater than $-5$ but no more than $3$.</p>
+          <ol>
+            <li>Write the set as an inequality.</li>
+            <li>Write the set in interval notation.</li>
+            <li>Explain which endpoints are included.</li>
+          </ol>
+          <div class="workspace-260"></div>
+          <div class="teacher-answer">
+            <p><strong>You Try It 4 Answer</strong></p>
+            <ol>
+              <li>$-5&lt;x\le3$</li>
+              <li>$(-5,3]$</li>
+              <li>$-5$ is excluded because the set is greater than $-5$; $3$ is included because “no more than $3$” means $3$ is allowed.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>What phrase tells you that $2$ should be included in Example 4?</li>
+            <li>What phrase tells you that $9$ should be excluded?</li>
+            <li>Why can words sometimes be harder to interpret than symbols?</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+          <div class="teacher-answer">
+            <p><strong>Sample Discussion Responses</strong></p>
+            <ol>
+              <li>“At least” tells us $2$ is included.</li>
+              <li>“Less than” tells us $9$ is excluded.</li>
+              <li>Words can be ambiguous unless students slow down and identify boundary phrases.</li>
+            </ol>
+          </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title-task-group">
+        <div class="problem">
+          <!-- REASONING ABOUT ENDPOINTS START -->
+          <h2>Reasoning About Endpoints</h2>
+          <p>Endpoint decisions must be justified. In pure math, the symbol or bracket tells you whether the endpoint belongs. In context, the situation determines whether a boundary value is allowed.</p>
+        </div>
+
+        <div class="problem">
+          <div class="example-box">
+            <!-- EXAMPLE START -->
+            <h3>Example 5</h3>
+            <p>A student writes $x&gt;-1$ as $[-1,\infty)$. Identify the mistake and write the correct interval notation.</p>
+            <div class="workspace-220"></div>
+          <div class="teacher-answer">
+            <p><strong>Example 5 Answer</strong></p>
+            <p>The student included $-1$ by using a bracket, but $x&gt;-1$ excludes $-1$.</p>
+            <p><strong>Correct interval notation:</strong> $(-1,\infty)$</p>
+            <p><strong>Misconception to watch:</strong> Students may think the endpoint is always written with a bracket because it appears in the inequality.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 5</h3>
+          <p>A student writes $[0,7)$ as $0\le x\le7$. Identify the mistake and write the correct inequality notation.</p>
+          <div class="workspace-220"></div>
+          <div class="teacher-answer">
+            <p><strong>You Try It 5 Answer</strong></p>
+            <p>The interval $[0,7)$ includes $0$ but excludes $7$.</p>
+            <p><strong>Correct inequality:</strong> $0\le x&lt;7$</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>Why is the mistake in Example 5 more than just a notation issue?</li>
+            <li>How does one endpoint change the meaning of a set?</li>
+            <li>Why does infinity never get a bracket?</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+          <div class="teacher-answer">
+            <p><strong>Sample Discussion Responses</strong></p>
+            <ol>
+              <li>It changes the actual values allowed in the set, not just the notation.</li>
+              <li>One endpoint can determine whether a boundary case is allowed or rejected.</li>
+              <li>Infinity is a direction, not a reachable endpoint, so it is never included.</li>
+            </ol>
+          </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- CONTEXT AND RESTRICTIONS START -->
+        <h2>Context and Restrictions</h2>
+        <p>In real situations, endpoints often come from physical limits, rules, or definitions. A value may be excluded because it is impossible, unsafe, unavailable, or outside the meaning of the variable.</p>
+        <div class="key-point">
+          <p><strong>Context Question:</strong> Does the boundary value itself make sense in the situation?</p>
+          <p>If yes, include it. If no, exclude it.</p>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- CONTEXT TASK START -->
+          <h3>Context Task</h3>
+          <p>A ride requires a height of at least $48$ inches and no more than $78$ inches.</p>
+          <ol>
+            <li>Write the allowed heights as an inequality.</li>
+            <li>Write the allowed heights in interval notation.</li>
+            <li>Explain why both endpoints are included.</li>
+          </ol>
+          <div class="workspace-260"></div>
+          <div class="teacher-answer">
+            <p><strong>Context Task Answer</strong></p>
+            <ol>
+              <li>$48\le h\le78$</li>
+              <li>$[48,78]$</li>
+              <li>Both phrases include equality: “at least” includes $48$ and “no more than” includes $78$.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- PARTNER CONTEXT TASK START -->
+          <h3>Partner Context Task</h3>
+          <p>A school club accepts students who have completed more than $10$ service hours but fewer than $40$ service hours.</p>
+          <ol>
+            <li>Write the allowed service hours as an inequality.</li>
+            <li>Write the set in interval notation.</li>
+            <li>Explain why both endpoints are excluded.</li>
+          </ol>
+          <div class="workspace-260"></div>
+          <div class="teacher-answer">
+            <p><strong>Partner Context Task Answer</strong></p>
+            <ol>
+              <li>$10&lt;h&lt;40$</li>
+              <li>$(10,40)$</li>
+              <li>“More than” excludes $10$ and “fewer than” excludes $40$.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- RETURN TO THE FUTURE TASK START -->
+        <h2>Return to the Future Task</h2>
+        <p>Use what you learned to revisit the task from the beginning of the notes.</p>
+        <div class="annotation-box">
+          <p>A community swimming pool allows children to use the deep end only if their height is at least $48$ inches and less than $72$ inches.</p>
+          <ol>
+            <li>Define a variable for height.</li>
+            <li>Write the allowed heights as an inequality.</li>
+            <li>Write the same set in interval notation.</li>
+            <li>Represent the set on a number line.</li>
+            <li>Justify why one endpoint is included and the other is excluded.</li>
+            <li>Create a second real-world situation with almost the same graph but different endpoint inclusion, then explain the difference.</li>
+          </ol>
+        </div>
+        <div class="workspace-400"></div>
+          <div class="teacher-answer">
+            <p><strong>Future Task Answer / Facilitation Notes</strong></p>
+            <ol>
+              <li>Let $h$ represent height in inches.</li>
+              <li>$48\le h&lt;72$</li>
+              <li>$[48,72)$</li>
+              <li>Closed circle at $48$, open circle at $72$, shaded between.</li>
+              <li>$48$ is included because “at least” allows exactly $48$; $72$ is excluded because “less than” does not allow exactly $72$.</li>
+              <li>Possible extension: A program accepts ages greater than $48$ months and less than $72$ months, giving $(48,72)$; same endpoints but different inclusion.</li>
+            </ol>
+          </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- SUMMARY START -->
+        <h2>Summary</h2>
+        <div class="key-point">
+          <ul>
+            <li>Inequality notation uses comparison symbols to describe a set of values.</li>
+            <li>Interval notation uses parentheses and brackets to show excluded or included endpoints.</li>
+            <li>Number lines show solution sets visually with open circles, closed circles, shading, and arrows.</li>
+            <li>Parentheses mean an endpoint is excluded.</li>
+            <li>Brackets mean an endpoint is included.</li>
+            <li>Infinity always uses parentheses because it is not a value that can be included.</li>
+            <li>Context determines whether boundary values are reasonable or allowed.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- COMMON MISTAKES START -->
+        <h2>Common Mistakes</h2>
+        <div class="strategy-box">
+          <ul>
+            <li><strong>Using a bracket with infinity:</strong> $\infty$ and $-\infty$ always use parentheses.</li>
+            <li><strong>Mixing up parentheses and brackets:</strong> parentheses exclude endpoints; brackets include endpoints.</li>
+            <li><strong>Reading the number line backward:</strong> interval notation must be written from left to right.</li>
+            <li><strong>Ignoring endpoint words:</strong> phrases like “at least,” “no more than,” and “less than” determine inclusion.</li>
+            <li><strong>Using the wrong circle on a number line:</strong> open means excluded; closed means included.</li>
+            <li><strong>Forgetting context:</strong> the situation determines whether boundary values make sense.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
