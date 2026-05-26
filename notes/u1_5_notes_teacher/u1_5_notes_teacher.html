@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Section 1.5 - Limits Graphically Teacher Notes</title>
+<script>
+    window.MathJax = {tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]}};
+  </script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.7;color:#333;background:#ffffff;padding:20px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .container{max-width:900px;margin:auto;}.page-break{page-break-before:always;}
+    h1{color:#00003d;font-size:2.5em;margin-bottom:20px;line-height:1.15;}
+    h2{color:#00003d;font-size:1.8em;margin-top:30px;margin-bottom:15px;border-left:5px solid #00003d;padding-left:10px;}
+    h3{color:#004d99;font-size:1.3em;margin-top:16px;margin-bottom:8px;break-after:avoid;page-break-after:avoid;}
+    p{margin-bottom:10px;}ol,ul{margin-left:22px;}li{margin-bottom:6px;}
+    .title-page{min-height:930px;display:flex;flex-direction:column;justify-content:center;border:2px solid #00003d;padding:56px;border-radius:10px;background:linear-gradient(180deg,#ffffff 0%,#f6f8ff 100%);}
+    .title-kicker{font-weight:800;color:#004d99;text-transform:uppercase;letter-spacing:2px;margin-bottom:18px;}.title-main{font-size:3em;color:#00003d;font-weight:900;line-height:1.1;margin-bottom:18px;}.title-sub{font-size:1.3em;color:#333;margin-bottom:28px;}.quote-box{border-left:6px solid #00003d;background:#eef3ff;padding:18px 22px;border-radius:6px;margin-top:26px;font-size:1.15em;}.title-note{margin-top:26px;color:#555;font-size:1.05em;}
+    .objectives{background:#f0f4f8;padding:20px;border-radius:6px;break-inside:avoid;page-break-inside:avoid;}.definition{background:#fffacd;border-left:5px solid #ffd700;padding:16px;margin:16px 0;border-radius:6px;break-inside:avoid;page-break-inside:avoid;}.key-point{background:#e8f5e9;border-left:5px solid #4caf50;padding:16px;margin:16px 0;border-radius:6px;break-inside:avoid;page-break-inside:avoid;}.strategy-box{background:#eef3ff;border-left:5px solid #4a6fdc;padding:16px;margin:16px 0;border-radius:6px;break-inside:avoid;page-break-inside:avoid;}.annotation-box{border:1px solid #bfc8d8;border-radius:6px;padding:14px;margin:14px 0;break-inside:avoid;page-break-inside:avoid;}.example-box{border:none;border-radius:0;padding:0;margin:6px 0 12px 0;break-inside:avoid;page-break-inside:avoid;}.example-box h3{margin-top:0;margin-bottom:8px;}.problem{break-inside:avoid;page-break-inside:avoid;margin-bottom:12px;}
+    /* ======================= PRINT GROUPING CONTROL ======================= */
+    .section-title-task-group{break-inside:avoid;page-break-inside:avoid;}section{margin-bottom:30px;}
+    /* ======================= WORKSPACE HEIGHT CONTROL ======================= */
+    .workspace,.workspace-100,.workspace-120,.workspace-140,.workspace-150,.workspace-180,.workspace-200,.workspace-220,.workspace-240,.workspace-260,.workspace-300,.workspace-350,.workspace-400,.workspace-500,.workspace-600,.workspace-discuss,.workspace-context{width:100%;margin-top:8px;border-bottom:0 solid #000;break-inside:avoid;page-break-inside:avoid;border-top:1px solid #e4e4e4;}
+    .workspace-100{height:100px;}.workspace-120{height:120px;}.workspace-140{height:140px;}.workspace-150{height:150px;}.workspace-180{height:180px;}.workspace-200{height:200px;}.workspace-220{height:220px;}.workspace-240{height:240px;}.workspace-260{height:260px;}.workspace-300{height:300px;}.workspace-350{height:350px;}.workspace-400{height:400px;}.workspace-500{height:500px;}.workspace-600{height:600px;}.workspace-discuss{height:220px;}.workspace-context{height:300px;}
+    /* ======================= TABLE CONTROL ======================= */
+    .table-block{margin:10px auto 12px auto;border-collapse:collapse;}.table-block td,.table-block th{border:1px solid #000;padding:8px 18px;text-align:center;}
+    /* ======================= GRAPH / IMAGE SIZE CONTROL ======================= */
+    .graph-block{margin:12px 0 10px 0;text-align:center;break-inside:avoid;page-break-inside:avoid;}.graph-block img{display:block;margin:0 auto;height:auto;max-width:360px;width:100%;border:1px solid #ccc;background:#fff;}.graph-sm img{max-width:300px;}.graph-md img{max-width:360px;}.graph-lg img{max-width:430px;}
+    .two-column{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;}
+    @media print{body{padding:12px;}.title-page{min-height:9.7in;}.two-column{display:block;}}
+  
+
+    /* ======================= TEACHER ANSWER CONTROL =======================
+       Teacher notes are inserted as compact red blocks.
+       Student workspace and original layout are preserved.
+       ======================= */
+    .teacher-answer{
+      color:#b00000;
+      background:#fff5f5;
+      border-left:5px solid #b00000;
+      padding:10px 12px;
+      margin:10px 0 12px 0;
+      border-radius:5px;
+      font-size:0.96em;
+      break-inside:avoid;
+      page-break-inside:avoid;
+    }
+    .teacher-answer p{margin-bottom:6px;}
+    .teacher-answer ul,.teacher-answer ol{margin-left:22px;margin-bottom:6px;}
+    .teacher-answer li{margin-bottom:4px;}
+    .teacher-answer strong{color:#8a0000;}
+</style>
+</head>
+<body>
+<div class="container">
+<section class="title-page">
+<div class="title-kicker">Precalculus - Unit 01</div>
+<div class="title-main">Section 1.5<br/>Limits Graphically</div>
+<div class="title-sub">Reading what a function approaches, not just what value it has.</div>
+<div class="quote-box"><p><strong>Mathematical idea:</strong> A limit asks where the graph is heading. Sometimes the path matters more than the point.</p></div>
+<p class="title-note">In this section, you will use graphs to compare left-hand behavior, right-hand behavior, and actual function values near holes, jumps, and vertical asymptotes.</p>
+</section>
+<div class="page-break"></div>
+<section>
+<div class="problem">
+<!-- LEARNING TARGET START -->
+<h2>Learning Target</h2>
+<div class="objectives">
+<p>Students will analyze limits graphically by examining how functions behave as $x$ approaches a value from the left and right.</p>
+<p><strong>I can statements</strong></p>
+<ul>
+<li>I can determine left-hand and right-hand limits from a graph.</li>
+<li>I can determine whether a limit exists using left-hand and right-hand limits near jumps, holes, and vertical asymptotes.</li>
+<li>I can distinguish between the limit of a function and the actual function value shown on a graph.</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<div class="problem">
+<!-- WHAT'S TO COME START -->
+<h2>What’s To Come</h2>
+<p>Later in this section, you will return to the task below. For now, do not solve it. Instead, annotate it individually. Circle anything familiar, underline symbols or directions that seem important, and write notes about what information you think will be needed.</p>
+<p>As you annotate, ask yourself: From which side is the graph being approached? What value does the graph seem to approach? Is the actual point on the graph the same as the approached value? What kind of behavior would make a limit fail to exist?</p>
+<div class="annotation-box">
+<p><strong>Future Task</strong></p>
+<p>A function has several special behaviors shown on one graph.</p>
+<div class="graph-block graph-md"><img alt="Piecewise graph with a hole, point value difference, and jump behavior" src="figures/u1_5_multi_behavior.png"/></div>
+<ol>
+<li>Determine $\lim_{x\to -2^-} f(x)$ and $\lim_{x\to -2^+} f(x)$.</li>
+<li>Determine whether $\lim_{x\to -2} f(x)$ exists and compare it to $f(-2)$.</li>
+<li>Determine whether $\lim_{x\to 2} f(x)$ exists.</li>
+<li>Explain which feature of the graph creates the most important difference between a limit and a function value.</li>
+</ol>
+</div>
+<div class="workspace-discuss"></div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<p><strong>Facilitation:</strong> Do not solve yet. Listen for whether students notice one-sided notation, filled versus open points, and the difference between a value the graph approaches and a filled point.</p>
+<ul>
+<li>At $x=-2$, students should eventually notice two different one-sided behaviors and a separate filled point.</li>
+<li>At $x=2$, students should notice a jump: the left side approaches $-1$ while the right side approaches $3$.</li>
+<li>Main preview idea: limits are about nearby graph behavior; function values are about filled points.</li>
+</ul>
+</div></div>
+</section>
+<section>
+<div class="problem">
+<!-- INTRO START -->
+<h2>Intro</h2>
+<div class="strategy-box">
+<p><strong>Directions</strong></p>
+<p>Read the introduction aloud with a partner or in a small group. As you read, annotate the text by marking important ideas, circling key vocabulary, and writing short notes about connections, questions, or predictions in the margins.</p>
+</div>
+<p>A limit describes what value a function approaches as the input gets close to a specific number. The key word is <em>approaches</em>. When we ask for a limit, we are watching the graph move toward an $x$-value from nearby points, not simply looking at the point directly above that $x$-value.</p>
+<p>Sometimes the limit and the function value are the same. This happens on many smooth, connected parts of graphs. But sometimes the graph has a hole, jump, or separate filled point. In those cases, the value the graph approaches may be different from the actual value of the function.</p>
+<p>Limits are read from both sides. The left-hand limit describes what happens as $x$ approaches from values less than the target. The right-hand limit describes what happens as $x$ approaches from values greater than the target. A two-sided limit exists only when those two one-sided limits agree.</p>
+<p>Graphical limits help us build language for behavior. Instead of only asking “What is the output?” we ask “What does the graph get close to?” That shift is one of the foundations for later calculus.</p>
+</div>
+<div class="problem">
+<div class="strategy-box">
+<p><strong>Stop and Discuss</strong></p>
+<ol>
+<li>What does the word “approaches” mean when reading a graph?</li>
+<li>Why might a limit be different from a function value?</li>
+<li>What must be true about the left-hand and right-hand limits for the two-sided limit to exist?</li>
+<li>Which graph features from the reading might cause confusion?</li>
+</ol>
+</div>
+<div class="workspace-discuss"></div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<ol>
+<li>“Approaches” means the graph gets close to a value as $x$ moves toward a target from nearby inputs.</li>
+<li>A limit can differ from a function value when there is a hole, jump, or separate filled point.</li>
+<li>The left-hand and right-hand limits must approach the same $y$-value.</li>
+<li>Likely confusion: filled point vs. open circle, jumps, holes, and asymptotes.</li>
+</ol>
+<p><strong>Misconception to watch:</strong> Students may point to the filled dot automatically. Push them to trace the graph from both sides.</p>
+</div></div>
+</section>
+<section>
+<div class="problem">
+<!-- LIMITS DESCRIBE APPROACHING BEHAVIOR START -->
+<h2>Limits Describe Approaching Behavior</h2>
+<p>The notation $\lim_{x\to a} f(x)$ asks what value $f(x)$ approaches as $x$ gets close to $a$.</p>
+<div class="definition"><p><strong>Graphical Limit:</strong> Follow the graph toward the target $x$-value from nearby inputs. The limit is the $y$-value the graph approaches, if both sides approach the same value.</p></div>
+</div>
+<div class="problem">
+<div class="example-box">
+<!-- EXAMPLE 1 START -->
+<h3>Example 1</h3>
+<p>Use the graph to determine $\lim_{x\to 1} f(x)$.</p>
+<div class="graph-block graph-md"><img alt="Continuous parabola with target x equals 1" src="figures/u1_5_continuous_limit.png"/></div>
+<div class="workspace-220"></div>
+</div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<p>From the graph, as $x	o 1$, the curve approaches $y=-2$ from both sides.</p>
+<p><strong>Answer:</strong> $\lim_{x	o 1} f(x)=-2$.</p>
+<p><strong>Facilitation:</strong> Emphasize that this example is intentionally smooth, so the limit and visible function value agree.</p>
+</div></div>
+<div class="problem">
+<div class="example-box">
+<h3>You Try It 1</h3>
+<p>On a smooth connected graph, $f(x)$ approaches $4$ as $x$ approaches $-3$. What is $\lim_{x\to -3}f(x)$? Explain how you know.</p>
+<div class="workspace-180"></div>
+</div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<p><strong>Answer:</strong> $\lim_{x	o -3} f(x)=4$.</p>
+<p>The graph approaches the same output, $4$, as $x$ gets close to $-3$.</p>
+</div></div>
+<div class="problem">
+<div class="strategy-box"><p><strong>Stop and Discuss</strong></p><ol><li>Why do we look near $x=1$ instead of only at $x=1$?</li><li>How can a graph show a limit even before you know an equation?</li><li>When does the function value seem to match the limit?</li></ol></div>
+<div class="workspace-discuss"></div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<ol>
+<li>Because the limit is about behavior near $x=1$, not only the single point at $x=1$.</li>
+<li>A graph shows what $y$-value the curve gets close to as inputs approach the target.</li>
+<li>On a smooth connected graph with no hole or jump, the limit and function value usually match.</li>
+</ol>
+</div></div>
+</section>
+<section>
+<div class="problem">
+<!-- ONE-SIDED LIMITS START -->
+<h2>Left-Hand and Right-Hand Limits</h2>
+<p>A one-sided limit tells what the graph approaches from only one side of the target input.</p>
+<div class="key-point">
+<p><strong>Left-hand limit:</strong> $\lim_{x\to a^-} f(x)$ follows the graph from the left.</p>
+<p><strong>Right-hand limit:</strong> $\lim_{x\to a^+} f(x)$ follows the graph from the right.</p>
+</div>
+</div>
+<div class="problem">
+<div class="example-box">
+<!-- EXAMPLE 2 START -->
+<h3>Example 2</h3>
+<p>Use the graph to determine $\lim_{x\to 0^-}f(x)$, $\lim_{x\to 0^+}f(x)$, and whether $\lim_{x\to 0}f(x)$ exists.</p>
+<div class="graph-block graph-md"><img alt="Jump graph with different one-sided behavior at x equals 0" src="figures/u1_5_jump_graph.png"/></div>
+<div class="workspace-260"></div>
+</div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<p>From the left, the graph approaches the open point at $y=1$. From the right, it starts at/approaches $y=3$.</p>
+<p><strong>Answers:</strong> $\lim_{x	o 0^-}f(x)=1$, $\lim_{x	o 0^+}f(x)=3$, so $\lim_{x	o 0}f(x)$ does not exist.</p>
+<p><strong>Misconception:</strong> The filled point at $(0,3)$ gives $f(0)$, but it does not make the two-sided limit exist.</p>
+</div></div>
+<div class="problem">
+<div class="example-box">
+<h3>You Try It 2</h3>
+<p>A graph approaches $-2$ from the left as $x\to 5$ and approaches $6$ from the right as $x\to 5$. Does $\lim_{x\to 5}f(x)$ exist? Explain.</p>
+<div class="workspace-220"></div>
+</div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<p><strong>Answer:</strong> No. The two-sided limit does not exist because the one-sided limits are different: left side $=-2$, right side $=6$.</p>
+</div></div>
+</section>
+<section>
+<div class="problem">
+<!-- LIMITS AND FUNCTION VALUES START -->
+<h2>Limits and Function Values Can Be Different</h2>
+<p>A hole or separate filled point can make the limit and function value different. The limit depends on where the graph is heading. The function value depends on the filled point.</p>
+</div>
+<div class="problem">
+<div class="example-box">
+<!-- EXAMPLE 3 START -->
+<h3>Example 3</h3>
+<p>Use the graph to determine $\lim_{x\to 2}f(x)$ and $f(2)$. Are they equal?</p>
+<div class="graph-block graph-md"><img alt="Line with a hole at x equals 2 and filled point at a different output" src="figures/u1_5_hole_point_value.png"/></div>
+<div class="workspace-260"></div>
+</div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<p>The graph approaches the hole at about $y=2.2$, while the filled point shows $f(2)=-1.5$.</p>
+<p><strong>Answer:</strong> $\lim_{x	o 2}f(x)pprox 2.2$ and $f(2)=-1.5$. They are not equal.</p>
+<p><strong>Teacher note:</strong> Accept an approximate limit from the graph. The key idea is that the limit comes from the line, not the filled point.</p>
+</div></div>
+<div class="problem">
+<div class="example-box">
+<h3>You Try It 3</h3>
+<p>A graph has a hole at $(4,2)$ and a closed point at $(4,-1)$. What are $\lim_{x\to 4}f(x)$ and $f(4)$?</p>
+<div class="workspace-220"></div>
+</div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<p><strong>Answer:</strong> $\lim_{x	o 4}f(x)=2$ and $f(4)=-1$.</p>
+<p>The hole shows the approached value; the closed point shows the actual function value.</p>
+</div></div>
+<div class="problem">
+<div class="strategy-box"><p><strong>Stop and Discuss</strong></p><ol><li>Which mark on the graph shows the function value?</li><li>Which part of the graph shows the limit?</li><li>Why can a graph have a hole and still have a limit?</li></ol></div>
+<div class="workspace-discuss"></div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<ol>
+<li>The filled point shows the actual function value.</li>
+<li>The nearby curve or path of the graph shows the limit.</li>
+<li>A hole can still have a limit because both sides may approach the same missing point.</li>
+</ol>
+<p><strong>Teacher move:</strong> Ask students to cover the filled point and trace the curve first.</p>
+</div></div>
+</section>
+<section>
+<div class="section-title-task-group">
+<div class="problem">
+<!-- WHEN LIMITS DO NOT EXIST START -->
+<h2>When a Limit Does Not Exist</h2>
+<p>A two-sided limit does not exist when the left-hand and right-hand limits approach different values, or when the graph grows without bound instead of approaching one finite number.</p>
+</div>
+<div class="problem">
+<div class="example-box">
+<!-- EXAMPLE 4 START -->
+<h3>Example 4</h3>
+<p>Use the graph to describe the behavior as $x\to 0$. Does $\lim_{x\to 0}f(x)$ exist as a finite number?</p>
+<div class="graph-block graph-md"><img alt="Graph with vertical asymptote at x equals 0" src="figures/u1_5_asymptote_graph.png"/></div>
+<div class="workspace-260"></div>
+</div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<p>As $x	o 0^-$, the graph decreases without bound. As $x	o 0^+$, the graph increases without bound.</p>
+<p><strong>Answer:</strong> The two-sided limit does not exist as a finite number.</p>
+<p><strong>Language cue:</strong> Students may say “undefined.” Push for a graph-based explanation: the function grows without bound near the vertical asymptote.</p>
+</div></div>
+</div>
+<div class="problem">
+<div class="example-box">
+<h3>You Try It 4</h3>
+<p>A graph approaches $+\infty$ from the left and $-\infty$ from the right as $x\to -3$. Describe why the two-sided limit does not exist as a finite number.</p>
+<div class="workspace-220"></div>
+</div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<p><strong>Answer:</strong> The two-sided limit does not exist as a finite number because the graph is unbounded and the two sides do not approach the same behavior.</p>
+</div></div>
+<div class="problem">
+<div class="strategy-box"><p><strong>Stop and Discuss</strong></p><ol><li>How is an infinite limit different from a finite limit?</li><li>Why is “does not exist” not always the same as “nothing is happening”?</li><li>What graph features should make you check one-sided limits carefully?</li></ol></div>
+<div class="workspace-discuss"></div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<ol>
+<li>An infinite limit describes unbounded behavior, while a finite limit approaches one real-number output.</li>
+<li>“Does not exist” can mean the graph has behavior, but it is not approaching one finite value.</li>
+<li>Check one-sided limits carefully near jumps, holes, open circles, separate filled points, and vertical asymptotes.</li>
+</ol>
+</div></div>
+</section>
+<section>
+<div class="problem">
+<!-- REASONING ACROSS FEATURES START -->
+<h2>Reasoning Across Multiple Graph Features</h2>
+<p>Many graphs combine holes, jumps, point values, and connected pieces. When reading these graphs, slow down and check each target value one side at a time.</p>
+</div>
+<div class="problem">
+<div class="example-box">
+<!-- EXAMPLE 5 START -->
+<h3>Example 5</h3>
+<p>Use the graph to answer each question.</p>
+<div class="graph-block graph-md"><img alt="Piecewise graph with multiple special behaviors" src="figures/u1_5_multi_behavior.png"/></div>
+<ol>
+<li>Determine $\lim_{x\to -2^-} f(x)$ and $\lim_{x\to -2^+} f(x)$.</li>
+<li>Determine whether $\lim_{x\to -2} f(x)$ exists.</li>
+<li>Determine $f(-2)$.</li>
+<li>Determine whether $\lim_{x\to 2} f(x)$ exists.</li>
+</ol>
+<div class="workspace-350"></div>
+</div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<ol>
+<li>$\lim_{x	o -2^-}f(x)=2$ and $\lim_{x	o -2^+}f(x)=-1$.</li>
+<li>$\lim_{x	o -2}f(x)$ does not exist because the one-sided limits are different.</li>
+<li>$f(-2)=-2$ from the filled point.</li>
+<li>$\lim_{x	o 2}f(x)$ does not exist because the left side approaches $-1$ and the right side approaches $3$.</li>
+</ol>
+<p><strong>Teacher note:</strong> This is the best place to insist on three separate questions: left behavior, right behavior, and actual function value.</p>
+</div></div>
+<div class="problem">
+<div class="example-box">
+<h3>You Try It 5</h3>
+<p>Create a quick sketch of a graph where $\lim_{x\to 1}f(x)=3$ but $f(1)=-2$. Explain which part of your sketch shows the limit and which part shows the function value.</p>
+<div class="workspace-300"></div>
+</div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<p><strong>Sample answer:</strong> Draw a curve approaching an open circle at $(1,3)$ from both sides, then draw a filled point at $(1,-2)$.</p>
+<p>The open-circle path shows $\lim_{x	o 1}f(x)=3$; the filled point shows $f(1)=-2$.</p>
+</div></div>
+</section>
+<section>
+<div class="problem">
+<!-- RETURN TO THE FUTURE TASK START -->
+<h2>Return to the Future Task</h2>
+<p>Use what you learned to revisit the task from the beginning of the notes.</p>
+<div class="annotation-box">
+<p>A function has several special behaviors shown on one graph.</p>
+<div class="graph-block graph-md"><img alt="Piecewise graph with a hole, point value difference, and jump behavior" src="figures/u1_5_multi_behavior.png"/></div>
+<ol>
+<li>Determine $\lim_{x\to -2^-} f(x)$ and $\lim_{x\to -2^+} f(x)$.</li>
+<li>Determine whether $\lim_{x\to -2} f(x)$ exists and compare it to $f(-2)$.</li>
+<li>Determine whether $\lim_{x\to 2} f(x)$ exists.</li>
+<li>Explain which feature of the graph creates the most important difference between a limit and a function value.</li>
+</ol>
+</div>
+<div class="workspace-400"></div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<ol>
+<li>$\lim_{x	o -2^-}f(x)=2$ and $\lim_{x	o -2^+}f(x)=-1$.</li>
+<li>$\lim_{x	o -2}f(x)$ does not exist because the one-sided limits are different. Also, $f(-2)=-2$ from the filled point.</li>
+<li>$\lim_{x	o 2}f(x)$ does not exist because the graph approaches $-1$ from the left and $3$ from the right.</li>
+<li>The most important feature is the separation between open-circle approached values and filled function values, especially when one-sided behavior differs.</li>
+</ol>
+<p><strong>Facilitation:</strong> Have students annotate the graph using three colors or labels: left limit, right limit, function value.</p>
+</div></div>
+</section>
+<section>
+<div class="problem">
+<!-- SUMMARY START -->
+<h2>Summary</h2>
+<div class="key-point"><ul><li>A limit describes what $f(x)$ approaches as $x$ gets close to a target input.</li><li>Left-hand limits come from values less than the target input.</li><li>Right-hand limits come from values greater than the target input.</li><li>A two-sided limit exists only when the left-hand and right-hand limits agree.</li><li>A function value is shown by the filled point at the input.</li><li>A limit can exist even if the function value is different or undefined.</li><li>Jumps and vertical asymptotes often cause two-sided limits not to exist.</li></ul></div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<p><strong>Closure prompt:</strong> Ask students to write one sentence using all three phrases: left-hand limit, right-hand limit, function value.</p>
+</div></div>
+</section>
+<section>
+<div class="problem">
+<!-- COMMON MISTAKES START -->
+<h2>Common Mistakes</h2>
+<div class="strategy-box"><ul><li><strong>Using the filled point for every answer:</strong> the filled point gives $f(a)$, not always $\lim_{x\to a}f(x)$.</li><li><strong>Ignoring one side:</strong> a two-sided limit requires both one-sided limits to agree.</li><li><strong>Confusing a hole with no limit:</strong> a hole may still have a limit if both sides approach the same value.</li><li><strong>Saying a jump has one limit:</strong> if the left and right sides approach different values, the two-sided limit does not exist.</li><li><strong>Writing infinity as a normal output:</strong> infinite behavior describes unbounded growth, not a finite function value.</li><li><strong>Reading the wrong coordinate:</strong> limits are reported as approached $y$-values, not the target $x$-value.</li></ul></div>
+<div class="teacher-answer"><p><strong>Teacher Notes:</strong></p>
+<p><strong>Reteach priority:</strong> If students miss this lesson, start with filled point versus open circle before adding one-sided notation.</p>
+</div></div>
+</section>
+
+
+</div>
+</body>
+</html>
