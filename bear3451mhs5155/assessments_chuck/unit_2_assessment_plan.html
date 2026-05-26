@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Unit 2 Assessment Plan and Bank</title>
+<script>window.MathJax = { tex: { inlineMath: [["\\(","\\)"],["$","$"]], displayMath: [["\\[","\\]"],["$$","$$"]] } };</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+/* ======================= RESET / PAGE ======================= */
+@page { size: letter; margin: 0.45in; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.45;
+  color: #222;
+  background: #fff;
+  font-size: 11pt;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.container { max-width: 980px; margin: 0 auto; }
+.page-break { page-break-before: always; break-before: page; }
+.unbreakable, .assessment-card, .outline-card, .rubric-card, .ladder-table, .progress-tracker { break-inside: avoid; page-break-inside: avoid; }
+
+/* ======================= HEADER / TITLES ======================= */
+h1 { color: #00003d; font-size: 26pt; line-height: 1.1; margin-bottom: 8px; }
+h2 { color: #00003d; font-size: 17pt; margin: 18px 0 10px 0; border-left: 6px solid #00003d; padding-left: 10px; }
+h3 { color: #004d99; font-size: 13pt; margin: 12px 0 6px 0; }
+p { margin: 6px 0; }
+ul, ol { margin: 6px 0 8px 28px; }
+li { margin-bottom: 4px; }
+.small-note { font-size: 9.5pt; color: #555; font-style: italic; }
+
+/* ======================= OUTLINE CARDS ======================= */
+.outline-card {
+  border: 1px solid #9aa9bd;
+  border-left: 7px solid #00003d;
+  padding: 12px 14px;
+  margin: 12px 0;
+  background: #fff;
+}
+.outline-card-title { color: #00003d; font-weight: 800; font-size: 13.5pt; margin-bottom: 4px; }
+.essential-standard { font-size: 12pt; border: 2px solid #00003d; padding: 12px 14px; margin: 12px 0 16px 0; background: #f8fbff; }
+
+/* ======================= TABLES ======================= */
+table { border-collapse: collapse; width: 100%; margin: 10px 0 14px 0; }
+th, td { border: 1px solid #777; padding: 7px 8px; vertical-align: top; }
+th { background: #eaf1fb; color: #00003d; font-weight: 800; text-align: left; }
+.ladder-table th { background: #00003d; color: #fff; }
+.ladder-table .dok4 { background: #eef4ff; }
+.ladder-table .dok3 { background: #f6fbff; }
+.ladder-table .dok2 { background: #fffdf2; }
+.ladder-table .dok1 { background: #ffffff; }
+.table-block, .parent-table, table.values { width: auto; margin: 10px auto 12px auto; border-collapse: collapse; }
+.table-block td, .table-block th, .parent-table td, .parent-table th, table.values td, table.values th { border: 1px solid #777; padding: 6px 14px; text-align: center; vertical-align: middle; }
+
+/* ======================= PROGRESS TRACKING ======================= */
+.progress-tracker { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 12px 0 18px 0; }
+.progress-box { border: 1px solid #777; padding: 12px; min-height: 0.8in; }
+.progress-box strong { color: #00003d; }
+
+/* ======================= DOK SECTIONS ======================= */
+.dok-bar {
+  background: #000;
+  color: #fff;
+  font-weight: 900;
+  font-size: 15pt;
+  padding: 9px 12px;
+  margin: 22px 0 12px 0;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.dok-method-card { border: 1px solid #777; padding: 12px 14px; margin: 10px 0 16px 0; background: #fff; break-inside: avoid; page-break-inside: avoid; }
+.assessment-ideas { margin-left: 24px; }
+.assessment-ideas a { color: #005aa0; font-weight: 800; text-decoration: underline; }
+.timing-label { display: inline-block; background: #fff7cf; border: 1px solid #d1c27a; border-radius: 4px; padding: 1px 6px; font-weight: 800; color: #4a3f17; margin-left: 6px; }
+.what-tells { border-left: 5px solid #777; padding-left: 10px; margin-top: 10px; color: #333; }
+
+/* ======================= SUMMATIVE / RUBRIC ======================= */
+.summative-card { border: 2px solid #00003d; padding: 12px 14px; margin: 14px 0; background: #f8fbff; break-inside: avoid; page-break-inside: avoid; }
+.summative-card a { color: #005aa0; font-weight: 800; }
+.rubric-card { border: 1px solid #777; padding: 12px 14px; margin: 10px 0; }
+.rubric-level { color: #00003d; font-weight: 900; font-size: 12.5pt; }
+
+/* ======================= ASSESSMENT BANK ======================= */
+.bank-intro { border: 2px solid #00003d; padding: 12px 14px; margin: 12px 0 16px 0; background: #f8fbff; }
+.assessment-card {
+  border: 1px solid #777;
+  padding: 12px 14px;
+  margin: 12px 0;
+  background: #fff;
+}
+.problem-number { font-weight: 900; color: #00003d; font-size: 13pt; margin-bottom: 8px; }
+.problem-meta { color: #555; font-weight: 700; font-size: 10.5pt; margin-left: 8px; }
+.assessment-card p { margin-bottom: 7px; }
+.assessment-card ol, .assessment-card ul { margin-left: 26px; }
+.assessment-card li { margin-bottom: 6px; }
+.performance-notes { border-left: 5px solid #444; background: #f7f7f7; padding: 8px 10px; margin-top: 10px; font-size: 10pt; }
+.lower-alpha { list-style-type: lower-alpha; }
+.lower-roman { list-style-type: lower-roman; }
+
+/* ======================= FIGURE / GRAPH SYSTEM ======================= */
+.figure-block, .graph-block { margin: 12px 0 10px 0; text-align: center; break-inside: avoid; page-break-inside: avoid; }
+.figure-block img, .graph-block img { max-width: 100%; height: auto; border: 1px solid #ccc; background: #fff; }
+.figure-xs img { max-width: 1.4in; }
+.figure-sm img { max-width: 2.1in; }
+.figure-md img { max-width: 2.8in; }
+.figure-lg img { max-width: 3.8in; }
+.figure-xl img { max-width: 4.7in; }
+.graph-xs img { max-width: 2.0in; }
+.graph-sm img { max-width: 2.5in; }
+.graph-md img { max-width: 3.2in; }
+.graph-lg img { max-width: 4.1in; }
+.graph-xl img { max-width: 5.1in; }
+
+/* ======================= PRINT CONTROL ======================= */
+@media print {
+  body { font-size: 10.5pt; }
+  h1 { font-size: 24pt; }
+  h2 { font-size: 16pt; }
+  .assessment-card { padding: 10px 12px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- ======================= UNIT 2 OUTLINE START ======================= -->
+<h1>Precalculus – Unit 02: More Functions</h1>
+<h2>Essential Standard</h2>
+<div class="essential-standard">Students will analyze function structure, operations, composition, rates of change, symmetry, and inverse relationships in order to connect algebraic, graphical, tabular, and verbal representations of functions.</div>
+<!-- ======================= SECTION OUTLINE START ======================= -->
+<section class="outline-card">
+<div class="outline-card-title">Section 2.1: Odd and Even Functions</div>
+<p><strong>Learning Target: Students will determine whether functions are odd, even, or neither using algebraic and graphical reasoning.</strong></p>
+<ul>
+<li>I can identify symmetry in graphs of functions.</li>
+<li>I can determine whether a function is even, odd, or neither using f(-x).</li>
+<li>I can connect even functions to y-axis symmetry and odd functions to origin symmetry.</li>
+<li>I can justify whether a function is odd, even, or neither using algebraic or graphical evidence.</li>
+</ul></section>
+<section class="outline-card">
+<div class="outline-card-title">Section 2.2: Function Arithmetic</div>
+<p><strong>Learning Target: Students will combine functions using arithmetic operations and interpret the resulting functions.</strong></p>
+<ul>
+<li>I can add, subtract, multiply, and divide functions using function notation.</li>
+<li>I can evaluate function arithmetic expressions for numerical inputs.</li>
+<li>I can determine domain restrictions when functions are combined.</li>
+<li>I can interpret function arithmetic using equations, tables, graphs, or contexts.</li>
+</ul></section>
+<section class="outline-card">
+<div class="outline-card-title">Section 2.3: Function Composition</div>
+<p><strong>Learning Target: Students will compose functions and interpret composition as one function being used as the input of another.</strong></p>
+<ul>
+<li>I can evaluate composite functions such as f(g(x)) and g(f(x)).</li>
+<li>I can write formulas for composite functions.</li>
+<li>I can determine domain restrictions of composite functions.</li>
+<li>I can interpret the meaning of composition in mathematical or real-world situations.</li>
+</ul></section>
+<section class="outline-card">
+<div class="outline-card-title">Section 2.4: Difference Quotient</div>
+<p><strong>Learning Target: Students will calculate and interpret the difference quotient as an average rate of change.</strong></p>
+<ul>
+<li>I can calculate the difference quotient (f(x+h)-f(x))/h.</li>
+<li>I can simplify difference quotients for linear, quadratic, radical, or rational functions when appropriate.</li>
+<li>I can interpret the difference quotient as an average rate of change.</li>
+<li>I can connect the difference quotient to tables, graphs, and slope between two points.</li>
+</ul></section>
+<section class="outline-card">
+<div class="outline-card-title">Section 2.5: Function Inverses</div>
+<p><strong>Learning Target: Students will determine, write, and verify inverse functions using algebraic and graphical reasoning.</strong></p>
+<ul>
+<li>I can determine whether a function has an inverse function.</li>
+<li>I can find an inverse function algebraically by switching x and y and solving.</li>
+<li>I can verify inverse functions using composition.</li>
+<li>I can interpret inverse relationships using equations, graphs, tables, or contexts.</li>
+</ul></section>
+<!-- ======================= SECTION OUTLINE END ======================= -->
+<!-- ======================= LEARNING LADDER START ======================= -->
+<h2>Learning Ladder</h2>
+<table class="ladder-table">
+<tr><th>Rung</th><th>I Can Statement</th><th>Math Practice</th><th>DOK</th><th>Level</th></tr>
+<tr class="dok4"><td>8</td><td>I can model and analyze a situation involving function operations, composition, rates of change, symmetry, or inverses, justify my representation, and evaluate whether my conclusions are reasonable in context.</td><td>4. Model with Math / 3. Construct Arguments</td><td>DOK 4</td><td>Above</td></tr>
+<tr class="dok4"><td>7</td><td>I can compare and defend multiple strategies for analyzing combined, composed, symmetric, rate-of-change, or inverse functions using algebraic, graphical, tabular, and verbal representations.</td><td>1. Make Sense &amp; Persevere / 3. Construct Arguments</td><td>DOK 4</td><td>Above</td></tr>
+<tr class="dok3"><td>6</td><td>I can analyze how function structure changes under arithmetic operations, composition, inverses, or the difference quotient, and explain how those changes appear across representations.</td><td>7. Look for Structure / 8. Look for Regularity</td><td>DOK 3</td><td>Essential</td></tr>
+<tr class="dok3"><td>5</td><td>I can justify conclusions about odd/even symmetry, domain restrictions, composition, average rate of change, and inverse relationships using precise algebraic and graphical reasoning.</td><td>2. Reason Abstractly &amp; Quantitatively / 6. Attend to Precision</td><td>DOK 3</td><td>Essential</td></tr>
+<tr class="dok2"><td>4</td><td>I can calculate and simplify function arithmetic, composite functions, difference quotients, and inverse functions while identifying restrictions when needed.</td><td>6. Attend to Precision</td><td>DOK 2</td><td>Essential</td></tr>
+<tr class="dok2"><td>3</td><td>I can evaluate function operations, compositions, inverse expressions, and average rates of change from equations, tables, graphs, and descriptions.</td><td>5. Use Tools Strategically / 7. Look for Structure</td><td>DOK 2</td><td>Essential</td></tr>
+<tr class="dok1"><td>2</td><td>I can identify basic function features and vocabulary, including odd, even, neither, function operation, composition, average rate of change, and inverse.</td><td>2. Reason Abstractly</td><td>DOK 1</td><td>Essential</td></tr>
+<tr class="dok1"><td>1</td><td>I can recognize functions from equations, graphs, tables, and descriptions and evaluate simple function notation accurately.</td><td>1. Make Sense of Problems</td><td>DOK 1</td><td>Essential</td></tr>
+</table>
+<!-- ======================= LEARNING LADDER END ======================= -->
+<!-- ======================= PROGRESS TRACKING START ======================= -->
+<h2>Progress Tracking</h2>
+<div class="progress-tracker">
+<div class="progress-box"><strong>Not Yet:</strong> I need more instruction and practice.</div>
+<div class="progress-box"><strong>Getting There:</strong> I understand most of it but need more practice.</div>
+<div class="progress-box"><strong>Got It!:</strong> I can do this independently.</div>
+</div>
+<!-- ======================= PROGRESS TRACKING END ======================= -->
+<!-- ======================= ASSESSMENT METHODS START ======================= -->
+<h2>Assessment Methods by DOK Level</h2>
+<div class="dok-bar">DOK 1 — Rungs 1–2</div>
+<section class="dok-method-card">
+<p><strong>Format: 3–5 minute warm-up, quick check, or exit ticket</strong></p>
+<p>Purpose: Check whether students can recognize vocabulary, evaluate simple function notation, identify symmetry, and read basic features from equations, tables, or graphs.</p>
+<h3>Assessment Ideas</h3><ol class="assessment-ideas">
+<li><a href="u2-dok1-1.html">Odd, Even, or Neither Recognition Check</a> <span class="timing-label">Can Be Assessed After Unit 4, Section 1</span> – Students classify simple graphs or equations as odd, even, or neither and identify the type of symmetry shown.</li>
+<li><a href="u2-dok1-2.html">Function Operation Vocabulary Check</a> <span class="timing-label">Can Be Assessed After Unit 4, Section 2</span> – Students identify whether a notation such as (f+g)(x), (fg)(x), (f/g)(x), or f(g(x)) represents arithmetic or composition.</li>
+<li><a href="u2-dok1-3.html">Basic Composition Evaluation Check</a> <span class="timing-label">Can Be Assessed After Unit 4, Section 3</span> – Students evaluate simple composite expressions such as f(g(2)) using a table, graph, or equation.</li>
+<li><a href="u2-dok1-4.html">Inverse Relationship Recognition Check</a> <span class="timing-label">Can Be Assessed After Unit 4, Section 5</span> – Students match a function to its inverse using a table, graph, or simple equation.</li>
+</ol>
+<div class="what-tells"><strong>What this tells the teacher:</strong><br>Students who struggle here need more direct practice with function notation, symmetry language, composition notation, and inverse vocabulary before moving into multi-step algebraic work.</div>
+</section>
+<div class="dok-bar">DOK 2 — Rungs 3–4</div>
+<section class="dok-method-card">
+<p><strong>Format: Exit ticket, partner check, whiteboard response, or short written explanation</strong></p>
+<p>Purpose: Check whether students can apply procedures accurately, combine functions, compose functions, calculate average rate of change, and find inverses.</p>
+<h3>Assessment Ideas</h3><ol class="assessment-ideas">
+<li><a href="u2-dok2-1.html">Function Arithmetic Task</a> <span class="timing-label">Can Be Assessed After Unit 4, Section 2</span> – Students calculate (f+g)(x), (f-g)(x), (fg)(x), and (f/g)(x), then state any restrictions.</li>
+<li><a href="u2-dok2-2.html">Composite Function Task</a> <span class="timing-label">Can Be Assessed After Unit 4, Section 3</span> – Students evaluate and simplify f(g(x)) and g(f(x)), then compare the results.</li>
+<li><a href="u2-dok2-3.html">Difference Quotient Task</a> <span class="timing-label">Can Be Assessed After Unit 4, Section 4</span> – Students calculate and simplify (f(x+h)-f(x))/h for a linear or quadratic function and interpret it as an average rate of change.</li>
+<li><a href="u2-dok2-4.html">Inverse Function Task</a> <span class="timing-label">Can Be Assessed After Unit 4, Section 5</span> – Students find the inverse of a linear, quadratic-with-restricted-domain, radical, or rational function and verify using substitution or composition.</li>
+</ol>
+<div class="what-tells"><strong>What this tells the teacher:</strong><br>Students at this level can usually perform the skill, but the assessment reveals whether they maintain notation, track restrictions, distinguish arithmetic from composition, and connect procedures to meaning.</div>
+</section>
+<div class="dok-bar">DOK 3 — Rungs 5–6</div>
+<section class="dok-method-card">
+<p><strong>Format: Constructed response, error analysis, gallery walk, or group explanation</strong></p>
+<p>Purpose: Check whether students can justify reasoning, compare representations, identify restrictions, and explain function structure.</p>
+<h3>Assessment Ideas</h3><ol class="assessment-ideas">
+<li><a href="u2-dok3-1.html">Symmetry Justification Task</a> <span class="timing-label">Can Be Assessed After Unit 4, Section 1</span> – Students determine whether a function is odd, even, or neither using both algebraic evidence and graph symmetry.</li>
+<li><a href="u2-dok3-2.html">Composition and Domain Analysis</a> <span class="timing-label">Can Be Assessed After Unit 4, Section 3</span> – Students analyze a composite function, determine its domain, and explain how the inside function affects the allowable inputs.</li>
+<li><a href="u2-dok3-3.html">Difference Quotient Interpretation</a> <span class="timing-label">Can Be Assessed After Unit 4, Section 4</span> – Students compare average rates of change from a table, graph, and difference quotient expression and explain how they represent the same idea.</li>
+<li><a href="u2-dok3-4.html">Inverse Verification and Error Analysis</a> <span class="timing-label">Can Be Assessed After Unit 4, Section 5</span> – Students critique an incorrect inverse, identify the algebraic or domain error, and verify the corrected inverse using composition.</li>
+</ol>
+<div class="what-tells"><strong>What this tells the teacher:</strong><br>This level shows whether students understand the structure behind function operations rather than only following procedures. These tasks reveal whether students can reason about notation, restrictions, symmetry, rates of change, and inverse relationships.</div>
+</section>
+<div class="dok-bar">DOK 4 — Rungs 7–8</div>
+<section class="dok-method-card">
+<p><strong>Format: Performance task, extended response, modeling task, or strategy defense</strong></p>
+<p>Purpose: Check whether students can synthesize function structure, operations, composition, rates of change, and inverses in unfamiliar situations.</p>
+<h3>Assessment Ideas</h3><ol class="assessment-ideas">
+<li><a href="u2-dok4-1.html">Function Model Combination Task</a> <span class="timing-label">Can Be Assessed After Unit 4, Section 1</span> – Students model a situation using two functions, combine or compose them, interpret the new function, and justify domain restrictions.</li>
+<li><a href="u2-dok4-2.html">Design-a-Function Task</a> <span class="timing-label">Can Be Assessed After Unit 4, Section 3</span> – Students create a function that satisfies conditions involving symmetry, inverse behavior, composition, and rate of change, then justify why it works.</li>
+<li><a href="u2-dok4-3.html">Representation Transfer Task</a> <span class="timing-label">Can Be Assessed After Unit 4, Section 4</span> – Students move between a graph, table, equation, and verbal description involving function composition or inverses and explain how each representation shows the same relationship.</li>
+<li><a href="u2-dok4-4.html">Strategy Defense Task</a> <span class="timing-label">Can Be Assessed After Unit 4, Section 5</span> – Students solve a multi-step function problem using more than one method and defend which method is more efficient, precise, or meaningful.</li>
+</ol>
+<div class="what-tells"><strong>What this tells the teacher:</strong><br>DOK 4 tasks show whether students can transfer function understanding to unfamiliar situations and justify decisions involving structure, restrictions, symmetry, composition, rates of change, and inverses.</div>
+</section>
+<!-- ======================= ASSESSMENT METHODS END ======================= -->
+<!-- ======================= SUMMATIVE PLAN START ======================= -->
+<h2>Summative Assessment Plan</h2><section class="summative-card">
+<p><a href="u2-sum.html">Unit 2 Summative Assessment</a> <span class="timing-label">Unit 2 Assessed During Unit 4</span></p>
+<p>Assessment is designed for a 45-minute paper-only time limit and is built around balanced evidence rather than a fixed question-count breakdown. Each version includes a mix of procedural fluency, graphing/application tasks, and short reasoning or critique prompts aligned to the unit learning targets and Depth of Knowledge expectations.</p>
+<p>Assessments emphasize algebraic accuracy, interpretation of mathematical structure, graphing and representation skills, explanation of reasoning, and application of concepts in both familiar and unfamiliar situations.</p>
+<p>Summative assessments are intentionally focused on DoK 1–3 evidence within a paper-only environment. Extended DoK 4 modeling, investigation, performance, or technology-based tasks are assessed separately through activities, investigations, discourse tasks, or formative performance assessments rather than embedded directly into the summative exam.</p>
+</section><!-- ======================= SUMMATIVE PLAN END ======================= -->
+<!-- ======================= HOLISTIC RUBRIC START ======================= -->
+<h2>Holistic Rubric</h2>
+<section class="rubric-card"><div class="rubric-level">A — Highly Proficient</div><p>The student demonstrates a strong and flexible understanding of Unit 2 concepts. Work is accurate, well-organized, and supported by clear reasoning. The student can analyze odd/even symmetry, combine functions, compose functions, calculate and interpret difference quotients, find and verify inverses, and connect equations, graphs, tables, and contexts. The student consistently identifies restrictions and justifies conclusions using precise mathematical language.</p></section>
+<section class="rubric-card"><div class="rubric-level">B — Proficient</div><p>The student demonstrates solid understanding of the essential Unit 2 concepts. Most work is accurate, and the student can complete standard and moderately complex tasks independently. The student can classify functions as odd, even, or neither; perform function arithmetic; evaluate and simplify compositions; calculate difference quotients; and find inverses. Explanations are generally clear, though they may lack some precision or depth. Errors are minor or isolated and do not show major misconceptions.</p></section>
+<section class="rubric-card"><div class="rubric-level">C — Developing Proficiency</div><p>The student demonstrates partial but passable understanding of Unit 2 concepts. The student can complete many routine tasks but may need support with notation, domain restrictions, composition order, simplifying difference quotients, verifying inverses, or explaining symmetry. Work may contain errors, incomplete explanations, or inconsistent notation, but there is enough evidence that the student understands the main ideas.</p></section>
+<section class="rubric-card"><div class="rubric-level">Not Yet — Insufficient Evidence</div><p>The student does not yet demonstrate sufficient understanding of the essential Unit 2 concepts. Work shows major errors, missing reasoning, incorrect notation, confusion between function arithmetic and composition, weak understanding of inverse relationships, difficulty simplifying expressions, or inability to justify symmetry or restrictions. The student may need reteaching, additional practice, or reassessment to demonstrate proficiency.</p></section>
+<!-- ======================= HOLISTIC RUBRIC END ======================= -->
+<!-- ======================= UNIT 2 OUTLINE END ======================= -->
+<div class="page-break"></div>
+<!-- ======================= STRICTLY ASSESSMENT BANK START ======================= -->
+<h1>Strictly Assessment Bank</h1>
+<div class="bank-intro"><p><strong>Unit 2 Assessment Bank:</strong> Problems are organized by Depth of Knowledge and pulled from the uploaded teacher banks. These are intended as source items for formative assessments, reassessments, and summative assessment versions.</p><p class="small-note">Rolling timing: Unit 2 is assessed during Unit 4.</p></div>
+<div class="dok-bar">Assessment Bank DOK 1</div>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 001 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.001">
+<div class="problem-number">Assessment Bank DOK 1.001<span class="problem-meta">U2S1-001 | Section 2.1 | DoK 1</span></div>
+<p>Determine whether each function is even, odd, or neither.</p><ol class="lower-alpha"><li>\(f(x)=x^2\)</li><li>\(g(x)=x^3\)</li><li>\(h(x)=x^2+x\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 001 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 002 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.002">
+<div class="problem-number">Assessment Bank DOK 1.002<span class="problem-meta">U2S1-002 | Section 2.1 | DoK 1</span></div>
+<p>Evaluate \(f(-x)\) and compare it to \(f(x)\).</p><p style="text-align:center;">\(f(x)=x^2+4x\)</p><p>Classify the function as even, odd, or neither.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 002 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 003 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.003">
+<div class="problem-number">Assessment Bank DOK 1.003<span class="problem-meta">U2S1-003 | Section 2.1 | DoK 1</span></div>
+<p>A graph is shown. Use symmetry to classify the function as even, odd, or neither.</p><ol class="lower-alpha"><li>What type of symmetry do you see?</li><li>What should be true about \(f(-x)\)?</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S1-003" src="figures/u2-u2s1-003-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 003 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 004 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.004">
+<div class="problem-number">Assessment Bank DOK 1.004<span class="problem-meta">U2S1-004 | Section 2.1 | DoK 1</span></div>
+<p>A graph is shown. Use symmetry to classify the function as even, odd, or neither.</p><ol class="lower-alpha"><li>What type of symmetry do you see?</li><li>What should be true about \(f(-x)\)?</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S1-004" src="figures/u2-u2s1-004-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 004 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 005 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.005">
+<div class="problem-number">Assessment Bank DOK 1.005<span class="problem-meta">U2S1-005 | Section 2.1 | DoK 1</span></div>
+<p>Use the table to determine whether the function appears even, odd, or neither.</p><table class="parent-table"><tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(2\)</td></tr><tr><th>\(f(x)\)</th><td>\(4\)</td><td>\(1\)</td><td>\(1\)</td><td>\(4\)</td></tr></table><p>Justify using the table.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 005 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 006 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.006">
+<div class="problem-number">Assessment Bank DOK 1.006<span class="problem-meta">U2S1-006 | Section 2.1 | DoK 1</span></div>
+<p>Use the table to determine whether the function appears even, odd, or neither.</p><table class="parent-table"><tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(2\)</td></tr><tr><th>\(f(x)\)</th><td>\(-4\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(4\)</td></tr></table><p>Justify using the table.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 006 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 007 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.007">
+<div class="problem-number">Assessment Bank DOK 1.007<span class="problem-meta">U2S1-007 | Section 2.1 | DoK 1</span></div>
+<p>Match each description to <strong>even</strong>, <strong>odd</strong>, or <strong>neither</strong>.</p><ol class="lower-alpha"><li>A graph symmetric about the \(y\)-axis.</li><li>A graph symmetric about the origin.</li><li>A graph with no symmetry about the \(y\)-axis or origin.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S1-007" src="figures/u2-u2s1-007-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 007 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 008 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.008">
+<div class="problem-number">Assessment Bank DOK 1.008<span class="problem-meta">U2S1-008 | Section 2.1 | DoK 1</span></div>
+<p>Fill in each blank.</p><ol class="lower-alpha"><li>If \(f(-x)=f(x)\), the function is ____________________.</li><li>If \(f(-x)=-f(x)\), the function is ____________________.</li><li>If neither relationship is true, the function is ____________________.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 008 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 009 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.009">
+<div class="problem-number">Assessment Bank DOK 1.009<span class="problem-meta">U2S2-001 | Section 2.2 | DoK 1</span></div>
+<p>Let \(f(x)=2x+3\) and \(g(x)=x^2-4\).</p>
+<ol class="lower-alpha"><li>Find \((f+g)(x)\).</li><li>Find \((f-g)(x)\).</li><li>Find \((fg)(x)\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 009 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 010 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.010">
+<div class="problem-number">Assessment Bank DOK 1.010<span class="problem-meta">U2S2-002 | Section 2.2 | DoK 1</span></div>
+<p>Let \(f(x)=x+5\) and \(g(x)=x-2\).</p>
+<ol class="lower-alpha"><li>Find \(\left(\frac{f}{g}\right)(x)\).</li><li>State the value of \(x\) that must be excluded from the domain.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 010 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 011 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.011">
+<div class="problem-number">Assessment Bank DOK 1.011<span class="problem-meta">U2S2-003 | Section 2.2 | DoK 1</span></div>
+<p>The graphs of \(f\) and \(g\) are shown.</p>
+<ol class="lower-alpha"><li>Estimate \(f(2)\) and \(g(2)\).</li><li>Estimate \((f+g)(2)\).</li><li>Estimate \((f-g)(2)\).</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-003" src="figures/u2-u2s2-003-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 011 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 012 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.012">
+<div class="problem-number">Assessment Bank DOK 1.012<span class="problem-meta">U2S2-004 | Section 2.2 | DoK 1</span></div>
+<p>Use the table to evaluate each expression.</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-2\)</td><td>\(0\)</td><td>\(3\)</td></tr><tr><th>\(f(x)\)</th><td>\(5\)</td><td>\(1\)</td><td>\(-4\)</td></tr><tr><th>\(g(x)\)</th><td>\(-2\)</td><td>\(6\)</td><td>\(3\)</td></tr></table>
+<ol class="lower-alpha"><li>\((f+g)(0)\)</li><li>\((fg)(-2)\)</li><li>\(\left(\frac{f}{g}\right)(3)\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 012 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 013 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.013">
+<div class="problem-number">Assessment Bank DOK 1.013<span class="problem-meta">U2S2-005 | Section 2.2 | DoK 1</span></div>
+<p>Let \(p(x)=x^2\) and \(q(x)=3x\).</p>
+<ol class="lower-alpha"><li>Find \((p+q)(4)\).</li><li>Find \((p-q)(-2)\).</li><li>Find \((pq)(1)\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 013 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 014 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.014">
+<div class="problem-number">Assessment Bank DOK 1.014<span class="problem-meta">U2S2-006 | Section 2.2 | DoK 1</span></div>
+<p>Fill in the blanks.</p>
+<ol class="lower-alpha"><li>\((f+g)(x)=\) ____________________</li><li>\((f-g)(x)=\) ____________________</li><li>\((fg)(x)=\) ____________________</li><li>\(\left(\frac{f}{g}\right)(x)=\) ____________________, where \(g(x)\neq\) ________.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 014 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 015 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.015">
+<div class="problem-number">Assessment Bank DOK 1.015<span class="problem-meta">U2S2-007 | Section 2.2 | DoK 1</span></div>
+<p>Let \(f(x)=\sqrt{x}\) and \(g(x)=x+1\).</p>
+<ol class="lower-alpha"><li>Find \((f+g)(9)\).</li><li>Find \((fg)(4)\).</li><li>Explain why \(x=-1\) is not useful for evaluating \(f(x)\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 015 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 016 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.016">
+<div class="problem-number">Assessment Bank DOK 1.016<span class="problem-meta">U2S2-008 | Section 2.2 | DoK 1</span></div>
+<p>Let \(f(x)=x^2-9\) and \(g(x)=x-3\).</p>
+<ol class="lower-alpha"><li>Find \(\left(\frac{f}{g}\right)(x)\).</li><li>Simplify the expression.</li><li>State the excluded value before simplification.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 016 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 017 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.017">
+<div class="problem-number">Assessment Bank DOK 1.017<span class="problem-meta">U2S2-009 | Section 2.2 | DoK 1</span></div>
+<p>Let \( f(x)=3x-2 \) and \( g(x)=x+5 \).</p>
+<ol class="lower-alpha"><li>Find \((f+g)(x)\).</li><li>Find \((f-g)(x)\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 017 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 018 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.018">
+<div class="problem-number">Assessment Bank DOK 1.018<span class="problem-meta">U2S2-010 | Section 2.2 | DoK 1</span></div>
+<p>Let \( f(x)=x^2 \) and \( g(x)=2x \).</p>
+<ol class="lower-alpha"><li>Evaluate \((fg)(3)\).</li><li>Evaluate \(\left(\frac{f}{g}\right)(4)\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 018 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 019 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.019">
+<div class="problem-number">Assessment Bank DOK 1.019<span class="problem-meta">U2S2-011 | Section 2.2 | DoK 1</span></div>
+<p>Use the table.</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(2\)</td></tr><tr><th>\(f(x)\)</th><td>\(3\)</td><td>\(1\)</td><td>\(5\)</td></tr><tr><th>\(g(x)\)</th><td>\(2\)</td><td>\(-4\)</td><td>\(1\)</td></tr></table>
+<ol class="lower-alpha"><li>Find \((f+g)(0)\).</li><li>Find \((fg)(2)\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 019 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 020 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.020">
+<div class="problem-number">Assessment Bank DOK 1.020<span class="problem-meta">U2S2-012 | Section 2.2 | DoK 1</span></div>
+<p>State the domain restriction for:</p><p style="text-align:center;">\(\frac{x+1}{x-7}\)</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 020 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 021 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.021">
+<div class="problem-number">Assessment Bank DOK 1.021<span class="problem-meta">U2S2-013 | Section 2.2 | DoK 1</span></div>
+<p>True or False:</p><p>If \(g(x)=0\), then \(\frac{f(x)}{g(x)}\) is undefined.</p><p>Explain briefly.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 021 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 022 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.022">
+<div class="problem-number">Assessment Bank DOK 1.022<span class="problem-meta">U2S2-014 | Section 2.2 | DoK 1</span></div>
+<p>Match each operation to its description:</p>
+<ul><li>sum</li><li>difference</li><li>product</li><li>quotient</li></ul>
+<p>Descriptions involve combined totals, comparisons, scaling, and remaining amounts.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 022 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 023 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.023">
+<div class="problem-number">Assessment Bank DOK 1.023<span class="problem-meta">U2S3-001 | Section 2.3 | DoK 1</span></div>
+<p>Let \(f(x)=2x+3\) and \(g(x)=x^2-1\). Evaluate:</p>
+<ol class="lower-alpha"><li>\(f(g(2))\)</li><li>\(g(f(2))\)</li><li>Are the answers the same?</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 023 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 024 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.024">
+<div class="problem-number">Assessment Bank DOK 1.024<span class="problem-meta">U2S3-002 | Section 2.3 | DoK 1</span></div>
+<p>Let \(f(x)=x+5\) and \(g(x)=3x\). Find:</p>
+<ol class="lower-alpha"><li>\((f\circ g)(x)\)</li><li>\((g\circ f)(x)\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 024 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 025 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.025">
+<div class="problem-number">Assessment Bank DOK 1.025<span class="problem-meta">U2S3-003 | Section 2.3 | DoK 1</span></div>
+<p>Let \(f(x)=x^2\) and \(g(x)=x-4\). Evaluate:</p>
+<ol class="lower-alpha"><li>\(f(g(3))\)</li><li>\(g(f(3))\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 025 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 026 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.026">
+<div class="problem-number">Assessment Bank DOK 1.026<span class="problem-meta">U2S3-004 | Section 2.3 | DoK 1</span></div>
+<p>Use the table.</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr><tr><th>\(f(x)\)</th><td>\(1\)</td><td>\(3\)</td><td>\(2\)</td><td>\(-1\)</td><td>\(0\)</td></tr><tr><th>\(g(x)\)</th><td>\(2\)</td><td>\(0\)</td><td>\(-1\)</td><td>\(3\)</td><td>\(1\)</td></tr></table>
+<ol class="lower-alpha"><li>\(f(g(0))\)</li><li>\(g(f(2))\)</li><li>\(f(f(1))\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 026 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 027 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.027">
+<div class="problem-number">Assessment Bank DOK 1.027<span class="problem-meta">U2S3-005 | Section 2.3 | DoK 1</span></div>
+<p>Fill in the blanks.</p>
+<ol class="lower-alpha"><li>\((f\circ g)(x)=\) ____________________</li><li>\(f(g(x))\) means first use ____________________, then use ____________________.</li><li>\(g(f(x))\) means first use ____________________, then use ____________________.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 027 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 028 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.028">
+<div class="problem-number">Assessment Bank DOK 1.028<span class="problem-meta">U2S3-006 | Section 2.3 | DoK 1</span></div>
+<p>Let \(f(x)=4x-1\). Evaluate:</p>
+<ol class="lower-alpha"><li>\(f(3)\)</li><li>\(f(f(3))\)</li><li>\(f(f(x))\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 028 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 029 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.029">
+<div class="problem-number">Assessment Bank DOK 1.029<span class="problem-meta">U2S3-007 | Section 2.3 | DoK 1</span></div>
+<p>Let \(f(x)=\sqrt{x}\) and \(g(x)=x+9\). Evaluate:</p>
+<ol class="lower-alpha"><li>\(f(g(7))\)</li><li>\(g(f(16))\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 029 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 030 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.030">
+<div class="problem-number">Assessment Bank DOK 1.030<span class="problem-meta">U2S3-008 | Section 2.3 | DoK 1</span></div>
+<p>Decide whether each expression represents function composition or function arithmetic.</p>
+<ol class="lower-alpha"><li>\(f(g(x))\)</li><li>\(f(x)+g(x)\)</li><li>\((f\circ g)(x)\)</li><li>\(f(x)g(x)\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 030 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 031 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.031">
+<div class="problem-number">Assessment Bank DOK 1.031<span class="problem-meta">U2S3-009 | Section 2.3 | DoK 1</span></div>
+<p>Let \(f(x)=x-2\) and \(g(x)=5x\). Find:</p>
+<ol class="lower-alpha"><li>\((f\circ g)(4)\)</li><li>\((g\circ f)(4)\)</li><li>Explain why order matters.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 031 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 032 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.032">
+<div class="problem-number">Assessment Bank DOK 1.032<span class="problem-meta">U2S3-010 | Section 2.3 | DoK 1</span></div>
+<p>Let \(f(x)=x^2+1\) and \(g(x)=x-3\). Find:</p>
+<ol class="lower-alpha"><li>\(f(g(x))\)</li><li>\(g(f(x))\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 032 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 033 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.033">
+<div class="problem-number">Assessment Bank DOK 1.033<span class="problem-meta">U2S3-011 | Section 2.3 | DoK 1</span></div>
+<p>Use the table.</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td></tr><tr><th>\(f(x)\)</th><td>\(0\)</td><td>\(2\)</td><td>\(3\)</td><td>\(1\)</td><td>\(-1\)</td></tr><tr><th>\(g(x)\)</th><td>\(3\)</td><td>\(1\)</td><td>\(0\)</td><td>\(-1\)</td><td>\(2\)</td></tr></table>
+<ol class="lower-alpha"><li>\(f(g(1))\)</li><li>\(g(f(0))\)</li><li>\(g(g(2))\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 033 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 034 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.034">
+<div class="problem-number">Assessment Bank DOK 1.034<span class="problem-meta">U2S3-012 | Section 2.3 | DoK 1</span></div>
+<p>Let \(h(x)=3x+2\). Find and simplify:</p>
+<ol class="lower-alpha"><li>\(h(x+1)\)</li><li>\(h(2x)\)</li><li>\(h(h(x))\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 034 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 035 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.035">
+<div class="problem-number">Assessment Bank DOK 1.035<span class="problem-meta">U2S4-001 | Section 2.4 | DoK 1</span></div>
+<p>Let \(f(x)=x^2\). Find and simplify:</p><p style="text-align:center;">\(\frac{f(x+h)-f(x)}{h}\)</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 035 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 036 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.036">
+<div class="problem-number">Assessment Bank DOK 1.036<span class="problem-meta">U2S4-002 | Section 2.4 | DoK 1</span></div>
+<p>Let \(f(x)=3x+5\). Find and simplify:</p><p style="text-align:center;">\(\frac{f(x+h)-f(x)}{h}\)</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 036 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 037 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.037">
+<div class="problem-number">Assessment Bank DOK 1.037<span class="problem-meta">U2S4-003 | Section 2.4 | DoK 1</span></div>
+<p>Let \(f(x)=x^2+4x\). Find \(f(x+h)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 037 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 038 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.038">
+<div class="problem-number">Assessment Bank DOK 1.038<span class="problem-meta">U2S4-004 | Section 2.4 | DoK 1</span></div>
+<p>Let \(f(x)=2x^2-1\). Find \(f(x+h)-f(x)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 038 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 039 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.039">
+<div class="problem-number">Assessment Bank DOK 1.039<span class="problem-meta">U2S4-005 | Section 2.4 | DoK 1</span></div>
+<p>Let \(f(x)=x^2-3x+2\). Find and simplify the difference quotient.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 039 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 040 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.040">
+<div class="problem-number">Assessment Bank DOK 1.040<span class="problem-meta">U2S4-006 | Section 2.4 | DoK 1</span></div>
+<p>Let \(f(x)=5-x\). Find and simplify the difference quotient.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 040 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 041 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.041">
+<div class="problem-number">Assessment Bank DOK 1.041<span class="problem-meta">U2S4-007 | Section 2.4 | DoK 1</span></div>
+<p>Let \(f(x)=4\). Find and simplify the difference quotient.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 041 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 042 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.042">
+<div class="problem-number">Assessment Bank DOK 1.042<span class="problem-meta">U2S4-008 | Section 2.4 | DoK 1</span></div>
+<p>Fill in the blanks.</p><ol class="lower-alpha"><li>\(\frac{f(x+h)-f(x)}{h}\) represents the slope of a ____________________ line.</li><li>The two \(x\)-values being compared are ____________________ and ____________________.</li><li>\(h\) represents the change in ____________________.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 042 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 043 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.043">
+<div class="problem-number">Assessment Bank DOK 1.043<span class="problem-meta">U2S4-009 | Section 2.4 | DoK 1</span></div>
+<p>Let \(f(x)=x^2\). Evaluate the difference quotient at \(x=2\) and \(h=3\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 043 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 044 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.044">
+<div class="problem-number">Assessment Bank DOK 1.044<span class="problem-meta">U2S4-010 | Section 2.4 | DoK 1</span></div>
+<p>Let \(f(x)=2x+1\). Evaluate the difference quotient at \(x=-1\) and \(h=4\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 044 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 045 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.045">
+<div class="problem-number">Assessment Bank DOK 1.045<span class="problem-meta">U2S4-011 | Section 2.4 | DoK 1</span></div>
+<p>Use \(\frac{f(b)-f(a)}{b-a}\) to find the average rate of change of \(f(x)=x^2\) from \(x=1\) to \(x=4\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 045 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 046 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.046">
+<div class="problem-number">Assessment Bank DOK 1.046<span class="problem-meta">U2S4-012 | Section 2.4 | DoK 1</span></div>
+<p>Use the table to find the average rate of change from \(x=0\) to \(x=3\).</p><table class="parent-table"><tr><th>\(x\)</th><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td></tr><tr><th>\(f(x)\)</th><td>\(2\)</td><td>\(5\)</td><td>\(10\)</td><td>\(17\)</td></tr></table>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 046 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 047 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.047">
+<div class="problem-number">Assessment Bank DOK 1.047<span class="problem-meta">U2S4-013 | Section 2.4 | DoK 1</span></div>
+<p>For \(\frac{f(7)-f(2)}{7-2}\), identify the first input, second input, and change in input.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 047 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 048 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.048">
+<div class="problem-number">Assessment Bank DOK 1.048<span class="problem-meta">U2S4-014 | Section 2.4 | DoK 1</span></div>
+<p>True or False: The difference quotient is another way to write average rate of change. Explain briefly.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 048 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 049 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.049">
+<div class="problem-number">Assessment Bank DOK 1.049<span class="problem-meta">U2S5-001 | Section 2.5 | DoK 1</span></div>
+<p>Determine whether each pair of points would switch correctly under an inverse.</p><ol class="lower-alpha"><li>\((2,7)\) and \((7,2)\)</li><li>\((-3,5)\) and \((5,-3)\)</li><li>\((4,1)\) and \((-4,1)\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 049 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 050 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.050">
+<div class="problem-number">Assessment Bank DOK 1.050<span class="problem-meta">U2S5-002 | Section 2.5 | DoK 1</span></div>
+<p>If \(f(3)=8\), what point must be on \(f^{-1}\)?</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 050 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 051 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.051">
+<div class="problem-number">Assessment Bank DOK 1.051<span class="problem-meta">U2S5-003 | Section 2.5 | DoK 1</span></div>
+<p>Find the inverse of \(f(x)=x+6\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 051 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 052 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.052">
+<div class="problem-number">Assessment Bank DOK 1.052<span class="problem-meta">U2S5-004 | Section 2.5 | DoK 1</span></div>
+<p>Find the inverse of \(f(x)=2x-5\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 052 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 053 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.053">
+<div class="problem-number">Assessment Bank DOK 1.053<span class="problem-meta">U2S5-005 | Section 2.5 | DoK 1</span></div>
+<p>Find the inverse of \(f(x)=\frac{x+4}{3}\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 053 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 054 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.054">
+<div class="problem-number">Assessment Bank DOK 1.054<span class="problem-meta">U2S5-006 | Section 2.5 | DoK 1</span></div>
+<p>Find the inverse of \(f(x)=5-2x\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 054 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 055 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.055">
+<div class="problem-number">Assessment Bank DOK 1.055<span class="problem-meta">U2S5-007 | Section 2.5 | DoK 1</span></div>
+<p>Use the table.</p><table class="parent-table"><tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr><tr><th>\(f(x)\)</th><td>\(5\)</td><td>\(3\)</td><td>\(1\)</td><td>\(-1\)</td><td>\(-3\)</td></tr></table><ol class="lower-alpha"><li>Find \(f^{-1}(1)\).</li><li>Find \(f^{-1}(-3)\).</li><li>Write two ordered pairs on \(f^{-1}\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 055 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 056 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.056">
+<div class="problem-number">Assessment Bank DOK 1.056<span class="problem-meta">U2S5-008 | Section 2.5 | DoK 1</span></div>
+<p>Fill in the blanks.</p><ol class="lower-alpha"><li>To find an inverse algebraically, switch ____________________ and ____________________.</li><li>The graph of an inverse reflects across the line ____________________.</li><li>If \(f(a)=b\), then \(f^{-1}(b)=\) ____________________.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 056 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 057 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.057">
+<div class="problem-number">Assessment Bank DOK 1.057<span class="problem-meta">U2S5-009 | Section 2.5 | DoK 1</span></div>
+<p>Find the inverse relation of the set:</p><p style="text-align:center;">\(\{(1,4),(2,7),(3,10),(4,13)\}\)</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 057 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 058 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.058">
+<div class="problem-number">Assessment Bank DOK 1.058<span class="problem-meta">U2S5-010 | Section 2.5 | DoK 1</span></div>
+<p>Does the inverse relation of \(\{(1,2),(2,4),(3,4),(4,7)\}\) represent a function? Explain.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 058 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 059 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.059">
+<div class="problem-number">Assessment Bank DOK 1.059<span class="problem-meta">U2S5-011 | Section 2.5 | DoK 1</span></div>
+<p>Graph the line \(y=x\). Then plot the points \((1,4)\), \((2,5)\), and their inverse points.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U2S5-011" src="figures/u2-u2s5-011-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 059 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 060 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.060">
+<div class="problem-number">Assessment Bank DOK 1.060<span class="problem-meta">U2S5-012 | Section 2.5 | DoK 1</span></div>
+<p>Given \(f(x)=x^2\), find:</p><ol class="lower-alpha"><li>\(f(3)\)</li><li>\(f(-3)\)</li><li>Explain why this creates a problem for the inverse.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 060 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 061 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.061">
+<div class="problem-number">Assessment Bank DOK 1.061<span class="problem-meta">U2S5-013 | Section 2.5 | DoK 1</span></div>
+<p>State whether each function is one-to-one.</p><ol class="lower-alpha"><li>\(f(x)=3x-1\)</li><li>\(g(x)=x^2\)</li><li>\(h(x)=x^3\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 061 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 062 START ======================= -->
+<section class="assessment-card" id="U2-DOK1.062">
+<div class="problem-number">Assessment Bank DOK 1.062<span class="problem-meta">U2S5-014 | Section 2.5 | DoK 1</span></div>
+<p>Use the horizontal line test to decide whether each graph has an inverse that is a function.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U2S5-014" src="figures/u2-u2s5-014-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 1 PROBLEM 062 END ======================= -->
+<div class="dok-bar">Assessment Bank DOK 2</div>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 001 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.001">
+<div class="problem-number">Assessment Bank DOK 2.001<span class="problem-meta">U2S1-009 | Section 2.1 | DoK 2</span></div>
+<p>Determine whether the function is even, odd, or neither. Show algebraic work.</p><p style="text-align:center;">\(f(x)=3x^4-2x^2\)</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 001 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 002 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.002">
+<div class="problem-number">Assessment Bank DOK 2.002<span class="problem-meta">U2S1-010 | Section 2.1 | DoK 2</span></div>
+<p>Determine whether the function is even, odd, or neither. Show algebraic work and explain your conclusion.</p><p style="text-align:center;">\(f(x)=x^3+x\)</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 002 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 003 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.003">
+<div class="problem-number">Assessment Bank DOK 2.003<span class="problem-meta">U2S1-011 | Section 2.1 | DoK 2</span></div>
+<p>Determine whether the function is even, odd, or neither. Justify your answer.</p><p style="text-align:center;">\(f(x)=x^2+x^3\)</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 003 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 004 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.004">
+<div class="problem-number">Assessment Bank DOK 2.004<span class="problem-meta">U2S1-012 | Section 2.1 | DoK 2</span></div>
+<p>A graph is shown.</p><ol class="lower-alpha"><li>Classify the function as even, odd, or neither.</li><li>Describe how the symmetry appears in the graph.</li><li>Write a possible equation for a function with this symmetry.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S1-012" src="figures/u2-u2s1-012-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 004 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 005 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.005">
+<div class="problem-number">Assessment Bank DOK 2.005<span class="problem-meta">U2S1-013 | Section 2.1 | DoK 2</span></div>
+<p>Explain how you can test whether a function is even, odd, or neither without graphing it.</p><p>Your explanation should include the role of \(f(-x)\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 005 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 006 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.006">
+<div class="problem-number">Assessment Bank DOK 2.006<span class="problem-meta">U2S1-014 | Section 2.1 | DoK 2</span></div>
+<p>Compare the functions \(f(x)=x^2\) and \(g(x)=x^2+3\).</p><ol class="lower-alpha"><li>Which function is even?</li><li>Does adding a constant change whether the function is even?</li><li>Explain using algebra or graph structure.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 006 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 007 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.007">
+<div class="problem-number">Assessment Bank DOK 2.007<span class="problem-meta">U2S1-015 | Section 2.1 | DoK 2</span></div>
+<p>A table of values shows that \(f(-x)=-f(x)\) for matching positive and negative inputs.</p><ol class="lower-alpha"><li>What type of function does the table suggest?</li><li>Give a possible equation for the function.</li><li>Explain what the graph should look like.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 007 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 008 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.008">
+<div class="problem-number">Assessment Bank DOK 2.008<span class="problem-meta">U2S1-016 | Section 2.1 | DoK 2</span></div>
+<p>Sketch one even function and one odd function.</p><p>Label each graph and explain how the symmetry confirms your classification.</p>
+<div class="graph-block graph-md"><img alt="Graph for U2S1-016" src="figures/u2-u2s1-016-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 008 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 009 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.009">
+<div class="problem-number">Assessment Bank DOK 2.009<span class="problem-meta">U2S2-015 | Section 2.2 | DoK 2</span></div>
+<p>Let \(f(x)=x^2-1\) and \(g(x)=2x+5\).</p>
+<ol class="lower-alpha"><li>Find \((f+g)(x)\).</li><li>Find \((f-g)(x)\).</li><li>Find \((fg)(x)\).</li><li>Find \(\left(\frac{f}{g}\right)(x)\) and state its domain restriction.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 009 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 010 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.010">
+<div class="problem-number">Assessment Bank DOK 2.010<span class="problem-meta">U2S2-016 | Section 2.2 | DoK 2</span></div>
+<p>Let \(f(x)=\sqrt{x+2}\) and \(g(x)=x-1\).</p>
+<ol class="lower-alpha"><li>Find \((f+g)(x)\).</li><li>Find \((fg)(x)\).</li><li>State the domain of each combined function.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 010 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 011 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.011">
+<div class="problem-number">Assessment Bank DOK 2.011<span class="problem-meta">U2S2-017 | Section 2.2 | DoK 2</span></div>
+<p>Let \(f(x)=\frac{1}{x-4}\) and \(g(x)=x^2\).</p>
+<ol class="lower-alpha"><li>Find \((f+g)(x)\).</li><li>Find \((fg)(x)\).</li><li>State the domain restrictions.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 011 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 012 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.012">
+<div class="problem-number">Assessment Bank DOK 2.012<span class="problem-meta">U2S2-018 | Section 2.2 | DoK 2</span></div>
+<p>The graph shown represents \(f(x)+g(x)\).</p>
+<ol class="lower-alpha"><li>Estimate \((f+g)(-2)\), \((f+g)(0)\), and \((f+g)(4)\).</li><li>Explain how the sum graph relates to the values of \(f\) and \(g\).</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-018" src="figures/u2-u2s2-012-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 012 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 013 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.013">
+<div class="problem-number">Assessment Bank DOK 2.013<span class="problem-meta">U2S2-019 | Section 2.2 | DoK 2</span></div>
+<p>The graph shown represents a product \(f(x)g(x)\).</p>
+<ol class="lower-alpha"><li>Identify the \(x\)-intercepts of the product graph.</li><li>Explain why zeros of either factor become zeros of the product.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-019" src="figures/u2-u2s2-013-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 013 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 014 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.014">
+<div class="problem-number">Assessment Bank DOK 2.014<span class="problem-meta">U2S2-020 | Section 2.2 | DoK 2</span></div>
+<p>The graph shown represents a quotient \(\frac{f(x)}{g(x)}\).</p>
+<ol class="lower-alpha"><li>What value of \(x\) appears to be excluded?</li><li>Explain why a zero of the denominator creates a domain restriction.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-020" src="figures/u2-u2s2-014-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 014 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 015 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.015">
+<div class="problem-number">Assessment Bank DOK 2.015<span class="problem-meta">U2S2-021 | Section 2.2 | DoK 2</span></div>
+<p>Use the table to compare function operations.</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr><tr><th>\(f(x)\)</th><td>\(4\)</td><td>\(3\)</td><td>\(0\)</td><td>\(-2\)</td></tr><tr><th>\(g(x)\)</th><td>\(2\)</td><td>\(-1\)</td><td>\(5\)</td><td>\(0\)</td></tr></table>
+<ol class="lower-alpha"><li>Find \((f+g)(1)\).</li><li>Find \((fg)(0)\).</li><li>Find \(\left(\frac{f}{g}\right)(-1)\).</li><li>Explain why \(\left(\frac{f}{g}\right)(2)\) is undefined.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 015 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 016 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.016">
+<div class="problem-number">Assessment Bank DOK 2.016<span class="problem-meta">U2S2-022 | Section 2.2 | DoK 2</span></div>
+<p>A student simplified \(\frac{x^2-9}{x-3}\) to \(x+3\) and said the domain is all real numbers.</p>
+<ol class="lower-alpha"><li>What did the student do correctly?</li><li>What domain detail did the student miss?</li><li>Write the correct simplified expression and domain restriction.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 016 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 017 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.017">
+<div class="problem-number">Assessment Bank DOK 2.017<span class="problem-meta">U2S2-023 | Section 2.2 | DoK 2</span></div>
+<p>The graphs of \(f\) and \(g\) are shown.</p>
+<ol class="lower-alpha"><li>Estimate \((f+g)(1)\).</li><li>Estimate \((f-g)(-2)\).</li><li>Estimate \((fg)(0)\).</li><li>Explain how you used the graphs.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-023" src="figures/u2-u2s2-036-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 017 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 018 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.018">
+<div class="problem-number">Assessment Bank DOK 2.018<span class="problem-meta">U2S2-024 | Section 2.2 | DoK 2</span></div>
+<p>Given:</p><p style="text-align:center;">\(f(x)=\sqrt{x+4}\qquad g(x)=\frac{1}{x-2}\)</p>
+<p>Determine the domain of:</p><ul><li>\(f+g\)</li><li>\(fg\)</li></ul><p>Explain your reasoning.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 018 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 019 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.019">
+<div class="problem-number">Assessment Bank DOK 2.019<span class="problem-meta">U2S2-025 | Section 2.2 | DoK 2</span></div>
+<p>A company tracks daily expenses \(E(x)\) and daily revenue \(R(x)\).</p>
+<p>Explain what:</p><ul><li>\(R(x)-E(x)\)</li><li>\(\frac{R(x)}{E(x)}\)</li></ul><p>would represent in context.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 019 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 020 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.020">
+<div class="problem-number">Assessment Bank DOK 2.020<span class="problem-meta">U2S2-026 | Section 2.2 | DoK 2</span></div>
+<p>Compare:</p><p style="text-align:center;">\((f+g)(x)\qquad \text{and}\qquad f(x)+g(x)\)</p><p>Are these equivalent notations? Explain.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 020 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 021 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.021">
+<div class="problem-number">Assessment Bank DOK 2.021<span class="problem-meta">U2S2-027 | Section 2.2 | DoK 2</span></div>
+<p>Given:</p><p style="text-align:center;">\(f(x)=x^2-9\qquad g(x)=x-3\)</p>
+<ol class="lower-alpha"><li>Simplify \(\frac{f(x)}{g(x)}\).</li><li>Explain why the domain restriction still exists after simplification.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 021 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 022 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.022">
+<div class="problem-number">Assessment Bank DOK 2.022<span class="problem-meta">U2S2-028 | Section 2.2 | DoK 2</span></div>
+<p>Use a graph to estimate where:</p><p style="text-align:center;">\((f+g)(x)=0\)</p><p>Explain how the graphs help you determine the estimate.</p>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-028" src="figures/u2-u2s2-041-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 022 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 023 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.023">
+<div class="problem-number">Assessment Bank DOK 2.023<span class="problem-meta">U2S3-013 | Section 2.3 | DoK 2</span></div>
+<p>Let \(f(x)=x^2-4\) and \(g(x)=x+1\).</p>
+<ol class="lower-alpha"><li>Find \(f(g(x))\).</li><li>Find \(g(f(x))\).</li><li>Compare the two results.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 023 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 024 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.024">
+<div class="problem-number">Assessment Bank DOK 2.024<span class="problem-meta">U2S3-014 | Section 2.3 | DoK 2</span></div>
+<p>Let \(f(x)=\sqrt{x}\) and \(g(x)=x-5\).</p>
+<ol class="lower-alpha"><li>Find \(f(g(x))\).</li><li>State the domain of \(f(g(x))\).</li><li>Explain why the domain is restricted.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 024 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 025 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.025">
+<div class="problem-number">Assessment Bank DOK 2.025<span class="problem-meta">U2S3-015 | Section 2.3 | DoK 2</span></div>
+<p>Let \(f(x)=\frac{1}{x}\) and \(g(x)=x-2\).</p>
+<ol class="lower-alpha"><li>Find \(f(g(x))\).</li><li>State the domain restriction.</li><li>Explain what input causes the problem.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 025 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 026 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.026">
+<div class="problem-number">Assessment Bank DOK 2.026<span class="problem-meta">U2S3-016 | Section 2.3 | DoK 2</span></div>
+<p>Let \(f(x)=2x+7\) and \(g(x)=\frac{x-7}{2}\).</p>
+<ol class="lower-alpha"><li>Find \(f(g(x))\).</li><li>Find \(g(f(x))\).</li><li>What do you notice?</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 026 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 027 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.027">
+<div class="problem-number">Assessment Bank DOK 2.027<span class="problem-meta">U2S3-017 | Section 2.3 | DoK 2</span></div>
+<p>A machine doubles an input and then adds 5.</p>
+<ol class="lower-alpha"><li>Write a function \(f(x)\) for this machine.</li><li>A second machine squares its input. Write \(g(x)\).</li><li>Write \(g(f(x))\).</li><li>Explain what \(g(f(x))\) means in context.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 027 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 028 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.028">
+<div class="problem-number">Assessment Bank DOK 2.028<span class="problem-meta">U2S3-018 | Section 2.3 | DoK 2</span></div>
+<p>A student says:</p><p style="text-align:center;">\((f\circ g)(x)=f(x)\circ g(x)\)</p><p>Explain why this notation is incorrect.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 028 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 029 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.029">
+<div class="problem-number">Assessment Bank DOK 2.029<span class="problem-meta">U2S3-019 | Section 2.3 | DoK 2</span></div>
+<p>Use the table.</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr><tr><th>\(f(x)\)</th><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td><td>\(4\)</td></tr><tr><th>\(g(x)\)</th><td>\(2\)</td><td>\(-2\)</td><td>\(1\)</td><td>\(0\)</td><td>\(-1\)</td></tr></table>
+<ol class="lower-alpha"><li>Find \(f(g(-2))\).</li><li>Find \(g(f(-2))\).</li><li>Explain why one composition may be undefined if the output is not in the table.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 029 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 030 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.030">
+<div class="problem-number">Assessment Bank DOK 2.030<span class="problem-meta">U2S3-020 | Section 2.3 | DoK 2</span></div>
+<p>Let \(f(x)=x^2\), \(g(x)=x+4\), and \(h(x)=\sqrt{x}\). Evaluate:</p>
+<ol class="lower-alpha"><li>\(f(g(h(9)))\)</li><li>\(h(f(g(-1)))\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 030 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 031 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.031">
+<div class="problem-number">Assessment Bank DOK 2.031<span class="problem-meta">U2S3-021 | Section 2.3 | DoK 2</span></div>
+<p>Let \(f(x)=3x-1\) and \(g(x)=x^2+2\).</p>
+<ol class="lower-alpha"><li>Find \(f(g(x))\).</li><li>Find \(g(f(x))\).</li><li>Which composition produces a quadratic? Explain.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 031 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 032 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.032">
+<div class="problem-number">Assessment Bank DOK 2.032<span class="problem-meta">U2S3-022 | Section 2.3 | DoK 2</span></div>
+<p>Given \(f(x)=\sqrt{x+3}\) and \(g(x)=x^2-4\):</p>
+<ol class="lower-alpha"><li>Find \(f(g(x))\).</li><li>Find \(g(f(x))\).</li><li>Compare the domain restrictions.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 032 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 033 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.033">
+<div class="problem-number">Assessment Bank DOK 2.033<span class="problem-meta">U2S3-023 | Section 2.3 | DoK 2</span></div>
+<p>A temperature in Celsius is converted to Fahrenheit using \(F(C)=\frac{9}{5}C+32\). A lab sensor reports temperature as \(C(t)=2t+10\).</p>
+<ol class="lower-alpha"><li>Write \(F(C(t))\).</li><li>Interpret what the composition means.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 033 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 034 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.034">
+<div class="problem-number">Assessment Bank DOK 2.034<span class="problem-meta">U2S3-024 | Section 2.3 | DoK 2</span></div>
+<p>Let \(f(x)=x^2+1\) and \(g(x)=\sqrt{x-1}\).</p>
+<ol class="lower-alpha"><li>Find \(f(g(x))\).</li><li>Find \(g(f(x))\).</li><li>Which composition has the more restricted domain? Explain.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 034 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 035 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.035">
+<div class="problem-number">Assessment Bank DOK 2.035<span class="problem-meta">U2S3-025 | Section 2.3 | DoK 2</span></div>
+<p>A student computes \(f(g(2))\) by finding \(f(2)\) first.</p>
+<ol class="lower-alpha"><li>Explain the error.</li><li>Write the correct order of evaluation.</li><li>Create a simple example showing why order matters.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 035 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 036 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.036">
+<div class="problem-number">Assessment Bank DOK 2.036<span class="problem-meta">U2S3-026 | Section 2.3 | DoK 2</span></div>
+<p>Use the graph of \(f\) and the graph of \(g\).</p>
+<ol class="lower-alpha"><li>Estimate \(g(1)\).</li><li>Use that result to estimate \(f(g(1))\).</li><li>Estimate \(f(1)\).</li><li>Use that result to estimate \(g(f(1))\).</li><li>Compare the results.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U2S3-026" src="figures/u2-u2s3-026-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 036 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 037 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.037">
+<div class="problem-number">Assessment Bank DOK 2.037<span class="problem-meta">U2S3-048 | Section 2.3 | DoK 2</span></div>
+<p>Use the graph of \(f\) and the table for \(g\).</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr><tr><th>\(g(x)\)</th><td>\(1\)</td><td>\(3\)</td><td>\(-1\)</td><td>\(2\)</td><td>\(0\)</td></tr></table>
+<ol class="lower-alpha"><li>Find \(g(0)\).</li><li>Use the graph of \(f\) to find \(f(g(0))\).</li><li>Find \(g(2)\).</li><li>Use the graph of \(f\) to find \(f(g(2))\).</li><li>Explain how the table output becomes the graph input.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U2S3-048" src="figures/u2-u2s3-048-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 037 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 038 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.038">
+<div class="problem-number">Assessment Bank DOK 2.038<span class="problem-meta">U2S3-049 | Section 2.3 | DoK 2</span></div>
+<p>Use the equation for \(f\) and the graph of \(g\).</p><p style="text-align:center;">\(f(x)=2x-1\)</p>
+<ol class="lower-alpha"><li>Estimate \(g(3)\) from the graph.</li><li>Find \(f(g(3))\).</li><li>Estimate \(g(-1)\) from the graph.</li><li>Find \(f(g(-1))\).</li><li>Explain why the graph value must be found before using the equation.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U2S3-049" src="figures/u2-u2s3-049-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 038 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 039 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.039">
+<div class="problem-number">Assessment Bank DOK 2.039<span class="problem-meta">U2S3-051 | Section 2.3 | DoK 2</span></div>
+<p>Use the table for \(f\) and the equation for \(g\).</p><p style="text-align:center;">\(g(x)=x^2-1\)</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-3\)</td><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td></tr><tr><th>\(f(x)\)</th><td>\(2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(3\)</td><td>\(1\)</td><td>\(4\)</td><td>\(-2\)</td></tr></table>
+<ol class="lower-alpha"><li>Find \(f(2)\).</li><li>Find \(g(f(2))\).</li><li>Find \(g(-1)\).</li><li>Find \(f(g(-1))\), if possible.</li><li>Explain when a table-based composition can become undefined.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 039 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 040 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.040">
+<div class="problem-number">Assessment Bank DOK 2.040<span class="problem-meta">U2S4-015 | Section 2.4 | DoK 2</span></div>
+<p>Let \(f(x)=x^2+2x\).</p><ol class="lower-alpha"><li>Find \(f(x+h)\).</li><li>Find \(f(x+h)-f(x)\).</li><li>Simplify \(\frac{f(x+h)-f(x)}{h}\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 040 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 041 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.041">
+<div class="problem-number">Assessment Bank DOK 2.041<span class="problem-meta">U2S4-016 | Section 2.4 | DoK 2</span></div>
+<p>Let \(f(x)=2x^2-5x+1\). Find and simplify the difference quotient.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 041 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 042 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.042">
+<div class="problem-number">Assessment Bank DOK 2.042<span class="problem-meta">U2S4-017 | Section 2.4 | DoK 2</span></div>
+<p>Let \(f(x)=-x^2+6x\). Find and simplify the difference quotient.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 042 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 043 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.043">
+<div class="problem-number">Assessment Bank DOK 2.043<span class="problem-meta">U2S4-018 | Section 2.4 | DoK 2</span></div>
+<p>Let \(f(x)=x^3\).</p><ol class="lower-alpha"><li>Find \(f(x+h)\).</li><li>Find and simplify the difference quotient.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 043 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 044 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.044">
+<div class="problem-number">Assessment Bank DOK 2.044<span class="problem-meta">U2S4-019 | Section 2.4 | DoK 2</span></div>
+<p>Let \(f(x)=\frac{1}{x}\).</p><ol class="lower-alpha"><li>Find \(f(x+h)\).</li><li>Set up the difference quotient.</li><li>Simplify.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 044 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 045 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.045">
+<div class="problem-number">Assessment Bank DOK 2.045<span class="problem-meta">U2S4-020 | Section 2.4 | DoK 2</span></div>
+<p>Let \(f(x)=\sqrt{x}\). Set up the difference quotient and rationalize the numerator.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 045 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 046 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.046">
+<div class="problem-number">Assessment Bank DOK 2.046<span class="problem-meta">U2S4-021 | Section 2.4 | DoK 2</span></div>
+<p>Let \(f(x)=x^2\). Find the average rate of change from \(x=a\) to \(x=a+h\). Compare it to the difference quotient.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 046 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 047 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.047">
+<div class="problem-number">Assessment Bank DOK 2.047<span class="problem-meta">U2S4-022 | Section 2.4 | DoK 2</span></div>
+<p>Use a graph of \(f(x)=x^2-2\) to estimate the average rate of change from \(x=1\) to \(x=3\). Explain how this matches the idea of the difference quotient.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U2S4-022" src="figures/u2-u2s4-022-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 047 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 048 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.048">
+<div class="problem-number">Assessment Bank DOK 2.048<span class="problem-meta">U2S4-023 | Section 2.4 | DoK 2</span></div>
+<p>Use a graph of \(f(x)=x^3-3x\) to estimate the average rate of change from \(x=-2\) to \(x=1\). Explain what the secant line represents.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U2S4-023" src="figures/u2-u2s4-023-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 048 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 049 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.049">
+<div class="problem-number">Assessment Bank DOK 2.049<span class="problem-meta">U2S4-024 | Section 2.4 | DoK 2</span></div>
+<p>A ball’s height is modeled by \(h(t)=-16t^2+64t+5\).</p><ol class="lower-alpha"><li>Find the average velocity from \(t=1\) to \(t=3\).</li><li>Explain what your answer means in context.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 049 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 050 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.050">
+<div class="problem-number">Assessment Bank DOK 2.050<span class="problem-meta">U2S4-025 | Section 2.4 | DoK 2</span></div>
+<p>The position of a runner is \(s(t)=3t^2+2t\).</p><ol class="lower-alpha"><li>Find \(\frac{s(t+h)-s(t)}{h}\).</li><li>What does this expression represent?</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 050 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 051 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.051">
+<div class="problem-number">Assessment Bank DOK 2.051<span class="problem-meta">U2S4-026 | Section 2.4 | DoK 2</span></div>
+<p>Use the table to estimate the average rate of change on each interval.</p><table class="parent-table"><tr><th>\(x\)</th><td>\(1\)</td><td>\(2\)</td><td>\(4\)</td><td>\(7\)</td></tr><tr><th>\(f(x)\)</th><td>\(3\)</td><td>\(8\)</td><td>\(20\)</td><td>\(41\)</td></tr></table><ol class="lower-alpha"><li>\(x=1\) to \(x=2\)</li><li>\(x=2\) to \(x=4\)</li><li>\(x=4\) to \(x=7\)</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 051 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 052 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.052">
+<div class="problem-number">Assessment Bank DOK 2.052<span class="problem-meta">U2S4-027 | Section 2.4 | DoK 2</span></div>
+<p>Let \(f(x)=x^2-4x+1\). Find the difference quotient and evaluate your simplified result at \(x=3\), \(h=0.5\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 052 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 053 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.053">
+<div class="problem-number">Assessment Bank DOK 2.053<span class="problem-meta">U2S4-028 | Section 2.4 | DoK 2</span></div>
+<p>A student writes \(f(x+h)=f(x)+f(h)\). Use \(f(x)=x^2\) to show why this is not generally true.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 053 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 054 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.054">
+<div class="problem-number">Assessment Bank DOK 2.054<span class="problem-meta">U2S4-029 | Section 2.4 | DoK 2</span></div>
+<p>For \(f(x)=\sqrt{x}\), use a graph to estimate the average rate of change from \(x=1\) to \(x=4\). Then verify using exact function values.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U2S4-029" src="figures/u2-u2s4-029-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 054 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 055 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.055">
+<div class="problem-number">Assessment Bank DOK 2.055<span class="problem-meta">U2S5-015 | Section 2.5 | DoK 2</span></div>
+<p>Find the inverse of \(f(x)=4x-9\). Then verify by composition.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 055 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 056 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.056">
+<div class="problem-number">Assessment Bank DOK 2.056<span class="problem-meta">U2S5-016 | Section 2.5 | DoK 2</span></div>
+<p>Find the inverse of \(f(x)=\frac{2}{3}x+5\). Then check one point on \(f\) and its corresponding point on \(f^{-1}\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 056 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 057 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.057">
+<div class="problem-number">Assessment Bank DOK 2.057<span class="problem-meta">U2S5-017 | Section 2.5 | DoK 2</span></div>
+<p>Find the inverse of \(f(x)=\frac{x-7}{2}\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 057 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 058 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.058">
+<div class="problem-number">Assessment Bank DOK 2.058<span class="problem-meta">U2S5-018 | Section 2.5 | DoK 2</span></div>
+<p>Find the inverse of \(f(x)=\frac{5x+1}{3}\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 058 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 059 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.059">
+<div class="problem-number">Assessment Bank DOK 2.059<span class="problem-meta">U2S5-019 | Section 2.5 | DoK 2</span></div>
+<p>Find the inverse of \(f(x)=\frac{x+2}{x-3}\). State any restrictions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 059 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 060 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.060">
+<div class="problem-number">Assessment Bank DOK 2.060<span class="problem-meta">U2S5-020 | Section 2.5 | DoK 2</span></div>
+<p>Find the inverse of \(f(x)=\frac{3x-4}{x+2}\). State any restrictions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 060 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 061 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.061">
+<div class="problem-number">Assessment Bank DOK 2.061<span class="problem-meta">U2S5-021 | Section 2.5 | DoK 2</span></div>
+<p>Let \(f(x)=x^2+4\) with domain \(x\ge0\).</p><ol class="lower-alpha"><li>Find \(f^{-1}(x)\).</li><li>State the domain and range of \(f^{-1}\).</li><li>Explain why the domain restriction matters.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 061 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 062 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.062">
+<div class="problem-number">Assessment Bank DOK 2.062<span class="problem-meta">U2S5-022 | Section 2.5 | DoK 2</span></div>
+<p>Let \(f(x)=(x-3)^2\) with domain \(x\ge3\).</p><ol class="lower-alpha"><li>Find \(f^{-1}(x)\).</li><li>State the domain of \(f^{-1}\).</li><li>State the range of \(f^{-1}\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 062 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 063 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.063">
+<div class="problem-number">Assessment Bank DOK 2.063<span class="problem-meta">U2S5-023 | Section 2.5 | DoK 2</span></div>
+<p>Let \(f(x)=\sqrt{x-5}\).</p><ol class="lower-alpha"><li>Find \(f^{-1}(x)\).</li><li>State the domain and range of both \(f\) and \(f^{-1}\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 063 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 064 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.064">
+<div class="problem-number">Assessment Bank DOK 2.064<span class="problem-meta">U2S5-024 | Section 2.5 | DoK 2</span></div>
+<p>Let \(f(x)=\sqrt[3]{x+2}\).</p><ol class="lower-alpha"><li>Find \(f^{-1}(x)\).</li><li>Explain why this inverse is a function without restricting the domain.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 064 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 065 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.065">
+<div class="problem-number">Assessment Bank DOK 2.065<span class="problem-meta">U2S5-025 | Section 2.5 | DoK 2</span></div>
+<p>Verify that \(f(x)=2x-1\) and \(g(x)=\frac{x+1}{2}\) are inverses using composition.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 065 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 066 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.066">
+<div class="problem-number">Assessment Bank DOK 2.066<span class="problem-meta">U2S5-026 | Section 2.5 | DoK 2</span></div>
+<p>A student found the inverse of \(f(x)=3x-12\) as \(f^{-1}(x)=3x+12\).</p><ol class="lower-alpha"><li>Identify the error.</li><li>Find the correct inverse.</li><li>Verify.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 066 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 067 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.067">
+<div class="problem-number">Assessment Bank DOK 2.067<span class="problem-meta">U2S5-027 | Section 2.5 | DoK 2</span></div>
+<p>Use the graph of \(f\).</p><ol class="lower-alpha"><li>Sketch \(f^{-1}\).</li><li>Identify two reflected point pairs.</li><li>State whether \(f^{-1}\) is a function.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U2S5-027" src="figures/u2-u2s5-027-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 067 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 068 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.068">
+<div class="problem-number">Assessment Bank DOK 2.068<span class="problem-meta">U2S5-028 | Section 2.5 | DoK 2</span></div>
+<p>Use the graph of \(f\).</p><ol class="lower-alpha"><li>Decide whether \(f^{-1}\) is a function.</li><li>Explain using the horizontal line test.</li><li>Describe what happens when reflected across \(y=x\).</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U2S5-028" src="figures/u2-u2s5-028-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 068 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 069 START ======================= -->
+<section class="assessment-card" id="U2-DOK2.069">
+<div class="problem-number">Assessment Bank DOK 2.069<span class="problem-meta">U2S5-029 | Section 2.5 | DoK 2</span></div>
+<p>A function has domain \([-2,5]\) and range \([1,8]\). What are the domain and range of its inverse?</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 2 PROBLEM 069 END ======================= -->
+<div class="dok-bar">Assessment Bank DOK 3</div>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 001 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.001">
+<div class="problem-number">Assessment Bank DOK 3.001<span class="problem-meta">U2S1-017 | Section 2.1 | DoK 3</span></div>
+<p>Consider \(f(x)=x^2+x^3\).</p><ol class="lower-alpha"><li>Classify the function as even, odd, or neither.</li><li>Justify algebraically.</li><li>Describe what the graph should look like.</li><li>Explain why combining even and odd terms affects symmetry.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 001 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 002 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.002">
+<div class="problem-number">Assessment Bank DOK 3.002<span class="problem-meta">U2S1-018 | Section 2.1 | DoK 3</span></div>
+<p>A student claims, “All polynomial functions are either even or odd.”</p><ol class="lower-alpha"><li>Test the claim with at least two examples.</li><li>Provide a counterexample if possible.</li><li>State whether the claim is true or false.</li><li>Justify your conclusion.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 002 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 003 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.003">
+<div class="problem-number">Assessment Bank DOK 3.003<span class="problem-meta">U2S1-019 | Section 2.1 | DoK 3</span></div>
+<p>Explain why all odd functions that are defined at \(x=0\) must pass through the origin.</p><p>Include both algebraic reasoning and graphical interpretation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 003 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 004 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.004">
+<div class="problem-number">Assessment Bank DOK 3.004<span class="problem-meta">U2S1-020 | Section 2.1 | DoK 3</span></div>
+<p>Explain why constant functions are always even.</p><p>Use \(f(-x)\) and \(f(x)\) in your explanation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 004 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 005 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.005">
+<div class="problem-number">Assessment Bank DOK 3.005<span class="problem-meta">U2S1-021 | Section 2.1 | DoK 3</span></div>
+<p>Consider the piecewise-defined function.</p><p style="text-align:center;">\(f(x)=\begin{cases}x^2 &amp; x\ge 0\\ -x^2 &amp; x&lt;0\end{cases}\)</p><ol class="lower-alpha"><li>Classify the function as even, odd, or neither.</li><li>Justify algebraically.</li><li>Describe its symmetry.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S1-021" src="figures/u2-u2s1-021-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 005 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 006 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.006">
+<div class="problem-number">Assessment Bank DOK 3.006<span class="problem-meta">U2S1-022 | Section 2.1 | DoK 3</span></div>
+<p>Does shifting a function horizontally preserve even or odd symmetry?</p><p>Use the graph and at least one example to support your answer.</p>
+<div class="graph-block graph-md"><img alt="Graph for U2S1-022" src="figures/u2-u2s1-022-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 006 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 007 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.007">
+<div class="problem-number">Assessment Bank DOK 3.007<span class="problem-meta">U2S1-023 | Section 2.1 | DoK 3</span></div>
+<p>Compare the symmetry of \(x^2\), \(x^3\), and \(x^2+x\).</p><p>Explain how the structure of each equation connects to its graph.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 007 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 008 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.008">
+<div class="problem-number">Assessment Bank DOK 3.008<span class="problem-meta">U2S1-024 | Section 2.1 | DoK 3</span></div>
+<p>Choose one function that is even or odd. Show how algebra and graphing confirm the same symmetry result.</p><p>Your response should connect \(f(-x)\), symmetry, and the visual structure of the graph.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 008 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 009 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.009">
+<div class="problem-number">Assessment Bank DOK 3.009<span class="problem-meta">U2S2-029 | Section 2.2 | DoK 3</span></div>
+<p>A fundraiser has revenue \(R(x)=12x+40\) and cost \(C(x)=8x+100\), where \(x\) is the number of items sold.</p>
+<ol class="lower-alpha"><li>Write a function for profit \(P(x)=R(x)-C(x)\).</li><li>Interpret \(P(10)\) in context.</li><li>Explain why subtracting functions makes sense in this situation.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-029" src="figures/u2-u2s2-019-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 009 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 010 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.010">
+<div class="problem-number">Assessment Bank DOK 3.010<span class="problem-meta">U2S2-030 | Section 2.2 | DoK 3</span></div>
+<p>Let \(f(x)=x^2-4\) and \(g(x)=x-2\).</p>
+<ol class="lower-alpha"><li>Find \(\left(\frac{f}{g}\right)(x)\) and simplify.</li><li>Explain why the simplified expression does not have the same domain as \(x+2\).</li><li>Describe what would happen on a graph at the excluded input.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 010 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 011 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.011">
+<div class="problem-number">Assessment Bank DOK 3.011<span class="problem-meta">U2S2-031 | Section 2.2 | DoK 3</span></div>
+<p>Compare the functions \(f+g\), \(fg\), and \(\frac{f}{g}\). Use \(f(x)=x+1\) and \(g(x)=x-4\).</p>
+<ol class="lower-alpha"><li>Write each combined function.</li><li>Compare their domains.</li><li>Explain why the quotient requires more caution than the sum or product.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 011 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 012 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.012">
+<div class="problem-number">Assessment Bank DOK 3.012<span class="problem-meta">U2S2-032 | Section 2.2 | DoK 3</span></div>
+<p>A student claims, “If \(f\) and \(g\) are both defined for all real numbers, then \(\frac{f}{g}\) is also defined for all real numbers.”</p>
+<ol class="lower-alpha"><li>Is the claim true?</li><li>Use an example to test the claim.</li><li>Write a complete explanation.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 012 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 013 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.013">
+<div class="problem-number">Assessment Bank DOK 3.013<span class="problem-meta">U2S2-033 | Section 2.2 | DoK 3</span></div>
+<p>Let \(f(x)=\sqrt{x+1}\) and \(g(x)=6-x\).</p>
+<ol class="lower-alpha"><li>Find the domain of \(f+g\).</li><li>Find the domain of \(fg\).</li><li>Find the domain of \(\frac{f}{g}\).</li><li>Explain why the quotient has one additional restriction.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-033" src="figures/u2-u2s2-023-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 013 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 014 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.014">
+<div class="problem-number">Assessment Bank DOK 3.014<span class="problem-meta">U2S2-034 | Section 2.2 | DoK 3</span></div>
+<p>Explain the difference between simplifying a quotient of functions and changing the function itself.</p>
+<p>Use \(\frac{x^2-1}{x-1}\) as your example. Mention excluded values, holes, or domain restrictions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 014 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 015 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.015">
+<div class="problem-number">Assessment Bank DOK 3.015<span class="problem-meta">U2S2-035 | Section 2.2 | DoK 3</span></div>
+<p>Use structure to determine whether each statement is always, sometimes, or never true.</p>
+<ol class="lower-alpha"><li>The domain of \(f+g\) is the intersection of the domains of \(f\) and \(g\).</li><li>The domain of \(fg\) is the union of the domains of \(f\) and \(g\).</li><li>The domain of \(\frac{f}{g}\) must exclude inputs where \(g(x)=0\).</li></ol>
+<p>Justify each answer.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 015 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 016 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.016">
+<div class="problem-number">Assessment Bank DOK 3.016<span class="problem-meta">U2S2-036 | Section 2.2 | DoK 3</span></div>
+<p>Two students are comparing \((f+g)(x)\) and \(f(g(x))\).</p>
+<ol class="lower-alpha"><li>Explain why these are different operations.</li><li>Create a pair of functions where \((f+g)(2)\neq f(g(2))\).</li><li>Explain how notation prevents confusion.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 016 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 017 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.017">
+<div class="problem-number">Assessment Bank DOK 3.017<span class="problem-meta">U2S2-037 | Section 2.2 | DoK 3</span></div>
+<p>A student says:</p><p>“If two functions have the same domain, then all operations on them will also have the same domain.”</p>
+<p>Is this true? Use examples and explanations to justify your answer.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 017 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 018 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.018">
+<div class="problem-number">Assessment Bank DOK 3.018<span class="problem-meta">U2S2-038 | Section 2.2 | DoK 3</span></div>
+<p>Compare the domains of:</p><ul><li>\(f+g\)</li><li>\(fg\)</li><li>\(\frac{f}{g}\)</li></ul><p>Explain why the quotient operation behaves differently.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 018 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 019 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.019">
+<div class="problem-number">Assessment Bank DOK 3.019<span class="problem-meta">U2S2-039 | Section 2.2 | DoK 3</span></div>
+<p>Explain why:</p><p style="text-align:center;">\(\frac{x^2-4}{x-2}\)</p><p>and</p><p style="text-align:center;">\(x+2\)</p><p>have different graphs even though they simplify algebraically.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 019 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 020 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.020">
+<div class="problem-number">Assessment Bank DOK 3.020<span class="problem-meta">U2S2-040 | Section 2.2 | DoK 3</span></div>
+<p>Create two functions where:</p><ul><li>the sum is defined</li><li>the quotient is not defined for all real numbers</li></ul><p>Explain why.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 020 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 021 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.021">
+<div class="problem-number">Assessment Bank DOK 3.021<span class="problem-meta">U2S3-027 | Section 2.3 | DoK 3</span></div>
+<p>Let \(f(x)=x^2\) and \(g(x)=x+3\).</p>
+<ol class="lower-alpha"><li>Find \(f(g(x))\).</li><li>Find \(g(f(x))\).</li><li>Explain why the two expressions are not equivalent.</li><li>Describe how the graphs of the two compositions would differ.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 021 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 022 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.022">
+<div class="problem-number">Assessment Bank DOK 3.022<span class="problem-meta">U2S3-028 | Section 2.3 | DoK 3</span></div>
+<p>A student claims, “Function composition is commutative because \(f(g(x))\) and \(g(f(x))\) use the same two functions.”</p>
+<ol class="lower-alpha"><li>Test the claim using an example.</li><li>Decide whether the claim is true.</li><li>Write a complete explanation.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 022 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 023 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.023">
+<div class="problem-number">Assessment Bank DOK 3.023<span class="problem-meta">U2S3-029 | Section 2.3 | DoK 3</span></div>
+<p>Let \(f(x)=\sqrt{x}\) and \(g(x)=x-6\).</p>
+<ol class="lower-alpha"><li>Find \(f(g(x))\).</li><li>Explain why the domain is not all real numbers.</li><li>Describe how the restriction comes from the inside function.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 023 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 024 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.024">
+<div class="problem-number">Assessment Bank DOK 3.024<span class="problem-meta">U2S3-030 | Section 2.3 | DoK 3</span></div>
+<p>Let \(f(x)=\frac{1}{x}\) and \(g(x)=x^2-9\).</p>
+<ol class="lower-alpha"><li>Find \(f(g(x))\).</li><li>State all domain restrictions.</li><li>Explain how zeros of the inside function create restrictions in the composition.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 024 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 025 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.025">
+<div class="problem-number">Assessment Bank DOK 3.025<span class="problem-meta">U2S3-031 | Section 2.3 | DoK 3</span></div>
+<p>A real-world process has two steps:</p><p>Step 1: A starting value is increased by 20%.<br/>Step 2: A flat fee of 15 is added.</p>
+<ol class="lower-alpha"><li>Write a function for each step.</li><li>Write a composition for the complete process.</li><li>Reverse the order of the two steps.</li><li>Explain whether the final result changes.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 025 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 026 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.026">
+<div class="problem-number">Assessment Bank DOK 3.026<span class="problem-meta">U2S3-032 | Section 2.3 | DoK 3</span></div>
+<p>Let \(f(x)=2x-1\), \(g(x)=x^2\), and \(h(x)=x+4\).</p>
+<ol class="lower-alpha"><li>Find \(f(g(h(x)))\).</li><li>Find \(h(g(f(x)))\).</li><li>Explain how the order of composition changes the structure of the expression.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 026 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 027 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.027">
+<div class="problem-number">Assessment Bank DOK 3.027<span class="problem-meta">U2S3-033 | Section 2.3 | DoK 3</span></div>
+<p>A student sees \(f(g(x))=(x+2)^2\) and says, “The outside function must be \(f(x)=x+2\).”</p>
+<ol class="lower-alpha"><li>Explain why this may not be true.</li><li>Give one possible pair of functions \(f\) and \(g\).</li><li>Give a different possible pair of functions \(f\) and \(g\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 027 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 028 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.028">
+<div class="problem-number">Assessment Bank DOK 3.028<span class="problem-meta">U2S3-034 | Section 2.3 | DoK 3</span></div>
+<p>Let \(f(x)=x^2-1\) and \(g(x)=\sqrt{x+1}\).</p>
+<ol class="lower-alpha"><li>Find \(f(g(x))\).</li><li>Simplify if possible.</li><li>Explain why simplification does not remove the need to think about domain.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 028 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 029 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.029">
+<div class="problem-number">Assessment Bank DOK 3.029<span class="problem-meta">U2S3-035 | Section 2.3 | DoK 3</span></div>
+<p>Compare function arithmetic and function composition.</p><p>Use examples to explain the difference between \((f+g)(x)\) and \(f(g(x))\).</p><p>Your explanation should include meaning, notation, and order.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 029 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 030 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.030">
+<div class="problem-number">Assessment Bank DOK 3.030<span class="problem-meta">U2S3-036 | Section 2.3 | DoK 3</span></div>
+<p>A function \(f\) changes miles to kilometers. A function \(g\) changes kilometers to meters.</p>
+<ol class="lower-alpha"><li>Which composition converts miles to meters?</li><li>Which composition would not make sense in context?</li><li>Explain how units help determine the correct order.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 030 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 031 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.031">
+<div class="problem-number">Assessment Bank DOK 3.031<span class="problem-meta">U2S3-037 | Section 2.3 | DoK 3</span></div>
+<p>Let \(f(x)=|x|\) and \(g(x)=x-3\).</p>
+<ol class="lower-alpha"><li>Find \(f(g(x))\).</li><li>Find \(g(f(x))\).</li><li>Explain how the graphs would differ.</li><li>Which one has a vertex or corner shifted right? Explain.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 031 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 032 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.032">
+<div class="problem-number">Assessment Bank DOK 3.032<span class="problem-meta">U2S3-038 | Section 2.3 | DoK 3</span></div>
+<p>A student says, “If the inside function has no restrictions, then the composition has no restrictions.”</p>
+<ol class="lower-alpha"><li>Is this always true?</li><li>Test using \(f(x)=\sqrt{x}\) and \(g(x)=x^2-4\).</li><li>Explain your reasoning.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 032 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 033 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.033">
+<div class="problem-number">Assessment Bank DOK 3.033<span class="problem-meta">U2S3-050 | Section 2.3 | DoK 3</span></div>
+<p>Use the graph of \(f\) and the graph of \(g\).</p>
+<ol class="lower-alpha"><li>Estimate \(f(g(1))\).</li><li>Estimate \(g(f(1))\).</li><li>Are the results the same?</li><li>Explain why the order of composition matters using the graphs.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U2S3-050" src="figures/u2-u2s3-050-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 033 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 034 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.034">
+<div class="problem-number">Assessment Bank DOK 3.034<span class="problem-meta">U2S3-052 | Section 2.3 | DoK 3</span></div>
+<p>Use the graph of \(f\), the table for \(g\), and the equation for \(h\).</p><p style="text-align:center;">\(h(x)=x+2\)</p>
+<table class="parent-table"><tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr><tr><th>\(g(x)\)</th><td>\(0\)</td><td>\(2\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(3\)</td></tr></table>
+<ol class="lower-alpha"><li>Find \(h(g(-1))\).</li><li>Use the graph of \(f\) to find \(f(h(g(-1)))\).</li><li>Find \(h(g(0))\).</li><li>Use the graph of \(f\) to find \(f(h(g(0)))\).</li><li>Explain the order of inputs and outputs through all three representations.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U2S3-052" src="figures/u2-u2s3-052-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 034 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 035 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.035">
+<div class="problem-number">Assessment Bank DOK 3.035<span class="problem-meta">U2S4-030 | Section 2.4 | DoK 3</span></div>
+<p>Let \(f(x)=x^2\).</p><ol class="lower-alpha"><li>Find the simplified difference quotient.</li><li>Evaluate it for \(h=2\), \(h=1\), and \(h=0.1\) when \(x=3\).</li><li>Describe what happens as \(h\) gets closer to \(0\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 035 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 036 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.036">
+<div class="problem-number">Assessment Bank DOK 3.036<span class="problem-meta">U2S4-031 | Section 2.4 | DoK 3</span></div>
+<p>A student simplifies \(\frac{(x+h)^2-x^2}{h}\) to \(h\).</p><ol class="lower-alpha"><li>Identify the error.</li><li>Write the correct simplification.</li><li>Explain why the error changes the meaning.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 036 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 037 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.037">
+<div class="problem-number">Assessment Bank DOK 3.037<span class="problem-meta">U2S4-032 | Section 2.4 | DoK 3</span></div>
+<p>Explain how the difference quotient connects average rate of change, slope of a secant line, and change in output divided by change in input.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 037 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 038 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.038">
+<div class="problem-number">Assessment Bank DOK 3.038<span class="problem-meta">U2S4-033 | Section 2.4 | DoK 3</span></div>
+<p>Let \(f(x)=x^2+3x\).</p><ol class="lower-alpha"><li>Find the average rate of change from \(x=2\) to \(x=2+h\).</li><li>Simplify completely.</li><li>Explain why \(h\neq0\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 038 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 039 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.039">
+<div class="problem-number">Assessment Bank DOK 3.039<span class="problem-meta">U2S4-034 | Section 2.4 | DoK 3</span></div>
+<p>Let \(f(x)=\frac{2}{x}\).</p><ol class="lower-alpha"><li>Find the difference quotient.</li><li>State restrictions on \(x\) and \(h\).</li><li>Explain where the restrictions come from.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 039 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 040 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.040">
+<div class="problem-number">Assessment Bank DOK 3.040<span class="problem-meta">U2S4-035 | Section 2.4 | DoK 3</span></div>
+<p>Use graph values to estimate average rate of change from \(x=-2\) to \(x=2\). Then explain why another interval with the same length may have a different average rate of change.</p>
+<div class="graph-block graph-lg"><img alt="Graph for U2S4-035" src="figures/u2-u2s4-035-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 040 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 041 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.041">
+<div class="problem-number">Assessment Bank DOK 3.041<span class="problem-meta">U2S4-036 | Section 2.4 | DoK 3</span></div>
+<p>A cyclist’s distance is modeled by \(d(t)=4t^2+8t\).</p><ol class="lower-alpha"><li>Find the average speed from \(t=1\) to \(t=4\).</li><li>Find the average speed from \(t=4\) to \(t=7\).</li><li>Explain why the two average speeds are different.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U2S4-036" src="figures/u2-u2s4-036-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 041 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 042 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.042">
+<div class="problem-number">Assessment Bank DOK 3.042<span class="problem-meta">U2S4-037 | Section 2.4 | DoK 3</span></div>
+<p>A student claims: “If the difference quotient simplifies to an expression with \(h\), then the answer is wrong because \(h\) should cancel completely.”</p><p>Respond with an example and explanation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 042 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 043 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.043">
+<div class="problem-number">Assessment Bank DOK 3.043<span class="problem-meta">U2S4-038 | Section 2.4 | DoK 3</span></div>
+<p>Compare the difference quotient for \(f(x)=x^2\) and \(g(x)=2x^2\).</p><ol class="lower-alpha"><li>Find both.</li><li>Explain how the vertical stretch affects average rate of change.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 043 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 044 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.044">
+<div class="problem-number">Assessment Bank DOK 3.044<span class="problem-meta">U2S4-039 | Section 2.4 | DoK 3</span></div>
+<p>Let \(f(x)=|x|\).</p><ol class="lower-alpha"><li>Find the average rate of change from \(x=-2\) to \(x=1\).</li><li>Find the average rate of change from \(x=1\) to \(x=4\).</li><li>Explain how the corner affects rates of change.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 044 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 045 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.045">
+<div class="problem-number">Assessment Bank DOK 3.045<span class="problem-meta">U2S4-040 | Section 2.4 | DoK 3</span></div>
+<p>Let \(f(x)=x^3-2x\).</p><ol class="lower-alpha"><li>Find the difference quotient.</li><li>Explain what each term in the simplified expression tells you about dependence on \(x\) and \(h\).</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 045 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 046 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.046">
+<div class="problem-number">Assessment Bank DOK 3.046<span class="problem-meta">U2S4-041 | Section 2.4 | DoK 3</span></div>
+<p>Explain why \(\frac{f(x+h)-f(x)}{h}\) is undefined when \(h=0\), even though we often think about what happens as \(h\to0\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 046 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 047 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.047">
+<div class="problem-number">Assessment Bank DOK 3.047<span class="problem-meta">U2S4-042 | Section 2.4 | DoK 3</span></div>
+<p>A function has average rate of change 7 from \(x=2\) to \(x=5\). What does this tell you about the function values? Create a possible pair of points and explain.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 047 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 048 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.048">
+<div class="problem-number">Assessment Bank DOK 3.048<span class="problem-meta">U2S4-043 | Section 2.4 | DoK 3</span></div>
+<p>Given \(f(x)=x^2-6x\), compare the average rate of change on \([1,3]\) and \([3,5]\). Use the results to explain symmetry around the vertex.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 048 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 049 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.049">
+<div class="problem-number">Assessment Bank DOK 3.049<span class="problem-meta">U2S5-030 | Section 2.5 | DoK 3</span></div>
+<p>Explain why every linear function with nonzero slope has an inverse that is also a function.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 049 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 050 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.050">
+<div class="problem-number">Assessment Bank DOK 3.050<span class="problem-meta">U2S5-031 | Section 2.5 | DoK 3</span></div>
+<p>Explain why \(f(x)=x^2\) does not have an inverse function unless its domain is restricted.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 050 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 051 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.051">
+<div class="problem-number">Assessment Bank DOK 3.051<span class="problem-meta">U2S5-032 | Section 2.5 | DoK 3</span></div>
+<p>Let \(f(x)=x^2-6x+10\).</p><ol class="lower-alpha"><li>Rewrite the function in vertex form.</li><li>Choose a domain restriction that makes \(f\) one-to-one.</li><li>Find the inverse on that restricted domain.</li><li>Explain your domain choice.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 051 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 052 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.052">
+<div class="problem-number">Assessment Bank DOK 3.052<span class="problem-meta">U2S5-033 | Section 2.5 | DoK 3</span></div>
+<p>Let \(f(x)=(x+4)^2-1\).</p><ol class="lower-alpha"><li>Give two different domain restrictions that would make the inverse a function.</li><li>Find the inverse for one restriction.</li><li>Explain how the chosen restriction affects the inverse.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 052 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 053 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.053">
+<div class="problem-number">Assessment Bank DOK 3.053<span class="problem-meta">U2S5-034 | Section 2.5 | DoK 3</span></div>
+<p>A student says: “All functions have inverse functions because you can always switch \(x\) and \(y\).”</p><p>Respond with an example and explanation.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 053 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 054 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.054">
+<div class="problem-number">Assessment Bank DOK 3.054<span class="problem-meta">U2S5-035 | Section 2.5 | DoK 3</span></div>
+<p>Compare \(f(x)=x^2\) on the domain \(x\ge0\) and \(g(x)=x^2\) on the domain \(x\le0\).</p><ol class="lower-alpha"><li>Find each inverse.</li><li>Compare the graphs of the inverses.</li><li>Explain why the original domain changes the inverse rule.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 054 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 055 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.055">
+<div class="problem-number">Assessment Bank DOK 3.055<span class="problem-meta">U2S5-036 | Section 2.5 | DoK 3</span></div>
+<p>Let \(f(x)=\frac{x+1}{x-2}\).</p><ol class="lower-alpha"><li>Find \(f^{-1}(x)\).</li><li>Find the domain and range of \(f\).</li><li>Find the domain and range of \(f^{-1}\).</li><li>Explain how restrictions swap.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 055 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 056 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.056">
+<div class="problem-number">Assessment Bank DOK 3.056<span class="problem-meta">U2S5-037 | Section 2.5 | DoK 3</span></div>
+<p>Use composition to prove that two functions are inverses:</p><p style="text-align:center;">\(f(x)=\frac{x-4}{5}\qquad g(x)=5x+4\)</p><p>Show both \(f(g(x))\) and \(g(f(x))\).</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 056 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 057 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.057">
+<div class="problem-number">Assessment Bank DOK 3.057<span class="problem-meta">U2S5-038 | Section 2.5 | DoK 3</span></div>
+<p>A function \(f\) converts inches to centimeters. Its inverse converts centimeters to inches.</p><ol class="lower-alpha"><li>Write a possible function \(f\).</li><li>Write \(f^{-1}\).</li><li>Explain how the units show the inverse relationship.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 057 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 058 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.058">
+<div class="problem-number">Assessment Bank DOK 3.058<span class="problem-meta">U2S5-039 | Section 2.5 | DoK 3</span></div>
+<p>A student finds the inverse of \(f(x)=\sqrt{x+6}\) as \(f^{-1}(x)=x^2+6\).</p><ol class="lower-alpha"><li>Identify the error.</li><li>Find the correct inverse.</li><li>State the correct domain of the inverse.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 058 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 059 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.059">
+<div class="problem-number">Assessment Bank DOK 3.059<span class="problem-meta">U2S5-040 | Section 2.5 | DoK 3</span></div>
+<p>Use the table.</p><table class="parent-table"><tr><th>\(x\)</th><td>\(-3\)</td><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td></tr><tr><th>\(f(x)\)</th><td>\(2\)</td><td>\(4\)</td><td>\(6\)</td><td>\(4\)</td><td>\(2\)</td></tr></table><ol class="lower-alpha"><li>Does \(f\) have an inverse that is a function?</li><li>Explain using repeated outputs.</li><li>Choose a restricted domain that would make an inverse function possible.</li></ol>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 059 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 060 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.060">
+<div class="problem-number">Assessment Bank DOK 3.060<span class="problem-meta">U2S5-041 | Section 2.5 | DoK 3</span></div>
+<p>A graph is reflected across \(y=x\). Explain how:</p><ol class="lower-alpha"><li>domain and range change</li><li>\(x\)- and \(y\)-intercepts change</li><li>points on the graph change</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U2S5-041" src="figures/u2-u2s5-041-1.png"/></div>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 060 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 061 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.061">
+<div class="problem-number">Assessment Bank DOK 3.061<span class="problem-meta">U2S5-042 | Section 2.5 | DoK 3</span></div>
+<p>Explain why \(f(f^{-1}(x))=x\) and \(f^{-1}(f(x))=x\) are both needed when verifying inverse functions.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 061 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 062 START ======================= -->
+<section class="assessment-card" id="U2-DOK3.062">
+<div class="problem-number">Assessment Bank DOK 3.062<span class="problem-meta">U2S5-043 | Section 2.5 | DoK 3</span></div>
+<p>A function is one-to-one but has a restricted domain. Explain whether its inverse must also have a restricted domain.</p>
+
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 3 PROBLEM 062 END ======================= -->
+<div class="dok-bar">Assessment Bank DOK 4</div>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 001 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.001">
+<div class="problem-number">Assessment Bank DOK 4.001<span class="problem-meta">U2S1-025 | Section 2.1 | DoK 4</span></div>
+<p>Create three functions:</p><ol class="lower-alpha"><li>one even function</li><li>one odd function</li><li>one function that is neither</li></ol><p>For each function, include an equation, algebraic justification, and a description of its graph.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 001 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 002 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.002">
+<div class="problem-number">Assessment Bank DOK 4.002<span class="problem-meta">U2S1-026 | Section 2.1 | DoK 4</span></div>
+<p>Design a function that is odd, has at least three terms, and is not a basic parent function.</p><p>Explain how you built the function and how you verified its symmetry.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 002 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 003 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.003">
+<div class="problem-number">Assessment Bank DOK 4.003<span class="problem-meta">U2S1-027 | Section 2.1 | DoK 4</span></div>
+<p>A student says, “If a graph looks symmetric, then it must be even or odd.”</p><ol class="lower-alpha"><li>Is this always true?</li><li>Use the figure or another example as a counterexample.</li><li>Explain the difference between visual symmetry and the algebraic definitions of even and odd functions.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S1-027" src="figures/u2-u2s1-027-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 003 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 004 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.004">
+<div class="problem-number">Assessment Bank DOK 4.004<span class="problem-meta">U2S1-028 | Section 2.1 | DoK 4</span></div>
+<p>Describe a real-world situation that could be modeled by an even function and another real-world situation that could be modeled by an odd function.</p><p>Explain why symmetry makes sense in each situation.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 004 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 005 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.005">
+<div class="problem-number">Assessment Bank DOK 4.005<span class="problem-meta">U2S1-029 | Section 2.1 | DoK 4</span></div>
+<p>Explain how symmetry can reduce computation and simplify graphing.</p><p>Give a specific example where knowing a function is even or odd saves work.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 005 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 006 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.006">
+<div class="problem-number">Assessment Bank DOK 4.006<span class="problem-meta">U2S1-030 | Section 2.1 | DoK 4</span></div>
+<p>Create a function that is symmetric about the \(y\)-axis, has a maximum at \((0,5)\), and is not quadratic.</p><p>Write the equation, sketch or describe the graph, and justify why it satisfies all conditions.</p>
+<div class="graph-block graph-md"><img alt="Graph for U2S1-030" src="figures/u2-u2s1-030-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 006 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 007 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.007">
+<div class="problem-number">Assessment Bank DOK 4.007<span class="problem-meta">U2S2-041 | Section 2.2 | DoK 4</span></div>
+<p>Create two functions \(f\) and \(g\) so that:</p>
+<ol class="lower-alpha"><li>\((f+g)(x)\) is linear.</li><li>\((fg)(x)\) is quadratic.</li><li>\(\frac{f}{g}\) has an excluded value.</li></ol>
+<p>Explain why your choices satisfy all three conditions.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 007 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 008 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.008">
+<div class="problem-number">Assessment Bank DOK 4.008<span class="problem-meta">U2S2-042 | Section 2.2 | DoK 4</span></div>
+<p>Design a pair of functions \(f\) and \(g\) where \(\frac{f}{g}\) simplifies algebraically but still has a hole in its graph.</p>
+<ol class="lower-alpha"><li>Write \(f(x)\) and \(g(x)\).</li><li>Simplify \(\frac{f}{g}\).</li><li>State the original domain restriction.</li><li>Explain what the graph would show.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 008 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 009 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.009">
+<div class="problem-number">Assessment Bank DOK 4.009<span class="problem-meta">U2S2-043 | Section 2.2 | DoK 4</span></div>
+<p>Create a real-world situation involving two quantities where adding, subtracting, multiplying, and dividing functions each have different meanings.</p>
+<p>For each operation, describe what the new function would represent.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 009 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 010 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.010">
+<div class="problem-number">Assessment Bank DOK 4.010<span class="problem-meta">U2S2-044 | Section 2.2 | DoK 4</span></div>
+<p>A school store sells shirts and hats. Let \(S(x)\) be shirt revenue and \(H(x)\) be hat revenue after \(x\) days.</p>
+<ol class="lower-alpha"><li>Create reasonable functions \(S(x)\) and \(H(x)\).</li><li>Write and interpret \((S+H)(x)\).</li><li>Write and interpret \((S-H)(x)\).</li><li>Explain whether \(\frac{S(x)}{H(x)}\) has a meaningful interpretation.</li></ol>
+<div class="graph-block graph-md"><img alt="Graph for U2S2-044" src="figures/u2-u2s2-030-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 010 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 011 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.011">
+<div class="problem-number">Assessment Bank DOK 4.011<span class="problem-meta">U2S2-045 | Section 2.2 | DoK 4</span></div>
+<p>A student argues that function arithmetic is “just combining equations,” so domain does not need to be checked separately.</p>
+<ol class="lower-alpha"><li>Critique the student’s argument.</li><li>Give at least two examples that show why domain matters.</li><li>Write a corrected explanation that could be used as a class note.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 011 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 012 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.012">
+<div class="problem-number">Assessment Bank DOK 4.012<span class="problem-meta">U2S2-046 | Section 2.2 | DoK 4</span></div>
+<p>Design a real-world situation where:</p><ul><li>adding functions makes sense</li><li>multiplying functions makes sense</li><li>dividing functions does NOT make sense</li></ul><p>Explain your reasoning.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 012 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 013 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.013">
+<div class="problem-number">Assessment Bank DOK 4.013<span class="problem-meta">U2S2-047 | Section 2.2 | DoK 4</span></div>
+<p>Create two functions whose quotient:</p><ul><li>has a removable discontinuity</li><li>simplifies algebraically</li><li>still requires a restricted domain</li></ul><p>Explain completely.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 013 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 014 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.014">
+<div class="problem-number">Assessment Bank DOK 4.014<span class="problem-meta">U2S3-039 | Section 2.3 | DoK 4</span></div>
+<p>Create two functions \(f\) and \(g\) so that \(f(g(x))=x^2+6x+9\).</p>
+<ol class="lower-alpha"><li>Write \(f(x)\) and \(g(x)\).</li><li>Verify your composition.</li><li>Explain how you designed the functions.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 014 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 015 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.015">
+<div class="problem-number">Assessment Bank DOK 4.015<span class="problem-meta">U2S3-040 | Section 2.3 | DoK 4</span></div>
+<p>Create two functions \(f\) and \(g\) so that \(f(g(x))=\sqrt{x-4}\) and the domain is \(x\ge 4\).</p>
+<ol class="lower-alpha"><li>Write \(f(x)\) and \(g(x)\).</li><li>Verify the composition.</li><li>Explain how the domain is created.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 015 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 016 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.016">
+<div class="problem-number">Assessment Bank DOK 4.016<span class="problem-meta">U2S3-041 | Section 2.3 | DoK 4</span></div>
+<p>Design a real-world situation involving two steps where the order matters.</p>
+<ol class="lower-alpha"><li>Define both functions.</li><li>Write both compositions.</li><li>Explain why one order matches the situation and the other does not.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 016 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 017 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.017">
+<div class="problem-number">Assessment Bank DOK 4.017<span class="problem-meta">U2S3-042 | Section 2.3 | DoK 4</span></div>
+<p>Create a pair of functions \(f\) and \(g\) where \(f(g(x))=g(f(x))\) for all \(x\).</p>
+<ol class="lower-alpha"><li>Write the functions.</li><li>Verify both compositions.</li><li>Explain why this pair works.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 017 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 018 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.018">
+<div class="problem-number">Assessment Bank DOK 4.018<span class="problem-meta">U2S3-043 | Section 2.3 | DoK 4</span></div>
+<p>Create a pair of functions \(f\) and \(g\) where \(f(g(x))\neq g(f(x))\) for most values of \(x\).</p>
+<ol class="lower-alpha"><li>Write the functions.</li><li>Verify both compositions.</li><li>Explain why the order changes the result.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 018 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 019 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.019">
+<div class="problem-number">Assessment Bank DOK 4.019<span class="problem-meta">U2S3-044 | Section 2.3 | DoK 4</span></div>
+<p>A company applies a 10% discount and then adds a \$5 service fee.</p>
+<ol class="lower-alpha"><li>Model the discount with a function.</li><li>Model the service fee with a function.</li><li>Write the composition for discount first, fee second.</li><li>Write the composition for fee first, discount second.</li><li>Which is better for the customer? Justify mathematically.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 019 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 020 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.020">
+<div class="problem-number">Assessment Bank DOK 4.020<span class="problem-meta">U2S3-045 | Section 2.3 | DoK 4</span></div>
+<p>Design a composition problem where the final simplified expression is linear, but one of the original functions is not linear.</p>
+<ol class="lower-alpha"><li>Write your two functions.</li><li>Show the composition.</li><li>Explain why the result is linear.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 020 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 021 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.021">
+<div class="problem-number">Assessment Bank DOK 4.021<span class="problem-meta">U2S3-046 | Section 2.3 | DoK 4</span></div>
+<p>Create a composition where the inside function causes a domain restriction even though the outside function appears simple.</p>
+<ol class="lower-alpha"><li>Write \(f(x)\) and \(g(x)\).</li><li>Find \(f(g(x))\).</li><li>State the domain.</li><li>Explain where the restriction comes from.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 021 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 022 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.022">
+<div class="problem-number">Assessment Bank DOK 4.022<span class="problem-meta">U2S3-047 | Section 2.3 | DoK 4</span></div>
+<p>A student is building a function machine with three stages:</p>
+<ol><li>Add 2</li><li>Square the result</li><li>Subtract 5</li></ol>
+<ol class="lower-alpha"><li>Write the composition using three functions.</li><li>Write the final simplified function.</li><li>Create a different three-stage machine that produces the same final function.</li><li>Explain why both machines are equivalent.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 022 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 023 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.023">
+<div class="problem-number">Assessment Bank DOK 4.023<span class="problem-meta">U2S4-044 | Section 2.4 | DoK 4</span></div>
+<p>Create a quadratic function whose average rate of change from \(x=1\) to \(x=3\) is 8.</p><ol class="lower-alpha"><li>Write your function.</li><li>Verify the average rate of change.</li><li>Explain how you designed it.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 023 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 024 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.024">
+<div class="problem-number">Assessment Bank DOK 4.024<span class="problem-meta">U2S4-045 | Section 2.4 | DoK 4</span></div>
+<p>Create two different functions with the same average rate of change from \(x=0\) to \(x=4\), but different behavior between those endpoints.</p><ol class="lower-alpha"><li>Write or sketch both.</li><li>Verify the average rate of change.</li><li>Explain why average rate of change does not describe all graph behavior.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 024 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 025 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.025">
+<div class="problem-number">Assessment Bank DOK 4.025<span class="problem-meta">U2S4-046 | Section 2.4 | DoK 4</span></div>
+<p>Design a real-world situation where the difference quotient represents an average rate.</p><ol class="lower-alpha"><li>Define the function and variables.</li><li>Write a difference quotient.</li><li>Interpret the expression.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 025 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 026 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.026">
+<div class="problem-number">Assessment Bank DOK 4.026<span class="problem-meta">U2S4-047 | Section 2.4 | DoK 4</span></div>
+<p>A student says, “The average rate of change over a long interval is enough to understand the motion of an object.” Critique the statement using a graph, table, or example.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 026 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 027 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.027">
+<div class="problem-number">Assessment Bank DOK 4.027<span class="problem-meta">U2S4-048 | Section 2.4 | DoK 4</span></div>
+<p>Use a graph to explain how secant slopes approach a tangent slope as \(h\) gets closer to 0.</p><ol class="lower-alpha"><li>Describe what changes in the picture.</li><li>Explain what stays fixed.</li><li>Connect your explanation to the difference quotient.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U2S4-048" src="figures/u2-u2s4-048-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 027 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 028 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.028">
+<div class="problem-number">Assessment Bank DOK 4.028<span class="problem-meta">U2S4-049 | Section 2.4 | DoK 4</span></div>
+<p>Create a function where the average rate of change from \(x=0\) to \(x=2\) is positive, but the function decreases somewhere inside the interval.</p><ol class="lower-alpha"><li>Sketch or write the function.</li><li>Verify the average rate of change.</li><li>Explain why this does not contradict your graph.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 028 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 029 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.029">
+<div class="problem-number">Assessment Bank DOK 4.029<span class="problem-meta">U2S4-050 | Section 2.4 | DoK 4</span></div>
+<p>Design an error-analysis problem involving the difference quotient for \(f(x)=x^2+5x\).</p><ol class="lower-alpha"><li>Write an incorrect student solution.</li><li>Identify the error.</li><li>Write the corrected solution.</li><li>Explain the misconception.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 029 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 030 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.030">
+<div class="problem-number">Assessment Bank DOK 4.030<span class="problem-meta">U2S4-051 | Section 2.4 | DoK 4</span></div>
+<p>Create a function \(f\) so that the simplified difference quotient is \(2x+h+5\).</p><ol class="lower-alpha"><li>Write a possible function.</li><li>Verify by computing the difference quotient.</li><li>Explain how the expression helped you work backward.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 030 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 031 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.031">
+<div class="problem-number">Assessment Bank DOK 4.031<span class="problem-meta">U2S4-052 | Section 2.4 | DoK 4</span></div>
+<p>A company models profit with \(P(x)\), where \(x\) is units produced.</p><ol class="lower-alpha"><li>Explain what \(\frac{P(x+h)-P(x)}{h}\) represents.</li><li>Describe when the expression would be useful.</li><li>Explain why choosing a small \(h\) may give different insight than choosing a large \(h\).</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 031 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 032 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.032">
+<div class="problem-number">Assessment Bank DOK 4.032<span class="problem-meta">U2S5-044 | Section 2.5 | DoK 4</span></div>
+<p>Create a function that does not have an inverse function on its full domain, then restrict the domain so that it does.</p><ol class="lower-alpha"><li>Write the original function.</li><li>State the restricted domain.</li><li>Find the inverse.</li><li>Explain why your restriction works.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 032 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 033 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.033">
+<div class="problem-number">Assessment Bank DOK 4.033<span class="problem-meta">U2S5-045 | Section 2.5 | DoK 4</span></div>
+<p>Design two functions that are inverses of each other.</p><ol class="lower-alpha"><li>Write both functions.</li><li>Verify by composition.</li><li>Explain how the graphs would relate.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 033 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 034 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.034">
+<div class="problem-number">Assessment Bank DOK 4.034<span class="problem-meta">U2S5-046 | Section 2.5 | DoK 4</span></div>
+<p>Create a rational function whose inverse is also a rational function.</p><ol class="lower-alpha"><li>Write the function.</li><li>Find the inverse.</li><li>State restrictions for both functions.</li><li>Verify by composition.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 034 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 035 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.035">
+<div class="problem-number">Assessment Bank DOK 4.035<span class="problem-meta">U2S5-047 | Section 2.5 | DoK 4</span></div>
+<p>A business converts price before tax to price after tax using a function.</p><ol class="lower-alpha"><li>Define a tax function.</li><li>Find its inverse.</li><li>Explain what the inverse means in context.</li><li>Describe when the inverse would be useful.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 035 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 036 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.036">
+<div class="problem-number">Assessment Bank DOK 4.036<span class="problem-meta">U2S5-048 | Section 2.5 | DoK 4</span></div>
+<p>Create a real-world situation where using an inverse function is more efficient than solving from scratch.</p><ol class="lower-alpha"><li>Define the original function.</li><li>Define the inverse.</li><li>Use both methods on one example.</li><li>Defend which method is better.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 036 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 037 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.037">
+<div class="problem-number">Assessment Bank DOK 4.037<span class="problem-meta">U2S5-049 | Section 2.5 | DoK 4</span></div>
+<p>Design a graph that has an inverse relation but not an inverse function.</p><ol class="lower-alpha"><li>Sketch or describe the graph.</li><li>Explain why the inverse relation exists.</li><li>Explain why the inverse is not a function.</li></ol>
+<div class="graph-block graph-lg"><img alt="Graph for U2S5-049" src="figures/u2-u2s5-049-1.png"/></div>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 037 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 038 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.038">
+<div class="problem-number">Assessment Bank DOK 4.038<span class="problem-meta">U2S5-050 | Section 2.5 | DoK 4</span></div>
+<p>Create a function with a square root inverse.</p><ol class="lower-alpha"><li>Write the function and its domain.</li><li>Find the inverse.</li><li>State the domain and range of both.</li><li>Explain how the graph of each relates to \(y=x\).</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 038 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 039 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.039">
+<div class="problem-number">Assessment Bank DOK 4.039<span class="problem-meta">U2S5-051 | Section 2.5 | DoK 4</span></div>
+<p>A student argues: “If the inverse graph looks correct, then no algebraic verification is needed.”</p><p>Critique this claim using a specific example.</p>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 039 END ======================= -->
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 040 START ======================= -->
+<section class="assessment-card" id="U2-DOK4.040">
+<div class="problem-number">Assessment Bank DOK 4.040<span class="problem-meta">U2S5-052 | Section 2.5 | DoK 4</span></div>
+<p>Create a multi-representation inverse problem involving an equation, table, and graph.</p><ol class="lower-alpha"><li>Write the original function.</li><li>Create a table of values.</li><li>Describe or sketch the inverse graph.</li><li>Explain how all three representations show the same inverse relationship.</li></ol>
+<div class="performance-notes"><strong>Performance Task Planning / Notes:</strong> Use this as a short performance check or discussion-based task. Students should justify choices, connect representations, and explain reasonableness rather than only produce an answer.</div>
+</section>
+<!-- ======================= ASSESSMENT BANK DOK 4 PROBLEM 040 END ======================= -->
+<!-- ======================= STRICTLY ASSESSMENT BANK END ======================= -->
+</div>
+</body>
+</html>
