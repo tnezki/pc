@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 1.4 - Transformations of Parent Functions</title>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+      line-height:1.7;
+      color:#333;
+      background:#ffffff;
+      padding:20px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .container{max-width:900px;margin:auto;}
+    .page-break{page-break-before:always;}
+
+    h1{color:#00003d;font-size:2.5em;margin-bottom:20px;line-height:1.15;}
+
+    h2{
+      color:#00003d;
+      font-size:1.8em;
+      margin-top:30px;
+      margin-bottom:15px;
+      border-left:5px solid #00003d;
+      padding-left:10px;
+    }
+
+    h3{
+      color:#004d99;
+      font-size:1.3em;
+      margin-top:16px;
+      margin-bottom:8px;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    p{margin-bottom:10px;}
+    ol, ul{margin-left:22px;}
+    li{margin-bottom:6px;}
+
+    .title-page{
+      min-height:930px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      border:2px solid #00003d;
+      padding:56px;
+      border-radius:10px;
+      background:linear-gradient(180deg,#ffffff 0%,#f6f8ff 100%);
+    }
+
+    .title-kicker{font-weight:800;color:#004d99;text-transform:uppercase;letter-spacing:2px;margin-bottom:18px;}
+    .title-main{font-size:3em;color:#00003d;font-weight:900;line-height:1.1;margin-bottom:18px;}
+    .title-sub{font-size:1.3em;color:#333;margin-bottom:28px;}
+    .quote-box{border-left:6px solid #00003d;background:#eef3ff;padding:18px 22px;border-radius:6px;margin-top:26px;font-size:1.15em;}
+    .title-note{margin-top:26px;color:#555;font-size:1.05em;}
+
+    .objectives{background:#f0f4f8;padding:20px;border-radius:6px;break-inside:avoid;page-break-inside:avoid;}
+    .definition{background:#fffacd;border-left:5px solid #ffd700;padding:16px;margin:16px 0;border-radius:6px;break-inside:avoid;page-break-inside:avoid;}
+    .key-point{background:#e8f5e9;border-left:5px solid #4caf50;padding:16px;margin:16px 0;border-radius:6px;break-inside:avoid;page-break-inside:avoid;}
+    .strategy-box{background:#eef3ff;border-left:5px solid #4a6fdc;padding:16px;margin:16px 0;border-radius:6px;break-inside:avoid;page-break-inside:avoid;}
+    .annotation-box{border:1px solid #bfc8d8;border-radius:6px;padding:14px;margin:14px 0;break-inside:avoid;page-break-inside:avoid;}
+    .example-box{border:none;border-radius:0;padding:0;margin:6px 0 12px 0;break-inside:avoid;page-break-inside:avoid;}
+    .example-box h3{margin-top:0;margin-bottom:8px;}
+    .problem{break-inside:avoid;page-break-inside:avoid;margin-bottom:12px;}
+
+    /* =======================
+       PRINT GROUPING CONTROL
+       Use this wrapper when a section title/intro should stay with the first task.
+       Add around only small chunks; do not wrap an entire long section.
+       ======================= */
+    .section-title-task-group{break-inside:avoid;page-break-inside:avoid;}
+    section{margin-bottom:30px;}
+
+    /* =======================
+       WORKSPACE HEIGHT CONTROL
+       Adjust these heights if you want more or less student writing space.
+       ======================= */
+    .workspace,.workspace-100,.workspace-120,.workspace-140,.workspace-150,.workspace-180,.workspace-200,.workspace-220,.workspace-240,.workspace-260,.workspace-300,.workspace-350,.workspace-400,.workspace-500,.workspace-600,.workspace-discuss,.workspace-context{
+      width:100%;margin-top:8px;border-bottom:0 solid #000;break-inside:avoid;page-break-inside:avoid;border-top:1px solid #e4e4e4;
+    }
+    .workspace-100{height:100px;}.workspace-120{height:120px;}.workspace-140{height:140px;}.workspace-150{height:150px;}.workspace-180{height:180px;}.workspace-200{height:200px;}.workspace-220{height:220px;}.workspace-240{height:240px;}.workspace-260{height:260px;}.workspace-300{height:300px;}.workspace-350{height:350px;}.workspace-400{height:400px;}.workspace-500{height:500px;}.workspace-600{height:600px;}.workspace-discuss{height:220px;}.workspace-context{height:300px;}
+
+    /* =======================
+       TABLE CONTROL
+       Adjust table padding here if tables need to become more compact.
+       ======================= */
+    .table-block{margin:10px auto 12px auto;border-collapse:collapse;}
+    .table-block td,.table-block th{border:1px solid #000;padding:8px 18px;text-align:center;}
+
+    /* =======================
+       GRAPH / IMAGE SIZE CONTROL
+       Change max-width below to manually resize all graphs at once.
+       Use graph-sm / graph-md / graph-lg for individual control.
+       ======================= */
+    .graph-block{margin:12px 0 10px 0;text-align:center;break-inside:avoid;page-break-inside:avoid;}
+    .graph-block img{display:block;margin:0 auto;height:auto;max-width:360px;width:100%;border:1px solid #ccc;background:#fff;}
+    .graph-sm img{max-width:300px;}.graph-md img{max-width:360px;}.graph-lg img{max-width:430px;}
+
+    .two-column{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;}
+
+    @media print{body{padding:12px;}.title-page{min-height:9.7in;}.two-column{display:block;}}
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <section class="title-page">
+      <div class="title-kicker">Precalculus - Unit 01</div>
+      <div class="title-main">Section 1.4<br>Transformations of Parent Functions</div>
+      <div class="title-sub">Seeing how equations move, flip, and stretch graphs without rebuilding them point by point.</div>
+      <div class="quote-box">
+        <p><strong>Mathematical idea:</strong> A transformation changes a graph in a predictable way. The equation tells us what changed; the graph helps us decide whether that change makes sense.</p>
+      </div>
+      <p class="title-note">In this section, you will connect the structure of $a\cdot f(x-h)+k$ to shifts, reflections, stretches, compressions, and sketches of transformed parent functions.</p>
+    </section>
+
+    <div class="page-break"></div>
+
+    <section>
+      <div class="problem">
+        <!-- LEARNING TARGET START -->
+        <h2>Learning Target</h2>
+        <div class="objectives">
+          <p>Students will analyze and apply transformations of parent functions using the form $a*f(x - h) + k$.</p>
+          <p><strong>I can statements</strong></p>
+          <ul>
+            <li>I can identify and describe vertical and horizontal shifts of parent functions.</li>
+            <li>I can determine the effects of reflections and vertical stretches or compressions on parent functions.</li>
+            <li>I can sketch transformed functions using structural reasoning or write an equation based on a graph.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- WHAT'S TO COME START -->
+        <h2>What’s To Come</h2>
+        <p>Later in this section, you will return to the task below. For now, do not solve it. Instead, annotate it individually. Circle anything familiar, underline symbols or directions that seem important, and write notes about what information you think will be needed.</p>
+        <p>As you annotate, ask yourself: What parent function is involved? What does each part of the equation change? Which features should move, flip, or stretch? How could the graph confirm the equation?</p>
+        <div class="annotation-box">
+          <p><strong>Future Task</strong></p>
+          <p>A transformed function has the form</p>
+          $$g(x)=a\cdot f(x-h)+k$$
+          <p>The graph of $g$ is related to the parent function $f(x)=|x|$. A student claims the graph was shifted right $3$, reflected across the $x$-axis, vertically stretched by a factor of $2$, and shifted up $5$.</p>
+          <ol>
+            <li>Write a possible equation for $g(x)$.</li>
+            <li>Describe which feature of the parent graph moves to a new location.</li>
+            <li>Explain how you could check whether the student's description and equation match.</li>
+            <li>Create a second equation with the same vertex but a different shape, then explain what changed.</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- INTRO START -->
+        <h2>Intro</h2>
+        <div class="strategy-box">
+          <p><strong>Directions</strong></p>
+          <p>Read the introduction aloud with a partner or in a small group. As you read, annotate the text by marking important ideas, circling key vocabulary, and writing short notes about connections, questions, or predictions in the margins.</p>
+        </div>
+        <p>Parent functions are simple graphs that act like starting points. The graphs of $x^2$, $|x|$, $\sqrt{x}$, and $x^3$ each have a recognizable shape and key features. Instead of plotting every point from scratch, we can use transformations to predict how the whole graph changes.</p>
+        <p>The form $a\cdot f(x-h)+k$ organizes those changes. The value of $h$ affects the input before the function acts, so it moves the graph horizontally. The value of $k$ is added after the function acts, so it moves the graph vertically. The value of $a$ changes the outputs, which can stretch, compress, or reflect the graph.</p>
+        <p>Transformations require careful reasoning because some parts feel backward. For example, $f(x-3)$ shifts a graph right, not left. This happens because the input must be $3$ larger before the inside of the function behaves the same way it did before. The equation and the graph should always tell the same story.</p>
+        <p>In this lesson, you will focus on how structure connects to graph behavior. You will describe transformations from equations, write equations from descriptions or graphs, and explain why different forms create different visual effects.</p>
+      </div>
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>What is a parent function?</li>
+            <li>Which part of $a\cdot f(x-h)+k$ controls vertical movement?</li>
+            <li>Why might $f(x-3)$ feel confusing at first?</li>
+            <li>Why is it useful to predict graph changes instead of plotting every point?</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- STRUCTURE OF TRANSFORMATION FORM START -->
+        <h2>The Structure of $a\cdot f(x-h)+k$</h2>
+        <p>The transformation form helps separate horizontal changes, vertical changes, and output changes.</p>
+        <div class="definition">
+          <p><strong>$h$:</strong> shifts the graph horizontally. In $f(x-h)$, positive $h$ shifts right and negative $h$ shifts left.</p>
+          <p><strong>$k$:</strong> shifts the graph vertically. Positive $k$ shifts up and negative $k$ shifts down.</p>
+          <p><strong>$a$:</strong> changes the output values. It can reflect, stretch, or compress the graph vertically.</p>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- EXAMPLE 1 START -->
+          <h3>Example 1</h3>
+          <p>For each function, describe the transformation from $f(x)$ to $g(x)$.</p>
+          <ol>
+            <li>$g(x)=f(x-4)+2$</li>
+            <li>$g(x)=f(x+3)-5$</li>
+            <li>$g(x)=2f(x)$</li>
+            <li>$g(x)=-f(x)+1$</li>
+          </ol>
+          <div class="workspace-260"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 1</h3>
+          <p>Describe the transformation from $f(x)$ to $g(x)$.</p>
+          <ol>
+            <li>$g(x)=f(x+6)+4$</li>
+            <li>$g(x)=\frac{1}{2} f(x)-3$</li>
+            <li>$g(x)=-3f(x-1)$</li>
+          </ol>
+          <div class="workspace-220"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>Which transformations change the location of the graph?</li>
+            <li>Which transformations change the shape or orientation of the graph?</li>
+            <li>Why does the horizontal shift come from the expression inside the function?</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title-task-group">
+        <div class="problem">
+          <!-- SHIFTS MOVE KEY FEATURES START -->
+          <h2>Shifts Move Key Features</h2>
+          <p>A horizontal or vertical shift moves every point on the graph the same distance. Key features such as a vertex, endpoint, or center point are especially helpful because they are easy to track.</p>
+        </div>
+        <div class="problem">
+          <div class="example-box">
+            <!-- EXAMPLE 2 START -->
+            <h3>Example 2</h3>
+            <p>The graph of $f(x)=x^2$ and $g(x)=(x-2)^2+1$ are shown.</p>
+            <div class="graph-block graph-md"><img src="figures/u1_4_shift_example.png" alt="Graph showing y=x squared and y=(x-2)^2+1"></div>
+            <ol>
+              <li>Describe the transformation.</li>
+              <li>What happened to the vertex of the parent function?</li>
+              <li>How does the equation show the same movement as the graph?</li>
+            </ol>
+            <div class="workspace-260"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 2</h3>
+          <p>Let $f(x)=|x|$. Write an equation for $g(x)$ if $f(x)$ is shifted left $4$ units and up $3$ units. Then describe what happens to the vertex.</p>
+          <div class="workspace-220"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- REFLECTIONS STRETCHES AND COMPRESSIONS START -->
+        <h2>Reflections, Stretches, and Compressions</h2>
+        <p>The value of $a$ multiplies every output. When $a$ is negative, the graph reflects across the $x$-axis. When $|a|>1$, the graph is vertically stretched. When $0<|a|<1$, the graph is vertically compressed.</p>
+        <div class="key-point">
+          <p>$g(x)=a\cdot f(x)$ changes the $y$-values of the parent graph. It does not directly move the graph left, right, up, or down.</p>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- EXAMPLE 3 START -->
+          <h3>Example 3</h3>
+          <p>The graph of $f(x)=|x|$ and $g(x)=-2|x|+3$ are shown.</p>
+          <div class="graph-block graph-md"><img src="figures/u1_4_reflect_stretch.png" alt="Graph showing y=absolute value x and y=-2 absolute value x plus 3"></div>
+          <ol>
+            <li>Identify the parent function.</li>
+            <li>Describe the reflection, stretch or compression, and shift.</li>
+            <li>Explain why the graph opens downward.</li>
+          </ol>
+          <div class="workspace-260"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>How can you tell from an equation that a graph reflects across the $x$-axis?</li>
+            <li>How can two graphs have the same vertex but different shapes?</li>
+            <li>What does a vertical stretch do to points that are already on the $x$-axis?</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- WRITING EQUATIONS FROM DESCRIPTIONS START -->
+        <h2>Writing Equations from Descriptions</h2>
+        <p>When writing a transformed equation, start with the parent function and place each transformation in the part of the structure where it belongs.</p>
+        <div class="definition">
+          <p>For $g(x)=a\cdot f(x-h)+k$, build the equation by asking:</p>
+          <ol>
+            <li>What is the parent function?</li>
+            <li>What is the horizontal shift?</li>
+            <li>Is there a reflection, stretch, or compression?</li>
+            <li>What is the vertical shift?</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <!-- EXAMPLE 4 START -->
+          <h3>Example 4</h3>
+          <p>Write an equation for the graph of $y=x^2$ shifted right $4$ units and up $1$ unit. Then explain how each part of the equation matches the description.</p>
+          <div class="workspace-240"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>You Try It 3</h3>
+          <p>Let $f(x)=\sqrt{x}$. Write $g(x)$ if $f(x)$ is shifted right $7$ units and up $3$ units.</p>
+          <div class="workspace-180"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title-task-group">
+        <div class="problem">
+          <!-- WRITING EQUATIONS FROM GRAPHS START -->
+          <h2>Writing Equations from Graphs</h2>
+          <p>A graph can reveal the parent function, the new key feature location, and whether the graph has been reflected, stretched, or compressed.</p>
+        </div>
+        <div class="problem">
+          <div class="example-box">
+            <!-- EXAMPLE 5 START -->
+            <h3>Example 5</h3>
+            <p>Use the graph to write an equation for the transformed quadratic. Then justify each transformation using $a$, $h$, and $k$.</p>
+            <div class="graph-block graph-md"><img src="figures/u1_4_write_equation.png" alt="Graph showing parent quadratic and transformed quadratic"></div>
+            <div class="workspace-300"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>Partner Task</h3>
+          <p>The graph of $f(x)=\sqrt{x}$ and a transformed graph are shown. Write a possible equation for $g(x)$ and explain how the graph supports your equation.</p>
+          <div class="graph-block graph-md"><img src="figures/u1_4_parent_match.png" alt="Graph showing square root parent and shifted square root function"></div>
+          <div class="workspace-260"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>Which graph features are easiest to track when writing an equation?</li>
+            <li>How can you decide whether a graph is stretched or compressed?</li>
+            <li>What evidence would convince you that an equation and graph match?</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title-task-group">
+        <div class="problem">
+          <!-- REASONING AND ERROR ANALYSIS START -->
+          <h2>Reasoning and Error Analysis</h2>
+          <p>Transformation errors often happen when students reverse horizontal shifts, ignore the value of $a$, or treat all numbers in an equation as shifts.</p>
+        </div>
+        <div class="problem">
+          <div class="example-box">
+            <!-- ERROR ANALYSIS TASK START -->
+            <h3>Error Analysis Task</h3>
+            <p>A student says $g(x)=f(x-5)$ shifts the graph left $5$ units because of the minus sign. Explain the error and give the correct transformation.</p>
+            <div class="workspace-220"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="example-box">
+          <h3>Partner Error Analysis</h3>
+          <p>A student says $g(x)=-2f(x)+3$ only shifts the graph up $3$ units. Explain what transformation was missed and how it affects the graph.</p>
+          <div class="workspace-220"></div>
+        </div>
+      </div>
+
+      <div class="problem">
+        <div class="strategy-box">
+          <p><strong>Stop and Discuss</strong></p>
+          <ol>
+            <li>Why are horizontal shifts often harder to read than vertical shifts?</li>
+            <li>How can you check whether a transformation description is complete?</li>
+            <li>What is one mistake you want to avoid when writing transformed equations?</li>
+          </ol>
+        </div>
+        <div class="workspace-discuss"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- RETURN TO THE FUTURE TASK START -->
+        <h2>Return to the Future Task</h2>
+        <p>Use what you learned to revisit the task from the beginning of the notes.</p>
+        <div class="annotation-box">
+          <p>A transformed function has the form $g(x)=a\cdot f(x-h)+k$. The graph of $g$ is related to the parent function $f(x)=|x|$. A student claims the graph was shifted right $3$, reflected across the $x$-axis, vertically stretched by a factor of $2$, and shifted up $5$.</p>
+          <ol>
+            <li>Write a possible equation for $g(x)$.</li>
+            <li>Describe which feature of the parent graph moves to a new location.</li>
+            <li>Explain how you could check whether the student's description and equation match.</li>
+            <li>Create a second equation with the same vertex but a different shape, then explain what changed.</li>
+          </ol>
+        </div>
+        <div class="workspace-400"></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- SUMMARY START -->
+        <h2>Summary</h2>
+        <div class="key-point">
+          <ul>
+            <li>Parent functions provide familiar starting graphs.</li>
+            <li>The form $a\cdot f(x-h)+k$ organizes transformations.</li>
+            <li>$h$ shifts a graph horizontally; $k$ shifts it vertically.</li>
+            <li>A negative $a$ reflects the graph across the $x$-axis.</li>
+            <li>When $|a|>1$, the graph is vertically stretched; when $0<|a|<1$, the graph is vertically compressed.</li>
+            <li>Graphs and equations should support the same transformation story.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="problem">
+        <!-- COMMON MISTAKES START -->
+        <h2>Common Mistakes</h2>
+        <div class="strategy-box">
+          <ul>
+            <li><strong>Reversing horizontal shifts:</strong> $f(x-3)$ shifts right $3$, not left.</li>
+            <li><strong>Missing reflections:</strong> a negative outside the function reflects across the $x$-axis.</li>
+            <li><strong>Calling every number a shift:</strong> the value of $a$ changes outputs; it is not a horizontal or vertical shift.</li>
+            <li><strong>Forgetting the parent function:</strong> the same transformations can look different depending on the parent shape.</li>
+            <li><strong>Using the wrong key feature:</strong> track a vertex, endpoint, or central point when possible.</li>
+            <li><strong>Writing $x+h$ for a right shift:</strong> right shifts use $x-h$ inside the function.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <div class="problem">
+        <h2>Supplemental Notes</h2>
+        <div class="workspace-600"></div>
+      </div>
+    </section>
+
+    <section class="page-break">
+      <div class="problem">
+        <h2>Supplemental Notes</h2>
+        <div class="workspace-600"></div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
