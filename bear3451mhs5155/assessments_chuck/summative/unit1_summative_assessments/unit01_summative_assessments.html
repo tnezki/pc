@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1 Summative Assessments</title>
+<script>
+window.MathJax = { tex: { inlineMath: [["\\(","\\)"],["$","$"]], displayMath: [["\\[","\\]"],["$$","$$"]] } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+/* ======================= PRINT PAGE + RESET ======================= */
+@page { size: letter; margin: 0.45in; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.32;
+  color: #111;
+  background: #fff;
+  font-size: 11.4pt;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ======================= FIXED PRINT PAGE SYSTEM ======================= */
+.page {
+  width: 100%;
+  height: 10.08in;
+  max-height: 10.08in;
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+  display: flex;
+  flex-direction: column;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+.header-row {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid #111;
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+}
+.assessment-title { font-size: 14.5pt; font-weight: 900; color: #000; }
+.name-line { font-size: 12pt; font-weight: 800; }
+.name-line span {
+  display: inline-block;
+  width: 2.7in;
+  border-bottom: 1.5px solid #111;
+  height: 15px;
+  margin-left: 7px;
+  vertical-align: bottom;
+}
+
+/* ======================= PAGE-LOCAL GRIDS ======================= */
+.question-grid {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+  align-items: stretch;
+}
+.grid-four { grid-template-rows: 1fr 1fr; }
+.grid-graph { grid-template-rows: 0.92fr 1.18fr; }
+.grid-three { grid-template-rows: 0.92fr 1.08fr; }
+.graph-wide, .wide-card { grid-column: 1 / 3; }
+
+/* ======================= ASSESSMENT CARDS ======================= */
+.assessment-card {
+  border: 1px solid #777;
+  padding: 11px 12px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.problem-number {
+  flex: 0 0 auto;
+  font-weight: 900;
+  color: #000;
+  font-size: 13pt;
+  margin-bottom: 8px;
+}
+.section-tag {
+  color: #555;
+  font-size: 11pt;
+  font-weight: 800;
+  margin-left: 8px;
+}
+p { margin-bottom: 8px; }
+.math-display {
+  flex: 0 0 auto;
+  text-align: center;
+  font-size: 13pt;
+  margin: 9px 0 10px 0;
+}
+.work-area {
+  flex: 1 1 auto;
+  min-height: 0.75in;
+  border-top: 1px solid #c8c8c8;
+  margin-top: 7px;
+}
+.ans-block {
+  flex: 0 0 auto;
+  margin-top: 10px;
+  border-top: 2px solid #111;
+  padding-top: 5px;
+}
+.ans-line {
+  min-height: 0.24in;
+  padding: 3px 0 2px 0;
+  border-bottom: 1px solid #ddd;
+}
+.ans-line:last-child { border-bottom: none; }
+.ans-label { font-weight: 900; font-size: 10.5pt; }
+
+/* ======================= GRAPH CARD ======================= */
+.graph-wide { padding-bottom: 10px; }
+.graph-layout {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 3.85in;
+  gap: 12px;
+  align-items: start;
+}
+.graph-prompt {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+}
+.graph-work {
+  flex: 1 1 auto;
+  min-height: 0.55in;
+}
+.answer-plane {
+  width: 3.85in;
+  max-width: 3.85in;
+  height: auto;
+  display: block;
+  border: 0;
+  background: #fff;
+}
+.graph-answers { margin-top: 5px; }
+
+/* ======================= DATA TABLES ======================= */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 6px 0 7px 0;
+  flex-shrink: 0;
+}
+.data-table th,
+.data-table td {
+  border: 1px solid #777;
+  padding: 4px 5px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 10.5pt;
+}
+.data-table th:first-child,
+.data-table td:first-child { font-weight: 900; width: 0.62in; }
+
+@media print {
+  body { font-size: 11.4pt; }
+  .page { height: 10.08in; max-height: 10.08in; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ======================= VERSION 1 PAGE 1 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V1</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-four">
+
+<!-- VERSION 1 PROBLEM 1 START -->
+<div class="assessment-card" id="v1-problem-1">
+  <div class="problem-number">1.<span class="section-tag">Section 1.1</span></div>
+  <p>Given \(f(x)=2x^2-3x+1\), evaluate \(f(-2)\). Then solve \(f(x)=1\).</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">f(&#8722;2) =</span></div>
+    <div class="ans-line"><span class="ans-label">solutions to f(x) = 1:</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 1 END -->
+
+<!-- VERSION 1 PROBLEM 2 START -->
+<div class="assessment-card" id="v1-problem-2">
+  <div class="problem-number">2.<span class="section-tag">Section 1.1</span></div>
+  <p>The table shows values of \(g(x)\). Find \(g(3)\) and solve \(g(x)=4\).</p>
+  <table class="data-table">
+    <tr><th>\(x\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td></tr>
+    <tr><th>\(g(x)\)</th><td>\(4\)</td><td>\(1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(4\)</td></tr>
+  </table>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">g(3) =</span></div>
+    <div class="ans-line"><span class="ans-label">x when g(x) = 4:</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 2 END -->
+
+<!-- VERSION 1 PROBLEM 3 START -->
+<div class="assessment-card" id="v1-problem-3">
+  <div class="problem-number">3.<span class="section-tag">Section 1.2</span></div>
+  <p>Write the solution set in interval notation and describe whether each endpoint is included.</p>
+  <p class="math-display">\[-3 < x \le 5\]</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">interval notation:</span></div>
+    <div class="ans-line"><span class="ans-label">endpoint note:</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 3 END -->
+
+<!-- VERSION 1 PROBLEM 4 START -->
+<div class="assessment-card" id="v1-problem-4">
+  <div class="problem-number">4.<span class="section-tag">Section 1.3</span></div>
+  <p>Determine the domain of \(h(x)=\sqrt{x-4}\). Write your answer in interval notation and explain the restriction.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">restriction / reasoning:</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 4 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 1 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 1 PAGE 2 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V1</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-graph">
+
+<!-- VERSION 1 PROBLEM 5 START -->
+<div class="assessment-card" id="v1-problem-5">
+  <div class="problem-number">5.<span class="section-tag">Section 1.3</span></div>
+  <p>A function has lowest value \(-2\), highest value \(6\), and both endpoint values are included. Write the range in both inequality notation and interval notation.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">inequality notation:</span></div>
+    <div class="ans-line"><span class="ans-label">interval notation:</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 5 END -->
+
+<!-- VERSION 1 PROBLEM 6 START -->
+<div class="assessment-card" id="v1-problem-6">
+  <div class="problem-number">6.<span class="section-tag">Section 1.4</span></div>
+  <p>Describe all transformations applied to \(y=|x|\) to produce \(y=-2|x-3|+4\). Include shifts, reflection, stretch or compression, and vertex location.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">transformations:</span></div>
+    <div class="ans-line"><span class="ans-label">vertex:</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 6 END -->
+
+<!-- VERSION 1 PROBLEM 7 START -->
+<div class="assessment-card graph-wide" id="v1-problem-7">
+  <div class="problem-number">7.<span class="section-tag">Section 1.4</span></div>
+  <div class="graph-layout">
+    <div class="graph-prompt">
+      <p>Graph \(y=\sqrt{x+2}-3\). Then state the domain and range of the function.</p>
+      <div class="work-area graph-work"></div>
+    </div>
+    <img class="answer-plane" src="figures/plane.png" alt="coordinate plane">
+  </div>
+  <div class="ans-block graph-answers">
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">range:</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 7 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 1 PAGE 2 END ======================= -->
+
+<!-- ======================= VERSION 1 PAGE 3 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V1</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-three">
+
+<!-- VERSION 1 PROBLEM 8 START -->
+<div class="assessment-card" id="v1-problem-8">
+  <div class="problem-number">8.<span class="section-tag">Section 1.5</span></div>
+  <p>A graph approaches \(5\) from the left of \(x=2\) and approaches \(1\) from the right. Determine \(\lim_{x\to2^-} f(x)\), \(\lim_{x\to2^+} f(x)\), and state whether \(\lim_{x\to2} f(x)\) exists.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">left-hand limit:</span></div>
+    <div class="ans-line"><span class="ans-label">right-hand limit:</span></div>
+    <div class="ans-line"><span class="ans-label">two-sided limit / exists?</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 8 END -->
+
+<!-- VERSION 1 PROBLEM 9 START -->
+<div class="assessment-card" id="v1-problem-9">
+  <div class="problem-number">9.<span class="section-tag">Section 1.5</span></div>
+  <p>At \(x=4\), a graph has an open circle at \((4,\,3)\) and a filled point at \((4,\,-1)\). The graph approaches \(3\) from both sides. State \(\lim_{x\to4} f(x)\) and \(f(4)\), then explain the difference.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">\(\lim_{x\to 4} f(x)\) =</span></div>
+    <div class="ans-line"><span class="ans-label">f(4) =</span></div>
+    <div class="ans-line"><span class="ans-label">explanation:</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 9 END -->
+
+<!-- VERSION 1 PROBLEM 10 START -->
+<div class="assessment-card wide-card" id="v1-problem-10">
+  <div class="problem-number">10.<span class="section-tag">Sections 1.1 / 1.3</span></div>
+  <p>A student says the domain of \(p(x)=\dfrac{1}{x-6}\) is all real numbers because every input can be substituted. Explain the mistake and state the correct domain in interval notation.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">mistake:</span></div>
+    <div class="ans-line"><span class="ans-label">correct domain:</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 10 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 1 PAGE 3 END ======================= -->
+
+
+<!-- ======================= VERSION 2 PAGE 1 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V2</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-four">
+
+<!-- VERSION 2 PROBLEM 1 START -->
+<div class="assessment-card" id="v2-problem-1">
+  <div class="problem-number">1.<span class="section-tag">Section 1.1</span></div>
+  <p>Given \(f(x)=x^2+4x-5\), evaluate \(f(-3)\). Then solve \(f(x)=-5\).</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">f(&#8722;3) =</span></div>
+    <div class="ans-line"><span class="ans-label">solutions to f(x) = &#8722;5:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 1 END -->
+
+<!-- VERSION 2 PROBLEM 2 START -->
+<div class="assessment-card" id="v2-problem-2">
+  <div class="problem-number">2.<span class="section-tag">Section 1.1</span></div>
+  <p>The table shows values of \(g(x)\). Find \(g(-2)\) and solve \(g(x)=3\).</p>
+  <table class="data-table">
+    <tr><th>\(x\)</th><td>\(-3\)</td><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td></tr>
+    <tr><th>\(g(x)\)</th><td>\(8\)</td><td>\(3\)</td><td>\(0\)</td><td>\(-1\)</td><td>\(0\)</td></tr>
+  </table>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">g(&#8722;2) =</span></div>
+    <div class="ans-line"><span class="ans-label">x when g(x) = 3:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 2 END -->
+
+<!-- VERSION 2 PROBLEM 3 START -->
+<div class="assessment-card" id="v2-problem-3">
+  <div class="problem-number">3.<span class="section-tag">Section 1.2</span></div>
+  <p>Write the solution set in interval notation and describe whether each endpoint is included.</p>
+  <p class="math-display">\[-4 \le x < 2\]</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">interval notation:</span></div>
+    <div class="ans-line"><span class="ans-label">endpoint note:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 3 END -->
+
+<!-- VERSION 2 PROBLEM 4 START -->
+<div class="assessment-card" id="v2-problem-4">
+  <div class="problem-number">4.<span class="section-tag">Section 1.3</span></div>
+  <p>Determine the domain of \(h(x)=\sqrt{7-x}\). Write your answer in interval notation and explain the restriction.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">restriction / reasoning:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 4 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 2 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 2 PAGE 2 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V2</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-graph">
+
+<!-- VERSION 2 PROBLEM 5 START -->
+<div class="assessment-card" id="v2-problem-5">
+  <div class="problem-number">5.<span class="section-tag">Section 1.3</span></div>
+  <p>A function has range \((-\infty,\,9]\). Write the range in inequality notation and explain what the closed bracket at \(9\) tells you about the graph.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">inequality notation:</span></div>
+    <div class="ans-line"><span class="ans-label">endpoint meaning:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 5 END -->
+
+<!-- VERSION 2 PROBLEM 6 START -->
+<div class="assessment-card" id="v2-problem-6">
+  <div class="problem-number">6.<span class="section-tag">Section 1.4</span></div>
+  <p>Describe all transformations applied to \(y=x^2\) to produce \(y=\tfrac{1}{2}(x+4)^2-1\). Include shifts, stretch or compression, and vertex location.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">transformations:</span></div>
+    <div class="ans-line"><span class="ans-label">vertex:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 6 END -->
+
+<!-- VERSION 2 PROBLEM 7 START -->
+<div class="assessment-card graph-wide" id="v2-problem-7">
+  <div class="problem-number">7.<span class="section-tag">Section 1.4</span></div>
+  <div class="graph-layout">
+    <div class="graph-prompt">
+      <p>Graph \(y=|x-1|+2\). Then state the domain and range of the function.</p>
+      <div class="work-area graph-work"></div>
+    </div>
+    <img class="answer-plane" src="figures/plane.png" alt="coordinate plane">
+  </div>
+  <div class="ans-block graph-answers">
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">range:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 7 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 2 PAGE 2 END ======================= -->
+
+<!-- ======================= VERSION 2 PAGE 3 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V2</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-three">
+
+<!-- VERSION 2 PROBLEM 8 START -->
+<div class="assessment-card" id="v2-problem-8">
+  <div class="problem-number">8.<span class="section-tag">Section 1.5</span></div>
+  <p>A graph approaches \(-2\) from the left of \(x=-1\) and approaches \(-2\) from the right. Determine both one-sided limits and state \(\lim_{x\to -1} f(x)\).</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">left-hand limit:</span></div>
+    <div class="ans-line"><span class="ans-label">right-hand limit:</span></div>
+    <div class="ans-line"><span class="ans-label">two-sided limit:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 8 END -->
+
+<!-- VERSION 2 PROBLEM 9 START -->
+<div class="assessment-card" id="v2-problem-9">
+  <div class="problem-number">9.<span class="section-tag">Section 1.5</span></div>
+  <p>At \(x=0\), a graph has an open circle at \((0,\,4)\) and a filled point at \((0,\,7)\). The graph approaches \(4\) from both sides. State \(\lim_{x\to0} f(x)\) and \(f(0)\), then explain the difference.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">\(\lim_{x\to 0} f(x)\) =</span></div>
+    <div class="ans-line"><span class="ans-label">f(0) =</span></div>
+    <div class="ans-line"><span class="ans-label">explanation:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 9 END -->
+
+<!-- VERSION 2 PROBLEM 10 START -->
+<div class="assessment-card wide-card" id="v2-problem-10">
+  <div class="problem-number">10.<span class="section-tag">Sections 1.2 / 1.3</span></div>
+  <p>A student writes \([2,\infty)\) for the set \(x>2\). Explain the mistake and write the correct interval notation.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">mistake:</span></div>
+    <div class="ans-line"><span class="ans-label">correct notation:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 10 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 2 PAGE 3 END ======================= -->
+
+
+<!-- ======================= VERSION 3 PAGE 1 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V3</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-four">
+
+<!-- VERSION 3 PROBLEM 1 START -->
+<div class="assessment-card" id="v3-problem-1">
+  <div class="problem-number">1.<span class="section-tag">Section 1.1</span></div>
+  <p>Given \(f(x)=-x^2+6x-2\), evaluate \(f(4)\). Then solve \(f(x)=-2\).</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">f(4) =</span></div>
+    <div class="ans-line"><span class="ans-label">solutions to f(x) = &#8722;2:</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 1 END -->
+
+<!-- VERSION 3 PROBLEM 2 START -->
+<div class="assessment-card" id="v3-problem-2">
+  <div class="problem-number">2.<span class="section-tag">Section 1.1</span></div>
+  <p>The table shows values of \(g(x)\). Find \(g(2)\) and solve \(g(x)=-2\).</p>
+  <table class="data-table">
+    <tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr>
+    <tr><th>\(g(x)\)</th><td>\(-2\)</td><td>\(1\)</td><td>\(2\)</td><td>\(1\)</td><td>\(-2\)</td></tr>
+  </table>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">g(2) =</span></div>
+    <div class="ans-line"><span class="ans-label">x when g(x) = &#8722;2:</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 2 END -->
+
+<!-- VERSION 3 PROBLEM 3 START -->
+<div class="assessment-card" id="v3-problem-3">
+  <div class="problem-number">3.<span class="section-tag">Section 1.2</span></div>
+  <p>Write the solution set in inequality notation and describe whether each endpoint is included.</p>
+  <p class="math-display">\[(-5,\,4]\]</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">inequality notation:</span></div>
+    <div class="ans-line"><span class="ans-label">endpoint note:</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 3 END -->
+
+<!-- VERSION 3 PROBLEM 4 START -->
+<div class="assessment-card" id="v3-problem-4">
+  <div class="problem-number">4.<span class="section-tag">Section 1.3</span></div>
+  <p>Determine the domain of \(h(x)=\dfrac{1}{x+3}\). Write your answer in interval notation and explain the restriction.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">restriction / reasoning:</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 4 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 3 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 3 PAGE 2 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V3</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-graph">
+
+<!-- VERSION 3 PROBLEM 5 START -->
+<div class="assessment-card" id="v3-problem-5">
+  <div class="problem-number">5.<span class="section-tag">Section 1.3</span></div>
+  <p>A graph has range \([-6,\,\infty)\). Write the range in inequality notation and describe what the closed bracket at \(-6\) tells you about the lowest point of the graph.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">inequality notation:</span></div>
+    <div class="ans-line"><span class="ans-label">endpoint meaning:</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 5 END -->
+
+<!-- VERSION 3 PROBLEM 6 START -->
+<div class="assessment-card" id="v3-problem-6">
+  <div class="problem-number">6.<span class="section-tag">Section 1.4</span></div>
+  <p>Describe all transformations applied to \(y=\sqrt{x}\) to produce \(y=3\sqrt{x-1}+2\). Include shifts, stretch or compression, and starting point.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">transformations:</span></div>
+    <div class="ans-line"><span class="ans-label">starting point:</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 6 END -->
+
+<!-- VERSION 3 PROBLEM 7 START -->
+<div class="assessment-card graph-wide" id="v3-problem-7">
+  <div class="problem-number">7.<span class="section-tag">Section 1.4</span></div>
+  <div class="graph-layout">
+    <div class="graph-prompt">
+      <p>Graph \(y=(x-2)^2-4\). Then state the vertex, domain, and range of the function.</p>
+      <div class="work-area graph-work"></div>
+    </div>
+    <img class="answer-plane" src="figures/plane.png" alt="coordinate plane">
+  </div>
+  <div class="ans-block graph-answers">
+    <div class="ans-line"><span class="ans-label">vertex:</span></div>
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">range:</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 7 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 3 PAGE 2 END ======================= -->
+
+<!-- ======================= VERSION 3 PAGE 3 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V3</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-three">
+
+<!-- VERSION 3 PROBLEM 8 START -->
+<div class="assessment-card" id="v3-problem-8">
+  <div class="problem-number">8.<span class="section-tag">Section 1.5</span></div>
+  <p>A graph approaches \(0\) from the left of \(x=3\) and approaches \(4\) from the right. Determine both one-sided limits and state whether \(\lim_{x\to3} f(x)\) exists.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">left-hand limit:</span></div>
+    <div class="ans-line"><span class="ans-label">right-hand limit:</span></div>
+    <div class="ans-line"><span class="ans-label">two-sided limit / exists?</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 8 END -->
+
+<!-- VERSION 3 PROBLEM 9 START -->
+<div class="assessment-card" id="v3-problem-9">
+  <div class="problem-number">9.<span class="section-tag">Section 1.5</span></div>
+  <p>At \(x=-2\), the graph has a filled point at \((-2,\,5)\) and approaches \(5\) from both sides. State \(\lim_{x\to -2} f(x)\) and \(f(-2)\), then explain whether the function is continuous there.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">\(\lim_{x\to -2} f(x)\) =</span></div>
+    <div class="ans-line"><span class="ans-label">f(&#8722;2) =</span></div>
+    <div class="ans-line"><span class="ans-label">continuous? explain:</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 9 END -->
+
+<!-- VERSION 3 PROBLEM 10 START -->
+<div class="assessment-card wide-card" id="v3-problem-10">
+  <div class="problem-number">10.<span class="section-tag">Sections 1.1 / 1.5</span></div>
+  <p>A student says \(\lim_{x\to1} f(x)\) must equal \(f(1)\). Explain why this is not always true and give a specific example using a hole or a jump discontinuity.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">mistake:</span></div>
+    <div class="ans-line"><span class="ans-label">counterexample / explanation:</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 10 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 3 PAGE 3 END ======================= -->
+
+
+<!-- ======================= VERSION 4 PAGE 1 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V4</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-four">
+
+<!-- VERSION 4 PROBLEM 1 START -->
+<div class="assessment-card" id="v4-problem-1">
+  <div class="problem-number">1.<span class="section-tag">Section 1.1</span></div>
+  <p>Given \(f(x)=3x^2-12x+2\), evaluate \(f(0)\). Then solve \(f(x)=2\).</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">f(0) =</span></div>
+    <div class="ans-line"><span class="ans-label">solutions to f(x) = 2:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 1 END -->
+
+<!-- VERSION 4 PROBLEM 2 START -->
+<div class="assessment-card" id="v4-problem-2">
+  <div class="problem-number">2.<span class="section-tag">Section 1.1</span></div>
+  <p>The table shows values of \(g(x)\). Find \(g(4)\) and solve \(g(x)=0\).</p>
+  <table class="data-table">
+    <tr><th>\(x\)</th><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td><td>\(4\)</td></tr>
+    <tr><th>\(g(x)\)</th><td>\(6\)</td><td>\(0\)</td><td>\(-2\)</td><td>\(0\)</td><td>\(6\)</td></tr>
+  </table>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">g(4) =</span></div>
+    <div class="ans-line"><span class="ans-label">x when g(x) = 0:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 2 END -->
+
+<!-- VERSION 4 PROBLEM 3 START -->
+<div class="assessment-card" id="v4-problem-3">
+  <div class="problem-number">3.<span class="section-tag">Section 1.2</span></div>
+  <p>Write the solution set in interval notation and describe whether each endpoint is included.</p>
+  <p class="math-display">\[x \le -1 \text{ or } x > 3\]</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">interval notation:</span></div>
+    <div class="ans-line"><span class="ans-label">endpoint note:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 3 END -->
+
+<!-- VERSION 4 PROBLEM 4 START -->
+<div class="assessment-card" id="v4-problem-4">
+  <div class="problem-number">4.<span class="section-tag">Section 1.3</span></div>
+  <p>Determine the domain of \(h(x)=\sqrt{2x+6}\). Write your answer in interval notation and explain the restriction.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">restriction / reasoning:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 4 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 4 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 4 PAGE 2 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V4</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-graph">
+
+<!-- VERSION 4 PROBLEM 5 START -->
+<div class="assessment-card" id="v4-problem-5">
+  <div class="problem-number">5.<span class="section-tag">Section 1.3</span></div>
+  <p>A function has range \((-\infty,\,4)\). Write the range in inequality notation and explain why the endpoint at \(4\) is not included.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">inequality notation:</span></div>
+    <div class="ans-line"><span class="ans-label">endpoint meaning:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 5 END -->
+
+<!-- VERSION 4 PROBLEM 6 START -->
+<div class="assessment-card" id="v4-problem-6">
+  <div class="problem-number">6.<span class="section-tag">Section 1.4</span></div>
+  <p>Describe all transformations applied to \(y=|x|\) to produce \(y=\tfrac{1}{2}|x+5|-3\). Include shifts, stretch or compression, and vertex location.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">transformations:</span></div>
+    <div class="ans-line"><span class="ans-label">vertex:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 6 END -->
+
+<!-- VERSION 4 PROBLEM 7 START -->
+<div class="assessment-card graph-wide" id="v4-problem-7">
+  <div class="problem-number">7.<span class="section-tag">Section 1.4</span></div>
+  <div class="graph-layout">
+    <div class="graph-prompt">
+      <p>Graph \(y=-|x+2|+5\). Then state the vertex, domain, and range of the function.</p>
+      <div class="work-area graph-work"></div>
+    </div>
+    <img class="answer-plane" src="figures/plane.png" alt="coordinate plane">
+  </div>
+  <div class="ans-block graph-answers">
+    <div class="ans-line"><span class="ans-label">vertex:</span></div>
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">range:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 7 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 4 PAGE 2 END ======================= -->
+
+<!-- ======================= VERSION 4 PAGE 3 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V4</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-three">
+
+<!-- VERSION 4 PROBLEM 8 START -->
+<div class="assessment-card" id="v4-problem-8">
+  <div class="problem-number">8.<span class="section-tag">Section 1.5</span></div>
+  <p>A graph approaches \(7\) from the left of \(x=0\) and approaches \(7\) from the right. Determine both one-sided limits and state \(\lim_{x\to0} f(x)\).</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">left-hand limit:</span></div>
+    <div class="ans-line"><span class="ans-label">right-hand limit:</span></div>
+    <div class="ans-line"><span class="ans-label">two-sided limit:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 8 END -->
+
+<!-- VERSION 4 PROBLEM 9 START -->
+<div class="assessment-card" id="v4-problem-9">
+  <div class="problem-number">9.<span class="section-tag">Section 1.5</span></div>
+  <p>At \(x=5\), the graph approaches \(-3\) from both sides but the filled point is at \((5,\,2)\). State \(\lim_{x\to5} f(x)\) and \(f(5)\), then explain the difference.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">\(\lim_{x\to 5} f(x)\) =</span></div>
+    <div class="ans-line"><span class="ans-label">f(5) =</span></div>
+    <div class="ans-line"><span class="ans-label">explanation:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 9 END -->
+
+<!-- VERSION 4 PROBLEM 10 START -->
+<div class="assessment-card wide-card" id="v4-problem-10">
+  <div class="problem-number">10.<span class="section-tag">Sections 1.2 / 1.4</span></div>
+  <p>A student says \(y=-(x-4)^2+1\) shifts left 4 and reflects over the \(x\)-axis. Identify each mistake and describe the correct transformations.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">mistake(s):</span></div>
+    <div class="ans-line"><span class="ans-label">correct transformations:</span></div>
+    <div class="ans-line"><span class="ans-label">vertex:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 10 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 4 PAGE 3 END ======================= -->
+
+
+<!-- ======================= VERSION 5 PAGE 1 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V5</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-four">
+
+<!-- VERSION 5 PROBLEM 1 START -->
+<div class="assessment-card" id="v5-problem-1">
+  <div class="problem-number">1.<span class="section-tag">Section 1.1</span></div>
+  <p>Given \(f(x)=x^2-5x+6\), evaluate \(f(1)\). Then solve \(f(x)=0\).</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">f(1) =</span></div>
+    <div class="ans-line"><span class="ans-label">solutions to f(x) = 0:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 1 END -->
+
+<!-- VERSION 5 PROBLEM 2 START -->
+<div class="assessment-card" id="v5-problem-2">
+  <div class="problem-number">2.<span class="section-tag">Section 1.1</span></div>
+  <p>The table shows values of \(g(x)\). Find \(g(-1)\) and solve \(g(x)=5\).</p>
+  <table class="data-table">
+    <tr><th>\(x\)</th><td>\(-3\)</td><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td></tr>
+    <tr><th>\(g(x)\)</th><td>\(5\)</td><td>\(2\)</td><td>\(1\)</td><td>\(2\)</td><td>\(5\)</td></tr>
+  </table>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">g(&#8722;1) =</span></div>
+    <div class="ans-line"><span class="ans-label">x when g(x) = 5:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 2 END -->
+
+<!-- VERSION 5 PROBLEM 3 START -->
+<div class="assessment-card" id="v5-problem-3">
+  <div class="problem-number">3.<span class="section-tag">Section 1.2</span></div>
+  <p>Write the solution set in inequality notation and describe whether each endpoint is included.</p>
+  <p class="math-display">\[[-2,\,6)\]</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">inequality notation:</span></div>
+    <div class="ans-line"><span class="ans-label">endpoint note:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 3 END -->
+
+<!-- VERSION 5 PROBLEM 4 START -->
+<div class="assessment-card" id="v5-problem-4">
+  <div class="problem-number">4.<span class="section-tag">Section 1.3</span></div>
+  <p>Determine the domain of \(h(x)=\dfrac{1}{x^2-9}\). Write your answer in interval notation and explain all restrictions.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">restriction / reasoning:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 4 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 5 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 5 PAGE 2 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V5</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-graph">
+
+<!-- VERSION 5 PROBLEM 5 START -->
+<div class="assessment-card" id="v5-problem-5">
+  <div class="problem-number">5.<span class="section-tag">Section 1.3</span></div>
+  <p>A function has no maximum value and has a minimum value of \(1\) that is not achieved. Write the range in both inequality notation and interval notation.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">inequality notation:</span></div>
+    <div class="ans-line"><span class="ans-label">interval notation:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 5 END -->
+
+<!-- VERSION 5 PROBLEM 6 START -->
+<div class="assessment-card" id="v5-problem-6">
+  <div class="problem-number">6.<span class="section-tag">Section 1.4</span></div>
+  <p>Describe all transformations applied to \(y=x^2\) to produce \(y=-3(x-1)^2+6\). Include shifts, reflection, stretch or compression, and vertex location.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">transformations:</span></div>
+    <div class="ans-line"><span class="ans-label">vertex:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 6 END -->
+
+<!-- VERSION 5 PROBLEM 7 START -->
+<div class="assessment-card graph-wide" id="v5-problem-7">
+  <div class="problem-number">7.<span class="section-tag">Section 1.4</span></div>
+  <div class="graph-layout">
+    <div class="graph-prompt">
+      <p>Graph \(y=\sqrt{x-3}+1\). Then state the domain and range of the function.</p>
+      <div class="work-area graph-work"></div>
+    </div>
+    <img class="answer-plane" src="figures/plane.png" alt="coordinate plane">
+  </div>
+  <div class="ans-block graph-answers">
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">range:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 7 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 5 PAGE 2 END ======================= -->
+
+<!-- ======================= VERSION 5 PAGE 3 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V5</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-three">
+
+<!-- VERSION 5 PROBLEM 8 START -->
+<div class="assessment-card" id="v5-problem-8">
+  <div class="problem-number">8.<span class="section-tag">Section 1.5</span></div>
+  <p>A graph approaches \(-4\) from the left of \(x=2\) and approaches \(-4\) from the right. Determine both one-sided limits and state \(\lim_{x\to2} f(x)\).</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">left-hand limit:</span></div>
+    <div class="ans-line"><span class="ans-label">right-hand limit:</span></div>
+    <div class="ans-line"><span class="ans-label">two-sided limit:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 8 END -->
+
+<!-- VERSION 5 PROBLEM 9 START -->
+<div class="assessment-card" id="v5-problem-9">
+  <div class="problem-number">9.<span class="section-tag">Section 1.5</span></div>
+  <p>At \(x=-1\), a graph has an open circle at \((-1,\,0)\) and a filled point at \((-1,\,6)\). The graph approaches \(0\) from both sides. State \(\lim_{x\to -1} f(x)\) and \(f(-1)\), then explain the difference.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">\(\lim_{x\to -1} f(x)\) =</span></div>
+    <div class="ans-line"><span class="ans-label">f(&#8722;1) =</span></div>
+    <div class="ans-line"><span class="ans-label">explanation:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 9 END -->
+
+<!-- VERSION 5 PROBLEM 10 START -->
+<div class="assessment-card wide-card" id="v5-problem-10">
+  <div class="problem-number">10.<span class="section-tag">Sections 1.1 / 1.3</span></div>
+  <p>A student solves \(f(x)=4\) from a table by finding the row where \(x=4\). Explain the mistake and describe what the student should look for instead.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">mistake:</span></div>
+    <div class="ans-line"><span class="ans-label">correct method:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 10 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 5 PAGE 3 END ======================= -->
+
+
+<!-- ======================= VERSION 6 PAGE 1 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V6</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-four">
+
+<!-- VERSION 6 PROBLEM 1 START -->
+<div class="assessment-card" id="v6-problem-1">
+  <div class="problem-number">1.<span class="section-tag">Section 1.1</span></div>
+  <p>Given \(f(x)=-2x^2+8x+1\), evaluate \(f(3)\). Then solve \(f(x)=1\).</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">f(3) =</span></div>
+    <div class="ans-line"><span class="ans-label">solutions to f(x) = 1:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 1 END -->
+
+<!-- VERSION 6 PROBLEM 2 START -->
+<div class="assessment-card" id="v6-problem-2">
+  <div class="problem-number">2.<span class="section-tag">Section 1.1</span></div>
+  <p>The table shows values of \(g(x)\). Find \(g(0)\) and solve \(g(x)=1\).</p>
+  <table class="data-table">
+    <tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr>
+    <tr><th>\(g(x)\)</th><td>\(1\)</td><td>\(-2\)</td><td>\(-3\)</td><td>\(-2\)</td><td>\(1\)</td></tr>
+  </table>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">g(0) =</span></div>
+    <div class="ans-line"><span class="ans-label">x when g(x) = 1:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 2 END -->
+
+<!-- VERSION 6 PROBLEM 3 START -->
+<div class="assessment-card" id="v6-problem-3">
+  <div class="problem-number">3.<span class="section-tag">Section 1.2</span></div>
+  <p>Write the solution set in interval notation and describe whether each endpoint is included.</p>
+  <p class="math-display">\[x < -6 \text{ or } x \ge 2\]</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">interval notation:</span></div>
+    <div class="ans-line"><span class="ans-label">endpoint note:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 3 END -->
+
+<!-- VERSION 6 PROBLEM 4 START -->
+<div class="assessment-card" id="v6-problem-4">
+  <div class="problem-number">4.<span class="section-tag">Section 1.3</span></div>
+  <p>Determine the domain of \(h(x)=\sqrt{10-2x}\). Write your answer in interval notation and explain the restriction.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">restriction / reasoning:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 4 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 6 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 6 PAGE 2 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V6</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-graph">
+
+<!-- VERSION 6 PROBLEM 5 START -->
+<div class="assessment-card" id="v6-problem-5">
+  <div class="problem-number">5.<span class="section-tag">Section 1.3</span></div>
+  <p>A function has maximum value \(8\) with no minimum value, and the maximum is achieved. Write the range in both inequality notation and interval notation.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">inequality notation:</span></div>
+    <div class="ans-line"><span class="ans-label">interval notation:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 5 END -->
+
+<!-- VERSION 6 PROBLEM 6 START -->
+<div class="assessment-card" id="v6-problem-6">
+  <div class="problem-number">6.<span class="section-tag">Section 1.4</span></div>
+  <p>Describe all transformations applied to \(y=\sqrt{x}\) to produce \(y=-\sqrt{x+4}+2\). Include shifts, reflection, and starting point.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">transformations:</span></div>
+    <div class="ans-line"><span class="ans-label">starting point:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 6 END -->
+
+<!-- VERSION 6 PROBLEM 7 START -->
+<div class="assessment-card graph-wide" id="v6-problem-7">
+  <div class="problem-number">7.<span class="section-tag">Section 1.4</span></div>
+  <div class="graph-layout">
+    <div class="graph-prompt">
+      <p>Graph \(y=(x+1)^2-5\). Then state the vertex, domain, and range of the function.</p>
+      <div class="work-area graph-work"></div>
+    </div>
+    <img class="answer-plane" src="figures/plane.png" alt="coordinate plane">
+  </div>
+  <div class="ans-block graph-answers">
+    <div class="ans-line"><span class="ans-label">vertex:</span></div>
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">range:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 7 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 6 PAGE 2 END ======================= -->
+
+<!-- ======================= VERSION 6 PAGE 3 START ======================= -->
+<section class="page">
+  <div class="header-row">
+    <div class="assessment-title">Unit 1 Summative &nbsp; V6</div>
+    <div class="name-line">Name:<span></span></div>
+  </div>
+  <div class="question-grid grid-three">
+
+<!-- VERSION 6 PROBLEM 8 START -->
+<div class="assessment-card" id="v6-problem-8">
+  <div class="problem-number">8.<span class="section-tag">Section 1.5</span></div>
+  <p>A graph approaches \(2\) from the left of \(x=-3\) and approaches \(-6\) from the right. Determine both one-sided limits and state whether \(\lim_{x\to -3} f(x)\) exists.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">left-hand limit:</span></div>
+    <div class="ans-line"><span class="ans-label">right-hand limit:</span></div>
+    <div class="ans-line"><span class="ans-label">two-sided limit / exists?</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 8 END -->
+
+<!-- VERSION 6 PROBLEM 9 START -->
+<div class="assessment-card" id="v6-problem-9">
+  <div class="problem-number">9.<span class="section-tag">Section 1.5</span></div>
+  <p>At \(x=1\), the graph approaches \(9\) from both sides but \(f(1)\) is undefined. State \(\lim_{x\to1} f(x)\) and \(f(1)\), then explain what type of discontinuity this represents.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">\(\lim_{x\to 1} f(x)\) =</span></div>
+    <div class="ans-line"><span class="ans-label">f(1) =</span></div>
+    <div class="ans-line"><span class="ans-label">type of discontinuity:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 9 END -->
+
+<!-- VERSION 6 PROBLEM 10 START -->
+<div class="assessment-card wide-card" id="v6-problem-10">
+  <div class="problem-number">10.<span class="section-tag">Sections 1.2 / 1.3</span></div>
+  <p>A student writes \((-\infty,\,3)\) as the interval notation for \(x \le 3\). Explain the mistake and write the correct interval notation.</p>
+  <div class="work-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">mistake:</span></div>
+    <div class="ans-line"><span class="ans-label">correct notation:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 10 END -->
+
+  </div>
+</section>
+<!-- ======================= VERSION 6 PAGE 3 END ======================= -->
+
+</body>
+</html>
