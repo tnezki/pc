@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Unit 2 Summative Assessments</title>
 <script>
 window.MathJax = { tex: { inlineMath: [["\\(","\\)"],["$","$"]], displayMath: [["\\[","\\]"],["$$","$$"]] } };
@@ -11,113 +11,136 @@ window.MathJax = { tex: { inlineMath: [["\\(","\\)"],["$","$"]], displayMath: [[
 <style>
 
 /* ======================= PRINT PAGE + RESET ======================= */
-@page { size: letter; margin: 0.45in; }
+:root {
+  --pad: 0.13in;
+  /* Max width for images — matches one column. Images will NOT grow beyond
+     this in full-page mode. Edit here to resize all graphs at once.       */
+  --img-col-max: 3.45in;
+}
+@page { size: letter; margin: 0.5in; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.32;
+  line-height: 1.34;
   color: #111;
   background: #fff;
-  font-size: 11.4pt;
+  font-size: 11.5pt;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
 
-/* ======================= FIXED PRINT PAGE SYSTEM ======================= */
+/* ======================= PAGE SHELL ======================= */
 .page {
-  width: 100%;
-  height: 10.08in;
-  max-height: 10.08in;
-  overflow: hidden;
+  height: 10in;
+  display: flex;
+  flex-direction: column;   /* header on top, problem-row fills the rest */
   page-break-after: always;
   break-after: page;
-  display: flex;
-  flex-direction: column;
 }
 .page:last-child { page-break-after: auto; break-after: auto; }
-.header-row {
+
+/* ======================= PAGE HEADER — one per page, full width ======================= */
+.page-header {
   flex: 0 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  padding: 0 var(--pad) 4px var(--pad);
   border-bottom: 2px solid #111;
-  padding-bottom: 4px;
-  margin-bottom: 12px;
 }
-.assessment-title { font-size: 14.5pt; font-weight: 900; color: #000; }
-.name-line { font-size: 12pt; font-weight: 800; }
+.page-title { font-weight: 900; font-size: 13.5pt; color: #000; white-space: nowrap; }
+.name-line   { font-size: 11.5pt; font-weight: 800; white-space: nowrap; }
 .name-line span {
   display: inline-block;
-  width: 2.7in;
+  width: 2.6in;
+  height: 13px;
   border-bottom: 1.5px solid #111;
-  height: 15px;
-  margin-left: 7px;
+  margin-left: 6px;
   vertical-align: bottom;
 }
 
-/* ======================= PAGE-LOCAL GRIDS ======================= */
-.question-grid {
+/* ======================= PROBLEM ROW — holds the two problem columns ======================= */
+.problem-row {
   flex: 1 1 auto;
   min-height: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px 16px;
-  align-items: stretch;
+  display: flex;
+  flex-direction: row;
 }
-.grid-four  { grid-template-rows: 1fr 1fr; }
-.grid-three { grid-template-rows: 0.92fr 1.08fr; }
-.wide-card  { grid-column: 1 / 3; }
 
-/* ======================= ASSESSMENT CARDS ======================= */
-.assessment-card {
-  border: 1px solid #777;
-  padding: 11px 12px;
-  background: #fff;
+/* ======================= PROBLEM SIZE CLASSES =======================
+
+   TWO SIZES — add one class to each problem div:
+
+     half  →  problem fills one column (two per page, side by side)
+     full  →  problem fills the whole page width (one per page)
+
+   HOW TO USE:
+     Normal two-up page:
+       <div class="problem half" id="v1-problem-1"> ... </div>
+       <div class="problem half" id="v1-problem-2"> ... </div>
+
+     Single full-page problem (remove the other problem div entirely):
+       <div class="problem full" id="v1-problem-4"> ... </div>
+
+   VERTICAL DIVIDER LINE:
+     The center line is drawn automatically by CSS when two .half problems
+     are adjacent. It appears only between them — no extra HTML needed.
+     It does NOT appear in full-page mode.
+
+   IMAGE SIZE IN FULL MODE:
+     Images stay at column width (--img-col-max ≈ 3.45in) even in full mode.
+     They do not stretch to fill the wider card. To change this, edit
+     --img-col-max in :root above.
+   ======================================================================= */
+
+/* shared layout for both sizes */
+.problem {
   display: flex;
   flex-direction: column;
-  min-height: 0;
   overflow: hidden;
-  break-inside: avoid;
-  page-break-inside: avoid;
+  padding: 8px var(--pad) var(--pad) var(--pad);
+  align-self: stretch;
 }
+
+/* HALF — one of two side-by-side columns */
+.problem.half { flex: 1 1 0; min-width: 0; }
+
+/* vertical center divider — drawn automatically between two .half problems */
+.problem.half + .problem.half { border-left: 1px solid #777; }
+
+/* FULL — single problem spanning the entire page width */
+.problem.full { flex: 0 0 100%; width: 100%; }
+
+/* ======================= PROBLEM NUMBER + SECTION TAG ======================= */
 .problem-number {
   flex: 0 0 auto;
   font-weight: 900;
   color: #000;
-  font-size: 13pt;
-  margin-bottom: 8px;
+  font-size: 12.5pt;
+  margin-bottom: 5px;
 }
 .section-tag {
   color: #555;
-  font-size: 11pt;
+  font-size: 10.5pt;
   font-weight: 800;
   margin-left: 8px;
 }
-p { margin-bottom: 7px; }
-.math-display {
-  flex: 0 0 auto;
-  text-align: center;
-  font-size: 13pt;
-  margin: 8px 0 9px 0;
-}
-.sub-list {
-  flex: 0 0 auto;
-  list-style-type: lower-alpha;
-  margin: 4px 0 7px 22px;
-  padding: 0;
-}
-.sub-list li { margin-bottom: 3px; }
-.work-area {
+.note { font-size: 9.5pt; color: #555; font-style: italic; }
+p  { margin-bottom: 6px; }
+ol, ul { margin-left: 0.24in; margin-bottom: 5px; }
+li { margin-bottom: 3px; }
+
+/* ======================= WORK AREA + ANSWER BLOCK ======================= */
+.ws-area {
   flex: 1 1 auto;
-  min-height: 0.75in;
-  border-top: 1px solid #c8c8c8;
-  margin-top: 7px;
+  min-height: 0.35in;
+  margin-top: 6px;
 }
 .ans-block {
   flex: 0 0 auto;
-  margin-top: 10px;
+  margin-top: auto;
   border-top: 2px solid #111;
-  padding-top: 5px;
+  padding-top: 4px;
 }
 .ans-line {
   min-height: 0.24in;
@@ -127,12 +150,31 @@ p { margin-bottom: 7px; }
 .ans-line:last-child { border-bottom: none; }
 .ans-label { font-weight: 900; font-size: 10.5pt; }
 
+/* ======================= GRAPHS / COORDINATE PLANES ======================= */
+/* width: 100% fills the column; max-width keeps images column-sized in full mode */
+.graph-block {
+  flex: 0 0 auto;
+  margin: 6px 0 5px 0;
+  text-align: left;
+}
+.question-graph,
+.answer-plane {
+  display: block;
+  width: 100%;
+  max-width: var(--img-col-max);
+  height: auto;
+  margin: 0;
+  border: 0;
+  background: #fff;
+}
+.answer-plane { margin-top: 5px; }
+
 /* ======================= DATA TABLES ======================= */
 .data-table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
-  margin: 5px 0 6px 0;
+  margin: 6px 0 7px 0;
   flex-shrink: 0;
 }
 .data-table th,
@@ -146,33 +188,27 @@ p { margin-bottom: 7px; }
 .data-table th:first-child,
 .data-table td:first-child { font-weight: 900; width: 0.62in; }
 
-@media print {
-  body { font-size: 11.4pt; }
-  .page { height: 10.08in; max-height: 10.08in; }
-}
+@media print { body { font-size: 11.5pt; } }
 
 </style>
 </head>
 <body>
 
+
 <!-- ======================= VERSION 1 PAGE 1 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V1</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-four">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V1</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 1 PROBLEM 1 START -->
-<div class="assessment-card" id="v1-problem-1">
+<div class="problem half" id="v1-problem-1">
   <div class="problem-number">1.<span class="section-tag">Section 2.1</span></div>
   <p>Determine whether each function is even, odd, or neither. Show how \(f(-x)\) supports each classification.</p>
-  <ol class="sub-list">
-    <li>\(f(x)=x^4-5x^2+2\)</li>
-    <li>\(g(x)=x^3-4x\)</li>
-    <li>\(h(x)=x^2+x\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(a.\quad f(x)=x^4-5x^2+2\)</li><li>\(b.\quad g(x)=x^3-4x\)</li><li>\(c.\quad h(x)=x^2+x\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">a. classification:</span></div>
     <div class="ans-line"><span class="ans-label">b. classification:</span></div>
@@ -183,14 +219,14 @@ p { margin-bottom: 7px; }
 <!-- VERSION 1 PROBLEM 1 END -->
 
 <!-- VERSION 1 PROBLEM 2 START -->
-<div class="assessment-card" id="v1-problem-2">
+<div class="problem half" id="v1-problem-2">
   <div class="problem-number">2.<span class="section-tag">Section 2.1</span></div>
   <p>Use the table to decide whether the function appears even, odd, or neither. Justify using matching positive and negative inputs.</p>
   <table class="data-table">
-    <tr><th>\(x\)</th><td>\(-3\)</td><td>\(-2\)</td><td>\(2\)</td><td>\(3\)</td></tr>
-    <tr><th>\(f(x)\)</th><td>\(-6\)</td><td>\(-4\)</td><td>\(4\)</td><td>\(6\)</td></tr>
+  <tr><th>\(x\)</th><td>\(-3\)</td><td>\(-2\)</td><td>\(2\)</td><td>\(3\)</td></tr>
+  <tr><th>\(f(x)\)</th><td>\(-6\)</td><td>\(-4\)</td><td>\(4\)</td><td>\(6\)</td></tr>
   </table>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">classification:</span></div>
     <div class="ans-line"><span class="ans-label">evidence from table:</span></div>
@@ -198,29 +234,37 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 1 PROBLEM 2 END -->
 
+</div>
+</section>
+<!-- ======================= VERSION 1 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 1 PAGE 2 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V1</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
 <!-- VERSION 1 PROBLEM 3 START -->
-<div class="assessment-card" id="v1-problem-3">
+<div class="problem half" id="v1-problem-3">
   <div class="problem-number">3.<span class="section-tag">Section 2.2</span></div>
   <p>Let \(f(x)=x^2-3x\) and \(g(x)=2x+5\). Find each combined function.</p>
-  <ol class="sub-list">
-    <li>\((f+g)(x)\)</li>
-    <li>\((f-g)(x)\)</li>
-    <li>\((fg)(x)\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\((f+g)(x)\)</li><li>\((f-g)(x)\)</li><li>\((fg)(x)\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">(f+g)(x) =</span></div>
-    <div class="ans-line"><span class="ans-label">(f&#8722;g)(x) =</span></div>
+    <div class="ans-line"><span class="ans-label">(f-g)(x) =</span></div>
     <div class="ans-line"><span class="ans-label">(fg)(x) =</span></div>
   </div>
 </div>
 <!-- VERSION 1 PROBLEM 3 END -->
 
 <!-- VERSION 1 PROBLEM 4 START -->
-<div class="assessment-card" id="v1-problem-4">
+<div class="problem half" id="v1-problem-4">
   <div class="problem-number">4.<span class="section-tag">Section 2.2</span></div>
-  <p>Let \(f(x)=x^2-9\) and \(g(x)=x-3\). Find \(\left(\dfrac{f}{g}\right)(x)\), simplify when possible, and state the original domain restriction.</p>
-  <div class="work-area"></div>
+  <p>Let \(f(x)=x^2-9\) and \(g(x)=x-3\). Find \(\left(\frac{f}{g}\right)(x)\), simplify when possible, and state the original domain restriction.</p>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">quotient:</span></div>
     <div class="ans-line"><span class="ans-label">simplified form:</span></div>
@@ -229,27 +273,24 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 1 PROBLEM 4 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 1 PAGE 1 END ======================= -->
+<!-- ======================= VERSION 1 PAGE 2 END ======================= -->
 
-<!-- ======================= VERSION 1 PAGE 2 START ======================= -->
+<!-- ======================= VERSION 1 PAGE 3 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V1</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-four">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V1</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 1 PROBLEM 5 START -->
-<div class="assessment-card" id="v1-problem-5">
+<div class="problem half" id="v1-problem-5">
   <div class="problem-number">5.<span class="section-tag">Section 2.3</span></div>
   <p>Let \(f(x)=x^2+1\) and \(g(x)=x-4\). Find and simplify both compositions, then compare the results.</p>
-  <ol class="sub-list">
-    <li>\(f(g(x))\)</li>
-    <li>\(g(f(x))\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(f(g(x))\)</li><li>\(g(f(x))\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">f(g(x)) =</span></div>
     <div class="ans-line"><span class="ans-label">g(f(x)) =</span></div>
@@ -259,16 +300,16 @@ p { margin-bottom: 7px; }
 <!-- VERSION 1 PROBLEM 5 END -->
 
 <!-- VERSION 1 PROBLEM 6 START -->
-<div class="assessment-card" id="v1-problem-6">
+<div class="problem half" id="v1-problem-6">
   <div class="problem-number">6.<span class="section-tag">Section 2.3</span></div>
   <p>Use the table to evaluate the composite function values.</p>
   <table class="data-table">
-    <tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr>
-    <tr><th>\(f(x)\)</th><td>\(1\)</td><td>\(3\)</td><td>\(2\)</td><td>\(-1\)</td><td>\(0\)</td></tr>
-    <tr><th>\(g(x)\)</th><td>\(2\)</td><td>\(0\)</td><td>\(-1\)</td><td>\(3\)</td><td>\(1\)</td></tr>
+  <tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr>
+  <tr><th>\(f(x)\)</th><td>\(1\)</td><td>\(3\)</td><td>\(2\)</td><td>\(-1\)</td><td>\(0\)</td></tr>
+  <tr><th>\(g(x)\)</th><td>\(2\)</td><td>\(0\)</td><td>\(-1\)</td><td>\(3\)</td><td>\(1\)</td></tr>
   </table>
-  <p>Find: &nbsp; a) \(f(g(0))\) &nbsp;&nbsp; b) \(g(f(2))\) &nbsp;&nbsp; c) \(f(f(1))\)</p>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(f(g(0))\)</li><li>\(g(f(2))\)</li><li>\(f(f(1))\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">f(g(0)) =</span></div>
     <div class="ans-line"><span class="ans-label">g(f(2)) =</span></div>
@@ -277,12 +318,24 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 1 PROBLEM 6 END -->
 
+</div>
+</section>
+<!-- ======================= VERSION 1 PAGE 3 END ======================= -->
+
+<!-- ======================= VERSION 1 PAGE 4 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V1</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
 <!-- VERSION 1 PROBLEM 7 START -->
-<div class="assessment-card" id="v1-problem-7">
+<div class="problem half" id="v1-problem-7">
   <div class="problem-number">7.<span class="section-tag">Section 2.4</span></div>
   <p>For \(f(x)=x^2-3x+2\), compute and simplify the difference quotient.</p>
-  <p class="math-display">\[\dfrac{f(x+h)-f(x)}{h}\]</p>
-  <div class="work-area"></div>
+  <ol type="a"><li>\[\frac{f(x+h)-f(x)}{h}\]</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">simplified difference quotient:</span></div>
     <div class="ans-line"><span class="ans-label">key algebra steps:</span></div>
@@ -291,14 +344,14 @@ p { margin-bottom: 7px; }
 <!-- VERSION 1 PROBLEM 7 END -->
 
 <!-- VERSION 1 PROBLEM 8 START -->
-<div class="assessment-card" id="v1-problem-8">
+<div class="problem half" id="v1-problem-8">
   <div class="problem-number">8.<span class="section-tag">Section 2.4</span></div>
   <p>The table gives values of a function. Find the average rate of change from \(x=1\) to \(x=5\), then interpret it as change in output per unit change in input.</p>
   <table class="data-table">
-    <tr><th>\(x\)</th><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td><td>\(4\)</td><td>\(5\)</td></tr>
-    <tr><th>\(f(x)\)</th><td>\(3\)</td><td>\(7\)</td><td>\(13\)</td><td>\(21\)</td><td>\(31\)</td></tr>
+  <tr><th>\(x\)</th><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td><td>\(4\)</td><td>\(5\)</td></tr>
+  <tr><th>\(f(x)\)</th><td>\(3\)</td><td>\(7\)</td><td>\(13\)</td><td>\(21\)</td><td>\(31\)</td></tr>
   </table>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">average rate of change:</span></div>
     <div class="ans-line"><span class="ans-label">interpretation:</span></div>
@@ -306,23 +359,23 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 1 PROBLEM 8 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 1 PAGE 2 END ======================= -->
+<!-- ======================= VERSION 1 PAGE 4 END ======================= -->
 
-<!-- ======================= VERSION 1 PAGE 3 START ======================= -->
+<!-- ======================= VERSION 1 PAGE 5 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V1</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-three">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V1</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 1 PROBLEM 9 START -->
-<div class="assessment-card" id="v1-problem-9">
+<div class="problem half" id="v1-problem-9">
   <div class="problem-number">9.<span class="section-tag">Section 2.5</span></div>
-  <p>Find the inverse of \(f(x)=\dfrac{x-4}{3}\). Verify your answer by composing \(f\) and \(f^{-1}\) in one direction.</p>
-  <div class="work-area"></div>
+  <p>Find the inverse of \(f(x)=\frac{x-4}{3}\). Verify your answer by composing \(f\) and \(f^{-1}\) in one direction.</p>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">inverse function:</span></div>
     <div class="ans-line"><span class="ans-label">verification:</span></div>
@@ -331,10 +384,10 @@ p { margin-bottom: 7px; }
 <!-- VERSION 1 PROBLEM 9 END -->
 
 <!-- VERSION 1 PROBLEM 10 START -->
-<div class="assessment-card wide-card" id="v1-problem-10">
+<div class="problem half" id="v1-problem-10">
   <div class="problem-number">10.<span class="section-tag">Sections 2.2 / 2.3 / 2.5</span></div>
   <p>A student says \(f(g(x))\) means the same thing as \(f(x)+g(x)\) because both use two functions. Explain the mistake and give a simple example showing the two results can be different.</p>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">mistake:</span></div>
     <div class="ans-line"><span class="ans-label">example:</span></div>
@@ -343,29 +396,24 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 1 PROBLEM 10 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 1 PAGE 3 END ======================= -->
-
+<!-- ======================= VERSION 1 PAGE 5 END ======================= -->
 
 <!-- ======================= VERSION 2 PAGE 1 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V2</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-four">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V2</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 2 PROBLEM 1 START -->
-<div class="assessment-card" id="v2-problem-1">
+<div class="problem half" id="v2-problem-1">
   <div class="problem-number">1.<span class="section-tag">Section 2.1</span></div>
   <p>Determine whether each function is even, odd, or neither. Show how \(f(-x)\) supports each classification.</p>
-  <ol class="sub-list">
-    <li>\(f(x)=2x^6-x^4+7\)</li>
-    <li>\(g(x)=x^5+3x\)</li>
-    <li>\(h(x)=x^3+x^2\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(a.\quad f(x)=2x^6-x^4+7\)</li><li>\(b.\quad g(x)=x^5+3x\)</li><li>\(c.\quad h(x)=x^3+x^2\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">a. classification:</span></div>
     <div class="ans-line"><span class="ans-label">b. classification:</span></div>
@@ -376,14 +424,14 @@ p { margin-bottom: 7px; }
 <!-- VERSION 2 PROBLEM 1 END -->
 
 <!-- VERSION 2 PROBLEM 2 START -->
-<div class="assessment-card" id="v2-problem-2">
+<div class="problem half" id="v2-problem-2">
   <div class="problem-number">2.<span class="section-tag">Section 2.1</span></div>
   <p>Use the table to decide whether the function appears even, odd, or neither. Justify using matching positive and negative inputs.</p>
   <table class="data-table">
-    <tr><th>\(x\)</th><td>\(-4\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(4\)</td></tr>
-    <tr><th>\(f(x)\)</th><td>\(9\)</td><td>\(3\)</td><td>\(3\)</td><td>\(9\)</td></tr>
+  <tr><th>\(x\)</th><td>\(-4\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(4\)</td></tr>
+  <tr><th>\(f(x)\)</th><td>\(9\)</td><td>\(3\)</td><td>\(3\)</td><td>\(9\)</td></tr>
   </table>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">classification:</span></div>
     <div class="ans-line"><span class="ans-label">evidence from table:</span></div>
@@ -391,29 +439,37 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 2 PROBLEM 2 END -->
 
+</div>
+</section>
+<!-- ======================= VERSION 2 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 2 PAGE 2 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V2</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
 <!-- VERSION 2 PROBLEM 3 START -->
-<div class="assessment-card" id="v2-problem-3">
+<div class="problem half" id="v2-problem-3">
   <div class="problem-number">3.<span class="section-tag">Section 2.2</span></div>
   <p>Let \(f(x)=3x-1\) and \(g(x)=x^2+4\). Find each combined function.</p>
-  <ol class="sub-list">
-    <li>\((f+g)(x)\)</li>
-    <li>\((f-g)(x)\)</li>
-    <li>\((fg)(x)\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\((f+g)(x)\)</li><li>\((f-g)(x)\)</li><li>\((fg)(x)\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">(f+g)(x) =</span></div>
-    <div class="ans-line"><span class="ans-label">(f&#8722;g)(x) =</span></div>
+    <div class="ans-line"><span class="ans-label">(f-g)(x) =</span></div>
     <div class="ans-line"><span class="ans-label">(fg)(x) =</span></div>
   </div>
 </div>
 <!-- VERSION 2 PROBLEM 3 END -->
 
 <!-- VERSION 2 PROBLEM 4 START -->
-<div class="assessment-card" id="v2-problem-4">
+<div class="problem half" id="v2-problem-4">
   <div class="problem-number">4.<span class="section-tag">Section 2.2</span></div>
-  <p>Let \(f(x)=x^2-16\) and \(g(x)=x-4\). Find \(\left(\dfrac{f}{g}\right)(x)\), simplify when possible, and state the original domain restriction.</p>
-  <div class="work-area"></div>
+  <p>Let \(f(x)=x^2-16\) and \(g(x)=x-4\). Find \(\left(\frac{f}{g}\right)(x)\), simplify when possible, and state the original domain restriction.</p>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">quotient:</span></div>
     <div class="ans-line"><span class="ans-label">simplified form:</span></div>
@@ -422,27 +478,24 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 2 PROBLEM 4 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 2 PAGE 1 END ======================= -->
+<!-- ======================= VERSION 2 PAGE 2 END ======================= -->
 
-<!-- ======================= VERSION 2 PAGE 2 START ======================= -->
+<!-- ======================= VERSION 2 PAGE 3 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V2</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-four">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V2</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 2 PROBLEM 5 START -->
-<div class="assessment-card" id="v2-problem-5">
+<div class="problem half" id="v2-problem-5">
   <div class="problem-number">5.<span class="section-tag">Section 2.3</span></div>
   <p>Let \(f(x)=2x+3\) and \(g(x)=x^2-5\). Find and simplify both compositions, then compare the results.</p>
-  <ol class="sub-list">
-    <li>\(f(g(x))\)</li>
-    <li>\(g(f(x))\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(f(g(x))\)</li><li>\(g(f(x))\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">f(g(x)) =</span></div>
     <div class="ans-line"><span class="ans-label">g(f(x)) =</span></div>
@@ -452,16 +505,16 @@ p { margin-bottom: 7px; }
 <!-- VERSION 2 PROBLEM 5 END -->
 
 <!-- VERSION 2 PROBLEM 6 START -->
-<div class="assessment-card" id="v2-problem-6">
+<div class="problem half" id="v2-problem-6">
   <div class="problem-number">6.<span class="section-tag">Section 2.3</span></div>
   <p>Use the table to evaluate the composite function values.</p>
   <table class="data-table">
-    <tr><th>\(x\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td></tr>
-    <tr><th>\(f(x)\)</th><td>\(0\)</td><td>\(2\)</td><td>\(3\)</td><td>\(1\)</td><td>\(-1\)</td></tr>
-    <tr><th>\(g(x)\)</th><td>\(3\)</td><td>\(1\)</td><td>\(0\)</td><td>\(-1\)</td><td>\(2\)</td></tr>
+  <tr><th>\(x\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td></tr>
+  <tr><th>\(f(x)\)</th><td>\(0\)</td><td>\(2\)</td><td>\(3\)</td><td>\(1\)</td><td>\(-1\)</td></tr>
+  <tr><th>\(g(x)\)</th><td>\(3\)</td><td>\(1\)</td><td>\(0\)</td><td>\(-1\)</td><td>\(2\)</td></tr>
   </table>
-  <p>Find: &nbsp; a) \(f(g(1))\) &nbsp;&nbsp; b) \(g(f(0))\) &nbsp;&nbsp; c) \(g(g(2))\)</p>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(f(g(1))\)</li><li>\(g(f(0))\)</li><li>\(g(g(2))\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">f(g(1)) =</span></div>
     <div class="ans-line"><span class="ans-label">g(f(0)) =</span></div>
@@ -470,12 +523,24 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 2 PROBLEM 6 END -->
 
+</div>
+</section>
+<!-- ======================= VERSION 2 PAGE 3 END ======================= -->
+
+<!-- ======================= VERSION 2 PAGE 4 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V2</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
 <!-- VERSION 2 PROBLEM 7 START -->
-<div class="assessment-card" id="v2-problem-7">
+<div class="problem half" id="v2-problem-7">
   <div class="problem-number">7.<span class="section-tag">Section 2.4</span></div>
   <p>For \(f(x)=2x^2+5x\), compute and simplify the difference quotient.</p>
-  <p class="math-display">\[\dfrac{f(x+h)-f(x)}{h}\]</p>
-  <div class="work-area"></div>
+  <ol type="a"><li>\[\frac{f(x+h)-f(x)}{h}\]</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">simplified difference quotient:</span></div>
     <div class="ans-line"><span class="ans-label">key algebra steps:</span></div>
@@ -484,14 +549,14 @@ p { margin-bottom: 7px; }
 <!-- VERSION 2 PROBLEM 7 END -->
 
 <!-- VERSION 2 PROBLEM 8 START -->
-<div class="assessment-card" id="v2-problem-8">
+<div class="problem half" id="v2-problem-8">
   <div class="problem-number">8.<span class="section-tag">Section 2.4</span></div>
   <p>The table gives values of a function. Find the average rate of change from \(x=0\) to \(x=4\), then interpret it as change in output per unit change in input.</p>
   <table class="data-table">
-    <tr><th>\(x\)</th><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td><td>\(4\)</td></tr>
-    <tr><th>\(f(x)\)</th><td>\(-1\)</td><td>\(2\)</td><td>\(7\)</td><td>\(14\)</td><td>\(23\)</td></tr>
+  <tr><th>\(x\)</th><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td><td>\(4\)</td></tr>
+  <tr><th>\(f(x)\)</th><td>\(-1\)</td><td>\(2\)</td><td>\(7\)</td><td>\(14\)</td><td>\(23\)</td></tr>
   </table>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">average rate of change:</span></div>
     <div class="ans-line"><span class="ans-label">interpretation:</span></div>
@@ -499,23 +564,23 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 2 PROBLEM 8 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 2 PAGE 2 END ======================= -->
+<!-- ======================= VERSION 2 PAGE 4 END ======================= -->
 
-<!-- ======================= VERSION 2 PAGE 3 START ======================= -->
+<!-- ======================= VERSION 2 PAGE 5 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V2</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-three">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V2</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 2 PROBLEM 9 START -->
-<div class="assessment-card" id="v2-problem-9">
+<div class="problem half" id="v2-problem-9">
   <div class="problem-number">9.<span class="section-tag">Section 2.5</span></div>
   <p>Find the inverse of \(f(x)=5-2x\). Verify your answer by composing \(f\) and \(f^{-1}\) in one direction.</p>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">inverse function:</span></div>
     <div class="ans-line"><span class="ans-label">verification:</span></div>
@@ -524,10 +589,10 @@ p { margin-bottom: 7px; }
 <!-- VERSION 2 PROBLEM 9 END -->
 
 <!-- VERSION 2 PROBLEM 10 START -->
-<div class="assessment-card wide-card" id="v2-problem-10">
+<div class="problem half" id="v2-problem-10">
   <div class="problem-number">10.<span class="section-tag">Sections 2.2 / 2.3 / 2.5</span></div>
-  <p>A student simplifies \(\dfrac{x^2-16}{x-4}\) to \(x+4\) and says the domain is all real numbers. Explain what is correct, what is missing, and state the correct restriction.</p>
-  <div class="work-area"></div>
+  <p>A student simplifies \(\frac{x^2-16}{x-4}\) to \(x+4\) and says the domain is all real numbers. Explain what is correct, what is missing, and state the correct restriction.</p>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">correct step:</span></div>
     <div class="ans-line"><span class="ans-label">missing detail:</span></div>
@@ -536,29 +601,24 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 2 PROBLEM 10 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 2 PAGE 3 END ======================= -->
-
+<!-- ======================= VERSION 2 PAGE 5 END ======================= -->
 
 <!-- ======================= VERSION 3 PAGE 1 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V3</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-four">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V3</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 3 PROBLEM 1 START -->
-<div class="assessment-card" id="v3-problem-1">
+<div class="problem half" id="v3-problem-1">
   <div class="problem-number">1.<span class="section-tag">Section 2.1</span></div>
   <p>Determine whether each function is even, odd, or neither. Show how \(f(-x)\) supports each classification.</p>
-  <ol class="sub-list">
-    <li>\(f(x)=x^8+4x^2\)</li>
-    <li>\(g(x)=-2x^3+x\)</li>
-    <li>\(h(x)=x^4-x\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(a.\quad f(x)=x^8+4x^2\)</li><li>\(b.\quad g(x)=-2x^3+x\)</li><li>\(c.\quad h(x)=x^4-x\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">a. classification:</span></div>
     <div class="ans-line"><span class="ans-label">b. classification:</span></div>
@@ -569,14 +629,14 @@ p { margin-bottom: 7px; }
 <!-- VERSION 3 PROBLEM 1 END -->
 
 <!-- VERSION 3 PROBLEM 2 START -->
-<div class="assessment-card" id="v3-problem-2">
+<div class="problem half" id="v3-problem-2">
   <div class="problem-number">2.<span class="section-tag">Section 2.1</span></div>
   <p>Use the table to decide whether the function appears even, odd, or neither. Justify using matching positive and negative inputs.</p>
   <table class="data-table">
-    <tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(2\)</td></tr>
-    <tr><th>\(f(x)\)</th><td>\(5\)</td><td>\(2\)</td><td>\(-2\)</td><td>\(-5\)</td></tr>
+  <tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(2\)</td></tr>
+  <tr><th>\(f(x)\)</th><td>\(5\)</td><td>\(2\)</td><td>\(-2\)</td><td>\(-5\)</td></tr>
   </table>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">classification:</span></div>
     <div class="ans-line"><span class="ans-label">evidence from table:</span></div>
@@ -584,29 +644,37 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 3 PROBLEM 2 END -->
 
+</div>
+</section>
+<!-- ======================= VERSION 3 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 3 PAGE 2 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V3</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
 <!-- VERSION 3 PROBLEM 3 START -->
-<div class="assessment-card" id="v3-problem-3">
+<div class="problem half" id="v3-problem-3">
   <div class="problem-number">3.<span class="section-tag">Section 2.2</span></div>
   <p>Let \(f(x)=x^2+2x\) and \(g(x)=4-x\). Find each combined function.</p>
-  <ol class="sub-list">
-    <li>\((f+g)(x)\)</li>
-    <li>\((f-g)(x)\)</li>
-    <li>\((fg)(x)\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\((f+g)(x)\)</li><li>\((f-g)(x)\)</li><li>\((fg)(x)\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">(f+g)(x) =</span></div>
-    <div class="ans-line"><span class="ans-label">(f&#8722;g)(x) =</span></div>
+    <div class="ans-line"><span class="ans-label">(f-g)(x) =</span></div>
     <div class="ans-line"><span class="ans-label">(fg)(x) =</span></div>
   </div>
 </div>
 <!-- VERSION 3 PROBLEM 3 END -->
 
 <!-- VERSION 3 PROBLEM 4 START -->
-<div class="assessment-card" id="v3-problem-4">
+<div class="problem half" id="v3-problem-4">
   <div class="problem-number">4.<span class="section-tag">Section 2.2</span></div>
-  <p>Let \(f(x)=x^2-25\) and \(g(x)=x+5\). Find \(\left(\dfrac{f}{g}\right)(x)\), simplify when possible, and state the original domain restriction.</p>
-  <div class="work-area"></div>
+  <p>Let \(f(x)=x^2-25\) and \(g(x)=x+5\). Find \(\left(\frac{f}{g}\right)(x)\), simplify when possible, and state the original domain restriction.</p>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">quotient:</span></div>
     <div class="ans-line"><span class="ans-label">simplified form:</span></div>
@@ -615,27 +683,24 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 3 PROBLEM 4 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 3 PAGE 1 END ======================= -->
+<!-- ======================= VERSION 3 PAGE 2 END ======================= -->
 
-<!-- ======================= VERSION 3 PAGE 2 START ======================= -->
+<!-- ======================= VERSION 3 PAGE 3 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V3</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-four">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V3</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 3 PROBLEM 5 START -->
-<div class="assessment-card" id="v3-problem-5">
+<div class="problem half" id="v3-problem-5">
   <div class="problem-number">5.<span class="section-tag">Section 2.3</span></div>
   <p>Let \(f(x)=x-2\) and \(g(x)=3x+1\). Find and simplify both compositions, then compare the results.</p>
-  <ol class="sub-list">
-    <li>\(f(g(x))\)</li>
-    <li>\(g(f(x))\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(f(g(x))\)</li><li>\(g(f(x))\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">f(g(x)) =</span></div>
     <div class="ans-line"><span class="ans-label">g(f(x)) =</span></div>
@@ -645,30 +710,42 @@ p { margin-bottom: 7px; }
 <!-- VERSION 3 PROBLEM 5 END -->
 
 <!-- VERSION 3 PROBLEM 6 START -->
-<div class="assessment-card" id="v3-problem-6">
+<div class="problem half" id="v3-problem-6">
   <div class="problem-number">6.<span class="section-tag">Section 2.3</span></div>
   <p>Use the table to evaluate the composite function values.</p>
   <table class="data-table">
-    <tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr>
-    <tr><th>\(f(x)\)</th><td>\(2\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(3\)</td><td>\(0\)</td></tr>
-    <tr><th>\(g(x)\)</th><td>\(1\)</td><td>\(0\)</td><td>\(-2\)</td><td>\(2\)</td><td>\(-1\)</td></tr>
+  <tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr>
+  <tr><th>\(f(x)\)</th><td>\(2\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(3\)</td><td>\(0\)</td></tr>
+  <tr><th>\(g(x)\)</th><td>\(1\)</td><td>\(0\)</td><td>\(-2\)</td><td>\(2\)</td><td>\(-1\)</td></tr>
   </table>
-  <p>Find: &nbsp; a) \(f(g(-1))\) &nbsp;&nbsp; b) \(g(f(2))\) &nbsp;&nbsp; c) \(f(f(0))\)</p>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(f(g(-1))\)</li><li>\(g(f(2))\)</li><li>\(f(f(0))\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
-    <div class="ans-line"><span class="ans-label">f(g(&#8722;1)) =</span></div>
+    <div class="ans-line"><span class="ans-label">f(g(-1)) =</span></div>
     <div class="ans-line"><span class="ans-label">g(f(2)) =</span></div>
     <div class="ans-line"><span class="ans-label">f(f(0)) =</span></div>
   </div>
 </div>
 <!-- VERSION 3 PROBLEM 6 END -->
 
+</div>
+</section>
+<!-- ======================= VERSION 3 PAGE 3 END ======================= -->
+
+<!-- ======================= VERSION 3 PAGE 4 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V3</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
 <!-- VERSION 3 PROBLEM 7 START -->
-<div class="assessment-card" id="v3-problem-7">
+<div class="problem half" id="v3-problem-7">
   <div class="problem-number">7.<span class="section-tag">Section 2.4</span></div>
   <p>For \(f(x)=x^2+6x-1\), compute and simplify the difference quotient.</p>
-  <p class="math-display">\[\dfrac{f(x+h)-f(x)}{h}\]</p>
-  <div class="work-area"></div>
+  <ol type="a"><li>\[\frac{f(x+h)-f(x)}{h}\]</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">simplified difference quotient:</span></div>
     <div class="ans-line"><span class="ans-label">key algebra steps:</span></div>
@@ -677,14 +754,14 @@ p { margin-bottom: 7px; }
 <!-- VERSION 3 PROBLEM 7 END -->
 
 <!-- VERSION 3 PROBLEM 8 START -->
-<div class="assessment-card" id="v3-problem-8">
+<div class="problem half" id="v3-problem-8">
   <div class="problem-number">8.<span class="section-tag">Section 2.4</span></div>
   <p>The table gives values of a function. Find the average rate of change from \(x=-1\) to \(x=3\), then interpret it as change in output per unit change in input.</p>
   <table class="data-table">
-    <tr><th>\(x\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td></tr>
-    <tr><th>\(f(x)\)</th><td>\(8\)</td><td>\(5\)</td><td>\(4\)</td><td>\(5\)</td><td>\(8\)</td></tr>
+  <tr><th>\(x\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td></tr>
+  <tr><th>\(f(x)\)</th><td>\(8\)</td><td>\(5\)</td><td>\(4\)</td><td>\(5\)</td><td>\(8\)</td></tr>
   </table>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">average rate of change:</span></div>
     <div class="ans-line"><span class="ans-label">interpretation:</span></div>
@@ -692,23 +769,23 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 3 PROBLEM 8 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 3 PAGE 2 END ======================= -->
+<!-- ======================= VERSION 3 PAGE 4 END ======================= -->
 
-<!-- ======================= VERSION 3 PAGE 3 START ======================= -->
+<!-- ======================= VERSION 3 PAGE 5 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V3</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-three">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V3</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 3 PROBLEM 9 START -->
-<div class="assessment-card" id="v3-problem-9">
+<div class="problem half" id="v3-problem-9">
   <div class="problem-number">9.<span class="section-tag">Section 2.5</span></div>
-  <p>Find the inverse of \(f(x)=\dfrac{x+7}{2}\). Verify your answer by composing \(f\) and \(f^{-1}\) in one direction.</p>
-  <div class="work-area"></div>
+  <p>Find the inverse of \(f(x)=\frac{x+7}{2}\). Verify your answer by composing \(f\) and \(f^{-1}\) in one direction.</p>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">inverse function:</span></div>
     <div class="ans-line"><span class="ans-label">verification:</span></div>
@@ -717,10 +794,10 @@ p { margin-bottom: 7px; }
 <!-- VERSION 3 PROBLEM 9 END -->
 
 <!-- VERSION 3 PROBLEM 10 START -->
-<div class="assessment-card wide-card" id="v3-problem-10">
+<div class="problem half" id="v3-problem-10">
   <div class="problem-number">10.<span class="section-tag">Sections 2.2 / 2.3 / 2.5</span></div>
   <p>A student says every function has an inverse function because you can always switch \(x\) and \(y\). Explain the mistake and give an example where the inverse relation is not a function.</p>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">mistake:</span></div>
     <div class="ans-line"><span class="ans-label">example:</span></div>
@@ -729,29 +806,24 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 3 PROBLEM 10 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 3 PAGE 3 END ======================= -->
-
+<!-- ======================= VERSION 3 PAGE 5 END ======================= -->
 
 <!-- ======================= VERSION 4 PAGE 1 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V4</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-four">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V4</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 4 PROBLEM 1 START -->
-<div class="assessment-card" id="v4-problem-1">
+<div class="problem half" id="v4-problem-1">
   <div class="problem-number">1.<span class="section-tag">Section 2.1</span></div>
   <p>Determine whether each function is even, odd, or neither. Show how \(f(-x)\) supports each classification.</p>
-  <ol class="sub-list">
-    <li>\(f(x)=5x^4-2\)</li>
-    <li>\(g(x)=x^7-2x^3\)</li>
-    <li>\(h(x)=x^5+x^2\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(a.\quad f(x)=5x^4-2\)</li><li>\(b.\quad g(x)=x^7-2x^3\)</li><li>\(c.\quad h(x)=x^5+x^2\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">a. classification:</span></div>
     <div class="ans-line"><span class="ans-label">b. classification:</span></div>
@@ -762,14 +834,14 @@ p { margin-bottom: 7px; }
 <!-- VERSION 4 PROBLEM 1 END -->
 
 <!-- VERSION 4 PROBLEM 2 START -->
-<div class="assessment-card" id="v4-problem-2">
+<div class="problem half" id="v4-problem-2">
   <div class="problem-number">2.<span class="section-tag">Section 2.1</span></div>
   <p>Use the table to decide whether the function appears even, odd, or neither. Justify using matching positive and negative inputs.</p>
   <table class="data-table">
-    <tr><th>\(x\)</th><td>\(-3\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(3\)</td></tr>
-    <tr><th>\(f(x)\)</th><td>\(8\)</td><td>\(2\)</td><td>\(5\)</td><td>\(11\)</td></tr>
+  <tr><th>\(x\)</th><td>\(-3\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(3\)</td></tr>
+  <tr><th>\(f(x)\)</th><td>\(8\)</td><td>\(2\)</td><td>\(5\)</td><td>\(11\)</td></tr>
   </table>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">classification:</span></div>
     <div class="ans-line"><span class="ans-label">evidence from table:</span></div>
@@ -777,29 +849,37 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 4 PROBLEM 2 END -->
 
+</div>
+</section>
+<!-- ======================= VERSION 4 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 4 PAGE 2 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V4</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
 <!-- VERSION 4 PROBLEM 3 START -->
-<div class="assessment-card" id="v4-problem-3">
+<div class="problem half" id="v4-problem-3">
   <div class="problem-number">3.<span class="section-tag">Section 2.2</span></div>
   <p>Let \(f(x)=2x^2-1\) and \(g(x)=x+6\). Find each combined function.</p>
-  <ol class="sub-list">
-    <li>\((f+g)(x)\)</li>
-    <li>\((f-g)(x)\)</li>
-    <li>\((fg)(x)\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\((f+g)(x)\)</li><li>\((f-g)(x)\)</li><li>\((fg)(x)\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">(f+g)(x) =</span></div>
-    <div class="ans-line"><span class="ans-label">(f&#8722;g)(x) =</span></div>
+    <div class="ans-line"><span class="ans-label">(f-g)(x) =</span></div>
     <div class="ans-line"><span class="ans-label">(fg)(x) =</span></div>
   </div>
 </div>
 <!-- VERSION 4 PROBLEM 3 END -->
 
 <!-- VERSION 4 PROBLEM 4 START -->
-<div class="assessment-card" id="v4-problem-4">
+<div class="problem half" id="v4-problem-4">
   <div class="problem-number">4.<span class="section-tag">Section 2.2</span></div>
-  <p>Let \(f(x)=x^2-4\) and \(g(x)=x-2\). Find \(\left(\dfrac{f}{g}\right)(x)\), simplify when possible, and state the original domain restriction.</p>
-  <div class="work-area"></div>
+  <p>Let \(f(x)=x^2-4\) and \(g(x)=x-2\). Find \(\left(\frac{f}{g}\right)(x)\), simplify when possible, and state the original domain restriction.</p>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">quotient:</span></div>
     <div class="ans-line"><span class="ans-label">simplified form:</span></div>
@@ -808,23 +888,23 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 4 PROBLEM 4 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 4 PAGE 1 END ======================= -->
+<!-- ======================= VERSION 4 PAGE 2 END ======================= -->
 
-<!-- ======================= VERSION 4 PAGE 2 START ======================= -->
+<!-- ======================= VERSION 4 PAGE 3 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V4</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-four">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V4</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 4 PROBLEM 5 START -->
-<div class="assessment-card" id="v4-problem-5">
+<div class="problem half" id="v4-problem-5">
   <div class="problem-number">5.<span class="section-tag">Section 2.3</span></div>
   <p>Let \(f(x)=\sqrt{x}\) and \(g(x)=x+9\). Find \(f(g(x))\), state its domain, and evaluate \(f(g(7))\).</p>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">f(g(x)) =</span></div>
     <div class="ans-line"><span class="ans-label">domain:</span></div>
@@ -834,30 +914,42 @@ p { margin-bottom: 7px; }
 <!-- VERSION 4 PROBLEM 5 END -->
 
 <!-- VERSION 4 PROBLEM 6 START -->
-<div class="assessment-card" id="v4-problem-6">
+<div class="problem half" id="v4-problem-6">
   <div class="problem-number">6.<span class="section-tag">Section 2.3</span></div>
   <p>Use the table to evaluate the composite function values.</p>
   <table class="data-table">
-    <tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr>
-    <tr><th>\(f(x)\)</th><td>\(0\)</td><td>\(2\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(3\)</td></tr>
-    <tr><th>\(g(x)\)</th><td>\(1\)</td><td>\(3\)</td><td>\(2\)</td><td>\(0\)</td><td>\(-1\)</td></tr>
+  <tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr>
+  <tr><th>\(f(x)\)</th><td>\(0\)</td><td>\(2\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(3\)</td></tr>
+  <tr><th>\(g(x)\)</th><td>\(1\)</td><td>\(3\)</td><td>\(2\)</td><td>\(0\)</td><td>\(-1\)</td></tr>
   </table>
-  <p>Find: &nbsp; a) \(g(f(-2))\) &nbsp;&nbsp; b) \(f(g(1))\) &nbsp;&nbsp; c) \(g(g(2))\)</p>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(g(f(-2))\)</li><li>\(f(g(1))\)</li><li>\(g(g(2))\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
-    <div class="ans-line"><span class="ans-label">g(f(&#8722;2)) =</span></div>
+    <div class="ans-line"><span class="ans-label">g(f(-2)) =</span></div>
     <div class="ans-line"><span class="ans-label">f(g(1)) =</span></div>
     <div class="ans-line"><span class="ans-label">g(g(2)) =</span></div>
   </div>
 </div>
 <!-- VERSION 4 PROBLEM 6 END -->
 
+</div>
+</section>
+<!-- ======================= VERSION 4 PAGE 3 END ======================= -->
+
+<!-- ======================= VERSION 4 PAGE 4 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V4</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
 <!-- VERSION 4 PROBLEM 7 START -->
-<div class="assessment-card" id="v4-problem-7">
+<div class="problem half" id="v4-problem-7">
   <div class="problem-number">7.<span class="section-tag">Section 2.4</span></div>
   <p>For \(f(x)=3x^2-2x\), compute and simplify the difference quotient.</p>
-  <p class="math-display">\[\dfrac{f(x+h)-f(x)}{h}\]</p>
-  <div class="work-area"></div>
+  <ol type="a"><li>\[\frac{f(x+h)-f(x)}{h}\]</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">simplified difference quotient:</span></div>
     <div class="ans-line"><span class="ans-label">key algebra steps:</span></div>
@@ -866,10 +958,10 @@ p { margin-bottom: 7px; }
 <!-- VERSION 4 PROBLEM 7 END -->
 
 <!-- VERSION 4 PROBLEM 8 START -->
-<div class="assessment-card" id="v4-problem-8">
+<div class="problem half" id="v4-problem-8">
   <div class="problem-number">8.<span class="section-tag">Section 2.4</span></div>
   <p>Find the average rate of change of \(f(x)=x^2-2x\) from \(x=1\) to \(x=5\). Interpret the result.</p>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">average rate of change:</span></div>
     <div class="ans-line"><span class="ans-label">interpretation:</span></div>
@@ -877,23 +969,23 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 4 PROBLEM 8 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 4 PAGE 2 END ======================= -->
+<!-- ======================= VERSION 4 PAGE 4 END ======================= -->
 
-<!-- ======================= VERSION 4 PAGE 3 START ======================= -->
+<!-- ======================= VERSION 4 PAGE 5 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V4</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-three">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V4</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 4 PROBLEM 9 START -->
-<div class="assessment-card" id="v4-problem-9">
+<div class="problem half" id="v4-problem-9">
   <div class="problem-number">9.<span class="section-tag">Section 2.5</span></div>
-  <p>Find the inverse of \(f(x)=\dfrac{2x-1}{5}\). Verify your answer by composing \(f\) and \(f^{-1}\) in one direction.</p>
-  <div class="work-area"></div>
+  <p>Find the inverse of \(f(x)=\frac{2x-1}{5}\). Verify your answer by composing \(f\) and \(f^{-1}\) in one direction.</p>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">inverse function:</span></div>
     <div class="ans-line"><span class="ans-label">verification:</span></div>
@@ -902,10 +994,10 @@ p { margin-bottom: 7px; }
 <!-- VERSION 4 PROBLEM 9 END -->
 
 <!-- VERSION 4 PROBLEM 10 START -->
-<div class="assessment-card wide-card" id="v4-problem-10">
+<div class="problem half" id="v4-problem-10">
   <div class="problem-number">10.<span class="section-tag">Sections 2.2 / 2.3 / 2.5</span></div>
-  <p>A student claims that if \(f\) and \(g\) are defined for all real numbers, then \(\dfrac{f}{g}\) is also defined for all real numbers. Explain whether this is always true and support your answer with an example.</p>
-  <div class="work-area"></div>
+  <p>A student claims that if \(f\) and \(g\) are defined for all real numbers, then \(\frac{f}{g}\) is also defined for all real numbers. Explain whether this is always true and support your answer with an example.</p>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">claim evaluation:</span></div>
     <div class="ans-line"><span class="ans-label">example:</span></div>
@@ -914,29 +1006,24 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 4 PROBLEM 10 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 4 PAGE 3 END ======================= -->
-
+<!-- ======================= VERSION 4 PAGE 5 END ======================= -->
 
 <!-- ======================= VERSION 5 PAGE 1 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V5</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-four">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V5</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 5 PROBLEM 1 START -->
-<div class="assessment-card" id="v5-problem-1">
+<div class="problem half" id="v5-problem-1">
   <div class="problem-number">1.<span class="section-tag">Section 2.1</span></div>
   <p>Determine whether each function is even, odd, or neither. Show how \(f(-x)\) supports each classification.</p>
-  <ol class="sub-list">
-    <li>\(f(x)=-x^6+3x^2-1\)</li>
-    <li>\(g(x)=4x^3-x\)</li>
-    <li>\(h(x)=x^2-3x+1\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(a.\quad f(x)=-x^6+3x^2-1\)</li><li>\(b.\quad g(x)=4x^3-x\)</li><li>\(c.\quad h(x)=x^2-3x+1\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">a. classification:</span></div>
     <div class="ans-line"><span class="ans-label">b. classification:</span></div>
@@ -947,14 +1034,14 @@ p { margin-bottom: 7px; }
 <!-- VERSION 5 PROBLEM 1 END -->
 
 <!-- VERSION 5 PROBLEM 2 START -->
-<div class="assessment-card" id="v5-problem-2">
+<div class="problem half" id="v5-problem-2">
   <div class="problem-number">2.<span class="section-tag">Section 2.1</span></div>
   <p>Use the table to decide whether the function appears even, odd, or neither. Justify using matching positive and negative inputs.</p>
   <table class="data-table">
-    <tr><th>\(x\)</th><td>\(-5\)</td><td>\(-2\)</td><td>\(2\)</td><td>\(5\)</td></tr>
-    <tr><th>\(f(x)\)</th><td>\(12\)</td><td>\(6\)</td><td>\(6\)</td><td>\(12\)</td></tr>
+  <tr><th>\(x\)</th><td>\(-5\)</td><td>\(-2\)</td><td>\(2\)</td><td>\(5\)</td></tr>
+  <tr><th>\(f(x)\)</th><td>\(12\)</td><td>\(6\)</td><td>\(6\)</td><td>\(12\)</td></tr>
   </table>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">classification:</span></div>
     <div class="ans-line"><span class="ans-label">evidence from table:</span></div>
@@ -962,29 +1049,37 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 5 PROBLEM 2 END -->
 
+</div>
+</section>
+<!-- ======================= VERSION 5 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 5 PAGE 2 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V5</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
 <!-- VERSION 5 PROBLEM 3 START -->
-<div class="assessment-card" id="v5-problem-3">
+<div class="problem half" id="v5-problem-3">
   <div class="problem-number">3.<span class="section-tag">Section 2.2</span></div>
   <p>Let \(f(x)=x^2-5\) and \(g(x)=3x+2\). Find each combined function.</p>
-  <ol class="sub-list">
-    <li>\((f+g)(x)\)</li>
-    <li>\((f-g)(x)\)</li>
-    <li>\((fg)(x)\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\((f+g)(x)\)</li><li>\((f-g)(x)\)</li><li>\((fg)(x)\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">(f+g)(x) =</span></div>
-    <div class="ans-line"><span class="ans-label">(f&#8722;g)(x) =</span></div>
+    <div class="ans-line"><span class="ans-label">(f-g)(x) =</span></div>
     <div class="ans-line"><span class="ans-label">(fg)(x) =</span></div>
   </div>
 </div>
 <!-- VERSION 5 PROBLEM 3 END -->
 
 <!-- VERSION 5 PROBLEM 4 START -->
-<div class="assessment-card" id="v5-problem-4">
+<div class="problem half" id="v5-problem-4">
   <div class="problem-number">4.<span class="section-tag">Section 2.2</span></div>
-  <p>Let \(f(x)=x^2+7x+10\) and \(g(x)=x+5\). Find \(\left(\dfrac{f}{g}\right)(x)\), simplify when possible, and state the original domain restriction.</p>
-  <div class="work-area"></div>
+  <p>Let \(f(x)=x^2+7x+10\) and \(g(x)=x+5\). Find \(\left(\frac{f}{g}\right)(x)\), simplify when possible, and state the original domain restriction.</p>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">quotient:</span></div>
     <div class="ans-line"><span class="ans-label">simplified form:</span></div>
@@ -993,27 +1088,24 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 5 PROBLEM 4 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 5 PAGE 1 END ======================= -->
+<!-- ======================= VERSION 5 PAGE 2 END ======================= -->
 
-<!-- ======================= VERSION 5 PAGE 2 START ======================= -->
+<!-- ======================= VERSION 5 PAGE 3 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V5</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-four">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V5</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 5 PROBLEM 5 START -->
-<div class="assessment-card" id="v5-problem-5">
+<div class="problem half" id="v5-problem-5">
   <div class="problem-number">5.<span class="section-tag">Section 2.3</span></div>
   <p>Let \(f(x)=x^2-2\) and \(g(x)=x+3\). Find and simplify both compositions, then compare the results.</p>
-  <ol class="sub-list">
-    <li>\(f(g(x))\)</li>
-    <li>\(g(f(x))\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(f(g(x))\)</li><li>\(g(f(x))\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">f(g(x)) =</span></div>
     <div class="ans-line"><span class="ans-label">g(f(x)) =</span></div>
@@ -1023,16 +1115,16 @@ p { margin-bottom: 7px; }
 <!-- VERSION 5 PROBLEM 5 END -->
 
 <!-- VERSION 5 PROBLEM 6 START -->
-<div class="assessment-card" id="v5-problem-6">
+<div class="problem half" id="v5-problem-6">
   <div class="problem-number">6.<span class="section-tag">Section 2.3</span></div>
   <p>Use the table to evaluate the composite function values.</p>
   <table class="data-table">
-    <tr><th>\(x\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td></tr>
-    <tr><th>\(f(x)\)</th><td>\(3\)</td><td>\(1\)</td><td>\(0\)</td><td>\(2\)</td><td>\(-1\)</td></tr>
-    <tr><th>\(g(x)\)</th><td>\(2\)</td><td>\(3\)</td><td>\(1\)</td><td>\(-1\)</td><td>\(0\)</td></tr>
+  <tr><th>\(x\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td><td>\(3\)</td></tr>
+  <tr><th>\(f(x)\)</th><td>\(3\)</td><td>\(1\)</td><td>\(0\)</td><td>\(2\)</td><td>\(-1\)</td></tr>
+  <tr><th>\(g(x)\)</th><td>\(2\)</td><td>\(3\)</td><td>\(1\)</td><td>\(-1\)</td><td>\(0\)</td></tr>
   </table>
-  <p>Find: &nbsp; a) \(f(g(2))\) &nbsp;&nbsp; b) \(g(f(1))\) &nbsp;&nbsp; c) \(f(f(3))\)</p>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(f(g(2))\)</li><li>\(g(f(1))\)</li><li>\(f(f(3))\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">f(g(2)) =</span></div>
     <div class="ans-line"><span class="ans-label">g(f(1)) =</span></div>
@@ -1041,12 +1133,24 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 5 PROBLEM 6 END -->
 
+</div>
+</section>
+<!-- ======================= VERSION 5 PAGE 3 END ======================= -->
+
+<!-- ======================= VERSION 5 PAGE 4 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V5</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
 <!-- VERSION 5 PROBLEM 7 START -->
-<div class="assessment-card" id="v5-problem-7">
+<div class="problem half" id="v5-problem-7">
   <div class="problem-number">7.<span class="section-tag">Section 2.4</span></div>
   <p>For \(f(x)=x^2-8x+3\), compute and simplify the difference quotient.</p>
-  <p class="math-display">\[\dfrac{f(x+h)-f(x)}{h}\]</p>
-  <div class="work-area"></div>
+  <ol type="a"><li>\[\frac{f(x+h)-f(x)}{h}\]</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">simplified difference quotient:</span></div>
     <div class="ans-line"><span class="ans-label">key algebra steps:</span></div>
@@ -1055,14 +1159,14 @@ p { margin-bottom: 7px; }
 <!-- VERSION 5 PROBLEM 7 END -->
 
 <!-- VERSION 5 PROBLEM 8 START -->
-<div class="assessment-card" id="v5-problem-8">
+<div class="problem half" id="v5-problem-8">
   <div class="problem-number">8.<span class="section-tag">Section 2.4</span></div>
   <p>The table gives values of a function. Find the average rate of change from \(x=2\) to \(x=6\), then interpret it as change in output per unit change in input.</p>
   <table class="data-table">
-    <tr><th>\(x\)</th><td>\(2\)</td><td>\(3\)</td><td>\(4\)</td><td>\(5\)</td><td>\(6\)</td></tr>
-    <tr><th>\(f(x)\)</th><td>\(10\)</td><td>\(13\)</td><td>\(18\)</td><td>\(25\)</td><td>\(34\)</td></tr>
+  <tr><th>\(x\)</th><td>\(2\)</td><td>\(3\)</td><td>\(4\)</td><td>\(5\)</td><td>\(6\)</td></tr>
+  <tr><th>\(f(x)\)</th><td>\(10\)</td><td>\(13\)</td><td>\(18\)</td><td>\(25\)</td><td>\(34\)</td></tr>
   </table>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">average rate of change:</span></div>
     <div class="ans-line"><span class="ans-label">interpretation:</span></div>
@@ -1070,23 +1174,23 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 5 PROBLEM 8 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 5 PAGE 2 END ======================= -->
+<!-- ======================= VERSION 5 PAGE 4 END ======================= -->
 
-<!-- ======================= VERSION 5 PAGE 3 START ======================= -->
+<!-- ======================= VERSION 5 PAGE 5 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V5</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-three">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V5</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 5 PROBLEM 9 START -->
-<div class="assessment-card" id="v5-problem-9">
+<div class="problem half" id="v5-problem-9">
   <div class="problem-number">9.<span class="section-tag">Section 2.5</span></div>
   <p>Find the inverse of \(f(x)=4x+9\). Verify your answer by composing \(f\) and \(f^{-1}\) in one direction.</p>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">inverse function:</span></div>
     <div class="ans-line"><span class="ans-label">verification:</span></div>
@@ -1095,10 +1199,10 @@ p { margin-bottom: 7px; }
 <!-- VERSION 5 PROBLEM 9 END -->
 
 <!-- VERSION 5 PROBLEM 10 START -->
-<div class="assessment-card wide-card" id="v5-problem-10">
+<div class="problem half" id="v5-problem-10">
   <div class="problem-number">10.<span class="section-tag">Sections 2.2 / 2.3 / 2.5</span></div>
   <p>A student finds an inverse by switching \(x\) and \(y\), but does not solve for \(y\). Explain why the process is incomplete and show the correct process using \(f(x)=2x-7\).</p>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">incomplete step:</span></div>
     <div class="ans-line"><span class="ans-label">correct inverse:</span></div>
@@ -1107,29 +1211,24 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 5 PROBLEM 10 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 5 PAGE 3 END ======================= -->
-
+<!-- ======================= VERSION 5 PAGE 5 END ======================= -->
 
 <!-- ======================= VERSION 6 PAGE 1 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V6</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-four">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V6</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 6 PROBLEM 1 START -->
-<div class="assessment-card" id="v6-problem-1">
+<div class="problem half" id="v6-problem-1">
   <div class="problem-number">1.<span class="section-tag">Section 2.1</span></div>
   <p>Determine whether each function is even, odd, or neither. Show how \(f(-x)\) supports each classification.</p>
-  <ol class="sub-list">
-    <li>\(f(x)=x^{10}-x^2+6\)</li>
-    <li>\(g(x)=-x^5+5x^3\)</li>
-    <li>\(h(x)=x^4+x^3\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(a.\quad f(x)=x^{10}-x^2+6\)</li><li>\(b.\quad g(x)=-x^5+5x^3\)</li><li>\(c.\quad h(x)=x^4+x^3\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">a. classification:</span></div>
     <div class="ans-line"><span class="ans-label">b. classification:</span></div>
@@ -1140,14 +1239,14 @@ p { margin-bottom: 7px; }
 <!-- VERSION 6 PROBLEM 1 END -->
 
 <!-- VERSION 6 PROBLEM 2 START -->
-<div class="assessment-card" id="v6-problem-2">
+<div class="problem half" id="v6-problem-2">
   <div class="problem-number">2.<span class="section-tag">Section 2.1</span></div>
   <p>Use the table to decide whether the function appears even, odd, or neither. Justify using matching positive and negative inputs.</p>
   <table class="data-table">
-    <tr><th>\(x\)</th><td>\(-4\)</td><td>\(-2\)</td><td>\(2\)</td><td>\(4\)</td></tr>
-    <tr><th>\(f(x)\)</th><td>\(-7\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(7\)</td></tr>
+  <tr><th>\(x\)</th><td>\(-4\)</td><td>\(-2\)</td><td>\(2\)</td><td>\(4\)</td></tr>
+  <tr><th>\(f(x)\)</th><td>\(-7\)</td><td>\(-1\)</td><td>\(1\)</td><td>\(7\)</td></tr>
   </table>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">classification:</span></div>
     <div class="ans-line"><span class="ans-label">evidence from table:</span></div>
@@ -1155,29 +1254,37 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 6 PROBLEM 2 END -->
 
+</div>
+</section>
+<!-- ======================= VERSION 6 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 6 PAGE 2 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V6</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
 <!-- VERSION 6 PROBLEM 3 START -->
-<div class="assessment-card" id="v6-problem-3">
+<div class="problem half" id="v6-problem-3">
   <div class="problem-number">3.<span class="section-tag">Section 2.2</span></div>
   <p>Let \(f(x)=5-x\) and \(g(x)=x^2+2x\). Find each combined function.</p>
-  <ol class="sub-list">
-    <li>\((f+g)(x)\)</li>
-    <li>\((f-g)(x)\)</li>
-    <li>\((fg)(x)\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\((f+g)(x)\)</li><li>\((f-g)(x)\)</li><li>\((fg)(x)\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">(f+g)(x) =</span></div>
-    <div class="ans-line"><span class="ans-label">(f&#8722;g)(x) =</span></div>
+    <div class="ans-line"><span class="ans-label">(f-g)(x) =</span></div>
     <div class="ans-line"><span class="ans-label">(fg)(x) =</span></div>
   </div>
 </div>
 <!-- VERSION 6 PROBLEM 3 END -->
 
 <!-- VERSION 6 PROBLEM 4 START -->
-<div class="assessment-card" id="v6-problem-4">
+<div class="problem half" id="v6-problem-4">
   <div class="problem-number">4.<span class="section-tag">Section 2.2</span></div>
-  <p>Let \(f(x)=x^2-6x+9\) and \(g(x)=x-3\). Find \(\left(\dfrac{f}{g}\right)(x)\), simplify when possible, and state the original domain restriction.</p>
-  <div class="work-area"></div>
+  <p>Let \(f(x)=x^2-6x+9\) and \(g(x)=x-3\). Find \(\left(\frac{f}{g}\right)(x)\), simplify when possible, and state the original domain restriction.</p>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">quotient:</span></div>
     <div class="ans-line"><span class="ans-label">simplified form:</span></div>
@@ -1186,27 +1293,24 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 6 PROBLEM 4 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 6 PAGE 1 END ======================= -->
+<!-- ======================= VERSION 6 PAGE 2 END ======================= -->
 
-<!-- ======================= VERSION 6 PAGE 2 START ======================= -->
+<!-- ======================= VERSION 6 PAGE 3 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V6</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-four">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V6</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 6 PROBLEM 5 START -->
-<div class="assessment-card" id="v6-problem-5">
+<div class="problem half" id="v6-problem-5">
   <div class="problem-number">5.<span class="section-tag">Section 2.3</span></div>
   <p>Let \(f(x)=3x-4\) and \(g(x)=x^2+2\). Find and simplify both compositions, then compare the results.</p>
-  <ol class="sub-list">
-    <li>\(f(g(x))\)</li>
-    <li>\(g(f(x))\)</li>
-  </ol>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(f(g(x))\)</li><li>\(g(f(x))\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">f(g(x)) =</span></div>
     <div class="ans-line"><span class="ans-label">g(f(x)) =</span></div>
@@ -1216,30 +1320,42 @@ p { margin-bottom: 7px; }
 <!-- VERSION 6 PROBLEM 5 END -->
 
 <!-- VERSION 6 PROBLEM 6 START -->
-<div class="assessment-card" id="v6-problem-6">
+<div class="problem half" id="v6-problem-6">
   <div class="problem-number">6.<span class="section-tag">Section 2.3</span></div>
   <p>Use the table to evaluate the composite function values.</p>
   <table class="data-table">
-    <tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr>
-    <tr><th>\(f(x)\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(2\)</td><td>\(3\)</td><td>\(1\)</td></tr>
-    <tr><th>\(g(x)\)</th><td>\(2\)</td><td>\(1\)</td><td>\(-2\)</td><td>\(0\)</td><td>\(3\)</td></tr>
+  <tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>\(0\)</td><td>\(1\)</td><td>\(2\)</td></tr>
+  <tr><th>\(f(x)\)</th><td>\(-1\)</td><td>\(0\)</td><td>\(2\)</td><td>\(3\)</td><td>\(1\)</td></tr>
+  <tr><th>\(g(x)\)</th><td>\(2\)</td><td>\(1\)</td><td>\(-2\)</td><td>\(0\)</td><td>\(3\)</td></tr>
   </table>
-  <p>Find: &nbsp; a) \(f(g(0))\) &nbsp;&nbsp; b) \(g(f(-1))\) &nbsp;&nbsp; c) \(f(f(2))\)</p>
-  <div class="work-area"></div>
+  <ol type="a"><li>\(f(g(0))\)</li><li>\(g(f(-1))\)</li><li>\(f(f(2))\)</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">f(g(0)) =</span></div>
-    <div class="ans-line"><span class="ans-label">g(f(&#8722;1)) =</span></div>
+    <div class="ans-line"><span class="ans-label">g(f(-1)) =</span></div>
     <div class="ans-line"><span class="ans-label">f(f(2)) =</span></div>
   </div>
 </div>
 <!-- VERSION 6 PROBLEM 6 END -->
 
+</div>
+</section>
+<!-- ======================= VERSION 6 PAGE 3 END ======================= -->
+
+<!-- ======================= VERSION 6 PAGE 4 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V6</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
 <!-- VERSION 6 PROBLEM 7 START -->
-<div class="assessment-card" id="v6-problem-7">
+<div class="problem half" id="v6-problem-7">
   <div class="problem-number">7.<span class="section-tag">Section 2.4</span></div>
   <p>For \(f(x)=4x^2+x-6\), compute and simplify the difference quotient.</p>
-  <p class="math-display">\[\dfrac{f(x+h)-f(x)}{h}\]</p>
-  <div class="work-area"></div>
+  <ol type="a"><li>\[\frac{f(x+h)-f(x)}{h}\]</li></ol>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">simplified difference quotient:</span></div>
     <div class="ans-line"><span class="ans-label">key algebra steps:</span></div>
@@ -1248,10 +1364,10 @@ p { margin-bottom: 7px; }
 <!-- VERSION 6 PROBLEM 7 END -->
 
 <!-- VERSION 6 PROBLEM 8 START -->
-<div class="assessment-card" id="v6-problem-8">
+<div class="problem half" id="v6-problem-8">
   <div class="problem-number">8.<span class="section-tag">Section 2.4</span></div>
   <p>Find the average rate of change of \(f(x)=2x^2+1\) from \(x=-1\) to \(x=3\). Interpret the result.</p>
-  <div class="work-area"></div>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">average rate of change:</span></div>
     <div class="ans-line"><span class="ans-label">interpretation:</span></div>
@@ -1259,23 +1375,23 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 6 PROBLEM 8 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 6 PAGE 2 END ======================= -->
+<!-- ======================= VERSION 6 PAGE 4 END ======================= -->
 
-<!-- ======================= VERSION 6 PAGE 3 START ======================= -->
+<!-- ======================= VERSION 6 PAGE 5 START ======================= -->
 <section class="page">
-  <div class="header-row">
-    <div class="assessment-title">Unit 2 Summative &nbsp; V6</div>
-    <div class="name-line">Name:<span></span></div>
-  </div>
-  <div class="question-grid grid-three">
+<div class="page-header">
+  <div class="page-title">Summative Assessment &nbsp; V6</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
 
 <!-- VERSION 6 PROBLEM 9 START -->
-<div class="assessment-card" id="v6-problem-9">
+<div class="problem half" id="v6-problem-9">
   <div class="problem-number">9.<span class="section-tag">Section 2.5</span></div>
-  <p>Find the inverse of \(f(x)=\dfrac{6-x}{2}\). Verify your answer by composing \(f\) and \(f^{-1}\) in one direction.</p>
-  <div class="work-area"></div>
+  <p>Find the inverse of \(f(x)=\frac{6-x}{2}\). Verify your answer by composing \(f\) and \(f^{-1}\) in one direction.</p>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">inverse function:</span></div>
     <div class="ans-line"><span class="ans-label">verification:</span></div>
@@ -1284,10 +1400,10 @@ p { margin-bottom: 7px; }
 <!-- VERSION 6 PROBLEM 9 END -->
 
 <!-- VERSION 6 PROBLEM 10 START -->
-<div class="assessment-card wide-card" id="v6-problem-10">
+<div class="problem half" id="v6-problem-10">
   <div class="problem-number">10.<span class="section-tag">Sections 2.2 / 2.3 / 2.5</span></div>
-  <p>A student says \(f^{-1}(x)\) means \(\dfrac{1}{f(x)}\). Explain the mistake and use an example to show the difference between an inverse function and a reciprocal.</p>
-  <div class="work-area"></div>
+  <p>A student says \(f^{-1}(x)\) means \(\frac{1}{f(x)}\). Explain the mistake and use an example to show the difference between an inverse function and a reciprocal.</p>
+  <div class="ws-area"></div>
   <div class="ans-block">
     <div class="ans-line"><span class="ans-label">mistake:</span></div>
     <div class="ans-line"><span class="ans-label">example:</span></div>
@@ -1296,9 +1412,9 @@ p { margin-bottom: 7px; }
 </div>
 <!-- VERSION 6 PROBLEM 10 END -->
 
-  </div>
+</div>
 </section>
-<!-- ======================= VERSION 6 PAGE 3 END ======================= -->
+<!-- ======================= VERSION 6 PAGE 5 END ======================= -->
 
 </body>
 </html>
