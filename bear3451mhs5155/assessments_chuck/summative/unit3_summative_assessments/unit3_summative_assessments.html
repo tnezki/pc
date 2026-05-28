@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Unit 3 Summative Assessments</title>
+<script>
+MathJax = { tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+
+/* ======================= PRINT PAGE + RESET ======================= */
+:root {
+  --pad: 0.13in;
+  /* Max width for images — matches one column. Images will NOT grow beyond
+     this in full-page mode. Edit here to resize all graphs at once.       */
+  --img-col-max: 3.45in;
+}
+@page { size: letter; margin: 0.5in; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.34;
+  color: #111;
+  background: #fff;
+  font-size: 11.5pt;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ======================= PAGE SHELL ======================= */
+.page {
+  height: 10in;
+  display: flex;
+  flex-direction: column;   /* header on top, problem-row fills the rest */
+  page-break-after: always;
+  break-after: page;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+
+/* ======================= PAGE HEADER — one per page, full width ======================= */
+.page-header {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 var(--pad) 4px var(--pad);
+  border-bottom: 2px solid #111;
+}
+.page-title { font-weight: 900; font-size: 13.5pt; color: #000; white-space: nowrap; }
+.name-line   { font-size: 11.5pt; font-weight: 800; white-space: nowrap; }
+.name-line span {
+  display: inline-block;
+  width: 2.6in;
+  height: 13px;
+  border-bottom: 1.5px solid #111;
+  margin-left: 6px;
+  vertical-align: bottom;
+}
+
+/* ======================= PROBLEM ROW — holds the two problem columns ======================= */
+.problem-row {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+/* ======================= PROBLEM SIZE CLASSES =======================
+
+   TWO SIZES — add one class to each problem div:
+
+     half  →  problem fills one column (two per page, side by side)
+     full  →  problem fills the whole page width (one per page)
+
+   HOW TO USE:
+     Normal two-up page:
+       <div class="problem half" id="v1-problem-1"> ... </div>
+       <div class="problem half" id="v1-problem-2"> ... </div>
+
+     Single full-page problem (remove the other problem div entirely):
+       <div class="problem full" id="v1-problem-4"> ... </div>
+
+   VERTICAL DIVIDER LINE:
+     The center line is drawn automatically by CSS when two .half problems
+     are adjacent. It appears only between them — no extra HTML needed.
+     It does NOT appear in full-page mode.
+
+   IMAGE SIZE IN FULL MODE:
+     Images stay at column width (--img-col-max ≈ 3.45in) even in full mode.
+     They do not stretch to fill the wider card. To change this, edit
+     --img-col-max in :root above.
+   ======================================================================= */
+
+/* shared layout for both sizes */
+.problem {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 8px var(--pad) var(--pad) var(--pad);
+  align-self: stretch;
+}
+
+/* HALF — one of two side-by-side columns */
+.problem.half { flex: 1 1 0; min-width: 0; }
+
+/* vertical center divider — drawn automatically between two .half problems */
+.problem.half + .problem.half { border-left: 1px solid #777; }
+
+/* FULL — single problem spanning the entire page width */
+.problem.full { flex: 0 0 100%; width: 100%; }
+
+/* ======================= PROBLEM NUMBER + SECTION TAG ======================= */
+.problem-number {
+  flex: 0 0 auto;
+  font-weight: 900;
+  color: #000;
+  font-size: 12.5pt;
+  margin-bottom: 5px;
+}
+.section-tag {
+  color: #555;
+  font-size: 10.5pt;
+  font-weight: 800;
+  margin-left: 8px;
+}
+.note { font-size: 9.5pt; color: #555; font-style: italic; }
+p  { margin-bottom: 6px; }
+ol, ul { margin-left: 0.24in; margin-bottom: 5px; }
+li { margin-bottom: 3px; }
+
+/* ======================= WORK AREA + ANSWER BLOCK ======================= */
+.ws-area {
+  flex: 1 1 auto;
+  min-height: 0.35in;
+  margin-top: 6px;
+}
+.ans-block {
+  flex: 0 0 auto;
+  margin-top: auto;
+  border-top: 2px solid #111;
+  padding-top: 4px;
+}
+.ans-line {
+  min-height: 0.24in;
+  padding: 3px 0 2px 0;
+  border-bottom: 1px solid #ddd;
+}
+.ans-line:last-child { border-bottom: none; }
+.ans-label { font-weight: 900; font-size: 10.5pt; }
+
+/* ======================= GRAPHS / COORDINATE PLANES ======================= */
+/* width: 100% fills the column; max-width keeps images column-sized in full mode */
+.graph-block {
+  flex: 0 0 auto;
+  margin: 6px 0 5px 0;
+  text-align: left;
+}
+.question-graph,
+.answer-plane {
+  display: block;
+  width: 100%;
+  max-width: var(--img-col-max);
+  height: auto;
+  margin: 0;
+  border: 0;
+  background: #fff;
+}
+.answer-plane { margin-top: 5px; }
+
+/* ======================= DATA TABLES ======================= */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 6px 0 7px 0;
+  flex-shrink: 0;
+}
+.data-table th,
+.data-table td {
+  border: 1px solid #777;
+  padding: 4px 5px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 10.5pt;
+}
+.data-table th:first-child,
+.data-table td:first-child { font-weight: 900; width: 0.62in; }
+
+@media print { body { font-size: 11.5pt; } }
+
+</style>
+</head>
+<body>
+
+
+
+<!-- ======================= VERSION 1 PAGE 1 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V1</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 1 PROBLEM 1 START -->
+<div class="problem half" id="v1-problem-1">
+  <div class="problem-number">1.<span class="section-tag">Section 3.1</span></div>
+  <p>Solve. Show exact solutions. $$x^2=64$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution(s):</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 1 END -->
+
+<!-- VERSION 1 PROBLEM 2 START -->
+<div class="problem half" id="v1-problem-2">
+  <div class="problem-number">2.<span class="section-tag">Section 3.2</span></div>
+  <p>Solve and check. Identify any extraneous solution. $$\sqrt{x+6}=x$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution(s):</span></div>
+    <div class="ans-line"><span class="ans-label">extraneous?</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 2 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 1 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 1 PAGE 2 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V1</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 1 PROBLEM 3 START -->
+<div class="problem half" id="v1-problem-3">
+  <div class="problem-number">3.<span class="section-tag">Section 3.3</span></div>
+  <p>Solve and verify. $$\sqrt[3]{x-5}+2=6$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution:</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 3 END -->
+
+<!-- VERSION 1 PROBLEM 4 START -->
+<div class="problem half" id="v1-problem-4">
+  <div class="problem-number">4.<span class="section-tag">Section 3.5</span></div>
+  Rewrite each expression in the requested form. <ol type="a"><li>Write $x^{5/2}$ in radical form.</li><li>Write $\sqrt[3]{x^4}$ using rational exponents.</li></ol>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">a.</span></div>
+    <div class="ans-line"><span class="ans-label">b.</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 4 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 1 PAGE 2 END ======================= -->
+
+<!-- ======================= VERSION 1 PAGE 3 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V1</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 1 PROBLEM 5 START -->
+<div class="problem half" id="v1-problem-5">
+  <div class="problem-number">5.<span class="section-tag">Section 3.4</span></div>
+  <p>Graph the transformed radical function. State the locator point, domain, and range. $$f(x)=\sqrt{x-3}+2$$</p>
+  <div class="graph-block"><img class="answer-plane" src="figures/plane.png" alt="coordinate plane for graphing"></div>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">locator point:</span></div>
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">range:</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 5 END -->
+
+<!-- VERSION 1 PROBLEM 6 START -->
+<div class="problem half" id="v1-problem-6">
+  <div class="problem-number">6.<span class="section-tag">Section 3.4</span></div>
+  <p>A square root graph begins at $(-4,1)$ and opens downward. Write a possible equation for the graph.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">equation:</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 6 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 1 PAGE 3 END ======================= -->
+
+<!-- ======================= VERSION 1 PAGE 4 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V1</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 1 PROBLEM 7 START -->
+<div class="problem half" id="v1-problem-7">
+  <div class="problem-number">7.<span class="section-tag">Section 3.4</span></div>
+  <p>Compare the graphs of $y=\sqrt{x}$ and $y=\sqrt[3]{x}$ using domain and range.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">comparison:</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 7 END -->
+
+<!-- VERSION 1 PROBLEM 8 START -->
+<div class="problem half" id="v1-problem-8">
+  <div class="problem-number">8.<span class="section-tag">Section 3.2</span></div>
+  <p>Explain why squaring both sides of an equation can create extraneous solutions.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">explanation:</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 8 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 1 PAGE 4 END ======================= -->
+
+<!-- ======================= VERSION 1 PAGE 5 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V1</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 1 PROBLEM 9 START -->
+<div class="problem half" id="v1-problem-9">
+  <div class="problem-number">9.<span class="section-tag">Section 3.4</span></div>
+  <p>Describe the transformations in the function. $$g(x)=-2\sqrt{x+1}+4$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">transformations:</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 9 END -->
+
+<!-- VERSION 1 PROBLEM 10 START -->
+<div class="problem half" id="v1-problem-10">
+  <div class="problem-number">10.<span class="section-tag">Section 3.2 / 3.4</span></div>
+  <p>A student says the domain of $f(x)=\sqrt{x-6}$ is all real numbers. Correct the mistake.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">correction:</span></div>
+  </div>
+</div>
+<!-- VERSION 1 PROBLEM 10 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 1 PAGE 5 END ======================= -->
+
+<!-- ======================= VERSION 2 PAGE 1 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V2</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 2 PROBLEM 1 START -->
+<div class="problem half" id="v2-problem-1">
+  <div class="problem-number">1.<span class="section-tag">Section 3.1</span></div>
+  <p>Solve. Show exact solutions. $$x^3=-125$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 1 END -->
+
+<!-- VERSION 2 PROBLEM 2 START -->
+<div class="problem half" id="v2-problem-2">
+  <div class="problem-number">2.<span class="section-tag">Section 3.2</span></div>
+  <p>Solve and check. Identify any extraneous solution. $$\sqrt{x+5}=x-1$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution(s):</span></div>
+    <div class="ans-line"><span class="ans-label">extraneous?</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 2 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 2 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 2 PAGE 2 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V2</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 2 PROBLEM 3 START -->
+<div class="problem half" id="v2-problem-3">
+  <div class="problem-number">3.<span class="section-tag">Section 3.3</span></div>
+  <p>Solve and verify. $$\sqrt[3]{x+8}-1=3$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 3 END -->
+
+<!-- VERSION 2 PROBLEM 4 START -->
+<div class="problem half" id="v2-problem-4">
+  <div class="problem-number">4.<span class="section-tag">Section 3.5</span></div>
+  Rewrite each expression in the requested form. <ol type="a"><li>Write $x^{3/4}$ in radical form.</li><li>Write $\sqrt{x^7}$ using rational exponents.</li></ol>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">a.</span></div>
+    <div class="ans-line"><span class="ans-label">b.</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 4 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 2 PAGE 2 END ======================= -->
+
+<!-- ======================= VERSION 2 PAGE 3 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V2</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 2 PROBLEM 5 START -->
+<div class="problem half" id="v2-problem-5">
+  <div class="problem-number">5.<span class="section-tag">Section 3.4</span></div>
+  <p>Graph the transformed radical function. State the locator point, domain, and range. $$f(x)=-\sqrt{x}+5$$</p>
+  <div class="graph-block"><img class="answer-plane" src="figures/plane.png" alt="coordinate plane for graphing"></div>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">locator point:</span></div>
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">range:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 5 END -->
+
+<!-- VERSION 2 PROBLEM 6 START -->
+<div class="problem half" id="v2-problem-6">
+  <div class="problem-number">6.<span class="section-tag">Section 3.4</span></div>
+  <p>A square root graph starts at $(2,-3)$ and opens upward. Write a possible equation for the graph.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">equation:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 6 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 2 PAGE 3 END ======================= -->
+
+<!-- ======================= VERSION 2 PAGE 4 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V2</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 2 PROBLEM 7 START -->
+<div class="problem half" id="v2-problem-7">
+  <div class="problem-number">7.<span class="section-tag">Section 3.4</span></div>
+  <p>Compare the graphs of $y=-\sqrt{x}$ and $y=-\sqrt[3]{x}$. Include one similarity and one difference.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">comparison:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 7 END -->
+
+<!-- VERSION 2 PROBLEM 8 START -->
+<div class="problem half" id="v2-problem-8">
+  <div class="problem-number">8.<span class="section-tag">Section 3.3</span></div>
+  <p>Explain why cube root equations usually do not create extraneous solutions as often as square root equations.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">explanation:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 8 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 2 PAGE 4 END ======================= -->
+
+<!-- ======================= VERSION 2 PAGE 5 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V2</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 2 PROBLEM 9 START -->
+<div class="problem half" id="v2-problem-9">
+  <div class="problem-number">9.<span class="section-tag">Section 3.4</span></div>
+  <p>Describe the transformations in the function. $$g(x)=\sqrt[3]{x-4}-2$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">transformations:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 9 END -->
+
+<!-- VERSION 2 PROBLEM 10 START -->
+<div class="problem half" id="v2-problem-10">
+  <div class="problem-number">10.<span class="section-tag">Section 3.1 / 3.3</span></div>
+  <p>A student says every root equation needs a $\pm$. Explain when that is true and when it is not.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">explanation:</span></div>
+  </div>
+</div>
+<!-- VERSION 2 PROBLEM 10 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 2 PAGE 5 END ======================= -->
+
+<!-- ======================= VERSION 3 PAGE 1 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V3</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 3 PROBLEM 1 START -->
+<div class="problem half" id="v3-problem-1">
+  <div class="problem-number">1.<span class="section-tag">Section 3.1</span></div>
+  <p>Solve. Show exact solutions. $$x^2=81$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution(s):</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 1 END -->
+
+<!-- VERSION 3 PROBLEM 2 START -->
+<div class="problem half" id="v3-problem-2">
+  <div class="problem-number">2.<span class="section-tag">Section 3.2</span></div>
+  <p>Solve and check. Identify any extraneous solution. $$\sqrt{x+10}=x$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution(s):</span></div>
+    <div class="ans-line"><span class="ans-label">extraneous?</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 2 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 3 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 3 PAGE 2 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V3</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 3 PROBLEM 3 START -->
+<div class="problem half" id="v3-problem-3">
+  <div class="problem-number">3.<span class="section-tag">Section 3.3</span></div>
+  <p>Solve and verify. $$2\sqrt[3]{x-1}-5=7$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution:</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 3 END -->
+
+<!-- VERSION 3 PROBLEM 4 START -->
+<div class="problem half" id="v3-problem-4">
+  <div class="problem-number">4.<span class="section-tag">Section 3.5</span></div>
+  Rewrite each expression in the requested form. <ol type="a"><li>Write $x^{2/3}$ in radical form.</li><li>Write $\sqrt[5]{x^3}$ using rational exponents.</li></ol>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">a.</span></div>
+    <div class="ans-line"><span class="ans-label">b.</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 4 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 3 PAGE 2 END ======================= -->
+
+<!-- ======================= VERSION 3 PAGE 3 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V3</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 3 PROBLEM 5 START -->
+<div class="problem half" id="v3-problem-5">
+  <div class="problem-number">5.<span class="section-tag">Section 3.4</span></div>
+  <p>Graph the transformed radical function. State the locator point, domain, and range. $$f(x)=\sqrt{x+3}-4$$</p>
+  <div class="graph-block"><img class="answer-plane" src="figures/plane.png" alt="coordinate plane for graphing"></div>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">locator point:</span></div>
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">range:</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 5 END -->
+
+<!-- VERSION 3 PROBLEM 6 START -->
+<div class="problem half" id="v3-problem-6">
+  <div class="problem-number">6.<span class="section-tag">Section 3.4</span></div>
+  <p>A cube root graph has locator point $(5,-2)$. Write a possible equation for the graph.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">equation:</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 6 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 3 PAGE 3 END ======================= -->
+
+<!-- ======================= VERSION 3 PAGE 4 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V3</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 3 PROBLEM 7 START -->
+<div class="problem half" id="v3-problem-7">
+  <div class="problem-number">7.<span class="section-tag">Section 3.4</span></div>
+  <p>Compare the behavior of square root and cube root graphs near their locator points.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">comparison:</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 7 END -->
+
+<!-- VERSION 3 PROBLEM 8 START -->
+<div class="problem half" id="v3-problem-8">
+  <div class="problem-number">8.<span class="section-tag">Section 3.1 / 3.3</span></div>
+  <p>Explain why $x^2=36$ has two real solutions while $x^3=216$ has one real solution.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">explanation:</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 8 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 3 PAGE 4 END ======================= -->
+
+<!-- ======================= VERSION 3 PAGE 5 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V3</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 3 PROBLEM 9 START -->
+<div class="problem half" id="v3-problem-9">
+  <div class="problem-number">9.<span class="section-tag">Section 3.4</span></div>
+  <p>Describe the transformations in the function. $$g(x)=2\sqrt[3]{x}-1$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">transformations:</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 9 END -->
+
+<!-- VERSION 3 PROBLEM 10 START -->
+<div class="problem half" id="v3-problem-10">
+  <div class="problem-number">10.<span class="section-tag">Section 3.3 / 3.5</span></div>
+  <p>A student says negative inputs never work with radicals. Explain why this is false.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">explanation:</span></div>
+  </div>
+</div>
+<!-- VERSION 3 PROBLEM 10 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 3 PAGE 5 END ======================= -->
+
+<!-- ======================= VERSION 4 PAGE 1 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V4</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 4 PROBLEM 1 START -->
+<div class="problem half" id="v4-problem-1">
+  <div class="problem-number">1.<span class="section-tag">Section 3.1</span></div>
+  <p>Solve. Show exact solutions. $$x^3=216$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 1 END -->
+
+<!-- VERSION 4 PROBLEM 2 START -->
+<div class="problem half" id="v4-problem-2">
+  <div class="problem-number">2.<span class="section-tag">Section 3.2</span></div>
+  <p>Solve and check. Identify any extraneous solution. $$\sqrt{x+9}=x-3$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution(s):</span></div>
+    <div class="ans-line"><span class="ans-label">extraneous?</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 2 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 4 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 4 PAGE 2 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V4</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 4 PROBLEM 3 START -->
+<div class="problem half" id="v4-problem-3">
+  <div class="problem-number">3.<span class="section-tag">Section 3.3</span></div>
+  <p>Solve and verify. $$\sqrt[3]{2x+1}=3$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 3 END -->
+
+<!-- VERSION 4 PROBLEM 4 START -->
+<div class="problem half" id="v4-problem-4">
+  <div class="problem-number">4.<span class="section-tag">Section 3.5</span></div>
+  Rewrite each expression in the requested form. <ol type="a"><li>Write $x^{4/3}$ in radical form.</li><li>Write $\sqrt[4]{x^5}$ using rational exponents.</li></ol>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">a.</span></div>
+    <div class="ans-line"><span class="ans-label">b.</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 4 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 4 PAGE 2 END ======================= -->
+
+<!-- ======================= VERSION 4 PAGE 3 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V4</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 4 PROBLEM 5 START -->
+<div class="problem half" id="v4-problem-5">
+  <div class="problem-number">5.<span class="section-tag">Section 3.4</span></div>
+  <p>Graph the transformed radical function. State the locator point, domain, and range. $$f(x)=\sqrt{x-1}-3$$</p>
+  <div class="graph-block"><img class="answer-plane" src="figures/plane.png" alt="coordinate plane for graphing"></div>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">locator point:</span></div>
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">range:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 5 END -->
+
+<!-- VERSION 4 PROBLEM 6 START -->
+<div class="problem half" id="v4-problem-6">
+  <div class="problem-number">6.<span class="section-tag">Section 3.4</span></div>
+  <p>A square root graph starts at $(-2,5)$ and is reflected across the $x$-axis. Write a possible equation for the graph.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">equation:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 6 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 4 PAGE 3 END ======================= -->
+
+<!-- ======================= VERSION 4 PAGE 4 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V4</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 4 PROBLEM 7 START -->
+<div class="problem half" id="v4-problem-7">
+  <div class="problem-number">7.<span class="section-tag">Section 3.4</span></div>
+  <p>Compare the domain and range of square root functions and cube root functions.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">comparison:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 7 END -->
+
+<!-- VERSION 4 PROBLEM 8 START -->
+<div class="problem half" id="v4-problem-8">
+  <div class="problem-number">8.<span class="section-tag">Section 3.2</span></div>
+  <p>Explain why checking solutions is important after squaring both sides of an equation.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">explanation:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 8 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 4 PAGE 4 END ======================= -->
+
+<!-- ======================= VERSION 4 PAGE 5 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V4</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 4 PROBLEM 9 START -->
+<div class="problem half" id="v4-problem-9">
+  <div class="problem-number">9.<span class="section-tag">Section 3.4</span></div>
+  <p>Describe the transformations in the function. $$g(x)=-2\sqrt[3]{x+1}$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">transformations:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 9 END -->
+
+<!-- VERSION 4 PROBLEM 10 START -->
+<div class="problem half" id="v4-problem-10">
+  <div class="problem-number">10.<span class="section-tag">Section 3.4 / 3.5</span></div>
+  <p>A student claims all rational exponent graphs have the same shape. Explain why this is false.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">explanation:</span></div>
+  </div>
+</div>
+<!-- VERSION 4 PROBLEM 10 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 4 PAGE 5 END ======================= -->
+
+<!-- ======================= VERSION 5 PAGE 1 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V5</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 5 PROBLEM 1 START -->
+<div class="problem half" id="v5-problem-1">
+  <div class="problem-number">1.<span class="section-tag">Section 3.1</span></div>
+  <p>Solve. Show exact solutions. $$x^2=100$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution(s):</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 1 END -->
+
+<!-- VERSION 5 PROBLEM 2 START -->
+<div class="problem half" id="v5-problem-2">
+  <div class="problem-number">2.<span class="section-tag">Section 3.2</span></div>
+  <p>Solve and check. Identify any extraneous solution. $$\sqrt{x+8}=x-2$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution(s):</span></div>
+    <div class="ans-line"><span class="ans-label">extraneous?</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 2 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 5 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 5 PAGE 2 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V5</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 5 PROBLEM 3 START -->
+<div class="problem half" id="v5-problem-3">
+  <div class="problem-number">3.<span class="section-tag">Section 3.3</span></div>
+  <p>Solve and verify. $$4+\sqrt[3]{x-6}=9$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 3 END -->
+
+<!-- VERSION 5 PROBLEM 4 START -->
+<div class="problem half" id="v5-problem-4">
+  <div class="problem-number">4.<span class="section-tag">Section 3.5</span></div>
+  Rewrite each expression in the requested form. <ol type="a"><li>Write $x^{7/2}$ in radical form.</li><li>Write $\sqrt[3]{x^2}$ using rational exponents.</li></ol>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">a.</span></div>
+    <div class="ans-line"><span class="ans-label">b.</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 4 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 5 PAGE 2 END ======================= -->
+
+<!-- ======================= VERSION 5 PAGE 3 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V5</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 5 PROBLEM 5 START -->
+<div class="problem half" id="v5-problem-5">
+  <div class="problem-number">5.<span class="section-tag">Section 3.4</span></div>
+  <p>Graph the transformed radical function. State the locator point, domain, and range. $$f(x)=-\sqrt{x+2}+6$$</p>
+  <div class="graph-block"><img class="answer-plane" src="figures/plane.png" alt="coordinate plane for graphing"></div>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">locator point:</span></div>
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">range:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 5 END -->
+
+<!-- VERSION 5 PROBLEM 6 START -->
+<div class="problem half" id="v5-problem-6">
+  <div class="problem-number">6.<span class="section-tag">Section 3.4</span></div>
+  <p>A cube root graph has locator point $(-5,4)$. Write a possible equation for the graph.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">equation:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 6 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 5 PAGE 3 END ======================= -->
+
+<!-- ======================= VERSION 5 PAGE 4 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V5</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 5 PROBLEM 7 START -->
+<div class="problem half" id="v5-problem-7">
+  <div class="problem-number">7.<span class="section-tag">Section 3.4</span></div>
+  <p>Compare the intervals where square root and cube root parent functions increase.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">comparison:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 7 END -->
+
+<!-- VERSION 5 PROBLEM 8 START -->
+<div class="problem half" id="v5-problem-8">
+  <div class="problem-number">8.<span class="section-tag">Section 3.1 / 3.2</span></div>
+  <p>Explain why $(x-4)^2=49$ requires two cases.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">explanation:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 8 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 5 PAGE 4 END ======================= -->
+
+<!-- ======================= VERSION 5 PAGE 5 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V5</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 5 PROBLEM 9 START -->
+<div class="problem half" id="v5-problem-9">
+  <div class="problem-number">9.<span class="section-tag">Section 3.4</span></div>
+  <p>Describe the transformations in the function. $$g(x)=\sqrt[3]{x-5}+4$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">transformations:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 9 END -->
+
+<!-- VERSION 5 PROBLEM 10 START -->
+<div class="problem half" id="v5-problem-10">
+  <div class="problem-number">10.<span class="section-tag">Section 3.4</span></div>
+  <p>A student says reflected radical graphs always change domain. Explain why this is incorrect.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">explanation:</span></div>
+  </div>
+</div>
+<!-- VERSION 5 PROBLEM 10 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 5 PAGE 5 END ======================= -->
+
+<!-- ======================= VERSION 6 PAGE 1 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V6</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 6 PROBLEM 1 START -->
+<div class="problem half" id="v6-problem-1">
+  <div class="problem-number">1.<span class="section-tag">Section 3.1</span></div>
+  <p>Solve. Show exact solutions. $$x^3=-216$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 1 END -->
+
+<!-- VERSION 6 PROBLEM 2 START -->
+<div class="problem half" id="v6-problem-2">
+  <div class="problem-number">2.<span class="section-tag">Section 3.2</span></div>
+  <p>Solve and check. Identify any extraneous solution. $$\sqrt{x+7}=x-1$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution(s):</span></div>
+    <div class="ans-line"><span class="ans-label">extraneous?</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 2 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 6 PAGE 1 END ======================= -->
+
+<!-- ======================= VERSION 6 PAGE 2 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V6</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 6 PROBLEM 3 START -->
+<div class="problem half" id="v6-problem-3">
+  <div class="problem-number">3.<span class="section-tag">Section 3.3</span></div>
+  <p>Solve and verify. $$3\sqrt[3]{x+2}=15$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">solution:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 3 END -->
+
+<!-- VERSION 6 PROBLEM 4 START -->
+<div class="problem half" id="v6-problem-4">
+  <div class="problem-number">4.<span class="section-tag">Section 3.5</span></div>
+  Rewrite each expression in the requested form. <ol type="a"><li>Write $x^{1/5}$ in radical form.</li><li>Write $\sqrt{x^9}$ using rational exponents.</li></ol>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">a.</span></div>
+    <div class="ans-line"><span class="ans-label">b.</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 4 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 6 PAGE 2 END ======================= -->
+
+<!-- ======================= VERSION 6 PAGE 3 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V6</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 6 PROBLEM 5 START -->
+<div class="problem half" id="v6-problem-5">
+  <div class="problem-number">5.<span class="section-tag">Section 3.4</span></div>
+  <p>Graph the transformed radical function. State the locator point, domain, and range. $$f(x)=3\sqrt{x-2}-1$$</p>
+  <div class="graph-block"><img class="answer-plane" src="figures/plane.png" alt="coordinate plane for graphing"></div>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">locator point:</span></div>
+    <div class="ans-line"><span class="ans-label">domain:</span></div>
+    <div class="ans-line"><span class="ans-label">range:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 5 END -->
+
+<!-- VERSION 6 PROBLEM 6 START -->
+<div class="problem half" id="v6-problem-6">
+  <div class="problem-number">6.<span class="section-tag">Section 3.4</span></div>
+  <p>A square root graph starts at $(4,-1)$ and opens upward. Write a possible equation for the graph.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">equation:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 6 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 6 PAGE 3 END ======================= -->
+
+<!-- ======================= VERSION 6 PAGE 4 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V6</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 6 PROBLEM 7 START -->
+<div class="problem half" id="v6-problem-7">
+  <div class="problem-number">7.<span class="section-tag">Section 3.4</span></div>
+  <p>Compare how square root and cube root functions behave for negative $x$-values.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">comparison:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 7 END -->
+
+<!-- VERSION 6 PROBLEM 8 START -->
+<div class="problem half" id="v6-problem-8">
+  <div class="problem-number">8.<span class="section-tag">Section 3.3 / 3.4</span></div>
+  <p>Explain how graph structure helps explain why cube root equations often have one real solution.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">explanation:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 8 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 6 PAGE 4 END ======================= -->
+
+<!-- ======================= VERSION 6 PAGE 5 START ======================= -->
+<section class="page">
+<div class="page-header">
+  <div class="page-title">Unit 3 Summative Assessment &nbsp; V6</div>
+  <div class="name-line">Name:<span></span></div>
+</div>
+<div class="problem-row">
+
+<!-- VERSION 6 PROBLEM 9 START -->
+<div class="problem half" id="v6-problem-9">
+  <div class="problem-number">9.<span class="section-tag">Section 3.4</span></div>
+  <p>Describe the transformations in the function. $$g(x)=\sqrt[3]{x+6}-3$$</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">transformations:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 9 END -->
+
+<!-- VERSION 6 PROBLEM 10 START -->
+<div class="problem half" id="v6-problem-10">
+  <div class="problem-number">10.<span class="section-tag">Section 3.4</span></div>
+  <p>A student says square root functions always have all real outputs. Correct the misconception.</p>
+  <div class="ws-area"></div>
+  <div class="ans-block">
+    <div class="ans-line"><span class="ans-label">correction:</span></div>
+  </div>
+</div>
+<!-- VERSION 6 PROBLEM 10 END -->
+
+</div>
+</section>
+<!-- ======================= VERSION 6 PAGE 5 END ======================= -->
+
+</body>
+</html>
